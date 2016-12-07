@@ -1,0 +1,9 @@
+apply plugin: 'application'
+
+mainClassName = "io.j1st.test.TestEmulator"
+
+dependencies {
+    // project
+    compile project(':emulator-util')
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

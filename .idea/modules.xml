@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Emulator-EMS.iml" filepath="$PROJECT_DIR$/.idea/modules/Emulator-EMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-data/emulator-data.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-data/emulator-data.iml" group="emulator-data" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-data/emulator-data_main.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-data/emulator-data_main.iml" group="emulator-data" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-data/emulator-data_test.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-data/emulator-data_test.iml" group="emulator-data" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end.iml" group="emulator-end" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end_main.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end_main.iml" group="emulator-end" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end_test.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end_test.iml" group="emulator-end" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util.iml" group="emulator-util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util_main.iml" group="emulator-util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util_test.iml" group="emulator-util" />
+    </modules>
+  </component>
+</project>

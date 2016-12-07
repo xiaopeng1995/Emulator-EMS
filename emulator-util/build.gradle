@@ -1,0 +1,6 @@
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    // eclipse mqtt
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.0.2'
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3.test:1.0.2'
+}

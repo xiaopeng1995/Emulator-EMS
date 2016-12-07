@@ -1,0 +1,5 @@
+rootProject.name = 'Emulator-EMS'
+include 'emulator-data'
+include 'emulator-util'
+include 'emulator-end'
+

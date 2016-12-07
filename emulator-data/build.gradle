@@ -1,0 +1,9 @@
+
+apply plugin: 'application'
+
+mainClassName = "io.j1st.data.MeterEmulator"
+
+dependencies {
+    // project
+    compile project(':emulator-util')
+}
