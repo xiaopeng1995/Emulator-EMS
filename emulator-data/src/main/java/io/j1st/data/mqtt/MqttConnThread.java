@@ -60,20 +60,20 @@ public class MqttConnThread implements Callable {
                     @Override
                     public void messageArrived(String topic, MqttMessage message) throws Exception {
                         logger.debug("收到的消息为：" + message.toString());
-                        Map<Object, Object> msgData = JsonUtils.OBJECT_MAPPER.readValue(message.toString().getBytes(), Map.class);
+                        Map<Object, Object> msgData = JsonUtils.Mapper.readValue(message.toString().getBytes(), Map.class);
                         System.out.println(msgData);
                         if (msgData.keySet().toString().contains("uery")) {
-                            Payload payload = JsonUtils.OBJECT_MAPPER.readValue(message.toString().getBytes(), Payload.class);
+                            Payload payload = JsonUtils.Mapper.readValue(message.toString().getBytes(), Payload.class);
                             int d = payload.getQuery().get(0).getD();
                             int i = payload.getQuery().get(0).getI();
                             Thread.sleep(d * 1000);
                             String msg = GetJsonEmsData.getData(null, null, null);
-                            mqttClient.publish("systemQuery", new MqttMessage(msg.getBytes("utf-8")));
-                            quartzManager.modifyJobTime(null, null, "meter_trigger", "meter_trigger", "0/" + i + " * * * * ?");
+                           // mqttClient.publish("systemQuery", new MqttMessage(msg.getBytes("utf-8")));
+                            quartzManager.modifyJobTime(null, null, "bat_trigger", "bat_trigger", "0/" + i + " * * * * ?");
                             logger.debug("上传数据为：" + msg);
                             logger.info("间隔已经恢复改为" + i + "秒");
                         } else if (msgData.keySet().toString().contains("etMHReg")) {
-                            BatReceive batReceive=JsonUtils.OBJECT_MAPPER.readValue(message.toString().getBytes(), BatReceive.class);
+                            BatReceive batReceive=JsonUtils.Mapper.readValue(message.toString().getBytes(), BatReceive.class);
                             String dsn=batReceive.getSetMHReg().get(0).getDsn();
                             Registry.INSTANCE.saveKey(dsn,batReceive);
                         }else

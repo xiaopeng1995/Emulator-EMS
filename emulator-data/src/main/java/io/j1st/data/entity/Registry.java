@@ -2,6 +2,7 @@ package io.j1st.data.entity;
 
 
 import io.j1st.data.mqtt.MqttConnThread;
+import org.apache.commons.configuration.PropertiesConfiguration;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -17,6 +18,7 @@ public enum Registry {
     INSTANCE;
 
     public Map<String, MqttConnThread> map = new ConcurrentHashMap<>();
+    public Map<String, PropertiesConfiguration> config = new ConcurrentHashMap<>();
     public Map<String, Object> value = new ConcurrentHashMap<>();
 
     // connect pool
@@ -32,6 +34,11 @@ public enum Registry {
         this.value.put(key, value);
     }
 
+    // save 配置文件值
+    public void saveConfig(String key, PropertiesConfiguration value) {
+        this.config.put(key, value);
+    }
+
     // get session
     public Map<String, MqttConnThread> getSession() {
         return this.map;
@@ -40,6 +47,11 @@ public enum Registry {
     // get Value
     public Map<String, Object> getValue() {
         return this.value;
+    }
+
+    //get config
+    public Map<String, PropertiesConfiguration> getConfig() {
+        return this.config;
     }
 
     // delete Session

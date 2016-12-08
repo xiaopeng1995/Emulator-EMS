@@ -2,6 +2,8 @@ package io.j1st.util.entity;
 
 import io.j1st.util.entity.data.Values;
 
+import java.util.Map;
+
 /**
  * EmsEntity
  */
@@ -10,7 +12,7 @@ public class EmsData {
     private String asn;
     private String type;
 
-    private Values values;
+    private Map values;
 
     public void setDsn(String dsn){
         this.dsn = dsn;
@@ -24,10 +26,10 @@ public class EmsData {
     public String getType(){
         return this.type;
     }
-    public void setValues(Values values){
+    public void setValues(Map values){
         this.values = values;
     }
-    public Values getValues(){
+    public Map getValues(){
         return this.values;
     }
 

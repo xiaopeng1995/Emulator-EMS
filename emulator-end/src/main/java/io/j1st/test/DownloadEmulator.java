@@ -42,7 +42,7 @@ public class DownloadEmulator {
         d.add(setMHReg);
         BatReceive batReceive=new BatReceive();
         batReceive.setSetMHReg(d);
-        String msg= JsonUtils.OBJECT_MAPPER.writeValueAsString(batReceive);
+        String msg= JsonUtils.Mapper.writeValueAsString(batReceive);
         System.out.println(msg);
         mqtt.publish("agents/5833e406dafbaf59a0d39671/downstream", new MqttMessage(msg.getBytes("utf-8")));
     }
