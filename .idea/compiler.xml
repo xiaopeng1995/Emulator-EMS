@@ -27,6 +27,8 @@
       <module name="emulator-end_test" target="1.8" />
       <module name="emulator-meter_main" target="1.8" />
       <module name="emulator-meter_test" target="1.8" />
+      <module name="emulator-mongo_main" target="1.8" />
+      <module name="emulator-mongo_test" target="1.8" />
       <module name="emulator-util_main" target="1.8" />
       <module name="emulator-util_test" target="1.8" />
     </bytecodeTargetLevel>

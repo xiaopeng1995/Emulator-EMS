@@ -2,6 +2,7 @@ package io.j1st.data.mqtt;
 
 
 import io.j1st.data.entity.Registry;
+import io.j1st.data.job.GetDataAll;
 import io.j1st.data.quartz.QuartzManager;
 import io.j1st.util.entity.Payload;
 import io.j1st.util.entity.bat.BatReceive;
@@ -12,6 +13,7 @@ import org.eclipse.paho.client.mqttv3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.function.ObjDoubleConsumer;
@@ -61,23 +63,36 @@ public class MqttConnThread implements Callable {
                     public void messageArrived(String topic, MqttMessage message) throws Exception {
                         logger.debug("收到的消息为：" + message.toString());
                         Map<Object, Object> msgData = JsonUtils.Mapper.readValue(message.toString().getBytes(), Map.class);
-                        System.out.println(msgData);
-                        if (msgData.keySet().toString().contains("uery")) {
-                            Payload payload = JsonUtils.Mapper.readValue(message.toString().getBytes(), Payload.class);
-                            int d = payload.getQuery().get(0).getD();
-                            int i = payload.getQuery().get(0).getI();
-                            Thread.sleep(d * 1000);
-                            String msg = GetJsonEmsData.getData(null, null, null);
-                           // mqttClient.publish("systemQuery", new MqttMessage(msg.getBytes("utf-8")));
+                        if (msgData.keySet().toString().contains("Query")) {
+                            List<Map> bbc=(List<Map>)msgData.get("Query");
+                            int d = (Integer) bbc.get(0).get("D");
+                            int i = (Integer) bbc.get(0).get("I");
                             quartzManager.modifyJobTime(null, null, "bat_trigger", "bat_trigger", "0/" + i + " * * * * ?");
-                            logger.debug("上传数据为：" + msg);
                             logger.info("间隔已经恢复改为" + i + "秒");
-                        } else if (msgData.keySet().toString().contains("etMHReg")) {
-                            BatReceive batReceive=JsonUtils.Mapper.readValue(message.toString().getBytes(), BatReceive.class);
-                            String dsn=batReceive.getSetMHReg().get(0).getDsn();
-                            Registry.INSTANCE.saveKey(dsn,batReceive);
-                        }else
-                        {
+                            Thread.sleep(d * 1000);
+                            BatReceive batReceive = (BatReceive) Registry.INSTANCE.getValue().get("AB123456");
+                            double Reg12551 = 0.0;
+                            if (batReceive != null) {
+                                Reg12551 = Integer.parseInt(batReceive.getSetMHReg().get(0).get("Reg12551").toString());
+                            }
+                            GetDataAll getDataAll = new GetDataAll(Reg12551, Registry.INSTANCE.getConfig().get("STROAGE_002"));
+                            String msg = getDataAll.getDate();
+                            mqttClient.publish("agents/" + mqttClient.getClientId() + "/systemQuery", new MqttMessage(msg.getBytes("utf-8")));
+                            logger.debug("上传数据为：" + msg);
+
+                        } else if (msgData.keySet().toString().contains("SetMHReg")) {
+                            List<Map> bbc=(List<Map>)msgData.get("SetMHReg");
+                            String d = bbc.get(0).get("dsn").toString();
+                            double i = (double) bbc.get(0).get("Reg12551");
+                            Object num1=Registry.INSTANCE.getValue().get("Soc");
+                            if(num1!=null)//判断当前容量是否处于极限值.
+                            {
+                                double num=(double) num1;
+                                i=num>0.95?0:num<0.05?0:num;
+                                logger.debug("收到指令,当前Soc:"+num);
+                            }
+                            Registry.INSTANCE.saveKey(d, i);
+                        } else {
                             logger.error("错误格式");
                         }
 
@@ -89,7 +104,7 @@ public class MqttConnThread implements Callable {
                     }
                 });
 
-                String topic = "agents/5833e406dafbaf59a0d39671/downstream";
+                String topic = "agents/" + mqttClient.getClientId() + "/downstream";
                 mqttClient.subscribe(topic);
             }
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());

@@ -82,7 +82,6 @@ public class Clculate {
             data.put("meterG", getRealVaule(LC.get("MeterG"), 2));
             data.put("powerT", getRealVaule(LC.get("PowerU"), 0));
             data.put("meterT", getRealVaule(LC.get("MeterU"), 2));
-            System.out.println(data);
        // }
         return data;
     }
@@ -157,13 +156,13 @@ public class Clculate {
         double b2 = LC.get("Car2PC");
         LC.put("CARtE", 0.0);
         if (CHour >= EMPara.get("CarTBH")) {
-            if (LC.get("CarBack") == 0) {
+            if (LC.get("CarBack") == null) {
                 LC.put("CarBack", 1.0);
                 LC.put("CarSOC", EMPara.get("CarINCapa") + 0);
             }
         }
         if (CHour >= EMPara.get("Car2TBH")) {
-            if (LC.get("Car2Back") == 0) {
+            if (LC.get("Car2Back") == null) {
                 LC.put("Car2Back", 1.0);
                 LC.put("Car2SOC", EMPara.get("Car2INCapa"));
             }
@@ -312,7 +311,7 @@ public class Clculate {
         //地点参数
         EMPara.put("Long", 121.5);//经度Number(id('Longitude').value);
         EMPara.put("LatiN", 31.2 * pi_v / 180);//纬度EMPara.LatiN = id('Latitude').value * pi_v / 180;
-        itv = 60.0;//间隔 Number(id('doubleerval').value);
+        itv = 1.0;//间隔 Number(id('doubleerval').value);
         policy = 2;// 策略1 禁止向电网输出">2 高峰输出 低谷回购">
         // 晨谷结束时间dy = id('GridV0E').value.split(":");
         EMPara.put("GridV0EH", 6.0);//EMPara.GridV0EH = Number(dy[0]);
@@ -461,7 +460,6 @@ public class Clculate {
 //	LC.put("",0);atoTrans = EMPara.atoTrans;
         LC.put("BattSOC", EMPara.get("BattICapa"));
         LC.put("CarSOC", EMPara.get("CarIMcapa"));
-        System.out.println(LC.get("CarSOC"));
         LC.put("Car2SOC", EMPara.get("Car2IMCapa"));
 
         LC.put("MeterG", EMPara.get("MeterIG"));    //
@@ -553,7 +551,7 @@ public class Clculate {
                 }
             }
         }
-        logger.info(content);
+
     }
 
     private void InitPVData() {//查12

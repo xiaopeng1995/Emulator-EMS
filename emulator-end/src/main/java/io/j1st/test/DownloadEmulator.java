@@ -12,7 +12,9 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -28,22 +30,25 @@ public class DownloadEmulator {
         options = new MqttConnectOptions();
         mqtt.connect(options);
         mqtt.setTimeToWait(2000);
-        JobTest jobTest=new JobTest(mqtt,options);
-//        Query query=new Query();
-//        query.setD(0);
-//        query.setI(20);
-        List<SetMHReg> d=new ArrayList<>();
-//        d.add(query);
-//        Payload payload=new Payload();
-//        payload.setQuery(d);
-        SetMHReg setMHReg=new SetMHReg();
-        setMHReg.setDsn("AB123456");
-        setMHReg.setReg12551(800);
+        Map<String, Object> query = new HashMap<>();
+        query.put("D", 6);
+        query.put("I", 30);
+        List<Map> d1 = new ArrayList<>();
+        d1.add(query);
+        Map<String, Object> payload = new HashMap<>();
+        payload.put("Query",d1);
+
+        List<Map> d = new ArrayList<>();
+        Map<String, Object> setMHReg = new HashMap<>();
+        setMHReg.put("dsn", "ST123456");
+        setMHReg.put("Reg12551", -600.0);
         d.add(setMHReg);
-        BatReceive batReceive=new BatReceive();
-        batReceive.setSetMHReg(d);
-        String msg= JsonUtils.Mapper.writeValueAsString(batReceive);
-        System.out.println(msg);
-        mqtt.publish("agents/5833e406dafbaf59a0d39671/downstream", new MqttMessage(msg.getBytes("utf-8")));
+        Map<String, Object> batReceive = new HashMap<>();
+        batReceive.put("SetMHReg", d);
+        String msg1 = JsonUtils.Mapper.writeValueAsString(batReceive);
+        String msg2 = JsonUtils.Mapper.writeValueAsString(payload);
+        System.out.println(msg1);
+        System.out.println(msg2);
+         mqtt.publish("agents/5848cacedafbaf35325b70e0/downstream", new MqttMessage(msg1.getBytes("utf-8")));
     }
 }

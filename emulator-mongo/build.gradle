@@ -1,0 +1,11 @@
+dependencies {
+    // mongodb
+    compile 'org.mongodb:mongodb-driver:3.2.2'
+
+    // joda-time
+    compile 'joda-time:joda-time:2.9.2'
+
+    compile 'com.google.guava:guava:18.0'
+    // project
+    compile project(':emulator-util')
+}

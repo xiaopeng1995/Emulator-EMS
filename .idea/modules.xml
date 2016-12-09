@@ -9,6 +9,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end.iml" group="emulator-end" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end_main.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end_main.iml" group="emulator-end" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end_test.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-end/emulator-end_test.iml" group="emulator-end" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-mongo/emulator-mongo.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-mongo/emulator-mongo.iml" group="emulator-mongo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-mongo/emulator-mongo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-mongo/emulator-mongo_main.iml" group="emulator-mongo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-mongo/emulator-mongo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-mongo/emulator-mongo_test.iml" group="emulator-mongo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util.iml" group="emulator-util" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util_main.iml" group="emulator-util" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/emulator-util/emulator-util_test.iml" group="emulator-util" />
