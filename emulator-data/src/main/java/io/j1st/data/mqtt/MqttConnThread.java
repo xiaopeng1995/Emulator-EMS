@@ -13,6 +13,8 @@ import org.eclipse.paho.client.mqttv3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -67,7 +69,9 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc=(List<Map>)msgData.get("Query");
                             int d = (Integer) bbc.get(0).get("D");
                             int i = (Integer) bbc.get(0).get("I");
-                            quartzManager.modifyJobTime(null, null, "bat_trigger", "bat_trigger", "0/" + i + " * * * * ?");
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("ss");//可以方便地修改日期格式
+                            String date = dateFormat.format(new Date());
+                            quartzManager.modifyJobTime(null, null, "bat_trigger", "bat_trigger", date+"/" + i + " * * * * ?");
                             logger.info("间隔已经恢复改为" + i + "秒");
                             Thread.sleep(d * 1000);
                             BatReceive batReceive = (BatReceive) Registry.INSTANCE.getValue().get("AB123456");
@@ -88,8 +92,10 @@ public class MqttConnThread implements Callable {
                             if(num1!=null)//判断当前容量是否处于极限值.
                             {
                                 double num=(double) num1;
-                                i=num>0.95?0:num<0.05?0:num;
+
+                                i=num>0.95&i<0?0:num<0.05&i>0?0:i;
                                 logger.debug("收到指令,当前Soc:"+num);
+                                logger.debug("收到指令,功率百分比:"+i);
                             }
                             Registry.INSTANCE.saveKey(d, i);
                         } else {

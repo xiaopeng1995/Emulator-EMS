@@ -12,6 +12,7 @@ import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
@@ -32,12 +33,14 @@ public class EmulatorApplication {
         PropertiesConfiguration mongoConfig;
         PropertiesConfiguration mqttConfig;
         PropertiesConfiguration STROAGE_002;
+        PropertiesConfiguration quartzConfig;
 
-        if (args.length >= 3) {
+        if (args.length >= 4) {
             productIdConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
             mqttConfig = new PropertiesConfiguration(args[2]);
             STROAGE_002 = new PropertiesConfiguration(args[3]);
+            quartzConfig = new PropertiesConfiguration(args[4]);
 
 
         } else {
@@ -45,21 +48,20 @@ public class EmulatorApplication {
             productIdConfig = new PropertiesConfiguration("config/product.properties");
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
             mqttConfig = new PropertiesConfiguration("config/mqtt.properties");
+            quartzConfig = new PropertiesConfiguration("config/quartz.properties");
         }
 
         // Mqtt
-        Registry.INSTANCE.saveConfig("STROAGE_002",STROAGE_002);
+        Registry.INSTANCE.saveConfig("STROAGE_002", STROAGE_002);
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
         MqttConnectOptions options;
         //定时任务开始
-        Properties pros = new Properties();
-        pros.setProperty("org.quartz.threadPool.threadCount", "500");
-        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(pros));
-       // quartzManager.addJob("meter_job", "meter_job", "meter_trigger", "meter_trigger", MeterJob.class, "1/59 * * * * ?");
-        quartzManager.addJob("bat_job", "bat_job", "bat_trigger", "bat_trigger", BatJob.class, "0/30 * * * * ?");
-        //mqttConfig.getString("mqtt.url")
-        mqtt = new MqttClient("tcp://139.196.230.150:1883", "5848cacedafbaf35325b70e0", persistence);
+        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("ss");
+        String date = dateFormat.format(new Date());
+        quartzManager.addJob("bat_job", "bat_job", "bat_trigger", "bat_trigger", BatJob.class, date + "/30 * * * * ?");
+        mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), "5848cacedafbaf35325b70e0", persistence);
         options = new MqttConnectOptions();
         options.setUserName("5848cacedafbaf35325b70e0");
         options.setPassword("hTCxJJkWtGkbVBzLLryEvTvRGzcBKFTm".toCharArray());

@@ -1,7 +1,7 @@
 
 apply plugin: 'application'
 
-mainClassName = "io.j1st.data.MeterEmulator"
+mainClassName = "io.j1st.data.EmulatorApplication"
 
 dependencies {
     // project

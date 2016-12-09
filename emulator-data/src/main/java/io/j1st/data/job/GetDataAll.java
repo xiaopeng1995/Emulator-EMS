@@ -71,7 +71,7 @@ public class GetDataAll {
         long startDate = 0;
         try {
             interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get("date")) / 1000 + 1;
-            startDate = (now.getTime()-(long) Registry.INSTANCE.getValue().get("startDate")) / 1000;
+            startDate = (now.getTime()-(long) Registry.INSTANCE.getValue().get("startDate")) / 1000+1;
             SimpleDateFormat dateFormat = new SimpleDateFormat("HHmm");//可以方便地修改日期格式
             String date = dateFormat.format(now);
             if(date.equals("00:00"))
