@@ -160,7 +160,7 @@ public class GetDataAll {
             if (Registry.INSTANCE.getValue().get("TotWhImp") != null) {
                 TotWhImp += J_TotWhImp;
             }
-            Registry.INSTANCE.saveKey("TotWhImp", GttRetainValue.getRealVaule(TotWhImp, 8));
+            Registry.INSTANCE.saveKey("TotWhImp", TotWhImp);
 
         } else //充电
         {
@@ -179,12 +179,12 @@ public class GetDataAll {
             if (Registry.INSTANCE.getValue().get("TotWhExp") != null) {
                 TotWhExp += J_TotWhExp;
             }
-            Registry.INSTANCE.saveKey("TotWhExp", GttRetainValue.getRealVaule(TotWhExp, 8));
+            Registry.INSTANCE.saveKey("TotWhExp", TotWhExp);
         }
         TotWh = TotWhExp + TotWhImp;
         TCkWh = TotWhImp - TotWhExp;
         DCkWh = TCkWh;
-        Registry.INSTANCE.saveKey("Soc", GttRetainValue.getRealVaule(Soc, 8));//本次间隔Soc
+        Registry.INSTANCE.saveKey("Soc", Soc);//本次间隔Soc
         logger.debug("存Soc值为:" + Registry.INSTANCE.getValue().get("Soc"));
         //逆变器
 

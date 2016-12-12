@@ -36,9 +36,9 @@ public class BatJob implements Job {
 
 
         STROAGE_002 = Registry.INSTANCE.getConfig().get("STROAGE_002");
-        Object batReceive = Registry.INSTANCE.getValue().get("ST123456");
+        Object batReceive = Registry.INSTANCE.getValue().get("AB123456");
         if (batReceive != null) {
-            Reg12551 = (Double) Registry.INSTANCE.getValue().get("ST123456");
+            Reg12551 = (Double) Registry.INSTANCE.getValue().get("AB123456");
         }
 
         GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002);

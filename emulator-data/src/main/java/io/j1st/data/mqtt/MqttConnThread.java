@@ -69,8 +69,6 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc=(List<Map>)msgData.get("Query");
                             int d = (Integer) bbc.get(0).get("D");
                             int i = (Integer) bbc.get(0).get("I");
-                            SimpleDateFormat dateFormat = new SimpleDateFormat("ss");//可以方便地修改日期格式
-                            String date = dateFormat.format(new Date());
                             quartzManager.modifyJobTime(null, null, "batTrigger", "batTrigger", "0/"+i+" * * * * ?");
                             logger.info("间隔已经恢复改为" + i + "秒");
                             Thread.sleep(d * 1000);
