@@ -148,7 +148,6 @@ public class GetDataAll {
             double J_TotWhImp = PDC * (((double) interval) / 3600);//当前间隔放电消耗功率
             dqrl = WHRtg * Soc - J_TotWhImp;
             Soc = dqrl / WHRtg;
-            System.out.println("Soc = dqrl / WHRtg:"+Soc);
             /*Soc>20 BV=1.312SOC+293.8  Soc<=20   BV=1SOC+260 */
             if (Soc > 20) {
                 BV = 1.312 * Soc * 100 + 293.8;
