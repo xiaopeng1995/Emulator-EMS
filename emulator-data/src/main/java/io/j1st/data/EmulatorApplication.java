@@ -60,7 +60,7 @@ public class EmulatorApplication {
         QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
         SimpleDateFormat dateFormat = new SimpleDateFormat("ss");
         String date = dateFormat.format(new Date());
-        quartzManager.addJob("bat_job", "bat_job", "bat_trigger", "bat_trigger", BatJob.class, date + "/30 * * * * ?");
+        quartzManager.addJob("batJob", "batJob", "batTrigger", "batTrigger", BatJob.class,  "0/30 * * * * ?");
         mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), "5848cacedafbaf35325b70e0", persistence);
         options = new MqttConnectOptions();
         options.setUserName("5848cacedafbaf35325b70e0");

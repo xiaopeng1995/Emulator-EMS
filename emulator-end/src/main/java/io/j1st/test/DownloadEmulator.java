@@ -31,7 +31,7 @@ public class DownloadEmulator {
         mqtt.connect(options);
         mqtt.setTimeToWait(2000);
         Map<String, Object> query = new HashMap<>();
-        query.put("D", 6);
+        query.put("D", 0);
         query.put("I", 30);
         List<Map> d1 = new ArrayList<>();
         d1.add(query);
@@ -41,7 +41,7 @@ public class DownloadEmulator {
         List<Map> d = new ArrayList<>();
         Map<String, Object> setMHReg = new HashMap<>();
         setMHReg.put("dsn", "ST123456");
-        setMHReg.put("Reg12551", -300.0);
+        setMHReg.put("Reg12551", 500.0);
         d.add(setMHReg);
         Map<String, Object> batReceive = new HashMap<>();
         batReceive.put("SetMHReg", d);

@@ -52,7 +52,7 @@ public class QuartzManager {
             }
             logger.info("quartz runing..");
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 

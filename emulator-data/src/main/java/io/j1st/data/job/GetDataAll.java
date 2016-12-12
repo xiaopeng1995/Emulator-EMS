@@ -148,6 +148,7 @@ public class GetDataAll {
             double J_TotWhImp = PDC * (((double) interval) / 3600);//当前间隔放电消耗功率
             dqrl = WHRtg * Soc - J_TotWhImp;
             Soc = dqrl / WHRtg;
+            System.out.println("Soc = dqrl / WHRtg:"+Soc);
             /*Soc>20 BV=1.312SOC+293.8  Soc<=20   BV=1SOC+260 */
             if (Soc > 20) {
                 BV = 1.312 * Soc * 100 + 293.8;
@@ -160,7 +161,7 @@ public class GetDataAll {
             if (Registry.INSTANCE.getValue().get("TotWhImp") != null) {
                 TotWhImp += J_TotWhImp;
             }
-            Registry.INSTANCE.saveKey("TotWhImp", GttRetainValue.getRealVaule(TotWhImp, 3));
+            Registry.INSTANCE.saveKey("TotWhImp", GttRetainValue.getRealVaule(TotWhImp, 8));
 
         } else //充电
         {
@@ -179,12 +180,12 @@ public class GetDataAll {
             if (Registry.INSTANCE.getValue().get("TotWhExp") != null) {
                 TotWhExp += J_TotWhExp;
             }
-            Registry.INSTANCE.saveKey("TotWhExp", GttRetainValue.getRealVaule(TotWhExp, 3));
+            Registry.INSTANCE.saveKey("TotWhExp", GttRetainValue.getRealVaule(TotWhExp, 8));
         }
         TotWh = TotWhExp + TotWhImp;
         TCkWh = TotWhImp - TotWhExp;
         DCkWh = TCkWh;
-        Registry.INSTANCE.saveKey("Soc", GttRetainValue.getRealVaule(Soc, 3));//本次间隔Soc
+        Registry.INSTANCE.saveKey("Soc", GttRetainValue.getRealVaule(Soc, 8));//本次间隔Soc
         logger.debug("存Soc值为:" + Registry.INSTANCE.getValue().get("Soc"));
         //逆变器
 

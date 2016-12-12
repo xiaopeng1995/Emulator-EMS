@@ -28,16 +28,12 @@ public class BatJob implements Job {
     private double Reg12551;
 
     @Override
-    public void execute(JobExecutionContext context) throws JobExecutionException {
+    public void execute(JobExecutionContext context){
         // mqtt topic
         String topic;
 
         MqttConnThread mqttConnThread;
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
 
         STROAGE_002 = Registry.INSTANCE.getConfig().get("STROAGE_002");
         Object batReceive = Registry.INSTANCE.getValue().get("ST123456");
