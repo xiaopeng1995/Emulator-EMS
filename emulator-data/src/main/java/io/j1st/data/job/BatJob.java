@@ -28,30 +28,29 @@ public class BatJob implements Job {
     private double Reg12551;
 
     @Override
-    public void execute(JobExecutionContext context){
+    public void execute(JobExecutionContext context) {
         // mqtt topic
         String topic;
-
+        String agentId = context.getTrigger().getKey().toString().substring(0, 24);
+        logger.debug("开始执行"+agentId);
+        logger.info("内存中除配置文件外所有值 MAP:" + Registry.INSTANCE.getValue());
         MqttConnThread mqttConnThread;
         STROAGE_002 = Registry.INSTANCE.getConfig().get("STROAGE_002");
-        Set<String> agentIds = Registry.INSTANCE.getSession().keySet();
-        for (String agentId : agentIds) {
-            Object batReceive = Registry.INSTANCE.getValue().get("AB123456");
-            if (batReceive != null) {
-                Reg12551 = (Double) Registry.INSTANCE.getValue().get("AB123456");
-            }
-            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002);
-            String msg = dataAll.getDate();
-            mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
-            topic = getTopic(agentId);
-            if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
-                mqttConnThread.sendMessage(topic, msg);
-                logger.debug("发送的数据为：" + msg);
-                //更新间隔时间
-                Registry.INSTANCE.saveKey("date", new Date().getTime());
-            } else {
-                logger.info("MQTT链接信息错误,链接失败");
-            }
+        Object batReceive = Registry.INSTANCE.getValue().get("AB123456");
+        if (batReceive != null) {
+            Reg12551 = (Double) Registry.INSTANCE.getValue().get(agentId + "_AB123456");
+        }
+        GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002);
+        String msg = dataAll.getDate(agentId);
+        mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
+        topic = getTopic(agentId);
+        if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
+            // mqttConnThread.sendMessage(topic, msg);
+            logger.debug(agentId + "发送的数据为：" + msg);
+            //更新间隔时间
+            Registry.INSTANCE.saveKey(agentId + "_date", new Date().getTime());
+        } else {
+            logger.info("MQTT链接信息错误,链接失败");
         }
     }
 

@@ -58,19 +58,25 @@ public class EmulatorApplication {
         MqttConnectOptions options;
         //定时任务开始
         QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
-        quartzManager.addJob("batJob", "batJob", "batTrigger", "batTrigger", BatJob.class,  "0/30 * * * * ?");
-        mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), productIdConfig.getString("agent_ID"), persistence);
-        options = new MqttConnectOptions();
-        options.setUserName(productIdConfig.getString("agent_ID"));
-        options.setPassword("hTCxJJkWtGkbVBzLLryEvTvRGzcBKFTm".toCharArray());
-        //mqtt
-        MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, quartzManager);
-        //保存mqtt连接信息
-        Registry.INSTANCE.saveSession(productIdConfig.getString("agent_ID"), mqttConnThread);
-        //添加新线程到线程池
-        Registry.INSTANCE.startThread(mqttConnThread);
-        //保存启动时间
-        Registry.INSTANCE.saveKey("date", new Date().getTime());
+        for (int i = 0; i < 2; i++) {
+            String agentID = productIdConfig.getString("agent_ID" + i);
+            quartzManager.addJob(agentID + "_Job", agentID + "_Job", agentID + "_Trigger", agentID + "_Trigger", BatJob.class, "0/3 * * * * ?");
+            mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agentID, persistence);
+            options = new MqttConnectOptions();
+            options.setUserName(agentID);
+            if (i == 1)
+                options.setPassword("sWrIOuytduErHAjVbLBQyUjhEDtRNmiJ".toCharArray());
+            else
+                options.setPassword("eheYOJNklYBkubBhDfXSaBXNJyvywDvX".toCharArray());
+            //mqtt
+            MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, quartzManager);
+            //保存mqtt连接信息
+            Registry.INSTANCE.saveSession(agentID, mqttConnThread);
+            //添加新线程到线程池
+            Registry.INSTANCE.startThread(mqttConnThread);
+            //保存启动时间
+            Registry.INSTANCE.saveKey(agentID+"_date", new Date().getTime());
+        }
         //起点时间
         Registry.INSTANCE.saveKey("startDate", new Date().getTime());
     }

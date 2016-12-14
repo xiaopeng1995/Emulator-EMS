@@ -69,7 +69,7 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc=(List<Map>)msgData.get("Query");
                             int d = (Integer) bbc.get(0).get("D");
                             int i = (Integer) bbc.get(0).get("I");
-                            quartzManager.modifyJobTime(null, null, "batTrigger", "batTrigger", "0/"+i+" * * * * ?");
+                            quartzManager.modifyJobTime(null, null, mqttClient.getClientId()+"_Trigger", mqttClient.getClientId()+"_Trigger", "0/"+i+" * * * * ?");
                             logger.info("间隔已经恢复改为" + i + "秒");
                             Thread.sleep(d * 1000);
                             BatReceive batReceive = (BatReceive) Registry.INSTANCE.getValue().get("AB123456");
@@ -78,7 +78,7 @@ public class MqttConnThread implements Callable {
                                 Reg12551 = Integer.parseInt(batReceive.getSetMHReg().get(0).get("Reg12551").toString());
                             }
                             GetDataAll getDataAll = new GetDataAll(Reg12551, Registry.INSTANCE.getConfig().get("STROAGE_002"));
-                            String msg = getDataAll.getDate();
+                            String msg = getDataAll.getDate(mqttClient.getClientId());
                             mqttClient.publish("agents/" + mqttClient.getClientId() + "/systemQuery", new MqttMessage(msg.getBytes("utf-8")));
                             logger.debug("上传数据为：" + msg);
 
@@ -86,7 +86,7 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc=(List<Map>)msgData.get("SetMHReg");
                             String d = bbc.get(0).get("dsn").toString();
                             double i = (double) bbc.get(0).get("Reg12551");
-                            Object num1=Registry.INSTANCE.getValue().get("Soc");
+                            Object num1=Registry.INSTANCE.getValue().get(mqttClient.getClientId()+"_Soc");
                             if(num1!=null)//判断当前容量是否处于极限值.
                             {
                                 double num=(double) num1;
@@ -95,7 +95,7 @@ public class MqttConnThread implements Callable {
                                 logger.debug("收到指令,当前Soc:"+num);
                                 logger.debug("收到指令,功率百分比:"+i);
                             }
-                            Registry.INSTANCE.saveKey(d, i);
+                            Registry.INSTANCE.saveKey(mqttClient.getClientId()+d, i);
                         } else if(msgData.keySet().toString().contains("upSTAEAM")) {
 
                         }else {

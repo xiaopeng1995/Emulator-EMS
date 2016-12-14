@@ -43,34 +43,15 @@ public class GetDataAll {
     Map<String, Object> load = new HashMap<>();
     private EmsData loadData = new EmsData();//
 
-    public String getDate() {
-        emsData01.setType("120");
-        emsData01.setDsn("AB123456");
+    public String getDate(String agentID) {
 
-        emsData02.setType("801");
-        emsData02.setDsn("ST123456");
-
-        gridData.setType("202");
-        gridData.setDsn("GR123456");
-
-        loadData.setType("201");
-        loadData.setDsn("LO123456");
-
-        pvData.setType("103");
-        pvData.setDsn("PV123456");
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");//可以方便地修改日期格式
-//        String date = dateFormat.format(new Date());
-//        int hh = Integer.parseInt(date.substring(8, 10));
-//        int mm = Integer.parseInt(date.substring(10, 12));
-//        int ss = Integer.parseInt(date.substring(12, 14));
-//        double i = hh * 60 + mm;
         Date now = new Date();
         //间隔时间差
         long interval = 0;
         //总时间差
         long startDate = 0;
         try {
-            interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get("date")) / 1000 + 1;
+            interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get(agentID+"_date")) / 1000 + 1;
             startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000 + 1;
             SimpleDateFormat dateFormat = new SimpleDateFormat("HHmm");//可以方便地修改日期格式
             String date = dateFormat.format(now);
@@ -81,21 +62,37 @@ public class GetDataAll {
             logger.debug("过滤初始0");
         }
         /*信息打印*/
-        logger.debug("本次间隔:" + interval + "秒");
+        logger.debug(agentID+"本次间隔:" + interval + "秒");
 
         logger.info("程序一共运行:" + startDate + "秒");
-
-        logger.info("内存中除配置文件外所有值 MAP:" + Registry.INSTANCE.getValue());
         /* 结束 */
         List<EmsData> datas = new ArrayList<>();
-        discharge(interval, startDate);
+        discharge(interval, startDate,agentID);
         getPvData();
         getLoadData();
+        //填装数据
+
+        emsData01.setType("120");
+        emsData01.setDsn("AB123456");
         emsData01.setValues(storage01);
+
+        emsData02.setType("801");
+        emsData02.setDsn("ST123456");
         emsData02.setValues(storage02);
-        pvData.setValues(pv);
-        loadData.setValues(load);
+
+        gridData.setType("202");
+        gridData.setDsn("GR123456");
         gridData.setValues(grid);
+
+        loadData.setType("201");
+        loadData.setDsn("LO123456");
+        loadData.setValues(load);
+
+        pvData.setType("103");
+        pvData.setDsn("PV123456");
+        pvData.setValues(pv);
+
+
 
         datas.add(emsData01);
         datas.add(emsData02);
@@ -111,12 +108,12 @@ public class GetDataAll {
         return msg;
     }
 
-    private void discharge(long interval, long startDate) {
+    private void discharge(long interval, long startDate,String agentID) {
         //电网参数
         double TotWh;//组合总和TotWhImp+TotWhExp
-        Object num = Registry.INSTANCE.getValue().get("TotWhImp");
+        Object num = Registry.INSTANCE.getValue().get(agentID+"_TotWhImp");
         double TotWhImp = (num == null ? 0.0 : (double) num);//电网正向有功总电能  (放电总功率)
-        num = Registry.INSTANCE.getValue().get("TotWhExp");
+        num = Registry.INSTANCE.getValue().get(agentID+"_TotWhExp");
         double TotWhExp = (num == null ? 0.0 : (double) num);//电网负向有功总电能  (充电总功率)
         double VAR = 0.0;//Reactive Power 瞬时总无功功率 kw
         double PF = Math.random();//Power Factor 总功率因数
@@ -131,7 +128,7 @@ public class GetDataAll {
         double MaxRsvPct = STROAGE_002.getDouble("MaxRsvPct");
         double MinRsvPct = STROAGE_002.getDouble("MinRsvPct");
         //电池参数
-        num = Registry.INSTANCE.getValue().get("Soc");
+        num = Registry.INSTANCE.getValue().get(agentID+"_Soc");
         double Soc = (num == null ? STROAGE_002.getDouble("SoC") : (double) num);//当前电量百分比
         double dqrl;//当前容量kw/h
         double BV;//电压
@@ -156,10 +153,10 @@ public class GetDataAll {
 
             BI = (PDC * 1000) / BV;
 
-            if (Registry.INSTANCE.getValue().get("TotWhImp") != null) {
+            if (Registry.INSTANCE.getValue().get(agentID+"_TotWhImp") != null) {
                 TotWhImp += J_TotWhImp;
             }
-            Registry.INSTANCE.saveKey("TotWhImp", TotWhImp);
+            Registry.INSTANCE.saveKey(agentID+"_TotWhImp", TotWhImp);
 
         } else //充电
         {
@@ -175,16 +172,16 @@ public class GetDataAll {
                 BV = 2 * (Soc * 100) + 260;
             }
             BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
-            if (Registry.INSTANCE.getValue().get("TotWhExp") != null) {
+            if (Registry.INSTANCE.getValue().get(agentID+"_TotWhExp") != null) {
                 TotWhExp += J_TotWhExp;
             }
-            Registry.INSTANCE.saveKey("TotWhExp", TotWhExp);
+            Registry.INSTANCE.saveKey(agentID+"_TotWhExp", TotWhExp);
         }
         TotWh = TotWhExp + TotWhImp;
         TCkWh = TotWhImp - TotWhExp;
         DCkWh = TCkWh;
-        Registry.INSTANCE.saveKey("Soc", Soc);//本次间隔Soc
-        logger.debug("存Soc值为:" + Registry.INSTANCE.getValue().get("Soc"));
+        Registry.INSTANCE.saveKey(agentID+"_Soc", Soc);//本次间隔Soc
+        logger.debug(agentID+"存Soc值为:" + Registry.INSTANCE.getValue().get(agentID+"_Soc"));
         //逆变器
 
         storage01.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 3));
