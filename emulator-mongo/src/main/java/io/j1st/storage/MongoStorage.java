@@ -720,25 +720,14 @@ public class MongoStorage {
     /**
      * 获取 采集器列表，根据产品Id
      *
-     * @param batP_product_id    电池产品id
-     * @param pVPower_product_id 太阳能发电器产品id
-     * @param load_product_id    用电器产品产品id
-     * @param grid_product_id    电网产品id
-     * @param cat_product_id     充电桩产品id
+     * @param products_id    产品id
      * @return 采集器的列表 Or Empty List
      */
-    public List<Agent> getAgentsByProductId(ObjectId batP_product_id,
-                                            ObjectId pVPower_product_id,
-                                            ObjectId load_product_id,
-                                            ObjectId grid_product_id,
-                                            ObjectId cat_product_id) {
+    public List<Agent> getAgentsByProductId(ObjectId products_id) {
         List<Agent> r = new ArrayList<>();
         this.database.getCollection("agents")
-                .find(or(eq("product_id", batP_product_id)
-                        , eq("product_id", pVPower_product_id)
-                        , eq("product_id", load_product_id)
-                        , eq("product_id", grid_product_id)
-                        , eq("product_id", cat_product_id)))
+                .find(eq("product_id", products_id)
+               )
                 .forEach((Consumer<Document>) d ->
                         r.add(parseAgentDocument(d)));
         return r;

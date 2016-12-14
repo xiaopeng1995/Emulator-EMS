@@ -2,6 +2,7 @@ package io.j1st.data.job;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.j1st.data.entity.Registry;
+import io.j1st.data.entity.config.BatConfig;
 import io.j1st.util.entity.EmsData;
 import io.j1st.util.entity.data.Values;
 import io.j1st.util.util.GttRetainValue;
@@ -19,9 +20,9 @@ import java.util.*;
 public class GetDataAll {
     private double Reg12551;//以多少功率的百分比
     Logger logger = LoggerFactory.getLogger(GetDataAll.class);
-    private PropertiesConfiguration STROAGE_002;
+    private BatConfig STROAGE_002;
 
-    public GetDataAll(double Reg12551, PropertiesConfiguration STROAGE_002) {
+    public GetDataAll(double Reg12551, BatConfig STROAGE_002) {
         this.Reg12551 = Reg12551;
         this.STROAGE_002 = STROAGE_002;
     }
@@ -63,8 +64,6 @@ public class GetDataAll {
         }
         /*信息打印*/
         logger.debug(agentID+"本次间隔:" + interval + "秒");
-
-        logger.info("程序一共运行:" + startDate + "秒");
         /* 结束 */
         List<EmsData> datas = new ArrayList<>();
         discharge(interval, startDate,agentID);
@@ -73,23 +72,23 @@ public class GetDataAll {
         //填装数据
 
         emsData01.setType("120");
-        emsData01.setDsn("AB123456");
+        emsData01.setDsn(agentID+"storage01");
         emsData01.setValues(storage01);
 
         emsData02.setType("801");
-        emsData02.setDsn("ST123456");
+        emsData02.setDsn(agentID+"storage02");
         emsData02.setValues(storage02);
 
         gridData.setType("202");
-        gridData.setDsn("GR123456");
+        gridData.setDsn(agentID+"grid");
         gridData.setValues(grid);
 
         loadData.setType("201");
-        loadData.setDsn("LO123456");
+        loadData.setDsn(agentID+"load");
         loadData.setValues(load);
 
         pvData.setType("103");
-        pvData.setDsn("PV123456");
+        pvData.setDsn(agentID+"agentID");
         pvData.setValues(pv);
 
 
@@ -120,16 +119,16 @@ public class GetDataAll {
         double Hz = 50.0;//电网频率
         double Evt = 0.0;//标志事件?
         //逆变器 电池参数
-        double WHRtg = STROAGE_002.getInt("WHRtg");//电池总能量
+        double WHRtg = STROAGE_002.WHRtg;//电池总能量
         double PDC;//充电放电功率
         double EFF = ((1.0 + Math.random() * (10.0 - 1.0 + 1.0)) / 100.0 + 0.75);
         double PAC;//Active power from inverter 来自逆变器的有功功率
         double W;//Total Real Power 瞬时总有功功率 kw
-        double MaxRsvPct = STROAGE_002.getDouble("MaxRsvPct");
-        double MinRsvPct = STROAGE_002.getDouble("MinRsvPct");
+        double MaxRsvPct = STROAGE_002.MaxRsvPct;
+        double MinRsvPct = STROAGE_002.MinRsvPct;
         //电池参数
         num = Registry.INSTANCE.getValue().get(agentID+"_Soc");
-        double Soc = (num == null ? STROAGE_002.getDouble("SoC") : (double) num);//当前电量百分比
+        double Soc = (num == null ? STROAGE_002.SoC : (double) num);//当前电量百分比
         double dqrl;//当前容量kw/h
         double BV;//电压
         double BI;// 电流
@@ -192,8 +191,8 @@ public class GetDataAll {
         storage01.put(Values.DCkWh, GttRetainValue.getRealVaule(DCkWh, 3));
         //储能
         storage02.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 3));
-        storage02.put(Values.SoCNpMaxPct, STROAGE_002.getDouble("SoCNpMaxPct"));
-        storage02.put(Values.SoCNpMinPct, STROAGE_002.getDouble("SoCNpMinPct"));
+        storage02.put(Values.SoCNpMaxPct, STROAGE_002.SoCNpMaxPct);
+        storage02.put(Values.SoCNpMinPct, STROAGE_002.SoCNpMinPct);
         storage02.put(Values.SoC, GttRetainValue.getRealVaule(Soc, 3));
         storage02.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct, 3));
         storage02.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct, 3));

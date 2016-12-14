@@ -2,6 +2,7 @@ package io.j1st.data.mqtt;
 
 
 import io.j1st.data.entity.Registry;
+import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.GetDataAll;
 import io.j1st.data.quartz.QuartzManager;
 import io.j1st.util.entity.Payload;
@@ -63,24 +64,26 @@ public class MqttConnThread implements Callable {
 
                     @Override
                     public void messageArrived(String topic, MqttMessage message) throws Exception {
-                        logger.debug("收到的消息为：" + message.toString());
+                        String AgentID=mqttClient.getClientId();
+                        logger.debug(AgentID+"收到的消息为：" + message.toString());
                         Map<Object, Object> msgData = JsonUtils.Mapper.readValue(message.toString().getBytes(), Map.class);
                         if (msgData.keySet().toString().contains("Query")) {
                             List<Map> bbc=(List<Map>)msgData.get("Query");
                             int d = (Integer) bbc.get(0).get("D");
                             int i = (Integer) bbc.get(0).get("I");
-                            quartzManager.modifyJobTime(null, null, mqttClient.getClientId()+"_Trigger", mqttClient.getClientId()+"_Trigger", "0/"+i+" * * * * ?");
-                            logger.info("间隔已经恢复改为" + i + "秒");
+                            quartzManager.modifyJobTime(null, null, AgentID+"_Trigger", AgentID+"_Trigger", "0/"+i+" * * * * ?");
+                            logger.info(AgentID+"间隔已经恢复改为" + i + "秒");
                             Thread.sleep(d * 1000);
-                            BatReceive batReceive = (BatReceive) Registry.INSTANCE.getValue().get("AB123456");
+                            //取当前功率
+                            Object batReceive = Registry.INSTANCE.getValue().get(AgentID+"storage01");
                             double Reg12551 = 0.0;
                             if (batReceive != null) {
-                                Reg12551 = Integer.parseInt(batReceive.getSetMHReg().get(0).get("Reg12551").toString());
+                                Reg12551 = (Double)batReceive;
                             }
-                            GetDataAll getDataAll = new GetDataAll(Reg12551, Registry.INSTANCE.getConfig().get("STROAGE_002"));
-                            String msg = getDataAll.getDate(mqttClient.getClientId());
-                            mqttClient.publish("agents/" + mqttClient.getClientId() + "/systemQuery", new MqttMessage(msg.getBytes("utf-8")));
-                            logger.debug("上传数据为：" + msg);
+                            GetDataAll getDataAll = new GetDataAll(Reg12551,(BatConfig)Registry.INSTANCE.getValue().get(AgentID+"_STROAGE_002Config"));
+                            String msg = getDataAll.getDate(AgentID);
+                            mqttClient.publish("agents/" + AgentID + "/systemQuery", new MqttMessage(msg.getBytes("utf-8")));
+                            logger.debug("响应指令上发数据为:" + msg);
 
                         } else if (msgData.keySet().toString().contains("SetMHReg")) {
                             List<Map> bbc=(List<Map>)msgData.get("SetMHReg");
@@ -92,10 +95,11 @@ public class MqttConnThread implements Callable {
                                 double num=(double) num1;
 
                                 i=num>0.95&i<0?0:num<0.05&i>0?0:i;
+                                logger.debug("dsn:"+d);
                                 logger.debug("收到指令,当前Soc:"+num);
                                 logger.debug("收到指令,功率百分比:"+i);
                             }
-                            Registry.INSTANCE.saveKey(mqttClient.getClientId()+d, i);
+                            Registry.INSTANCE.saveKey(d, i);
                         } else if(msgData.keySet().toString().contains("upSTAEAM")) {
 
                         }else {

@@ -2,6 +2,7 @@ package io.j1st.data.job;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.j1st.data.entity.Registry;
+import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.mqtt.MqttConnThread;
 import io.j1st.util.entity.EmsData;
 import io.j1st.util.entity.bat.BatReceive;
@@ -23,7 +24,7 @@ import java.util.*;
  */
 public class BatJob implements Job {
     Logger logger = LoggerFactory.getLogger(BatJob.class);
-    private PropertiesConfiguration STROAGE_002;
+    private BatConfig STROAGE_002;
 
     private double Reg12551;
 
@@ -32,13 +33,13 @@ public class BatJob implements Job {
         // mqtt topic
         String topic;
         String agentId = context.getTrigger().getKey().toString().substring(0, 24);
-        logger.debug("开始执行"+agentId);
+        logger.debug("执行" + agentId);
         logger.info("内存中除配置文件外所有值 MAP:" + Registry.INSTANCE.getValue());
         MqttConnThread mqttConnThread;
-        STROAGE_002 = Registry.INSTANCE.getConfig().get("STROAGE_002");
-        Object batReceive = Registry.INSTANCE.getValue().get("AB123456");
+        STROAGE_002 = (BatConfig)Registry.INSTANCE.getValue().get(agentId+"_STROAGE_002Config");
+        Object batReceive = Registry.INSTANCE.getValue().get(agentId+"storage01");
         if (batReceive != null) {
-            Reg12551 = (Double) Registry.INSTANCE.getValue().get(agentId + "_AB123456");
+            Reg12551 = (Double) Registry.INSTANCE.getValue().get(agentId+"storage01");
         }
         GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002);
         String msg = dataAll.getDate(agentId);
