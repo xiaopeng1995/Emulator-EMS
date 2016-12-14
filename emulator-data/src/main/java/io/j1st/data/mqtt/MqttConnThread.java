@@ -96,7 +96,9 @@ public class MqttConnThread implements Callable {
                                 logger.debug("收到指令,功率百分比:"+i);
                             }
                             Registry.INSTANCE.saveKey(d, i);
-                        } else {
+                        } else if(msgData.keySet().toString().contains("upSTAEAM")) {
+
+                        }else {
                             logger.error("错误格式");
                         }
 

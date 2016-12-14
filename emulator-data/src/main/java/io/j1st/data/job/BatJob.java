@@ -33,27 +33,26 @@ public class BatJob implements Job {
         String topic;
 
         MqttConnThread mqttConnThread;
-
-
         STROAGE_002 = Registry.INSTANCE.getConfig().get("STROAGE_002");
-        Object batReceive = Registry.INSTANCE.getValue().get("AB123456");
-        if (batReceive != null) {
-            Reg12551 = (Double) Registry.INSTANCE.getValue().get("AB123456");
+        Set<String> agentIds = Registry.INSTANCE.getSession().keySet();
+        for (String agentId : agentIds) {
+            Object batReceive = Registry.INSTANCE.getValue().get("AB123456");
+            if (batReceive != null) {
+                Reg12551 = (Double) Registry.INSTANCE.getValue().get("AB123456");
+            }
+            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002);
+            String msg = dataAll.getDate();
+            mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
+            topic = getTopic(agentId);
+            if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
+                mqttConnThread.sendMessage(topic, msg);
+                logger.debug("发送的数据为：" + msg);
+                //更新间隔时间
+                Registry.INSTANCE.saveKey("date", new Date().getTime());
+            } else {
+                logger.info("MQTT链接信息错误,链接失败");
+            }
         }
-
-        GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002);
-        String msg = dataAll.getDate();
-        mqttConnThread = Registry.INSTANCE.getSession().get("874804605");
-        topic = getTopic("5848cacedafbaf35325b70e0");
-        if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
-            mqttConnThread.sendMessage(topic, msg);
-            logger.debug("发送的数据为：" + msg);
-            //更新间隔时间
-            Registry.INSTANCE.saveKey("date", new Date().getTime());
-        } else {
-            logger.info("MQTT链接信息错误,链接失败");
-        }
-
     }
 
     /**

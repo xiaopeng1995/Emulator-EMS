@@ -40,8 +40,8 @@ public class DownloadEmulator {
 
         List<Map> d = new ArrayList<>();
         Map<String, Object> setMHReg = new HashMap<>();
-        setMHReg.put("dsn", "ST123456");
-        setMHReg.put("Reg12551", 500.0);
+        setMHReg.put("dsn", "AB123456");
+        setMHReg.put("Reg12551", 0.0);
         d.add(setMHReg);
         Map<String, Object> batReceive = new HashMap<>();
         batReceive.put("SetMHReg", d);

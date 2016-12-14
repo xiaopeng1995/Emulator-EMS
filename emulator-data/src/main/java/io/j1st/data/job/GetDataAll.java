@@ -71,20 +71,19 @@ public class GetDataAll {
         long startDate = 0;
         try {
             interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get("date")) / 1000 + 1;
-            startDate = (now.getTime()-(long) Registry.INSTANCE.getValue().get("startDate")) / 1000+1;
+            startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000 + 1;
             SimpleDateFormat dateFormat = new SimpleDateFormat("HHmm");//可以方便地修改日期格式
             String date = dateFormat.format(now);
-            if(date.equals("00:00"))
-            {
+            if (date.equals("00:00")) {
                 logger.info("凌晨了,当天功率需要重新计算");
             }
         } catch (NullPointerException e) {
             logger.debug("过滤初始0");
         }
         /*信息打印*/
-        logger.debug("本次间隔:" + interval+"秒");
+        logger.debug("本次间隔:" + interval + "秒");
 
-        logger.info("程序一共运行:" + startDate+"秒");
+        logger.info("程序一共运行:" + startDate + "秒");
 
         logger.info("内存中除配置文件外所有值 MAP:" + Registry.INSTANCE.getValue());
         /* 结束 */
@@ -115,10 +114,10 @@ public class GetDataAll {
     private void discharge(long interval, long startDate) {
         //电网参数
         double TotWh;//组合总和TotWhImp+TotWhExp
-        Object num=Registry.INSTANCE.getValue().get("TotWhImp");
-        double TotWhImp =(num==null? 0.0:(double)num);//电网正向有功总电能  (放电总功率)
-        num=Registry.INSTANCE.getValue().get("TotWhExp");
-        double TotWhExp =(num==null? 0.0:(double)num);//电网负向有功总电能  (充电总功率)
+        Object num = Registry.INSTANCE.getValue().get("TotWhImp");
+        double TotWhImp = (num == null ? 0.0 : (double) num);//电网正向有功总电能  (放电总功率)
+        num = Registry.INSTANCE.getValue().get("TotWhExp");
+        double TotWhExp = (num == null ? 0.0 : (double) num);//电网负向有功总电能  (充电总功率)
         double VAR = 0.0;//Reactive Power 瞬时总无功功率 kw
         double PF = Math.random();//Power Factor 总功率因数
         double Hz = 50.0;//电网频率
@@ -129,11 +128,11 @@ public class GetDataAll {
         double EFF = ((1.0 + Math.random() * (10.0 - 1.0 + 1.0)) / 100.0 + 0.75);
         double PAC;//Active power from inverter 来自逆变器的有功功率
         double W;//Total Real Power 瞬时总有功功率 kw
-        double MaxRsvPct = STROAGE_002.getInt("MaxRsvPct");
-        double MinRsvPct = STROAGE_002.getInt("MinRsvPct");
+        double MaxRsvPct = STROAGE_002.getDouble("MaxRsvPct");
+        double MinRsvPct = STROAGE_002.getDouble("MinRsvPct");
         //电池参数
-        num=Registry.INSTANCE.getValue().get("Soc");
-        double Soc=(num==null?STROAGE_002.getDouble("SoC"):(double)num);//当前电量百分比
+        num = Registry.INSTANCE.getValue().get("Soc");
+        double Soc = (num == null ? STROAGE_002.getDouble("SoC") : (double) num);//当前电量百分比
         double dqrl;//当前容量kw/h
         double BV;//电压
         double BI;// 电流
@@ -155,7 +154,7 @@ public class GetDataAll {
                 BV = 1 * Soc * 100 + 260;
             }
 
-            BI = PDC / BV;
+            BI = (PDC * 1000) / BV;
 
             if (Registry.INSTANCE.getValue().get("TotWhImp") != null) {
                 TotWhImp += J_TotWhImp;
@@ -175,7 +174,7 @@ public class GetDataAll {
             } else {
                 BV = 2 * (Soc * 100) + 260;
             }
-            BI = PDC / BV;
+            BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
             if (Registry.INSTANCE.getValue().get("TotWhExp") != null) {
                 TotWhExp += J_TotWhExp;
             }
@@ -189,62 +188,11 @@ public class GetDataAll {
         //逆变器
 
         storage01.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 3));
-        storage01.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 3));
         storage01.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 3));
         storage01.put(Values.BI, GttRetainValue.getRealVaule(BI, 3));
         storage01.put(Values.BV, GttRetainValue.getRealVaule(BV, 3));
         storage01.put(Values.TCkWh, GttRetainValue.getRealVaule(TCkWh, 3));
         storage01.put(Values.DCkWh, GttRetainValue.getRealVaule(DCkWh, 3));
-        //储能
-        storage02.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 3));
-        storage02.put(Values.SoCNpMaxPct, STROAGE_002.getDouble("SoCNpMaxPct"));
-        storage02.put(Values.SoCNpMinPct, STROAGE_002.getDouble("SoCNpMinPct"));
-        storage02.put(Values.SoC, GttRetainValue.getRealVaule(Soc, 3));
-        storage02.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct, 3));
-        storage02.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct, 3));
-        //电网电表
-        grid.put(Values.TotWh, GttRetainValue.getRealVaule(TotWh, 3));
-        grid.put(Values.TotWhExp, GttRetainValue.getRealVaule(TotWhExp, 3));
-        grid.put(Values.TotWhImp, GttRetainValue.getRealVaule(TotWhImp, 3));
-        grid.put(Values.W, GttRetainValue.getRealVaule(W, 3));
-        grid.put(Values.VAR, GttRetainValue.getRealVaule(VAR, 3));
-        grid.put(Values.PF, GttRetainValue.getRealVaule(PF, 3));
-        grid.put(Values.Hz, GttRetainValue.getRealVaule(Hz, 3));
-        grid.put(Values.Evt, GttRetainValue.getRealVaule(Evt, 3));
-
-    }
-
-    private void getDefault() {    // TODO:
-        double WHRtg = STROAGE_002.getInt("WHRtg");
-        double PDC = WHRtg * Reg12551 / 1000;
-        double PAC = PDC / ((int) (1 + Math.random() * (10 - 1 + 1)) / 100 + 0.75);
-        double W = PAC;
-        double BV;
-        double BI = 0;
-        double MaxRsvPct = STROAGE_002.getInt("MaxRsvPct");
-        double MinRsvPct = STROAGE_002.getInt("MinRsvPct");
-        double TotWh = 0.0;
-        double TotWhImp = 0.0;
-        double TotWhExp = 0.0;
-        double VAR = 0.0;
-        double PF = 0.0;
-        double Hz = 0.0;
-        double Evt = 0.0;
-        double Soc;
-        if (Registry.INSTANCE.getValue().get("Soc") != null) {
-            Soc = (double) Registry.INSTANCE.getValue().get("Soc");
-            BV = 16.5 * (Soc * 100) + 316.44;
-        } else {
-            Soc = STROAGE_002.getDouble("SoC");
-            BV = 16.5 * (Soc * 100) + 316.44;
-        }
-        //逆变器
-
-        storage01.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 3));
-        storage01.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 3));
-        storage01.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 3));
-        storage01.put(Values.BI, GttRetainValue.getRealVaule(BI, 3));
-        storage01.put(Values.BV, GttRetainValue.getRealVaule(BV, 3));
         //储能
         storage02.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 3));
         storage02.put(Values.SoCNpMaxPct, STROAGE_002.getDouble("SoCNpMaxPct"));
