@@ -4,6 +4,7 @@ package io.j1st.data.mqtt;
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.GetDataAll;
+import io.j1st.data.job.Job;
 import io.j1st.data.quartz.QuartzManager;
 import io.j1st.util.entity.Payload;
 import io.j1st.util.entity.bat.BatReceive;
@@ -36,10 +37,10 @@ public class MqttConnThread implements Callable {
     // Mqtt Connect Options
     private MqttConnectOptions options;
     //定时任务修改
-    private QuartzManager quartzManager;
+    private Job quartzManager;
 
     // Construction
-    public MqttConnThread(MqttClient mqttClient, MqttConnectOptions options, QuartzManager quartzManager) {
+    public MqttConnThread(MqttClient mqttClient, MqttConnectOptions options, Job quartzManager) {
         this.mqttClient = mqttClient;
         this.options = options;
         this.quartzManager = quartzManager;
@@ -71,19 +72,18 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc=(List<Map>)msgData.get("Query");
                             int d = (Integer) bbc.get(0).get("D");
                             int i = (Integer) bbc.get(0).get("I");
-                            quartzManager.modifyJobTime(null, null, AgentID+"_Trigger", AgentID+"_Trigger", "0/"+i+" * * * * ?");
-                            logger.info(AgentID+"间隔已经恢复改为" + i + "秒");
+                            Job thread=(Job)Registry.INSTANCE.getValue().get(AgentID+"_Job");
+                            //开启新的线程
                             Thread.sleep(d * 1000);
-                            //取当前功率
-                            Object batReceive = Registry.INSTANCE.getValue().get(AgentID+"storage01");
-                            double Reg12551 = 0.0;
-                            if (batReceive != null) {
-                                Reg12551 = (Double)batReceive;
-                            }
-                            GetDataAll getDataAll = new GetDataAll(Reg12551,(BatConfig)Registry.INSTANCE.getValue().get(AgentID+"_STROAGE_002Config"));
-                            String msg = getDataAll.getDate(AgentID);
-                            mqttClient.publish("agents/" + AgentID + "/systemQuery", new MqttMessage(msg.getBytes("utf-8")));
-                            logger.debug("响应指令上发数据为:" + msg);
+                            Job threadnew=new Job(AgentID,i);
+                            threadnew.start();
+                            Registry.INSTANCE.saveKey(AgentID+"_Job",threadnew);
+                            logger.info(AgentID+"间隔已经恢复改为" + i + "秒");
+                            //停掉旧的线程
+                            thread.exit = true;  // 终止线程thread
+                            thread.join();
+                            logger.debug(AgentID+"线程已退出!");
+
 
                         } else if (msgData.keySet().toString().contains("SetMHReg")) {
                             List<Map> bbc=(List<Map>)msgData.get("SetMHReg");

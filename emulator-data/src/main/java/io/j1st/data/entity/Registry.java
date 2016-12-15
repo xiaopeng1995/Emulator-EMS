@@ -1,6 +1,7 @@
 package io.j1st.data.entity;
 
 
+import io.j1st.data.job.Job;
 import io.j1st.data.mqtt.MqttConnThread;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
@@ -62,5 +63,11 @@ public enum Registry {
     // Start Thread
     public void startThread(MqttConnThread client) {
         this.es.submit(client);
+    }
+    public void startJob(Job job) {
+        this.es.submit(job);
+    }
+    public void shutdown() {
+        this.es.shutdown();
     }
 }

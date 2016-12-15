@@ -52,8 +52,8 @@ public class GetDataAll {
         //总时间差
         long startDate = 0;
         try {
-            interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get(agentID+"_date")) / 1000 + 1;
-            startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000 + 1;
+            interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get(agentID+"_date")) / 1000 ;
+            startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000 ;
             SimpleDateFormat dateFormat = new SimpleDateFormat("HHmm");//可以方便地修改日期格式
             String date = dateFormat.format(now);
             if (date.equals("00:00")) {
@@ -88,7 +88,7 @@ public class GetDataAll {
         loadData.setValues(load);
 
         pvData.setType("103");
-        pvData.setDsn(agentID+"agentID");
+        pvData.setDsn(agentID+"pv");
         pvData.setValues(pv);
 
 
