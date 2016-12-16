@@ -14,27 +14,24 @@ import java.util.jar.Pack200;
  * Created by xiaopeng on 2016/12/14.
  */
 public class Job extends Thread {
-    Logger logger = LoggerFactory.getLogger(BatJob.class);
+    Logger logger = LoggerFactory.getLogger(Job.class);
     public volatile boolean exit = false;
     private BatConfig STROAGE_002;
     private String agentId;
     private int time;
     private double Reg12551;
-    public Job(String agentid,int time){
+    private String topic;
+    public Job(String agentid,int time,String topic){
         this.agentId=agentid;
         this.time=time;
+        this.topic=topic;
     }
 
     public void run() {
         // mqtt topic
         String topic;
         while (!exit) {
-            int timeT=time;
-            Object timenow = Registry.INSTANCE.getValue().get(agentId + "_Intervaltime");
-            if (timenow == null ? false : true) {
-                timeT= (int)timenow;
-            }
-            logger.debug("执行" + agentId);
+            logger.debug("执行线程:" + super.getId());
             logger.info("内存中除配置文件外所有值 MAP:" + Registry.INSTANCE.getValue());
             MqttConnThread mqttConnThread;
             STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(agentId + "_STROAGE_002Config");
@@ -47,7 +44,7 @@ public class Job extends Thread {
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topic = getTopic(agentId);
             if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
-                // mqttConnThread.sendMessage(topic, msg);
+                 mqttConnThread.sendMessage(topic, msg);
                 logger.debug(agentId + "发送的数据为：" + msg);
                 //更新间隔时间
                 Registry.INSTANCE.saveKey(agentId + "_date", new Date().getTime());
@@ -55,19 +52,20 @@ public class Job extends Thread {
                 logger.info("MQTT链接信息错误,链接失败");
             }
             try {
-                Thread.sleep(timeT * 1000);
+                Thread.sleep(time * 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
-
+        logger.debug("旧线程:"+super.getId()+"已退出!");
     }
 
     /**
      * Get Topic
      */
-    private static String getTopic(String agentId) {
-        return "agents/" + agentId + "/systemQuery";
+    private  String getTopic(String agentId) {
+        logger.debug("Topic:{}",topic);
+        return "agents/" + agentId + "/"+topic;
     }
 }

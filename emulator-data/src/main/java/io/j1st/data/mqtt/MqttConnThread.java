@@ -51,7 +51,7 @@ public class MqttConnThread implements Callable {
         try {
             // connect mqtt broker
             mqttClient.connect(options);
-            mqttClient.setTimeToWait(2000);
+            mqttClient.setTimeToWait(200);
 
             //判断客户端是否连接上
             if (mqttClient.isConnected()) {
@@ -75,15 +75,15 @@ public class MqttConnThread implements Callable {
                             Job thread=(Job)Registry.INSTANCE.getValue().get(AgentID+"_Job");
                             //开启新的线程
                             Thread.sleep(d * 1000);
-                            Job threadnew=new Job(AgentID,i);
+                            Job threadnew=new Job(AgentID,i,"systemQuery");
                             threadnew.start();
+                            //把新线程储存起来替换掉旧线程
                             Registry.INSTANCE.saveKey(AgentID+"_Job",threadnew);
+                            logger.debug("开启新线程:{}",threadnew.getId());
                             logger.info(AgentID+"间隔已经恢复改为" + i + "秒");
                             //停掉旧的线程
                             thread.exit = true;  // 终止线程thread
                             thread.join();
-                            logger.debug(AgentID+"线程已退出!");
-
 
                         } else if (msgData.keySet().toString().contains("SetMHReg")) {
                             List<Map> bbc=(List<Map>)msgData.get("SetMHReg");

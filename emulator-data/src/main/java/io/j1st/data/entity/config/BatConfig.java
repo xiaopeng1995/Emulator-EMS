@@ -26,6 +26,6 @@ public class BatConfig {
     public final Double MaxRsvPct = 0.8;
     //uint16	%WHRtg	Setpoint for minimum reserve for storage as a percentage of the nominal minimum storage.  实际使用的最小存储量，以标称存储总能量的百分比表示。
     public final Double MinRsvPct = 0.3;
-    public final Double SoC = Ran < 0.1 ? 0.1 : Ran > 0.9 ? 0.9 : Ran;
+    public final Double SoC = Ran < 0.2 ? 0.2 : Ran > 0.8 ? 0.8 : Ran;
 
 }

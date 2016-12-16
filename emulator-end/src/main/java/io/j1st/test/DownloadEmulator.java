@@ -32,7 +32,7 @@ public class DownloadEmulator {
         mqtt.setTimeToWait(2000);
         Map<String, Object> query = new HashMap<>();
         query.put("D", 0);
-        query.put("I", 5);
+        query.put("I", 10);
         List<Map> d1 = new ArrayList<>();
         d1.add(query);
         Map<String, Object> payload = new HashMap<>();
@@ -47,11 +47,11 @@ public class DownloadEmulator {
         batReceive.put("SetMHReg", d);
         String batReceivemsg = JsonUtils.Mapper.writeValueAsString(batReceive);
         String payloadmsg = JsonUtils.Mapper.writeValueAsString(payload);
-        String agent ="58340adcdafbaf5bf5b95c8d";
+        String agent ="5848ca8cdafbaf35325b70d5";
         System.out.println(agent);
         System.out.println("batReceivemsg\n"+batReceivemsg);
         System.out.println("payloadmsg\n"+payloadmsg);
-         mqtt.publish("agents/"+agent+"/downstream", new MqttMessage(batReceivemsg.getBytes("utf-8")));
+         mqtt.publish("agents/"+agent+"/downstream", new MqttMessage(payloadmsg.getBytes("utf-8")));
 
     }
 }

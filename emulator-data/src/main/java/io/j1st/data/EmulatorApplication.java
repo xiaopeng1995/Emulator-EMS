@@ -72,10 +72,10 @@ public class EmulatorApplication {
            // quartzManager.addJob(agentID + "_Job", agentID + "_Job", agentID + "_Trigger", agentID + "_Trigger", BatJob.class, "0/10 * * * * ?");
             mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agentID, persistence);
             options = new MqttConnectOptions();
-            options.setUserName(agentID);
+            options.setUserName(agent.getId().toHexString());
             options.setPassword(agent.getToken().toCharArray());
             Registry.INSTANCE.saveKey(agentID+"_STROAGE_002Config", new BatConfig());
-            Job thread=new Job(agentID,30);
+            Job thread=new Job(agentID,30,"jsonUp");
             thread.start();
             Registry.INSTANCE.saveKey(agentID+"_Job",thread);
             //mqtt
@@ -86,7 +86,6 @@ public class EmulatorApplication {
             Registry.INSTANCE.startThread(mqttConnThread);
             //保存启动时间
             Registry.INSTANCE.saveKey(agentID+"_date", new Date().getTime());
-
 
         }
         //起点时间
