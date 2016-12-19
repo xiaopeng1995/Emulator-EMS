@@ -75,7 +75,7 @@ public class EmulatorApplication {
             options.setUserName(agent.getId().toHexString());
             options.setPassword(agent.getToken().toCharArray());
             Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
-            Job thread = new Job(agentID, 3, "jsonUp");
+            Job thread = new Job(agentID, 30, "jsonUp");
             thread.start();
             Registry.INSTANCE.saveKey(agentID + "_Job", thread);
             //mqtt
