@@ -83,7 +83,7 @@ public class EmulatorApplication {
             //保存mqtt连接信息
             Registry.INSTANCE.saveSession(agentID, mqttConnThread);
             //添加新线程到线程池
-           // Registry.INSTANCE.startThread(mqttConnThread);
+            Registry.INSTANCE.startThread(mqttConnThread);
             //保存启动时间
             Registry.INSTANCE.saveKey(agentID + "_date", new Date().getTime());
         }

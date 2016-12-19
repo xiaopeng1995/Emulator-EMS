@@ -13,15 +13,12 @@ import java.util.UUID;
  */
 public class Test {
     public static void main(String[] args)throws  Exception {
-       List<Integer> num=new ArrayList<>();
-        for(int a=0;a<6;a++)
+        String c="16,1,1,1,1";
+        String[] a=c.split(",");
+        for(int i=0;i<a.length;i++)
         {
-            num.add(a);
+            System.out.println(a[i]);
         }
 
-        for (int cc:num)
-        {
-            System.out.println(cc);
-        }
     }
 }
