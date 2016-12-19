@@ -64,4 +64,6 @@ public class Values {
     //PV侧数据
     public static final String TYield="TYield";
     public static final String Pac="Pac";
+    //告警
+    public static final String RunTime="RunTime";
 }

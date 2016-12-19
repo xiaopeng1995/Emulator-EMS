@@ -44,14 +44,14 @@ public class EmulatorApplication {
             productIdConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
             mqttConfig = new PropertiesConfiguration(args[2]);
-            quartzConfig = new PropertiesConfiguration(args[4]);
+            //quartzConfig = new PropertiesConfiguration(args[4]);
 
 
         } else {
             productIdConfig = new PropertiesConfiguration("config/product.properties");
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
             mqttConfig = new PropertiesConfiguration("config/mqtt.properties");
-            quartzConfig = new PropertiesConfiguration("config/quartz.properties");
+            //quartzConfig = new PropertiesConfiguration("config/quartz.properties");
         }
 
         // Mqtt
@@ -69,24 +69,23 @@ public class EmulatorApplication {
 
         for (Agent agent : agents) {
             String agentID = agent.getId().toString();
-           // quartzManager.addJob(agentID + "_Job", agentID + "_Job", agentID + "_Trigger", agentID + "_Trigger", BatJob.class, "0/10 * * * * ?");
+            // quartzManager.addJob(agentID + "_Job", agentID + "_Job", agentID + "_Trigger", agentID + "_Trigger", BatJob.class, "0/10 * * * * ?");
             mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agentID, persistence);
             options = new MqttConnectOptions();
             options.setUserName(agent.getId().toHexString());
             options.setPassword(agent.getToken().toCharArray());
-            Registry.INSTANCE.saveKey(agentID+"_STROAGE_002Config", new BatConfig());
-            Job thread=new Job(agentID,30,"jsonUp");
+            Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
+            Job thread = new Job(agentID, 3, "jsonUp");
             thread.start();
-            Registry.INSTANCE.saveKey(agentID+"_Job",thread);
+            Registry.INSTANCE.saveKey(agentID + "_Job", thread);
             //mqtt
             MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null);
             //保存mqtt连接信息
             Registry.INSTANCE.saveSession(agentID, mqttConnThread);
             //添加新线程到线程池
-            Registry.INSTANCE.startThread(mqttConnThread);
+           // Registry.INSTANCE.startThread(mqttConnThread);
             //保存启动时间
-            Registry.INSTANCE.saveKey(agentID+"_date", new Date().getTime());
-
+            Registry.INSTANCE.saveKey(agentID + "_date", new Date().getTime());
         }
         //起点时间
         Registry.INSTANCE.saveKey("startDate", new Date().getTime());

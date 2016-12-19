@@ -3,7 +3,9 @@ package io.j1st.data.job;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
+import io.j1st.storage.entity.Value;
 import io.j1st.util.entity.EmsData;
+import io.j1st.util.entity.data.Device;
 import io.j1st.util.entity.data.Values;
 import io.j1st.util.util.GttRetainValue;
 import io.j1st.util.util.JsonUtils;
@@ -29,20 +31,25 @@ public class GetDataAll {
 
 
     //逆变器参数
-    Map<String, Object> storage01 = new HashMap<>();
+    Map<String, Object> data120 = new HashMap<>();
     private EmsData emsData01 = new EmsData();
     //电池参数
-    Map<String, Object> storage02 = new HashMap<>();
+    Map<String, Object> data801 = new HashMap<>();
     private EmsData emsData02 = new EmsData();//
     //GRID参数
-    Map<String, Object> grid = new HashMap<>();
+    Map<String, Object> data202 = new HashMap<>();
     private EmsData gridData = new EmsData();//
     //PV参数
-    Map<String, Object> pv = new HashMap<>();
+    Map<String, Object> data103 = new HashMap<>();
     private EmsData pvData = new EmsData();//
     //load参数
-    Map<String, Object> load = new HashMap<>();
+    Map<String, Object> data201 = new HashMap<>();
     private EmsData loadData = new EmsData();//
+
+
+
+    //根数据
+    List<EmsData> datas = new ArrayList<>();
 
     public String getDate(String agentID) {
 
@@ -52,8 +59,8 @@ public class GetDataAll {
         //总时间差
         long startDate = 0;
         try {
-            interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get(agentID+"_date")) / 1000 ;
-            startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000 ;
+            interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get(agentID + "_date")) / 1000;
+            startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000;
             SimpleDateFormat dateFormat = new SimpleDateFormat("HHmm");//可以方便地修改日期格式
             String date = dateFormat.format(now);
             if (date.equals("00:00")) {
@@ -63,41 +70,79 @@ public class GetDataAll {
             logger.debug("过滤初始0");
         }
         /*信息打印*/
-        logger.debug(agentID+"本次间隔:" + interval + "秒");
+        logger.debug(agentID + "本次间隔:" + interval + "秒");
         /* 结束 */
-        List<EmsData> datas = new ArrayList<>();
-        discharge(interval, startDate,agentID);
+
+        discharge(interval, startDate, agentID);
         getPvData();
         getLoadData();
         //填装数据
 
         emsData01.setType("120");
-        emsData01.setDsn(agentID+"storage01");
-        emsData01.setValues(storage01);
+        emsData01.setDsn(agentID + "120");
+        emsData01.setValues(data120);
 
         emsData02.setType("801");
-        emsData02.setDsn(agentID+"storage02");
-        emsData02.setValues(storage02);
+        emsData02.setDsn(agentID + "801");
+        emsData02.setValues(data801);
 
         gridData.setType("202");
-        gridData.setDsn(agentID+"grid");
-        gridData.setValues(grid);
+        gridData.setDsn(agentID + "202");
+        gridData.setValues(data202);
 
         loadData.setType("201");
-        loadData.setDsn(agentID+"load");
-        loadData.setValues(load);
+        loadData.setDsn(agentID + "201");
+        loadData.setValues(data201);
 
         pvData.setType("103");
-        pvData.setDsn(agentID+"pv");
-        pvData.setValues(pv);
+        pvData.setDsn(agentID + "103");
+        pvData.setValues(data103);
 
+        //packing
+        Object datapacking = Registry.INSTANCE.getValue().get(agentID + "_packing");
+        //对应类型120 810 202 201 130
+        int[] packing = {1, 1, 1, 1, 1,};
+        if (datapacking != null)
+            packing = (int[]) datapacking;
+        if (packing[0] < 100) {
+            for (int i = 0; i < packing[0]; i++) {
 
+                datas.add(emsData01);
+            }
+        } else { //告警数据
+            getAlarm(packing[0], agentID, "120", data120);
+        }
 
-        datas.add(emsData01);
-        datas.add(emsData02);
-        datas.add(gridData);
-        datas.add(loadData);
-        datas.add(pvData);
+        if (packing[1] < 100) {
+            for (int i = 0; i < packing[1]; i++) {
+                datas.add(emsData02);
+            }
+        } else {//告警数据
+            getAlarm(packing[1], agentID, "801", data801);
+        }
+
+        if (packing[2] < 100) {
+            for (int i = 0; i < packing[2]; i++) {
+                datas.add(gridData);
+            }
+        } else {//告警数据
+            getAlarm(packing[2], agentID, "202", data202);
+        }
+        if (packing[3] < 100) {
+            for (int i = 0; i < packing[3]; i++) {
+                datas.add(loadData);
+            }
+        } else {//告警数据
+            getAlarm(packing[3], agentID, "201", data201);
+        }
+        if (packing[4] < 100) {
+            for (int i = 0; i < packing[4]; i++) {
+                datas.add(pvData);
+            }
+        } else {//告警数据
+            getAlarm(packing[4], agentID, "103", data103);
+        }
+
         String msg = null;
         try {
             msg = JsonUtils.Mapper.writeValueAsString(datas);
@@ -107,12 +152,12 @@ public class GetDataAll {
         return msg;
     }
 
-    private void discharge(long interval, long startDate,String agentID) {
+    private void discharge(long interval, long startDate, String agentID) {
         //电网参数
         double TotWh;//组合总和TotWhImp+TotWhExp
-        Object num = Registry.INSTANCE.getValue().get(agentID+"_TotWhImp");
+        Object num = Registry.INSTANCE.getValue().get(agentID + "_TotWhImp");
         double TotWhImp = (num == null ? 0.0 : (double) num);//电网正向有功总电能  (放电总功率)
-        num = Registry.INSTANCE.getValue().get(agentID+"_TotWhExp");
+        num = Registry.INSTANCE.getValue().get(agentID + "_TotWhExp");
         double TotWhExp = (num == null ? 0.0 : (double) num);//电网负向有功总电能  (充电总功率)
         double VAR = 0.0;//Reactive Power 瞬时总无功功率 kw
         double PF = Math.random();//Power Factor 总功率因数
@@ -127,7 +172,7 @@ public class GetDataAll {
         double MaxRsvPct = STROAGE_002.MaxRsvPct;
         double MinRsvPct = STROAGE_002.MinRsvPct;
         //电池参数
-        num = Registry.INSTANCE.getValue().get(agentID+"_Soc");
+        num = Registry.INSTANCE.getValue().get(agentID + "_Soc");
         double Soc = (num == null ? STROAGE_002.SoC : (double) num);//当前电量百分比
         double dqrl;//当前容量kw/h
         double BV;//电压
@@ -152,10 +197,10 @@ public class GetDataAll {
 
             BI = (PDC * 1000) / BV;
 
-            if (Registry.INSTANCE.getValue().get(agentID+"_TotWhImp") != null) {
+            if (Registry.INSTANCE.getValue().get(agentID + "_TotWhImp") != null) {
                 TotWhImp += J_TotWhImp;
             }
-            Registry.INSTANCE.saveKey(agentID+"_TotWhImp", TotWhImp);
+            Registry.INSTANCE.saveKey(agentID + "_TotWhImp", TotWhImp);
 
         } else //充电
         {
@@ -171,54 +216,54 @@ public class GetDataAll {
                 BV = 2 * (Soc * 100) + 260;
             }
             BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
-            if (Registry.INSTANCE.getValue().get(agentID+"_TotWhExp") != null) {
+            if (Registry.INSTANCE.getValue().get(agentID + "_TotWhExp") != null) {
                 TotWhExp += J_TotWhExp;
             }
-            Registry.INSTANCE.saveKey(agentID+"_TotWhExp", TotWhExp);
+            Registry.INSTANCE.saveKey(agentID + "_TotWhExp", TotWhExp);
         }
         TotWh = TotWhExp + TotWhImp;
         TCkWh = TotWhImp - TotWhExp;
         DCkWh = TCkWh;
-        Registry.INSTANCE.saveKey(agentID+"_Soc", Soc);//本次间隔Soc
-        logger.debug(agentID+"存Soc值为:" + Registry.INSTANCE.getValue().get(agentID+"_Soc"));
+        Registry.INSTANCE.saveKey(agentID + "_Soc", Soc);//本次间隔Soc
+        logger.debug(agentID + "存Soc值为:" + Registry.INSTANCE.getValue().get(agentID + "_Soc"));
         //逆变器
 
-        storage01.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 3));
-        storage01.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 3));
-        storage01.put(Values.BI, GttRetainValue.getRealVaule(BI, 3));
-        storage01.put(Values.BV, GttRetainValue.getRealVaule(BV, 3));
-        storage01.put(Values.TCkWh, GttRetainValue.getRealVaule(TCkWh, 3));
-        storage01.put(Values.DCkWh, GttRetainValue.getRealVaule(DCkWh, 3));
+        data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 3));
+        data120.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 3));
+        data120.put(Values.BI, GttRetainValue.getRealVaule(BI, 3));
+        data120.put(Values.BV, GttRetainValue.getRealVaule(BV, 3));
+        data120.put(Values.TCkWh, GttRetainValue.getRealVaule(TCkWh, 3));
+        data120.put(Values.DCkWh, GttRetainValue.getRealVaule(DCkWh, 3));
         //储能
-        storage02.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 3));
-        storage02.put(Values.SoCNpMaxPct, STROAGE_002.SoCNpMaxPct);
-        storage02.put(Values.SoCNpMinPct, STROAGE_002.SoCNpMinPct);
-        storage02.put(Values.SoC, GttRetainValue.getRealVaule(Soc, 3));
-        storage02.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct, 3));
-        storage02.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct, 3));
+        data801.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 3));
+        data801.put(Values.SoCNpMaxPct, STROAGE_002.SoCNpMaxPct);
+        data801.put(Values.SoCNpMinPct, STROAGE_002.SoCNpMinPct);
+        data801.put(Values.SoC, GttRetainValue.getRealVaule(Soc, 3));
+        data801.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct, 3));
+        data801.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct, 3));
         //电网电表
-        grid.put(Values.TotWh, GttRetainValue.getRealVaule(TotWh, 3));
-        grid.put(Values.TotWhExp, GttRetainValue.getRealVaule(TotWhExp, 3));
-        grid.put(Values.TotWhImp, GttRetainValue.getRealVaule(TotWhImp, 3));
-        grid.put(Values.W, GttRetainValue.getRealVaule(W, 3));
-        grid.put(Values.VAR, GttRetainValue.getRealVaule(VAR, 3));
-        grid.put(Values.PF, GttRetainValue.getRealVaule(PF, 3));
-        grid.put(Values.Hz, GttRetainValue.getRealVaule(Hz, 3));
-        grid.put(Values.Evt, GttRetainValue.getRealVaule(Evt, 3));
+        data202.put(Values.TotWh, GttRetainValue.getRealVaule(TotWh, 3));
+        data202.put(Values.TotWhExp, GttRetainValue.getRealVaule(TotWhExp, 3));
+        data202.put(Values.TotWhImp, GttRetainValue.getRealVaule(TotWhImp, 3));
+        data202.put(Values.W, GttRetainValue.getRealVaule(W, 3));
+        data202.put(Values.VAR, GttRetainValue.getRealVaule(VAR, 3));
+        data202.put(Values.PF, GttRetainValue.getRealVaule(PF, 3));
+        data202.put(Values.Hz, GttRetainValue.getRealVaule(Hz, 3));
+        data202.put(Values.Evt, GttRetainValue.getRealVaule(Evt, 3));
 
     }
 
     private void getPvData() {
         Clculate clculate = new Clculate();
-        pv.put(Values.Pac, clculate.TotalCalc().get("eToday"));
-        pv.put(Values.TYield, clculate.TotalCalc().get("pVPower"));
+        data103.put(Values.Pac, clculate.TotalCalc().get("eToday"));
+        data103.put(Values.TYield, clculate.TotalCalc().get("pVPower"));
     }
 
     private void getLoadData() {
         Clculate clculate = new Clculate();
-        load.put(Values.W, clculate.TotalCalc().get("powerT"));
-        load.put(Values.TotWhImp, clculate.TotalCalc().get("pVPower"));
-        load.put(Values.TotWhExp, clculate.TotalCalc().get("meterT"));
+        data201.put(Values.W, clculate.TotalCalc().get("powerT"));
+        data201.put(Values.TotWhImp, clculate.TotalCalc().get("pVPower"));
+        data201.put(Values.TotWhExp, clculate.TotalCalc().get("meterT"));
     }
 
     private static Number getRealVaule(double value, int resLen) {
@@ -228,5 +273,46 @@ public class GetDataAll {
             return Math.round(value * 10 + 5) / 10;
         double db = Math.pow(10, resLen);
         return Math.round(value * db) / db;
+    }
+
+    private void getAlarm(int number, String agentID, String type, Map<String, Object> data) {
+        //告警参数
+        Map<String, Object> noDevice = new HashMap<>();
+        EmsData device = new EmsData();
+        if (number == 101)//No Device（Node未激活或无法初始化通讯）
+        {
+            noDevice.put(Values.RunTime, 1);
+            device.setValues(noDevice);
+            device.setAsn(agentID.substring(10, 20)+type);
+            device.setType("AGENT");
+
+
+        } else if (number == 102) {//Device disconnect（Node通讯异常）
+            noDevice.put(Values.WarnV, "101");
+            noDevice.put(Values.WarnD, "Device communication is lost");
+            noDevice.put(Values.WarnT, "待定");
+            device.setValues(noDevice);
+            device.setDsn(agentID + type);
+            device.setType(type);
+
+        } else if (number == 103) {//Device fault（Node运行出现错误）
+            data.put(Values.FaultV, "103");
+            data.put(Values.FaultD, "Device fault");
+            data.put(Values.FaultT, "aaa");
+            device.setValues(data);
+            device.setDsn(agentID + type);
+            device.setType(type);
+
+
+        } else if (number == 104) {//Device warning （Node运行出现警告）
+            data.put(Values.WarnV, "101");
+            data.put(Values.WarnD, "Device communication is lost");
+            data.put(Values.WarnT, "待定");
+            device.setValues(data);
+            device.setDsn(agentID + type);
+            device.setType(type);
+
+        }
+        datas.add(device);
     }
 }

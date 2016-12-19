@@ -45,7 +45,12 @@ public enum Registry {
         return this.map;
     }
 
-    // get Value
+    /**
+     *
+     * @return
+     * AgentID_TotWhExp,AgentID_Job,AgentID_TotWhImp,AgentID_Soc,AgentIDstorage01
+     * AgentID_STROAGE_002Config,AgentID_date,startDate,AgentID_packing
+     * */
     public Map<String, Object> getValue() {
         return this.value;
     }
@@ -66,6 +71,7 @@ public enum Registry {
     }
     public void startJob(Job job) {
         this.es.submit(job);
+
     }
     public void shutdown() {
         this.es.shutdown();
