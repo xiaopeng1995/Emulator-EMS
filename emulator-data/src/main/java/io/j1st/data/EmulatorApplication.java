@@ -2,7 +2,7 @@ package io.j1st.data;
 
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
-import io.j1st.data.job.BatJob;
+import io.j1st.data.job.DayJob;
 import io.j1st.data.job.Job;
 import io.j1st.data.mqtt.MqttConnThread;
 import io.j1st.data.quartz.QuartzManager;
@@ -44,14 +44,14 @@ public class EmulatorApplication {
             productIdConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
             mqttConfig = new PropertiesConfiguration(args[2]);
-            //quartzConfig = new PropertiesConfiguration(args[4]);
+            quartzConfig = new PropertiesConfiguration(args[4]);
 
 
         } else {
             productIdConfig = new PropertiesConfiguration("config/product.properties");
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
             mqttConfig = new PropertiesConfiguration("config/mqtt.properties");
-            //quartzConfig = new PropertiesConfiguration("config/quartz.properties");
+            quartzConfig = new PropertiesConfiguration("config/quartz.properties");
         }
 
         // Mqtt
@@ -59,17 +59,17 @@ public class EmulatorApplication {
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
         MqttConnectOptions options;
-//        //定时任务开始
-//        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
-//        //mongodb
+//      //定时任务开始
+        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
+        //定时每天算当天功率0 0 12 * * ?
+        quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 12 * * ?");
+//      //mongodb
         MongoStorage mogo = new MongoStorage();
         mogo.init(mongoConfig);
-        //  List<Agent> agents = mogo.getAgentsByProductId(new ObjectId(productIdConfig.getString("product_id")));
         List<Agent> agents = mogo.getAgentsByProductId(new ObjectId(productIdConfig.getString("product_id")));
-
+        Registry.INSTANCE.saveKey("agents",agents);
         for (Agent agent : agents) {
             String agentID = agent.getId().toString();
-            // quartzManager.addJob(agentID + "_Job", agentID + "_Job", agentID + "_Trigger", agentID + "_Trigger", BatJob.class, "0/10 * * * * ?");
             mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agentID, persistence);
             options = new MqttConnectOptions();
             options.setUserName(agent.getId().toHexString());

@@ -50,6 +50,7 @@ public enum Registry {
      * @return
      * AgentID_TotWhExp,AgentID_Job,AgentID_TotWhImp,AgentID_Soc,AgentIDstorage01
      * AgentID_STROAGE_002Config,AgentID_date,startDate,AgentID_packing
+     * agents
      * */
     public Map<String, Object> getValue() {
         return this.value;

@@ -44,7 +44,7 @@ public class Job extends Thread {
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topic = getTopic(agentId);
             if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
-                 mqttConnThread.sendMessage(topic, msg);
+                mqttConnThread.sendMessage(topic, msg);
                 logger.debug(agentId + "发送的数据为：" + msg);
                 //更新间隔时间
                 Registry.INSTANCE.saveKey(agentId + "_date", new Date().getTime());

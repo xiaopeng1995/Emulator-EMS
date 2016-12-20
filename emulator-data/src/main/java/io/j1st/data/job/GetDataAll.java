@@ -47,7 +47,6 @@ public class GetDataAll {
     private EmsData loadData = new EmsData();//
 
 
-
     //根数据
     List<EmsData> datas = new ArrayList<>();
 
@@ -157,8 +156,12 @@ public class GetDataAll {
         double TotWh;//组合总和TotWhImp+TotWhExp
         Object num = Registry.INSTANCE.getValue().get(agentID + "_TotWhImp");
         double TotWhImp = (num == null ? 0.0 : (double) num);//电网正向有功总电能  (放电总功率)
+        double DWhImp=0.0;
+
         num = Registry.INSTANCE.getValue().get(agentID + "_TotWhExp");
         double TotWhExp = (num == null ? 0.0 : (double) num);//电网负向有功总电能  (充电总功率)
+        double DWhExp=0.0;
+
         double VAR = 0.0;//Reactive Power 瞬时总无功功率 kw
         double PF = Math.random();//Power Factor 总功率因数
         double Hz = 50.0;//电网频率
@@ -171,22 +174,27 @@ public class GetDataAll {
         double W;//Total Real Power 瞬时总有功功率 kw
         double MaxRsvPct = STROAGE_002.MaxRsvPct;
         double MinRsvPct = STROAGE_002.MinRsvPct;
+        double TCkWh;//总充电电量
+        double DCkWh;//当天的总充电电量
+        double TDkWh;//总放电电量
+        double DDkWh;//当天总放电电量
+
+
         //电池参数
         num = Registry.INSTANCE.getValue().get(agentID + "_Soc");
         double Soc = (num == null ? STROAGE_002.SoC : (double) num);//当前电量百分比
         double dqrl;//当前容量kw/h
         double BV;//电压
         double BI;// 电流
-        double TCkWh;//总排放功率（千瓦时）
-        double DCkWh;//当天的总功率
+
         PDC = WHRtg * ((Reg12551 / 1000.0));//总功率*功率百分比   当前放电充电瞬时功率
         PAC = PDC / EFF;
         W = PAC;
         //储能放电
         if (Reg12551 > 0)//使用受到到放电功率计算
         {
-            double J_TotWhImp = PDC * (((double) interval) / 3600);//当前间隔放电消耗功率
-            dqrl = WHRtg * Soc - J_TotWhImp;
+            double J_TotWhExp = PDC * (((double) interval) / 3600);//当前间隔放电消耗功率
+            dqrl = WHRtg * Soc - J_TotWhExp;
             Soc = dqrl / WHRtg;
             /*Soc>20 BV=1.312SOC+293.8  Soc<=20   BV=1SOC+260 */
             if (Soc > 20) {
@@ -197,15 +205,15 @@ public class GetDataAll {
 
             BI = (PDC * 1000) / BV;
 
-            if (Registry.INSTANCE.getValue().get(agentID + "_TotWhImp") != null) {
-                TotWhImp += J_TotWhImp;
+            if (Registry.INSTANCE.getValue().get(agentID + "_TotWhExp") != null) {
+                TotWhExp += J_TotWhExp;
             }
-            Registry.INSTANCE.saveKey(agentID + "_TotWhImp", TotWhImp);
+            Registry.INSTANCE.saveKey(agentID + "_TotWhExp", TotWhExp);
 
         } else //充电
         {
-            double J_TotWhExp = PDC * (((double) interval) / 3600);//当前间隔充电消耗功率
-            dqrl = WHRtg * Soc - J_TotWhExp;
+            double J_TotWhImp = PDC * (((double) interval) / 3600);//当前间隔充电消耗功率
+            dqrl = WHRtg * Soc - J_TotWhImp;
             Soc = dqrl / WHRtg;
             /*  Soc>80 BV=425 Soc<=80  BV=16.5Soc+316.44  Soc<10  BV=2Soc+260  */
             if (Soc > 0.8) {
@@ -216,40 +224,53 @@ public class GetDataAll {
                 BV = 2 * (Soc * 100) + 260;
             }
             BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
-            if (Registry.INSTANCE.getValue().get(agentID + "_TotWhExp") != null) {
-                TotWhExp += J_TotWhExp;
+            if (Registry.INSTANCE.getValue().get(agentID + "_TotWhImp") != null) {
+                TotWhImp += J_TotWhImp;
             }
-            Registry.INSTANCE.saveKey(agentID + "_TotWhExp", TotWhExp);
+            Registry.INSTANCE.saveKey(agentID + "_TotWhImp", TotWhImp);
         }
         TotWh = TotWhExp + TotWhImp;
-        TCkWh = TotWhImp - TotWhExp;
-        DCkWh = TCkWh;
+        TCkWh = -TotWhImp;//总充电电量
+        num = Registry.INSTANCE.getValue().get(agentID + "_DCkWh");
+        DCkWh=num != null?(double) num:TCkWh;
+
+        TDkWh = TotWhExp;//总放电 电量
+        num = Registry.INSTANCE.getValue().get(agentID + "_DDkWh");
+        DDkWh=num != null?(double) num:TDkWh;//当天
+
+        DWhImp=-DCkWh;
+        DWhExp=DDkWh;
+
         Registry.INSTANCE.saveKey(agentID + "_Soc", Soc);//本次间隔Soc
         logger.debug(agentID + "存Soc值为:" + Registry.INSTANCE.getValue().get(agentID + "_Soc"));
         //逆变器
 
-        data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 3));
-        data120.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 3));
+        data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 2));
+        data120.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 2));
         data120.put(Values.BI, GttRetainValue.getRealVaule(BI, 3));
         data120.put(Values.BV, GttRetainValue.getRealVaule(BV, 3));
-        data120.put(Values.TCkWh, GttRetainValue.getRealVaule(TCkWh, 3));
-        data120.put(Values.DCkWh, GttRetainValue.getRealVaule(DCkWh, 3));
+        data120.put(Values.TCkWh, GttRetainValue.getRealVaule(TCkWh, 2));
+        data120.put(Values.DCkWh, GttRetainValue.getRealVaule(DCkWh, 2));
+        data120.put(Values.TDkWh, GttRetainValue.getRealVaule(TDkWh, 2));
+        data120.put(Values.DDkWh, GttRetainValue.getRealVaule(DDkWh, 2));
         //储能
-        data801.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 3));
+        data801.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 2));
         data801.put(Values.SoCNpMaxPct, STROAGE_002.SoCNpMaxPct);
         data801.put(Values.SoCNpMinPct, STROAGE_002.SoCNpMinPct);
-        data801.put(Values.SoC, GttRetainValue.getRealVaule(Soc, 3));
+        data801.put(Values.SoC, GttRetainValue.getRealVaule(Soc, 2));
         data801.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct, 3));
         data801.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct, 3));
         //电网电表
-        data202.put(Values.TotWh, GttRetainValue.getRealVaule(TotWh, 3));
-        data202.put(Values.TotWhExp, GttRetainValue.getRealVaule(TotWhExp, 3));
-        data202.put(Values.TotWhImp, GttRetainValue.getRealVaule(TotWhImp, 3));
-        data202.put(Values.W, GttRetainValue.getRealVaule(W, 3));
-        data202.put(Values.VAR, GttRetainValue.getRealVaule(VAR, 3));
-        data202.put(Values.PF, GttRetainValue.getRealVaule(PF, 3));
-        data202.put(Values.Hz, GttRetainValue.getRealVaule(Hz, 3));
-        data202.put(Values.Evt, GttRetainValue.getRealVaule(Evt, 3));
+        data202.put(Values.DWhImp, GttRetainValue.getRealVaule(DWhImp, 2));
+        data202.put(Values.DWhExp, GttRetainValue.getRealVaule(DWhExp, 2));
+        data202.put(Values.TotWh, GttRetainValue.getRealVaule(TotWh, 2));
+        data202.put(Values.TotWhExp, GttRetainValue.getRealVaule(TotWhExp, 2));
+        data202.put(Values.TotWhImp, GttRetainValue.getRealVaule(TotWhImp, 2));
+        data202.put(Values.W, GttRetainValue.getRealVaule(W, 2));
+        data202.put(Values.VAR, GttRetainValue.getRealVaule(VAR, 2));
+        data202.put(Values.PF, GttRetainValue.getRealVaule(PF, 2));
+        data202.put(Values.Hz, GttRetainValue.getRealVaule(Hz, 2));
+        data202.put(Values.Evt, GttRetainValue.getRealVaule(Evt, 2));
 
     }
 
@@ -283,7 +304,7 @@ public class GetDataAll {
         {
             noDevice.put(Values.RunTime, 1);
             device.setValues(noDevice);
-            device.setAsn(agentID.substring(10, 20)+type);
+            device.setAsn(agentID.substring(10, 20) + type);
             device.setType("AGENT");
 
 
