@@ -3,6 +3,7 @@ package io.j1st.data.mqtt;
 
 import io.j1st.data.entity.Registry;
 import io.j1st.data.job.Job;
+import io.j1st.storage.MongoStorage;
 import io.j1st.util.util.JsonUtils;
 import org.eclipse.paho.client.mqttv3.*;
 import org.slf4j.Logger;
@@ -29,12 +30,15 @@ public class MqttConnThread implements Callable {
     private MqttConnectOptions options;
     //定时任务修改
     private Job quartzManager;
+    //数据持久操作
+    private MongoStorage mogo;
 
     // Construction
-    public MqttConnThread(MqttClient mqttClient, MqttConnectOptions options, Job quartzManager) {
+    public MqttConnThread(MqttClient mqttClient, MqttConnectOptions options, Job quartzManager, MongoStorage mogo) {
         this.mqttClient = mqttClient;
         this.options = options;
         this.quartzManager = quartzManager;
+        this.mogo = mogo;
     }
 
     @Override
@@ -51,7 +55,7 @@ public class MqttConnThread implements Callable {
                     @Override
                     public void connectionLost(Throwable cause) {
                         logger.debug("线程:{}断开连接，开始重连", mqttClient.getClientId());
-                        new MqttConnThread(mqttClient, options, quartzManager);
+                        new MqttConnThread(mqttClient, options, quartzManager, mogo);
                     }
 
                     @Override
@@ -66,7 +70,7 @@ public class MqttConnThread implements Callable {
                             Job thread = (Job) Registry.INSTANCE.getValue().get(AgentID + "_Job");
                             //开启新的线程
                             Thread.sleep(d * 1000);
-                            Job threadnew = new Job(AgentID, i, "systemQuery");
+                            Job threadnew = new Job(AgentID, i, "systemQuery", mogo);
                             Registry.INSTANCE.startJob(threadnew);
                             //把新线程储存起来替换掉旧线程
                             Registry.INSTANCE.saveKey(AgentID + "_Job", threadnew);
@@ -80,7 +84,7 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc = (List<Map>) msgData.get("SetMHReg");
                             String d = bbc.get(0).get("dsn").toString();
                             double i = (double) bbc.get(0).get("Reg12551");
-                            Object num1 = Registry.INSTANCE.getValue().get(mqttClient.getClientId() + "_Soc");
+                            Object num1 = mogo.findEmulatorRegister(AgentID, "Soc");
                             if (num1 != null)//判断当前容量是否处于极限值.
                             {
                                 double num = (double) num1;
@@ -95,14 +99,13 @@ public class MqttConnThread implements Callable {
 
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
-                            String dataqc=bbc.get(0).get("packs").toString();
-                            String[] a=dataqc.split(",");
-                            int[] packs=new int[5];
-                            for(int i=0;i<a.length;i++)
-                            {
-                                packs[i]=Integer.parseInt(a[i]);
+                            String dataqc = bbc.get(0).get("packs").toString();
+                            String[] a = dataqc.split(",");
+                            int[] packs = new int[5];
+                            for (int i = 0; i < a.length; i++) {
+                                packs[i] = Integer.parseInt(a[i]);
                             }
-                            Registry.INSTANCE.saveKey(AgentID + "_packing",packs);
+                            Registry.INSTANCE.saveKey(AgentID + "_packing", packs);
                         } else {
                             logger.error("错误格式");
                         }
@@ -121,7 +124,7 @@ public class MqttConnThread implements Callable {
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         } catch (Exception e) {
             logger.error("后台mqtt客户端:{}连接服务器 broker失败！重新连接开始...", mqttClient.getClientId());
-            new MqttConnThread(mqttClient, options, quartzManager);
+            new MqttConnThread(mqttClient, options, quartzManager, mogo);
             //睡眠5秒
             Thread.sleep(5000);
         }

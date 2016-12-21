@@ -3,6 +3,7 @@ package io.j1st.data.job;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
+import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Value;
 import io.j1st.util.entity.EmsData;
 import io.j1st.util.entity.data.Device;
@@ -23,10 +24,12 @@ public class GetDataAll {
     private double Reg12551;//以多少功率的百分比
     Logger logger = LoggerFactory.getLogger(GetDataAll.class);
     private BatConfig STROAGE_002;
+    private MongoStorage mogo;
 
-    public GetDataAll(double Reg12551, BatConfig STROAGE_002) {
+    public GetDataAll(double Reg12551, BatConfig STROAGE_002, MongoStorage mogo) {
         this.Reg12551 = Reg12551;
         this.STROAGE_002 = STROAGE_002;
+        this.mogo = mogo;
     }
 
 
@@ -154,11 +157,11 @@ public class GetDataAll {
     private void discharge(long interval, long startDate, String agentID) {
         //电网参数
         double TotWh;//组合总和TotWhImp+TotWhExp
-        Object num = Registry.INSTANCE.getValue().get(agentID + "_TotWhImp");
+        Object num = mogo.findEmulatorRegister(agentID, "TotWhImp");
         double TotWhImp = (num == null ? 0.0 : (double) num);//电网正向有功总电能  (放电总功率)
         double DWhImp = 0.0;
 
-        num = Registry.INSTANCE.getValue().get(agentID + "_TotWhExp");
+        num = mogo.findEmulatorRegister(agentID, "TotWhExp");
         double TotWhExp = (num == null ? 0.0 : (double) num);//电网负向有功总电能  (充电总功率)
         double DWhExp = 0.0;
 
@@ -175,13 +178,13 @@ public class GetDataAll {
         double MaxRsvPct = STROAGE_002.MaxRsvPct;
         double MinRsvPct = STROAGE_002.MinRsvPct;
         double TCkWh;//总充电电量
-        double DCkWh=0.0;//当天的总充电电量
+        double DCkWh = 0.0;//当天的总充电电量
         double TDkWh;//总放电电量
-        double DDkWh=0.0;//当天总放电电量
+        double DDkWh = 0.0;//当天总放电电量
 
 
         //电池参数
-        num = Registry.INSTANCE.getValue().get(agentID + "_Soc");
+        num = mogo.findEmulatorRegister(agentID, "Soc");
         double Soc = (num == null ? STROAGE_002.SoC : (double) num);//当前电量百分比
         double dqrl;//当前容量kw/h
         double BV;//电压
@@ -206,12 +209,12 @@ public class GetDataAll {
             BI = (PDC * 1000) / BV;
             //更新累计值
             TotWhExp += J_TotWhExp;
-            Registry.INSTANCE.saveKey(agentID + "_TotWhExp", TotWhExp);
+            mogo.updateEmulatorRegister(agentID, "TotWhExp", TotWhExp);
 
             //去内存获取当天情况
-            num = Registry.INSTANCE.getValue().get(agentID + "_DCkWh");
-            DCkWh = num != null ? (double) num+J_TotWhExp : TotWhExp;
-            Registry.INSTANCE.saveKey(agentID + "_DCkWh",DCkWh);
+            num = mogo.findEmulatorRegister(agentID, "DCkWh");
+            DCkWh = num != null ? (double) num + J_TotWhExp : TotWhExp;
+            mogo.updateEmulatorRegister(agentID, "DCkWh", DCkWh);
 
         } else //充电
         {
@@ -229,11 +232,12 @@ public class GetDataAll {
             BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
             //更新累计值
             TotWhImp += J_TotWhImp;
-            Registry.INSTANCE.saveKey(agentID + "_TotWhImp", TotWhImp);
+            mogo.updateEmulatorRegister(agentID, "TotWhImp", TotWhImp);
             //去内存获取当天情况
-            num = Registry.INSTANCE.getValue().get(agentID + "_DDkWh");
-            DDkWh = num != null ? (double) num+J_TotWhImp : -TotWhImp;//当天
-            Registry.INSTANCE.saveKey(agentID + "_DDkWh",DDkWh);
+
+            num = mogo.findEmulatorRegister(agentID, "DDkWh");
+            DDkWh = num != null ? (double) num + J_TotWhImp : -TotWhImp;//当天
+            mogo.updateEmulatorRegister(agentID, "DDkWh", DDkWh);
         }
         TotWh = TotWhExp + TotWhImp;
         TCkWh = -TotWhImp;//总充电电量
@@ -242,9 +246,8 @@ public class GetDataAll {
 
         DWhImp = -DCkWh;
         DWhExp = DDkWh;
-
-        Registry.INSTANCE.saveKey(agentID + "_Soc", Soc);//本次间隔Soc
-        logger.debug(agentID + "存Soc值为:" + Registry.INSTANCE.getValue().get(agentID + "_Soc"));
+        mogo.updateEmulatorRegister(agentID, "Soc", Soc);
+        logger.debug(agentID + "存Soc值为:" + mogo.findEmulatorRegister(agentID, "Soc"));
         //逆变器
 
         data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 2));
@@ -259,7 +262,7 @@ public class GetDataAll {
         data801.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 2));
         data801.put(Values.SoCNpMaxPct, STROAGE_002.SoCNpMaxPct);
         data801.put(Values.SoCNpMinPct, STROAGE_002.SoCNpMinPct);
-        data801.put(Values.SoC, GttRetainValue.getRealVaule(Soc*100, 2));
+        data801.put(Values.SoC, GttRetainValue.getRealVaule(Soc * 100, 2));
         data801.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct, 3));
         data801.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct, 3));
         data801.put(Values.WMaxChaRte, GttRetainValue.getRealVaule(STROAGE_002.WMaxChaRte, 2));
@@ -285,19 +288,20 @@ public class GetDataAll {
         data103.put(Values.Pac, GttRetainValue.getRealVaule(Pac, 2));
 
         //去内存获取累计情况
-        Object num = Registry.INSTANCE.getValue().get(agentID + "_TYield");
+
+        Object num = mogo.findEmulatorRegister(agentID, "TYield");
         double eToday = (double) clculate.TotalCalc().get("eToday");
         double TYield = eToday;
         if (num != null)
             TYield += (double) num;
-        Registry.INSTANCE.saveKey(agentID + "_TYield", TYield);
-
+        mogo.updateEmulatorRegister(agentID, "TYield", TYield);
         //去内存获取当天情况
         double DYield = eToday;
-        num = Registry.INSTANCE.getValue().get(agentID + "_DYield");
+
+        num = mogo.findEmulatorRegister(agentID, "DYield");
         if (num != null)
             DYield += (double) num;
-        Registry.INSTANCE.saveKey(agentID + "_DYield", DYield);
+        mogo.updateEmulatorRegister(agentID, "DYield", DYield);
 
         data103.put(Values.DYield, GttRetainValue.getRealVaule(DYield, 2));
         data103.put(Values.TYield, GttRetainValue.getRealVaule(TYield, 2));

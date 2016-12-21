@@ -1034,8 +1034,35 @@ public class MongoStorage {
         return count;
     }
 
-    public boolean updateEmulatorRegister(String agentId, String key, String value) {
+    /**
+     * updateEmulatorRegister
+     *
+     * @param agentId agentId
+     * @param key     key
+     * @param value   value
+     * @return
+     */
+    public boolean updateEmulatorRegister(String agentId, String key, Double value) {
         return this.database.getCollection("emulator_register").updateOne(eq("agent_id", agentId), new Document("$set", new Document(key, value).append("updated_at", new Date()))
-        ,new UpdateOptions().upsert(true)).getModifiedCount() > 0;
+                , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
+    }
+
+    /**
+     * findEmulatorRegister
+     *
+     * @param key     key
+     * @param agentId agentId
+     * @return
+     */
+    public Object findEmulatorRegister(String agentId, String key) {
+        Object data;
+        try {
+            data = this.database.getCollection("emulator_register")
+                    .find(eq("agent_id", agentId)).first().get(key);
+        }catch (NullPointerException e)
+        {
+            data = null;
+        }
+        return data;
     }
 }

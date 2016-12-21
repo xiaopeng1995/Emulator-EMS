@@ -17,10 +17,10 @@ import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.SimpleDateFormat;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Properties;
 
 
 /**
@@ -58,34 +58,42 @@ public class EmulatorApplication {
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
         MqttConnectOptions options;
-//      //定时任务开始
-        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
-        //定时每天算当天功率0 0 12 * * ?
-        quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 12 * * ?");
-//      //mongodb
+        //mongodb
         MongoStorage mogo = new MongoStorage();
         mogo.init(mongoConfig);
-        List<Agent> agents = mogo.getAgentsByProductId(new ObjectId(productIdConfig.getString("product_id")));
-        Registry.INSTANCE.saveKey("agents",agents);
-        for (Agent agent : agents) {
-            String agentID = agent.getId().toString();
-            mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agentID, persistence);
-            options = new MqttConnectOptions();
-            options.setUserName(agent.getId().toHexString());
-            options.setPassword(agent.getToken().toCharArray());
-            Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
-            Job thread = new Job(agentID, 30, "jsonUp");
-            Registry.INSTANCE.startJob(thread);
-            Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-            //mqtt
-            MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null);
-            //保存mqtt连接信息
-            Registry.INSTANCE.saveSession(agentID, mqttConnThread);
-            //添加新线程到线程池
-            Registry.INSTANCE.startThread(mqttConnThread);
-            //保存启动时间
-            Registry.INSTANCE.saveKey(agentID + "_date", new Date().getTime());
+        Registry.INSTANCE.saveKey("mogo", mogo);
+//      //定时任务开始
+        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
+        //定时每天算当天功率0 0 0 * * ?
+        quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
+        //quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", dayJob.getClass(), "0 0 0 * * ?");
+        String[] productIds = productIdConfig.getString("product_id").split("_");
+        List<String> agentIdAll = new ArrayList<>();
+        for (String productId : productIds) {
+            List<Agent> agents = mogo.getAgentsByProductId(new ObjectId(productId));
+            for (Agent agent : agents) {
+                String agentID = agent.getId().toString();
+                agentIdAll.add(agentID);
+                mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agentID, persistence);
+                options = new MqttConnectOptions();
+                options.setUserName(agent.getId().toHexString());
+                options.setPassword(agent.getToken().toCharArray());
+                Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
+                Job thread = new Job(agentID, 30, "jsonUp", mogo);
+                Registry.INSTANCE.startJob(thread);
+                Registry.INSTANCE.saveKey(agentID + "_Job", thread);
+                //mqtt
+                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo);
+                //保存mqtt连接信息
+                Registry.INSTANCE.saveSession(agentID, mqttConnThread);
+                //添加新线程到线程池
+                Registry.INSTANCE.startThread(mqttConnThread);
+                //保存启动时间
+                Registry.INSTANCE.saveKey(agentID + "_date", new Date().getTime());
+                Thread.sleep(10);
+            }
         }
+        Registry.INSTANCE.saveKey("agentIdAll", agentIdAll);
         //起点时间
         Registry.INSTANCE.saveKey("startDate", new Date().getTime());
     }

@@ -12,7 +12,7 @@
             <FileNamePattern>log/archived/m2m-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
             <MaxHistory>30</MaxHistory>
             <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <MaxFileSize>20MB</MaxFileSize>
+                <MaxFileSize>200MB</MaxFileSize>
             </TimeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder charset="UTF-8">

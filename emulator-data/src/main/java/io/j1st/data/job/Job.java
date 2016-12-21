@@ -3,6 +3,7 @@ package io.j1st.data.job;
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.mqtt.MqttConnThread;
+import io.j1st.storage.MongoStorage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,10 +22,13 @@ public class Job extends Thread {
     private int time;
     private double Reg12551;
     private String topic;
-    public Job(String agentid,int time,String topic){
-        this.agentId=agentid;
-        this.time=time;
-        this.topic=topic;
+    private MongoStorage mogo;
+
+    public Job(String agentid, int time, String topic, MongoStorage mogo) {
+        this.agentId = agentid;
+        this.time = time;
+        this.topic = topic;
+        this.mogo = mogo;
     }
 
     public void run() {
@@ -39,7 +43,7 @@ public class Job extends Thread {
             if (batReceive != null) {
                 Reg12551 = (Double) Registry.INSTANCE.getValue().get(agentId + "120");
             }
-            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002);
+            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo);
             String msg = dataAll.getDate(agentId);
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topic = getTopic(agentId);
@@ -59,14 +63,14 @@ public class Job extends Thread {
             }
 
         }
-        logger.debug("旧线程:"+super.getId()+"已退出!");
+        logger.debug("旧线程:" + super.getId() + "已退出!");
     }
 
     /**
      * Get Topic
      */
-    private  String getTopic(String agentId) {
-        logger.debug("Topic:{}",topic);
-        return "agents/" + agentId + "/"+topic;
+    private String getTopic(String agentId) {
+        logger.debug("Topic:{}", topic);
+        return "agents/" + agentId + "/" + topic;
     }
 }

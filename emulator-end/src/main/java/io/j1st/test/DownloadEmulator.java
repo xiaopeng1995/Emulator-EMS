@@ -40,18 +40,18 @@ public class DownloadEmulator {
 
         List<Map> d = new ArrayList<>();
         Map<String, Object> setMHReg = new HashMap<>();
-        setMHReg.put("dsn", "5848cacedafbaf35325b70e0120");
-        setMHReg.put("Reg12551", -300.0);
+        setMHReg.put("dsn", "583fc9e4dafbaf1b983e88e5120");
+        setMHReg.put("Reg12551", -666.0);
         d.add(setMHReg);
         Map<String, Object> batReceive = new HashMap<>();
         batReceive.put("SetMHReg", d);
         String batReceivemsg = JsonUtils.Mapper.writeValueAsString(batReceive);
         String payloadmsg = JsonUtils.Mapper.writeValueAsString(payload);
-        String agent ="5833e406dafbaf59a0d39672";
+        String agent ="583fc9e4dafbaf1b983e88e5";
         System.out.println(agent);
         System.out.println("batReceivemsg\n"+batReceivemsg);
         System.out.println("payloadmsg\n"+payloadmsg);
-         mqtt.publish("agents/"+agent+"/downstream", new MqttMessage(payloadmsg.getBytes("utf-8")));
+         mqtt.publish("agents/"+agent+"/downstream", new MqttMessage(batReceivemsg.getBytes("utf-8")));
 
     }
 }
