@@ -70,8 +70,8 @@ public enum Registry {
     public void startThread(MqttConnThread client) {
         this.es.submit(client);
     }
-    public void startJob(Job job) {
-        this.es.submit(job);
+    public void startJob(Thread job) {
+        this.es.execute(job);
 
     }
     public void shutdown() {

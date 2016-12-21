@@ -32,12 +32,12 @@ public class Job extends Thread {
         String topic;
         while (!exit) {
             logger.debug("执行线程:" + super.getId());
-            logger.info("内存中除配置文件外所有值 MAP:" + Registry.INSTANCE.getValue());
+            logger.debug("内存中除配置文件外所有值 MAP:" + Registry.INSTANCE.getValue());
             MqttConnThread mqttConnThread;
             STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(agentId + "_STROAGE_002Config");
-            Object batReceive = Registry.INSTANCE.getValue().get(agentId + "storage01");
+            Object batReceive = Registry.INSTANCE.getValue().get(agentId + "120");
             if (batReceive != null) {
-                Reg12551 = (Double) Registry.INSTANCE.getValue().get(agentId + "storage01");
+                Reg12551 = (Double) Registry.INSTANCE.getValue().get(agentId + "120");
             }
             GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002);
             String msg = dataAll.getDate(agentId);

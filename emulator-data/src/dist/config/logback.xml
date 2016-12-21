@@ -38,19 +38,19 @@
         <appender-ref ref="File"/>
     </logger>
 
-    <logger name="io.j1st.data.job" level="DEBUG" additivity="false">
+    <logger name="io.j1st.data.job" level="DBUG" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-    <logger name="io.j1st.data.mqtt" level="DEBUG" additivity="false">
+    <logger name="io.j1st.data.mqtt" level="DBUG" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-    <logger name="io.j1st.data.job.GetDataAll" level="DEBUG" additivity="false">
+    <logger name="io.j1st.data.job.GetDataAll" level="DBUG" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-    <logger name="io.j1st.data.EmulatorApplication" level="DEBUG" additivity="false">
+    <logger name="io.j1st.data.EmulatorApplication" level="DBUG" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>

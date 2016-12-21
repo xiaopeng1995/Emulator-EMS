@@ -53,7 +53,6 @@ public class EmulatorApplication {
             mqttConfig = new PropertiesConfiguration("config/mqtt.properties");
             quartzConfig = new PropertiesConfiguration("config/quartz.properties");
         }
-
         // Mqtt
 
         MemoryPersistence persistence = new MemoryPersistence();
@@ -76,7 +75,7 @@ public class EmulatorApplication {
             options.setPassword(agent.getToken().toCharArray());
             Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
             Job thread = new Job(agentID, 30, "jsonUp");
-            thread.start();
+            Registry.INSTANCE.startJob(thread);
             Registry.INSTANCE.saveKey(agentID + "_Job", thread);
             //mqtt
             MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null);

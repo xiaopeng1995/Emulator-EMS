@@ -28,4 +28,5 @@ public class BatConfig {
     public final Double MinRsvPct = 0.3;
     public final Double SoC = Ran < 0.2 ? 0.2 : Ran > 0.8 ? 0.8 : Ran;
 
+
 }

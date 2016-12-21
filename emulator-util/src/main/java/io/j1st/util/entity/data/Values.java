@@ -23,6 +23,8 @@ public class Values {
     public static final String SoC = "SoC";
     public static final String SoCNpMaxPct = "SoCNpMaxPct";
     public static final String SoCNpMinPct = "SoCNpMinPct";
+    public static final String WMaxChaRte = "WMaxChaRte";//最大充电功率
+    public static final String WMaxDisChaRte = "WMaxDisChaRte";//最大放电功率
     /*储能侧Key*/
     // ATTRIBUTES
     public static final String TCAh = "TCAh";//TCAh"="";           //Total charge power(Ah)
@@ -67,6 +69,7 @@ public class Values {
     //PV侧数据
     public static final String TYield = "TYield";
     public static final String Pac = "Pac";
+    public static final String DYield = "DYield";
     //告警
     public static final String RunTime = "RunTime";
 }

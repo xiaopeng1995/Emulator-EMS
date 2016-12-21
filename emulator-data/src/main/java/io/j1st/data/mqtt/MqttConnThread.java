@@ -2,25 +2,16 @@ package io.j1st.data.mqtt;
 
 
 import io.j1st.data.entity.Registry;
-import io.j1st.data.entity.config.BatConfig;
-import io.j1st.data.job.GetDataAll;
 import io.j1st.data.job.Job;
-import io.j1st.data.quartz.QuartzManager;
-import io.j1st.util.entity.Payload;
-import io.j1st.util.entity.bat.BatReceive;
-import io.j1st.util.entity.bat.SetMHReg;
-import io.j1st.util.util.GetJsonEmsData;
 import io.j1st.util.util.JsonUtils;
 import org.eclipse.paho.client.mqttv3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
-import java.util.function.ObjDoubleConsumer;
 
 
 /**
@@ -76,7 +67,7 @@ public class MqttConnThread implements Callable {
                             //开启新的线程
                             Thread.sleep(d * 1000);
                             Job threadnew = new Job(AgentID, i, "systemQuery");
-                            threadnew.start();
+                            Registry.INSTANCE.startJob(threadnew);
                             //把新线程储存起来替换掉旧线程
                             Registry.INSTANCE.saveKey(AgentID + "_Job", threadnew);
                             logger.debug("开启新线程:{}", threadnew.getId());

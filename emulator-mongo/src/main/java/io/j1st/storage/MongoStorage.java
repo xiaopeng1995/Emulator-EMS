@@ -720,14 +720,14 @@ public class MongoStorage {
     /**
      * 获取 采集器列表，根据产品Id
      *
-     * @param products_id    产品id
+     * @param products_id 产品id
      * @return 采集器的列表 Or Empty List
      */
     public List<Agent> getAgentsByProductId(ObjectId products_id) {
         List<Agent> r = new ArrayList<>();
         this.database.getCollection("agents")
                 .find(eq("product_id", products_id)
-               )
+                )
                 .forEach((Consumer<Document>) d ->
                         r.add(parseAgentDocument(d)));
         return r;
@@ -1034,4 +1034,8 @@ public class MongoStorage {
         return count;
     }
 
+    public boolean updateEmulatorRegister(String agentId, String key, String value) {
+        return this.database.getCollection("emulator_register").updateOne(eq("agent_id", agentId), new Document("$set", new Document(key, value).append("updated_at", new Date()))
+        ,new UpdateOptions().upsert(true)).getModifiedCount() > 0;
+    }
 }
