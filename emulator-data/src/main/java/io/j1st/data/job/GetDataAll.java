@@ -252,8 +252,8 @@ public class GetDataAll {
 
         data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 2));
         data120.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 2));
-        data120.put(Values.BI, GttRetainValue.getRealVaule(BI, 3));
-        data120.put(Values.BV, GttRetainValue.getRealVaule(BV, 3));
+        data120.put(Values.BI, GttRetainValue.getRealVaule(BI, 2));
+        data120.put(Values.BV, GttRetainValue.getRealVaule(BV, 2));
         data120.put(Values.TCkWh, GttRetainValue.getRealVaule(TCkWh, 2));
         data120.put(Values.DCkWh, GttRetainValue.getRealVaule(DCkWh, 2));
         data120.put(Values.TDkWh, GttRetainValue.getRealVaule(TDkWh, 2));
@@ -263,19 +263,19 @@ public class GetDataAll {
         data801.put(Values.SoCNpMaxPct, STROAGE_002.SoCNpMaxPct);
         data801.put(Values.SoCNpMinPct, STROAGE_002.SoCNpMinPct);
         data801.put(Values.SoC, GttRetainValue.getRealVaule(Soc * 100, 2));
-        data801.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct, 3));
-        data801.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct, 3));
-        data801.put(Values.WMaxChaRte, GttRetainValue.getRealVaule(STROAGE_002.WMaxChaRte, 2));
-        data801.put(Values.WMaxDisChaRte, GttRetainValue.getRealVaule(STROAGE_002.WMaxDisChaRte, 2));
+        data801.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct*100, 1));
+        data801.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct*100, 1));
+        data801.put(Values.WMaxChaRte, GttRetainValue.getRealVaule(STROAGE_002.WMaxChaRte, 3));
+        data801.put(Values.WMaxDisChaRte, GttRetainValue.getRealVaule(STROAGE_002.WMaxDisChaRte, 3));
         //电网电表
         data202.put(Values.DWhImp, GttRetainValue.getRealVaule(DWhImp, 2));
         data202.put(Values.DWhExp, GttRetainValue.getRealVaule(DWhExp, 2));
         data202.put(Values.TotWh, GttRetainValue.getRealVaule(TotWh, 2));
         data202.put(Values.TotWhExp, GttRetainValue.getRealVaule(TotWhExp, 2));
         data202.put(Values.TotWhImp, GttRetainValue.getRealVaule(TotWhImp, 2));
-        data202.put(Values.W, GttRetainValue.getRealVaule(W, 2));
-        data202.put(Values.VAR, GttRetainValue.getRealVaule(VAR, 2));
-        data202.put(Values.PF, GttRetainValue.getRealVaule(PF, 2));
+        data202.put(Values.W, GttRetainValue.getRealVaule(W, 3));
+        data202.put(Values.VAR, GttRetainValue.getRealVaule(VAR, 3));
+        data202.put(Values.PF, GttRetainValue.getRealVaule(PF, 3));
         data202.put(Values.Hz, GttRetainValue.getRealVaule(Hz, 2));
         data202.put(Values.Evt, GttRetainValue.getRealVaule(Evt, 2));
 
@@ -285,7 +285,7 @@ public class GetDataAll {
 
         Clculate clculate = new Clculate();
         double Pac = ((double) clculate.TotalCalc().get("pVPower") / 1000);
-        data103.put(Values.Pac, GttRetainValue.getRealVaule(Pac, 2));
+        data103.put(Values.Pac, GttRetainValue.getRealVaule(Pac, 1));
 
         //去内存获取累计情况
 
@@ -303,8 +303,8 @@ public class GetDataAll {
             DYield += (double) num;
         mogo.updateEmulatorRegister(agentID, "DYield", DYield);
 
-        data103.put(Values.DYield, GttRetainValue.getRealVaule(DYield, 2));
-        data103.put(Values.TYield, GttRetainValue.getRealVaule(TYield, 2));
+        data103.put(Values.DYield, GttRetainValue.getRealVaule(DYield, 1));
+        data103.put(Values.TYield, GttRetainValue.getRealVaule(TYield, 0));
     }
 
     private void getLoadData() {

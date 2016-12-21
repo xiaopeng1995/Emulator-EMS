@@ -19,9 +19,9 @@ public class BatConfig {
     //uint16	W	Maximum rate of energy transfer out of the storage device.最大放电功率
     public final Double WMaxDisChaRte = 999.0 + Ran;
     //uint16	%WHRtg	Manufacturer maximum state of charge, expressed as a percentage.最大充电百分比
-    public final Double SoCNpMaxPct = 0.95;
+    public final Double SoCNpMaxPct = 95.0;
     //uint16	%WHRtg	Manufacturer minimum state of charge, expressed as a percentage.最小放电电百分比
-    public final Double SoCNpMinPct = 0.05;
+    public final Double SoCNpMinPct = 5.0;
     //uint16	%WHRtg	Setpoint for maximum reserve for storage as a percentage of the nominal maximum storage.  实际使用的最大存储量，以标称存储总能量的百分比表示。
     public final Double MaxRsvPct = 0.8;
     //uint16	%WHRtg	Setpoint for minimum reserve for storage as a percentage of the nominal minimum storage.  实际使用的最小存储量，以标称存储总能量的百分比表示。
