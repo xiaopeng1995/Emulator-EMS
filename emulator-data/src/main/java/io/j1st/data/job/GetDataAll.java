@@ -217,10 +217,6 @@ public class GetDataAll {
 
         } else //充电
         {
-            PDC=-PDC;
-            double J_TotWhImp = PDC * (((double) interval) / 3600);//当前间隔充电消耗功率
-            dqrl = WHRtg * Soc - J_TotWhImp;
-            Soc = dqrl / WHRtg;
             /*  Soc>80 BV=425 Soc<=80  BV=16.5Soc+316.44  Soc<10  BV=2Soc+260  */
             if (Soc > 0.8) {
                 BV = 425.0;
@@ -229,6 +225,13 @@ public class GetDataAll {
             } else {
                 BV = 2 * (Soc * 100) + 260;
             }
+            //PDC=(102PDC-PDC*soc)/27
+            PDC=-PDC;
+            PDC=PDC*(102-Soc)/27;
+            double J_TotWhImp = PDC * (((double) interval) / 3600);//当前间隔充电消耗功率
+            dqrl = WHRtg * Soc - J_TotWhImp;
+            Soc = dqrl / WHRtg;
+
             //更新累计值
             TotWhImp += J_TotWhImp;
             mogo.updateEmulatorRegister(agentID, "TotWhImp", TotWhImp);
