@@ -90,7 +90,7 @@ public class EmulatorApplication {
                 Registry.INSTANCE.startThread(mqttConnThread);
                 //保存启动时间
                 Registry.INSTANCE.saveKey(agentID + "_date", new Date().getTime());
-                Thread.sleep(10);
+                Thread.sleep(80);
             }
         }
         Registry.INSTANCE.saveKey("agentIdAll", agentIdAll);
