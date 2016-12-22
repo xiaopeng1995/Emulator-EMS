@@ -208,8 +208,10 @@ public class GetDataAll {
         {
             PAC = PDC * EFF;
             W = PAC;
-            double J_TotWhExp = PAC * (((double) interval) / 3600);//当前间隔放电消耗功率
-            double J_TDkWh = PDC * (((double) interval) / 3600);//当前间隔放电消耗功率
+            //当前间隔电网放电消耗功率
+            double J_TotWhExp = PAC * (((double) interval) / 3600);
+            //当前间隔逆变器放电消耗功率
+            double J_TDkWh = PDC * (((double) interval) / 3600);
             dqrl = WHRtg * Soc - J_TDkWh;
             Soc = dqrl / WHRtg;
             /*Soc>20 BV=1.312SOC+293.8  Soc<=20   BV=1SOC+260 */
