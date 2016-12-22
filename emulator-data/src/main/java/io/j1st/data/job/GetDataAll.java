@@ -159,11 +159,14 @@ public class GetDataAll {
         double TotWh;//组合总和TotWhImp+TotWhExp
         Object num = mogo.findEmulatorRegister(agentID, "TotWhImp");
         double TotWhImp = (num == null ? 0.0 : (double) num);//电网正向有功总电能  (放电总功率)
-        double DWhImp = 0.0;
+
+         num = mogo.findEmulatorRegister(agentID, "DWhImp");
+        double DWhImp =(num == null ? 0.0 : (double) num);
 
         num = mogo.findEmulatorRegister(agentID, "TotWhExp");
         double TotWhExp = (num == null ? 0.0 : (double) num);//电网负向有功总电能  (充电总功率)
-        double DWhExp = 0.0;
+        num = mogo.findEmulatorRegister(agentID, "DWhExp");
+        double DWhExp  =(num == null ? 0.0 : (double) num);
 
         double VAR = 0.0;//Reactive Power 瞬时总无功功率 kw
         double PF = Math.random();//Power Factor 总功率因数
@@ -177,12 +180,19 @@ public class GetDataAll {
         double W;//Total Real Power 瞬时总有功功率 kw
         double MaxRsvPct = STROAGE_002.MaxRsvPct;
         double MinRsvPct = STROAGE_002.MinRsvPct;
-        double TCkWh;//总充电电量
+        //总充电电量
+        num = mogo.findEmulatorRegister(agentID, "TCkWh");
+        double TCkWh = (num == null ? 0.0 : (double) num);
+        //去数据库获取当天逆变器充电情况
         num = mogo.findEmulatorRegister(agentID, "DCkWh");
-        double DCkWh = (num == null ? 0.0 : (double) num);//当天的总充电电量
-        double TDkWh;//总放电电量
+        double DCkWh = (num == null ? 0.0 : (double) num);
+
+        //总放电电量
+        num = mogo.findEmulatorRegister(agentID, "TDkWh");
+        double TDkWh = (num == null ? 0.0 : (double) num);
+        //去数据库获取当天放电情况
         num = mogo.findEmulatorRegister(agentID, "DDkWh");
-        double DDkWh = (num == null ? 0.0 : (double) num);//当天总放电电量
+        double DDkWh = (num == null ? 0.0 : (double) num);
 
 
         //电池参数
@@ -191,15 +201,16 @@ public class GetDataAll {
         double dqrl;//当前容量kw/h
         double BV;//电压
         double BI;// 电流
-
         PDC = WHRtg * ((Reg12551 / 1000.0));//总功率*功率百分比   当前放电充电瞬时功率
-        PAC = PDC / EFF;
-        W = PAC;
+
         //储能放电
         if (PDC > 0)//使用受到到放电功率计算
         {
-            double J_TotWhExp = PDC * (((double) interval) / 3600);//当前间隔放电消耗功率
-            dqrl = WHRtg * Soc - J_TotWhExp;
+            PAC = PDC * EFF;
+            W = PAC;
+            double J_TotWhExp = PAC * (((double) interval) / 3600);//当前间隔放电消耗功率
+            double J_TDkWh = PDC * (((double) interval) / 3600);//当前间隔放电消耗功率
+            dqrl = WHRtg * Soc - J_TDkWh;
             Soc = dqrl / WHRtg;
             /*Soc>20 BV=1.312SOC+293.8  Soc<=20   BV=1SOC+260 */
             if (Soc > 20) {
@@ -207,20 +218,27 @@ public class GetDataAll {
             } else {
                 BV = 1 * Soc * 100 + 260;
             }
-            //更新累计值
+            //更新逆变器总放电 电量
+            TDkWh += J_TDkWh;
+            mogo.updateEmulatorRegister(agentID, "TDkWh", TDkWh);
+            //更新电网累计值
             TotWhExp += J_TotWhExp;
             mogo.updateEmulatorRegister(agentID, "TotWhExp", TotWhExp);
 
-            //去内存获取当天情况
-            DCkWh += J_TotWhExp;
-            mogo.updateEmulatorRegister(agentID, "DCkWh", DCkWh);
-
+            //去数据库获取当天放电情况
+            DDkWh += J_TDkWh;
+            mogo.updateEmulatorRegister(agentID, "DDkWh", DDkWh);
+            //去数据库获取当天电网
+            DWhExp += J_TotWhExp;//电网当天放电
+            mogo.updateEmulatorRegister(agentID, "DWhExp", DWhExp);
         } else //充电
         {
+            PDC = -PDC;
+            PAC = PDC / EFF;
+            W = -PAC;
+            //PDC=(102PDC-PDC*soc)/27
             if (Soc > 0.75)
                 PDC = PDC * (102 - Soc) / 27;
-            //PDC=(102PDC-PDC*soc)/27
-            PDC = -PDC;
             /*  Soc>80 BV=425 Soc<=80  BV=16.5Soc+316.44  Soc<10  BV=2Soc+260  */
             if (Soc > 0.8) {
                 BV = 425.0;
@@ -229,28 +247,34 @@ public class GetDataAll {
             } else {
                 BV = 2 * (Soc * 100) + 260;
             }
-            double J_TotWhImp = PDC * (((double) interval) / 3600);//当前间隔充电消耗功率
-            dqrl = WHRtg * Soc - J_TotWhImp;
+
+            double J_TotWhImp = PAC * (((double) interval) / 3600);//当前电网侧间隔充电消耗功率
+            double J_TCkWh = PDC * (((double) interval) / 3600);//当前逆变器侧间隔充电消耗功率
+
+            dqrl = WHRtg * Soc - J_TCkWh;
             Soc = dqrl / WHRtg;
-            //更新累计值
+            //更新逆变器总充电电量
+            TCkWh += J_TCkWh;
+            mogo.updateEmulatorRegister(agentID, "TCkWh", TCkWh);
+            //更新电网累计值
             TotWhImp += J_TotWhImp;
             mogo.updateEmulatorRegister(agentID, "TotWhImp", TotWhImp);
-            //去内存获取当天情况
-            DDkWh += J_TotWhImp;//当天
-            mogo.updateEmulatorRegister(agentID, "DDkWh", DDkWh);
+
+            //去内存获取当天逆变器充电情况
+            DCkWh += J_TCkWh;//当天
+            mogo.updateEmulatorRegister(agentID, "DCkWh", DCkWh);
+            //当天电网
+            DWhImp+= J_TotWhImp;
+            mogo.updateEmulatorRegister(agentID, "DWhImp", DWhImp);
         }
         BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
-        TotWh = TotWhExp + TotWhImp;
-        TCkWh = -TotWhImp;//总充电电量
-        TDkWh = TotWhExp;//总放电 电量
+        TotWh = TotWhImp - TotWhExp;//Total Real Energy (当前)组合有功总电能
 
 
-        DWhImp = -DCkWh;
-        DWhExp = DDkWh;
+
         mogo.updateEmulatorRegister(agentID, "Soc", Soc);
         logger.debug(agentID + "存Soc值为:" + mogo.findEmulatorRegister(agentID, "Soc"));
         //逆变器
-
         data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 2));
         data120.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 2));
         data120.put(Values.BI, GttRetainValue.getRealVaule(BI, 2));

@@ -15,25 +15,6 @@ public class TestMethods {
 
     @Test
     public void testLogBack() {
-        for (Shrubbery s : Shrubbery.values()) {
-            //ordinal()方法返回一个int值,这是每个enum实例在声明时的次序,从0开始,
-            System.out.println(s + "ordinal:" + s.ordinal());
-            //Enum类实现呢Comparable接口
-            System.out.println(s.compareTo(Shrubbery.CRAWING) + "");
-            //编译器会自动帮你找到equals()和hashCode()方法
-            System.out.println(s.equals(Shrubbery.CRAWING) + "");
-            //可以用==来比较enum
-            System.out.println(s == Shrubbery.CRAWING);
-            //调用getDeclaringClass()这个方法就知道所属的enum类了
-            System.out.println(s.getDeclaringClass());
-            //name()方法返回enum实例声明时的名字,和toString()方法效果一样
-            System.out.println(s.name());
-
-            System.out.println("---------------------------------");
-        }
-        for (String s:"HANGING CRAWING GROUND".split(" ")){
-            Shrubbery shrub=Enum.valueOf(Shrubbery.class,s);
-            System.out.println(shrub);
-        }
+        System.out.println(((1.0 + Math.random() * (10.0 - 1.0 + 1.0)) / 100.0 + 0.75));
     }
 }
