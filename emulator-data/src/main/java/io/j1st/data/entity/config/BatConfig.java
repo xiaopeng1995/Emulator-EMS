@@ -15,9 +15,9 @@ public class BatConfig {
     //铭牌标识的DC存储总能量 A.h
     public final Double WHRtg = 30.0 + Ran;
     //uint16	W	Maximum rate of energy transfer into the storage device.最大充电功率
-    public final Double WMaxChaRte = -665.0 - Ran;
+    public final Double WMaxChaRte = -0.666;
     //uint16	W	Maximum rate of energy transfer out of the storage device.最大放电功率
-    public final Double WMaxDisChaRte = 999.0 + Ran;
+    public final Double WMaxDisChaRte = 1.0;
     //uint16	%WHRtg	Manufacturer maximum state of charge, expressed as a percentage.最大充电百分比
     public final Double SoCNpMaxPct = 0.95;
     //uint16	%WHRtg	Manufacturer minimum state of charge, expressed as a percentage.最小放电电百分比

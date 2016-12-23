@@ -50,6 +50,11 @@ public class DayJob implements Job {
                 is = mogo.updateEmulatorRegister(agentID, "DYield", 0.0);
                 if (is)
                     logger.debug(agentID + "_DYield PV已清零..");
+                //负载当天
+                is = mogo.updateEmulatorRegister(agentID, "loadDWhImp", 0.0);
+                if (is)
+                    logger.debug(agentID + "_loadDWhImp load已清零..");
+
             }
         }
     }

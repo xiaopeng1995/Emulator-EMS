@@ -374,7 +374,7 @@ public class Clculate {
         EMPara.put("HAKit", 3000.0);//厨房功率
         //电表读数
         EMPara.put("MeterIG", 1363.384);//电网初始EMPara.MeterIG = Number(id("MeterIG").value);
-        EMPara.put("MeterIU", 3590.045);//负载初始EMPara.MeterIU = Number(id("MeterIU").value);
+        EMPara.put("MeterIU", 0.045);//负载初始EMPara.MeterIU = Number(id("MeterIU").value);
     }
 
     private double valTrans(double num) {

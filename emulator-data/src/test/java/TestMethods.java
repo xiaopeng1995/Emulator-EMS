@@ -3,9 +3,13 @@
  */
 
 
+import io.j1st.util.util.GttRetainValue;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 enum Shrubbery {GROUND, CRAWING, HANGING}
@@ -15,6 +19,9 @@ public class TestMethods {
 
     @Test
     public void testLogBack() {
-        System.out.println(((1.0 + Math.random() * (10.0 - 1.0 + 1.0)) / 100.0 + 0.75));
+        double a=-0.65;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH");//可以方便地修改日期格式
+        String date = dateFormat.format(new Date());
+        System.out.println(date);
     }
 }
