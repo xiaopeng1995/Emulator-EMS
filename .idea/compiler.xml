@@ -25,6 +25,8 @@
       <module name="Emulator-EMS_test" target="1.5" />
       <module name="emulator-end_main" target="1.8" />
       <module name="emulator-end_test" target="1.8" />
+      <module name="emulator-http_main" target="1.8" />
+      <module name="emulator-http_test" target="1.8" />
       <module name="emulator-meter_main" target="1.8" />
       <module name="emulator-meter_test" target="1.8" />
       <module name="emulator-mongo_main" target="1.8" />

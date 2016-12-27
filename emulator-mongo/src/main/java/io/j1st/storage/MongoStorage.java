@@ -70,9 +70,9 @@ public class MongoStorage {
         this.database.getCollection("geetest_verifies").createIndex(ascending("datetime"), new IndexOptions().expireAfter(10L, TimeUnit.MINUTES));
         this.database.getCollection("event_logs").createIndex(ascending("action_date"), new IndexOptions().expireAfter(15L, TimeUnit.DAYS));
         this.database.getCollection("event_logs").createIndex(ascending("user_id", "product_id", "agent_id"));
-
+        //this.database.getCollection("emulator_datas").createIndex(ascending("eToday"), new IndexOptions().expireAfter(5L, TimeUnit.DAYS));
         //drop index(这里暂时没用，预留，当我们需要改变与时间相关的检索字段时，需要先删除再新建，删除的前提是检索字段已经存在，不存在会报错，慎改)
-        //this.database.getCollection("sms_verifies").dropIndex(ascending("mobile"));
+        //this.database.getCollection("power.emulator_register").dropIndex(descending("action_date_1"));
         //this.database.getCollection("mail_verifies").dropIndex(ascending("mail"));
         //this.database.getCollection("users").dropIndex(ascending("email"));
 
@@ -732,6 +732,17 @@ public class MongoStorage {
                         r.add(parseAgentDocument(d)));
         return r;
     }
+    /**
+     * 获取 采集器列表，根据产品Id
+     *
+     * @param id agentid
+     * @return 采集器的列表 Or Empty List
+     */
+    public Agent getAgentsById(ObjectId id) {
+        return parseAgentDocument(this.database.getCollection("agents")
+                .find(eq("_id", id)
+                ).first());
+    }
 
     /**
      * 获取 采集器列表，根据产品Id
@@ -985,22 +996,25 @@ public class MongoStorage {
      * @param genData GenData数据
      */
     public void addGenData(GenData genData) {
-        Document d = new Document();
-        d.append("state", genData.getState());
-        d.append("time", genData.getTime());
-        d.append("pVPower", genData.getpVPower());
-        d.append("eToday", genData.geteToday());
-        d.append("car1P", genData.getCar1P());
-        d.append("car1SOC", genData.getCar1SOC());
-        d.append("car2P", genData.getCar2P());
-        d.append("car2SOC", genData.getCar2SOC());
-        d.append("batP", genData.getBatP());
-        d.append("batSOC", genData.getBatSOC());
-        d.append("powerG", genData.getPowerG());
-        d.append("meterG", genData.getMeterG());
-        d.append("powerT", genData.getPowerT());
-        d.append("meterT", genData.getMeterT());
-        this.database.getCollection("emulator_datas").insertOne(d);
+        if(findGendDataByTime(genData.getTime(), 0)==null) {
+            System.out.println("添加数据..");
+            Document d = new Document();
+            d.append("state", genData.getState());
+            d.append("time", genData.getTime());
+            d.append("pVPower", genData.getpVPower());
+            d.append("eToday", genData.geteToday());
+            d.append("car1P", genData.getCar1P());
+            d.append("car1SOC", genData.getCar1SOC());
+            d.append("car2P", genData.getCar2P());
+            d.append("car2SOC", genData.getCar2SOC());
+            d.append("batP", genData.getBatP());
+            d.append("batSOC", genData.getBatSOC());
+            d.append("powerG", genData.getPowerG());
+            d.append("meterG", genData.getMeterG());
+            d.append("powerT", genData.getPowerT());
+            d.append("meterT", genData.getMeterT());
+            this.database.getCollection("emulator_datas").insertOne(d);
+        }
     }
 
     /**
@@ -1025,7 +1039,7 @@ public class MongoStorage {
         long count = 0;
         for (Document d : TDocument
                 ) {
-            if (Double.parseDouble(d.get("time").toString()) < Double.parseDouble(time))
+            if (Double.parseDouble(d.get("time").toString()) > Double.parseDouble(time))
                 count += this.database.getCollection("emulator_datas")
                         .deleteOne(eq("time", d.get("time")))
                         .getDeletedCount();
@@ -1059,8 +1073,18 @@ public class MongoStorage {
         try {
             data = this.database.getCollection("emulator_register")
                     .find(eq("agent_id", agentId)).first().get(key);
-        }catch (NullPointerException e)
-        {
+        } catch (NullPointerException e) {
+            data = null;
+        }
+        return data;
+    }
+
+    public Document findEmulatorDate(String agentId) {
+        Document data;
+        try {
+            data = this.database.getCollection("emulator_register")
+                    .find(eq("agent_id", agentId)).first();
+        } catch (NullPointerException e) {
             data = null;
         }
         return data;

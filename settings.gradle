@@ -3,4 +3,5 @@ include 'emulator-data'
 include 'emulator-util'
 include 'emulator-end'
 include 'emulator-mongo'
+include 'emulator-http'
 

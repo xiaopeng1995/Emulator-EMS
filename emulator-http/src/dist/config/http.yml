@@ -1,0 +1,36 @@
+# MQTT Http Interface configuration
+
+# Http
+
+# This is the server id, please make sure each server instance used a different id
+serverId: 110
+
+
+# DropWizard
+
+logging:
+  level: INFO
+  loggers:
+      "io.j1st": DEBUG
+  appenders:
+    - type: console
+      threshold: ALL
+      target: stdout
+      timeZone: Asia/Shanghai
+      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %c{20} - %msg%n %ex{full}"
+    - type: file
+      currentLogFilename: log/http.log
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: /log/http-%d.log
+      archivedFileCount: 5
+      timeZone: Asia/Shanghai
+      logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %c{20} - %msg%n %ex{full}"
+
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 8899

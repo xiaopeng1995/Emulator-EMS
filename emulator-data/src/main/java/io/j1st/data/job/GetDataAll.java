@@ -11,6 +11,7 @@ import io.j1st.util.entity.data.Values;
 import io.j1st.util.util.GttRetainValue;
 import io.j1st.util.util.JsonUtils;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -74,9 +75,13 @@ public class GetDataAll {
         /*信息打印*/
         logger.info(agentID + "本次间隔:" + interval + "秒");
         /* 结束 */
-
-        discharge(interval, startDate, agentID);
-        getPvData(agentID);
+        Date now1 = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmm");//可以方便地修改日期格式
+        String date = dateFormat.format(now1);
+        if (date.contains("0000"))
+            date = date.replace("0000", "0001");
+        discharge(interval, date, agentID);
+        getPvData(agentID,date);
 
         //填装数据
 
@@ -154,22 +159,12 @@ public class GetDataAll {
         return msg;
     }
 
-    private void discharge(long interval, long startDate, String agentID) {
+    private void discharge(long interval, String startDate, String agentID) {
         //负载
-        double ranl;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH");//可以方便地修改日期格式
-        int hh = Integer.parseInt(dateFormat.format(new Date()));
-        if (hh == 11 || hh == 12 || hh >= 18) {
-            double nn=Math.random() * 10;
-            if (nn > 5)
-                ranl = Math.random() * 10 > 5 ? 0.08 * Math.random() : 0.09 * Math.random();
-            else if(nn==4)
-                ranl = Math.random() * 10 > 5 ? 3 * Math.random() : 1 * Math.random();
-            else
-                ranl = Math.random() * 10 > 5 ? 0.9 * Math.random() : 1.6 * Math.random();
-        } else
-            ranl = Math.random() * 10 > 5 ? 0.033 * Math.random() : 0.01 * Math.random();
-        double loadW = 0.001 + ranl;
+
+        Document document = mogo.findGendDataByTime(startDate, 0);
+        double loadW = document.getDouble("powerT") / 1000;
+        System.out.println("loadW:"+loadW);
         Object num = mogo.findEmulatorRegister(agentID, "loadTotWhImp");
         double loadTotWhImp = (num == null ? 0.0 : (double) num + loadW);
         mogo.updateEmulatorRegister(agentID, "loadTotWhImp", loadTotWhImp);
@@ -338,37 +333,26 @@ public class GetDataAll {
 
     }
 
-    private void getPvData(String agentID) {
+    private void getPvData(String agentID,String date) {
 
-        Clculate clculate = new Clculate();
-        double Pac = ((double) clculate.TotalCalc().get("pVPower") / 1000);
+        Document document = mogo.findGendDataByTime(date, 0);
+        double Pac = (document.getDouble("pVPower") / 1000);
         data103.put(Values.Pac, GttRetainValue.getRealVaule(Pac, 1));
 
-        //去内存获取累计情况
-
-        Object num = mogo.findEmulatorRegister(agentID, "TYield");
-        double eToday = (double) clculate.TotalCalc().get("eToday");
-        double TYield = eToday;
-        if (num != null)
-            TYield += (double) num;
-        mogo.updateEmulatorRegister(agentID, "TYield", TYield);
-        //去内存获取当天情况
+        double eToday = document.getDouble("eToday");
+        int odlday=Integer.parseInt(date.substring(0,8))-1;
+        String odltime=odlday+"2359";
+        double TYield = mogo.findGendDataByTime(odltime, 0).getDouble("eToday")+eToday;
         double DYield = eToday;
-
-        num = mogo.findEmulatorRegister(agentID, "DYield");
-        if (num != null)
-            DYield += (double) num;
-        mogo.updateEmulatorRegister(agentID, "DYield", DYield);
-
         data103.put(Values.DYield, GttRetainValue.getRealVaule(DYield, 1));
         data103.put(Values.TYield, GttRetainValue.getRealVaule(TYield, 0));
     }
 
     private void getLoadData(double loadW, double loadTotWhImp, double loadDWhImp) {
 
-        data201.put(Values.W, loadW);
-        data201.put(Values.TotWhImp, loadTotWhImp);
-        data201.put(Values.DWhImp, loadDWhImp);
+        data201.put(Values.W, GttRetainValue.getRealVaule(loadW, 2));
+        data201.put(Values.TotWhImp, GttRetainValue.getRealVaule(loadTotWhImp, 2));
+        data201.put(Values.DWhImp, GttRetainValue.getRealVaule(loadDWhImp, 2));
     }
 
     private static Number getRealVaule(double value, int resLen) {

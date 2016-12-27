@@ -68,13 +68,20 @@ public class EmulatorApplication {
         quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
         //quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", dayJob.getClass(), "0 0 0 * * ?");
         String[] productIds = productIdConfig.getString("product_id").split("_");
+        String[] agentIds = productIdConfig.getString("agent_id").split("_");
         List<String> agentIdAll = new ArrayList<>();
-        for (String productId : productIds) {
-            List<Agent> agents = mogo.getAgentsByProductId(new ObjectId(productId));
+
+        int n = productIds.length > agentIds.length ? productIds.length : agentIds.length;
+        for (int i = 0; i < n; i++) {
+            List<Agent> agents = new ArrayList<>();
+            if (i < productIds.length)
+                agents = mogo.getAgentsByProductId(new ObjectId(productIds[i]));
+            if (i < agentIds.length)
+                agents.add(mogo.getAgentsById(new ObjectId(agentIds[i])));
             for (Agent agent : agents) {
                 String agentID = agent.getId().toString();
                 agentIdAll.add(agentID);
-                mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agentID, persistence);
+                mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agent.getId().toHexString(), persistence);
                 options = new MqttConnectOptions();
                 options.setUserName(agent.getId().toHexString());
                 options.setPassword(agent.getToken().toCharArray());

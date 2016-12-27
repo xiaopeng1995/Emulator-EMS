@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/emulator-data" />
             <option value="$PROJECT_DIR$/emulator-end" />
+            <option value="$PROJECT_DIR$/emulator-http" />
             <option value="$PROJECT_DIR$/emulator-mongo" />
             <option value="$PROJECT_DIR$/emulator-util" />
           </set>

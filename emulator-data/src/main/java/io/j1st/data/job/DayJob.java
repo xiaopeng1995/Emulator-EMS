@@ -9,6 +9,7 @@ import org.quartz.JobExecutionContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -54,7 +55,6 @@ public class DayJob implements Job {
                 is = mogo.updateEmulatorRegister(agentID, "loadDWhImp", 0.0);
                 if (is)
                     logger.debug(agentID + "_loadDWhImp load已清零..");
-
             }
         }
     }
