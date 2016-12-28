@@ -5,12 +5,16 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.UpdateOptions;
 import io.j1st.storage.entity.Product;
 import io.j1st.storage.entity.User;
+import io.j1st.storage.utils.DateUtils;
 import org.apache.commons.configuration.AbstractConfiguration;
 import org.apache.commons.lang3.StringUtils;
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.joda.time.DateTimeZone;
+
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -86,5 +90,42 @@ public class DataMongoStorage {
 
         return "成功删除: " + attributeCount + " 条agent attributes数据 "+agentLogs+" 条agent logs数据";
     }
+    /**
+     * 预测一天的pac数据
+     *
+     * @param agentId
+     * @param deviceSn
+     * @param type          硬件类型
+     * @param date          时间
+     * @param timeZone      时区
+     * @param key           当前毫秒数
+     * @param value         当前值
+     * @param dyield        一天的总值
+     */
+    public void updateAnalysisInfo(ObjectId agentId, String deviceSn, Integer type,Date date,DateTimeZone timeZone,
+                                   long key,double value,double dyield){
+        if(timeZone == null){
+            timeZone = DateTimeZone.getDefault();
+        }
+        Integer day = DateUtils.getIntDayForTimeZone(date, timeZone);
+        Document soid = new Document();
+        soid.append("device_sn", deviceSn);
+        soid.append("agent_id", agentId);
+        soid.append("type", type);
 
+        Document sd = new Document();
+        sd.append("updated_at",date);
+        sd.append("DYield",dyield);
+        sd.append("Pac."+key,value);
+
+        this.database.getCollection("ems_forecast_data")
+                .updateOne(and(eq("device_sn", deviceSn),
+                        eq("agent_id", agentId),
+                        eq("day", day)),
+                        new Document()
+                                .append("$set",sd)
+                                .append("$setOnInsert", soid),
+                        new UpdateOptions().upsert(true));
+
+    }
 }

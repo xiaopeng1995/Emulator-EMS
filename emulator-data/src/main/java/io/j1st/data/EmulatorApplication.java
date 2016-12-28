@@ -5,7 +5,9 @@ import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.DayJob;
 import io.j1st.data.job.Job;
 import io.j1st.data.mqtt.MqttConnThread;
+import io.j1st.data.predict.PVpredict;
 import io.j1st.data.quartz.QuartzManager;
+import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -18,6 +20,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -61,6 +65,10 @@ public class EmulatorApplication {
         //mongodb
         MongoStorage mogo = new MongoStorage();
         mogo.init(mongoConfig);
+        DataMongoStorage dmogo = new DataMongoStorage();
+        dmogo.init(mongoConfig);
+
+        Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
 //      //定时任务开始
         QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
@@ -68,7 +76,9 @@ public class EmulatorApplication {
         quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
         //quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", dayJob.getClass(), "0 0 0 * * ?");
         String[] productIds = productIdConfig.getString("product_id").split("_");
-        String[] agentIds = productIdConfig.getString("agent_id").split("_");
+        String[] agentIds = null;
+        if (productIdConfig.getString("agent_id") != null)
+            agentIds = productIdConfig.getString("agent_id").split("_");
         List<String> agentIdAll = new ArrayList<>();
 
         int n = productIds.length > agentIds.length ? productIds.length : agentIds.length;

@@ -75,6 +75,7 @@ public class MqttConnThread implements Callable {
                             //把新线程储存起来替换掉旧线程
                             Registry.INSTANCE.saveKey(AgentID + "_Job", threadnew);
                             logger.debug("开启新线程:{}", threadnew.getId());
+                            mogo.updateEmulatorRegister(AgentID,"jgtime",i*1.0);
                             logger.info(AgentID + "间隔已经恢复改为" + i + "秒");
                             //停掉旧的线程
                             thread.exit = true;  // 终止线程thread

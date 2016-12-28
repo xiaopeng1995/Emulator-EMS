@@ -81,7 +81,7 @@ public class GetDataAll {
         if (date.contains("0000"))
             date = date.replace("0000", "0001");
         discharge(interval, date, agentID);
-        getPvData(agentID,date);
+        getPvData(agentID, date);
 
         //填装数据
 
@@ -164,12 +164,16 @@ public class GetDataAll {
 
         Document document = mogo.findGendDataByTime(startDate, 0);
         double loadW = document.getDouble("powerT") / 1000;
-        System.out.println("loadW:"+loadW);
+        System.out.println("loadW:" + loadW);
+
+
+        Object time1 = mogo.findEmulatorRegister(agentID, "jgtime");
+        double jgtime = time1 == null ? 30 : (double) time1;
         Object num = mogo.findEmulatorRegister(agentID, "loadTotWhImp");
-        double loadTotWhImp = (num == null ? 0.0 : (double) num + loadW);
+        double loadTotWhImp = (num == null ? 0.0 : (double) num + loadW / (3600 / jgtime));
         mogo.updateEmulatorRegister(agentID, "loadTotWhImp", loadTotWhImp);
         num = mogo.findEmulatorRegister(agentID, "loadDWhImp");
-        double loadDWhImp = (num == null ? 0.0 : (double) num + loadW);
+        double loadDWhImp = (num == null ? 0.0 : (double) num + loadW / (3600 / jgtime));
         mogo.updateEmulatorRegister(agentID, "loadDWhImp", loadDWhImp);
         getLoadData(loadW, loadTotWhImp, loadDWhImp);
         //电网参数
@@ -333,17 +337,20 @@ public class GetDataAll {
 
     }
 
-    private void getPvData(String agentID,String date) {
+    private void getPvData(String agentID, String date) {
 
         Document document = mogo.findGendDataByTime(date, 0);
         double Pac = (document.getDouble("pVPower") / 1000);
         data103.put(Values.Pac, GttRetainValue.getRealVaule(Pac, 1));
 
         double eToday = document.getDouble("eToday");
-        int odlday=Integer.parseInt(date.substring(0,8))-1;
-        String odltime=odlday+"2359";
-        double TYield = mogo.findGendDataByTime(odltime, 0).getDouble("eToday")+eToday;
+        int odlday = Integer.parseInt(date.substring(0, 8)) - 1;
+        String odltime = odlday + "2359";
+        Object num = mogo.findEmulatorRegister(agentID, "TYield");
+        double TYield = num == null ? mogo.findGendDataByTime(odltime, 0).getDouble("eToday") + eToday : (double) num + eToday;
         double DYield = eToday;
+
+        mogo.updateEmulatorRegister(agentID, "DYield", DYield);
         data103.put(Values.DYield, GttRetainValue.getRealVaule(DYield, 1));
         data103.put(Values.TYield, GttRetainValue.getRealVaule(TYield, 0));
     }

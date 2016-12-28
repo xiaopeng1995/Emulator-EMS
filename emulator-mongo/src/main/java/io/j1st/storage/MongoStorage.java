@@ -9,6 +9,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.IndexOptions;
 import com.mongodb.client.model.UpdateOptions;
 import io.j1st.storage.entity.*;
+import io.j1st.storage.utils.DateUtils;
 import org.apache.commons.configuration.AbstractConfiguration;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.bson.Document;
@@ -70,9 +71,9 @@ public class MongoStorage {
         this.database.getCollection("geetest_verifies").createIndex(ascending("datetime"), new IndexOptions().expireAfter(10L, TimeUnit.MINUTES));
         this.database.getCollection("event_logs").createIndex(ascending("action_date"), new IndexOptions().expireAfter(15L, TimeUnit.DAYS));
         this.database.getCollection("event_logs").createIndex(ascending("user_id", "product_id", "agent_id"));
-        //this.database.getCollection("emulator_datas").createIndex(ascending("eToday"), new IndexOptions().expireAfter(5L, TimeUnit.DAYS));
+       // this.database.getCollection("emulator_datas").createIndex(ascending("test"), new IndexOptions().expireAfter(1L, TimeUnit.MINUTES));
         //drop index(这里暂时没用，预留，当我们需要改变与时间相关的检索字段时，需要先删除再新建，删除的前提是检索字段已经存在，不存在会报错，慎改)
-        //this.database.getCollection("power.emulator_register").dropIndex(descending("action_date_1"));
+        //this.database.getCollection("emulator_datas").dropIndex(ascending("test"));
         //this.database.getCollection("mail_verifies").dropIndex(ascending("mail"));
         //this.database.getCollection("users").dropIndex(ascending("email"));
 
@@ -732,6 +733,7 @@ public class MongoStorage {
                         r.add(parseAgentDocument(d)));
         return r;
     }
+
     /**
      * 获取 采集器列表，根据产品Id
      *
@@ -996,7 +998,7 @@ public class MongoStorage {
      * @param genData GenData数据
      */
     public void addGenData(GenData genData) {
-        if(findGendDataByTime(genData.getTime(), 0)==null) {
+        if (findGendDataByTime(genData.getTime(), 0) == null) {
             System.out.println("添加数据..");
             Document d = new Document();
             d.append("state", genData.getState());
@@ -1034,15 +1036,17 @@ public class MongoStorage {
      * @param time 时间
      * @return 受影响行数
      */
-    public long deleteDataByTime(String time) {
+    public long deleteDataByTime(String time, int is) {
         FindIterable<Document> TDocument = database.getCollection("emulator_datas").find();
         long count = 0;
         for (Document d : TDocument
                 ) {
-            if (Double.parseDouble(d.get("time").toString()) > Double.parseDouble(time))
+            if (Double.parseDouble(d.get("time").toString()) > Double.parseDouble(time) && is > 0
+                    || is == 0 && Double.parseDouble(d.get("time").toString()) < Double.parseDouble(time)) {
                 count += this.database.getCollection("emulator_datas")
                         .deleteOne(eq("time", d.get("time")))
                         .getDeletedCount();
+            }
         }
 
         return count;
@@ -1057,7 +1061,10 @@ public class MongoStorage {
      * @return
      */
     public boolean updateEmulatorRegister(String agentId, String key, Double value) {
-        return this.database.getCollection("emulator_register").updateOne(eq("agent_id", agentId), new Document("$set", new Document(key, value).append("updated_at", new Date()))
+        return this.database.getCollection("emulator_register")
+                .updateOne(eq("agent_id", agentId),
+                new Document("$set", new Document(key, value)
+                        .append("updated_at", new Date()))
                 , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
     }
 
@@ -1089,4 +1096,5 @@ public class MongoStorage {
         }
         return data;
     }
+
 }

@@ -37,7 +37,10 @@
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-
+    <logger name="io.j1st.data.predict" level="DBUG" additivity="false">
+        <appender-ref ref="Console"/>
+        <appender-ref ref="File"/>
+    </logger>
     <logger name="io.j1st.data.job" level="DBUG" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>

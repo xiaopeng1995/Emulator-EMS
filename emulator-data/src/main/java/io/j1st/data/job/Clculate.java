@@ -58,31 +58,31 @@ public class Clculate {
         int hh = Integer.parseInt(date.substring(8, 10));
         int mm = Integer.parseInt(date.substring(10, 12));
         double i = itv+ hh*60+mm;
-      //  for (double i = itv; i <= 1440; i += itv) {
-            CHour = (int) Math.floor(i / 60);
-            CMinute = (int) i % 60;
-            LC.put("PC", 0.0);
+        //  for (double i = itv; i <= 1440; i += itv) {
+        CHour = (int) Math.floor(i / 60);
+        CMinute = (int) i % 60;
+        LC.put("PC", 0.0);
 
-            GenPV(i);    // Must be first查
-            GenHA();//查
-            GenECar();//查
-            GenStorage(); // Policy adopted HERE!查
-            GenMeter();//查
-            // data.put("state", "policy");
-            data.put("time", DisplayTime());
-            data.put("pVPower", getRealVaule(LC.get("PVOut"), 1));
-            data.put("eToday", getRealVaule(LC.get("EToday"), 3));
-            data.put("car1P", getRealVaule(LC.get("CarPC"), 0));
-            data.put("car1SOC", getRealVaule(LC.get("CarSOC"), 2));
-            data.put("car2P", getRealVaule(LC.get("Car2PC"), 0));
-            data.put("car2SOC", getRealVaule(LC.get("Car2SOC"), 2));
-            data.put("batP", getRealVaule(LC.get("BattPC"), 0));
-            data.put("batSOC", getRealVaule(LC.get("BattSOC"), 2));
-            data.put("powerG", getRealVaule(LC.get("PowerG"), 0));
-            data.put("meterG", getRealVaule(LC.get("MeterG"), 2));
-            data.put("powerT", getRealVaule(LC.get("PowerU"), 0));
-            data.put("meterT", getRealVaule(LC.get("MeterU"), 2));
-       // }
+        GenPV(i);    // Must be first查
+        GenHA();//查
+        GenECar();//查
+        GenStorage(); // Policy adopted HERE!查
+        GenMeter();//查
+        // data.put("state", "policy");
+        data.put("time", DisplayTime());
+        data.put("pVPower", getRealVaule(LC.get("PVOut"), 1));
+        data.put("eToday", getRealVaule(LC.get("EToday"), 3));
+        data.put("car1P", getRealVaule(LC.get("CarPC"), 0));
+        data.put("car1SOC", getRealVaule(LC.get("CarSOC"), 2));
+        data.put("car2P", getRealVaule(LC.get("Car2PC"), 0));
+        data.put("car2SOC", getRealVaule(LC.get("Car2SOC"), 2));
+        data.put("batP", getRealVaule(LC.get("BattPC"), 0));
+        data.put("batSOC", getRealVaule(LC.get("BattSOC"), 2));
+        data.put("powerG", getRealVaule(LC.get("PowerG"), 0));
+        data.put("meterG", getRealVaule(LC.get("MeterG"), 2));
+        data.put("powerT", getRealVaule(LC.get("PowerU"), 0));
+        data.put("meterT", getRealVaule(LC.get("MeterU"), 2));
+        // }
         return data;
     }
 
@@ -377,7 +377,7 @@ public class Clculate {
         EMPara.put("MeterIU", 0.045);//负载初始EMPara.MeterIU = Number(id("MeterIU").value);
     }
 
-    private double valTrans(double num) {
+    public double valTrans(double num) {
         double ret = (9 - num) / 10;
         if (ret < 0.1) {
             ret = Math.pow(10, 4 * (ret - 0.1) - 1);
@@ -435,7 +435,7 @@ public class Clculate {
 
     }
 
-    private double GenRandom(double std, double vari, double type) {//查
+    public double GenRandom(double std, double vari, double type) {//查
         double ret = 0;
         if (type == 0) {
             return std - vari / 2 + Math.random() * vari;
@@ -454,7 +454,7 @@ public class Clculate {
     }
 
     private void InitData() {//查1
-        LC.put("EToday", 0.0);
+        LC.put("EToday", 0d);
         LC.put("PVOut", 0.0);
 
 //	LC.put("",0);atoTrans = EMPara.atoTrans;
@@ -648,7 +648,7 @@ public class Clculate {
         return 1 - AngleIn / 10;
     }
 
-    private double CalcAtoMass(double heightN) {
+    public double CalcAtoMass(double heightN) {
         double res;
         if (heightN > pi_v / 6) {
             res = 1.0 / Math.sin(heightN);

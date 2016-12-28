@@ -48,4 +48,8 @@ public class DateUtils {
         DateTime dt = new DateTime(date, timeZone);
         return fmt.print(dt);
     }
+    public static String getLongTimeForTimeZone(Date date, DateTimeZone timeZone) {
+        DateTime dt = new DateTime(date, timeZone);
+        return String.valueOf(dt.getMillis());
+    }
 }

@@ -72,9 +72,13 @@ public class GenDataAddUtil extends AbstractResource {
     @GET
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity findUntreated(@QueryParam("time") String time) {
-
-        return new ResultEntity<>("已经删除"+mongo.deleteDataByTime(time)+"行");
+    public ResultEntity findUntreated(@QueryParam("time") String time,
+                                      @QueryParam("is") @DefaultValue("0") int is) {
+        if(is>0)
+        logger.info("开始删除"+time+"之后数据111");
+        else
+            logger.info("开始删除"+time+"之前数据000");
+        return new ResultEntity<>("已经删除"+mongo.deleteDataByTime(time,is)+"行");
     }
 
 }

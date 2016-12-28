@@ -19,9 +19,7 @@ public class TestMethods {
 
     @Test
     public void testLogBack() {
-        double a=-0.65;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH");//可以方便地修改日期格式
-        String date = dateFormat.format(new Date());
-        System.out.println(date);
+        long a=Long.parseLong("1483027170000");
+        System.out.println(new java.util.Date(a));
     }
 }
