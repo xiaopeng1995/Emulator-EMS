@@ -92,7 +92,6 @@ public class Job extends Thread {
             }
             /*结束*/
             logger.debug("执行线程:" + super.getId());
-            logger.debug("内存中除配置文件外所有值 MAP:" + Registry.INSTANCE.getValue());
             MqttConnThread mqttConnThread;
             STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(agentId + "_STROAGE_002Config");
             Object batReceive = mogo.findEmulatorRegister(agentId, agentId + "120");

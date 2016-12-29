@@ -12,6 +12,7 @@ import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
 import io.j1st.storage.entity.GenData;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -96,7 +97,7 @@ public class EmulatorApplication {
                 options = new MqttConnectOptions();
                 options.setUserName(agent.getId().toHexString());
                 options.setPassword(agent.getToken().toCharArray());
-                Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
+               Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
                 Job thread = new Job(agentID, 30, "jsonUp", mogo, dmogo);
                 Registry.INSTANCE.startJob(thread);
                 Registry.INSTANCE.saveKey(agentID + "_Job", thread);

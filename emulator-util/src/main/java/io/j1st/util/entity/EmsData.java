@@ -11,6 +11,7 @@ public class EmsData {
     private String dsn;
     private String asn;
     private String type;
+    private String model;
 
     private Map values;
 
@@ -39,5 +40,13 @@ public class EmsData {
 
     public void setAsn(String asn) {
         this.asn = asn;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }

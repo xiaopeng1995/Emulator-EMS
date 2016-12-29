@@ -8,6 +8,7 @@ import java.util.Random;
  * 电池参数
  */
 public class BatConfig {
+
     //随机配置值
     public final Double Ran = GttRetainValue.getRealVaule(Math.random(), 3).doubleValue();
     //分布式能源设备类型。
@@ -27,6 +28,10 @@ public class BatConfig {
     //uint16	%WHRtg	Setpoint for minimum reserve for storage as a percentage of the nominal minimum storage.  实际使用的最小存储量，以标称存储总能量的百分比表示。
     public final Double MinRsvPct = 0.2;
     public final Double SoC = 0.58;
+    public final Double kWp = 30d;
+    public final Double MaxBatACha = -70.00;
+    public final Double MaxBatADischa = 70.00;
+    public final Double SoH = 0.99;
 
 
 }

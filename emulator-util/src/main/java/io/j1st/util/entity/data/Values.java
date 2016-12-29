@@ -66,6 +66,12 @@ public class Values {
     public static final String WarnV = "WarnV";//WarnV"="";         //警告码
     public static final String WarnD = "WarnD";//WarnD"="";         //警告描述
     public static final String WarnT = "WarnT";//WarnT"="";         //警告发送时间
+    public static final String BatSt = "BatSt";//State of the battery bank.  Enumeration. 系统状态标识位，0：未就绪，1：就绪
+    public static final String Vol = "Vol";//External Battery Voltage, DC Bus Voltage 充电电压
+    public static final String MaxBatACha = "MaxBatACha";//充电最大电流
+    public static final String MaxBatADischa = "MaxBatADischa";//放电最大电流
+    public static final String StrCur = "StrCur";// 总电流，大于0代表放电状态，小于0代表充电状态
+    public static final String SoH = "SoH";//健康状态，剩余电池寿命的百分比。
     //PV侧数据
     public static final String TYield = "TYield";
     public static final String Pac = "Pac";

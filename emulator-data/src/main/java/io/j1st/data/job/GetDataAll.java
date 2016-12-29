@@ -87,24 +87,29 @@ public class GetDataAll {
 
         //填装数据
 
-        emsData01.setType("120");
+        emsData01.setType("SUNS120");
         emsData01.setDsn(agentID + "120");
+        emsData01.setModel("SC36KTL-DO");
         emsData01.setValues(data120);
 
-        emsData02.setType("801");
+        emsData02.setType("SUNS801");
         emsData02.setDsn(agentID + "801");
+        emsData02.setModel("ZE60BATTERY");
         emsData02.setValues(data801);
 
-        gridData.setType("202");
+        gridData.setType("SUNS202");
         gridData.setDsn(agentID + "202");
+        gridData.setModel("ZEMETERG");
         gridData.setValues(data202);
 
-        loadData.setType("201");
+        loadData.setType("SUNS201");
         loadData.setDsn(agentID + "201");
+        loadData.setModel("ZEMETERL");
         loadData.setValues(data201);
 
-        pvData.setType("103");
+        pvData.setType("SUNS103");
         pvData.setDsn(agentID + "103");
+        pvData.setModel("SC30KTL-DO");
         pvData.setValues(data103);
 
         //packing
@@ -229,7 +234,7 @@ public class GetDataAll {
         double dqrl;//当前容量kw/h
         double BV;//电压
         double BI;// 电流
-        PAC = WHRtg * ((Reg12551 / 1000.0));//总功率*功率百分比   当前放电充电瞬时功率
+        PAC = STROAGE_002.kWp * ((Reg12551 / 1000.0));//总功率*功率百分比   当前放电充电瞬时功率
         W = -PAC + loadW;
         //储能放电
         if (PAC > 0 && Soc > STROAGE_002.SoCNpMinPct)//使用受到到放电功率计算
@@ -322,14 +327,13 @@ public class GetDataAll {
         data120.put(Values.TDkWh, GttRetainValue.getRealVaule(TDkWh, 2));
         data120.put(Values.DDkWh, GttRetainValue.getRealVaule(DDkWh, 2));
         //储能
-        data801.put(Values.WHRtg, GttRetainValue.getRealVaule(WHRtg, 2));
-        data801.put(Values.SoCNpMaxPct, STROAGE_002.SoCNpMaxPct);
-        data801.put(Values.SoCNpMinPct, STROAGE_002.SoCNpMinPct);
+        data801.put(Values.BatSt, 1);
+        data801.put(Values.Vol, GttRetainValue.getRealVaule(BV, 2));
+        data801.put(Values.MaxBatACha, STROAGE_002.MaxBatACha);
         data801.put(Values.SoC, GttRetainValue.getRealVaule(Soc, 2));
-        data801.put(Values.MaxRsvPct, GttRetainValue.getRealVaule(MaxRsvPct, 1));
-        data801.put(Values.MinRsvPct, GttRetainValue.getRealVaule(MinRsvPct, 1));
-        data801.put(Values.WMaxChaRte, GttRetainValue.getRealVaule(STROAGE_002.WMaxChaRte, 3));
-        data801.put(Values.WMaxDisChaRte, GttRetainValue.getRealVaule(STROAGE_002.WMaxDisChaRte, 3));
+        data801.put(Values.MaxBatADischa, STROAGE_002.MaxBatADischa);
+        data801.put(Values.StrCur, GttRetainValue.getRealVaule(BI, 2));
+        data801.put(Values.SoH, STROAGE_002.SoH);
         //电网电表
         data202.put(Values.DWhImp, GttRetainValue.getRealVaule(DWhImp, 2));
         data202.put(Values.DWhExp, GttRetainValue.getRealVaule(DWhExp, 2));

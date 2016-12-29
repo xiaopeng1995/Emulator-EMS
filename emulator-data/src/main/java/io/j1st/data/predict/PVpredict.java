@@ -175,7 +175,7 @@ public class PVpredict {
         EMPara.put("LatiN", 31.2 * pi_v / 180);
         EMPara.put("pVTiltN", 25d / 180 * pi_v);
         EMPara.put("pVAuziN", 0d / 180 * pi_v);
-        EMPara.put("PVPower", 3000.0);
+        EMPara.put("PVPower", 30000.0);
         double epv = 0;
         double eToday = 0;
         double pVOut = 0;
@@ -213,9 +213,9 @@ public class PVpredict {
                 ObjectId agentId = new ObjectId(agentid);
                 dataMongoStorage.updateAnalysisInfo(agentId, agentid + "103", 103, date, DateTimeZone.getDefault(), now, pVOut / 1000, eToday);
                 dataMongoStorage.updateAnalysisInfo(agentId, agentid + "103", 103, date, DateTimeZone.getDefault(), now + 30000, pVOut / 1000, eToday);
-               //load
-                dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now, W/1000, DWhlmp);
-                dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now+ 30000, W/1000, DWhlmp);
+                //load
+                dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now, W / 1000, DWhlmp);
+                dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now + 30000, W / 1000, DWhlmp);
             } else { //添加实时数据
                 GenData genData = new GenData();
                 genData.setpVPower(pVOut);
