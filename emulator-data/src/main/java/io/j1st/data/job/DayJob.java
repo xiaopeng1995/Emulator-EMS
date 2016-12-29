@@ -23,57 +23,17 @@ public class DayJob implements Job {
 
     @Override
     public void execute(JobExecutionContext context) {
-        MongoStorage mogo = (MongoStorage) Registry.INSTANCE.getValue().get("mogo");
         DataMongoStorage dmogo = (DataMongoStorage) Registry.INSTANCE.getValue().get("dmogo");
-        List<String> agentIds;
-        Object data = Registry.INSTANCE.getValue().get("agentIdAll");
-        if (data != null) {
-            logger.info("已到凌晨开始清零当天数据");
-            agentIds = (List<String>) data;
-            PVpredict p=new PVpredict(dmogo);
-            SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
-            String date = format.format(new Date());
-            for (String agentID : agentIds) {
-                try {
-                    p.PVInfo(date,agentID,agentID+"103");
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                boolean is;
-                //当天电网放电清零
-                is = mogo.updateEmulatorRegister(agentID, "DWhExp", 0.0);
-                if (is)
-                    logger.debug(agentID + "_DWhExp 电网放已清零..");
-                //当天逆变器放电清零
-                is = mogo.updateEmulatorRegister(agentID, "DCkWh", 0.0);
-                if (is)
-                    logger.debug(agentID + "_DCkWh 逆变器放已清零..");
-
-                //当天电网充电清零
-                is = mogo.updateEmulatorRegister(agentID, "DWhImp", 0.0);
-                if (is)
-                    logger.debug(agentID + "_DWhImp 电网充已清零..");
-                //当天逆变器充电清零
-                is = mogo.updateEmulatorRegister(agentID, "DDkWh", 0.0);
-                if (is)
-                    logger.debug(agentID + "_DDkWh 逆变器充已清零..");
-
-                //当天PV电量清零
-                is = mogo.updateEmulatorRegister(agentID, "DYield", 0.0);
-                if (is)
-                    logger.debug(agentID + "_DYield PV已清零..");
-                //负载当天
-                is = mogo.updateEmulatorRegister(agentID, "loadDWhImp", 0.0);
-                if (is)
-                    logger.debug(agentID + "_loadDWhImp load已清零..");
-                Object num=mogo.findEmulatorRegister(agentID,"TYield");
-                double TYield=num!=null?(double)num:0.0;
-                num=mogo.findEmulatorRegister(agentID,"DYield");
-                double DYield=num!=null?(double)num:0.0;
-                is = mogo.updateEmulatorRegister(agentID, "TYield", TYield+DYield);
-                if(is)
-                logger.debug(agentID + "TYield累加前一天.");
-            }
+        PVpredict p = new PVpredict(dmogo);
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+        String date = format.format(new Date());
+        date = date.substring(0, 8) + "000000";
+        logger.info("到凌晨添加实时数据");
+        try {
+            //添加实时数据
+            p.PVInfo(date, "5848cacedafbaf35325b70e0", 1);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 

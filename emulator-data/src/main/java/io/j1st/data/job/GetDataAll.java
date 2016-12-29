@@ -3,6 +3,7 @@ package io.j1st.data.job;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
+import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Value;
 import io.j1st.util.entity.EmsData;
@@ -26,6 +27,7 @@ public class GetDataAll {
     Logger logger = LoggerFactory.getLogger(GetDataAll.class);
     private BatConfig STROAGE_002;
     private MongoStorage mogo;
+    private DataMongoStorage dmogo = (DataMongoStorage) Registry.INSTANCE.getValue().get("dmogo");
 
     public GetDataAll(double Reg12551, BatConfig STROAGE_002, MongoStorage mogo) {
         this.Reg12551 = Reg12551;
@@ -106,11 +108,18 @@ public class GetDataAll {
         pvData.setValues(data103);
 
         //packing
-        Object datapacking = Registry.INSTANCE.getValue().get(agentID + "_packing");
+        Object datapacking = mogo.findEmulatorRegister(agentID, "packing");
         //对应类型120 810 202 201 130
         int[] packing = {1, 1, 1, 1, 1,};
-        if (datapacking != null)
-            packing = (int[]) datapacking;
+        if (datapacking != null) {
+            String datapackings = (String) datapacking;
+            String[] a = datapackings.split(",");
+            for (int i = 0; i < a.length; i++) {
+                packing[i] = Integer.parseInt(a[i]);
+            }
+        } else {
+            mogo.updateEmulatorRegister(agentID,"packing","1,1,1,1,1");
+        }
         if (packing[0] < 100) {
             for (int i = 0; i < packing[0]; i++) {
 
@@ -161,12 +170,10 @@ public class GetDataAll {
 
     private void discharge(long interval, String startDate, String agentID) {
         //负载
-
-        Document document = mogo.findGendDataByTime(startDate, 0);
-        double loadW = document.getDouble("powerT") / 1000;
-        System.out.println("loadW:" + loadW);
-
-
+        Document document = dmogo.findGendDataByTime(startDate, 0);
+        double loadW = 0.0;
+        if (document != null)
+            loadW = document.getDouble("powerT") / 1000;
         Object time1 = mogo.findEmulatorRegister(agentID, "jgtime");
         double jgtime = time1 == null ? 30 : (double) time1;
         Object num = mogo.findEmulatorRegister(agentID, "loadTotWhImp");
@@ -339,15 +346,18 @@ public class GetDataAll {
 
     private void getPvData(String agentID, String date) {
 
-        Document document = mogo.findGendDataByTime(date, 0);
-        double Pac = (document.getDouble("pVPower") / 1000);
+        Document document = dmogo.findGendDataByTime(date, 0);
+        double Pac = 0.0;
+        double eToday = 0.0;
+        if (document != null) {
+            Pac = (document.getDouble("pVPower") / 1000);
+            eToday = document.getDouble("eToday");
+        }
         data103.put(Values.Pac, GttRetainValue.getRealVaule(Pac, 1));
-
-        double eToday = document.getDouble("eToday");
         int odlday = Integer.parseInt(date.substring(0, 8)) - 1;
         String odltime = odlday + "2359";
         Object num = mogo.findEmulatorRegister(agentID, "TYield");
-        double TYield = num == null ? mogo.findGendDataByTime(odltime, 0).getDouble("eToday") + eToday : (double) num + eToday;
+        double TYield = num == null ? dmogo.findGendDataByTime(odltime, 0).getDouble("eToday") + eToday : (double) num + eToday;
         double DYield = eToday;
 
         mogo.updateEmulatorRegister(agentID, "DYield", DYield);

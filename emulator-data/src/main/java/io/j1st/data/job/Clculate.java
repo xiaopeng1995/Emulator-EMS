@@ -1,6 +1,10 @@
 package io.j1st.data.job;
 
 
+import io.j1st.storage.DataMongoStorage;
+import io.j1st.storage.utils.DateUtils;
+import org.bson.types.ObjectId;
+import org.joda.time.DateTimeZone;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class Clculate {
     private Logger logger = LoggerFactory.getLogger(Clculate.class);
+
     private double sunI0 = 1367.0;    // Sun radiation constant
     private double pi_v = Math.PI;
     private double policy = 0;
@@ -34,8 +39,8 @@ public class Clculate {
 
     private double ADEff = 0.85;
 
-    public Map TotalCalc() {
-        Map data = new HashMap<String, String>();
+    public List<Map<String,String>> TotalCalc() {
+        List<Map<String,String>> listMap = new ArrayList<>();
         SetPara();//查1
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmm");//可以方便地修改日期格式
         String date = dateFormat.format(new Date());
@@ -57,42 +62,51 @@ public class Clculate {
         InitData();//查1
         int hh = Integer.parseInt(date.substring(8, 10));
         int mm = Integer.parseInt(date.substring(10, 12));
-        double i = itv+ hh*60+mm;
-        //  for (double i = itv; i <= 1440; i += itv) {
-        CHour = (int) Math.floor(i / 60);
-        CMinute = (int) i % 60;
-        LC.put("PC", 0.0);
+        //int i = itv;
+        for (int i = 1; i <= 1440; i ++) {
+            Map<String,String> data = new HashMap<String, String>();
+            CHour = (int) Math.floor(i / 60);
+            CMinute = (int) i % 60;
+            LC.put("PC", 0.0);
 
-        GenPV(i);    // Must be first查
-        GenHA();//查
-        GenECar();//查
-        GenStorage(); // Policy adopted HERE!查
-        GenMeter();//查
-        // data.put("state", "policy");
-        data.put("time", DisplayTime());
-        data.put("pVPower", getRealVaule(LC.get("PVOut"), 1));
-        data.put("eToday", getRealVaule(LC.get("EToday"), 3));
-        data.put("car1P", getRealVaule(LC.get("CarPC"), 0));
-        data.put("car1SOC", getRealVaule(LC.get("CarSOC"), 2));
-        data.put("car2P", getRealVaule(LC.get("Car2PC"), 0));
-        data.put("car2SOC", getRealVaule(LC.get("Car2SOC"), 2));
-        data.put("batP", getRealVaule(LC.get("BattPC"), 0));
-        data.put("batSOC", getRealVaule(LC.get("BattSOC"), 2));
-        data.put("powerG", getRealVaule(LC.get("PowerG"), 0));
-        data.put("meterG", getRealVaule(LC.get("MeterG"), 2));
-        data.put("powerT", getRealVaule(LC.get("PowerU"), 0));
-        data.put("meterT", getRealVaule(LC.get("MeterU"), 2));
-        // }
-        return data;
+            GenPV(i);    // Must be first查
+            GenHA();//查
+            GenECar();//查
+            GenStorage(); // Policy adopted HERE!查
+            GenMeter();//查
+            // data.put("state", "policy");
+            data.put("time", DisplayTime());
+            data.put("pVPower", getRealVaule(LC.get("PVOut"), 1));
+            data.put("eToday", getRealVaule(LC.get("EToday"), 3));
+            data.put("car1P", getRealVaule(LC.get("CarPC"), 0));
+            data.put("car1SOC", getRealVaule(LC.get("CarSOC"), 2));
+            data.put("car2P", getRealVaule(LC.get("Car2PC"), 0));
+            data.put("car2SOC", getRealVaule(LC.get("Car2SOC"), 2));
+            data.put("batP", getRealVaule(LC.get("BattPC"), 0));
+            data.put("batSOC", getRealVaule(LC.get("BattSOC"), 2));
+            data.put("powerG", getRealVaule(LC.get("PowerG"), 0));
+            data.put("meterG", getRealVaule(LC.get("MeterG"), 2));
+            data.put("powerT", getRealVaule(LC.get("PowerU"), 0));
+            data.put("meterT", getRealVaule(LC.get("MeterU"), 2));
+            //System.out.println("powerT"+data.get("powerT"));
+            listMap.add(data);
+        }
+        return listMap;
     }
 
-    private static Number getRealVaule(double value, int resLen) {
-        if (resLen == 0)
+
+
+    private String getRealVaule(double value, int resLen) {
+        Number number = 0;
+        if (resLen == 0) {
             //原理:123.456*10=1234.56+5=1239.56/10=123
             //原理:123.556*10=1235.56+5=1240.56/10=124
-            return Math.round(value * 10 + 5) / 10;
+            number = Math.round(value * 10 + 5) / 10;
+            return number.toString();
+        }
         double db = Math.pow(10, resLen);
-        return Math.round(value * db) / db;
+        number = Math.round(value * db) / db;
+        return number.toString();
     }
 
     private String DisplayTime() {
@@ -454,7 +468,7 @@ public class Clculate {
     }
 
     private void InitData() {//查1
-        LC.put("EToday", 0d);
+        LC.put("EToday", 0.0);
         LC.put("PVOut", 0.0);
 
 //	LC.put("",0);atoTrans = EMPara.atoTrans;

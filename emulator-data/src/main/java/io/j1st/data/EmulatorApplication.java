@@ -10,6 +10,7 @@ import io.j1st.data.quartz.QuartzManager;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
+import io.j1st.storage.entity.GenData;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.bson.types.ObjectId;
 import org.eclipse.paho.client.mqttv3.MqttClient;
@@ -34,11 +35,6 @@ public class EmulatorApplication {
     private static final Logger logger = LoggerFactory.getLogger(EmulatorApplication.class);
 
     public static void main(String[] args) throws Exception {
-        logger.debug("Starting data emulator module ...");
-
-        // load config
-        logger.debug("Loading product id by config files ...");
-
         PropertiesConfiguration productIdConfig;
         PropertiesConfiguration mongoConfig;
         PropertiesConfiguration mqttConfig;
@@ -67,20 +63,25 @@ public class EmulatorApplication {
         mogo.init(mongoConfig);
         DataMongoStorage dmogo = new DataMongoStorage();
         dmogo.init(mongoConfig);
-
+//        PVpredict p = new PVpredict(dmogo);
+//        p.PVInfo("20161229000000", "5848cacedafbaf35325b70e0", 0);
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
-//      //定时任务开始
+        //定时任务开始
         QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
         //定时每天算当天功率0 0 0 * * ?
         quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
-        //quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", dayJob.getClass(), "0 0 0 * * ?");
-        String[] productIds = productIdConfig.getString("product_id").split("_");
+        String[] productIds = null;
         String[] agentIds = null;
-        if (productIdConfig.getString("agent_id") != null)
+        try {
+            productIds = productIdConfig.getString("product_id").split("_");
             agentIds = productIdConfig.getString("agent_id").split("_");
-        List<String> agentIdAll = new ArrayList<>();
+        } catch (NullPointerException e) {
+            productIds = productIds == null ? new String[0] : productIds;
+            agentIds = agentIds == null ? new String[0] : agentIds;
+        }
 
+        List<String> agentIdAll = new ArrayList<>();
         int n = productIds.length > agentIds.length ? productIds.length : agentIds.length;
         for (int i = 0; i < n; i++) {
             List<Agent> agents = new ArrayList<>();
@@ -96,11 +97,11 @@ public class EmulatorApplication {
                 options.setUserName(agent.getId().toHexString());
                 options.setPassword(agent.getToken().toCharArray());
                 Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
-                Job thread = new Job(agentID, 30, "jsonUp", mogo);
+                Job thread = new Job(agentID, 30, "jsonUp", mogo, dmogo);
                 Registry.INSTANCE.startJob(thread);
                 Registry.INSTANCE.saveKey(agentID + "_Job", thread);
                 //mqtt
-                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo);
+                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo, dmogo);
                 //保存mqtt连接信息
                 Registry.INSTANCE.saveSession(agentID, mqttConnThread);
                 //添加新线程到线程池

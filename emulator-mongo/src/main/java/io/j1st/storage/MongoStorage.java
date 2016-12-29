@@ -1060,7 +1060,7 @@ public class MongoStorage {
      * @param value   value
      * @return
      */
-    public boolean updateEmulatorRegister(String agentId, String key, Double value) {
+    public boolean updateEmulatorRegister(String agentId, String key, Object value) {
         return this.database.getCollection("emulator_register")
                 .updateOne(eq("agent_id", agentId),
                 new Document("$set", new Document(key, value)

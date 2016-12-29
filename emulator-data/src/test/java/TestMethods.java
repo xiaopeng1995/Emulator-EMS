@@ -3,6 +3,8 @@
  */
 
 
+import com.mongodb.connection.Cluster;
+import io.j1st.data.job.Clculate;
 import io.j1st.util.util.GttRetainValue;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -19,7 +21,8 @@ public class TestMethods {
 
     @Test
     public void testLogBack() {
-        long a=Long.parseLong("1483027170000");
-        System.out.println(new java.util.Date(a));
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+        String date = format.format(new Date());
+        System.out.println(date.substring(8));
     }
 }

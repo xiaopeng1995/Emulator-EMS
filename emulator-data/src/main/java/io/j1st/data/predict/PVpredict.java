@@ -3,6 +3,7 @@ package io.j1st.data.predict;
 import io.j1st.data.job.Clculate;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
+import io.j1st.storage.entity.GenData;
 import io.j1st.storage.utils.DateUtils;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTimeZone;
@@ -13,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -158,12 +160,15 @@ public class PVpredict {
         return aCloud;
     }
 
-    public void PVInfo(String tdate, String agentid, String dsn) throws ParseException {
+    public void PVInfo(String tdate, String agentid, int is) throws ParseException {
 
         Map<String, Double> EMPara = new HashMap<>();
+
         int CYear = Integer.parseInt(tdate.substring(0, 4));
         int CMonth = Integer.parseInt(tdate.substring(4, 6));
         int CDay = Integer.parseInt(tdate.substring(6, 8));
+        int CH = Integer.parseInt(tdate.substring(8, 10));
+        int CM = Integer.parseInt(tdate.substring(10, 12));
 
         double pi_v = Math.PI;
         EMPara.put("Long", 121.5);
@@ -181,10 +186,14 @@ public class PVpredict {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         Date date = format.parse(tdate);
         long now = Long.parseLong(DateUtils.getLongTimeForTimeZone(date, DateTimeZone.getDefault()));
+        //load数据获取
+        List<Map<String, String>> mapList = clculate.TotalCalc();
+        double DWhlmp = 0;
 
-        logger.debug("开始计算并添加一天的PV数据....");
+        String msg = is == 0 ? "预测000" : "实时111";
+        logger.debug("开始计算并添加一天的" + msg);
         //循环一天的每分钟
-        for (int i = 0; i < 1440; i++) {
+        for (int i = 0; i < mapList.size(); i++) {
             double b = pVOut;
             double k = clculate.GenRandom(0.5, 0.4, 0);
             double CHour = Math.floor(i / 60);
@@ -194,15 +203,65 @@ public class PVpredict {
             pVOut = CalcSolarPowerPredict(CYear, CMonth, CDay, CHour, CMinute, EMPara, atoTrans);
             epv = (b * k + pVOut * (1 - k)) * 1 / 60 / 1000;
             eToday += epv;
-
-            ObjectId agentId = new ObjectId(agentid);
-            String deviceSn = dsn;
-            //添加至数据库
-            dataMongoStorage.updateAnalysisInfo(agentId, deviceSn, 103, date, DateTimeZone.getDefault(), now, pVOut / 1000, eToday);
-            dataMongoStorage.updateAnalysisInfo(agentId, deviceSn, 103, date, DateTimeZone.getDefault(), now + 30000, pVOut / 1000, eToday);
-            System.out.println(pVOut + "\t" + eToday);
+            //load
+            double W = Integer.parseInt(mapList.get(i).get("powerT")) * 0.8;
+            double lepv = W / 60d / 1000d;
+            DWhlmp += lepv;
+            //添加至预测数据库
+            if (is == 0) {
+                //PV
+                ObjectId agentId = new ObjectId(agentid);
+                dataMongoStorage.updateAnalysisInfo(agentId, agentid + "103", 103, date, DateTimeZone.getDefault(), now, pVOut / 1000, eToday);
+                dataMongoStorage.updateAnalysisInfo(agentId, agentid + "103", 103, date, DateTimeZone.getDefault(), now + 30000, pVOut / 1000, eToday);
+               //load
+                dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now, W/1000, DWhlmp);
+                dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now+ 30000, W/1000, DWhlmp);
+            } else { //添加实时数据
+                GenData genData = new GenData();
+                genData.setpVPower(pVOut);
+                genData.seteToday(eToday);
+                genData.setPowerT(W);
+                int chh = i / 60;
+                String shhh = chh + "";
+                if (chh < 10)
+                    shhh = "0" + chh;
+                int cmm = i - chh * 60;
+                String smmm = cmm + "";
+                if (cmm < 10)
+                    smmm = "0" + cmm;
+                String stime = tdate.substring(0, 8) + shhh + smmm;
+                genData.setTime(stime);
+                dataMongoStorage.addGenData(genData);
+            }
             now += 60000;
         }
         logger.debug("已成功添加了一天的数据至数据库！");
     }
+//
+//    public void PowerTData(String tdate, String agentid, String dsn, int is) throws ParseException {
+//
+//
+//        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+//        String s = tdate;
+//        Date date = format.parse(s);
+//        long now = Long.parseLong(DateUtils.getLongTimeForTimeZone(date, DateTimeZone.getDefault()));
+//        ObjectId agentId = new ObjectId(agentid);
+//        String deviceSn = dsn;
+//        double k = clculate.GenRandom(0.5, 0.4, 0);
+//        double DWhlmp = 0;
+//        for (int i = 0; i < data.size(); i++) {
+//            System.out.println(data.get(i).get("powerT"));
+//            double W = Integer.parseInt(data.get(i).get("powerT"))*0.8;
+//            double epv = W / 60d / 1000d;
+//            DWhlmp += epv;
+//            if (is == 0)//预测
+//                dataMongoStorage.updatePowerT(agentId, deviceSn, "201", date, DateTimeZone.getDefault(), now, W, DWhlmp);
+//            else //实时
+//            {
+//
+//            }
+//            now += 60000;
+//
+//        }
+//    }
 }
