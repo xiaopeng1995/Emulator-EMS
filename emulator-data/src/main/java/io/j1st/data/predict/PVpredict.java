@@ -2,7 +2,6 @@ package io.j1st.data.predict;
 
 import io.j1st.data.job.Clculate;
 import io.j1st.storage.DataMongoStorage;
-import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.GenData;
 import io.j1st.storage.utils.DateUtils;
 import org.bson.types.ObjectId;

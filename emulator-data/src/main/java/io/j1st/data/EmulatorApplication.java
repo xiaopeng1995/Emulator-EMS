@@ -5,14 +5,14 @@ import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.DayJob;
 import io.j1st.data.job.Job;
 import io.j1st.data.mqtt.MqttConnThread;
-import io.j1st.data.predict.PVpredict;
+
 import io.j1st.data.quartz.QuartzManager;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
-import io.j1st.storage.entity.GenData;
+
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.bson.Document;
+
 import org.bson.types.ObjectId;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -22,8 +22,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -97,7 +95,7 @@ public class EmulatorApplication {
                 options = new MqttConnectOptions();
                 options.setUserName(agent.getId().toHexString());
                 options.setPassword(agent.getToken().toCharArray());
-               Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
+                Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
                 Job thread = new Job(agentID, 30, "jsonUp", mogo, dmogo);
                 Registry.INSTANCE.startJob(thread);
                 Registry.INSTANCE.saveKey(agentID + "_Job", thread);
