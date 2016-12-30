@@ -96,7 +96,12 @@ public class DataMongoStorage {
 
         return "成功删除: " + attributeCount + " 条agent attributes数据 " + agentLogs + " 条agent logs数据";
     }
-
+    //是否添加预测数据
+    public Boolean findycdata(String agentId,Integer day)
+    {
+        return this.database.getCollection("ems_forecast_data")
+                .find(and(eq("agent_id", new ObjectId(agentId)),eq("day", day))).first()==null;
+    }
 
     /**
      * 预测一天的pac数据

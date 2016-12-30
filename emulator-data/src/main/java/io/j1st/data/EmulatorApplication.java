@@ -6,6 +6,7 @@ import io.j1st.data.job.DayJob;
 import io.j1st.data.job.Job;
 import io.j1st.data.mqtt.MqttConnThread;
 
+import io.j1st.data.predict.PVpredict;
 import io.j1st.data.quartz.QuartzManager;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
@@ -63,7 +64,7 @@ public class EmulatorApplication {
         DataMongoStorage dmogo = new DataMongoStorage();
         dmogo.init(mongoConfig);
 //        PVpredict p = new PVpredict(dmogo);
-//        p.PVInfo("20161229000000", "5848cacedafbaf35325b70e0", 0);
+//        p.PVInfo("20161228000000", "5848cacedafbaf35325b70e0", 1);
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
         //定时任务开始

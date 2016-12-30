@@ -123,7 +123,7 @@ public class GetDataAll {
                 packing[i] = Integer.parseInt(a[i]);
             }
         } else {
-            mogo.updateEmulatorRegister(agentID,"packing","1,1,1,1,1");
+            mogo.updateEmulatorRegister(agentID, "packing", "1,1,1,1,1");
         }
         if (packing[0] < 100) {
             for (int i = 0; i < packing[0]; i++) {
@@ -131,7 +131,7 @@ public class GetDataAll {
                 datas.add(emsData01);
             }
         } else { //告警数据
-            getAlarm(packing[0], agentID, "120", data120);
+            getAlarm(packing[0], agentID, "SUNS120", "SC36KTL-DO", data120);
         }
 
         if (packing[1] < 100) {
@@ -139,7 +139,7 @@ public class GetDataAll {
                 datas.add(emsData02);
             }
         } else {//告警数据
-            getAlarm(packing[1], agentID, "801", data801);
+            getAlarm(packing[1], agentID, "SUNS801", "ZE60BATTERY", data801);
         }
 
         if (packing[2] < 100) {
@@ -147,21 +147,21 @@ public class GetDataAll {
                 datas.add(gridData);
             }
         } else {//告警数据
-            getAlarm(packing[2], agentID, "202", data202);
+            getAlarm(packing[2], agentID, "SUNS202", "ZEMETERG", data202);
         }
         if (packing[3] < 100) {
             for (int i = 0; i < packing[3]; i++) {
                 datas.add(loadData);
             }
         } else {//告警数据
-            getAlarm(packing[3], agentID, "201", data201);
+            getAlarm(packing[3], agentID, "SUNS201", "ZEMETERL", data201);
         }
         if (packing[4] < 100) {
             for (int i = 0; i < packing[4]; i++) {
                 datas.add(pvData);
             }
         } else {//告警数据
-            getAlarm(packing[4], agentID, "103", data103);
+            getAlarm(packing[4], agentID, "SUNS103", "SC30KTL-DO", data103);
         }
 
         String msg = null;
@@ -361,7 +361,7 @@ public class GetDataAll {
         int odlday = Integer.parseInt(date.substring(0, 8)) - 1;
         String odltime = odlday + "2359";
         Object num = mogo.findEmulatorRegister(agentID, "TYield");
-        double TYield = num == null ? dmogo.findGendDataByTime(odltime, 0).getDouble("eToday") + eToday : (double) num + eToday;
+        double TYield = num == null ? eToday : (double) num + eToday;
         double DYield = eToday;
 
         mogo.updateEmulatorRegister(agentID, "DYield", DYield);
@@ -385,7 +385,7 @@ public class GetDataAll {
         return Math.round(value * db) / db;
     }
 
-    private void getAlarm(int number, String agentID, String type, Map<String, Object> data) {
+    private void getAlarm(int number, String agentID, String type, String model, Map<String, Object> data) {
         //告警参数
         Map<String, Object> noDevice = new HashMap<>();
         EmsData device = new EmsData();
@@ -398,12 +398,13 @@ public class GetDataAll {
 
 
         } else if (number == 102) {//Device disconnect（Node通讯异常）
-            noDevice.put(Values.WarnV, "101");
+            noDevice.put(Values.WarnV, "102");
             noDevice.put(Values.WarnD, "Device communication is lost");
             noDevice.put(Values.WarnT, "待定");
             device.setValues(noDevice);
             device.setDsn(agentID + type);
             device.setType(type);
+            device.setModel(model);
 
         } else if (number == 103) {//Device fault（Node运行出现错误）
             data.put(Values.FaultV, "103");
@@ -412,15 +413,16 @@ public class GetDataAll {
             device.setValues(data);
             device.setDsn(agentID + type);
             device.setType(type);
-
+            device.setModel(model);
 
         } else if (number == 104) {//Device warning （Node运行出现警告）
-            data.put(Values.WarnV, "101");
+            data.put(Values.WarnV, "la104");
             data.put(Values.WarnD, "Device communication is lost");
             data.put(Values.WarnT, "待定");
             device.setValues(data);
             device.setDsn(agentID + type);
             device.setType(type);
+            device.setModel(model);
 
         }
         datas.add(device);

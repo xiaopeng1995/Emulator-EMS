@@ -23,6 +23,6 @@ public class TestMethods {
     public void testLogBack() {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         String date = format.format(new Date());
-        System.out.println(date.substring(8));
+        System.out.println(date.substring(8,12));
     }
 }
