@@ -12,8 +12,6 @@ import org.slf4j.LoggerFactory;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.Callable;
-import java.util.jar.Pack200;
 
 /**
  * 单线程工作任务,模拟单个ems系统数据
