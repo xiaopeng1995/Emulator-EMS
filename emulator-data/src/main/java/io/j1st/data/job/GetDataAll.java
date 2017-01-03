@@ -359,7 +359,6 @@ public class GetDataAll {
         }
         data103.put(Values.Pac, GttRetainValue.getRealVaule(Pac, 1));
         int odlday = Integer.parseInt(date.substring(0, 8)) - 1;
-        String odltime = odlday + "2359";
         Object num = mogo.findEmulatorRegister(agentID, "TYield");
         double TYield = num == null ? eToday : (double) num + eToday;
         double DYield = eToday;

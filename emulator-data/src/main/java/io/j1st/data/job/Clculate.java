@@ -39,15 +39,21 @@ public class Clculate {
 
     private double ADEff = 0.85;
 
-    public List<Map<String,String>> TotalCalc() {
-        List<Map<String,String>> listMap = new ArrayList<>();
+    public List<Map<String, String>> TotalCalc() {
+        List<Map<String, String>> listMap = new ArrayList<>();
         SetPara();//查1
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmm");//可以方便地修改日期格式
         String date = dateFormat.format(new Date());
         CYear = Integer.parseInt(date.substring(0, 4));
         CMonth = Integer.parseInt(date.substring(4, 6));
         CDay = Integer.parseInt(date.substring(6, 8));
-        String strDate = CYear + "" + CMonth + "" + CDay;
+        String strDate;
+        if (CMonth < 10)
+            strDate = CYear + "0" + CMonth + "" + CDay;
+        if (CDay < 10)
+            strDate = CYear + "" + CMonth + "0" + CDay;
+        else
+            strDate = CYear + "" + CMonth + "" + CDay;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         Calendar calendar = new GregorianCalendar();
         Date date1 = null;
@@ -63,8 +69,8 @@ public class Clculate {
         int hh = Integer.parseInt(date.substring(8, 10));
         int mm = Integer.parseInt(date.substring(10, 12));
         //int i = itv;
-        for (int i = 1; i <= 1440; i ++) {
-            Map<String,String> data = new HashMap<String, String>();
+        for (int i = 1; i <= 1440; i++) {
+            Map<String, String> data = new HashMap<String, String>();
             CHour = (int) Math.floor(i / 60);
             CMinute = (int) i % 60;
             LC.put("PC", 0.0);
@@ -93,7 +99,6 @@ public class Clculate {
         }
         return listMap;
     }
-
 
 
     private String getRealVaule(double value, int resLen) {
@@ -570,7 +575,7 @@ public class Clculate {
 
     private void InitPVData() {//查12
         for (int i = 0; i <= 1440; i++) {
-            CHour =  (int)Math.floor(i / 60);
+            CHour = (int) Math.floor(i / 60);
             CMinute = i % 60;
 
             LC.put("atoTrans", aCloud[i]);

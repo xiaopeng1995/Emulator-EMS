@@ -105,12 +105,6 @@ public class MqttConnThread implements Callable {
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
                             String dataqc = bbc.get(0).get("packs").toString();
-//                            String[] a = dataqc.split(",");
-//                            int[] packs = new int[5];
-//                            for (int i = 0; i < a.length; i++) {
-//                                packs[i] = Integer.parseInt(a[i]);
-//                            }
-                            //Registry.INSTANCE.saveKey(AgentID + "_packing", packs);
                             mogo.updateEmulatorRegister(AgentID, "packing", dataqc);
                         } else {
                             logger.error("错误格式");

@@ -23,6 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -63,8 +64,6 @@ public class EmulatorApplication {
         mogo.init(mongoConfig);
         DataMongoStorage dmogo = new DataMongoStorage();
         dmogo.init(mongoConfig);
-//        PVpredict p = new PVpredict(dmogo);
-//        p.PVInfo("20161228000000", "5848cacedafbaf35325b70e0", 1);
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
         //定时任务开始
@@ -80,7 +79,8 @@ public class EmulatorApplication {
             productIds = productIds == null ? new String[0] : productIds;
             agentIds = agentIds == null ? new String[0] : agentIds;
         }
-
+        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+        String date = format.format(new Date());
         List<String> agentIdAll = new ArrayList<>();
         int n = productIds.length > agentIds.length ? productIds.length : agentIds.length;
         for (int i = 0; i < n; i++) {
@@ -96,6 +96,11 @@ public class EmulatorApplication {
                 options = new MqttConnectOptions();
                 options.setUserName(agent.getId().toHexString());
                 options.setPassword(agent.getToken().toCharArray());
+                //添加预测数据
+                if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
+                    PVpredict p = new PVpredict(dmogo);
+                    p.PVInfo(date.substring(0, 8) + "000000", agentID, 0);
+                }
                 Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
                 Job thread = new Job(agentID, 30, "jsonUp", mogo, dmogo);
                 Registry.INSTANCE.startJob(thread);
@@ -114,5 +119,6 @@ public class EmulatorApplication {
         Registry.INSTANCE.saveKey("agentIdAll", agentIdAll);
         //起点时间
         Registry.INSTANCE.saveKey("startDate", new Date().getTime());
+        logger.info("Service has been ready!");
     }
 }
