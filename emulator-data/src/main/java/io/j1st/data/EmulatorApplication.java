@@ -49,13 +49,12 @@ public class EmulatorApplication {
 
 
         } else {
-            productIdConfig = new PropertiesConfiguration("config/product.properties");
+            productIdConfig = new PropertiesConfiguration("config/product_agent.properties");
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
             mqttConfig = new PropertiesConfiguration("config/mqtt.properties");
             quartzConfig = new PropertiesConfiguration("config/quartz.properties");
         }
-        // Mqtt
-
+        //mqtt
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
         MqttConnectOptions options;
@@ -64,25 +63,34 @@ public class EmulatorApplication {
         mogo.init(mongoConfig);
         DataMongoStorage dmogo = new DataMongoStorage();
         dmogo.init(mongoConfig);
+        //
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
-        //定时任务开始
+        //timing thread (Trigger twelve o 'clock every day)
         QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
-        //定时每天算当天功率0 0 0 * * ?
         quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
         String[] productIds = null;
         String[] agentIds = null;
         try {
-            productIds = productIdConfig.getString("product_id").split("_");
             agentIds = productIdConfig.getString("agent_id").split("_");
         } catch (NullPointerException e) {
-            productIds = productIds == null ? new String[0] : productIds;
             agentIds = agentIds == null ? new String[0] : agentIds;
         }
+        try {
+            productIds = productIdConfig.getString("product_id").split("_");
+        } catch (NullPointerException e) {
+            productIds = productIds == null ? new String[0] : productIds;
+
+        }
+        PVpredict pVpredict = new PVpredict(dmogo);
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         String date = format.format(new Date());
+        //add now data
+        if (dmogo.findGendDataByTime(date.substring(0, 8) + "0001", 0) == null)
+            pVpredict.PVInfo(date.substring(0, 8) + "000000", "dfds", 1, pvcloud());
         List<String> agentIdAll = new ArrayList<>();
         int n = productIds.length > agentIds.length ? productIds.length : agentIds.length;
+        int agunt = 0;
         for (int i = 0; i < n; i++) {
             List<Agent> agents = new ArrayList<>();
             if (i < productIds.length)
@@ -90,35 +98,57 @@ public class EmulatorApplication {
             if (i < agentIds.length)
                 agents.add(mogo.getAgentsById(new ObjectId(agentIds[i])));
             for (Agent agent : agents) {
+                agunt++;
                 String agentID = agent.getId().toString();
                 agentIdAll.add(agentID);
                 mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agent.getId().toHexString(), persistence);
                 options = new MqttConnectOptions();
                 options.setUserName(agent.getId().toHexString());
                 options.setPassword(agent.getToken().toCharArray());
-                //添加预测数据
+                //add predict data
                 if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
-                    PVpredict p = new PVpredict(dmogo);
-                    p.PVInfo(date.substring(0, 8) + "000000", agentID, 0);
+                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, pvcloud());
+
                 }
+
+                //save a job config
                 Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
+                //mqtt
+                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo, dmogo);
+                //seve mqtt info
+                Registry.INSTANCE.saveSession(agentID, mqttConnThread);
+                //add a agent mqtt Send and receive sever
+                Registry.INSTANCE.startThread(mqttConnThread);
+                //save start time
+                Registry.INSTANCE.saveKey(agentID + "_date", new Date().getTime());
+                Thread.sleep(90);
+                //start a job thread
                 Job thread = new Job(agentID, 30, "jsonUp", mogo, dmogo);
                 Registry.INSTANCE.startJob(thread);
                 Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                //mqtt
-                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo, dmogo);
-                //保存mqtt连接信息
-                Registry.INSTANCE.saveSession(agentID, mqttConnThread);
-                //添加新线程到线程池
-                Registry.INSTANCE.startThread(mqttConnThread);
-                //保存启动时间
-                Registry.INSTANCE.saveKey(agentID + "_date", new Date().getTime());
-                Thread.sleep(80);
+                logger.debug(agentID + "准备成功开始上传数据..");
             }
         }
         Registry.INSTANCE.saveKey("agentIdAll", agentIdAll);
         //起点时间
         Registry.INSTANCE.saveKey("startDate", new Date().getTime());
-        logger.info("Service has been ready!");
+        logger.info("启动完毕,本次启动共{}个Agent任务", agunt);
+    }
+
+    //太阳能云因子
+    private static int[] pvcloud() {
+        int[] cCloud = new int[8];
+        int ran = (int) (Math.random() * 10);
+        cCloud[0] = ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 4;
+        cCloud[1] = ran > 5 ? 3 : ran > 3 ? 2 : ran > 2 ? 1 : 5;
+        cCloud[2] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 3;
+        ran = (int) (Math.random() * 10);
+        cCloud[3] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 3 : 2;
+        cCloud[4] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 3;
+        cCloud[5] = ran > 5 ? 6 : ran > 3 ? 5 : ran > 2 ? 4 : 7;
+        ran = (int) (Math.random() * 10);
+        cCloud[6] = ran > 5 ? 6 : ran > 3 ? 5 : ran > 2 ? 4 : 3;
+        cCloud[7] = ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 1 : 2;
+        return cCloud;
     }
 }

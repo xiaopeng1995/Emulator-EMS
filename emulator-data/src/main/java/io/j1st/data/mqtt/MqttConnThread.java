@@ -29,9 +29,11 @@ public class MqttConnThread implements Callable {
 
     // Mqtt Connect Options
     private MqttConnectOptions options;
-    //定时任务修改
+
+    //Timing task changes
     private Job quartzManager;
-    //数据持久操作
+
+    //Data persistence operations
     private MongoStorage mogo;
     private DataMongoStorage dmogo;
 
@@ -51,7 +53,7 @@ public class MqttConnThread implements Callable {
             mqttClient.connect(options);
             mqttClient.setTimeToWait(200);
 
-            //判断客户端是否连接上
+            //Whether the client connection
             if (mqttClient.isConnected()) {
                 mqttClient.setCallback(new MqttCallback() {
 
@@ -70,19 +72,22 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc = (List<Map>) msgData.get("Query");
                             int d = (Integer) bbc.get(0).get("D");
                             int i = (Integer) bbc.get(0).get("I");
-                            Job thread = (Job) Registry.INSTANCE.getValue().get(AgentID + "_Job");
+                            Object  oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
+                            // 如果有停掉旧的线程
+                            if (oldjob != null) {
+                                Job thread = (Job) Registry.INSTANCE.getValue().get(AgentID + "_Job");
+                                thread.exit = true;  // 终止线程thread
+                                thread.join();
+                            }
                             //开启新的线程
                             Thread.sleep(d * 1000);
                             Job threadnew = new Job(AgentID, i, "systemQuery", mogo, dmogo);
                             Registry.INSTANCE.startJob(threadnew);
-                            //把新线程储存起来替换掉旧线程
+                            //更新内存线程池中线程
                             Registry.INSTANCE.saveKey(AgentID + "_Job", threadnew);
-                            logger.debug("开启新线程:{}", threadnew.getId());
+                            logger.debug(AgentID + "开启新上传工作线程:{}", threadnew.getId());
                             mogo.updateEmulatorRegister(AgentID, "jgtime", i * 1.0);
                             logger.info(AgentID + "间隔已经恢复改为" + i + "秒");
-                            //停掉旧的线程
-                            thread.exit = true;  // 终止线程thread
-                            thread.join();
 
                         } else if (msgData.keySet().toString().contains("SetMHReg")) {
                             List<Map> bbc = (List<Map>) msgData.get("SetMHReg");
@@ -114,7 +119,7 @@ public class MqttConnThread implements Callable {
 
                     @Override
                     public void deliveryComplete(IMqttDeliveryToken token) {
-                        logger.debug("数据已发送");
+                        logger.debug(mqttClient.getClientId() + ":数据发送成功!");
                     }
                 });
 

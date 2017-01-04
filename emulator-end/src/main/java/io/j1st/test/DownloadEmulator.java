@@ -31,8 +31,8 @@ public class DownloadEmulator {
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
         MqttConnectOptions options;
-        String agentid = "5865c375dafbaf52d3fb21ee";
-        int type=1;
+        String agentid = "586b617fdafbaf65c5ef2dd6";
+        int type = 1;
         mqtt = new MqttClient("tcp://139.196.230.150:1883", new ObjectId("58340c81dafbaf5bf5b95cd6").toHexString(), persistence);
         options = new MqttConnectOptions();
         options.setUserName(new ObjectId("58340c81dafbaf5bf5b95cd6").toHexString());
@@ -57,12 +57,10 @@ public class DownloadEmulator {
         String batReceivemsg = JsonUtils.Mapper.writeValueAsString(batReceive);
         String payloadmsg = JsonUtils.Mapper.writeValueAsString(payload);
 
-        if(type==1)
-        {
-            payloadmsg=batReceivemsg;
+        if (type == 1) {
+            payloadmsg = batReceivemsg;
             logger.info("batReceivemsg\n" + batReceivemsg);
-        }else
-        {
+        } else {
             logger.info("payloadmsg\n" + payloadmsg);
         }
         mqtt.publish("agents/" + agentid + "/downstream", new MqttMessage(payloadmsg.getBytes("utf-8")));
@@ -77,7 +75,7 @@ public class DownloadEmulator {
 
                 @Override
                 public void messageArrived(String topic, MqttMessage message) throws Exception {
-                    logger.debug( "收到的消息为：" + message.toString());
+                    logger.debug("收到的消息为：" + message.toString());
                 }
 
                 @Override
@@ -85,9 +83,9 @@ public class DownloadEmulator {
                     logger.debug("数据已发送");
                 }
             });
-        }else {
+        } else {
             logger.info("no server");
         }
-
+        return;
     }
 }

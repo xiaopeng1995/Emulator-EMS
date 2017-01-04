@@ -40,6 +40,9 @@ public class Job extends Thread {
         String topic;
         while (!exit) {
             //定时任务
+            logger.debug(agentId + "执行线程:" + super.getId());
+            MqttConnThread mqttConnThread;
+            //添加预测数据
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
             String date = format.format(new Date());
             //零点开始
@@ -85,15 +88,14 @@ public class Job extends Thread {
                             logger.debug(agentId + "TYield累加前一天.");
                         //添加预测数据
                         PVpredict p = new PVpredict(dmogo);
-                        p.PVInfo(date, agentId, 0);
+                        p.PVInfo(date, agentId, 0,pvcloud());
                     }
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
             }
             /*结束*/
-            logger.debug("执行线程:" + super.getId());
-            MqttConnThread mqttConnThread;
+
             STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(agentId + "_STROAGE_002Config");
             Object batReceive = mogo.findEmulatorRegister(agentId, agentId + "120");
             if (batReceive != null) {
@@ -111,7 +113,7 @@ public class Job extends Thread {
                 //更新间隔时间
                 Registry.INSTANCE.saveKey(agentId + "_date", new Date().getTime());
             } else {
-                logger.info("MQTT链接信息错误,链接失败");
+                logger.info(agentId + "MQTT链接信息错误,链接失败");
                 logger.debug(agentId + "发送的数据为：" + msg);
             }
             try {
@@ -121,14 +123,32 @@ public class Job extends Thread {
             }
 
         }
-        logger.debug("旧线程:" + super.getId() + "已退出!");
+        logger.debug(agentId + "旧上传工作线程:" + super.getId() + "已退出!");
+        return;
     }
 
     /**
      * Get Topic
      */
     private String getTopic(String agentId) {
-        logger.debug("Topic:{}", topic);
+        logger.debug(agentId + " Topic:{}", topic);
         return "agents/" + agentId + "/" + topic;
+    }
+    //太阳能云因子
+    private static int[] pvcloud()
+    {
+        int [] cCloud=new int[8];
+        int ran=(int)(Math.random()*10);
+        cCloud[0]=ran>5?1:ran>3?2:ran>2?3:4;
+        cCloud[1]=ran>5?3:ran>3?2:ran>2?1:5;
+        cCloud[2]=ran>5?0:ran>3?1:ran>2?2:3;
+        ran=(int)(Math.random()*10);
+        cCloud[3]=ran>5?0:ran>3?1:ran>2?3:2;
+        cCloud[4]=ran>5?0:ran>3?1:ran>2?2:3;
+        cCloud[5]=ran>5?6:ran>3?5:ran>2?4:7;
+        ran=(int)(Math.random()*10);
+        cCloud[6]=ran>5?6:ran>3?5:ran>2?4:3;
+        cCloud[7]=ran>5?3:ran>3?4:ran>2?1:2;
+        return  cCloud;
     }
 }

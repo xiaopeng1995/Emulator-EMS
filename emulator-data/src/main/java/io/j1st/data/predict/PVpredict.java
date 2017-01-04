@@ -1,5 +1,6 @@
 package io.j1st.data.predict;
 
+import io.j1st.data.entity.Registry;
 import io.j1st.data.job.Clculate;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.entity.GenData;
@@ -159,15 +160,12 @@ public class PVpredict {
         return aCloud;
     }
 
-    public void PVInfo(String tdate, String agentid, int is) throws ParseException {
-
+    public void PVInfo(String tdate, String agentid, int is,int [] cCloud) throws ParseException {
         Map<String, Double> EMPara = new HashMap<>();
 
         int CYear = Integer.parseInt(tdate.substring(0, 4));
         int CMonth = Integer.parseInt(tdate.substring(4, 6));
         int CDay = Integer.parseInt(tdate.substring(6, 8));
-        int CH = Integer.parseInt(tdate.substring(8, 10));
-        int CM = Integer.parseInt(tdate.substring(10, 12));
 
         double pi_v = Math.PI;
         EMPara.put("Long", 121.5);
@@ -179,8 +177,7 @@ public class PVpredict {
         double eToday = 0;
         double pVOut = 0;
 
-        //云量
-        double[] aCloud = CalTrans(2, 3, 1, 0, 3, 9, 7, 0.2);
+        double[] aCloud = CalTrans(cCloud[0],cCloud[1] , cCloud[2], cCloud[3], cCloud[4], cCloud[5], cCloud[6], cCloud[7]*0.1);
         //声明时间
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         Date date = format.parse(tdate);
@@ -215,6 +212,7 @@ public class PVpredict {
                 //load
                 dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now, W / 1000, DWhlmp);
                 dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now + 30000, W / 1000, DWhlmp);
+
             } else { //添加实时数据
                 GenData genData = new GenData();
                 genData.setpVPower(pVOut);
@@ -231,10 +229,16 @@ public class PVpredict {
                 String stime = tdate.substring(0, 8) + shhh + smmm;
                 genData.setTime(stime);
                 dataMongoStorage.addGenData(genData);
+
             }
             now += 60000;
         }
-        logger.debug("已成功添加了一天的数据至数据库！");
+
+        if (is == 0)
+            logger.debug("已成功添加了一天的预测数据至数据库！");
+        else
+            logger.debug("已成功添加了一天的实时数据至数据库！");
+
     }
 //
 //    public void PowerTData(String tdate, String agentid, String dsn, int is) throws ParseException {

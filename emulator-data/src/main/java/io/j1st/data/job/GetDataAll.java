@@ -313,10 +313,7 @@ public class GetDataAll {
         }
         BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
         TotWh = TotWhImp - TotWhExp;//Total Real Energy (当前)组合有功总电能
-
-
         mogo.updateEmulatorRegister(agentID, "Soc", Soc);
-        logger.debug(agentID + "存Soc值为:" + mogo.findEmulatorRegister(agentID, "Soc"));
         //逆变器
         data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 2));
         data120.put(Values.PAC, GttRetainValue.getRealVaule(PAC, 2));

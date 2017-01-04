@@ -68,14 +68,13 @@ public class HttpApplication extends Application<HttpConfiguration> {
         cors.setInitParameter("exposedHeaders", "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval");
         cors.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, "/*");
 
-
         // register resources
-        environment.jersey().register(new DeleteUtil(mongo,dataMongo));
-        environment.jersey().register(new SelectUtile(mongo,dataMongo));
-        environment.jersey().register(new UpdateUtil(mongo,dataMongo));
-        environment.jersey().register(new JudgeUtil(mongo,dataMongo));
-        environment.jersey().register(new InsertUtil(mongo,dataMongo));
-        environment.jersey().register(new GenDataAddUtil(mongo,dataMongo));
+        environment.jersey().register(new DeleteUtil(mongo, dataMongo));
+        environment.jersey().register(new SelectUtile(mongo, dataMongo));
+        environment.jersey().register(new UpdateUtil(mongo, dataMongo));
+        environment.jersey().register(new JudgeUtil(mongo, dataMongo));
+        environment.jersey().register(new InsertUtil(mongo, dataMongo));
+        environment.jersey().register(new GenDataAddUtil(mongo, dataMongo));
 
         // config jackson
         environment.getObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
