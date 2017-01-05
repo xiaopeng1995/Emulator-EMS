@@ -75,6 +75,7 @@ public class HttpApplication extends Application<HttpConfiguration> {
         environment.jersey().register(new JudgeUtil(mongo, dataMongo));
         environment.jersey().register(new InsertUtil(mongo, dataMongo));
         environment.jersey().register(new GenDataAddUtil(mongo, dataMongo));
+        environment.jersey().register(new DownResoure(mongo, dataMongo));
 
         // config jackson
         environment.getObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

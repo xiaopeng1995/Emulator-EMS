@@ -9,6 +9,7 @@ applicationDefaultJvmArgs = ["-Dlogback.configurationFile=config/logback.xml"]
 dependencies {
     // project
     compile project(':emulator-mongo')
+    compile project(':emulator-util')
 
     // dropwizard
     compile 'io.dropwizard:dropwizard-core:0.9.2'

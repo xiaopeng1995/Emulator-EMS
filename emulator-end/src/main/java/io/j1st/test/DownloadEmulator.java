@@ -31,12 +31,13 @@ public class DownloadEmulator {
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
         MqttConnectOptions options;
+        /*需要的传参*/
         String agentid = "586b617fdafbaf65c5ef2dd6";
-        int type = 1;
-        mqtt = new MqttClient("tcp://139.196.230.150:1883", new ObjectId("58340c81dafbaf5bf5b95cd6").toHexString(), persistence);
+        int type = 1;//1功率,2时间,3告警
+        String pack="1,1,1,1,1301";
+        /**/
+        mqtt = new MqttClient("tcp://139.196.230.150:1883", "dd", persistence);
         options = new MqttConnectOptions();
-        options.setUserName(new ObjectId("58340c81dafbaf5bf5b95cd6").toHexString());
-        options.setPassword("NiwJORoQlcyFNTtJwkBRMlbmyEpXbCBy".toCharArray());
         mqtt.connect(options);
         Map<String, Object> query = new HashMap<>();
         query.put("D", 0);
@@ -49,43 +50,26 @@ public class DownloadEmulator {
         List<Map> d = new ArrayList<>();
         Map<String, Object> setMHReg = new HashMap<>();
         setMHReg.put("dsn", agentid + "120");
-        setMHReg.put("Reg12551", -66.0);
+        setMHReg.put("Reg12551", 66.0);
         d.add(setMHReg);
         Map<String, Object> batReceive = new HashMap<>();
         batReceive.put("SetMHReg", d);
 
         String batReceivemsg = JsonUtils.Mapper.writeValueAsString(batReceive);
         String payloadmsg = JsonUtils.Mapper.writeValueAsString(payload);
-
+        String packs ="{\"packs\":[{\"packs\":\""+pack+"\"}]}";
         if (type == 1) {
             payloadmsg = batReceivemsg;
             logger.info("batReceivemsg\n" + batReceivemsg);
-        } else {
+        } else if(type == 2){
             logger.info("payloadmsg\n" + payloadmsg);
         }
-        mqtt.publish("agents/" + agentid + "/downstream", new MqttMessage(payloadmsg.getBytes("utf-8")));
-        //判断客户端是否连接上
-        if (mqtt.isConnected()) {
-            mqtt.setCallback(new MqttCallback() {
-
-                @Override
-                public void connectionLost(Throwable cause) {
-                    logger.debug("线程:{}断开连接，开始重连", mqtt.getClientId());
-                }
-
-                @Override
-                public void messageArrived(String topic, MqttMessage message) throws Exception {
-                    logger.debug("收到的消息为：" + message.toString());
-                }
-
-                @Override
-                public void deliveryComplete(IMqttDeliveryToken token) {
-                    logger.debug("数据已发送");
-                }
-            });
-        } else {
-            logger.info("no server");
+        else
+        {
+            payloadmsg=packs;
+            logger.info("packs\n" + payloadmsg);
         }
-        return;
+        mqtt.publish("agents/" + agentid + "/downstream",payloadmsg.getBytes("utf-8"),0,false);
+        mqtt.close();
     }
 }

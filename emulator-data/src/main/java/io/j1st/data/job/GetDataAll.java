@@ -125,43 +125,53 @@ public class GetDataAll {
         } else {
             mogo.updateEmulatorRegister(agentID, "packing", "1,1,1,1,1");
         }
-        if (packing[0] < 100) {
-            for (int i = 0; i < packing[0]; i++) {
+        if (packing[0] == 101) {
+            Map<String, Object> noDevice = new HashMap<>();
+            EmsData device = new EmsData();
+            noDevice.put(Values.RunTime, 1);
+            device.setValues(noDevice);
+            device.setAsn(agentID);
+            device.setType("AGENT");
+            datas.add(device);
+        } else {
+            if (packing[0] < 100) {
+                for (int i = 0; i < packing[0]; i++) {
 
-                datas.add(emsData01);
+                    datas.add(emsData01);
+                }
+            } else { //告警数据
+                getAlarm(packing[0], agentID, "SUNS120", "SC36KTL-DO", data120);
             }
-        } else { //告警数据
-            getAlarm(packing[0], agentID, "SUNS120", "SC36KTL-DO", data120);
-        }
 
-        if (packing[1] < 100) {
-            for (int i = 0; i < packing[1]; i++) {
-                datas.add(emsData02);
+            if (packing[1] < 100) {
+                for (int i = 0; i < packing[1]; i++) {
+                    datas.add(emsData02);
+                }
+            } else {//告警数据
+                getAlarm(packing[1], agentID, "SUNS801", "ZE60BATTERY", data801);
             }
-        } else {//告警数据
-            getAlarm(packing[1], agentID, "SUNS801", "ZE60BATTERY", data801);
-        }
 
-        if (packing[2] < 100) {
-            for (int i = 0; i < packing[2]; i++) {
-                datas.add(gridData);
+            if (packing[2] < 100) {
+                for (int i = 0; i < packing[2]; i++) {
+                    datas.add(gridData);
+                }
+            } else {//告警数据
+                getAlarm(packing[2], agentID, "SUNS202", "ZEMETERG", data202);
             }
-        } else {//告警数据
-            getAlarm(packing[2], agentID, "SUNS202", "ZEMETERG", data202);
-        }
-        if (packing[3] < 100) {
-            for (int i = 0; i < packing[3]; i++) {
-                datas.add(loadData);
+            if (packing[3] < 100) {
+                for (int i = 0; i < packing[3]; i++) {
+                    datas.add(loadData);
+                }
+            } else {//告警数据
+                getAlarm(packing[3], agentID, "SUNS201", "ZEMETERL", data201);
             }
-        } else {//告警数据
-            getAlarm(packing[3], agentID, "SUNS201", "ZEMETERL", data201);
-        }
-        if (packing[4] < 100) {
-            for (int i = 0; i < packing[4]; i++) {
-                datas.add(pvData);
+            if (packing[4] < 100) {
+                for (int i = 0; i < packing[4]; i++) {
+                    datas.add(pvData);
+                }
+            } else {//告警数据
+                getAlarm(packing[4], agentID, "SUNS103", "SC30KTL-DO", data103);
             }
-        } else {//告警数据
-            getAlarm(packing[4], agentID, "SUNS103", "SC30KTL-DO", data103);
         }
 
         String msg = null;
@@ -385,13 +395,83 @@ public class GetDataAll {
         //告警参数
         Map<String, Object> noDevice = new HashMap<>();
         EmsData device = new EmsData();
-        if (number == 101)//No Device（Node未激活或无法初始化通讯）
-        {
-            noDevice.put(Values.RunTime, 1);
-            device.setValues(noDevice);
-            device.setAsn(agentID.substring(10, 20) + type);
-            device.setType("AGENT");
+        if (number > 5000) {//Fault
+            switch (number){
+                case 5101:
+                    data.put(Values.FaultV, "F0001");
+                    data.put(Values.FaultD, "TempOver");
+                    break;
+                case 5102:
+                    data.put(Values.FaultV, "F0002");
+                    data.put(Values.FaultD, "GridV.OutLow");
+                    break;
+                case 5103:
+                    data.put(Values.FaultV, "F0003");
+                    data.put(Values.FaultD, "EmergencyStp");
+                    break;
+                case 5201:
+                    data.put(Values.FaultV, "F0001");
+                    data.put(Values.FaultD, "TempRiseDown");
+                    break;
+                case 5202:
+                    data.put(Values.FaultV, "F0002");
+                    data.put(Values.FaultD, "CAOverDown");
+                    break;
+                case 5203:
+                    data.put(Values.FaultV, "F0003");
+                    data.put(Values.FaultD, "DAOverDown");
+                    break;
+                case 5204:
+                    data.put(Values.FaultV, "F0004");
+                    data.put(Values.FaultD, "RelayStp");
+                    break;
+                case 5301:
+                    data.put(Values.FaultV, "F0001");
+                    data.put(Values.FaultD, "TempOver");
+                    break;
+                case 5302:
+                    data.put(Values.FaultV, "F0002");
+                    data.put(Values.FaultD, "GridV.OutLow");
+                    break;
+                case 5303:
+                    data.put(Values.FaultV, "F0003");
+                    data.put(Values.FaultD, "EmergencyStp");
+                    break;
+            }
+            data.put(Values.FaultT, "aaa");
+            device.setValues(data);
+            device.setDsn(agentID + type);
+            device.setType(type);
+            device.setModel(model);
+        } else if (number < 5000 && number > 1000) {//Warning
 
+            switch (number){
+                case 1101:
+                    data.put(Values.WarnV, "W0020");
+                    data.put(Values.WarnD, "ACFanWarn");
+                    break;
+                case 1102:
+                    data.put(Values.WarnV, "W0010");
+                    data.put(Values.WarnD, "DCFanWarn");
+                    break;
+                case 1201:
+                    data.put(Values.WarnV, "W0001");
+                    data.put(Values.WarnD, "ModTempLowWarn");
+                    break;
+                case 1202:
+                    data.put(Values.WarnV, "W0002");
+                    data.put(Values.WarnD, "ModTempHighWarn");
+                    break;
+                case 1301:
+                    data.put(Values.WarnV, "W0020");
+                    data.put(Values.WarnD, "ACFanWarn");
+                    break;
+            }
+            data.put(Values.WarnT, "待定");
+            device.setValues(data);
+            device.setDsn(agentID + type);
+            device.setType(type);
+            device.setModel(model);
 
         } else if (number == 102) {//Device disconnect（Node通讯异常）
             noDevice.put(Values.WarnV, "102");

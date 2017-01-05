@@ -135,7 +135,19 @@ public class MongoStorage {
                 .first();
         return d != null;
     }
-
+    /**
+     * 获取 采集器，根据Id
+     *
+     * @param id 采集器Id
+     * @return 采集器 or Null
+     */
+    public Agent getAgentById(ObjectId id) {
+        Document d = this.database.getCollection("agents")
+                .find(eq("_id", id))
+                .first();
+        if (d == null) return null;
+        return parseAgentDocument(d);
+    }
     /**
      * 判断 用户邮箱 是否存在
      *
@@ -471,12 +483,24 @@ public class MongoStorage {
      * @return 用户信息 or Null
      */
     public User getUserById(ObjectId id) {
-        Document d = this.database.getCollection("users")
+        Document d = this.database.getCollection("agents")
                 .find(eq("_id", id))
+                .projection(include("product_id"))
+                .first();
+        ObjectId pid=(ObjectId)d.get("product_id");
+
+        Document products = this.database.getCollection("products")
+                .find(eq("_id", pid))
+                .projection(include("user_id"))
+                .first();
+        ObjectId uid=(ObjectId)products.get("user_id");
+
+        Document user = this.database.getCollection("users")
+                .find(eq("_id", uid))
                 .projection(exclude("password"))
                 .first();
-        if (d == null) return null;
-        return parseUserDocument(d);
+        if (user == null) return null;
+        return parseUserDocument(user);
     }
 
     /**
