@@ -14,6 +14,7 @@ import io.j1st.storage.entity.Agent;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -85,12 +86,12 @@ public class EmulatorApplication {
         PVpredict pVpredict = new PVpredict(dmogo);
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         String date = format.format(new Date());
-        //add now data
-        if (dmogo.findGendDataByTime(date.substring(0, 8) + "0001", 0) == null)
-            pVpredict.PVInfo(date.substring(0, 8) + "000000", "dfds", 1, pvcloud());
+
         List<String> agentIdAll = new ArrayList<>();
         int n = productIds.length > agentIds.length ? productIds.length : agentIds.length;
         int agunt = 0;
+        //start a job thread
+        Registry.INSTANCE.saveKey("startDate", new Date().getTime());
         for (int i = 0; i < n; i++) {
             List<Agent> agents = new ArrayList<>();
             if (i < productIds.length)
@@ -105,6 +106,9 @@ public class EmulatorApplication {
                 options = new MqttConnectOptions();
                 options.setUserName(agent.getId().toHexString());
                 options.setPassword(agent.getToken().toCharArray());
+                //add now data
+                if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
+                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, pvcloud());
                 //add predict data
                 if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
                     pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, pvcloud());
@@ -119,20 +123,21 @@ public class EmulatorApplication {
                 Registry.INSTANCE.saveSession(agentID, mqttConnThread);
                 //add a agent mqtt Send and receive sever
                 Registry.INSTANCE.startThread(mqttConnThread);
-                //save start time
-                Registry.INSTANCE.saveKey(agentID + "_date", new Date().getTime());
                 Thread.sleep(90);
-                //start a job thread
-                Job thread = new Job(agentID, 30, "jsonUp", mogo, dmogo);
-                Registry.INSTANCE.startJob(thread);
-                Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                logger.debug(agentID + "准备成功开始上传数据..");
+                //设置间隔时间
+                Registry.INSTANCE.saveKey(agentID + "_jgtime", 30);
+                //防止MQTT先启动线程做判断
+                if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
+                    Job thread = new Job(agentID, "jsonUp", mogo, dmogo);
+                    Registry.INSTANCE.startJob(thread);
+                    Registry.INSTANCE.saveKey(agentID + "_Job", thread);
+                    logger.debug(agentID + "准备成功开始上传数据..");
+                }
             }
         }
         Registry.INSTANCE.saveKey("agentIdAll", agentIdAll);
-        //起点时间
-        Registry.INSTANCE.saveKey("startDate", new Date().getTime());
         logger.info("启动完毕,本次启动共{}个Agent任务", agunt);
+
     }
 
     //太阳能云因子

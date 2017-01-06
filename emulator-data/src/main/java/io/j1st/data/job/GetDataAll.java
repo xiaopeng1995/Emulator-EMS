@@ -28,11 +28,20 @@ public class GetDataAll {
     private BatConfig STROAGE_002;
     private MongoStorage mogo;
     private DataMongoStorage dmogo = (DataMongoStorage) Registry.INSTANCE.getValue().get("dmogo");
+    private int jgtime;
 
-    public GetDataAll(double Reg12551, BatConfig STROAGE_002, MongoStorage mogo) {
+    /**
+     * @param Reg12551    充放电指令
+     * @param STROAGE_002 配置
+     * @param mogo        数据库操作
+     * @param jgtime      间隔时间
+     */
+    public GetDataAll(double Reg12551, BatConfig STROAGE_002, MongoStorage mogo, int jgtime) {
         this.Reg12551 = Reg12551;
         this.STROAGE_002 = STROAGE_002;
         this.mogo = mogo;
+        this.jgtime = jgtime;
+
     }
 
 
@@ -59,13 +68,7 @@ public class GetDataAll {
     public String getDate(String agentID) {
 
         Date now = new Date();
-        //间隔时间差
-        long interval = 0;
-        //总时间差
-        long startDate = 0;
         try {
-            interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get(agentID + "_date")) / 1000;
-            startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000;
             SimpleDateFormat dateFormat = new SimpleDateFormat("HHmm");//可以方便地修改日期格式
             String date = dateFormat.format(now);
             if (date.equals("00:00")) {
@@ -74,15 +77,13 @@ public class GetDataAll {
         } catch (NullPointerException e) {
             logger.debug("过滤初始0");
         }
-        /*信息打印*/
-        logger.info(agentID + "本次间隔:" + interval + "秒");
-        /* 结束 */
+
         Date now1 = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmm");//可以方便地修改日期格式
         String date = dateFormat.format(now1);
         if (date.contains("0000"))
             date = date.replace("0000", "0001");
-        discharge(interval, date, agentID);
+        discharge(date, agentID);
         getPvData(agentID, date);
 
         //填装数据
@@ -183,14 +184,12 @@ public class GetDataAll {
         return msg;
     }
 
-    private void discharge(long interval, String startDate, String agentID) {
+    private void discharge(String startDate, String agentID) {
         //负载
-        Document document = dmogo.findGendDataByTime(startDate, 0);
+        Document powerT = dmogo.findGendDataByTime(agentID, "powerT");
         double loadW = 0.0;
-        if (document != null)
-            loadW = document.getDouble("powerT") / 1000;
-        Object time1 = mogo.findEmulatorRegister(agentID, "jgtime");
-        double jgtime = time1 == null ? 30 : (double) time1;
+        if (powerT != null)
+            loadW = powerT.getDouble(startDate);
         Object num = mogo.findEmulatorRegister(agentID, "loadTotWhImp");
         double loadTotWhImp = (num == null ? 0.0 : (double) num + loadW / (3600 / jgtime));
         mogo.updateEmulatorRegister(agentID, "loadTotWhImp", loadTotWhImp);
@@ -251,10 +250,10 @@ public class GetDataAll {
         {
             PDC = PAC / EFF;
             //当前间隔电网放电消耗功率
-            double J_TotWhExp = W * (((double) interval) / 3600);
+            double J_TotWhExp = W * (((double) jgtime) / 3600);
             //当前间隔逆变器放电消耗功率
-            double J_TDkWh = PAC * (((double) interval) / 3600);
-            dqrl = WHRtg * Soc - (PDC * (((double) interval) / 3600));
+            double J_TDkWh = PAC * (((double) jgtime) / 3600);
+            dqrl = WHRtg * Soc - (PDC * (((double) jgtime) / 3600));
             Soc = dqrl / WHRtg;
             /*Soc>20 BV=1.312SOC+293.8  Soc<=20   BV=1SOC+260 */
             if (Soc > 20) {
@@ -289,11 +288,11 @@ public class GetDataAll {
             } else {
                 BV = 2 * (Soc * 100) + 260;
             }
-            double J_TotWhImp = W * (((double) interval) / 3600);//当前电网侧间隔充电消耗功率
+            double J_TotWhImp = W * (((double) jgtime) / 3600);//当前电网侧间隔充电消耗功率
 
-            double J_TCkWh = PAC * (((double) interval) / 3600);//当前逆变器侧间隔充电消耗功率
+            double J_TCkWh = PAC * (((double) jgtime) / 3600);//当前逆变器侧间隔充电消耗功率
 
-            dqrl = WHRtg * Soc - (PDC * (((double) interval) / 3600));
+            dqrl = WHRtg * Soc - (PDC * (((double) jgtime) / 3600));
             Soc = dqrl / WHRtg;
             if (Soc > STROAGE_002.SoCNpMaxPct)
                 Soc = STROAGE_002.SoCNpMaxPct;
@@ -357,15 +356,15 @@ public class GetDataAll {
 
     private void getPvData(String agentID, String date) {
 
-        Document document = dmogo.findGendDataByTime(date, 0);
+        Document pVPower = dmogo.findGendDataByTime(agentID, "pVPower");
+        Document eTodayy = dmogo.findGendDataByTime(agentID, "eToday");
         double Pac = 0.0;
         double eToday = 0.0;
-        if (document != null) {
-            Pac = (document.getDouble("pVPower") / 1000);
-            eToday = document.getDouble("eToday");
+        if (pVPower != null && eTodayy != null) {
+            Pac = (pVPower.getDouble(date));
+            eToday = eTodayy.getDouble(date);
         }
         data103.put(Values.Pac, GttRetainValue.getRealVaule(Pac, 1));
-        int odlday = Integer.parseInt(date.substring(0, 8)) - 1;
         Object num = mogo.findEmulatorRegister(agentID, "TYield");
         double TYield = num == null ? eToday : (double) num + eToday;
         double DYield = eToday;
@@ -396,7 +395,7 @@ public class GetDataAll {
         Map<String, Object> noDevice = new HashMap<>();
         EmsData device = new EmsData();
         if (number > 5000) {//Fault
-            switch (number){
+            switch (number) {
                 case 5101:
                     data.put(Values.FaultV, "F0001");
                     data.put(Values.FaultD, "TempOver");
@@ -445,7 +444,7 @@ public class GetDataAll {
             device.setModel(model);
         } else if (number < 5000 && number > 1000) {//Warning
 
-            switch (number){
+            switch (number) {
                 case 1101:
                     data.put(Values.WarnV, "W0020");
                     data.put(Values.WarnD, "ACFanWarn");

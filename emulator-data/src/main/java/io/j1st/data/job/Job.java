@@ -21,26 +21,27 @@ public class Job extends Thread {
     public volatile boolean exit = false;
     private BatConfig STROAGE_002;
     private String agentId;
-    private int time;
     private double Reg12551;
     private String topic;
     private MongoStorage mogo;
     private DataMongoStorage dmogo;
 
-    public Job(String agentid, int time, String topic, MongoStorage mogo, DataMongoStorage dmogo) {
+    public Job(String agentid, String topic, MongoStorage mogo, DataMongoStorage dmogo) {
         this.agentId = agentid;
-        this.time = time;
         this.topic = topic;
         this.mogo = mogo;
         this.dmogo = dmogo;
     }
 
     public void run() {
+        //本线程运行时间
+        Date timeThread = new Date();
+        int jgtime = (int) Registry.INSTANCE.getValue().get(agentId + "_jgtime");
         // mqtt topic
-        String topic;
+        String topicall;
+        //更新间隔时间
+        Registry.INSTANCE.saveKey(agentId + "_jgdate", timeThread.getTime());
         while (!exit) {
-            //定时任务
-            logger.debug(agentId + "执行线程:" + super.getId());
             MqttConnThread mqttConnThread;
             //添加预测数据
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -79,6 +80,7 @@ public class Job extends Thread {
                         is = mogo.updateEmulatorRegister(agentId, "loadDWhImp", 0.0);
                         if (is)
                             logger.debug(agentId + "_loadDWhImp load已清零..");
+
                         Object num = mogo.findEmulatorRegister(agentId, "TYield");
                         double TYield = num != null ? (double) num : 0.0;
                         num = mogo.findEmulatorRegister(agentId, "DYield");
@@ -88,7 +90,7 @@ public class Job extends Thread {
                             logger.debug(agentId + "TYield累加前一天.");
                         //添加预测数据
                         PVpredict p = new PVpredict(dmogo);
-                        p.PVInfo(date, agentId, 0,pvcloud());
+                        p.PVInfo(date, agentId, 0, pvcloud());
                     }
                 } catch (ParseException e) {
                     e.printStackTrace();
@@ -103,27 +105,36 @@ public class Job extends Thread {
             } else {
                 mogo.updateEmulatorRegister(agentId, agentId + "120", 0.0);
             }
-            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo);
+            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime);
             String msg = dataAll.getDate(agentId);
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
-            topic = getTopic(agentId);
+            topicall = getTopic(agentId);
             if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
-                mqttConnThread.sendMessage(topic, msg);
-                logger.debug(agentId + "发送的数据为：" + msg);
-                //更新间隔时间
-                Registry.INSTANCE.saveKey(agentId + "_date", new Date().getTime());
+                mqttConnThread.sendMessage(topicall, msg);
+                //间隔时间差
+                long interval ;
+                //总时间差
+                long startDate;
+                Date now = new Date();
+                interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get(agentId + "_jgdate")) / 1000;
+                long startThtead = (now.getTime() - timeThread.getTime()) / 1000;
+                startDate=(now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000;
+                logger.info("\n##########start###########\nThread[{}]Send Data Info:\nAgentID:\t{}\nTopic:\t{}\nTime Interval:\t{} \tSet the time:{}\tThread run time:{}\tserver run time:{}\nSend Data:\t{}\nOther Info:\t{}\n##########end###########"
+                        , super.getId(), agentId, topic, interval, jgtime,startThtead, startDate, msg, "other");
             } else {
                 logger.info(agentId + "MQTT链接信息错误,链接失败");
                 logger.debug(agentId + "发送的数据为：" + msg);
             }
+            //更新间隔时间
+            Registry.INSTANCE.saveKey(agentId + "_jgdate", new Date().getTime());
             try {
-                Thread.sleep(time * 1000);
+                sleep(jgtime * 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
-        logger.debug(agentId + "旧上传工作线程:" + super.getId() + "已退出!");
+        logger.debug(agentId + "Old  worker thread:" + super.getId() + "End!");
         return;
     }
 
@@ -131,24 +142,23 @@ public class Job extends Thread {
      * Get Topic
      */
     private String getTopic(String agentId) {
-        logger.debug(agentId + " Topic:{}", topic);
         return "agents/" + agentId + "/" + topic;
     }
+
     //太阳能云因子
-    private static int[] pvcloud()
-    {
-        int [] cCloud=new int[8];
-        int ran=(int)(Math.random()*10);
-        cCloud[0]=ran>5?1:ran>3?2:ran>2?3:4;
-        cCloud[1]=ran>5?3:ran>3?2:ran>2?1:5;
-        cCloud[2]=ran>5?0:ran>3?1:ran>2?2:3;
-        ran=(int)(Math.random()*10);
-        cCloud[3]=ran>5?0:ran>3?1:ran>2?3:2;
-        cCloud[4]=ran>5?0:ran>3?1:ran>2?2:3;
-        cCloud[5]=ran>5?6:ran>3?5:ran>2?4:7;
-        ran=(int)(Math.random()*10);
-        cCloud[6]=ran>5?6:ran>3?5:ran>2?4:3;
-        cCloud[7]=ran>5?3:ran>3?4:ran>2?1:2;
-        return  cCloud;
+    private static int[] pvcloud() {
+        int[] cCloud = new int[8];
+        int ran = (int) (Math.random() * 10);
+        cCloud[0] = ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 4;
+        cCloud[1] = ran > 5 ? 3 : ran > 3 ? 2 : ran > 2 ? 1 : 5;
+        cCloud[2] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 3;
+        ran = (int) (Math.random() * 10);
+        cCloud[3] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 3 : 2;
+        cCloud[4] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 3;
+        cCloud[5] = ran > 5 ? 6 : ran > 3 ? 5 : ran > 2 ? 4 : 7;
+        ran = (int) (Math.random() * 10);
+        cCloud[6] = ran > 5 ? 6 : ran > 3 ? 5 : ran > 2 ? 4 : 3;
+        cCloud[7] = ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 1 : 2;
+        return cCloud;
     }
 }

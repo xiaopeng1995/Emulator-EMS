@@ -5,6 +5,7 @@ import io.j1st.data.job.Clculate;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.entity.GenData;
 import io.j1st.storage.utils.DateUtils;
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTimeZone;
 import org.slf4j.Logger;
@@ -12,10 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * PV预测数据
@@ -160,7 +158,7 @@ public class PVpredict {
         return aCloud;
     }
 
-    public void PVInfo(String tdate, String agentid, int is,int [] cCloud) throws ParseException {
+    public void PVInfo(String tdate, String agentid, int is, int[] cCloud) throws ParseException {
         Map<String, Double> EMPara = new HashMap<>();
 
         int CYear = Integer.parseInt(tdate.substring(0, 4));
@@ -177,7 +175,7 @@ public class PVpredict {
         double eToday = 0;
         double pVOut = 0;
 
-        double[] aCloud = CalTrans(cCloud[0],cCloud[1] , cCloud[2], cCloud[3], cCloud[4], cCloud[5], cCloud[6], cCloud[7]*0.1);
+        double[] aCloud = CalTrans(cCloud[0], cCloud[1], cCloud[2], cCloud[3], cCloud[4], cCloud[5], cCloud[6], cCloud[7] * 0.1);
         //声明时间
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         Date date = format.parse(tdate);
@@ -188,6 +186,10 @@ public class PVpredict {
 
         String msg = is == 0 ? "预测000" : "实时111";
         logger.debug("开始计算并添加一天的" + msg);
+
+        Document allpac = new Document();
+        Document allW = new Document();
+        Document alleToday = new Document();
         //循环一天的每分钟
         for (int i = 0; i < mapList.size(); i++) {
             double b = pVOut;
@@ -205,19 +207,12 @@ public class PVpredict {
             DWhlmp += lepv;
             //添加至预测数据库
             if (is == 0) {
-                //PV
-                ObjectId agentId = new ObjectId(agentid);
-                dataMongoStorage.updateAnalysisInfo(agentId, agentid + "103", 103, date, DateTimeZone.getDefault(), now, pVOut / 1000, eToday);
-                dataMongoStorage.updateAnalysisInfo(agentId, agentid + "103", 103, date, DateTimeZone.getDefault(), now + 30000, pVOut / 1000, eToday);
-                //load
-                dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now, W / 1000, DWhlmp);
-                dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), now + 30000, W / 1000, DWhlmp);
 
+                allpac.append(now + "", pVOut / 1000);
+                allpac.append(now + 30000 + "", pVOut / 1000);
+                allW.append(now + "", W / 1000);
+                allW.append(now + 30000 + "", W / 1000);
             } else { //添加实时数据
-                GenData genData = new GenData();
-                genData.setpVPower(pVOut);
-                genData.seteToday(eToday);
-                genData.setPowerT(W);
                 int chh = i / 60;
                 String shhh = chh + "";
                 if (chh < 10)
@@ -227,17 +222,27 @@ public class PVpredict {
                 if (cmm < 10)
                     smmm = "0" + cmm;
                 String stime = tdate.substring(0, 8) + shhh + smmm;
-                genData.setTime(stime);
-                dataMongoStorage.addGenData(genData);
+                allpac.append(stime, pVOut / 1000);
+                allW.append(stime, W / 1000);
+                alleToday.append(stime, pVOut / 1000);
 
             }
             now += 60000;
         }
+        //数据持久化
+        //PV
+        ObjectId agentId = new ObjectId(agentid);
+        if (is == 0) {
+            Boolean pv = dataMongoStorage.updateAnalysisInfo(agentId, agentid + "103", 103, date, DateTimeZone.getDefault(), allpac, eToday);
+            Boolean loode = dataMongoStorage.updatePowerT(agentId, agentid + "201", "201", date, DateTimeZone.getDefault(), allW, DWhlmp);
+            if (pv && loode)
+                logger.debug("已成功添加了一天的预测数据至数据库！");
 
-        if (is == 0)
-            logger.debug("已成功添加了一天的预测数据至数据库！");
-        else
-            logger.debug("已成功添加了一天的实时数据至数据库！");
+        } else {
+            Boolean dataaa = dataMongoStorage.addGenData(agentId, tdate, allpac, alleToday, allW);
+            if (dataaa)
+                logger.debug("已成功添加了一天的实时数据至数据库！");
+        }
 
     }
 //

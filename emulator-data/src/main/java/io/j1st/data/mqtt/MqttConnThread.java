@@ -2,6 +2,8 @@ package io.j1st.data.mqtt;
 
 
 import io.j1st.data.entity.Registry;
+import io.j1st.data.entity.config.BatConfig;
+import io.j1st.data.job.GetDataAll;
 import io.j1st.data.job.Job;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
@@ -72,7 +74,7 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc = (List<Map>) msgData.get("Query");
                             int d = (Integer) bbc.get(0).get("D");
                             int i = (Integer) bbc.get(0).get("I");
-                            Object  oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
+                            Object oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
                             // 如果有停掉旧的线程
                             if (oldjob != null) {
                                 Job thread = (Job) Registry.INSTANCE.getValue().get(AgentID + "_Job");
@@ -81,7 +83,9 @@ public class MqttConnThread implements Callable {
                             }
                             //开启新的线程
                             Thread.sleep(d * 1000);
-                            Job threadnew = new Job(AgentID, i, "systemQuery", mogo, dmogo);
+                            //设置间隔时间
+                            Registry.INSTANCE.saveKey(AgentID + "_jgtime", i);
+                            Job threadnew = new Job(AgentID, "systemQuery", mogo, dmogo);
                             Registry.INSTANCE.startJob(threadnew);
                             //更新内存线程池中线程
                             Registry.INSTANCE.saveKey(AgentID + "_Job", threadnew);
@@ -111,15 +115,31 @@ public class MqttConnThread implements Callable {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
                             String dataqc = bbc.get(0).get("packs").toString();
                             mogo.updateEmulatorRegister(AgentID, "packing", dataqc);
+
+
+                            BatConfig STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(AgentID + "_STROAGE_002Config");
+                            Object batReceive = mogo.findEmulatorRegister(AgentID, AgentID + "120");
+                            double Reg12551 = 0d;
+                            if (batReceive != null) {
+                                Reg12551 = (Double) batReceive;
+                            } else {
+                                mogo.updateEmulatorRegister(AgentID, AgentID + "120", 0.0);
+                            }
+                            int jgtime = (int) Registry.INSTANCE.getValue().get(AgentID + "_jgtime");
+                            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime);
+                            String msg = dataAll.getDate(AgentID);
+                            logger.info("实时packs  类型:" + msg);
+                            sendMessage(getTopic(AgentID), msg);
                         } else {
                             logger.error("错误格式");
                         }
+
 
                     }
 
                     @Override
                     public void deliveryComplete(IMqttDeliveryToken token) {
-                        logger.debug(mqttClient.getClientId() + ":数据发送成功!");
+                        logger.debug(mqttClient.getClientId() + ":send successful!");
                     }
                 });
 
@@ -159,6 +179,11 @@ public class MqttConnThread implements Callable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private String getTopic(String agentId) {
+        logger.debug(agentId + " Topic:systemQuery");
+        return "agents/" + agentId + "/systemQuery";
     }
 
 }
