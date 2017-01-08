@@ -3,8 +3,8 @@ package io.j1st.data.mqtt;
 
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
+import io.j1st.data.job.EmsJob;
 import io.j1st.data.job.GetDataAll;
-import io.j1st.data.job.Job;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.util.util.JsonUtils;
@@ -33,19 +33,20 @@ public class MqttConnThread implements Callable {
     private MqttConnectOptions options;
 
     //Timing task changes
-    private Job quartzManager;
+    private EmsJob quartzManager;
 
     //Data persistence operations
     private MongoStorage mogo;
     private DataMongoStorage dmogo;
 
     // Construction
-    public MqttConnThread(MqttClient mqttClient, MqttConnectOptions options, Job quartzManager, MongoStorage mogo, DataMongoStorage dmogo) {
+    public MqttConnThread(MqttClient mqttClient, MqttConnectOptions options, EmsJob quartzManager, MongoStorage mogo, DataMongoStorage dmogo) {
         this.mqttClient = mqttClient;
         this.options = options;
         this.quartzManager = quartzManager;
         this.mogo = mogo;
         this.dmogo = dmogo;
+        logger.debug("connection agein");
     }
 
     @Override
@@ -77,7 +78,7 @@ public class MqttConnThread implements Callable {
                             Object oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
                             // 如果有停掉旧的线程
                             if (oldjob != null) {
-                                Job thread = (Job) Registry.INSTANCE.getValue().get(AgentID + "_Job");
+                                EmsJob thread = (EmsJob) Registry.INSTANCE.getValue().get(AgentID + "_Job");
                                 thread.exit = true;  // 终止线程thread
                                 thread.join();
                             }
@@ -85,7 +86,7 @@ public class MqttConnThread implements Callable {
                             Thread.sleep(d * 1000);
                             //设置间隔时间
                             Registry.INSTANCE.saveKey(AgentID + "_jgtime", i);
-                            Job threadnew = new Job(AgentID, "systemQuery", mogo, dmogo);
+                            EmsJob threadnew = new EmsJob(AgentID, "systemQuery", mogo, dmogo);
                             Registry.INSTANCE.startJob(threadnew);
                             //更新内存线程池中线程
                             Registry.INSTANCE.saveKey(AgentID + "_Job", threadnew);
@@ -126,7 +127,7 @@ public class MqttConnThread implements Callable {
                                 mogo.updateEmulatorRegister(AgentID, AgentID + "120", 0.0);
                             }
                             int jgtime = (int) Registry.INSTANCE.getValue().get(AgentID + "_jgtime");
-                            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime);
+                            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime,0);
                             String msg = dataAll.getDate(AgentID);
                             logger.info("实时packs  类型:" + msg);
                             sendMessage(getTopic(AgentID), msg);

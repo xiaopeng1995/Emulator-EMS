@@ -29,6 +29,7 @@ public class GetDataAll {
     private MongoStorage mogo;
     private DataMongoStorage dmogo = (DataMongoStorage) Registry.INSTANCE.getValue().get("dmogo");
     private int jgtime;
+    private int sysType;
 
     /**
      * @param Reg12551    充放电指令
@@ -36,11 +37,12 @@ public class GetDataAll {
      * @param mogo        数据库操作
      * @param jgtime      间隔时间
      */
-    public GetDataAll(double Reg12551, BatConfig STROAGE_002, MongoStorage mogo, int jgtime) {
+    public GetDataAll(double Reg12551, BatConfig STROAGE_002, MongoStorage mogo, int jgtime, int sysType) {
         this.Reg12551 = Reg12551;
         this.STROAGE_002 = STROAGE_002;
         this.mogo = mogo;
         this.jgtime = jgtime;
+        this.sysType = sysType;
 
     }
 
@@ -83,11 +85,19 @@ public class GetDataAll {
         String date = dateFormat.format(now1);
         if (date.contains("0000"))
             date = date.replace("0000", "0001");
-        discharge(date, agentID);
         getPvData(agentID, date);
 
-        //填装数据
-
+        //packing 远程指令
+        Object datapacking = null;
+        //对应类型120 810 202 201 130
+        //默认只有PV系统
+        int[] packing = {0, 0, 0, 0, 1};
+        //填装数据如果是ems系统的话
+        if (sysType == 0) {
+            packing = new int[]{1, 1, 1, 1, 1};
+            battery(date, agentID);
+            mogo.findEmulatorRegister(agentID, "packing");
+        }
         emsData01.setType("SUNS120");
         emsData01.setDsn(agentID + "120");
         emsData01.setModel("SC36KTL-DO");
@@ -113,10 +123,7 @@ public class GetDataAll {
         pvData.setModel("SC30KTL-DO");
         pvData.setValues(data103);
 
-        //packing
-        Object datapacking = mogo.findEmulatorRegister(agentID, "packing");
-        //对应类型120 810 202 201 130
-        int[] packing = {1, 1, 1, 1, 1,};
+
         if (datapacking != null) {
             String datapackings = (String) datapacking;
             String[] a = datapackings.split(",");
@@ -184,7 +191,7 @@ public class GetDataAll {
         return msg;
     }
 
-    private void discharge(String startDate, String agentID) {
+    private void battery(String startDate, String agentID) {
         //负载
         Document powerT = dmogo.findGendDataByTime(agentID, "powerT");
         double loadW = 0.0;
@@ -368,8 +375,12 @@ public class GetDataAll {
         Object num = mogo.findEmulatorRegister(agentID, "TYield");
         double TYield = num == null ? eToday : (double) num + eToday;
         double DYield = eToday;
-
-        mogo.updateEmulatorRegister(agentID, "DYield", DYield);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH");//可以方便地修改日期格式
+        String datepp = dateFormat.format(new Date());
+        int hhpp = Integer.parseInt(datepp);
+        //除去凌晨
+        if (hhpp < 23 && hhpp > 2)
+            mogo.updateEmulatorRegister(agentID, "DYield", DYield);
         data103.put(Values.DYield, GttRetainValue.getRealVaule(DYield, 1));
         data103.put(Values.TYield, GttRetainValue.getRealVaule(TYield, 0));
     }

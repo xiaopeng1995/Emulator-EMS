@@ -1,7 +1,6 @@
 package io.j1st.data.entity;
 
 
-import io.j1st.data.job.Job;
 import io.j1st.data.mqtt.MqttConnThread;
 import org.apache.commons.configuration.PropertiesConfiguration;
 

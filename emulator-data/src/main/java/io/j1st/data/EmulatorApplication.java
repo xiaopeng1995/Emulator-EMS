@@ -2,24 +2,21 @@ package io.j1st.data;
 
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
-import io.j1st.data.job.DayJob;
-import io.j1st.data.job.Job;
+import io.j1st.data.job.EmsJob;
+import io.j1st.data.job.PVjob;
 import io.j1st.data.mqtt.MqttConnThread;
 
 import io.j1st.data.predict.PVpredict;
-import io.j1st.data.quartz.QuartzManager;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 
-import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,11 +34,13 @@ public class EmulatorApplication {
     private static final Logger logger = LoggerFactory.getLogger(EmulatorApplication.class);
 
     public static void main(String[] args) throws Exception {
+        //start a job thread
+        Registry.INSTANCE.saveKey("startDate", new Date().getTime());
+
         PropertiesConfiguration productIdConfig;
         PropertiesConfiguration mongoConfig;
         PropertiesConfiguration mqttConfig;
         PropertiesConfiguration quartzConfig;
-
         if (args.length >= 3) {
             productIdConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
@@ -67,18 +66,16 @@ public class EmulatorApplication {
         //
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
-//        //timing thread (Trigger twelve o 'clock every day)
-//        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
-//        quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
-        String[] productIds ;
-        String[] agentIds ;
+        String[] productIds;
+        String[] agentIds;
+        //启动ems模拟数据
         try {
-            agentIds = productIdConfig.getString("agent_id").split("_");
+            agentIds = productIdConfig.getString("ems_agent_id").split("_");
         } catch (NullPointerException e) {
             agentIds = new String[0];
         }
         try {
-            productIds = productIdConfig.getString("product_id").split("_");
+            productIds = productIdConfig.getString("ems_product_id").split("_");
         } catch (NullPointerException e) {
             productIds = new String[0];
 
@@ -90,8 +87,7 @@ public class EmulatorApplication {
         List<String> agentIdAll = new ArrayList<>();
         int n = productIds.length > agentIds.length ? productIds.length : agentIds.length;
         int agunt = 0;
-        //start a job thread
-        Registry.INSTANCE.saveKey("startDate", new Date().getTime());
+
         for (int i = 0; i < n; i++) {
             List<Agent> agents = new ArrayList<>();
             if (i < productIds.length)
@@ -108,10 +104,10 @@ public class EmulatorApplication {
                 options.setPassword(agent.getToken().toCharArray());
                 //add now data
                 if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
-                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, pvcloud());
+                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
                 //add predict data
                 if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
-                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, pvcloud());
+                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
 
                 }
 
@@ -128,32 +124,75 @@ public class EmulatorApplication {
                 Registry.INSTANCE.saveKey(agentID + "_jgtime", 300);
                 //防止MQTT先启动线程做判断
                 if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
-                    Job thread = new Job(agentID, "jsonUp", mogo, dmogo);
+                    EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
                     Registry.INSTANCE.startJob(thread);
                     Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                    logger.debug(agentID + "准备成功开始上传数据..");
+                    logger.debug(agentID + "EMS所有设备准备成功开始上传数据..");
                 }
             }
         }
+        //启动PV系统数据任务
+        String[] pvagentIds;
+        String[] pvproductIds;
+        try {
+            pvagentIds = productIdConfig.getString("pv_agent_id").split("_");
+        } catch (NullPointerException e) {
+            pvagentIds = new String[0];
+        }
+        try {
+            pvproductIds = productIdConfig.getString("pv_product_id").split("_");
+        } catch (NullPointerException e) {
+            pvproductIds = new String[0];
+
+        }
+        int pvn = pvproductIds.length > pvagentIds.length ? pvproductIds.length : pvagentIds.length;
+        int pvagunt = 0;
+        for (int i = 0; i < pvn; i++) {
+            List<Agent> pvagents = new ArrayList<>();
+            if (i < pvproductIds.length)
+                pvagents = mogo.getAgentsByProductId(new ObjectId(pvproductIds[i]));
+            if (i < pvagentIds.length)
+                pvagents.add(mogo.getAgentsById(new ObjectId(pvagentIds[i])));
+            for (Agent pvagent : pvagents) {
+                pvagunt++;
+                String agentID = pvagent.getId().toString();
+                agentIdAll.add(agentID);
+                mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), pvagent.getId().toHexString(), persistence);
+                options = new MqttConnectOptions();
+                options.setUserName(pvagent.getId().toHexString());
+                options.setPassword(pvagent.getToken().toCharArray());
+                //add now data
+                if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
+                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
+                //add predict data
+                if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
+                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
+
+                }
+                //mqtt
+                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo, dmogo);
+                //seve mqtt info
+                Registry.INSTANCE.saveSession(agentID, mqttConnThread);
+                //add a agent mqtt Send and receive sever
+                Registry.INSTANCE.startThread(mqttConnThread);
+                Thread.sleep(90);
+                //设置间隔时间
+                Registry.INSTANCE.saveKey(agentID + "_jgtime", 300);
+                //防止MQTT先启动线程做判断
+                if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
+                    PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);
+                    Registry.INSTANCE.startJob(thread);
+                    Registry.INSTANCE.saveKey(agentID + "_Job", thread);
+                    logger.debug(agentID + "PV所有设备准备成功开始上传数据..");
+                }
+            }
+        }
+
+
         Registry.INSTANCE.saveKey("agentIdAll", agentIdAll);
-        logger.info("启动完毕,本次启动共{}个Agent任务", agunt);
+        logger.info("启动完毕,本次启动共{}个Agent任务", agunt+pvagunt);
 
     }
 
-    //太阳能云因子
-    private static int[] pvcloud() {
-        int[] cCloud = new int[8];
-        int ran = (int) (Math.random() * 10);
-        cCloud[0] = ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 4;
-        cCloud[1] = ran > 5 ? 3 : ran > 3 ? 2 : ran > 2 ? 1 : 5;
-        cCloud[2] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 3;
-        ran = (int) (Math.random() * 10);
-        cCloud[3] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 3 : 2;
-        cCloud[4] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 3;
-        cCloud[5] = ran > 5 ? 6 : ran > 3 ? 5 : ran > 2 ? 4 : 7;
-        ran = (int) (Math.random() * 10);
-        cCloud[6] = ran > 5 ? 6 : ran > 3 ? 5 : ran > 2 ? 4 : 3;
-        cCloud[7] = ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 1 : 2;
-        return cCloud;
-    }
+
 }

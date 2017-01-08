@@ -1,32 +1,31 @@
+
 package io.j1st.data.job;
 
-import io.j1st.data.entity.Registry;
-import io.j1st.data.entity.config.BatConfig;
-import io.j1st.data.mqtt.MqttConnThread;
-import io.j1st.data.predict.PVpredict;
-import io.j1st.storage.DataMongoStorage;
-import io.j1st.storage.MongoStorage;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+        import io.j1st.data.entity.Registry;
+        import io.j1st.data.entity.config.BatConfig;
+        import io.j1st.data.mqtt.MqttConnThread;
+        import io.j1st.data.predict.PVpredict;
+        import io.j1st.storage.DataMongoStorage;
+        import io.j1st.storage.MongoStorage;
+        import org.slf4j.Logger;
+        import org.slf4j.LoggerFactory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+        import java.text.ParseException;
+        import java.text.SimpleDateFormat;
+        import java.util.Date;
 
 /**
  * 单线程工作任务,模拟单个ems系统数据
  */
-public class Job extends Thread {
-    Logger logger = LoggerFactory.getLogger(Job.class);
+public class PVjob extends Thread {
+    Logger logger = LoggerFactory.getLogger(PVjob.class);
     public volatile boolean exit = false;
-    private BatConfig STROAGE_002;
     private String agentId;
-    private double Reg12551;
     private String topic;
     private MongoStorage mogo;
     private DataMongoStorage dmogo;
 
-    public Job(String agentid, String topic, MongoStorage mogo, DataMongoStorage dmogo) {
+    public PVjob(String agentid, String topic, MongoStorage mogo, DataMongoStorage dmogo) {
         this.agentId = agentid;
         this.topic = topic;
         this.mogo = mogo;
@@ -54,33 +53,6 @@ public class Job extends Thread {
                     if (dmogo.findycdata(agentId, Integer.parseInt(date.substring(0, 8)))) {
                         /********************清理数据****************/
                         boolean is;
-                        //当天电网放电清零
-                        is = mogo.updateEmulatorRegister(agentId, "DWhExp", 0.0);
-                        if (is)
-                            logger.debug(agentId + "_DWhExp 电网放已清零..");
-                        //当天逆变器放电清零
-                        is = mogo.updateEmulatorRegister(agentId, "DCkWh", 0.0);
-                        if (is)
-                            logger.debug(agentId + "_DCkWh 逆变器放已清零..");
-
-                        //当天电网充电清零
-                        is = mogo.updateEmulatorRegister(agentId, "DWhImp", 0.0);
-                        if (is)
-                            logger.debug(agentId + "_DWhImp 电网充已清零..");
-                        //当天逆变器充电清零
-                        is = mogo.updateEmulatorRegister(agentId, "DDkWh", 0.0);
-                        if (is)
-                            logger.debug(agentId + "_DDkWh 逆变器充已清零..");
-
-                        //当天PV电量清零
-                        is = mogo.updateEmulatorRegister(agentId, "DYield", 0.0);
-                        if (is)
-                            logger.debug(agentId + "_DYield PV已清零..");
-                        //负载当天
-                        is = mogo.updateEmulatorRegister(agentId, "loadDWhImp", 0.0);
-                        if (is)
-                            logger.debug(agentId + "_loadDWhImp load已清零..");
-
                         Object num = mogo.findEmulatorRegister(agentId, "TYield");
                         double TYield = num != null ? (double) num : 0.0;
                         num = mogo.findEmulatorRegister(agentId, "DYield");
@@ -88,6 +60,10 @@ public class Job extends Thread {
                         is = mogo.updateEmulatorRegister(agentId, "TYield", TYield + DYield);
                         if (is)
                             logger.debug(agentId + "TYield累加前一天.");
+                        //当天PV电量清零
+                        is = mogo.updateEmulatorRegister(agentId, "DYield", 0.0);
+                        if (is)
+                            logger.debug(agentId + "_DYield PV已清零..");
                         PVpredict p = new PVpredict(dmogo);
                         //add now data
                         p.PVInfo(date.substring(0, 8) + "000000", agentId, 1, pvcloud());
@@ -103,15 +79,12 @@ public class Job extends Thread {
                 }
             }
             /*结束*/
-
-            STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(agentId + "_STROAGE_002Config");
-            Object batReceive = mogo.findEmulatorRegister(agentId, agentId + "120");
-            if (batReceive != null) {
-                Reg12551 = (Double) batReceive;
-            } else {
-                mogo.updateEmulatorRegister(agentId, agentId + "120", 0.0);
-            }
-            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime);
+            //GetDataAll(0d, null, mogo, jgtime)
+            //第一个参数接收指令充放电
+            //第二个电池配置文件
+            //第三个间隔时间
+            //第四个数据系统类型 0ems  1pv 2..
+            GetDataAll dataAll = new GetDataAll(0d, null, mogo, jgtime,1);
             String msg = dataAll.getDate(agentId);
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topicall = getTopic(agentId);
@@ -141,7 +114,6 @@ public class Job extends Thread {
 
         }
         logger.debug(agentId + "Old  worker thread:" + super.getId() + "End!");
-        return;
     }
 
     /**
@@ -152,7 +124,7 @@ public class Job extends Thread {
     }
 
     //太阳能云因子
-    private static int[] pvcloud() {
+    public static int[] pvcloud() {
         int[] cCloud = new int[8];
         int ran = (int) (Math.random() * 10);
         cCloud[0] = ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 4;

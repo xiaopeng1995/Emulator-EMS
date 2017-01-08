@@ -224,7 +224,7 @@ public class PVpredict {
                 String stime = tdate.substring(0, 8) + shhh + smmm;
                 allpac.append(stime, pVOut / 1000);
                 allW.append(stime, W / 1000);
-                alleToday.append(stime, pVOut / 1000);
+                alleToday.append(stime, DWhlmp);
 
             }
             now += 60000;

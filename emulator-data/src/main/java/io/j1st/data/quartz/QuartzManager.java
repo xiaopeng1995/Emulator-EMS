@@ -93,7 +93,7 @@ public class QuartzManager {
 
                 /** 方式二：先删除，然后在创建一个新的Job  */
                 //JobDetail jobDetail = sched.getJobDetail(JobKey.jobKey(jobName, jobGroupName));
-                //Class<? extends Job> jobClass = jobDetail.getJobClass();
+                //Class<? extends EmsJob> jobClass = jobDetail.getJobClass();
                 //removeJob(jobName, jobGroupName, triggerName, triggerGroupName);
                 //addJob(jobName, jobGroupName, triggerName, triggerGroupName, jobClass, cron);
                 /** 方式二 ：先删除，然后在创建一个新的Job */
