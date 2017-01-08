@@ -42,18 +42,18 @@ public class EmulatorApplication {
         PropertiesConfiguration mqttConfig;
         PropertiesConfiguration quartzConfig;
 
-        if (args.length >= 4) {
+        if (args.length >= 3) {
             productIdConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
             mqttConfig = new PropertiesConfiguration(args[2]);
-            quartzConfig = new PropertiesConfiguration(args[4]);
+           // quartzConfig = new PropertiesConfiguration(args[4]);
 
 
         } else {
             productIdConfig = new PropertiesConfiguration("config/product_agent.properties");
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
             mqttConfig = new PropertiesConfiguration("config/mqtt.properties");
-            quartzConfig = new PropertiesConfiguration("config/quartz.properties");
+            //quartzConfig = new PropertiesConfiguration("config/quartz.properties");
         }
         //mqtt
         MemoryPersistence persistence = new MemoryPersistence();
@@ -67,9 +67,9 @@ public class EmulatorApplication {
         //
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
-        //timing thread (Trigger twelve o 'clock every day)
-        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
-        quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
+//        //timing thread (Trigger twelve o 'clock every day)
+//        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
+//        quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
         String[] productIds = null;
         String[] agentIds = null;
         try {
@@ -125,7 +125,7 @@ public class EmulatorApplication {
                 Registry.INSTANCE.startThread(mqttConnThread);
                 Thread.sleep(90);
                 //设置间隔时间
-                Registry.INSTANCE.saveKey(agentID + "_jgtime", 30);
+                Registry.INSTANCE.saveKey(agentID + "_jgtime", 300);
                 //防止MQTT先启动线程做判断
                 if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
                     Job thread = new Job(agentID, "jsonUp", mogo, dmogo);

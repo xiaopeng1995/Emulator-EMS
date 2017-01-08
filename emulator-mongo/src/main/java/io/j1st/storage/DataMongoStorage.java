@@ -52,8 +52,9 @@ public class DataMongoStorage {
         this.database = this.client.getDatabase(config.getString("data_mongo.database"));
         // indexes
         this.database.getCollection("emulator_datas").createIndex(descending("updated_at"), new IndexOptions().expireAfter(3L, TimeUnit.DAYS));
+        this.database.getCollection("ems_forecast_data").createIndex(descending("updated_at"), new IndexOptions().expireAfter(3L, TimeUnit.DAYS));
         //drop index(这里暂时没用，预留，当我们需要改变与时间相关的检索字段时，需要先删除再新建，删除的前提是检索字段已经存在，不存在会报错，慎改)
-        // this.database.getCollection("emulator_datas").dropIndex(descending("updated_at"));
+        //this.database.getCollection("emulator_datas").dropIndex(ascending("_id"));
     }
 
     public void destroy() {
@@ -96,11 +97,11 @@ public class DataMongoStorage {
 
         return "成功删除: " + attributeCount + " 条agent attributes数据 " + agentLogs + " 条agent logs数据";
     }
+
     //是否添加预测数据
-    public Boolean findycdata(String agentId,Integer day)
-    {
+    public Boolean findycdata(String agentId, Integer day) {
         return this.database.getCollection("ems_forecast_data")
-                .find(and(eq("agent_id", new ObjectId(agentId)),eq("day", day))).first()==null;
+                .find(and(eq("agent_id", new ObjectId(agentId)), eq("day", day))).first() == null;
     }
 
     /**
@@ -111,12 +112,10 @@ public class DataMongoStorage {
      * @param type     硬件类型
      * @param date     时间
      * @param timeZone 时区
-     * @param key      当前毫秒数
-     * @param value    当前值
      * @param dyield   一天的总值
      */
-    public void updateAnalysisInfo(ObjectId agentId, String deviceSn, Integer type, Date date, DateTimeZone timeZone,
-                                   long key, double value, double dyield) {
+    public boolean updateAnalysisInfo(ObjectId agentId, String deviceSn, Integer type, Date date, DateTimeZone timeZone,
+                                      Document pac, double dyield) {
         if (timeZone == null) {
             timeZone = DateTimeZone.getDefault();
         }
@@ -125,28 +124,23 @@ public class DataMongoStorage {
         soid.append("device_sn", deviceSn);
         soid.append("agent_id", agentId);
         soid.append("type", type + "");
-
-        Document sd = new Document();
-        sd.append("updated_at", date);
-        sd.append("DYield", dyield);
-        sd.append("Pac." + key, value);
-
-        this.database.getCollection("ems_forecast_data")
-                .updateOne(and(eq("device_sn", deviceSn),
-                        eq("agent_id", agentId),
-                        eq("day", day)),
+        soid.append("DYield", dyield);
+        soid.append("day", day);
+        soid.append("Pac", pac);
+        return this.database.getCollection("ems_forecast_data")
+                .updateOne(and(eq("agent_id", agentId), eq("device_sn", deviceSn)),
                         new Document()
-                                .append("$set", sd)
-                                .append("$setOnInsert", soid),
-                        new UpdateOptions().upsert(true));
+                                .append("$set", soid)
+                                .append("$currentDate", new Document("updated_at", true)),
+                        new UpdateOptions().upsert(true)).getModifiedCount() > 0;
 
     }
 
     /**
-     *预测一天的负载数据
+     * 预测一天的负载数据
      */
-    public void updatePowerT(ObjectId agentId, String deviceSn, String type, Date date, DateTimeZone timeZone,
-                             long key, double value, double DWhlmp) {
+    public boolean updatePowerT(ObjectId agentId, String deviceSn, String type, Date date, DateTimeZone timeZone,
+                                Document w, double DWhlmp) {
         if (timeZone == null) {
             timeZone = DateTimeZone.getDefault();
         }
@@ -155,58 +149,52 @@ public class DataMongoStorage {
         soid.append("device_sn", deviceSn);
         soid.append("agent_id", agentId);
         soid.append("type", type);
-
-        Document sd = new Document();
-        sd.append("updated_at", date);
-        sd.append("DWhlmp", DWhlmp);
-        sd.append("W." + key, value);
-
-        this.database.getCollection("ems_forecast_data")
-                .updateOne(and(eq("device_sn", deviceSn),
-                        eq("agent_id", agentId),
-                        eq("day", day)),
+        soid.append("day", day);
+        soid.append("DWhlmp", DWhlmp);
+        soid.append("W", w);
+        return this.database.getCollection("ems_forecast_data")
+                .updateOne(and(eq("agent_id", agentId), eq("device_sn", deviceSn)),
                         new Document()
-                                .append("$set", sd)
-                                .append("$setOnInsert", soid),
-                        new UpdateOptions().upsert(true));
+                                .append("$set", soid)
+                                .append("$currentDate", new Document("updated_at", true)),
+                        new UpdateOptions().upsert(true)).getModifiedCount() > 0;
 
     }
 
     /**
      * 添加GenData数据
-     *
-     * @param genData GenData数据
      */
-    public void addGenData(GenData genData) {
-        Document d = new Document();
-        d.append("updated_at", new Date());
-        d.append("state", genData.getState());
-        d.append("time", genData.getTime());
-        d.append("pVPower", genData.getpVPower());
-        d.append("eToday", genData.geteToday());
-        d.append("car1P", genData.getCar1P());
-        d.append("car1SOC", genData.getCar1SOC());
-        d.append("car2P", genData.getCar2P());
-        d.append("car2SOC", genData.getCar2SOC());
-        d.append("batP", genData.getBatP());
-        d.append("batSOC", genData.getBatSOC());
-        d.append("powerG", genData.getPowerG());
-        d.append("meterG", genData.getMeterG());
-        d.append("powerT", genData.getPowerT());
-        d.append("meterT", genData.getMeterT());
-        this.database.getCollection("emulator_datas").insertOne(d);
+    public boolean addGenData(ObjectId agentId, String day,
+                              Document pac, Document etoday, Document load) {
+
+        Document soid = new Document();
+        soid.append("agent_id", agentId);
+        soid.append("day", day.substring(0, 8));
+        soid.append("pVPower", pac);
+        soid.append("powerT", load);
+        soid.append("eToday", etoday);
+        return this.database.getCollection("emulator_datas")
+                .updateOne(eq("agent_id", agentId),
+                        new Document()
+                                .append("$set", soid)
+                                .append("$currentDate", new Document("updated_at", true)),
+                        new UpdateOptions().upsert(true)).getModifiedCount() > 0;
 
     }
 
     /**
      * 通过时间查找对应数据
      *
-     * @param time
      * @return genData
      */
-    public Document findGendDataByTime(String time, int state) {
-        Document genData = this.database.getCollection("emulator_datas").find(and(eq("time", time), eq("state", state))).first();
-        return genData;
+    public Document findGendDataByTime(String agentid, String key) {
+        Document d = this.database.getCollection("emulator_datas")
+                .find(eq("agent_id", new ObjectId(agentid))).first();
+        if (d != null) {
+            Object genData = d.get(key);
+            return (Document) genData;
+        } else
+            return null;
     }
 
     /**

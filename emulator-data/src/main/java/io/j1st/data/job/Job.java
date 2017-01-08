@@ -47,9 +47,9 @@ public class Job extends Thread {
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
             String date = format.format(new Date());
             //零点开始
-            if (date.substring(8, 12).equals("0000")) {
+            if (date.substring(8, 10).equals("00")) {
                 date = date.substring(0, 8) + "000000";
-                logger.info("已到凌晨..开始工作");
+                logger.info("已在凌晨时间..开始工作");
                 try {
                     if (dmogo.findycdata(agentId, Integer.parseInt(date.substring(0, 8)))) {
                         /********************清理数据****************/
@@ -88,9 +88,15 @@ public class Job extends Thread {
                         is = mogo.updateEmulatorRegister(agentId, "TYield", TYield + DYield);
                         if (is)
                             logger.debug(agentId + "TYield累加前一天.");
-                        //添加预测数据
                         PVpredict p = new PVpredict(dmogo);
+                        //add now data
+                        p.PVInfo(date.substring(0, 8) + "000000", agentId, 1, pvcloud());
+                        //添加预测数据
                         p.PVInfo(date, agentId, 0, pvcloud());
+
+                    }
+                    else {
+                        logger.debug("过滤凌晨重复动作");
                     }
                 } catch (ParseException e) {
                     e.printStackTrace();
@@ -112,15 +118,15 @@ public class Job extends Thread {
             if (mqttConnThread != null && mqttConnThread.getMqttClient().isConnected()) {
                 mqttConnThread.sendMessage(topicall, msg);
                 //间隔时间差
-                long interval ;
+                long interval;
                 //总时间差
                 long startDate;
                 Date now = new Date();
                 interval = (now.getTime() - (long) Registry.INSTANCE.getValue().get(agentId + "_jgdate")) / 1000;
                 long startThtead = (now.getTime() - timeThread.getTime()) / 1000;
-                startDate=(now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000;
+                startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000;
                 logger.info("\n##########start###########\nThread[{}]Send Data Info:\nAgentID:\t{}\nTopic:\t{}\nTime Interval:\t{} \tSet the time:{}\tThread run time:{}\tserver run time:{}\nSend Data:\t{}\nOther Info:\t{}\n##########end###########"
-                        , super.getId(), agentId, topic, interval, jgtime,startThtead, startDate, msg, "other");
+                        , super.getId(), agentId, topic, interval, jgtime, startThtead, startDate, msg, "other");
             } else {
                 logger.info(agentId + "MQTT链接信息错误,链接失败");
                 logger.debug(agentId + "发送的数据为：" + msg);

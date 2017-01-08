@@ -29,7 +29,7 @@ public class HttpApplication extends Application<HttpConfiguration> {
     private static PropertiesConfiguration mongoConfig;
 
     public static void main(String[] args) throws Exception {
-        if (args.length >= 1) {
+        if (args.length >= 3) {
             mongoConfig = new PropertiesConfiguration(args[0]);
             args = ArrayUtils.subarray(args, 1, args.length);
         } else {
