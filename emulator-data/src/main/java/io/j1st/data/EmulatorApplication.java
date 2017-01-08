@@ -46,7 +46,7 @@ public class EmulatorApplication {
             productIdConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
             mqttConfig = new PropertiesConfiguration(args[2]);
-           // quartzConfig = new PropertiesConfiguration(args[4]);
+            // quartzConfig = new PropertiesConfiguration(args[4]);
 
 
         } else {
@@ -70,17 +70,17 @@ public class EmulatorApplication {
 //        //timing thread (Trigger twelve o 'clock every day)
 //        QuartzManager quartzManager = new QuartzManager(new StdSchedulerFactory(quartzConfig.getString("config.path")));
 //        quartzManager.addJob("day_Job", "day_Job", "day_Trigger", "dat_Trigger", DayJob.class, "0 0 0 * * ?");
-        String[] productIds = null;
-        String[] agentIds = null;
+        String[] productIds ;
+        String[] agentIds ;
         try {
             agentIds = productIdConfig.getString("agent_id").split("_");
         } catch (NullPointerException e) {
-            agentIds = agentIds == null ? new String[0] : agentIds;
+            agentIds = new String[0];
         }
         try {
             productIds = productIdConfig.getString("product_id").split("_");
         } catch (NullPointerException e) {
-            productIds = productIds == null ? new String[0] : productIds;
+            productIds = new String[0];
 
         }
         PVpredict pVpredict = new PVpredict(dmogo);
