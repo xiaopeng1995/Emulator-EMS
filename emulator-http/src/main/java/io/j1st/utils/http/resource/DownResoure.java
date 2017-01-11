@@ -101,14 +101,15 @@ public class DownResoure extends AbstractResource {
             body = JsonUtils.Mapper.writeValueAsString(payload);
 
 //            final String body = JsonUtils.Mapper.writeValueAsString(map.get("payload"));
-            PropertiesConfiguration mqttHttp= new PropertiesConfiguration("config/mqttHttp.properties");
-            final String url = "http://" + mqttHttp.getString("mqtt.http") + "/mqtt/clients/" + agentId + "/publish?qos=" + qos + "&topicName=" + topic;
+           // PropertiesConfiguration mqttHttp= new PropertiesConfiguration("config/mqttHttp.properties");
+            //+ mqttHttp.getString("mqtt.http") +
+            final String url = "http://139.196.230.150:8081/mqtt/clients/" + agentId + "/publish?qos=" + qos + "&topicName=" + topic;
             final String token = this.mongo.getUserById(new ObjectId(agentId)).getToken();
             result = HttpClientUtils.sendDownStreamPost(url, token, null, body);
-        } catch (ConfigurationException e) {
+        } /*catch (ConfigurationException e) {
             e.printStackTrace();
             logger.info("读取配置文件发生错误:{}", e.getMessage());
-        } catch (JsonProcessingException e) {
+        } */catch (JsonProcessingException e) {
             e.printStackTrace();
             logger.info("客户端发来的json格式解析发生错误:{},下发操作放弃", e.getMessage());
         }

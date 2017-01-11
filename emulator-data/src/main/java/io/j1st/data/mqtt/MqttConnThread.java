@@ -63,7 +63,7 @@ public class MqttConnThread implements Callable {
                     @Override
                     public void connectionLost(Throwable cause) {
                         logger.debug("线程:{}断开连接，开始重连", mqttClient.getClientId());
-                        new MqttConnThread(mqttClient, options, quartzManager, mogo, dmogo);
+                        Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, quartzManager, mogo, dmogo));
                     }
 
                     @Override
@@ -71,6 +71,8 @@ public class MqttConnThread implements Callable {
                         String AgentID = mqttClient.getClientId();
                         logger.debug(AgentID + "收到的消息为：" + message.toString());
                         Map<Object, Object> msgData = JsonUtils.Mapper.readValue(message.toString().getBytes(), Map.class);
+
+
                         if (msgData.keySet().toString().contains("Query")) {
                             List<Map> bbc = (List<Map>) msgData.get("Query");
                             int d = (Integer) bbc.get(0).get("D");
@@ -110,14 +112,23 @@ public class MqttConnThread implements Callable {
                             }
                             Registry.INSTANCE.saveKey(d, i);
                             mogo.updateEmulatorRegister(AgentID, d, i);
-                        } else if (msgData.keySet().toString().contains("upSTAEAM")) {
+                        } else if (msgData.keySet().toString().contains("emulatorJob")) {
+
+                            List<Map> bbc = (List<Map>) msgData.get("emulatorJob");
+
+                            //
+                            String emulatorAgent = bbc.get(0).get("agentId").toString();
+                            // 0    AgentId  1批次号
+                            int Type = (int) bbc.get(0).get("type");
+                            // 0   PV   1 EMS
+                            int system=(int) bbc.get(0).get("system");
+
+
 
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
                             String dataqc = bbc.get(0).get("packs").toString();
                             mogo.updateEmulatorRegister(AgentID, "packing", dataqc);
-
-
                             BatConfig STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(AgentID + "_STROAGE_002Config");
                             Object batReceive = mogo.findEmulatorRegister(AgentID, AgentID + "120");
                             double Reg12551 = 0d;
@@ -127,7 +138,7 @@ public class MqttConnThread implements Callable {
                                 mogo.updateEmulatorRegister(AgentID, AgentID + "120", 0.0);
                             }
                             int jgtime = (int) Registry.INSTANCE.getValue().get(AgentID + "_jgtime");
-                            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime,0);
+                            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime, 0);
                             String msg = dataAll.getDate(AgentID);
                             logger.info("实时packs  类型:" + msg);
                             sendMessage(getTopic(AgentID), msg);
@@ -150,7 +161,7 @@ public class MqttConnThread implements Callable {
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         } catch (Exception e) {
             logger.error("后台mqtt客户端:{}连接服务器 broker失败！重新连接开始...", mqttClient.getClientId());
-            new MqttConnThread(mqttClient, options, quartzManager, mogo, dmogo);
+            Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, quartzManager, mogo, dmogo));
             //睡眠5秒
             Thread.sleep(5000);
         }

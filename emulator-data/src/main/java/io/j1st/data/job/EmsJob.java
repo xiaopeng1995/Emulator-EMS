@@ -132,7 +132,10 @@ public class EmsJob extends Thread {
                         , super.getId(), agentId, topic, interval, jgtime, startThtead, startDate, msg, "other");
             } else {
                 logger.info(agentId + "MQTT链接信息错误,链接失败");
-                logger.debug(agentId + "发送的数据为：" + msg);
+                logger.debug("发送的数据为：" + msg);
+                logger.info("开始重新连接..");
+                //add a agent mqtt Send and receive sever
+                Registry.INSTANCE.startThread(mqttConnThread);
             }
             //更新间隔时间
             Registry.INSTANCE.saveKey(agentId + "_jgdate", new Date().getTime());

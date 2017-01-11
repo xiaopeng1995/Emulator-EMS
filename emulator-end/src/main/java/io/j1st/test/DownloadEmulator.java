@@ -50,7 +50,7 @@ public class DownloadEmulator {
         List<Map> d = new ArrayList<>();
         Map<String, Object> setMHReg = new HashMap<>();
         setMHReg.put("dsn", agentid + "120");
-        setMHReg.put("Reg12551", 666.0);
+        setMHReg.put("Reg12551", 0d);
         d.add(setMHReg);
         Map<String, Object> batReceive = new HashMap<>();
         batReceive.put("SetMHReg", d);
@@ -70,6 +70,5 @@ public class DownloadEmulator {
             logger.info("packs\n" + payloadmsg);
         }
         mqtt.publish("agents/" + agentid + "/downstream",payloadmsg.getBytes("utf-8"),0,false);
-        mqtt.close();
     }
 }

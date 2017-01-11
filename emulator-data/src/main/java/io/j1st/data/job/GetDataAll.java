@@ -95,8 +95,8 @@ public class GetDataAll {
         //填装数据如果是ems系统的话
         if (sysType == 0) {
             packing = new int[]{1, 1, 1, 1, 1};
-            battery(date, agentID);
-            mogo.findEmulatorRegister(agentID, "packing");
+            battery01(date, agentID);
+            datapacking=mogo.findEmulatorRegister(agentID, "packing");
         }
         emsData01.setType("SUNS120");
         emsData01.setDsn(agentID + "120");
@@ -190,8 +190,8 @@ public class GetDataAll {
         }
         return msg;
     }
-
-    private void battery(String startDate, String agentID) {
+    //峰谷电价策略
+    private void battery01(String startDate, String agentID) {
         //负载
         Document powerT = dmogo.findGendDataByTime(agentID, "powerT");
         double loadW = 0.0;
@@ -286,7 +286,7 @@ public class GetDataAll {
             PDC = PAC * EFF;
             //PDC=(102PDC-PDC*soc)/27
             if (Soc > 0.75)
-                PDC = PDC * (102 - Soc) / 27;
+                PDC = PDC * (102 - Soc*(100)) / 27;
             /*  Soc>80 BV=425 Soc<=80  BV=16.5Soc+316.44  Soc<10  BV=2Soc+260  */
             if (Soc > 0.8) {
                 BV = 425.0;
@@ -295,7 +295,6 @@ public class GetDataAll {
             } else {
                 BV = 2 * (Soc * 100) + 260;
             }
-            double J_TotWhImp = W * (((double) jgtime) / 3600);//当前电网侧间隔充电消耗功率
 
             double J_TCkWh = PAC * (((double) jgtime) / 3600);//当前逆变器侧间隔充电消耗功率
 
@@ -307,26 +306,30 @@ public class GetDataAll {
             //*****  绝对值
             TCkWh += Math.abs(J_TCkWh);
             mogo.updateEmulatorRegister(agentID, "TCkWh", TCkWh);
-            //更新电网累计值
-            //*****  绝对值
-
-            TotWhImp += Math.abs(J_TotWhImp);
-            mogo.updateEmulatorRegister(agentID, "TotWhImp", TotWhImp);
 
             //去内存获取当天逆变器充电情况
             //*****  绝对值
             DCkWh += Math.abs(J_TCkWh);//当天
             mogo.updateEmulatorRegister(agentID, "DCkWh", DCkWh);
-            //当天电网
-            //*****  绝对值
-            DWhImp += Math.abs(J_TotWhImp);
-            mogo.updateEmulatorRegister(agentID, "DWhImp", DWhImp);
+
 
         }//待机不符合要求
         else {
             BV = 16.5 * Soc + 316.44;
             PDC = 0;
         }
+        //电网消耗
+        //更新电网累计值
+        //*****  绝对值
+        double J_TotWhImp = W * (((double) jgtime) / 3600);//当前电网侧间隔充电消耗功率
+        TotWhImp += Math.abs(J_TotWhImp);
+        mogo.updateEmulatorRegister(agentID, "TotWhImp", TotWhImp);
+        //当天电网
+        //*****  绝对值
+        DWhImp += Math.abs(J_TotWhImp);
+        mogo.updateEmulatorRegister(agentID, "DWhImp", DWhImp);
+
+
         BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
         TotWh = TotWhImp - TotWhExp;//Total Real Energy (当前)组合有功总电能
         mogo.updateEmulatorRegister(agentID, "Soc", Soc);

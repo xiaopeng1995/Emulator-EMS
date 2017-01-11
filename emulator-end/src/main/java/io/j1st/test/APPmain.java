@@ -22,9 +22,8 @@ public class APPmain {
             mqttConfig = new PropertiesConfiguration(args[2]);
             quartzConfig = new PropertiesConfiguration(args[4]);
 
-
         } else {
-            productIdConfig = new PropertiesConfiguration("config/product.properties");
+            productIdConfig = new PropertiesConfiguration("config/product_agent.properties");
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
             mqttConfig = new PropertiesConfiguration("config/mqtt.properties");
             quartzConfig = new PropertiesConfiguration("config/quartz.properties");

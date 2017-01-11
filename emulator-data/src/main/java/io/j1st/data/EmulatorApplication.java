@@ -63,7 +63,23 @@ public class EmulatorApplication {
         mogo.init(mongoConfig);
         DataMongoStorage dmogo = new DataMongoStorage();
         dmogo.init(mongoConfig);
-        //
+
+        /***********************************/
+        //mqtt
+//        String serverid = productIdConfig.getString("sever_id");
+//        mqtt = new MqttClient(mqttConfig.getString("mqtt.url"),
+//                new ObjectId(serverid).toHexString(), persistence);
+//        options = new MqttConnectOptions();
+//        options.setUserName(new ObjectId(serverid).toHexString());
+//        options.setPassword("qOSWXgJcZFNCuVjhkHtAHfyqbujuayHy".toCharArray());
+//        MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo, dmogo);
+//        //seve mqtt info
+//        Registry.INSTANCE.saveSession(serverid, mqttConnThread);
+//        //add a agent mqtt Send and receive sever
+//        Registry.INSTANCE.startThread(mqttConnThread);
+        /***********************************/
+
+        //mogo加入内存
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
         String[] productIds;
@@ -108,7 +124,6 @@ public class EmulatorApplication {
                 //add predict data
                 if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
                     pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
-
                 }
 
                 //save a job config
@@ -121,7 +136,7 @@ public class EmulatorApplication {
                 Registry.INSTANCE.startThread(mqttConnThread);
                 Thread.sleep(90);
                 //设置间隔时间
-                Registry.INSTANCE.saveKey(agentID + "_jgtime", 300);
+                Registry.INSTANCE.saveKey(agentID + "_jgtime", 30);
                 //防止MQTT先启动线程做判断
                 if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
                     EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
@@ -147,6 +162,7 @@ public class EmulatorApplication {
         }
         int pvn = pvproductIds.length > pvagentIds.length ? pvproductIds.length : pvagentIds.length;
         int pvagunt = 0;
+
         for (int i = 0; i < pvn; i++) {
             List<Agent> pvagents = new ArrayList<>();
             if (i < pvproductIds.length)
@@ -190,7 +206,7 @@ public class EmulatorApplication {
 
 
         Registry.INSTANCE.saveKey("agentIdAll", agentIdAll);
-        logger.info("启动完毕,本次启动共{}个Agent任务", agunt+pvagunt);
+        logger.info("启动完毕,本次启动共{}个Agent任务", agunt + pvagunt);
 
     }
 

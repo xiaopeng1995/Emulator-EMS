@@ -209,9 +209,8 @@ public class PVpredict {
             if (is == 0) {
 
                 allpac.append(now + "", pVOut / 1000);
-                allpac.append(now + 30000 + "", pVOut / 1000);
                 allW.append(now + "", W / 1000);
-                allW.append(now + 30000 + "", W / 1000);
+
             } else { //添加实时数据
                 int chh = i / 60;
                 String shhh = chh + "";
@@ -224,7 +223,7 @@ public class PVpredict {
                 String stime = tdate.substring(0, 8) + shhh + smmm;
                 allpac.append(stime, pVOut / 1000);
                 allW.append(stime, W / 1000);
-                alleToday.append(stime, DWhlmp);
+                alleToday.append(stime, eToday);
 
             }
             now += 60000;
