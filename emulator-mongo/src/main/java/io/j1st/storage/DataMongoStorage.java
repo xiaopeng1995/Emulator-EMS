@@ -200,21 +200,16 @@ public class DataMongoStorage {
     /**
      * 删除time时间之前数据
      *
-     * @param time 时间
+     *
      * @return 受影响行数
      */
-    public long deleteDataByTime(String time, int is) {
-        FindIterable<Document> TDocument = database.getCollection("emulator_datas").find();
+    public long deleteDataByTime() {
         long count = 0;
-        for (Document d : TDocument
-                ) {
-            if (Double.parseDouble(d.get("time").toString()) > Double.parseDouble(time) && is > 0
-                    || is == 0 && Double.parseDouble(d.get("time").toString()) < Double.parseDouble(time)) {
-                count += this.database.getCollection("emulator_datas")
-                        .deleteOne(eq("time", d.get("time")))
+
+         count += this.database.getCollection("emulator_datas")
+                        .deleteMany(eq("state", 0))
                         .getDeletedCount();
-            }
-        }
+
 
         return count;
     }

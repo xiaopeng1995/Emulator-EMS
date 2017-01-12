@@ -101,8 +101,14 @@ public class PVjob extends Thread {
                 logger.info("\n##########start###########\nThread[{}]Send Data Info:\nAgentID:\t{}\nTopic:\t{}\nTime Interval:\t{} \tSet the time:{}\tThread run time:{}\tserver run time:{}\nSend Data:\t{}\nOther Info:\t{}\n##########end###########"
                         , super.getId(), agentId, topic, interval, jgtime, startThtead, startDate, msg, "other");
             } else {
+                //睡眠300秒
+                try {
+                    Thread.sleep(300*1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 logger.info(agentId + "MQTT链接信息错误,链接失败");
-                logger.debug(agentId + "发送的数据为：" + msg);
+                Registry.INSTANCE.startThread(mqttConnThread);
             }
             //更新间隔时间
             Registry.INSTANCE.saveKey(agentId + "_jgdate", new Date().getTime());

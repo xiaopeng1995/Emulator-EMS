@@ -1016,43 +1016,7 @@ public class MongoStorage {
 
     }
 
-    /**
-     * 添加GenData数据
-     *
-     * @param genData GenData数据
-     */
-    public void addGenData(GenData genData) {
-        if (findGendDataByTime(genData.getTime(), 0) == null) {
-            System.out.println("添加数据..");
-            Document d = new Document();
-            d.append("state", genData.getState());
-            d.append("time", genData.getTime());
-            d.append("pVPower", genData.getpVPower());
-            d.append("eToday", genData.geteToday());
-            d.append("car1P", genData.getCar1P());
-            d.append("car1SOC", genData.getCar1SOC());
-            d.append("car2P", genData.getCar2P());
-            d.append("car2SOC", genData.getCar2SOC());
-            d.append("batP", genData.getBatP());
-            d.append("batSOC", genData.getBatSOC());
-            d.append("powerG", genData.getPowerG());
-            d.append("meterG", genData.getMeterG());
-            d.append("powerT", genData.getPowerT());
-            d.append("meterT", genData.getMeterT());
-            this.database.getCollection("emulator_datas").insertOne(d);
-        }
-    }
 
-    /**
-     * 通过时间查找对应数据
-     *
-     * @param time
-     * @return genData
-     */
-    public Document findGendDataByTime(String time, int state) {
-        Document genData = this.database.getCollection("emulator_datas").find(and(eq("time", time), eq("state", state))).first();
-        return genData;
-    }
 
     /**
      * 删除time时间之前数据

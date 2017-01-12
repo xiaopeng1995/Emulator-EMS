@@ -131,9 +131,13 @@ public class EmsJob extends Thread {
                 logger.info("\n##########start###########\nThread[{}]Send Data Info:\nAgentID:\t{}\nTopic:\t{}\nTime Interval:\t{} \tSet the time:{}\tThread run time:{}\tserver run time:{}\nSend Data:\t{}\nOther Info:\t{}\n##########end###########"
                         , super.getId(), agentId, topic, interval, jgtime, startThtead, startDate, msg, "other");
             } else {
-                logger.info(agentId + "MQTT链接信息错误,链接失败");
-                logger.debug("发送的数据为：" + msg);
-                logger.info("开始重新连接..");
+                //睡眠300秒
+                try {
+                    Thread.sleep(300*1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                logger.info(agentId + "MQTT链接信息错误,链接失败开始重新连接..");
                 //add a agent mqtt Send and receive sever
                 Registry.INSTANCE.startThread(mqttConnThread);
             }

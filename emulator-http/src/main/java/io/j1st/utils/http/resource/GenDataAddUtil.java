@@ -54,7 +54,7 @@ public class GenDataAddUtil extends AbstractResource {
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
     public ResultEntity addticket(@Valid GenData data) {
-        mongo.addGenData(data);
+
         return new ResultEntity<>(null);
     }
 
@@ -65,7 +65,7 @@ public class GenDataAddUtil extends AbstractResource {
     public ResultEntity findGendDataBytime(@QueryParam("time") @DefaultValue("201611180750") String time,
                                            @QueryParam("state") @DefaultValue("0") int state) {
 
-        return new ResultEntity<>(mongo.findGendDataByTime(time,state));
+        return new ResultEntity<>("");
     }
 
     @Path("/delete")

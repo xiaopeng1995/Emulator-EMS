@@ -13,6 +13,8 @@ import io.j1st.storage.entity.Agent;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 
+import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
+import org.apache.commons.lang3.StringUtils;
 import org.bson.types.ObjectId;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -37,61 +39,73 @@ public class EmulatorApplication {
         //start a job thread
         Registry.INSTANCE.saveKey("startDate", new Date().getTime());
 
-        PropertiesConfiguration productIdConfig;
+        PropertiesConfiguration emulatorConfig;
         PropertiesConfiguration mongoConfig;
         PropertiesConfiguration mqttConfig;
         PropertiesConfiguration quartzConfig;
         if (args.length >= 3) {
-            productIdConfig = new PropertiesConfiguration(args[0]);
+            emulatorConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
             mqttConfig = new PropertiesConfiguration(args[2]);
             // quartzConfig = new PropertiesConfiguration(args[4]);
 
 
         } else {
-            productIdConfig = new PropertiesConfiguration("config/product_agent.properties");
+            emulatorConfig = new PropertiesConfiguration("config/emulator.properties");
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
             mqttConfig = new PropertiesConfiguration("config/mqtt.properties");
             //quartzConfig = new PropertiesConfiguration("config/quartz.properties");
         }
-        //mqtt
+        /**************管理配置文件***************/
+        //自动重新加载
+        emulatorConfig.setReloadingStrategy(new FileChangedReloadingStrategy());
+        //自动保存
+        emulatorConfig.setAutoSave(true);
+
+
+        //***********************mqtt
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
         MqttConnectOptions options;
-        //mongodb
+        //***********************mongodb
         MongoStorage mogo = new MongoStorage();
         mogo.init(mongoConfig);
+
         DataMongoStorage dmogo = new DataMongoStorage();
         dmogo.init(mongoConfig);
-
-        /***********************************/
-        //mqtt
-//        String serverid = productIdConfig.getString("sever_id");
-//        mqtt = new MqttClient(mqttConfig.getString("mqtt.url"),
-//                new ObjectId(serverid).toHexString(), persistence);
-//        options = new MqttConnectOptions();
-//        options.setUserName(new ObjectId(serverid).toHexString());
-//        options.setPassword("qOSWXgJcZFNCuVjhkHtAHfyqbujuayHy".toCharArray());
-//        MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo, dmogo);
-//        //seve mqtt info
-//        Registry.INSTANCE.saveSession(serverid, mqttConnThread);
-//        //add a agent mqtt Send and receive sever
-//        Registry.INSTANCE.startThread(mqttConnThread);
-        /***********************************/
-
+//        System.out.println(dmogo.deleteDataByTime());删除旧数据
         //mogo加入内存
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
+        /***********************************/
+        //mqtt
+        String serverid = emulatorConfig.getString("sever_id");
+        mqtt = new MqttClient(mqttConfig.getString("mqtt.url"),
+                new ObjectId(serverid).toHexString(), persistence);
+        options = new MqttConnectOptions();
+        options.setUserName(new ObjectId(serverid).toHexString());
+        String token = mogo.getAgentsById(new ObjectId(serverid)).getToken();
+        options.setPassword(token.toCharArray());
+        MqttConnThread serverThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
+        //seve mqtt info
+        Registry.INSTANCE.saveKey("mqtt_url", mqttConfig.getString("mqtt.url"));
+        Registry.INSTANCE.saveSession(serverid, serverThread);
+        //add a agent mqtt Send and receive sever
+        Registry.INSTANCE.startThread(serverThread);
+        /***********************************/
+
+        //获取默认间隔时间
+        int defaultTime=Integer.parseInt(emulatorConfig.getString("default_Time"));
         String[] productIds;
         String[] agentIds;
         //启动ems模拟数据
         try {
-            agentIds = productIdConfig.getString("ems_agent_id").split("_");
+            agentIds = emulatorConfig.getString("ems_agent_id").split("_");
         } catch (NullPointerException e) {
             agentIds = new String[0];
         }
         try {
-            productIds = productIdConfig.getString("ems_product_id").split("_");
+            productIds = emulatorConfig.getString("ems_product_id").split("_");
         } catch (NullPointerException e) {
             productIds = new String[0];
 
@@ -106,10 +120,14 @@ public class EmulatorApplication {
 
         for (int i = 0; i < n; i++) {
             List<Agent> agents = new ArrayList<>();
-            if (i < productIds.length)
-                agents = mogo.getAgentsByProductId(new ObjectId(productIds[i]));
-            if (i < agentIds.length)
-                agents.add(mogo.getAgentsById(new ObjectId(agentIds[i])));
+            if (i < productIds.length) {
+                if (StringUtils.isNotBlank(productIds[i]))
+                    agents = mogo.getAgentsByProductId(new ObjectId(productIds[i]));
+            }
+            if (i < agentIds.length) {
+                if (StringUtils.isNotBlank(agentIds[i]))
+                    agents.add(mogo.getAgentsById(new ObjectId(agentIds[i])));
+            }
             for (Agent agent : agents) {
                 agunt++;
                 String agentID = agent.getId().toString();
@@ -129,14 +147,14 @@ public class EmulatorApplication {
                 //save a job config
                 Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
                 //mqtt
-                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo, dmogo);
+                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
                 //seve mqtt info
                 Registry.INSTANCE.saveSession(agentID, mqttConnThread);
                 //add a agent mqtt Send and receive sever
                 Registry.INSTANCE.startThread(mqttConnThread);
                 Thread.sleep(90);
                 //设置间隔时间
-                Registry.INSTANCE.saveKey(agentID + "_jgtime", 30);
+                Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
                 //防止MQTT先启动线程做判断
                 if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
                     EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
@@ -150,12 +168,12 @@ public class EmulatorApplication {
         String[] pvagentIds;
         String[] pvproductIds;
         try {
-            pvagentIds = productIdConfig.getString("pv_agent_id").split("_");
+            pvagentIds = emulatorConfig.getString("pv_agent_id").split("_");
         } catch (NullPointerException e) {
             pvagentIds = new String[0];
         }
         try {
-            pvproductIds = productIdConfig.getString("pv_product_id").split("_");
+            pvproductIds = emulatorConfig.getString("pv_product_id").split("_");
         } catch (NullPointerException e) {
             pvproductIds = new String[0];
 
@@ -165,10 +183,14 @@ public class EmulatorApplication {
 
         for (int i = 0; i < pvn; i++) {
             List<Agent> pvagents = new ArrayList<>();
-            if (i < pvproductIds.length)
-                pvagents = mogo.getAgentsByProductId(new ObjectId(pvproductIds[i]));
-            if (i < pvagentIds.length)
+            if (i < pvproductIds.length) {
+                if (StringUtils.isNotBlank(pvproductIds[i]))
+                    pvagents = mogo.getAgentsByProductId(new ObjectId(pvproductIds[i]));
+            }
+            if (i < pvagentIds.length){
+                if (StringUtils.isNotBlank(pvagentIds[i]))
                 pvagents.add(mogo.getAgentsById(new ObjectId(pvagentIds[i])));
+            }
             for (Agent pvagent : pvagents) {
                 pvagunt++;
                 String agentID = pvagent.getId().toString();
@@ -186,14 +208,14 @@ public class EmulatorApplication {
 
                 }
                 //mqtt
-                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, null, mogo, dmogo);
+                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
                 //seve mqtt info
                 Registry.INSTANCE.saveSession(agentID, mqttConnThread);
                 //add a agent mqtt Send and receive sever
                 Registry.INSTANCE.startThread(mqttConnThread);
                 Thread.sleep(90);
                 //设置间隔时间
-                Registry.INSTANCE.saveKey(agentID + "_jgtime", 300);
+                Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
                 //防止MQTT先启动线程做判断
                 if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
                     PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);

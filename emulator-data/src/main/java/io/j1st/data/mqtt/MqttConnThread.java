@@ -1,6 +1,7 @@
 package io.j1st.data.mqtt;
 
 
+import io.j1st.data.ConfigFun;
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.EmsJob;
@@ -8,6 +9,7 @@ import io.j1st.data.job.GetDataAll;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.util.util.JsonUtils;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.eclipse.paho.client.mqttv3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,18 +34,20 @@ public class MqttConnThread implements Callable {
     // Mqtt Connect Options
     private MqttConnectOptions options;
 
-    //Timing task changes
-    private EmsJob quartzManager;
+    //cofig
+    private PropertiesConfiguration emulatorConfig;
 
     //Data persistence operations
     private MongoStorage mogo;
     private DataMongoStorage dmogo;
 
     // Construction
-    public MqttConnThread(MqttClient mqttClient, MqttConnectOptions options, EmsJob quartzManager, MongoStorage mogo, DataMongoStorage dmogo) {
+    public MqttConnThread(MqttClient mqttClient, MqttConnectOptions options,
+                          MongoStorage mogo, DataMongoStorage dmogo,
+                          PropertiesConfiguration emulatorConfig) {
         this.mqttClient = mqttClient;
         this.options = options;
-        this.quartzManager = quartzManager;
+        this.emulatorConfig=emulatorConfig;
         this.mogo = mogo;
         this.dmogo = dmogo;
         logger.debug("connection agein");
@@ -62,8 +66,7 @@ public class MqttConnThread implements Callable {
 
                     @Override
                     public void connectionLost(Throwable cause) {
-                        logger.debug("线程:{}断开连接，开始重连", mqttClient.getClientId());
-                        Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, quartzManager, mogo, dmogo));
+                        logger.debug("线程:{}断开连接!!!!", mqttClient.getClientId());
                     }
 
                     @Override
@@ -115,16 +118,15 @@ public class MqttConnThread implements Callable {
                         } else if (msgData.keySet().toString().contains("emulatorJob")) {
 
                             List<Map> bbc = (List<Map>) msgData.get("emulatorJob");
-
                             //
-                            String emulatorAgent = bbc.get(0).get("agentId").toString();
+                            String emulatorAgent = bbc.get(0).get("emulatorId").toString();
                             // 0    AgentId  1批次号
-                            int Type = (int) bbc.get(0).get("type");
+                            int type = (int) bbc.get(0).get("type");
                             // 0   PV   1 EMS
-                            int system=(int) bbc.get(0).get("system");
-
-
-
+                            int system = (int) bbc.get(0).get("system");
+                            //开始添加新任务
+                            logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, type == 0 ? "AgentID" : "Batch ID", system == 0 ? "PV" : "EMS");
+                            new ConfigFun(dmogo, mogo,emulatorConfig).startOne(emulatorAgent, type, system);
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
                             String dataqc = bbc.get(0).get("packs").toString();
@@ -160,10 +162,11 @@ public class MqttConnThread implements Callable {
             }
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         } catch (Exception e) {
+            //睡眠10分钟
+            Thread.sleep(10 * 60 * 1000);
             logger.error("后台mqtt客户端:{}连接服务器 broker失败！重新连接开始...", mqttClient.getClientId());
-            Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, quartzManager, mogo, dmogo));
-            //睡眠5秒
-            Thread.sleep(5000);
+            Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo,emulatorConfig));
+
         }
         return null;
     }
