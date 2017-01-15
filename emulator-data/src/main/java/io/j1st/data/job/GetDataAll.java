@@ -99,27 +99,31 @@ public class GetDataAll {
             datapacking=mogo.findEmulatorRegister(agentID, "packing");
         }
         emsData01.setType("SUNS120");
+        pvData.setSta(0);
         emsData01.setDsn(agentID + "120");
         emsData01.setModel("SC36KTL-DO");
         emsData01.setValues(data120);
 
         emsData02.setType("SUNS801");
+        pvData.setSta(0);
         emsData02.setDsn(agentID + "801");
         emsData02.setModel("ZE60BATTERY");
         emsData02.setValues(data801);
 
         gridData.setType("SUNS202");
+        pvData.setSta(0);
         gridData.setDsn(agentID + "202");
         gridData.setModel("ZEMETERG");
         gridData.setValues(data202);
 
         loadData.setType("SUNS201");
+        pvData.setSta(0);
         loadData.setDsn(agentID + "201");
         loadData.setModel("ZEMETERL");
         loadData.setValues(data201);
 
         pvData.setType("SUNS103");
-        pvData.setSta(1);
+        pvData.setSta(0);
         pvData.setDsn(agentID + "103");
         pvData.setModel("SC30KTL-DO");
         pvData.setValues(data103);
@@ -372,6 +376,8 @@ public class GetDataAll {
         double Pac = 0.0;
         double eToday = 0.0;
         if (pVPower != null && eTodayy != null) {
+            if("587741c7dafbaf42f1617753".equals(agentID))
+                System.out.println(pVPower);
             Pac = (pVPower.getDouble(date));
             eToday = eTodayy.getDouble(date);
         }
@@ -453,6 +459,7 @@ public class GetDataAll {
                     break;
             }
             data.put(Values.FaultT, "aaa");
+            device.setSta(4);
             device.setValues(data);
             device.setDsn(agentID + type);
             device.setType(type);
@@ -482,6 +489,7 @@ public class GetDataAll {
                     break;
             }
             data.put(Values.WarnT, "待定");
+            device.setSta(2);
             device.setValues(data);
             device.setDsn(agentID + type);
             device.setType(type);
@@ -491,6 +499,7 @@ public class GetDataAll {
             noDevice.put(Values.WarnV, "102");
             noDevice.put(Values.WarnD, "Device communication is lost");
             noDevice.put(Values.WarnT, "待定");
+            device.setSta(2);
             device.setValues(noDevice);
             device.setDsn(agentID + type);
             device.setType(type);
@@ -500,6 +509,7 @@ public class GetDataAll {
             data.put(Values.FaultV, "103");
             data.put(Values.FaultD, "Device fault");
             data.put(Values.FaultT, "aaa");
+            device.setSta(4);
             device.setValues(data);
             device.setDsn(agentID + type);
             device.setType(type);
@@ -509,6 +519,7 @@ public class GetDataAll {
             data.put(Values.WarnV, "la104");
             data.put(Values.WarnD, "Device communication is lost");
             data.put(Values.WarnT, "待定");
+            device.setSta(2);
             device.setValues(data);
             device.setDsn(agentID + type);
             device.setType(type);

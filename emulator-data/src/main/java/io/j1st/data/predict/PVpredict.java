@@ -240,7 +240,7 @@ public class PVpredict {
         } else {
             Boolean dataaa = dataMongoStorage.addGenData(agentId, tdate, allpac, alleToday, allW);
             if (dataaa)
-                logger.debug("已成功添加了一天的实时数据至数据库！");
+                logger.debug("已成功添加了一天的实时数据至数据库！"+tdate);
         }
 
     }

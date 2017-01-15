@@ -41,45 +41,55 @@ public class ConfigFun {
 
     public void startOne(String emulatorId, int type, int system) {
         List<Agent> agents = new ArrayList<>();
-        String ems_agent_id = emulatorConfig.getString("ems_agent_id")==null?"":emulatorConfig.getString("ems_agent_id");
-        String ems_product_id = emulatorConfig.getString("ems_product_id")==null?"":emulatorConfig.getString("ems_product_id");
-        String pv_agent_id = emulatorConfig.getString("pv_agent_id")==null?"":emulatorConfig.getString("pv_agent_id");
-        String pv_product_id = emulatorConfig.getString("pv_product_id")==null?"":emulatorConfig.getString("pv_product_id");
-        //emulatorId类型判断
-        switch (type) {
-            //AgentID
-            case 0:
-                if (system != 0)
-                    ems_agent_id += emulatorId + "_";
-                else
-                    pv_agent_id += emulatorId + "_";
-                agents.add(mogo.getAgentsById(new ObjectId(emulatorId)));
-                break;
-            //BAID
-            case 1:
-                if (system != 0)
-                    ems_product_id += emulatorId + "_";
-                else
-                    pv_product_id += emulatorId + "_";
-                agents = mogo.getAgentsByProductId(new ObjectId(emulatorId));
-                break;
+        String ems_agent_id = emulatorConfig.getString("ems_agent_id") == null ? "" : emulatorConfig.getString("ems_agent_id");
+        String ems_product_id = emulatorConfig.getString("ems_product_id") == null ? "" : emulatorConfig.getString("ems_product_id");
+        String pv_agent_id = emulatorConfig.getString("pv_agent_id") == null ? "" : emulatorConfig.getString("pv_agent_id");
+        String pv_product_id = emulatorConfig.getString("pv_product_id") == null ? "" : emulatorConfig.getString("pv_product_id");
+        //如果都没有就启动
+        if (!emulatorId.contains(ems_agent_id) &&
+                !emulatorId.contains(ems_product_id) &&
+                !emulatorId.contains(pv_agent_id) &&
+                !emulatorId.contains(pv_product_id)) {
+            //emulatorId类型判断
+            switch (type) {
+                //AgentID
+                case 0:
+                    if (system != 0) {
+                        ems_agent_id += emulatorId + "_";
+                    } else {
+                        pv_agent_id += emulatorId + "_";
+                    }
+                    agents.add(mogo.getAgentsById(new ObjectId(emulatorId)));
+                    break;
+                //BAID
+                case 1:
+                    if (system != 0)
+                        ems_product_id += emulatorId + "_";
+                    else
+                        pv_product_id += emulatorId + "_";
+                    agents = mogo.getAgentsByProductId(new ObjectId(emulatorId));
+                    break;
+            }
+
+            //启动接收任务包括预测数据 启动MQTT线程
+
+            try {
+                statbatch(agents, system);
+            } catch (Exception e) {
+                e.printStackTrace();
+                logger.error("添加批次出错");
+            }
+
+            emulatorConfig.setProperty("ems_agent_id", ems_agent_id);
+            emulatorConfig.setProperty("ems_product_id", ems_product_id);
+            emulatorConfig.setProperty("pv_agent_id", pv_agent_id);
+            emulatorConfig.setProperty("pv_product_id", pv_product_id);
+            logger.info("启动完毕,本次启动共{}个Agent任务:\nems_agent_id:{}" +
+                    "\nems_product_id{}\npv_agent_id{}\npv_product_id{}", agunt, ems_agent_id, ems_product_id, pv_agent_id, pv_product_id);
+
+        }else {
+            logger.error("添加的重复任务..过滤");
         }
-
-        //启动接收任务包括预测数据 启动MQTT线程
-
-        try {
-            statbatch(agents, system);
-        } catch (Exception e) {
-            e.printStackTrace();
-            logger.error("添加批次出错");
-        }
-
-        emulatorConfig.setProperty("ems_agent_id", ems_agent_id);
-        emulatorConfig.setProperty("ems_product_id", ems_product_id);
-        emulatorConfig.setProperty("pv_agent_id", pv_agent_id);
-        emulatorConfig.setProperty("pv_product_id", pv_product_id);
-        logger.info("启动完毕,本次启动共{}个Agent任务:\nems_agent_id:{}" +
-                "\nems_product_id{}\npv_agent_id{}\npv_product_id{}", agunt, ems_agent_id, ems_product_id, pv_agent_id, pv_product_id);
     }
 
     private void statbatch(List<Agent> agents, int system) throws Exception {
@@ -93,7 +103,7 @@ public class ConfigFun {
         MqttConnectOptions options;
         MqttClient mqtt;
         //获取默认间隔时间
-        int defaultTime=Integer.parseInt(emulatorConfig.getString("default_Time"));
+        int defaultTime = Integer.parseInt(emulatorConfig.getString("default_Time"));
         for (Agent agent : agents) {
             agunt++;
             String agentID = agent.getId().toString();
@@ -109,6 +119,7 @@ public class ConfigFun {
             if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
                 pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
             }
+            Thread.sleep(3000);
             //save a job config
             Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
             //mqtt

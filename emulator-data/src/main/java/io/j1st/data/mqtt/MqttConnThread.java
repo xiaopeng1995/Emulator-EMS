@@ -121,9 +121,9 @@ public class MqttConnThread implements Callable {
                             //
                             String emulatorAgent = bbc.get(0).get("emulatorId").toString();
                             // 0    AgentId  1批次号
-                            int type = (int) bbc.get(0).get("type");
+                            int type = Integer.parseInt(bbc.get(0).get("type").toString());
                             // 0   PV   1 EMS
-                            int system = (int) bbc.get(0).get("system");
+                            int system = Integer.parseInt(bbc.get(0).get("system").toString());
                             //开始添加新任务
                             logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, type == 0 ? "AgentID" : "Batch ID", system == 0 ? "PV" : "EMS");
                             new ConfigFun(dmogo, mogo,emulatorConfig).startOne(emulatorAgent, type, system);

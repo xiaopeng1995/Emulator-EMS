@@ -51,14 +51,6 @@ public class GenDataAddUtil extends AbstractResource {
         return new ResultEntity<>(r);
     }
 
-    @Path("/add")
-    @POST
-    @PermitAll
-    @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity addticket(@Valid GenData data) {
-
-        return new ResultEntity<>(null);
-    }
 
     @Path("/findall")
     @GET
