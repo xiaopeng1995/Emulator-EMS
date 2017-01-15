@@ -3,7 +3,9 @@ package io.j1st.utils.http.resource;
 import com.google.common.base.Optional;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
+import io.j1st.storage.entity.EmulatorRegister;
 import io.j1st.storage.entity.GenData;
+import io.j1st.utils.http.entity.PageResponse;
 import io.j1st.utils.http.entity.ResultEntity;
 import org.bson.Document;
 import org.slf4j.Logger;
@@ -58,14 +60,29 @@ public class GenDataAddUtil extends AbstractResource {
         return new ResultEntity<>(null);
     }
 
-    @Path("/findone")
+    @Path("/findall")
     @GET
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity findGendDataBytime(@QueryParam("time") @DefaultValue("201611180750") String time,
-                                           @QueryParam("state") @DefaultValue("0") int state) {
+    public ResultEntity findGendDataBytime(     @QueryParam("page") @DefaultValue("1") int page,
+                                                @QueryParam("limit") @DefaultValue("10") int limit,
+                                                @QueryParam("isAsc") @DefaultValue("false") Boolean isAsc,
+                                                @QueryParam("isRead") @DefaultValue("false") Boolean isRead) {
 
-        return new ResultEntity<>("");
+        List<EmulatorRegister> sy=mongo.getEmulatorRegisterByuserID(page,limit,isAsc);
+        Long count=mongo.getEmulatorRegister();
+        PageResponse pageResponse=new PageResponse();
+        pageResponse.setCount(count);
+        Long totalPage;
+        if (count % limit == 0)
+            totalPage = count / limit;
+        else
+            totalPage = count / limit + 1;
+        pageResponse.setTotalPage(totalPage);
+        Map<String,Object> info=new HashMap<>();
+        info.put("pageInfo",pageResponse);
+        info.put("registerInfo",sy);
+        return new ResultEntity<>(info);
     }
 
     @Path("/delete")

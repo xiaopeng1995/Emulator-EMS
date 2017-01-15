@@ -119,6 +119,7 @@ public class GetDataAll {
         loadData.setValues(data201);
 
         pvData.setType("SUNS103");
+        pvData.setSta(1);
         pvData.setDsn(agentID + "103");
         pvData.setModel("SC30KTL-DO");
         pvData.setValues(data103);

@@ -12,7 +12,7 @@ public class EmsData {
     private String asn;
     private String type;
     private String model;
-
+    private int sta;
     private Map values;
 
     public void setDsn(String dsn){
@@ -48,5 +48,13 @@ public class EmsData {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public int getSta() {
+        return sta;
+    }
+
+    public void setSta(int sta) {
+        this.sta = sta;
     }
 }

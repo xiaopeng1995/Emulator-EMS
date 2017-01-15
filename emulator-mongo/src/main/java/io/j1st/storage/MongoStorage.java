@@ -16,6 +16,7 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.joda.time.DateTimeZone;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
@@ -1085,4 +1086,43 @@ public class MongoStorage {
         return data;
     }
 
+    /**
+     * 获取 模拟器信息
+     *
+     * @param skip   分页起始（略过）
+     * @param limit  分页数量
+     * @param isAsc  创建时间升序？
+     * @return 事件列表
+     */
+    public List<EmulatorRegister> getEmulatorRegisterByuserID( int skip, int limit, boolean isAsc) {
+        List<EmulatorRegister> r = new ArrayList<>();
+        this.database.getCollection("emulator_register")
+                .find()
+                .sort(isAsc ? ascending("updated_at") : descending("updated_at"))
+                .skip((skip - 1) * limit).limit(limit)
+                .forEach((Consumer<Document>) document ->
+                        r.add(parseRegisterDocument(document)));
+        return r;
+    }
+    //查询警告信息已读未读总数
+    public Long getEmulatorRegister() {
+        return this.database.getCollection("emulator_register").count();
+    }
+    @SuppressWarnings("unchecked")
+    protected EmulatorRegister parseRegisterDocument(Document d) {
+        SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//可以方便地修改日期格式
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMddHHmm");//可以方便地修改日期格式
+        int odldate = Integer.parseInt(dateFormat.format(d.getDate("updated_at")));
+        EmulatorRegister e = new EmulatorRegister();
+        e.setId(d.getObjectId("_id").toString());
+        e.setAgent_id(d.getString("agent_id"));
+        e.setUpdated_at(dateFormat1.format(d.getDate("updated_at")));
+        e.setPacking(d.getString("packing"));
+        e.setSystemType(d.get("Soc")==null?0:1);
+
+        int newdate = Integer.parseInt(dateFormat.format(new Date()));
+
+        e.setConnected(newdate-odldate<5);
+        return e;
+    }
 }
