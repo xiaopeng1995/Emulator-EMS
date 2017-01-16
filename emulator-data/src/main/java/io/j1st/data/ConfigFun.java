@@ -41,15 +41,15 @@ public class ConfigFun {
 
     public void startOne(String emulatorId, int type, int system) {
         List<Agent> agents = new ArrayList<>();
-        String ems_agent_id = emulatorConfig.getString("ems_agent_id") == null ? "" : emulatorConfig.getString("ems_agent_id");
-        String ems_product_id = emulatorConfig.getString("ems_product_id") == null ? "" : emulatorConfig.getString("ems_product_id");
-        String pv_agent_id = emulatorConfig.getString("pv_agent_id") == null ? "" : emulatorConfig.getString("pv_agent_id");
-        String pv_product_id = emulatorConfig.getString("pv_product_id") == null ? "" : emulatorConfig.getString("pv_product_id");
+        String ems_agent_id = emulatorConfig.getString("ems_agent_id") == null ? "_" : emulatorConfig.getString("ems_agent_id");
+        String ems_product_id = emulatorConfig.getString("ems_product_id") == null ? "_" : emulatorConfig.getString("ems_product_id");
+        String pv_agent_id = emulatorConfig.getString("pv_agent_id") == null ? "_" : emulatorConfig.getString("pv_agent_id");
+        String pv_product_id = emulatorConfig.getString("pv_product_id") == null ? "_" : emulatorConfig.getString("pv_product_id");
         //如果都没有就启动
-        if (!emulatorId.contains(ems_agent_id) &&
-                !emulatorId.contains(ems_product_id) &&
-                !emulatorId.contains(pv_agent_id) &&
-                !emulatorId.contains(pv_product_id)) {
+        if (!ems_agent_id.contains(emulatorId) &&
+                !ems_product_id.contains(emulatorId) &&
+                !pv_agent_id.contains(emulatorId) &&
+                !pv_product_id.contains(emulatorId)) {
             //emulatorId类型判断
             switch (type) {
                 //AgentID
@@ -107,44 +107,50 @@ public class ConfigFun {
         for (Agent agent : agents) {
             agunt++;
             String agentID = agent.getId().toString();
-            mqtt = new MqttClient(mqtturl, agent.getId().toHexString(), persistence);
-            options = new MqttConnectOptions();
-            options.setUserName(agent.getId().toHexString());
-            options.setPassword(agent.getToken().toCharArray());
-            //添加实时数据和预测数据
-            //add now data
-            if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
-                pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
-            //add predict data
-            if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
-                pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
-            }
-            Thread.sleep(3000);
-            //save a job config
-            Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
-            //mqtt
-            MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
-            //seve mqtt info
-            Registry.INSTANCE.saveSession(agentID, mqttConnThread);
-            //add a agent mqtt Send and receive sever
-            Registry.INSTANCE.startThread(mqttConnThread);
-            Thread.sleep(90);
-            //设置间隔时间
-            Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
-            //开始执行发送任务
-            //防止MQTT先启动线程做判断
-            if (system == 1 && Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
-                EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
-                Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                Registry.INSTANCE.startJob(thread);
-                logger.debug(agentID + "EMS设备准备成功开始上传数据..");
-            }
-            //防止MQTT先启动线程做判断
-            if (system == 0 && Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
-                PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);
-                Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                Registry.INSTANCE.startJob(thread);
-                logger.debug(agentID + "PV设备准备成功开始上传数据..");
+            //只有当此线程关闭时才会启动
+            if(Registry.INSTANCE.getValue().get(agentID + "_Job") == null)
+            {
+                mqtt = new MqttClient(mqtturl, agent.getId().toHexString(), persistence);
+                options = new MqttConnectOptions();
+                options.setUserName(agent.getId().toHexString());
+                options.setPassword(agent.getToken().toCharArray());
+                //添加实时数据和预测数据
+                //add now data
+                if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
+                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
+                //add predict data
+                if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
+                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
+                }
+                Thread.sleep(3000);
+                //save a job config
+                Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
+                //mqtt
+                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
+                //seve mqtt info
+                Registry.INSTANCE.saveSession(agentID, mqttConnThread);
+                //add a agent mqtt Send and receive sever
+                Registry.INSTANCE.startThread(mqttConnThread);
+                Thread.sleep(90);
+                //设置间隔时间
+                Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
+                //开始执行发送任务
+                //防止MQTT先启动线程做判断
+                if (system == 1 && Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
+                    EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
+                    Registry.INSTANCE.saveKey(agentID + "_Job", thread);
+                    Registry.INSTANCE.startJob(thread);
+                    logger.debug(agentID + "EMS设备准备成功开始上传数据..");
+                }
+                //防止MQTT先启动线程做判断
+                if (system == 0) {
+                    PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);
+                    Registry.INSTANCE.saveKey(agentID + "_Job", thread);
+                    Registry.INSTANCE.startJob(thread);
+                    logger.debug(agentID + "PV设备准备成功开始上传数据..");
+                }
+            }else{
+                logger.info("{}:此线程尚未关闭,启动失败!",agentID);
             }
         }
     }

@@ -42,6 +42,7 @@ public class EmsJob extends Thread {
         //更新间隔时间
         Registry.INSTANCE.saveKey(agentId + "_jgdate", timeThread.getTime());
         while (!exit) {
+            mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;
             //添加预测数据
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
