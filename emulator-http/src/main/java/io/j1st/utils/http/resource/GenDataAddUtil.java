@@ -76,7 +76,16 @@ public class GenDataAddUtil extends AbstractResource {
         info.put("registerInfo",sy);
         return new ResultEntity<>(info);
     }
+    @Path("/findone")
+    @GET
+    @PermitAll
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ResultEntity findGendDataBytime(@QueryParam("emulatorid")  String emulatorid) {
 
+        EmulatorRegister sy=mongo.getEmulatorRegisterByID(emulatorid).get(0);
+
+        return new ResultEntity<>(sy);
+    }
     @Path("/delete")
     @GET
     @PermitAll

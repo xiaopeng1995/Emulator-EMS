@@ -60,7 +60,7 @@ public class MqttConnThread implements Callable {
         try {
             // connect mqtt broker
             mqttClient.connect(options);
-            mqttClient.setTimeToWait(200);
+            mqttClient.setTimeToWait(500);
 
             //Whether the client connection
             if (mqttClient.isConnected()) {
@@ -69,10 +69,22 @@ public class MqttConnThread implements Callable {
                     @Override
                     public void connectionLost(Throwable cause) {
                         String AgentID = mqttClient.getClientId();
-                        logger.debug("线程:{}断开连接!!!!", mqttClient.getClientId());
+                        logger.debug("接收线程:{}断开连接!!!!", mqttClient.getClientId());
                         mogo.updateEmulatorRegister(AgentID, "onlinefail", 0);
                         long cuntdmogo=dmogo.deleteGendDataByTime(AgentID);
                         logger.debug("已删除此Agent对应数据:{}个",cuntdmogo);
+                        Object oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
+                        // 如果有停掉旧的线程
+                        logger.debug("执行停止{}发送线程!",AgentID);
+                        if (oldjob != null) {
+                            EmsJob thread = (EmsJob) oldjob;
+                            thread.exit = true;  // 终止线程thread
+                            try {
+                                thread.join();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
                     }
 
                     @Override
@@ -142,22 +154,13 @@ public class MqttConnThread implements Callable {
                                 String pv_agent_id = emulatorConfig.getString("pv_agent_id") == null ? "_" : emulatorConfig.getString("pv_agent_id");
                                 String pv_product_id = emulatorConfig.getString("pv_product_id") == null ? "_" : emulatorConfig.getString("pv_product_id");
                                 emulatorConfig.setProperty("ems_agent_id", ems_agent_id.replace(AgentID+"_",""));
-                                emulatorConfig.setProperty("ems_product_id", ems_product_id.replace(AgentID+"_",""));
+                                //emulatorConfig.setProperty("ems_product_id", ems_product_id.replace(AgentID+"_",""));
                                 emulatorConfig.setProperty("pv_agent_id", pv_agent_id.replace(AgentID+"_",""));
-                                emulatorConfig.setProperty("pv_product_id", pv_product_id.replace(AgentID+"_",""));
+                                //emulatorConfig.setProperty("pv_product_id", pv_product_id.replace(AgentID+"_",""));
                                 logger.info("任务:\nems_agent_id:{}" +
                                         "\nems_product_id{}\npv_agent_id{}\npv_product_id{}",  ems_agent_id, ems_product_id, pv_agent_id, pv_product_id);
-                                logger.debug("执行停止{}线程!",AgentID);
-                                Object oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
-                                // 如果有停掉旧的线程
-                                if (oldjob != null) {
-                                    EmsJob thread = (EmsJob) oldjob;
-                                    thread.exit = true;  // 终止线程thread
-                                    thread.join();
-                                    mqttClient.close();
-                                    logger.debug("执行停止{}线程!"+AgentID);
-                                }
-
+                                logger.debug("删除配置文件{}",AgentID);
+                                mqttClient.close();
                             }else //更改格式
                             {
                                 mogo.updateEmulatorRegister(AgentID, "packing", dataqc);

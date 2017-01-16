@@ -40,59 +40,63 @@ public class ConfigFun {
     }
 
     public void startOne(String emulatorId, int type, int system) {
-        List<Agent> agents = new ArrayList<>();
-        String ems_agent_id = emulatorConfig.getString("ems_agent_id") == null ? "_" : emulatorConfig.getString("ems_agent_id");
-        String ems_product_id = emulatorConfig.getString("ems_product_id") == null ? "_" : emulatorConfig.getString("ems_product_id");
-        String pv_agent_id = emulatorConfig.getString("pv_agent_id") == null ? "_" : emulatorConfig.getString("pv_agent_id");
-        String pv_product_id = emulatorConfig.getString("pv_product_id") == null ? "_" : emulatorConfig.getString("pv_product_id");
-        //如果都没有就启动
-        if (!ems_agent_id.contains(emulatorId) &&
-                !ems_product_id.contains(emulatorId) &&
-                !pv_agent_id.contains(emulatorId) &&
-                !pv_product_id.contains(emulatorId)) {
-            //emulatorId类型判断
-            switch (type) {
-                //AgentID
-                case 0:
-                    if (system != 0) {
-                        ems_agent_id += emulatorId + "_";
-                    } else {
-                        pv_agent_id += emulatorId + "_";
-                    }
-                    agents.add(mogo.getAgentsById(new ObjectId(emulatorId)));
-                    break;
-                //BAID
-                case 1:
-                    if (system != 0)
-                        ems_product_id += emulatorId + "_";
-                    else
-                        pv_product_id += emulatorId + "_";
-                    agents = mogo.getAgentsByProductId(new ObjectId(emulatorId));
-                    break;
+        if (true) {
+            List<Agent> agents = new ArrayList<>();
+            String ems_agent_id = emulatorConfig.getString("ems_agent_id") == null ? "_" : emulatorConfig.getString("ems_agent_id");
+            String ems_product_id = emulatorConfig.getString("ems_product_id") == null ? "_" : emulatorConfig.getString("ems_product_id");
+            String pv_agent_id = emulatorConfig.getString("pv_agent_id") == null ? "_" : emulatorConfig.getString("pv_agent_id");
+            String pv_product_id = emulatorConfig.getString("pv_product_id") == null ? "_" : emulatorConfig.getString("pv_product_id");
+            //如果都没有就启动
+            if (!ems_agent_id.contains(emulatorId) &&
+                    !ems_product_id.contains(emulatorId) &&
+                    !pv_agent_id.contains(emulatorId) &&
+                    !pv_product_id.contains(emulatorId)) {
+                //emulatorId类型判断
+                switch (type) {
+                    //AgentID
+                    case 0:
+                        if (system != 0) {
+                            ems_agent_id += emulatorId + "_";
+                        } else {
+                            pv_agent_id += emulatorId + "_";
+                        }
+                        agents.add(mogo.getAgentsById(new ObjectId(emulatorId)));
+                        break;
+                    //BAID
+                    case 1:
+                        if (system != 0)
+                            ems_product_id += emulatorId + "_";
+                        else
+                            pv_product_id += emulatorId + "_";
+                        agents = mogo.getAgentsByProductId(new ObjectId(emulatorId));
+                        break;
+                }
+
+                //启动接收任务包括预测数据 启动MQTT线程
+
+                try {
+                    statbatch(agents, system, type, emulatorId);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    logger.error("添加批次出错");
+                }
+
+                emulatorConfig.setProperty("ems_agent_id", ems_agent_id);
+                emulatorConfig.setProperty("ems_product_id", ems_product_id);
+                emulatorConfig.setProperty("pv_agent_id", pv_agent_id);
+                emulatorConfig.setProperty("pv_product_id", pv_product_id);
+                logger.info("启动完毕,本次启动共{}个Agent任务:\nems_agent_id:{}" +
+                        "\nems_product_id{}\npv_agent_id{}\npv_product_id{}", agunt, ems_agent_id, ems_product_id, pv_agent_id, pv_product_id);
+
+            } else {
+                logger.error("添加的重复任务..过滤");
             }
-
-            //启动接收任务包括预测数据 启动MQTT线程
-
-            try {
-                statbatch(agents, system);
-            } catch (Exception e) {
-                e.printStackTrace();
-                logger.error("添加批次出错");
-            }
-
-            emulatorConfig.setProperty("ems_agent_id", ems_agent_id);
-            emulatorConfig.setProperty("ems_product_id", ems_product_id);
-            emulatorConfig.setProperty("pv_agent_id", pv_agent_id);
-            emulatorConfig.setProperty("pv_product_id", pv_product_id);
-            logger.info("启动完毕,本次启动共{}个Agent任务:\nems_agent_id:{}" +
-                    "\nems_product_id{}\npv_agent_id{}\npv_product_id{}", agunt, ems_agent_id, ems_product_id, pv_agent_id, pv_product_id);
-
-        }else {
-            logger.error("添加的重复任务..过滤");
+        } else {
+            logger.info("{}:此线程尚未关闭,启动失败!", emulatorId);
         }
     }
 
-    private void statbatch(List<Agent> agents, int system) throws Exception {
+    private void statbatch(List<Agent> agents, int system, int type, String productId) throws Exception {
         //获取mqtt url
         String mqtturl = Registry.INSTANCE.getValue().get("mqtt_url").toString();
         PVpredict pVpredict = new PVpredict(dmogo);
@@ -107,51 +111,50 @@ public class ConfigFun {
         for (Agent agent : agents) {
             agunt++;
             String agentID = agent.getId().toString();
-            //只有当此线程关闭时才会启动
-            if(Registry.INSTANCE.getValue().get(agentID + "_Job") == null)
-            {
-                mqtt = new MqttClient(mqtturl, agent.getId().toHexString(), persistence);
-                options = new MqttConnectOptions();
-                options.setUserName(agent.getId().toHexString());
-                options.setPassword(agent.getToken().toCharArray());
-                //添加实时数据和预测数据
-                //add now data
-                if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
-                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
-                //add predict data
-                if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
-                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
-                }
-                Thread.sleep(3000);
-                //save a job config
-                Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
-                //mqtt
-                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
-                //seve mqtt info
-                Registry.INSTANCE.saveSession(agentID, mqttConnThread);
-                //add a agent mqtt Send and receive sever
-                Registry.INSTANCE.startThread(mqttConnThread);
-                Thread.sleep(90);
-                //设置间隔时间
-                Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
-                //开始执行发送任务
-                //防止MQTT先启动线程做判断
-                if (system == 1 && Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
-                    EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
-                    Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                    Registry.INSTANCE.startJob(thread);
-                    logger.debug(agentID + "EMS设备准备成功开始上传数据..");
-                }
-                //防止MQTT先启动线程做判断
-                if (system == 0) {
-                    PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);
-                    Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                    Registry.INSTANCE.startJob(thread);
-                    logger.debug(agentID + "PV设备准备成功开始上传数据..");
-                }
-            }else{
-                logger.info("{}:此线程尚未关闭,启动失败!",agentID);
+            if (type != 0) {
+                mogo.updateEmulatorRegister(agentID, "product_id", productId);
             }
+            mqtt = new MqttClient(mqtturl, agent.getId().toHexString(), persistence);
+            options = new MqttConnectOptions();
+            options.setUserName(agent.getId().toHexString());
+            options.setPassword(agent.getToken().toCharArray());
+            //添加实时数据和预测数据
+            //add now data
+            if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
+                pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
+            //add predict data
+            if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
+                pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
+            }
+            Thread.sleep(3000);
+            //save a job config
+            Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
+            //mqtt
+            MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
+            //seve mqtt info
+            Registry.INSTANCE.saveSession(agentID, mqttConnThread);
+            //add a agent mqtt Send and receive sever
+            Registry.INSTANCE.startThread(mqttConnThread);
+            //设置间隔时间
+            Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
+            //开始执行发送任务
+            //防止MQTT先启动线程做判断
+            Object onlinefail = mogo.findEmulatorRegister(agentID, "onlinefail");
+            int online = onlinefail == null ? 0 : Integer.parseInt(onlinefail.toString());
+            if (system == 1 && online == 0) {
+                EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
+                Registry.INSTANCE.saveKey(agentID + "_Job", thread);
+                Registry.INSTANCE.startJob(thread);
+                logger.debug(agentID + "EMS设备准备成功开始上传数据..");
+            }
+            //防止MQTT先启动线程做判断
+            if (system == 0 && online == 0) {
+                PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);
+                Registry.INSTANCE.saveKey(agentID + "_Job", thread);
+                Registry.INSTANCE.startJob(thread);
+                logger.debug(agentID + "PV设备准备成功开始上传数据..");
+            }
+            Thread.sleep(90);
         }
     }
 

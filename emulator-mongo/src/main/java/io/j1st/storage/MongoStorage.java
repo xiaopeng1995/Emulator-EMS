@@ -72,7 +72,7 @@ public class MongoStorage {
         this.database.getCollection("geetest_verifies").createIndex(ascending("datetime"), new IndexOptions().expireAfter(10L, TimeUnit.MINUTES));
         this.database.getCollection("event_logs").createIndex(ascending("action_date"), new IndexOptions().expireAfter(15L, TimeUnit.DAYS));
         this.database.getCollection("event_logs").createIndex(ascending("user_id", "product_id", "agent_id"));
-       // this.database.getCollection("emulator_datas").createIndex(ascending("test"), new IndexOptions().expireAfter(1L, TimeUnit.MINUTES));
+        // this.database.getCollection("emulator_datas").createIndex(ascending("test"), new IndexOptions().expireAfter(1L, TimeUnit.MINUTES));
         //drop index(这里暂时没用，预留，当我们需要改变与时间相关的检索字段时，需要先删除再新建，删除的前提是检索字段已经存在，不存在会报错，慎改)
         //this.database.getCollection("emulator_datas").dropIndex(ascending("test"));
         //this.database.getCollection("mail_verifies").dropIndex(ascending("mail"));
@@ -136,6 +136,7 @@ public class MongoStorage {
                 .first();
         return d != null;
     }
+
     /**
      * 获取 采集器，根据Id
      *
@@ -149,6 +150,7 @@ public class MongoStorage {
         if (d == null) return null;
         return parseAgentDocument(d);
     }
+
     /**
      * 判断 用户邮箱 是否存在
      *
@@ -488,13 +490,13 @@ public class MongoStorage {
                 .find(eq("_id", id))
                 .projection(include("product_id"))
                 .first();
-        ObjectId pid=(ObjectId)d.get("product_id");
+        ObjectId pid = (ObjectId) d.get("product_id");
 
         Document products = this.database.getCollection("products")
                 .find(eq("_id", pid))
                 .projection(include("user_id"))
                 .first();
-        ObjectId uid=(ObjectId)products.get("user_id");
+        ObjectId uid = (ObjectId) products.get("user_id");
 
         Document user = this.database.getCollection("users")
                 .find(eq("_id", uid))
@@ -1018,7 +1020,6 @@ public class MongoStorage {
     }
 
 
-
     /**
      * 删除time时间之前数据
      *
@@ -1052,9 +1053,9 @@ public class MongoStorage {
     public boolean updateEmulatorRegister(String agentId, String key, Object value) {
         return this.database.getCollection("emulator_register")
                 .updateOne(eq("agent_id", agentId),
-                new Document("$set", new Document(key, value)
-                        .append("updated_at", new Date()))
-                , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
+                        new Document("$set", new Document(key, value)
+                                .append("updated_at", new Date()))
+                        , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
     }
 
     /**
@@ -1087,14 +1088,30 @@ public class MongoStorage {
     }
 
     /**
+     *  查找启动Agent
+     * @param onlinefail 需要上传在线的
+     * @param systemTpye 哪个系统的  0pv 1ems
+     * @return agent 集合
+     */
+    public List<String> findEmulatorAgentInfoBy(int onlinefail,int systemTpye) {
+        List<String> agentidall=new ArrayList<>();
+
+        this.database.getCollection("emulator_register")
+                .find(and(eq("onlinefail", onlinefail),eq("systemTpye",systemTpye))).forEach((Consumer<Document>) document ->
+                agentidall.add(document.getString("agent_id"))
+        );
+        return agentidall;
+    }
+
+    /**
      * 获取 模拟器信息
      *
-     * @param skip   分页起始（略过）
-     * @param limit  分页数量
-     * @param isAsc  创建时间升序？
+     * @param skip  分页起始（略过）
+     * @param limit 分页数量
+     * @param isAsc 创建时间升序？
      * @return 事件列表
      */
-    public List<EmulatorRegister> getEmulatorRegisterByuserID( int skip, int limit, boolean isAsc) {
+    public List<EmulatorRegister> getEmulatorRegisterByuserID(int skip, int limit, boolean isAsc) {
         List<EmulatorRegister> r = new ArrayList<>();
         this.database.getCollection("emulator_register")
                 .find()
@@ -1104,25 +1121,53 @@ public class MongoStorage {
                         r.add(parseRegisterDocument(document)));
         return r;
     }
+
+    /**
+     * 获取 单个
+     *
+     * @param id 分页起始（略过）
+     * @return 事件列表
+     */
+    public List<EmulatorRegister> getEmulatorRegisterByID(String id) {
+        List<EmulatorRegister> r = new ArrayList<>();
+        this.database.getCollection("emulator_register")
+                .find(eq("agent_id", id))
+                .forEach((Consumer<Document>) document ->
+                        r.add(parseRegisterDocument(document)));
+        return r;
+    }
+
     //查询警告信息已读未读总数
     public Long getEmulatorRegister() {
         return this.database.getCollection("emulator_register").count();
     }
+
     @SuppressWarnings("unchecked")
     protected EmulatorRegister parseRegisterDocument(Document d) {
         SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//可以方便地修改日期格式
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMddHHmm");//可以方便地修改日期格式
         int odldate = Integer.parseInt(dateFormat.format(d.getDate("updated_at")));
+        int newdate = Integer.parseInt(dateFormat.format(new Date()));
         EmulatorRegister e = new EmulatorRegister();
         e.setId(d.getObjectId("_id").toString());
         e.setAgent_id(d.getString("agent_id"));
         e.setUpdated_at(dateFormat1.format(d.getDate("updated_at")));
         e.setPacking(d.getString("packing"));
-        e.setSystemType(d.get("Soc")==null?0:1);
-
-        int newdate = Integer.parseInt(dateFormat.format(new Date()));
-
-        e.setConnected(newdate-odldate<5);
+        e.setSystemType(d.get("Soc") == null ? 0 : 1);
+        if (d.get("product_id") != null)
+            e.setProdactId(d.getString("product_id"));
+        else
+            e.setProdactId("no");
+        //如果更新时间超时设为false
+        if (newdate - odldate > 5) {
+            e.setConnected(false);
+        } else {
+            if (d.get("onlinefail") == null)
+                e.setConnected(false);
+            else {
+                e.setConnected(d.getInteger("onlinefail") > 0);
+            }
+        }
         return e;
     }
 }

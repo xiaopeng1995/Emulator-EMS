@@ -41,6 +41,8 @@ public class EmsJob extends Thread {
         String topicall;
         //更新间隔时间
         Registry.INSTANCE.saveKey(agentId + "_jgdate", timeThread.getTime());
+        //打上系统类型标记
+        mogo.updateEmulatorRegister(agentId, "systemTpye", 1);
         while (!exit) {
             mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;

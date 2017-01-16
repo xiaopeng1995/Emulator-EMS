@@ -196,6 +196,17 @@ public class DataMongoStorage {
         } else
             return null;
     }
+    public long deleteGendDataByTime(String agentid) {
+        long count = 0;
+        count += this.database.getCollection("emulator_datas")
+                .deleteMany(eq("agent_id", new ObjectId(agentid)))
+                .getDeletedCount();
+        count += this.database.getCollection("ems_forecast_data")
+                .deleteMany(eq("agent_id", new ObjectId(agentid)))
+                .getDeletedCount();
+
+        return count;
+    }
 
     /**
      * 删除time时间之前数据

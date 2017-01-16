@@ -15,6 +15,7 @@ public class EmulatorRegister {
     private String packing;
     private int systemType;
     private boolean connected;
+    private String prodactId;
 
     private String updated_at;
 
@@ -64,5 +65,13 @@ public class EmulatorRegister {
 
     public void setSystemType(int systemType) {
         this.systemType = systemType;
+    }
+
+    public String getProdactId() {
+        return prodactId;
+    }
+
+    public void setProdactId(String prodactId) {
+        this.prodactId = prodactId;
     }
 }

@@ -212,13 +212,13 @@ public class GetDataAll {
         //电网参数
         double TotWh;//组合总和TotWhImp+TotWhExp
         num = mogo.findEmulatorRegister(agentID, "TotWhImp");
-        double TotWhImp = (num == null ? 0.0 : (double) num);//电网正向有功总电能  (放电总功率)
+        double TotWhImp = (num == null ? 0.0 : (double) num);//电网负向有功总电能  (充电总功率)
 
         num = mogo.findEmulatorRegister(agentID, "DWhImp");
         double DWhImp = (num == null ? 0.0 : (double) num);
 
         num = mogo.findEmulatorRegister(agentID, "TotWhExp");
-        double TotWhExp = (num == null ? 0.0 : (double) num);//电网负向有功总电能  (充电总功率)
+        double TotWhExp = (num == null ? 0.0 : (double) num);//电网正向有功总电能  (放电总功率)
         num = mogo.findEmulatorRegister(agentID, "DWhExp");
         double DWhExp = (num == null ? 0.0 : (double) num);
 
