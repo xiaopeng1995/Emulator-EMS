@@ -6,6 +6,7 @@ import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.EmsJob;
 import io.j1st.data.job.GetDataAll;
+import io.j1st.data.job.PVjob;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
@@ -49,10 +50,10 @@ public class MqttConnThread implements Callable {
                           PropertiesConfiguration emulatorConfig) {
         this.mqttClient = mqttClient;
         this.options = options;
-        this.emulatorConfig=emulatorConfig;
+        this.emulatorConfig = emulatorConfig;
         this.mogo = mogo;
         this.dmogo = dmogo;
-        logger.debug(mqttClient.getClientId()+"开始连接");
+        logger.debug(mqttClient.getClientId() + "开始连接");
     }
 
     @Override
@@ -68,22 +69,33 @@ public class MqttConnThread implements Callable {
 
                     @Override
                     public void connectionLost(Throwable cause) {
-                        String AgentID = mqttClient.getClientId();
-                        logger.debug("接收线程:{}断开连接!!!!", mqttClient.getClientId());
-                        mogo.updateEmulatorRegister(AgentID, "onlinefail", 0);
-                        long cuntdmogo=dmogo.deleteGendDataByTime(AgentID);
-                        logger.debug("已删除此Agent对应数据:{}个",cuntdmogo);
-                        Object oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
+                        String agentid = mqttClient.getClientId();
+                        logger.debug("接收线程:{}断开连接1111", agentid);
+                        Object oldjob = Registry.INSTANCE.getValue().get(agentid + "_Job");
                         // 如果有停掉旧的线程
-                        logger.debug("执行停止{}发送线程!",AgentID);
                         if (oldjob != null) {
-                            EmsJob thread = (EmsJob) oldjob;
-                            thread.exit = true;  // 终止线程thread
-                            try {
-                                thread.join();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
+                            Object systemTyp = mogo.findEmulatorRegister(agentid, "systemTpye");
+                            int systemType = (int) systemTyp;
+                            if (systemType > 0) {
+                                EmsJob thread = (EmsJob) oldjob;
+                                thread.exit = true;  // 终止线程thread
+                                logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
+                                try {
+                                    thread.join();
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            } else {
+                                PVjob thread = (PVjob) oldjob;
+                                thread.exit = true;  // 终止线程thread
+                                logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
+                                try {
+                                    thread.join();
+                                } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
                             }
+
                         }
                     }
 
@@ -142,26 +154,17 @@ public class MqttConnThread implements Callable {
                             int system = Integer.parseInt(bbc.get(0).get("system").toString());
                             //开始添加新任务
                             logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, type == 0 ? "AgentID" : "Batch ID", system == 0 ? "PV" : "EMS");
-                            new ConfigFun(dmogo, mogo,emulatorConfig).startOne(emulatorAgent, type, system);
+                            new ConfigFun(dmogo, mogo, emulatorConfig).startOne(emulatorAgent, type, system);
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
                             String dataqc = bbc.get(0).get("packs").toString();
-                            if(dataqc.equals("kill"))//关闭线程
+                            if (dataqc.equals("kill"))//关闭线程
                             {
-
-                                String ems_agent_id = emulatorConfig.getString("ems_agent_id") == null ? "_" : emulatorConfig.getString("ems_agent_id");
-                                String ems_product_id = emulatorConfig.getString("ems_product_id") == null ? "_" : emulatorConfig.getString("ems_product_id");
-                                String pv_agent_id = emulatorConfig.getString("pv_agent_id") == null ? "_" : emulatorConfig.getString("pv_agent_id");
-                                String pv_product_id = emulatorConfig.getString("pv_product_id") == null ? "_" : emulatorConfig.getString("pv_product_id");
-                                emulatorConfig.setProperty("ems_agent_id", ems_agent_id.replace(AgentID+"_",""));
-                                //emulatorConfig.setProperty("ems_product_id", ems_product_id.replace(AgentID+"_",""));
-                                emulatorConfig.setProperty("pv_agent_id", pv_agent_id.replace(AgentID+"_",""));
-                                //emulatorConfig.setProperty("pv_product_id", pv_product_id.replace(AgentID+"_",""));
-                                logger.info("任务:\nems_agent_id:{}" +
-                                        "\nems_product_id{}\npv_agent_id{}\npv_product_id{}",  ems_agent_id, ems_product_id, pv_agent_id, pv_product_id);
-                                logger.debug("删除配置文件{}",AgentID);
+                                mogo.updateEmulatorRegister(AgentID, "onlinefail", 0);
+                                long cuntdmogo = dmogo.deleteGendDataByTime(AgentID);
+                                logger.debug("已删除此Agent对应数据:{}个", cuntdmogo);
                                 mqttClient.close();
-                            }else //更改格式
+                            } else //更改格式
                             {
                                 mogo.updateEmulatorRegister(AgentID, "packing", dataqc);
                                 BatConfig STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(AgentID + "_STROAGE_002Config");
@@ -198,7 +201,7 @@ public class MqttConnThread implements Callable {
             //睡眠10分钟
             Thread.sleep(10 * 60 * 1000);
             logger.error("后台mqtt客户端:{}连接服务器 broker失败！重新连接开始...", mqttClient.getClientId());
-            Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo,emulatorConfig));
+            Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
 
         }
         return null;

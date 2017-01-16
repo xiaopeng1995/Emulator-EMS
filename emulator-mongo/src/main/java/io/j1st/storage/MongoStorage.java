@@ -1104,6 +1104,44 @@ public class MongoStorage {
     }
 
     /**
+     * 查找单个Agent或批次看是否满足启动情况
+     * @param id id任务
+     * @param onlinefail 是否运行
+     * @param systemTpye 数据系统类型
+     * @param agentType id类型
+     * @return 满足条件
+     */
+    public boolean isEmulatorAgentInfoBy(String id,int onlinefail,int systemTpye,int agentType) {
+        boolean is;
+        List<Integer> onlinefailAll=new ArrayList<>();
+        int acunt=0;
+        if(agentType==0)//agentid
+        {
+            is=this.database.getCollection("emulator_register")
+                    .find(and(eq("agent_id",id),
+                            eq("onlinefail", onlinefail),
+                            eq("systemTpye",systemTpye))).first()==null;
+
+        }else {//batch id
+            this.database.getCollection("emulator_register")
+                    .find(and(eq("product_id",id),
+                            eq("onlinefail", onlinefail),
+                            eq("systemTpye",systemTpye))).forEach((Consumer<Document>) document ->
+                    onlinefailAll.add(isnoDocument(document)));
+            for (Integer a:onlinefailAll)
+            {
+                acunt+=a;
+            }
+            is=acunt==0;
+        }
+        return is;
+    }
+    @SuppressWarnings("unchecked")
+    protected int isnoDocument(Document d) {
+        return d.getInteger("onlinefail");
+    }
+
+    /**
      * 获取 模拟器信息
      *
      * @param skip  分页起始（略过）

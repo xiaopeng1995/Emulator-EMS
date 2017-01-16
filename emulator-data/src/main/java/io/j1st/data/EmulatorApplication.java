@@ -42,7 +42,6 @@ public class EmulatorApplication {
         PropertiesConfiguration emulatorConfig;
         PropertiesConfiguration mongoConfig;
         PropertiesConfiguration mqttConfig;
-        PropertiesConfiguration quartzConfig;
         if (args.length >= 3) {
             emulatorConfig = new PropertiesConfiguration(args[0]);
             mongoConfig = new PropertiesConfiguration(args[1]);
@@ -95,43 +94,19 @@ public class EmulatorApplication {
         /***********************************/
 
         //获取默认间隔时间
-        int defaultTime=Integer.parseInt(emulatorConfig.getString("default_Time"));
-        String[] productIds;
-        String[] agentIds;
-        //启动ems模拟数据
-        try {
-            agentIds = emulatorConfig.getString("ems_agent_id").split("_");
-        } catch (NullPointerException e) {
-            agentIds = new String[0];
-        }
-        try {
-            productIds = emulatorConfig.getString("ems_product_id").split("_");
-        } catch (NullPointerException e) {
-            productIds = new String[0];
-
-        }
+        int defaultTime = Integer.parseInt(emulatorConfig.getString("default_Time"));
         PVpredict pVpredict = new PVpredict(dmogo);
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         String date = format.format(new Date());
-
-        List<String> agentIdAll = new ArrayList<>();
-        int n = productIds.length > agentIds.length ? productIds.length : agentIds.length;
         int agunt = 0;
-
-        for (int i = 0; i < n; i++) {
+        //获取所有需要运行ems的Agentid
+        List<String> emsAgentall = mogo.findEmulatorAgentInfoBy(1, 1);
+        for (String emsAgentid : emsAgentall) {
             List<Agent> agents = new ArrayList<>();
-            if (i < productIds.length) {
-                if (StringUtils.isNotBlank(productIds[i]))
-                    agents = mogo.getAgentsByProductId(new ObjectId(productIds[i]));
-            }
-            if (i < agentIds.length) {
-                if (StringUtils.isNotBlank(agentIds[i]))
-                    agents.add(mogo.getAgentsById(new ObjectId(agentIds[i])));
-            }
+            agents.add(mogo.getAgentsById(new ObjectId(emsAgentid)));
             for (Agent agent : agents) {
                 agunt++;
                 String agentID = agent.getId().toString();
-                agentIdAll.add(agentID);
                 mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agent.getId().toHexString(), persistence);
                 options = new MqttConnectOptions();
                 options.setUserName(agent.getId().toHexString());
@@ -165,36 +140,16 @@ public class EmulatorApplication {
             }
         }
         //启动PV系统数据任务
-        String[] pvagentIds;
-        String[] pvproductIds;
-        try {
-            pvagentIds = emulatorConfig.getString("pv_agent_id").split("_");
-        } catch (NullPointerException e) {
-            pvagentIds = new String[0];
-        }
-        try {
-            pvproductIds = emulatorConfig.getString("pv_product_id").split("_");
-        } catch (NullPointerException e) {
-            pvproductIds = new String[0];
-
-        }
-        int pvn = pvproductIds.length > pvagentIds.length ? pvproductIds.length : pvagentIds.length;
         int pvagunt = 0;
 
-        for (int i = 0; i < pvn; i++) {
+        //获取所有需要运行ems的Agentid
+        List<String> pvAgentall = mogo.findEmulatorAgentInfoBy(1, 0);
+        for (String pvAgentId : pvAgentall) {
             List<Agent> pvagents = new ArrayList<>();
-            if (i < pvproductIds.length) {
-                if (StringUtils.isNotBlank(pvproductIds[i]))
-                    pvagents = mogo.getAgentsByProductId(new ObjectId(pvproductIds[i]));
-            }
-            if (i < pvagentIds.length){
-                if (StringUtils.isNotBlank(pvagentIds[i]))
-                pvagents.add(mogo.getAgentsById(new ObjectId(pvagentIds[i])));
-            }
+            pvagents.add(mogo.getAgentsById(new ObjectId(pvAgentId)));
             for (Agent pvagent : pvagents) {
                 pvagunt++;
                 String agentID = pvagent.getId().toString();
-                agentIdAll.add(agentID);
                 mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), pvagent.getId().toHexString(), persistence);
                 options = new MqttConnectOptions();
                 options.setUserName(pvagent.getId().toHexString());
@@ -225,9 +180,6 @@ public class EmulatorApplication {
                 }
             }
         }
-
-
-        Registry.INSTANCE.saveKey("agentIdAll", agentIdAll);
         logger.info("启动完毕,本次启动共{}个Agent任务", agunt + pvagunt);
 
     }
