@@ -165,7 +165,7 @@ public class DataMongoStorage {
      * 添加GenData数据
      */
     public boolean addGenData(ObjectId agentId, String day,
-                              Document pac, Document etoday, Document load , Document allDWhlmp) {
+                              Document pac, Document etoday, Document load, Document allDWhlmp) {
 
         Document soid = new Document();
         soid.append("agent_id", agentId);
@@ -197,6 +197,7 @@ public class DataMongoStorage {
         } else
             return null;
     }
+
     public long deleteGendDataByTime(String agentid) {
         long count = 0;
         count += this.database.getCollection("emulator_datas")
@@ -212,17 +213,14 @@ public class DataMongoStorage {
     /**
      * 删除time时间之前数据
      *
-     *
      * @return 受影响行数
      */
     public long deleteDataByTime() {
         long count = 0;
 
-         count += this.database.getCollection("emulator_datas")
-                        .deleteMany(eq("state", 0))
-                        .getDeletedCount();
-
-
+        count += this.database.getCollection("emulator_datas")
+                .deleteMany(eq("state", 0))
+                .getDeletedCount();
         return count;
     }
 }

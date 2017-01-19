@@ -1088,16 +1088,17 @@ public class MongoStorage {
     }
 
     /**
-     *  查找启动Agent
+     * 查找启动Agent
+     *
      * @param onlinefail 需要上传在线的
      * @param systemTpye 哪个系统的  0pv 1ems
      * @return agent 集合
      */
-    public List<String> findEmulatorAgentInfoBy(int onlinefail,int systemTpye) {
-        List<String> agentidall=new ArrayList<>();
+    public List<String> findEmulatorAgentInfoBy(int onlinefail, int systemTpye) {
+        List<String> agentidall = new ArrayList<>();
 
         this.database.getCollection("emulator_register")
-                .find(and(eq("onlinefail", onlinefail),eq("systemTpye",systemTpye))).forEach((Consumer<Document>) document ->
+                .find(and(eq("onlinefail", onlinefail), eq("systemTpye", systemTpye))).forEach((Consumer<Document>) document ->
                 agentidall.add(document.getString("agent_id"))
         );
         return agentidall;
@@ -1105,37 +1106,38 @@ public class MongoStorage {
 
     /**
      * 查找单个Agent或批次看是否满足启动情况
-     * @param id id任务
+     *
+     * @param id         id任务
      * @param onlinefail 是否运行
      * @param systemTpye 数据系统类型
-     * @param agentType id类型
+     * @param agentType  id类型
      * @return 满足条件
      */
-    public boolean isEmulatorAgentInfoBy(String id,int onlinefail,int systemTpye,int agentType) {
+    public boolean isEmulatorAgentInfoBy(String id, int onlinefail, int systemTpye, int agentType) {
         boolean is;
-        List<Integer> onlinefailAll=new ArrayList<>();
-        int acunt=0;
-        if(agentType==0)//agentid
+        List<Integer> onlinefailAll = new ArrayList<>();
+        int acunt = 0;
+        if (agentType == 0)//agentid
         {
-            is=this.database.getCollection("emulator_register")
-                    .find(and(eq("agent_id",id),
+            is = this.database.getCollection("emulator_register")
+                    .find(and(eq("agent_id", id),
                             eq("onlinefail", onlinefail),
-                            eq("systemTpye",systemTpye))).first()==null;
+                            eq("systemTpye", systemTpye))).first() == null;
 
-        }else {//batch id
+        } else {//batch id
             this.database.getCollection("emulator_register")
-                    .find(and(eq("product_id",id),
+                    .find(and(eq("product_id", id),
                             eq("onlinefail", onlinefail),
-                            eq("systemTpye",systemTpye))).forEach((Consumer<Document>) document ->
+                            eq("systemTpye", systemTpye))).forEach((Consumer<Document>) document ->
                     onlinefailAll.add(isnoDocument(document)));
-            for (Integer a:onlinefailAll)
-            {
-                acunt+=a;
+            for (Integer a : onlinefailAll) {
+                acunt += a;
             }
-            is=acunt==0;
+            is = acunt == 0;
         }
         return is;
     }
+
     @SuppressWarnings("unchecked")
     protected int isnoDocument(Document d) {
         return d.getInteger("onlinefail");
