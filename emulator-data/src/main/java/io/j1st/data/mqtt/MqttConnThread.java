@@ -74,6 +74,7 @@ public class MqttConnThread implements Callable {
                         Object oldjob = Registry.INSTANCE.getValue().get(agentid + "_Job");
                         // 如果有停掉旧的线程
                         if (oldjob != null) {
+                            logger.debug("存在发送线程 断开中..");
                             Object systemTyp = mogo.findEmulatorRegister(agentid, "systemTpye");
                             int systemType = (int) systemTyp;
                             if (systemType > 0) {
@@ -96,6 +97,8 @@ public class MqttConnThread implements Callable {
                                 }
                             }
 
+                        }else {
+                            logger.debug("无发送线程直接结束..");
                         }
                     }
 
@@ -130,7 +133,14 @@ public class MqttConnThread implements Callable {
                         } else if (msgData.keySet().toString().contains("SetMHReg")) {
                             List<Map> bbc = (List<Map>) msgData.get("SetMHReg");
                             String d = bbc.get(0).get("dsn").toString();
-                            double i = (double) bbc.get(0).get("Reg12551");
+                            double i;
+                            try {
+                                i = (double) bbc.get(0).get("Reg12551");
+                            }catch (Exception e)
+                            {
+                                i = (int) bbc.get(0).get("Reg12551")*1.0;
+                            }
+
                             Object num1 = mogo.findEmulatorRegister(AgentID, "Soc");
                             if (num1 != null)//判断当前容量是否处于极限值.
                             {

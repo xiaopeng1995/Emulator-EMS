@@ -51,21 +51,17 @@ public class DownResoure extends AbstractResource {
         // validate objectId
         if (!ObjectId.isValid(agentId)) {
             logger.warn("agentId {} 不是有效的 ObjectId", agentId);
-            return new ResultEntity("不是有效的 ObjectId");
+            return new ResultEntity(503, "不是有效的 ObjectId");
+        }
+        if (!map.get("values").toString().contains("kill") && !map.get("code").toString().equals("emulatorJob")) {
+            if (!mongo.findEmulatorRegister(agentId, "systemTpye").toString().equals("1")) {
+                return new ResultEntity(502, "不是EMS系统无法下发指令!");
+            }
+            if (!mongo.findEmulatorRegister(agentId, "onlinefail").toString().equals("1")) {
+                return new ResultEntity(502, "不是正在运行数据无法下发指令!");
+            }
         }
 
-
-        //验证是否在线
-//        Agent agent = this.mongo.getAgentById(new ObjectId(agentId));
-//        if (agent == null) {
-//            logger.debug("Agent 不存在.");
-//            return new ResultEntity("Agent 不存在.");
-//        }
-//        if (!agent.isConnected()) {
-//            logger.debug("downstream 下发 Agent 已离线.");
-//            return new ResultEntity("downstream 下发 Agent 已离线.");
-//        }
-//
         String result = null;
         String body = null;
         try {
@@ -101,22 +97,25 @@ public class DownResoure extends AbstractResource {
             body = JsonUtils.Mapper.writeValueAsString(payload);
 
 //            final String body = JsonUtils.Mapper.writeValueAsString(map.get("payload"));
-           // PropertiesConfiguration mqttHttp= new PropertiesConfiguration("config/mqttHttp.properties");
-            //+ mqttHttp.getString("mqtt.http") +
-            final String url = "http://139.196.230.150:8081/mqtt/clients/" + agentId + "/publish?qos=" + qos + "&topicName=" + topic;
+             PropertiesConfiguration mqttHttp= new PropertiesConfiguration("config/mqttHttp.properties");
+            //
+            final String url = "http://"+ mqttHttp.getString("mqtt.http") +"/mqtt/clients/" + agentId + "/publish?qos=" + qos + "&topicName=" + topic;
+            logger.debug(agentId+"收到指令");
             final String token = this.mongo.getUserById(new ObjectId(agentId)).getToken();
             result = HttpClientUtils.sendDownStreamPost(url, token, null, body);
-        } /*catch (ConfigurationException e) {
+        } catch (ConfigurationException e) {
             e.printStackTrace();
             logger.info("读取配置文件发生错误:{}", e.getMessage());
-        } */catch (JsonProcessingException e) {
+        }  catch (JsonProcessingException e) {
             e.printStackTrace();
             logger.info("客户端发来的json格式解析发生错误:{},下发操作放弃", e.getMessage());
         }
 
         logger.debug("http请求发送成功，请求结果为：{} ", result);
-
-        return new ResultEntity<>(result);
+        if (result.contains("true"))
+            return new ResultEntity<>(result);
+        else
+            return new ResultEntity<>(500, "指令下发失败请检查信息");
     }
 
     public static String getTopic(String agetnId) {

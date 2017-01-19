@@ -16,6 +16,7 @@ public class EmulatorRegister {
     private int systemType;
     private boolean connected;
     private String prodactId;
+    private String topic;
 
     private String updated_at;
 
@@ -73,5 +74,13 @@ public class EmulatorRegister {
 
     public void setProdactId(String prodactId) {
         this.prodactId = prodactId;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 }

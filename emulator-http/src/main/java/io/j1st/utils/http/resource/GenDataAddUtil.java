@@ -56,14 +56,14 @@ public class GenDataAddUtil extends AbstractResource {
     @GET
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity findGendDataBytime(     @QueryParam("page") @DefaultValue("1") int page,
-                                                @QueryParam("limit") @DefaultValue("10") int limit,
-                                                @QueryParam("isAsc") @DefaultValue("false") Boolean isAsc,
-                                                @QueryParam("isRead") @DefaultValue("false") Boolean isRead) {
+    public ResultEntity findGendDataBytime(@QueryParam("page") @DefaultValue("1") int page,
+                                           @QueryParam("limit") @DefaultValue("10") int limit,
+                                           @QueryParam("isAsc") @DefaultValue("false") Boolean isAsc,
+                                           @QueryParam("isRead") @DefaultValue("false") Boolean isRead) {
 
-        List<EmulatorRegister> sy=mongo.getEmulatorRegisterByuserID(page,limit,isAsc);
-        Long count=mongo.getEmulatorRegister();
-        PageResponse pageResponse=new PageResponse();
+        List<EmulatorRegister> sy = mongo.getEmulatorRegisterByno(page, limit, isAsc);
+        Long count = mongo.getEmulatorRegister();
+        PageResponse pageResponse = new PageResponse();
         pageResponse.setCount(count);
         Long totalPage;
         if (count % limit == 0)
@@ -71,32 +71,35 @@ public class GenDataAddUtil extends AbstractResource {
         else
             totalPage = count / limit + 1;
         pageResponse.setTotalPage(totalPage);
-        Map<String,Object> info=new HashMap<>();
-        info.put("pageInfo",pageResponse);
-        info.put("registerInfo",sy);
+        Map<String, Object> info = new HashMap<>();
+        info.put("pageInfo", pageResponse);
+        info.put("registerInfo", sy);
         return new ResultEntity<>(info);
     }
+
     @Path("/findone")
     @GET
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity findGendDataBytime(@QueryParam("emulatorid")  String emulatorid) {
-
-        EmulatorRegister sy=mongo.getEmulatorRegisterByID(emulatorid).get(0);
-
+    public ResultEntity findGendDataBytime(@QueryParam("emulatorid") String emulatorid) {
+        EmulatorRegister sy=new EmulatorRegister();
+        List<EmulatorRegister> syall = mongo.getEmulatorRegisterByID(emulatorid);
+        if (syall.size() > 0)
+             sy = mongo.getEmulatorRegisterByID(emulatorid).get(0);
         return new ResultEntity<>(sy);
     }
+
     @Path("/delete")
     @GET
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
     public ResultEntity findUntreated(@QueryParam("time") String time,
                                       @QueryParam("is") @DefaultValue("0") int is) {
-        if(is>0)
-        logger.info("开始删除"+time+"之后数据111");
+        if (is > 0)
+            logger.info("开始删除" + time + "之后数据111");
         else
-            logger.info("开始删除"+time+"之前数据000");
-        return new ResultEntity<>("已经删除"+mongo.deleteDataByTime(time,is)+"行");
+            logger.info("开始删除" + time + "之前数据000");
+        return new ResultEntity<>("已经删除" + mongo.deleteDataByTime(time, is) + "行");
     }
 
 }

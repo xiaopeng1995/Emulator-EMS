@@ -96,7 +96,7 @@ public class GetDataAll {
         if (sysType == 0) {
             packing = new int[]{1, 1, 1, 1, 1};
             battery01(date, agentID);
-            datapacking=mogo.findEmulatorRegister(agentID, "packing");
+            datapacking = mogo.findEmulatorRegister(agentID, "packing");
         }
         emsData01.setType("SUNS120");
         pvData.setSta(0);
@@ -195,18 +195,20 @@ public class GetDataAll {
         }
         return msg;
     }
+
     //峰谷电价策略
     private void battery01(String startDate, String agentID) {
         //负载
         Document powerT = dmogo.findGendDataByTime(agentID, "powerT");
+        Document DWhlmp = dmogo.findGendDataByTime(agentID, "DWhImp");
         double loadW = 0.0;
+        double loadDWhImp = 0.0;
+        if (DWhlmp != null)
+            loadDWhImp = DWhlmp.getDouble(startDate);
         if (powerT != null)
             loadW = powerT.getDouble(startDate);
         Object num = mogo.findEmulatorRegister(agentID, "loadTotWhImp");
-        double loadTotWhImp = (num == null ? 0.0 : (double) num + loadW / (3600 / jgtime));
-        mogo.updateEmulatorRegister(agentID, "loadTotWhImp", loadTotWhImp);
-        num = mogo.findEmulatorRegister(agentID, "loadDWhImp");
-        double loadDWhImp = (num == null ? 0.0 : (double) num + loadW / (3600 / jgtime));
+        double loadTotWhImp = (num == null ? loadDWhImp : (double) num);
         mogo.updateEmulatorRegister(agentID, "loadDWhImp", loadDWhImp);
         getLoadData(loadW, loadTotWhImp, loadDWhImp);
         //电网参数
@@ -256,7 +258,9 @@ public class GetDataAll {
         double BV;//电压
         double BI;// 电流
         PAC = STROAGE_002.kWp * ((Reg12551 / 1000.0));//总功率*功率百分比   当前放电充电瞬时功率
-        W = -PAC + loadW;
+        W = PAC;
+        //页面显示w
+        double showW = -PAC + loadW;
         //储能放电
         if (PAC > 0 && Soc > STROAGE_002.SoCNpMinPct)//使用受到到放电功率计算
         {
@@ -291,7 +295,7 @@ public class GetDataAll {
             PDC = PAC * EFF;
             //PDC=(102PDC-PDC*soc)/27
             if (Soc > 0.75)
-                PDC = PDC * (102 - Soc*(100)) / 27;
+                PDC = PDC * (102 - Soc * (100)) / 27;
             /*  Soc>80 BV=425 Soc<=80  BV=16.5Soc+316.44  Soc<10  BV=2Soc+260  */
             if (Soc > 0.8) {
                 BV = 425.0;
@@ -316,27 +320,24 @@ public class GetDataAll {
             //*****  绝对值
             DCkWh += Math.abs(J_TCkWh);//当天
             mogo.updateEmulatorRegister(agentID, "DCkWh", DCkWh);
-
+            //电网消耗
+            //更新电网累计值
+            //*****  绝对值
+            double J_TotWhImp = W * (((double) jgtime) / 3600);//当前电网侧间隔充电消耗功率
+            TotWhImp += Math.abs(J_TotWhImp);
+            mogo.updateEmulatorRegister(agentID, "TotWhImp", TotWhImp);
+            //当天电网
+            //*****  绝对值
+            DWhImp += Math.abs(J_TotWhImp);
+            mogo.updateEmulatorRegister(agentID, "DWhImp", DWhImp);
 
         }//待机不符合要求
         else {
             BV = 16.5 * Soc + 316.44;
             PDC = 0;
         }
-        //电网消耗
-        //更新电网累计值
-        //*****  绝对值
-        double J_TotWhImp = W * (((double) jgtime) / 3600);//当前电网侧间隔充电消耗功率
-        TotWhImp += Math.abs(J_TotWhImp);
-        mogo.updateEmulatorRegister(agentID, "TotWhImp", TotWhImp);
-        //当天电网
-        //*****  绝对值
-        DWhImp += Math.abs(J_TotWhImp);
-        mogo.updateEmulatorRegister(agentID, "DWhImp", DWhImp);
-
-
         BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
-        TotWh = TotWhImp - TotWhExp;//Total Real Energy (当前)组合有功总电能
+        TotWh = TotWhImp+loadTotWhImp - TotWhExp;//Total Real Energy (当前)组合有功总电能
         mogo.updateEmulatorRegister(agentID, "Soc", Soc);
         //逆变器
         data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 2));
@@ -356,12 +357,12 @@ public class GetDataAll {
         data801.put(Values.StrCur, GttRetainValue.getRealVaule(BI, 2));
         data801.put(Values.SoH, STROAGE_002.SoH);
         //电网电表
-        data202.put(Values.DWhImp, GttRetainValue.getRealVaule(DWhImp, 2));
+        data202.put(Values.DWhImp, GttRetainValue.getRealVaule(DWhImp + loadDWhImp, 2));
         data202.put(Values.DWhExp, GttRetainValue.getRealVaule(DWhExp, 2));
         data202.put(Values.TotWh, GttRetainValue.getRealVaule(TotWh, 2));
         data202.put(Values.TotWhExp, GttRetainValue.getRealVaule(TotWhExp, 2));
-        data202.put(Values.TotWhImp, GttRetainValue.getRealVaule(TotWhImp, 2));
-        data202.put(Values.W, GttRetainValue.getRealVaule(W, 3));
+        data202.put(Values.TotWhImp, GttRetainValue.getRealVaule(TotWhImp + loadTotWhImp, 2));
+        data202.put(Values.W, GttRetainValue.getRealVaule(showW, 3));
         data202.put(Values.VAR, GttRetainValue.getRealVaule(VAR, 3));
         data202.put(Values.PF, GttRetainValue.getRealVaule(PF, 3));
         data202.put(Values.Hz, GttRetainValue.getRealVaule(Hz, 2));
@@ -376,7 +377,7 @@ public class GetDataAll {
         double Pac = 0.0;
         double eToday = 0.0;
         if (pVPower != null && eTodayy != null) {
-            if("587741c7dafbaf42f1617753".equals(agentID))
+            if ("587741c7dafbaf42f1617753".equals(agentID))
                 System.out.println(pVPower);
             Pac = (pVPower.getDouble(date));
             eToday = eTodayy.getDouble(date);

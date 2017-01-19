@@ -1149,7 +1149,7 @@ public class MongoStorage {
      * @param isAsc 创建时间升序？
      * @return 事件列表
      */
-    public List<EmulatorRegister> getEmulatorRegisterByuserID(int skip, int limit, boolean isAsc) {
+    public List<EmulatorRegister> getEmulatorRegisterByno(int skip, int limit, boolean isAsc) {
         List<EmulatorRegister> r = new ArrayList<>();
         this.database.getCollection("emulator_register")
                 .find()
@@ -1191,7 +1191,10 @@ public class MongoStorage {
         e.setAgent_id(d.getString("agent_id"));
         e.setUpdated_at(dateFormat1.format(d.getDate("updated_at")));
         e.setPacking(d.getString("packing"));
-        e.setSystemType(d.get("Soc") == null ? 0 : 1);
+        e.setSystemType(d.getInteger("systemTpye"));
+        e.setTopic(d.getString("topic"));
+
+
         if (d.get("product_id") != null)
             e.setProdactId(d.getString("product_id"));
         else

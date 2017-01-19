@@ -94,7 +94,7 @@ public class Clculate {
             data.put("meterG", getRealVaule(LC.get("MeterG"), 2));
             data.put("powerT", getRealVaule(LC.get("PowerU"), 0));
             data.put("meterT", getRealVaule(LC.get("MeterU"), 2));
-            //System.out.println("powerT"+data.get("powerT"));
+            //System.out.println("meterT "+data.get("meterT"));
             listMap.add(data);
         }
         return listMap;

@@ -190,6 +190,7 @@ public class PVpredict {
         Document allpac = new Document();
         Document allW = new Document();
         Document alleToday = new Document();
+        Document allDWhlmp = new Document();
         //循环一天的每分钟
         for (int i = 0; i < mapList.size(); i++) {
             double b = pVOut;
@@ -203,8 +204,9 @@ public class PVpredict {
             eToday += epv;
             //load
             double W = Integer.parseInt(mapList.get(i).get("powerT")) * 0.8;
+           // double dW = Integer.parseInt(mapList.get(i).get("meterT")) * 0.8;
             double lepv = W / 60d / 1000d;
-            DWhlmp += lepv;
+            DWhlmp += lepv ;
             //添加至预测数据库
             if (is == 0) {
 
@@ -223,6 +225,7 @@ public class PVpredict {
                 String stime = tdate.substring(0, 8) + shhh + smmm;
                 allpac.append(stime, pVOut / 1000);
                 allW.append(stime, W / 1000);
+                allDWhlmp.append(stime,DWhlmp);
                 alleToday.append(stime, eToday);
 
             }
@@ -238,9 +241,9 @@ public class PVpredict {
                 logger.debug("已成功添加了一天的预测数据至数据库！");
 
         } else {
-            Boolean dataaa = dataMongoStorage.addGenData(agentId, tdate, allpac, alleToday, allW);
+            Boolean dataaa = dataMongoStorage.addGenData(agentId, tdate, allpac, alleToday, allW,allDWhlmp);
             if (dataaa)
-                logger.debug("已成功添加了一天的实时数据至数据库！"+tdate);
+                logger.debug("已成功添加了一天的实时数据至数据库！" + tdate);
         }
 
     }

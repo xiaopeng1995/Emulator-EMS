@@ -41,6 +41,8 @@ public class EmsJob extends Thread {
         String topicall;
         //更新间隔时间
         Registry.INSTANCE.saveKey(agentId + "_jgdate", timeThread.getTime());
+        mogo.updateEmulatorRegister(agentId, "systemTpye", 1);
+        mogo.updateEmulatorRegister(agentId, "topic", topic);
         while (!exit) {
             mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;
@@ -73,11 +75,21 @@ public class EmsJob extends Thread {
                         if (is)
                             logger.debug(agentId + "_DDkWh 逆变器充已清零..");
 
-                        //负载当天
+                        //负载
+
+
+                        Object num = mogo.findEmulatorRegister(agentId, "loadTotWhImp");
+                        Object dnum = mogo.findEmulatorRegister(agentId, "loadDWhImp");
+                        double loadTotWhImp = (num == null ? (double) dnum : (double) num + (double) dnum);
+                        is = mogo.updateEmulatorRegister(agentId, "loadTotWhImp", loadTotWhImp);
+                        if (is)
+                            logger.debug(agentId + "_loadTotWhImp load累计..");
+
                         is = mogo.updateEmulatorRegister(agentId, "loadDWhImp", 0.0);
                         if (is)
                             logger.debug(agentId + "_loadDWhImp load已清零..");
-                        Object num = mogo.findEmulatorRegister(agentId, "TYield");
+                        //pv
+                        num = mogo.findEmulatorRegister(agentId, "TYield");
                         double TYield = num != null ? (double) num : 0.0;
                         num = mogo.findEmulatorRegister(agentId, "DYield");
                         double DYield = num != null ? (double) num : 0.0;
@@ -134,7 +146,7 @@ public class EmsJob extends Thread {
             } else {
                 //睡眠300秒
                 try {
-                    Thread.sleep(300*1000);
+                    Thread.sleep(300 * 1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

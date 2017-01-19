@@ -40,6 +40,8 @@ public class PVjob extends Thread {
         String topicall;
         //更新间隔时间
         Registry.INSTANCE.saveKey(agentId + "_jgdate", timeThread.getTime());
+        mogo.updateEmulatorRegister(agentId, "systemTpye", 0);
+        mogo.updateEmulatorRegister(agentId, "topic", topic);
         while (!exit) {
             mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;

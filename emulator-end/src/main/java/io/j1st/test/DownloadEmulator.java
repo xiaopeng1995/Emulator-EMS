@@ -33,11 +33,11 @@ public class DownloadEmulator {
         MqttConnectOptions options;
         /*需要的传参*/
         String agentid = "586b617fdafbaf65c5ef2dd6";
-        int type = 2;//1功率,2时间,3告警
+        int type = 1;//1功率,2时间,3告警
         String pack="1,1,1,1,1301";
         /**/
-        mqtt = new MqttClient("tcp://119.254.210.144:1883", "testupdate", persistence);
-        //mqtt = new MqttClient("tcp://139.196.230.150:1883", "dd", persistence);
+        //mqtt = new MqttClient("tcp://119.254.210.144:1883", "testupdate", persistence);
+        mqtt = new MqttClient("tcp://139.196.230.150:1883", "dd", persistence);
         options = new MqttConnectOptions();
         mqtt.connect(options);
         Map<String, Object> query = new HashMap<>();
@@ -70,6 +70,6 @@ public class DownloadEmulator {
             payloadmsg=packs;
             logger.info("packs\n" + payloadmsg);
         }
-        mqtt.publish("agents/" + agentid + "/downstream",payloadmsg.getBytes("utf-8"),0,false);
+       // mqtt.publish("agents/" + agentid + "/downstream",payloadmsg.getBytes("utf-8"),0,false);
     }
 }

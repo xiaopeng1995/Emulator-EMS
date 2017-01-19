@@ -150,7 +150,7 @@ public class DataMongoStorage {
         soid.append("agent_id", agentId);
         soid.append("type", type);
         soid.append("day", day);
-        soid.append("DWhlmp", DWhlmp);
+        soid.append("DWhImp", DWhlmp);
         soid.append("W", w);
         return this.database.getCollection("ems_forecast_data")
                 .updateOne(and(eq("agent_id", agentId), eq("device_sn", deviceSn)),
@@ -165,7 +165,7 @@ public class DataMongoStorage {
      * 添加GenData数据
      */
     public boolean addGenData(ObjectId agentId, String day,
-                              Document pac, Document etoday, Document load) {
+                              Document pac, Document etoday, Document load , Document allDWhlmp) {
 
         Document soid = new Document();
         soid.append("agent_id", agentId);
@@ -173,6 +173,7 @@ public class DataMongoStorage {
         soid.append("pVPower", pac);
         soid.append("powerT", load);
         soid.append("eToday", etoday);
+        soid.append("DWhImp", allDWhlmp);
         return this.database.getCollection("emulator_datas")
                 .updateOne(eq("agent_id", agentId),
                         new Document()
