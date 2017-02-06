@@ -77,7 +77,6 @@ public class MongoStorage {
         //this.database.getCollection("emulator_datas").dropIndex(ascending("test"));
         //this.database.getCollection("mail_verifies").dropIndex(ascending("mail"));
         //this.database.getCollection("users").dropIndex(ascending("email"));
-
     }
 
     public void destroy() {
@@ -1204,6 +1203,7 @@ public class MongoStorage {
         //如果更新时间超时设为false
         if (newdate - odldate > 5) {
             e.setConnected(false);
+            updateEmulatorRegister(d.getString("agent_id"),"onlinefail",0);
         } else {
             if (d.get("onlinefail") == null)
                 e.setConnected(false);

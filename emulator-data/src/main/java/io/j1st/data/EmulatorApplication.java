@@ -72,7 +72,8 @@ public class EmulatorApplication {
 
         DataMongoStorage dmogo = new DataMongoStorage();
         dmogo.init(mongoConfig);
-        System.out.println(dmogo.deleteDataByTime());//删除旧数据
+        if (dmogo.deleteDataByTime() > 0)
+            logger.info("已删除旧数据");
         //mogo加入内存
         Registry.INSTANCE.saveKey("dmogo", dmogo);
         Registry.INSTANCE.saveKey("mogo", mogo);
@@ -181,7 +182,6 @@ public class EmulatorApplication {
             }
         }
         logger.info("启动完毕,本次启动共{}个Agent任务", agunt + pvagunt);
-
     }
 
 

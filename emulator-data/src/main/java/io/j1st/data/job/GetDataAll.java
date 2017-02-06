@@ -133,7 +133,13 @@ public class GetDataAll {
             String datapackings = (String) datapacking;
             String[] a = datapackings.split(",");
             for (int i = 0; i < a.length; i++) {
-                packing[i] = Integer.parseInt(a[i]);
+                try {
+                    packing[i] = Integer.parseInt(a[i]);
+                }catch (Exception e)
+                {
+                    packing[i] = 1;
+                }
+
             }
         } else {
             mogo.updateEmulatorRegister(agentID, "packing", "1,1,1,1,1");
