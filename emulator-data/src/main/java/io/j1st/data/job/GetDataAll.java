@@ -5,13 +5,10 @@ import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
-import io.j1st.storage.entity.Value;
 import io.j1st.util.entity.EmsData;
-import io.j1st.util.entity.data.Device;
 import io.j1st.util.entity.data.Values;
 import io.j1st.util.util.GttRetainValue;
 import io.j1st.util.util.JsonUtils;
-import org.apache.commons.configuration.PropertiesConfiguration;
 import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -385,6 +382,7 @@ public class GetDataAll {
         if (pVPower != null && eTodayy != null) {
             if ("587741c7dafbaf42f1617753".equals(agentID))
                 System.out.println(pVPower);
+            System.out.println(date);
             Pac = (pVPower.getDouble(date));
             eToday = eTodayy.getDouble(date);
         }
@@ -425,47 +423,46 @@ public class GetDataAll {
         if (number > 5000) {//Fault
             switch (number) {
                 case 5101:
-                    data.put(Values.FaultV, "F0001");
-                    data.put(Values.FaultD, "TempOver");
+                    data.put(Values.evt, "F0001");
+                    data.put(Values.evtD, "TempOver");
                     break;
                 case 5102:
-                    data.put(Values.FaultV, "F0002");
-                    data.put(Values.FaultD, "GridV.OutLow");
+                    data.put(Values.evt, "F0002");
+                    data.put(Values.evtD, "GridV.OutLow");
                     break;
                 case 5103:
-                    data.put(Values.FaultV, "F0003");
-                    data.put(Values.FaultD, "EmergencyStp");
+                    data.put(Values.evt, "F0003");
+                    data.put(Values.evtD, "EmergencyStp");
                     break;
                 case 5201:
-                    data.put(Values.FaultV, "F0001");
-                    data.put(Values.FaultD, "TempRiseDown");
+                    data.put(Values.evt, "F0001");
+                    data.put(Values.evtD, "TempRiseDown");
                     break;
                 case 5202:
-                    data.put(Values.FaultV, "F0002");
-                    data.put(Values.FaultD, "CAOverDown");
+                    data.put(Values.evt, "F0002");
+                    data.put(Values.evtD, "CAOverDown");
                     break;
                 case 5203:
-                    data.put(Values.FaultV, "F0003");
-                    data.put(Values.FaultD, "DAOverDown");
+                    data.put(Values.evt, "F0003");
+                    data.put(Values.evtD, "DAOverDown");
                     break;
                 case 5204:
-                    data.put(Values.FaultV, "F0004");
-                    data.put(Values.FaultD, "RelayStp");
+                    data.put(Values.evt, "F0004");
+                    data.put(Values.evtD, "RelayStp");
                     break;
                 case 5301:
-                    data.put(Values.FaultV, "F0001");
-                    data.put(Values.FaultD, "TempOver");
+                    data.put(Values.evt, "F0001");
+                    data.put(Values.evtD, "TempOver");
                     break;
                 case 5302:
-                    data.put(Values.FaultV, "F0002");
-                    data.put(Values.FaultD, "GridV.OutLow");
+                    data.put(Values.evt, "F0002");
+                    data.put(Values.evtD, "GridV.OutLow");
                     break;
                 case 5303:
-                    data.put(Values.FaultV, "F0003");
-                    data.put(Values.FaultD, "EmergencyStp");
+                    data.put(Values.evt, "F0003");
+                    data.put(Values.evtD, "EmergencyStp");
                     break;
             }
-            data.put(Values.FaultT, "aaa");
             device.setSta(4);
             device.setValues(data);
             device.setDsn(agentID + type);
@@ -475,27 +472,27 @@ public class GetDataAll {
 
             switch (number) {
                 case 1101:
-                    data.put(Values.WarnV, "W0020");
-                    data.put(Values.WarnD, "ACFanWarn");
+                    data.put(Values.evt, "W0020");
+                    data.put(Values.evtD, "ACFanWarn");
                     break;
                 case 1102:
-                    data.put(Values.WarnV, "W0010");
-                    data.put(Values.WarnD, "DCFanWarn");
+                    data.put(Values.evt, "W0010");
+                    data.put(Values.evtD, "DCFanWarn");
                     break;
                 case 1201:
-                    data.put(Values.WarnV, "W0001");
-                    data.put(Values.WarnD, "ModTempLowWarn");
+                    data.put(Values.evt, "W0001");
+                    data.put(Values.evtD, "ModTempLowWarn");
                     break;
                 case 1202:
-                    data.put(Values.WarnV, "W0002");
-                    data.put(Values.WarnD, "ModTempHighWarn");
+                    data.put(Values.evt, "W0002");
+                    data.put(Values.evtD, "ModTempHighWarn");
                     break;
                 case 1301:
-                    data.put(Values.WarnV, "W0020");
-                    data.put(Values.WarnD, "ACFanWarn");
+                    data.put(Values.evt, "W0020");
+                    data.put(Values.evtD, "ACFanWarn");
                     break;
             }
-            data.put(Values.WarnT, "待定");
+            //data.put(Values.WarnT, "待定");
             device.setSta(2);
             device.setValues(data);
             device.setDsn(agentID + type);
@@ -503,9 +500,8 @@ public class GetDataAll {
             device.setModel(model);
 
         } else if (number == 102) {//Device disconnect（Node通讯异常）
-            noDevice.put(Values.WarnV, "102");
-            noDevice.put(Values.WarnD, "Device communication is lost");
-            noDevice.put(Values.WarnT, "待定");
+            noDevice.put(Values.evt, "102");
+            noDevice.put(Values.evtD, "Device communication is lost");
             device.setSta(2);
             device.setValues(noDevice);
             device.setDsn(agentID + type);
@@ -513,9 +509,8 @@ public class GetDataAll {
             device.setModel(model);
 
         } else if (number == 103) {//Device fault（Node运行出现错误）
-            data.put(Values.FaultV, "103");
-            data.put(Values.FaultD, "Device fault");
-            data.put(Values.FaultT, "aaa");
+            data.put(Values.evt, "103");
+            data.put(Values.evtD, "Device fault");
             device.setSta(4);
             device.setValues(data);
             device.setDsn(agentID + type);
@@ -523,9 +518,8 @@ public class GetDataAll {
             device.setModel(model);
 
         } else if (number == 104) {//Device warning （Node运行出现警告）
-            data.put(Values.WarnV, "la104");
-            data.put(Values.WarnD, "Device communication is lost");
-            data.put(Values.WarnT, "待定");
+            data.put(Values.evt, "la104");
+            data.put(Values.evtD, "Device communication is lost");
             device.setSta(2);
             device.setValues(data);
             device.setDsn(agentID + type);

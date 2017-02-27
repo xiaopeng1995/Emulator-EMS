@@ -97,7 +97,7 @@ public class MqttConnThread implements Callable {
                                 }
                             }
 
-                        }else {
+                        } else {
                             logger.debug("无发送线程直接结束..");
                         }
                     }
@@ -136,9 +136,8 @@ public class MqttConnThread implements Callable {
                             double i;
                             try {
                                 i = (double) bbc.get(0).get("Reg12551");
-                            }catch (Exception e)
-                            {
-                                i = (int) bbc.get(0).get("Reg12551")*1.0;
+                            } catch (Exception e) {
+                                i = (int) bbc.get(0).get("Reg12551") * 1.0;
                             }
 
                             Object num1 = mogo.findEmulatorRegister(AgentID, "Soc");
@@ -236,7 +235,11 @@ public class MqttConnThread implements Callable {
     //发布消息
     public void sendMessage(String topic, String message) {
         try {
-            this.mqttClient.publish(topic, new MqttMessage(message.getBytes("utf-8")));
+            if (mqttClient.isConnected())
+                this.mqttClient.publish(topic, new MqttMessage(message.getBytes("utf-8")));
+            else
+                logger.error("broker以断开");
+
         } catch (Exception e) {
             e.printStackTrace();
         }

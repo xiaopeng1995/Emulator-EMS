@@ -16,7 +16,8 @@ public class Values {
     public static final String VAR = "VAR";               //Reactive Power 瞬时总无功功率
     // public static final String PF="";                 //Power Factor 总功率因数
     public static final String Hz = "Hz";                 //Frequency 电网频率
-    public static final String Evt = "Evt";               //Meter?Event Flags 负载电表事件标志
+    public static final String Evt = "Evt";
+    //Meter?Event Flags 负载电表事件标志
     public static final String WHRtg = "WHRtg"; //铭牌标识的DC存储总能量
     public static final String MaxRsvPct = "MaxRsvPct";
     public static final String MinRsvPct = "MinRsvPct";
@@ -60,12 +61,8 @@ public class Values {
     public static final String QAC = "QAC";//QAC"="";             //Reactive power from inverter 来自逆变器的无功功率
     public static final String EFF = "EFF";//EFF"="";             //Efficiency 效率
     public static final String PF = "PF";//PF"="";               //Power factor 功率因素
-    public static final String FaultV = "FaultV";//FaultV"="";       //错误码
-    public static final String FaultD = "FaultD";//FaultD"="";       // 错误描述
-    public static final String FaultT = "FaultT";//FaultT"="";       //错误发送时间
-    public static final String WarnV = "WarnV";//WarnV"="";         //警告码
-    public static final String WarnD = "WarnD";//WarnD"="";         //警告描述
-    public static final String WarnT = "WarnT";//WarnT"="";         //警告发送时间
+    public static final String evt = "evt";
+    public static final String evtD = "evtD";
     public static final String BatSt = "BatSt";//State of the battery bank.  Enumeration. 系统状态标识位，0：未就绪，1：就绪
     public static final String Vol = "Vol";//External Battery Voltage, DC Bus Voltage 充电电压
     public static final String MaxBatACha = "MaxBatACha";//充电最大电流

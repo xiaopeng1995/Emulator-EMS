@@ -30,7 +30,7 @@ public class ConfigFun {
     private static final Logger logger = LoggerFactory.getLogger(ConfigFun.class);
     private DataMongoStorage dmogo;
     private MongoStorage mogo;
-    private int agunt = 0;
+    private int agunt = 0;//计算总数
     private PropertiesConfiguration emulatorConfig;
 
     public ConfigFun(DataMongoStorage dmogo, MongoStorage mogo, PropertiesConfiguration emulatorConfig) {
@@ -133,4 +133,16 @@ public class ConfigFun {
     }
 
 }
+
+//chunmianbujuexiaochuchuwentiniaoyelaifengyushenhualuozhiduoshao
+//eeequxiangxiangtiangebaimaofulvshuihongzhangboqinbo
+//heiyunyachengchengyucuijiaguangxiangrijinlinkai
+//huruyiyechunfenglaiqianshuwangshulihuakai
+//chuheridangwuhandihexiatusheizhipanzhongcanlilijiexinku
+//jianjiacangcnagbailuweishuangsuoweiyiranzaishuiyifang
+//shanbuzaigaoyouxianzemingshuibuzaishenyoulongzeling
+//sishiloushiweiwudixintaihenshangjielvcaoserulianqin
+//taohuatanshuisanqianchibujiwanglunsongwoqin
+//feiliuzhixiasanqianchiyishiyinheloujiutian
+
 
