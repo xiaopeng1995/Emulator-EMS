@@ -177,15 +177,15 @@ public class EmsJob extends Thread {
     public static int[] pvcloud() {
         int[] cCloud = new int[8];
         int ran = (int) (Math.random() * 10);
-        cCloud[0] = ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 4;
-        cCloud[1] = ran > 5 ? 3 : ran > 3 ? 2 : ran > 2 ? 1 : 5;
-        cCloud[2] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 3;
-        cCloud[3] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 3 : 2;
-        cCloud[4] = ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 3;
-        cCloud[5] = ran > 5 ? 6 : ran > 3 ? 5 : ran > 2 ? 4 : 7;
-        cCloud[6] = ran > 5 ? 6 : ran > 3 ? 5 : ran > 2 ? 4 : 3;
+        cCloud[0] = ran > 8 ? 3 :ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 5 : 1;//6
+        cCloud[1] = ran > 8 ? 3 :ran > 5 ? 2 : ran > 3 ? 3 : ran > 2 ? 4 : 1;//8
+        cCloud[2] = ran > 8 ? 1 :ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 0;//10
+        cCloud[3] = ran > 8 ? 1 :ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 0;//12
+        cCloud[4] = ran > 8 ? 1 :ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 0;//14
+        cCloud[5] = ran > 8 ? 1 :ran > 5 ? 2 : ran > 3 ? 3 : ran > 2 ? 4 : 1;//16
+        cCloud[6] = ran > 8 ? 2 :ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 5 : 1;//18
         ran = (int) (Math.random() * 10);
-        cCloud[7] = ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 1 : 2;
+        cCloud[7] = ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 1 : 2;//变化因子
         return cCloud;
     }
 }

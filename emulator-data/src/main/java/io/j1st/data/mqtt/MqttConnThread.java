@@ -109,8 +109,8 @@ public class MqttConnThread implements Callable {
                         Map<Object, Object> msgData = JsonUtils.Mapper.readValue(message.toString().getBytes(), Map.class);
                         if (msgData.keySet().toString().contains("Query")) {
                             List<Map> bbc = (List<Map>) msgData.get("Query");
-                            int d = (Integer) bbc.get(0).get("D");
-                            int i = (Integer) bbc.get(0).get("I");
+                            int d = Integer.parseInt(bbc.get(0).get("D").toString()) ;
+                            int i = Integer.parseInt(bbc.get(0).get("I").toString());
                             Object oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
                             // 如果有停掉旧的线程
                             if (oldjob != null) {

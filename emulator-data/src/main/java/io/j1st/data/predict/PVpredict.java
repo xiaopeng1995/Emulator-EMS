@@ -204,15 +204,15 @@ public class PVpredict {
             eToday += epv;
             //load
             double W = Integer.parseInt(mapList.get(i).get("powerT")) * 0.8;
-           // double dW = Integer.parseInt(mapList.get(i).get("meterT")) * 0.8;
+            // double dW = Integer.parseInt(mapList.get(i).get("meterT")) * 0.8;
             double lepv = W / 60d / 1000d;
-            DWhlmp += lepv ;
+            DWhlmp += lepv;
             //添加至预测数据库
             if (is == 0) {
-
-                allpac.append(now + "", pVOut / 1000);
-                allW.append(now + "", W / 1000);
-
+                if (i % 30 == 0 || i == 0) {
+                    allpac.append(now + "", pVOut / 1000);
+                    allW.append(now + "", W / 1000);
+                }
             } else { //添加实时数据
                 int chh = i / 60;
                 String shhh = chh + "";
@@ -225,7 +225,7 @@ public class PVpredict {
                 String stime = tdate.substring(0, 8) + shhh + smmm;
                 allpac.append(stime, pVOut / 1000);
                 allW.append(stime, W / 1000);
-                allDWhlmp.append(stime,DWhlmp);
+                allDWhlmp.append(stime, DWhlmp);
                 alleToday.append(stime, eToday);
 
             }
@@ -241,7 +241,7 @@ public class PVpredict {
                 logger.debug("已成功添加了一天的预测数据至数据库！");
 
         } else {
-            Boolean dataaa = dataMongoStorage.addGenData(agentId, tdate, allpac, alleToday, allW,allDWhlmp);
+            Boolean dataaa = dataMongoStorage.addGenData(agentId, tdate, allpac, alleToday, allW, allDWhlmp);
             if (dataaa)
                 logger.debug("已成功添加了一天的实时数据至数据库！" + tdate);
         }

@@ -1050,11 +1050,18 @@ public class MongoStorage {
      * @return
      */
     public boolean updateEmulatorRegister(String agentId, String key, Object value) {
-        return this.database.getCollection("emulator_register")
-                .updateOne(eq("agent_id", agentId),
-                        new Document("$set", new Document(key, value)
-                                .append("updated_at", new Date()))
-                        , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
+        if (key.equals("onlinefail"))
+            return this.database.getCollection("emulator_register")
+                    .updateOne(eq("agent_id", agentId),
+                            new Document("$set", new Document(key, value)
+                            )
+                            , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
+        else
+            return this.database.getCollection("emulator_register")
+                    .updateOne(eq("agent_id", agentId),
+                            new Document("$set", new Document(key, value)
+                                    .append("updated_at", new Date()))
+                            , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
     }
 
     /**
@@ -1203,7 +1210,7 @@ public class MongoStorage {
         //如果更新时间超时设为false
         if (newdate - odldate > 5) {
             e.setConnected(false);
-            updateEmulatorRegister(d.getString("agent_id"),"onlinefail",0);
+            updateEmulatorRegister(d.getString("agent_id"), "onlinefail", 0);
         } else {
             if (d.get("onlinefail") == null)
                 e.setConnected(false);
