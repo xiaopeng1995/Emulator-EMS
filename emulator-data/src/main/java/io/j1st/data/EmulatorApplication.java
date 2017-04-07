@@ -47,8 +47,6 @@ public class EmulatorApplication {
             mongoConfig = new PropertiesConfiguration(args[1]);
             mqttConfig = new PropertiesConfiguration(args[2]);
             // quartzConfig = new PropertiesConfiguration(args[4]);
-
-
         } else {
             emulatorConfig = new PropertiesConfiguration("config/emulator.properties");
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
@@ -145,6 +143,7 @@ public class EmulatorApplication {
 
         //获取所有需要运行ems的Agentid
         List<String> pvAgentall = mogo.findEmulatorAgentInfoBy(1, 0);
+
         for (String pvAgentId : pvAgentall) {
             List<Agent> pvagents = new ArrayList<>();
             pvagents.add(mogo.getAgentsById(new ObjectId(pvAgentId)));

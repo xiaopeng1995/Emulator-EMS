@@ -88,7 +88,7 @@ public class GetDataAll {
         Object datapacking = null;
         //对应类型120 810 202 201 130
         //默认只有PV系统
-        int[] packing = {0, 0, 0, 0, 1};
+        int[] packing = {0, 0, 0, 0, 5301};
         //填装数据如果是ems系统的话
         if (sysType == 0) {
             packing = new int[]{1, 1, 1, 1, 1};
@@ -97,31 +97,31 @@ public class GetDataAll {
         }
         emsData01.setType("SUNS120");
         pvData.setSta(0);
-        emsData01.setDsn(agentID + "120");
+        emsData01.setDsn(agentID + "SUNS120");
         emsData01.setModel("SC36KTL-DO");
         emsData01.setValues(data120);
 
         emsData02.setType("SUNS801");
         pvData.setSta(0);
-        emsData02.setDsn(agentID + "801");
+        emsData02.setDsn(agentID + "SUNS801");
         emsData02.setModel("ZE60BATTERY");
         emsData02.setValues(data801);
 
         gridData.setType("SUNS202");
         pvData.setSta(0);
-        gridData.setDsn(agentID + "202");
+        gridData.setDsn(agentID + "SUNS202");
         gridData.setModel("ZEMETERG");
         gridData.setValues(data202);
 
         loadData.setType("SUNS201");
         pvData.setSta(0);
-        loadData.setDsn(agentID + "201");
+        loadData.setDsn(agentID + "SUNS201");
         loadData.setModel("ZEMETERL");
         loadData.setValues(data201);
 
         pvData.setType("SUNS103");
         pvData.setSta(0);
-        pvData.setDsn(agentID + "103");
+        pvData.setDsn(agentID + "SUNS103");
         pvData.setModel("SC30KTL-DO");
         pvData.setValues(data103);
 

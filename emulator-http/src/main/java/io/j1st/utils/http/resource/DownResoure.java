@@ -47,7 +47,13 @@ public class DownResoure extends AbstractResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public ResultEntity fnxDownStream(@HeaderParam("Accept-Language") @DefaultValue("zh") String lang,
                                       @PathParam("agentId") String agentId, Map<String, Object> map) {
-
+        String mapjson;
+        try {
+            mapjson = JsonUtils.Mapper.writeValueAsString(map);
+        } catch (JsonProcessingException e) {
+            return new ResultEntity(503, "格式错误,无法解析!");
+        }
+        logger.debug("解析客户端发送的json数据:{}", mapjson);
         // validate objectId
         if (!ObjectId.isValid(agentId)) {
             logger.warn("agentId {} 不是有效的 ObjectId", agentId);
@@ -55,7 +61,9 @@ public class DownResoure extends AbstractResource {
         }
         if (!map.get("values").toString().contains("kill") && !map.get("code").toString().equals("emulatorJob")) {
             if (!mongo.findEmulatorRegister(agentId, "systemTpye").toString().equals("1")) {
-                return new ResultEntity(502, "不是EMS系统无法下发指令!");
+                if (!mapjson.contains("0,0,0,0"))
+                    return new ResultEntity(502, "不是EMS系统无法下发此类型指令!");
+
             }
             if (!mongo.findEmulatorRegister(agentId, "onlinefail").toString().equals("1")) {
                 return new ResultEntity(502, "不是正在运行数据无法下发指令!");
@@ -65,7 +73,6 @@ public class DownResoure extends AbstractResource {
         String result = null;
         String body = null;
         try {
-            logger.debug("解析客户端发送的json数据:{}", JsonUtils.Mapper.writeValueAsString(map));
             //组装下发的数据格式
             Map<String, Object> payload = new HashMap();
             String key = map.get("code").toString();
@@ -97,16 +104,16 @@ public class DownResoure extends AbstractResource {
             body = JsonUtils.Mapper.writeValueAsString(payload);
 
 //            final String body = JsonUtils.Mapper.writeValueAsString(map.get("payload"));
-             PropertiesConfiguration mqttHttp= new PropertiesConfiguration("config/mqttHttp.properties");
+            PropertiesConfiguration mqttHttp = new PropertiesConfiguration("config/mqttHttp.properties");
             //
-            final String url = "http://"+ mqttHttp.getString("mqtt.http") +"/mqtt/clients/" + agentId + "/publish?qos=" + qos + "&topicName=" + topic;
-            logger.debug(agentId+"收到指令");
+            final String url = "http://" + mqttHttp.getString("mqtt.http") + "/mqtt/clients/" + agentId + "/publish?qos=" + qos + "&topicName=" + topic;
+            logger.debug(agentId + "收到指令");
             final String token = this.mongo.getUserById(new ObjectId(agentId)).getToken();
             result = HttpClientUtils.sendDownStreamPost(url, token, null, body);
         } catch (ConfigurationException e) {
             e.printStackTrace();
             logger.info("读取配置文件发生错误:{}", e.getMessage());
-        }  catch (JsonProcessingException e) {
+        } catch (JsonProcessingException e) {
             e.printStackTrace();
             logger.info("客户端发来的json格式解析发生错误:{},下发操作放弃", e.getMessage());
         }

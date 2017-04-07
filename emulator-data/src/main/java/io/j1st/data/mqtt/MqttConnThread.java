@@ -109,7 +109,7 @@ public class MqttConnThread implements Callable {
                         Map<Object, Object> msgData = JsonUtils.Mapper.readValue(message.toString().getBytes(), Map.class);
                         if (msgData.keySet().toString().contains("Query")) {
                             List<Map> bbc = (List<Map>) msgData.get("Query");
-                            int d = Integer.parseInt(bbc.get(0).get("D").toString()) ;
+                            int d = Integer.parseInt(bbc.get(0).get("D").toString());
                             int i = Integer.parseInt(bbc.get(0).get("I").toString());
                             Object oldjob = Registry.INSTANCE.getValue().get(AgentID + "_Job");
                             // 如果有停掉旧的线程
@@ -188,7 +188,10 @@ public class MqttConnThread implements Callable {
                                 GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime, 0);
                                 String msg = dataAll.getDate(AgentID);
                                 logger.info("实时packs  类型:" + msg);
-                                sendMessage(getTopic(AgentID), msg);
+                                if (dataqc.contains("0,0,0,0"))
+                                    sendMessage(getTopic(AgentID, 0), msg);
+                                else
+                                    sendMessage(getTopic(AgentID, 1), msg);
                             }
 
                         } else {
@@ -245,9 +248,17 @@ public class MqttConnThread implements Callable {
         }
     }
 
-    private String getTopic(String agentId) {
-        logger.debug(agentId + " Topic:systemQuery");
-        return "agents/" + agentId + "/systemQuery";
+    private String getTopic(String agentId,int sysType) {
+        if(sysType==0)
+        {
+            logger.debug(agentId + " Topic:upstream");
+            return "agents/" + agentId + "/upstream";
+        }else
+        {
+            logger.debug(agentId + " Topic:systemQuery");
+            return "agents/" + agentId + "/systemQuery";
+        }
+
     }
 
 }
