@@ -8,31 +8,38 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 public class TestMethods {
     private static Logger log = LoggerFactory.getLogger(TestMethods.class);
 
     @Test
     public void testLogBack() {
-        for(int a:pvcloud())
-        {
-            System.out.print(a);
+        List<String> a = new ArrayList<String>();
+        a.add("1");
+        a.add("1");
+        a.add("1");
+        a.add("2");
+        for (int i=0;i<a.size();i++) {
+            if("1".equals(a.get(i))){
+                a.remove(a.get(i));
+            }
+            System.out.println("集合长度:"+a.size());
         }
+
+
+//        Iterator<String> it = a.iterator();
+//        while(it.hasNext()){
+//            String temp = it.next();
+//            if("2".equals(temp)){
+//                it.remove();
+//            }
+//        }
+        for(String temp1 : a)
+            System.out.println(temp1);
     }
-    //太阳能云因子
-    public static int[] pvcloud() {
-        int[] cCloud = new int[8];
-        int ran = (int) (Math.random() * 10);
-        cCloud[0] = ran > 8 ? 3 :ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 5 : 1;//6
-        cCloud[1] = ran > 8 ? 3 :ran > 5 ? 2 : ran > 3 ? 3 : ran > 2 ? 4 : 1;//8
-        cCloud[2] = ran > 8 ? 1 :ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 0;//10
-        cCloud[3] = ran > 8 ? 1 :ran > 5 ? 0 : ran > 3 ? 1 : ran > 2 ? 2 : 0;//12
-        cCloud[4] = ran > 8 ? 1 :ran > 5 ? 1 : ran > 3 ? 2 : ran > 2 ? 3 : 0;//14
-        cCloud[5] = ran > 8 ? 1 :ran > 5 ? 2 : ran > 3 ? 3 : ran > 2 ? 4 : 1;//16
-        cCloud[6] = ran > 8 ? 2 :ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 5 : 1;//18
-        ran = (int) (Math.random() * 10);
-        cCloud[7] = ran > 5 ? 3 : ran > 3 ? 4 : ran > 2 ? 1 : 2;//变化因子
-        return cCloud;
-    }
+
 }

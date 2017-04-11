@@ -26,7 +26,6 @@ public class GetDataAll {
     private MongoStorage mogo;
     private DataMongoStorage dmogo = (DataMongoStorage) Registry.INSTANCE.getValue().get("dmogo");
     private int jgtime;
-    private int sysType;
 
     /**
      * @param Reg12551    充放电指令
@@ -34,12 +33,11 @@ public class GetDataAll {
      * @param mogo        数据库操作
      * @param jgtime      间隔时间
      */
-    public GetDataAll(double Reg12551, BatConfig STROAGE_002, MongoStorage mogo, int jgtime, int sysType) {
+    public GetDataAll(double Reg12551, BatConfig STROAGE_002, MongoStorage mogo, int jgtime) {
         this.Reg12551 = Reg12551;
         this.STROAGE_002 = STROAGE_002;
         this.mogo = mogo;
         this.jgtime = jgtime;
-        this.sysType = sysType;
 
     }
 
@@ -85,16 +83,18 @@ public class GetDataAll {
         getPvData(agentID, date);
 
         //packing 远程指令
-        Object datapacking = null;
+        Object datapacking;
         //对应类型120 810 202 201 130
         //默认只有PV系统
-        int[] packing = {0, 0, 0, 0, 5301};
-        //填装数据如果是ems系统的话
-        if (sysType == 0) {
-            packing = new int[]{1, 1, 1, 1, 1};
+        int[] packing = {0, 0, 0, 0, 0};
+
+        //查找上传数据类型
+        datapacking = mogo.findEmulatorRegister(agentID, "packing");
+        //EMS 系统时才会计算一下值
+        if (datapacking.toString().equals("1,1,1,1,1")) {
             battery01(date, agentID);
-            datapacking = mogo.findEmulatorRegister(agentID, "packing");
         }
+
         emsData01.setType("SUNS120");
         pvData.setSta(0);
         emsData01.setDsn(agentID + "SUNS120");
@@ -127,19 +127,18 @@ public class GetDataAll {
 
 
         if (datapacking != null) {
-            String datapackings = (String) datapacking;
+            String datapackings = datapacking.toString();
             String[] a = datapackings.split(",");
             for (int i = 0; i < a.length; i++) {
                 try {
                     packing[i] = Integer.parseInt(a[i]);
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     packing[i] = 1;
                 }
 
             }
         } else {
-            mogo.updateEmulatorRegister(agentID, "packing", "1,1,1,1,1");
+            logger.error("数据出错!!!!!!!!!!!!!!!!!!!!!!");
         }
         if (packing[0] == 101) {
             Map<String, Object> noDevice = new HashMap<>();
@@ -340,7 +339,7 @@ public class GetDataAll {
             PDC = 0;
         }
         BI = (PDC * 1000) / BV + ((Math.random() * 3) / 10);
-        TotWh = TotWhImp+loadTotWhImp - TotWhExp;//Total Real Energy (当前)组合有功总电能
+        TotWh = TotWhImp + loadTotWhImp - TotWhExp;//Total Real Energy (当前)组合有功总电能
         mogo.updateEmulatorRegister(agentID, "Soc", Soc);
         //逆变器
         data120.put(Values.PDC, GttRetainValue.getRealVaule(PDC, 2));

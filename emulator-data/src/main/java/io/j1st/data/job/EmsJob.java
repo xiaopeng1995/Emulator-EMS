@@ -123,7 +123,9 @@ public class EmsJob extends Thread {
             //第二个电池配置文件
             //第三个间隔时间
             //第四个数据系统类型 0ems  1pv 2..
-            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime, 0);
+            GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime);
+            //更新数据格式
+            mogo.updateEmulatorRegister(agentId, "packing", "1,1,1,1,1");
             String msg = dataAll.getDate(agentId);
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topicall = getTopic(agentId);

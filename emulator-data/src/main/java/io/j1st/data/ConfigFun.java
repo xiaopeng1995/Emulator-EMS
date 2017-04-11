@@ -9,6 +9,7 @@ import io.j1st.data.predict.PVpredict;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
+import io.j1st.storage.entity.AssetsInfo;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -49,9 +50,18 @@ public class ConfigFun {
                 case 0:
                     agents.add(mogo.getAgentsById(new ObjectId(emulatorId)));
                     break;
-                //BAID
+                //ProductId
                 case 1:
                     agents = mogo.getAgentsByProductId(new ObjectId(emulatorId));
+                    break;
+                //plantid
+                case 2:
+                    List<AssetsInfo> assetsInfos=mogo.getAssetsListByPlantId(new ObjectId(emulatorId),null,1);
+                    for (AssetsInfo assetsInfo:assetsInfos)
+                    {
+                        agents.add(mogo.getAgentsById(assetsInfo.getAgentId()));
+                    }
+
                     break;
             }
 
@@ -70,7 +80,7 @@ public class ConfigFun {
     }
 
 
-    private void statbatch(List<Agent> agents, int system, int type, String productId) throws Exception {
+    private void statbatch(List<Agent> agents, int system, int type, String Id) throws Exception {
         //获取mqtt url
         String mqtturl = Registry.INSTANCE.getValue().get("mqtt_url").toString();
         PVpredict pVpredict = new PVpredict(dmogo);
@@ -85,8 +95,15 @@ public class ConfigFun {
         for (Agent agent : agents) {
             agunt++;
             String agentID = agent.getId().toString();
-            if (type != 0) {
-                mogo.updateEmulatorRegister(agentID, "product_id", productId);
+            switch (type) {
+                //ProductId
+                case 1:
+                    mogo.updateEmulatorRegister(agentID, "product_id", Id);
+                    break;
+                //PlantId
+                case 2:
+                    mogo.updateEmulatorRegister(agentID, "Plant_id", Id);
+                    break;
             }
             mqtt = new MqttClient(mqtturl, agent.getId().toHexString(), persistence);
             options = new MqttConnectOptions();

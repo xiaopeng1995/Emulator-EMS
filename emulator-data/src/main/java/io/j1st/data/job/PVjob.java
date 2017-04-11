@@ -87,7 +87,9 @@ public class PVjob extends Thread {
             //第二个电池配置文件
             //第三个间隔时间
             //第四个数据系统类型 0ems  1pv 2..
-            GetDataAll dataAll = new GetDataAll(0d, null, mogo, jgtime,1);
+            GetDataAll dataAll = new GetDataAll(0d, null, mogo, jgtime);
+            //更新数据格式
+            mogo.updateEmulatorRegister(agentId, "packing", "0,0,0,0,1");
             String msg = dataAll.getDate(agentId);
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topicall = getTopic(agentId);

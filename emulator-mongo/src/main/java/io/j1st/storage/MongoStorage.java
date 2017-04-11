@@ -760,6 +760,15 @@ public class MongoStorage {
         return r;
     }
 
+//    public List<Agent> getAgentsByProductId(ObjectId products_id) {
+//        List<Agent> r = new ArrayList<>();
+//        this.database.getCollection("agents")
+//                .find(eq("product_id", products_id)
+//                )
+//                .forEach((Consumer<Document>) d ->
+//                        r.add(parseAgentDocument(d)));
+//        return r;
+//    }
     /**
      * 获取 采集器列表，根据产品Id
      *
@@ -1063,7 +1072,51 @@ public class MongoStorage {
                                     .append("updated_at", new Date()))
                             , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
     }
-
+    /**
+     * 根据plantId查询Plant下的资产信息列表
+     *
+     * @param plantId
+     * @return
+     */
+    public List<AssetsInfo> getAssetsListByPlantId(ObjectId plantId, List<String> tags,Integer assetType) {
+        List<AssetsInfo> AssetsInfos = new ArrayList<>();
+        Document query = new Document();
+        query.append("plant_id", plantId);
+        if(assetType != null){
+            query.append("assets_type",assetType);
+        }
+        if (tags != null && tags.size() > 0) {
+            query.append("tags", new Document("$in", tags));
+        }
+        this.database.getCollection("user_assets_info")
+                .find(query)
+                .forEach((Consumer<Document>) document ->
+                        AssetsInfos.add(parseAssets(document)));
+        return AssetsInfos;
+    }
+    /**
+     * 解析资产组文档信息
+     *
+     * @param doc 查询出来的资产组文档
+     * @return 资产组信息
+     */
+    public static AssetsInfo parseAssets(Document doc) {
+        AssetsInfo assetsInfo = new AssetsInfo();
+        assetsInfo.setId(doc.getObjectId("_id"));
+        assetsInfo.setAgentId(doc.get("agent_id") != null ? doc.getObjectId("agent_id") : null);
+        assetsInfo.setUserId(doc.get("user_id") != null ? doc.getObjectId("user_id") : null);
+        assetsInfo.setGroupId(doc.get("group_id") != null ? doc.getObjectId("group_id") : null);
+        assetsInfo.setSystemId(doc.get("system_id") != null ? doc.getObjectId("system_id") : null);
+        assetsInfo.setPlantId(doc.get("plant_id") != null ? doc.getObjectId("plant_id") : null);
+        assetsInfo.setTags((List<String>) doc.get("tags"));
+        assetsInfo.setSn(doc.getString("sn"));
+        assetsInfo.setType(doc.getString("type"));
+        assetsInfo.setProductName(doc.getString("product_name"));
+        assetsInfo.setStatus(doc.getInteger("status"));
+        assetsInfo.setCreatedAt(doc.getDate("created_at"));
+        assetsInfo.setUpdatedAt(doc.getDate("updated_at"));
+        return assetsInfo;
+    }
     /**
      * findEmulatorRegister
      *
@@ -1204,9 +1257,9 @@ public class MongoStorage {
 
 
         if (d.get("product_id") != null)
-            e.setProdactId(d.getString("product_id"));
-        else
-            e.setProdactId("no");
+            e.setProdactId("product_id");
+        else if(d.get("Plant_id") != null)
+            e.setProdactId("Plant_id");
         //如果更新时间超时设为false
         if (newdate - odldate > 5) {
             e.setConnected(false);

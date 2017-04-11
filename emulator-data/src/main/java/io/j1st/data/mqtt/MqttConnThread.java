@@ -100,6 +100,11 @@ public class MqttConnThread implements Callable {
                         } else {
                             logger.debug("无发送线程直接结束..");
                         }
+                        if(agentid.equals(emulatorConfig.getString("sever_id")))
+                        {
+                            logger.info("sever_id断开直接重连!");
+                            Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
+                        }
                     }
 
                     @Override
@@ -162,7 +167,7 @@ public class MqttConnThread implements Callable {
                             // 0   PV   1 EMS
                             int system = Integer.parseInt(bbc.get(0).get("system").toString());
                             //开始添加新任务
-                            logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, type == 0 ? "AgentID" : "Batch ID", system == 0 ? "PV" : "EMS");
+                            logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, type, system == 0 ? "PV" : "EMS");
                             new ConfigFun(dmogo, mogo, emulatorConfig).startOne(emulatorAgent, type, system);
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
@@ -175,23 +180,28 @@ public class MqttConnThread implements Callable {
                                 mqttClient.close();
                             } else //更改格式
                             {
-                                mogo.updateEmulatorRegister(AgentID, "packing", dataqc);
-                                BatConfig STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(AgentID + "_STROAGE_002Config");
-                                Object batReceive = mogo.findEmulatorRegister(AgentID, AgentID + "120");
-                                double Reg12551 = 0d;
-                                if (batReceive != null) {
-                                    Reg12551 = (Double) batReceive;
-                                } else {
-                                    mogo.updateEmulatorRegister(AgentID, AgentID + "120", 0.0);
-                                }
                                 int jgtime = (int) Registry.INSTANCE.getValue().get(AgentID + "_jgtime");
-                                GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime, 0);
-                                String msg = dataAll.getDate(AgentID);
-                                logger.info("实时packs  类型:" + msg);
-                                if (dataqc.contains("0,0,0,0"))
+                                mogo.updateEmulatorRegister(AgentID, "packing", dataqc);
+                                String msg ;
+                                if (dataqc.contains("0,0,0,0")) {
+                                    GetDataAll dataAll = new GetDataAll(0d, null, mogo, jgtime);
+                                    msg = dataAll.getDate(AgentID);
                                     sendMessage(getTopic(AgentID, 0), msg);
-                                else
+                                } else {
+                                    BatConfig STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(AgentID + "_STROAGE_002Config");
+                                    Object batReceive = mogo.findEmulatorRegister(AgentID, AgentID + "120");
+                                    double Reg12551 = 0d;
+                                    if (batReceive != null) {
+                                        Reg12551 = (Double) batReceive;
+                                    } else {
+                                        mogo.updateEmulatorRegister(AgentID, AgentID + "120", 0.0);
+                                    }
+                                    GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime);
+                                    msg = dataAll.getDate(AgentID);
+
                                     sendMessage(getTopic(AgentID, 1), msg);
+                                }
+                                logger.info("实时packs  类型:" + msg);
                             }
 
                         } else {
@@ -248,13 +258,11 @@ public class MqttConnThread implements Callable {
         }
     }
 
-    private String getTopic(String agentId,int sysType) {
-        if(sysType==0)
-        {
+    private String getTopic(String agentId, int sysType) {
+        if (sysType == 0) {
             logger.debug(agentId + " Topic:upstream");
             return "agents/" + agentId + "/upstream";
-        }else
-        {
+        } else {
             logger.debug(agentId + " Topic:systemQuery");
             return "agents/" + agentId + "/systemQuery";
         }
