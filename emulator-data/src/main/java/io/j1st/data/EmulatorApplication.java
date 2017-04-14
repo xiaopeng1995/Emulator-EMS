@@ -77,7 +77,15 @@ public class EmulatorApplication {
         Registry.INSTANCE.saveKey("mogo", mogo);
         /***********************************/
         //mqtt
-        String serverid = emulatorConfig.getString("sever_id");
+        String serverid;
+        //查看是否本地测试
+        boolean islocal =emulatorConfig.getString("islocal").equals("1")?true: false;
+        if (islocal) {
+            serverid = emulatorConfig.getString("local_sever_id");
+            logger.info("启动本地模拟测试!!");
+        } else {
+            serverid = emulatorConfig.getString("sever_id");
+        }
         mqtt = new MqttClient(mqttConfig.getString("mqtt.url"),
                 new ObjectId(serverid).toHexString(), persistence);
         options = new MqttConnectOptions();
@@ -99,10 +107,21 @@ public class EmulatorApplication {
         String date = format.format(new Date());
         int agunt = 0;
         //获取所有需要运行ems的Agentid
-        List<String> emsAgentall = mogo.findEmulatorAgentInfoBy(1, 1);
+        List<String> emsAgentall = islocal ? new ArrayList<>() : mogo.findEmulatorAgentInfoBy(1, 1);
+        if(islocal)
+        {
+            emsAgentall.add(emulatorConfig.getString("emsagent_id"));
+        }
         for (String emsAgentid : emsAgentall) {
             List<Agent> agents = new ArrayList<>();
-            agents.add(mogo.getAgentsById(new ObjectId(emsAgentid)));
+            try {
+                agents.add(mogo.getAgentsById(new ObjectId(emsAgentid)));
+            } catch (NullPointerException e) {
+                logger.info("agentID不存在跳过:" + emsAgentid);
+            } catch (IllegalArgumentException es)
+            {
+                logger.info("没有EMS系统启动的ID");
+            }
             for (Agent agent : agents) {
                 agunt++;
                 String agentID = agent.getId().toString();
@@ -142,11 +161,25 @@ public class EmulatorApplication {
         int pvagunt = 0;
 
         //获取所有需要运行ems的Agentid
-        List<String> pvAgentall = mogo.findEmulatorAgentInfoBy(1, 0);
-
+        List<String> pvAgentall = islocal ? new ArrayList<>() : mogo.findEmulatorAgentInfoBy(1, 0);
+        if(islocal)
+        {
+            pvAgentall.add(emulatorConfig.getString("pvagent_id"));
+            pvAgentall.add("58ec9e28dafbaf6e1b76dc20");
+            pvAgentall.add("58ec9e28dafbaf6e1b76dc21");
+            pvAgentall.add("58ec9e28dafbaf6e1b76dc22");
+            pvAgentall.add("58ec9e28dafbaf6e1b76dc23");
+        }
         for (String pvAgentId : pvAgentall) {
             List<Agent> pvagents = new ArrayList<>();
-            pvagents.add(mogo.getAgentsById(new ObjectId(pvAgentId)));
+            try {
+                pvagents.add(mogo.getAgentsById(new ObjectId(pvAgentId)));
+            } catch (NullPointerException e) {
+                logger.info("agentID不存在跳过:" + pvAgentId);
+            }catch (IllegalArgumentException es)
+            {
+                logger.info("没有PV系统启动的ID");
+            }
             for (Agent pvagent : pvagents) {
                 pvagunt++;
                 String agentID = pvagent.getId().toString();

@@ -18,28 +18,31 @@ public class TestMethods {
 
     @Test
     public void testLogBack() {
-        List<String> a = new ArrayList<String>();
-        a.add("1");
-        a.add("1");
-        a.add("1");
-        a.add("2");
-        for (int i=0;i<a.size();i++) {
-            if("1".equals(a.get(i))){
-                a.remove(a.get(i));
-            }
-            System.out.println("集合长度:"+a.size());
-        }
 
-
-//        Iterator<String> it = a.iterator();
-//        while(it.hasNext()){
-//            String temp = it.next();
-//            if("2".equals(temp)){
-//                it.remove();
-//            }
-//        }
-        for(String temp1 : a)
-            System.out.println(temp1);
+        System.out.println(new Date().getTime());
     }
+//        List<String> a = new ArrayList<String>();
+//        a.add("1");
+//        a.add("1");
+//        a.add("1");
+//        a.add("2");
+//        for (int i=0;i<a.size();i++) {
+//            if("1".equals(a.get(i))){
+//                a.remove(a.get(i));
+//            }
+//            System.out.println("集合长度:"+a.size());
+//        }
+//
+//
+////        Iterator<String> it = a.iterator();
+////        while(it.hasNext()){
+////            String temp = it.next();
+////            if("2".equals(temp)){
+////                it.remove();
+////            }
+////        }
+//        for(String temp1 : a)
+//            System.out.println(temp1);
+//    }
 
 }

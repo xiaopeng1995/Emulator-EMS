@@ -45,26 +45,31 @@ public class ConfigFun {
         //如果都没有就启动
         if (mogo.isEmulatorAgentInfoBy(emulatorId, 1, system, type)) {
             //emulatorId类型判断
-            switch (type) {
-                //AgentID
-                case 0:
-                    agents.add(mogo.getAgentsById(new ObjectId(emulatorId)));
-                    break;
-                //ProductId
-                case 1:
-                    agents = mogo.getAgentsByProductId(new ObjectId(emulatorId));
-                    break;
-                //plantid
-                case 2:
-                    List<AssetsInfo> assetsInfos=mogo.getAssetsListByPlantId(new ObjectId(emulatorId),null,1);
-                    for (AssetsInfo assetsInfo:assetsInfos)
-                    {
-                        agents.add(mogo.getAgentsById(assetsInfo.getAgentId()));
-                    }
 
-                    break;
+            try {
+
+
+                switch (type) {
+                    //AgentID
+                    case 0:
+                        agents.add(mogo.getAgentsById(new ObjectId(emulatorId)));
+                        break;
+                    //ProductId
+                    case 1:
+                        agents = mogo.getAgentsByProductId(new ObjectId(emulatorId));
+                        break;
+                    //plantid
+                    case 2:
+                        List<AssetsInfo> assetsInfos = mogo.getAssetsListByPlantId(new ObjectId(emulatorId), null, 1);
+                        for (AssetsInfo assetsInfo : assetsInfos) {
+                            agents.add(mogo.getAgentsById(assetsInfo.getAgentId()));
+                        }
+
+                        break;
+                }
+            } catch (NullPointerException e) {
+                logger.info("agentID不存在跳过:" + emulatorId);
             }
-
             //启动接收任务包括预测数据 启动MQTT线程
 
             try {
