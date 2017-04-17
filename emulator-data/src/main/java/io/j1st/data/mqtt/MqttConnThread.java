@@ -100,10 +100,17 @@ public class MqttConnThread implements Callable {
                         } else {
                             logger.debug("无发送线程直接结束..");
                         }
-                        if(agentid.equals(emulatorConfig.getString("sever_id")))
-                        {
+                        if (agentid.equals(emulatorConfig.getString("sever_id"))) {
                             logger.info("sever_id断开直接重连!");
                             Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
+                        }
+                        if (mogo.findEmulatorRegister(agentid, "onlinefail").toString().equals("1")) {
+                            try {
+                                Thread.sleep(10 * 1000);
+                                resetJob();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
 
@@ -182,7 +189,7 @@ public class MqttConnThread implements Callable {
                             {
                                 int jgtime = (int) Registry.INSTANCE.getValue().get(AgentID + "_jgtime");
                                 mogo.updateEmulatorRegister(AgentID, "packing", dataqc);
-                                String msg ;
+                                String msg;
                                 if (dataqc.contains("0,0,0,0")) {
                                     GetDataAll dataAll = new GetDataAll(0d, null, mogo, jgtime);
                                     msg = dataAll.getDate(AgentID);
@@ -220,11 +227,10 @@ public class MqttConnThread implements Callable {
             }
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         } catch (Exception e) {
-            //睡眠10分钟
-            Thread.sleep(10 * 60 * 1000);
+            //睡眠5分钟
+            Thread.sleep(5 * 60 * 1000);
             logger.error("后台mqtt客户端:{}连接服务器 broker失败！重新连接开始...", mqttClient.getClientId());
-            Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
-
+            resetJob();
         }
         return null;
     }
@@ -267,6 +273,31 @@ public class MqttConnThread implements Callable {
             return "agents/" + agentId + "/systemQuery";
         }
 
+    }
+
+    public void resetJob() {
+        logger.info("开始重启任务!!!");
+        String agentid = mqttClient.getClientId();
+        Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
+        logger.info("启动发送线程..{}", mqttClient.getClientId());
+        try {
+            Object systemTyp = mogo.findEmulatorRegister(agentid, "systemTpye");
+            int systemType = (int) systemTyp;
+            if (systemType > 0) {
+                logger.info("启动EMS数据");
+                EmsJob threadnew = new EmsJob(agentid, "systemQuery", mogo, dmogo);
+                Registry.INSTANCE.startJob(threadnew);
+                //更新内存线程池中线程
+                Registry.INSTANCE.saveKey(agentid + "_Job", threadnew);
+            } else if (systemType == 0) {
+                PVjob threadnew = new PVjob(agentid, "upstream", mogo, dmogo);
+                Registry.INSTANCE.startJob(threadnew);
+                //更新内存线程池中线程
+                Registry.INSTANCE.saveKey(agentid + "_Job", threadnew);
+            }
+        } catch (Exception ejob) {
+            logger.info("重新启动发送线程异常!!!!!!!!!!!!!!!!!!!!!!!!!");
+        }
     }
 
 }

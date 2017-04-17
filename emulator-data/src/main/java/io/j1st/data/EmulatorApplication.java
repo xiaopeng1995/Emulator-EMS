@@ -165,10 +165,6 @@ public class EmulatorApplication {
         if(islocal)
         {
             pvAgentall.add(emulatorConfig.getString("pvagent_id"));
-            pvAgentall.add("58ec9e28dafbaf6e1b76dc20");
-            pvAgentall.add("58ec9e28dafbaf6e1b76dc21");
-            pvAgentall.add("58ec9e28dafbaf6e1b76dc22");
-            pvAgentall.add("58ec9e28dafbaf6e1b76dc23");
         }
         for (String pvAgentId : pvAgentall) {
             List<Agent> pvagents = new ArrayList<>();
