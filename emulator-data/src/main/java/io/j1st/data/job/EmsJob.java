@@ -43,6 +43,9 @@ public class EmsJob extends Thread {
         Registry.INSTANCE.saveKey(agentId + "_jgdate", timeThread.getTime());
         mogo.updateEmulatorRegister(agentId, "systemTpye", 1);
         mogo.updateEmulatorRegister(agentId, "topic", topic);
+
+        //更新数据格式
+        mogo.updateEmulatorRegister(agentId, "packing", "0,1,0,0,0");
         while (!exit) {
             mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;
@@ -109,14 +112,14 @@ public class EmsJob extends Thread {
                     e.printStackTrace();
                 }
             }
-            /*结束*/
+            /*结束 */
 
             STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(agentId + "_STROAGE_002Config");
-            Object batReceive = mogo.findEmulatorRegister(agentId, agentId + "120");
+            Object batReceive = mogo.findEmulatorRegister(agentId, agentId + "SUNS120");
             if (batReceive != null) {
                 Reg12551 = (Double) batReceive;
             } else {
-                mogo.updateEmulatorRegister(agentId, agentId + "120", 0.0);
+                mogo.updateEmulatorRegister(agentId, agentId + "SUNS120", 0.0);
             }
             //GetDataAll(0d, null, mogo, jgtime)
             //第一个参数接收指令充放电
@@ -124,8 +127,6 @@ public class EmsJob extends Thread {
             //第三个间隔时间
             //第四个数据系统类型 0ems  1pv 2..
             GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime);
-            //更新数据格式
-            mogo.updateEmulatorRegister(agentId, "packing", "1,1,1,1,1");
             String msg = dataAll.getDate(agentId);
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topicall = getTopic(agentId);

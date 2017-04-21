@@ -196,12 +196,12 @@ public class MqttConnThread implements Callable {
                                     sendMessage(getTopic(AgentID, 0), msg);
                                 } else {
                                     BatConfig STROAGE_002 = (BatConfig) Registry.INSTANCE.getValue().get(AgentID + "_STROAGE_002Config");
-                                    Object batReceive = mogo.findEmulatorRegister(AgentID, AgentID + "120");
+                                    Object batReceive = mogo.findEmulatorRegister(AgentID, AgentID + "SUNS120");
                                     double Reg12551 = 0d;
                                     if (batReceive != null) {
                                         Reg12551 = (Double) batReceive;
                                     } else {
-                                        mogo.updateEmulatorRegister(AgentID, AgentID + "120", 0.0);
+                                        mogo.updateEmulatorRegister(AgentID, AgentID + "SUNS120", 0.0);
                                     }
                                     GetDataAll dataAll = new GetDataAll(Reg12551, STROAGE_002, mogo, jgtime);
                                     msg = dataAll.getDate(AgentID);

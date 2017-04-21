@@ -150,7 +150,7 @@ public class EmulatorApplication {
                 Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
                 //防止MQTT先启动线程做判断
                 if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
-                    EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
+                    EmsJob thread = new EmsJob(agentID, "upstream", mogo, dmogo);
                     Registry.INSTANCE.startJob(thread);
                     Registry.INSTANCE.saveKey(agentID + "_Job", thread);
                     logger.debug(agentID + "EMS所有设备准备成功开始上传数据..");

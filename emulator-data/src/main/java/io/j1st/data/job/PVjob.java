@@ -42,6 +42,8 @@ public class PVjob extends Thread {
         Registry.INSTANCE.saveKey(agentId + "_jgdate", timeThread.getTime());
         mogo.updateEmulatorRegister(agentId, "systemTpye", 0);
         mogo.updateEmulatorRegister(agentId, "topic", topic);
+        //更新数据格式
+        mogo.updateEmulatorRegister(agentId, "packing", "0,0,0,0,1");
         while (!exit) {
             mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;
@@ -88,8 +90,7 @@ public class PVjob extends Thread {
             //第三个间隔时间
             //第四个数据系统类型 0ems  1pv 2..
             GetDataAll dataAll = new GetDataAll(0d, null, mogo, jgtime);
-            //更新数据格式
-            mogo.updateEmulatorRegister(agentId, "packing", "0,0,0,0,1");
+
             String msg = dataAll.getDate(agentId);
             mqttConnThread = Registry.INSTANCE.getSession().get(agentId);
             topicall = getTopic(agentId);

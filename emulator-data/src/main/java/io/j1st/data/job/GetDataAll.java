@@ -91,7 +91,7 @@ public class GetDataAll {
         //查找上传数据类型
         datapacking = mogo.findEmulatorRegister(agentID, "packing");
         //EMS 系统时才会计算一下值
-        if (datapacking.toString().equals("1,1,1,1,1")) {
+        if (!datapacking.toString().equals("0,0,0,0,1")) {
             battery01(date, agentID);
         }
 
