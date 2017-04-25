@@ -45,7 +45,12 @@ public class EmsJob extends Thread {
         mogo.updateEmulatorRegister(agentId, "topic", topic);
 
         //更新数据格式
-        mogo.updateEmulatorRegister(agentId, "packing", "0,1,0,0,0");
+        String packing = "1,1,1,1,1";
+        //如果不是EMS 系统更换topic
+        if (!packing.equals("1,1,1,1,1")) {
+            topic = "upstream";
+        }
+        mogo.updateEmulatorRegister(agentId, "packing", packing);
         while (!exit) {
             mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;

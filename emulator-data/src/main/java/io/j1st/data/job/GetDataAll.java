@@ -91,8 +91,12 @@ public class GetDataAll {
         //查找上传数据类型
         datapacking = mogo.findEmulatorRegister(agentID, "packing");
         //EMS 系统时才会计算一下值
-        if (!datapacking.toString().equals("0,0,0,0,1")) {
+        if (!datapacking.toString().contains("0,0,0,0")) {
+            try {
             battery01(date, agentID);
+            }catch (Exception e){
+                logger.error("获取EMS数据出错！");
+            }
         }
 
         emsData01.setType("SUNS120");
@@ -373,7 +377,6 @@ public class GetDataAll {
     }
 
     private void getPvData(String agentID, String date) {
-
         Document pVPower = dmogo.findGendDataByTime(agentID, "pVPower");
         Document eTodayy = dmogo.findGendDataByTime(agentID, "eToday");
         double Pac = 0.0;
@@ -397,6 +400,31 @@ public class GetDataAll {
             mogo.updateEmulatorRegister(agentID, "DYield", DYield);
         data103.put(Values.DYield, GttRetainValue.getRealVaule(DYield, 1));
         data103.put(Values.TYield, GttRetainValue.getRealVaule(TYield, 0));
+
+        data103.put(Values.PF, getRanNum(0.9,0.5));
+        data103.put(Values.Pmax, getRanNum(50.5,20.1));
+        data103.put(Values.RunT, getRanNum(480.4,410.4));
+        data103.put(Values.Sac, getRanNum(1));
+        data103.put(Values.Uab, getRanNum(1));
+        data103.put(Values.Ubc, getRanNum(1));
+        data103.put(Values.Uca, getRanNum(1));
+        data103.put(Values.Ia, getRanNum(1));
+        data103.put(Values.Ib, getRanNum(1));
+        data103.put(Values.Ic, getRanNum(1));
+        data103.put(Values.Upv1, getRanNum(1));
+        data103.put(Values.Ipv1, getRanNum(1));
+        data103.put(Values.Upv2, getRanNum(1));
+        data103.put(Values.Ipv2, getRanNum(1));
+        data103.put(Values.Upv3, getRanNum(1));
+        data103.put(Values.Ipv3, getRanNum(1));
+        data103.put(Values.Freq, getRanNum(1));
+        data103.put(Values.Tmod, getRanNum(1));
+        data103.put(Values.Tamb, getRanNum(1));
+        data103.put(Values.Tcoil, getRanNum(1));
+        data103.put(Values.Mode, 1);
+        data103.put(Values.Qac, getRanNum(1));
+        data103.put(Values.Eff, getRanNum(0.9,0.5));
+
     }
 
     private void getLoadData(double loadW, double loadTotWhImp, double loadDWhImp) {
@@ -527,5 +555,47 @@ public class GetDataAll {
 
         }
         datas.add(device);
+    }
+
+    /**
+     * 获取指定位数随机小数
+     *
+     * @param num 保留位数
+     * @return
+     */
+    private double getRanNum(int num) {
+        //随机配置值
+        Double Ran = GttRetainValue.getRealVaule(Math.random(), num).doubleValue();
+        return Ran;
+    }
+
+    /**
+     * 获取指定数值区间的随机数,z自动保留小数数位为区间给定值最大长度
+     *
+     * @param numMax 最大值
+     * @param numMin 最小值
+     * @return 所需的数值
+     */
+    private double getRanNum(double numMax, double numMin) {
+        if (numMax < numMin)
+            return 0d;
+        if (numMax == numMin)
+            return numMin;
+
+        String numMaxlength = numMax + "";
+        String numMinlength = numMin + "";
+        //获取最大长度
+        int maxleng = numMaxlength.split("\\.")[1].length() > numMinlength.split("\\.")[1].length() ? numMaxlength.split("\\.")[1].length() : numMinlength.split("\\.")[1].length();
+        int num1 = (int) ((numMax + numMin) / 2);
+        String a = num1 + "";
+        Double bl = Math.pow(10, a.length());
+        //随机配置值
+        Double Ras;
+        do {
+            Ras = Math.random() * bl;
+        } while (Ras > numMax || Ras < numMin);
+        Double Ra = Ras;
+        Double Ran = GttRetainValue.getRealVaule(Ra, maxleng).doubleValue();
+        return Ran;
     }
 }

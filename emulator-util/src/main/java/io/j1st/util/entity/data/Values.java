@@ -73,6 +73,36 @@ public class Values {
     public static final String TYield = "TYield";
     public static final String Pac = "Pac";
     public static final String DYield = "DYield";
+    public static final String Pmax = "Pmax";
+    public static final String RunT = "RunT";
+    public static final String Sac = "Sac";
+    public static final String Uab = "Uab";
+    public static final String Ubc = "Ubc";
+    public static final String Uca = "Uca";
+    public static final String Ia = "Ia";
+    public static final String Ib = "Ib";
+    public static final String Ic = "Ic";
+    public static final String Upv1 = "Upv1";
+    public static final String Ipv1 = "Ipv1";
+    public static final String Upv2 = "Upv2";
+    public static final String Upv3 = "Upv3";
+    public static final String Ipv3 = "Ipv3";
+    public static final String Freq = "Freq";
+    public static final String Tmod = "Tmod";
+    public static final String Tamb = "Tamb";
+    public static final String Tcoil = "Tcoil";
+    public static final String Mode = "Mode";
+    public static final String Qac = "Qac";
+    public static final String Ipv2 = "Ipv2";
+    public static final String Eff = "Eff";
+
+
+
+
+
+
+
+
     //告警
     public static final String RunTime = "RunTime";
 }

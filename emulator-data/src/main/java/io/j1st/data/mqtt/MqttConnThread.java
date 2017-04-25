@@ -106,7 +106,8 @@ public class MqttConnThread implements Callable {
                         }
                         if (mogo.findEmulatorRegister(agentid, "onlinefail").toString().equals("1")) {
                             try {
-                                Thread.sleep(10 * 1000);
+                                //睡眠5分钟
+                                Thread.sleep(5 * 60 * 1000);
                                 resetJob();
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
@@ -153,10 +154,9 @@ public class MqttConnThread implements Callable {
                             }
 
                             Object num1 = mogo.findEmulatorRegister(AgentID, "Soc");
-                            if (num1 != null)//判断当前容量是否处于极限值.
-                            {
+                            //判断当前容量是否处于极限值.
+                            if (num1 != null) {
                                 double num = (double) num1;
-
                                 i = num > 0.95 & i < 0 ? 0 : num < 0.05 & i > 0 ? 0 : i;
                                 logger.debug("dsn:" + d);
                                 logger.debug("收到指令,当前Soc:" + num);
@@ -179,14 +179,15 @@ public class MqttConnThread implements Callable {
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
                             String dataqc = bbc.get(0).get("packs").toString();
-                            if (dataqc.equals("kill"))//关闭线程
-                            {
+                            //关闭线程
+                            if (dataqc.equals("kill")) {
                                 mogo.updateEmulatorRegister(AgentID, "onlinefail", 0);
                                 long cuntdmogo = dmogo.deleteGendDataByTime(AgentID);
                                 logger.debug("已删除此Agent对应数据:{}个", cuntdmogo);
                                 mqttClient.close();
-                            } else //更改格式
-                            {
+                            }
+                            //更改格式
+                            else {
                                 int jgtime = (int) Registry.INSTANCE.getValue().get(AgentID + "_jgtime");
                                 mogo.updateEmulatorRegister(AgentID, "packing", dataqc);
                                 String msg;
