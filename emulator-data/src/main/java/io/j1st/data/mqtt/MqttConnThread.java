@@ -106,8 +106,9 @@ public class MqttConnThread implements Callable {
                         }
                         if (mogo.findEmulatorRegister(agentid, "onlinefail").toString().equals("1")) {
                             try {
-                                //睡眠5分钟
-                                Thread.sleep(5 * 60 * 1000);
+                                logger.info("意外停止...尝试1分钟后重启此任务!!");
+                                //睡眠1分钟
+                                Thread.sleep(1 * 60 * 1000);
                                 resetJob();
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
@@ -228,9 +229,9 @@ public class MqttConnThread implements Callable {
             }
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         } catch (Exception e) {
-            //睡眠5分钟
-            Thread.sleep(5 * 60 * 1000);
-            logger.error("后台mqtt客户端:{}连接服务器 broker失败！重新连接开始...", mqttClient.getClientId());
+            //睡眠1分钟
+            logger.error("后台mqtt客户端:{}连接服务器 broker失败！1分钟后重新连接开始...", mqttClient.getClientId());
+            Thread.sleep(1 * 60 * 1000);
             resetJob();
         }
         return null;
@@ -277,7 +278,6 @@ public class MqttConnThread implements Callable {
     }
 
     public void resetJob() {
-        logger.info("开始重启任务!!!");
         String agentid = mqttClient.getClientId();
         Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
         logger.info("启动发送线程..{}", mqttClient.getClientId());

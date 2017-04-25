@@ -58,8 +58,8 @@ public class EmulatorApplication {
         emulatorConfig.setReloadingStrategy(new FileChangedReloadingStrategy());
         //自动保存
         emulatorConfig.setAutoSave(true);
-
-
+        //初始话时，需要删除历史数据的数量
+        long deleteNum;
         //***********************mqtt
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
@@ -148,6 +148,10 @@ public class EmulatorApplication {
                 Thread.sleep(90);
                 //设置间隔时间
                 Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
+                //初始话数据
+                deleteNum=dmogo.deleteGendDataByTime(agentID);
+                logger.info("{}:已删除历史数据{}条",agentID,deleteNum);
+                mogo.updateEmulatorRegister(agentID,"created_at",new Date());
                 //防止MQTT先启动线程做判断
                 if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
                     EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
@@ -200,6 +204,10 @@ public class EmulatorApplication {
                 Thread.sleep(90);
                 //设置间隔时间
                 Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
+                //初始话数据
+                deleteNum=dmogo.deleteGendDataByTime(agentID);
+                logger.info("{}:已删除历史数据{}条",agentID,deleteNum);
+                mogo.updateEmulatorRegister(agentID,"created_at",new Date());
                 //防止MQTT先启动线程做判断
                 if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
                     PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);

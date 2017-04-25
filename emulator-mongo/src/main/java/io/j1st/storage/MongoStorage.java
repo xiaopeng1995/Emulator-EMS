@@ -1135,6 +1135,21 @@ public class MongoStorage {
         return data;
     }
 
+    /**
+     * 查询正在运行任务总数
+     * @return
+     */
+    public long findEmulatorJobNum() {
+        long num;
+        try {
+            num = this.database.getCollection("emulator_register").count(eq("onlinefail", 1));
+        } catch (NullPointerException e) {
+            return 0;
+        }
+        return num;
+    }
+
+
     public Document findEmulatorDate(String agentId) {
         Document data;
         try {

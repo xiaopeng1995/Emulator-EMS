@@ -64,16 +64,17 @@ public class DownResoure extends AbstractResource {
                     && !mapjson.contains("0,0,0,0")) {
                 return new ResultEntity(502, "不是EMS系统数据无法下发此类型指令!");
             }
-            if(mongo.findEmulatorRegister(agentId, "systemTpye").toString().equals("1")
-                    && mapjson.contains("0,0,0,0"))
-            {
+            if (mongo.findEmulatorRegister(agentId, "systemTpye").toString().equals("1")
+                    && mapjson.contains("0,0,0,0")) {
                 return new ResultEntity(502, "不是PV系统数据无法下发此类型指令!");
             }
             if (!mongo.findEmulatorRegister(agentId, "onlinefail").toString().equals("1")) {
                 return new ResultEntity(502, "不是正在运行数据无法下发指令!");
             }
         }
-
+        if (mongo.findEmulatorJobNum() > 200 && map.get("code").toString().equals("emulatorJob")) {
+            return new ResultEntity(502, "正在运行的任务已上限，无法继续添加！");
+        }
         String result = null;
         String body = null;
         try {

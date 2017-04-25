@@ -102,4 +102,5 @@ public class GenDataAddUtil extends AbstractResource {
         return new ResultEntity<>("已经删除" + mongo.deleteDataByTime(time, is) + "行");
     }
 
+
 }

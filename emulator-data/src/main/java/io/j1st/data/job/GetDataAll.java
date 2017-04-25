@@ -93,8 +93,8 @@ public class GetDataAll {
         //EMS 系统时才会计算一下值
         if (!datapacking.toString().contains("0,0,0,0")) {
             try {
-            battery01(date, agentID);
-            }catch (Exception e){
+                battery01(date, agentID);
+            } catch (Exception e) {
                 logger.error("获取EMS数据出错！");
             }
         }
@@ -401,9 +401,9 @@ public class GetDataAll {
         data103.put(Values.DYield, GttRetainValue.getRealVaule(DYield, 1));
         data103.put(Values.TYield, GttRetainValue.getRealVaule(TYield, 0));
 
-        data103.put(Values.PF, getRanNum(0.9,0.5));
-        data103.put(Values.Pmax, getRanNum(50.5,20.1));
-        data103.put(Values.RunT, getRanNum(480.4,410.4));
+        data103.put(Values.PF, getRanNum(0.9, 0.5));
+        data103.put(Values.Pmax, getRanNum(50.5, 20.1));
+        data103.put(Values.RunT, getRanNum(480.4, 410.4));
         data103.put(Values.Sac, getRanNum(1));
         data103.put(Values.Uab, getRanNum(1));
         data103.put(Values.Ubc, getRanNum(1));
@@ -423,7 +423,7 @@ public class GetDataAll {
         data103.put(Values.Tcoil, getRanNum(1));
         data103.put(Values.Mode, 1);
         data103.put(Values.Qac, getRanNum(1));
-        data103.put(Values.Eff, getRanNum(0.9,0.5));
+        data103.put(Values.Eff, getRanNum(0.9, 0.5));
 
     }
 
