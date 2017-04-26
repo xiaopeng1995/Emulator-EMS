@@ -1227,7 +1227,7 @@ public class MongoStorage {
         List<EmulatorRegister> r = new ArrayList<>();
         this.database.getCollection("emulator_register")
                 .find()
-                .sort(isAsc ? ascending("updated_at") : descending("updated_at"))
+                .sort(isAsc ? ascending("created_at") : descending("updated_at"))
                 .skip((skip - 1) * limit).limit(limit)
                 .forEach((Consumer<Document>) document ->
                         r.add(parseRegisterDocument(document)));
@@ -1267,6 +1267,7 @@ public class MongoStorage {
         e.setPacking(d.getString("packing"));
         e.setSystemType(d.getInteger("systemTpye"));
         e.setTopic(d.getString("topic"));
+        e.setCreated_at(dateFormat1.format(d.getDate("created_at")));
 
 
         if (d.get("product_id") != null)

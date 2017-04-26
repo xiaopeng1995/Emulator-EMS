@@ -117,7 +117,10 @@ public class EmulatorApplication {
         int initagunt = EmulatorRegisterAll.size();
         int jobagunt = 0;
         if (islocal) {
-            //emsAgentall.add(emulatorConfig.getString("emsagent_id"));
+            EmulatorRegister emulatorRegister = new EmulatorRegister();
+            emulatorRegister.setAgent_id(emulatorConfig.getString("emsagent_id"));
+            emulatorRegister.setSystemType(emulatorConfig.getInt("systemType"));
+            EmulatorRegisterAll.add(emulatorRegister);
         }
         //选择是否清空历史数据
         Scanner s = new Scanner(System.in);

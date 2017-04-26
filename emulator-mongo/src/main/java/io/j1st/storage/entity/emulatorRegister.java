@@ -17,6 +17,7 @@ public class EmulatorRegister {
     private boolean connected;
     private String prodactId;
     private String topic;
+    private String created_at;
 
     private String updated_at;
 
@@ -82,5 +83,13 @@ public class EmulatorRegister {
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 }

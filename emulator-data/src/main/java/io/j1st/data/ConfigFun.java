@@ -47,8 +47,6 @@ public class ConfigFun {
             //emulatorId类型判断
 
             try {
-
-
                 switch (type) {
                     //AgentID
                     case 0:
@@ -64,7 +62,6 @@ public class ConfigFun {
                         for (AssetsInfo assetsInfo : assetsInfos) {
                             agents.add(mogo.getAgentsById(assetsInfo.getAgentId()));
                         }
-
                         break;
                 }
             } catch (NullPointerException e) {
@@ -115,6 +112,12 @@ public class ConfigFun {
             options.setUserName(agent.getId().toHexString());
             options.setPassword(agent.getToken().toCharArray());
             //添加实时数据和预测数据
+            //初始话数据..
+            //初始话时，需要删除历史数据的数量
+            long deleteNum;
+            deleteNum = dmogo.deleteGendDataByTime(agentID);
+            logger.info("{}:已删除历史数据{}条", agentID, deleteNum);
+            mogo.updateEmulatorRegister(agentID, "created_at", new Date());
             //add now data
             if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
                 pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
@@ -133,12 +136,6 @@ public class ConfigFun {
             Registry.INSTANCE.startThread(mqttConnThread);
             //设置间隔时间
             Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
-            //初始话数据..
-            //初始话时，需要删除历史数据的数量
-            long deleteNum;
-            deleteNum=dmogo.deleteGendDataByTime(agentID);
-            logger.info("{}:已删除历史数据{}条",agentID,deleteNum);
-            mogo.updateEmulatorRegister(agentID,"created_at",new Date());
             //开始执行发送任务
             //防止MQTT先启动线程做判断
             Object onlinefail = mogo.findEmulatorRegister(agentID, "onlinefail");
