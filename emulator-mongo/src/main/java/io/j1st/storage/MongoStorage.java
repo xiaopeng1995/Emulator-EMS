@@ -966,9 +966,9 @@ public class MongoStorage {
      *
      * @return 删除数量
      */
-    public long deleteAgentById(ObjectId id) {
-        return this.database.getCollection("agents")
-                .deleteOne(eq("_id", id))
+    public long deleteemulatorRegisterById(String id) {
+        return this.database.getCollection("emulator_register")
+                .deleteOne(eq("agent_id", id))
                 .getDeletedCount();
         // TODO: 删除相关设备和Metrics
     }
@@ -1165,15 +1165,13 @@ public class MongoStorage {
      * 查找启动Agent
      *
      * @param onlinefail 需要上传在线的
-     * @param systemTpye 哪个系统的  0pv 1ems
      * @return agent 集合
      */
-    public List<String> findEmulatorAgentInfoBy(int onlinefail, int systemTpye) {
-        List<String> agentidall = new ArrayList<>();
-
+    public List<EmulatorRegister> findEmulatorAgentInfoBy(int onlinefail) {
+        List<EmulatorRegister> agentidall = new ArrayList<>();
         this.database.getCollection("emulator_register")
-                .find(and(eq("onlinefail", onlinefail), eq("systemTpye", systemTpye))).forEach((Consumer<Document>) document ->
-                agentidall.add(document.getString("agent_id"))
+                .find(eq("onlinefail", onlinefail)).forEach((Consumer<Document>) document ->
+                agentidall.add(parseRegisterDocument(document))
         );
         return agentidall;
     }

@@ -53,7 +53,6 @@ public class MqttConnThread implements Callable {
         this.emulatorConfig = emulatorConfig;
         this.mogo = mogo;
         this.dmogo = dmogo;
-        logger.debug(mqttClient.getClientId() + "开始连接");
     }
 
     @Override
@@ -69,50 +68,43 @@ public class MqttConnThread implements Callable {
 
                     @Override
                     public void connectionLost(Throwable cause) {
-                        String agentid = mqttClient.getClientId();
-                        logger.debug("接收线程:{}断开连接1111", agentid);
-                        Object oldjob = Registry.INSTANCE.getValue().get(agentid + "_Job");
-                        // 如果有停掉旧的线程
-                        if (oldjob != null) {
-                            logger.debug("存在发送线程 断开中..");
-                            Object systemTyp = mogo.findEmulatorRegister(agentid, "systemTpye");
-                            int systemType = (int) systemTyp;
-                            if (systemType > 0) {
-                                EmsJob thread = (EmsJob) oldjob;
-                                thread.exit = true;  // 终止线程thread
-                                logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
-                                try {
+                        try {
+                            String agentid = mqttClient.getClientId();
+                            logger.debug("接收线程:{}断开连接1111", agentid);
+                            Object oldjob = Registry.INSTANCE.getValue().get(agentid + "_Job");
+                            // 如果有停掉旧的线程
+                            if (oldjob != null) {
+                                logger.debug("存在发送线程 断开中..");
+                                Object systemTyp = mogo.findEmulatorRegister(agentid, "systemTpye");
+                                int systemType = (int) systemTyp;
+                                if (systemType > 0) {
+                                    EmsJob thread = (EmsJob) oldjob;
+                                    thread.exit = true;  // 终止线程thread
+                                    logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
                                     thread.join();
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
+                                } else {
+                                    PVjob thread = (PVjob) oldjob;
+                                    thread.exit = true;  // 终止线程thread
+                                    logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
+                                    thread.join();
                                 }
                             } else {
-                                PVjob thread = (PVjob) oldjob;
-                                thread.exit = true;  // 终止线程thread
-                                logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
-                                try {
-                                    thread.join();
-                                } catch (InterruptedException e) {
-                                    e.printStackTrace();
-                                }
+                                logger.debug("无发送线程直接结束..");
                             }
-
-                        } else {
-                            logger.debug("无发送线程直接结束..");
-                        }
-                        if (agentid.equals(emulatorConfig.getString("sever_id"))) {
-                            logger.info("sever_id断开直接重连!");
-                            Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
-                        }
-                        if (mogo.findEmulatorRegister(agentid, "onlinefail").toString().equals("1")) {
-                            try {
+                            if (agentid.equals(emulatorConfig.getString("sever_id"))) {
+                                logger.info("sever_id断开直接重连!");
+                                Thread.sleep(10 * 1000);
+                                Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
+                            }
+                            if (mogo.findEmulatorRegister(agentid, "onlinefail").toString().equals("1")) {
                                 logger.info("意外停止...尝试1分钟后重启此任务!!");
                                 //睡眠1分钟
                                 Thread.sleep(1 * 60 * 1000);
                                 resetJob();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
                             }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            logger.error("关闭接收线程,线程出现异常!!!!");
                         }
                     }
 
@@ -212,7 +204,6 @@ public class MqttConnThread implements Callable {
                                 }
                                 logger.info("实时packs  类型:" + msg);
                             }
-
                         } else {
                             logger.error("错误格式");
                         }

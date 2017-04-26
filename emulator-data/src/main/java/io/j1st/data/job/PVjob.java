@@ -35,6 +35,7 @@ public class PVjob extends Thread {
     public void run() {
         //本线程运行时间
         Date timeThread = new Date();
+        mogo.updateEmulatorRegister(agentId, "created_at", new Date());
         int jgtime = (int) Registry.INSTANCE.getValue().get(agentId + "_jgtime");
         // mqtt topic
         String topicall;

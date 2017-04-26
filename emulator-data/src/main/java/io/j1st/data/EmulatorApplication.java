@@ -11,6 +11,7 @@ import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
 
+import io.j1st.storage.entity.EmulatorRegister;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
 import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
@@ -24,9 +25,7 @@ import org.slf4j.LoggerFactory;
 
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -58,8 +57,14 @@ public class EmulatorApplication {
         emulatorConfig.setReloadingStrategy(new FileChangedReloadingStrategy());
         //自动保存
         emulatorConfig.setAutoSave(true);
+        /********************************初始话参数配置开始*********************************/
         //初始话时，需要删除历史数据的数量
-        long deleteNum;
+        long deleteNum = 0l;
+        //准备要启动的接受任务线程
+        List<MqttConnThread> mqttConnThreads = new ArrayList<>();
+        //准备要启动的发送任务线程
+        Map<String, Thread> threadSend = new HashMap<>();
+        /********************************初始话参数配置结束*********************************/
         //***********************mqtt
         MemoryPersistence persistence = new MemoryPersistence();
         MqttClient mqtt;
@@ -79,7 +84,7 @@ public class EmulatorApplication {
         //mqtt
         String serverid;
         //查看是否本地测试
-        boolean islocal =emulatorConfig.getString("islocal").equals("1")?true: false;
+        boolean islocal = emulatorConfig.getString("islocal").equals("1") ? true : false;
         if (islocal) {
             serverid = emulatorConfig.getString("local_sever_id");
             logger.info("启动本地模拟测试!!");
@@ -98,126 +103,143 @@ public class EmulatorApplication {
         Registry.INSTANCE.saveSession(serverid, serverThread);
         //add a agent mqtt Send and receive sever
         Registry.INSTANCE.startThread(serverThread);
+        Thread.sleep(2 * 1000);
+        logger.info("开始加载数据库配置..");
         /***********************************/
-
         //获取默认间隔时间
         int defaultTime = Integer.parseInt(emulatorConfig.getString("default_Time"));
         PVpredict pVpredict = new PVpredict(dmogo);
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         String date = format.format(new Date());
-        int agunt = 0;
-        //获取所有需要运行ems的Agentid
-        List<String> emsAgentall = islocal ? new ArrayList<>() : mogo.findEmulatorAgentInfoBy(1, 1);
-        if(islocal)
-        {
-            emsAgentall.add(emulatorConfig.getString("emsagent_id"));
+        //获取所有需要运行的Agentid
+        List<EmulatorRegister> EmulatorRegisterAll = islocal ? new ArrayList<>() : mogo.findEmulatorAgentInfoBy(1);
+        //应配置总数
+        int initagunt = EmulatorRegisterAll.size();
+        int jobagunt = 0;
+        if (islocal) {
+            //emsAgentall.add(emulatorConfig.getString("emsagent_id"));
         }
-        for (String emsAgentid : emsAgentall) {
-            List<Agent> agents = new ArrayList<>();
+        //选择是否清空历史数据
+        Scanner s = new Scanner(System.in);
+        System.out.println("是否清空已查询的" + EmulatorRegisterAll.size() + "个数据的历史数据?(1清空其他不清空)");
+        String delet = s.nextLine();
+        logger.info("正在加载配置到内存..");
+        for (EmulatorRegister eR : EmulatorRegisterAll) {
+            //获取agentId
+            String agentId = eR.getAgent_id();
+            Agent agent = null;
             try {
-                agents.add(mogo.getAgentsById(new ObjectId(emsAgentid)));
+                agent = mogo.getAgentsById(new ObjectId(agentId));
             } catch (NullPointerException e) {
-                logger.info("agentID不存在跳过:" + emsAgentid);
-            } catch (IllegalArgumentException es)
-            {
-                logger.info("没有EMS系统启动的ID");
+                logger.info("agentID不存在跳过:" + agentId);
+            } catch (IllegalArgumentException es) {
+                logger.info("没有启动的ID");
             }
-            for (Agent agent : agents) {
-                agunt++;
-                String agentID = agent.getId().toString();
+            if (agent != null) {
+                /****************初始化接受线程配置开始***************/
                 mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), agent.getId().toHexString(), persistence);
                 options = new MqttConnectOptions();
                 options.setUserName(agent.getId().toHexString());
                 options.setPassword(agent.getToken().toCharArray());
-                //add now data
-                if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
-                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
-                //add predict data
-                if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
-                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
-                }
-
                 //save a job config
-                Registry.INSTANCE.saveKey(agentID + "_STROAGE_002Config", new BatConfig());
+                Registry.INSTANCE.saveKey(agentId + "_STROAGE_002Config", new BatConfig());
                 //mqtt
                 MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
                 //seve mqtt info
-                Registry.INSTANCE.saveSession(agentID, mqttConnThread);
-                //add a agent mqtt Send and receive sever
-                Registry.INSTANCE.startThread(mqttConnThread);
-                Thread.sleep(90);
-                //设置间隔时间
-                Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
-                //初始话数据
-                deleteNum=dmogo.deleteGendDataByTime(agentID);
-                logger.info("{}:已删除历史数据{}条",agentID,deleteNum);
-                mogo.updateEmulatorRegister(agentID,"created_at",new Date());
-                //防止MQTT先启动线程做判断
-                if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
-                    EmsJob thread = new EmsJob(agentID, "jsonUp", mogo, dmogo);
-                    Registry.INSTANCE.startJob(thread);
-                    Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                    logger.debug(agentID + "EMS所有设备准备成功开始上传数据..");
+                Registry.INSTANCE.saveSession(agentId, mqttConnThread);
+                mqttConnThreads.add(mqttConnThread);
+                /****************初始化接受线程配置结束***************/
+                /****************添加预测数据***************/
+                //删除历史数据
+                if (delet.equals("1")) {
+                    deleteNum = dmogo.deleteGendDataByTime(agentId);
+                    logger.info("{}:已删除历史数据{}条", agentId, deleteNum);
+                    //add now data
+                    if (dmogo.findGendDataByTime(agentId, "pVPower") == null)
+                        pVpredict.PVInfo(date.substring(0, 8) + "000000", agentId, 1, EmsJob.pvcloud());
+                    //add predict data
+                    if (dmogo.findycdata(agentId, Integer.parseInt(date.substring(0, 8)))) {
+                        pVpredict.PVInfo(date.substring(0, 8) + "000000", agentId, 0, EmsJob.pvcloud());
+                    }
                 }
-            }
-        }
-        //启动PV系统数据任务
-        int pvagunt = 0;
+                /****************添加预测数据结束***************/
 
-        //获取所有需要运行ems的Agentid
-        List<String> pvAgentall = islocal ? new ArrayList<>() : mogo.findEmulatorAgentInfoBy(1, 0);
-        if(islocal)
-        {
-            pvAgentall.add(emulatorConfig.getString("pvagent_id"));
-        }
-        for (String pvAgentId : pvAgentall) {
-            List<Agent> pvagents = new ArrayList<>();
-            try {
-                pvagents.add(mogo.getAgentsById(new ObjectId(pvAgentId)));
-            } catch (NullPointerException e) {
-                logger.info("agentID不存在跳过:" + pvAgentId);
-            }catch (IllegalArgumentException es)
-            {
-                logger.info("没有PV系统启动的ID");
-            }
-            for (Agent pvagent : pvagents) {
-                pvagunt++;
-                String agentID = pvagent.getId().toString();
-                mqtt = new MqttClient(mqttConfig.getString("mqtt.url"), pvagent.getId().toHexString(), persistence);
-                options = new MqttConnectOptions();
-                options.setUserName(pvagent.getId().toHexString());
-                options.setPassword(pvagent.getToken().toCharArray());
-                //add now data
-                if (dmogo.findGendDataByTime(agentID, "pVPower") == null)
-                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 1, EmsJob.pvcloud());
-                //add predict data
-                if (dmogo.findycdata(agentID, Integer.parseInt(date.substring(0, 8)))) {
-                    pVpredict.PVInfo(date.substring(0, 8) + "000000", agentID, 0, EmsJob.pvcloud());
-
-                }
-                //mqtt
-                MqttConnThread mqttConnThread = new MqttConnThread(mqtt, options, mogo, dmogo, emulatorConfig);
-                //seve mqtt info
-                Registry.INSTANCE.saveSession(agentID, mqttConnThread);
-                //add a agent mqtt Send and receive sever
-                Registry.INSTANCE.startThread(mqttConnThread);
-                Thread.sleep(90);
                 //设置间隔时间
-                Registry.INSTANCE.saveKey(agentID + "_jgtime", defaultTime);
-                //初始话数据
-                deleteNum=dmogo.deleteGendDataByTime(agentID);
-                logger.info("{}:已删除历史数据{}条",agentID,deleteNum);
-                mogo.updateEmulatorRegister(agentID,"created_at",new Date());
-                //防止MQTT先启动线程做判断
-                if (Registry.INSTANCE.getValue().get(agentID + "_Job") == null) {
-                    PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);
-                    Registry.INSTANCE.startJob(thread);
-                    Registry.INSTANCE.saveKey(agentID + "_Job", thread);
-                    logger.debug(agentID + "PV所有设备准备成功开始上传数据..");
+                Registry.INSTANCE.saveKey(agentId + "_jgtime", defaultTime);
+                //填装PV和EMS系统任务
+                if (eR.getSystemType() == 0) {
+                    PVjob thread = new PVjob(agentId, "upstream", mogo, dmogo);
+                    threadSend.put(agentId, thread);
+                    jobagunt++;
+                } else if (eR.getSystemType() == 1) {
+                    EmsJob thread = new EmsJob(agentId, "jsonUp", mogo, dmogo);
+                    threadSend.put(agentId, thread);
+                } else {
+                    logger.info("其他系统类型暂不支持。。");
                 }
+            } else {
+                initagunt--;
+                long delete = mogo.deleteemulatorRegisterById(eR.getAgent_id());
+                if (delete > 0)
+                    logger.info("没有找到初始化的任务！已删除此任务");
+            }
+            logger.debug("Agent:" + agentId + ".加载完毕.");
+        }
+        //打印配置信息
+        logger.info("数据库任务加载完毕！\n应加载任务 {} 个，实际加载任务 {} 个 .EMS数据{}个.PV数据{}个",
+                EmulatorRegisterAll.size(), initagunt, jobagunt, initagunt - jobagunt);
+        //是否继续开始任务..
+        Scanner ss = new Scanner(System.in);
+        System.out.println("是否启动已加载的任务?(输入 1 继续,其他不启动)");
+        String line = ss.nextLine();
+        if (!line.equals("1")) {
+            logger.info("模拟器准备就绪..");
+            return;
+        }
+        logger.info("5秒后开始启动任务.");
+        Thread.sleep(5 * 1000);
+        //开始执行任务
+        EmulatorApplication emu = new EmulatorApplication();
+        //1.启动接收任务
+        emu.startReceiveThreadAll(mqttConnThreads);
+        Thread.sleep(5 * 1000);
+        //2.启动发送任务
+        emu.startSendThreadAll(threadSend);
+    }
+
+    /**
+     * 1.启动所有初始话好的接受任务
+     *
+     * @param mqttConnThreads 接收线程任务。
+     */
+    private void startReceiveThreadAll(List<MqttConnThread> mqttConnThreads) throws InterruptedException {
+        logger.info("开始启动所有接收任务..");
+        for (MqttConnThread mqttConnThread : mqttConnThreads) {
+            Registry.INSTANCE.startThread(mqttConnThread);
+            Thread.sleep(50);
+        }
+        logger.info("所有接收任务启动完毕 共{}个 ", mqttConnThreads.size());
+    }
+
+
+    /**
+     * 2.启动所有初始话好的发送任务
+     *
+     * @param threadSend
+     */
+    private void startSendThreadAll(Map<String, Thread> threadSend) throws InterruptedException {
+        logger.info("开始启动所有发送任务..");
+        Set<String> agentIds = threadSend.keySet();
+        for (String agentid : agentIds) {
+            //防止MQTT先启动线程做判断
+            if (Registry.INSTANCE.getValue().get(agentid + "_Job") == null) {
+                Registry.INSTANCE.startJob(threadSend.get(agentid));
+                //任务配置添加到内存！
+                Registry.INSTANCE.saveKey(agentid + "_Job", threadSend.get(agentid));
+                Thread.sleep(50);
             }
         }
-        logger.info("启动完毕,本次启动共{}个Agent任务", agunt + pvagunt);
+        logger.info("所有发送任务启动完毕 共{}个", agentIds.size());
     }
 
 

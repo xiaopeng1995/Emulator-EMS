@@ -478,16 +478,16 @@ public class GetDataAll {
                     data.put(Values.evtD, "RelayStp");
                     break;
                 case 5301:
-                    data.put(Values.evt, "F0001");
-                    data.put(Values.evtD, "TempOver");
+                    data.put(Values.evt, "2");
+                    data.put(Values.evtD, "过温保护");
                     break;
                 case 5302:
-                    data.put(Values.evt, "F0002");
-                    data.put(Values.evtD, "GridV.OutLow");
+                    data.put(Values.evt, "8");
+                    data.put(Values.evtD, "掉相");
                     break;
                 case 5303:
-                    data.put(Values.evt, "F0003");
-                    data.put(Values.evtD, "EmergencyStp");
+                    data.put(Values.evt, "100");
+                    data.put(Values.evtD, "电网线电压超限");
                     break;
             }
             device.setSta(4);
@@ -515,8 +515,16 @@ public class GetDataAll {
                     data.put(Values.evtD, "ModTempHighWarn");
                     break;
                 case 1301:
-                    data.put(Values.evt, "W0020");
-                    data.put(Values.evtD, "ACFanWarn");
+                    data.put(Values.evt, "8000");
+                    data.put(Values.evtD, "外部风扇告警");
+                    break;
+                case 1302:
+                    data.put(Values.evt, "4000");
+                    data.put(Values.evtD, "内部风扇告警");
+                    break;
+                case 1303:
+                    data.put(Values.evt, "2000");
+                    data.put(Values.evtD, "Reserved");
                     break;
             }
             //data.put(Values.WarnT, "待定");
