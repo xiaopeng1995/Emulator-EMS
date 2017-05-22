@@ -166,9 +166,10 @@ public class MqttConnThread implements Callable {
                             int type = Integer.parseInt(bbc.get(0).get("type").toString());
                             // 0   PV   1 EMS
                             int system = Integer.parseInt(bbc.get(0).get("system").toString());
+                            int num = Integer.parseInt(bbc.get(0).get("num").toString());
                             //开始添加新任务
                             logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, type, system == 0 ? "PV" : "EMS");
-                            new ConfigFun(dmogo, mogo, emulatorConfig).startOne(emulatorAgent, type, system);
+                            new ConfigFun(dmogo, mogo, emulatorConfig).startOne(emulatorAgent, type, system,num);
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
                             String dataqc = bbc.get(0).get("packs").toString();

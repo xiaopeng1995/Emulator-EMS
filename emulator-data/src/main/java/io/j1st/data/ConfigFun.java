@@ -40,7 +40,7 @@ public class ConfigFun {
         this.emulatorConfig = emulatorConfig;
     }
 
-    public void startOne(String emulatorId, int type, int system) {
+    public void startOne(String emulatorId, int type, int system,int num) {
         List<Agent> agents = new ArrayList<>();
         //如果都没有就启动
         if (mogo.isEmulatorAgentInfoBy(emulatorId, 1, system, type)) {
@@ -70,7 +70,7 @@ public class ConfigFun {
             //启动接收任务包括预测数据 启动MQTT线程
 
             try {
-                statbatch(agents, system, type, emulatorId);
+                statbatch(agents, system, type, emulatorId,num);
             } catch (Exception e) {
                 e.printStackTrace();
                 logger.error("添加批次出错");
@@ -82,7 +82,7 @@ public class ConfigFun {
     }
 
 
-    private void statbatch(List<Agent> agents, int system, int type, String Id) throws Exception {
+    private void statbatch(List<Agent> agents, int system, int type, String Id,int num) throws Exception {
         //获取mqtt url
         String mqtturl = Registry.INSTANCE.getValue().get("mqtt_url").toString();
         PVpredict pVpredict = new PVpredict(dmogo);
@@ -149,6 +149,7 @@ public class ConfigFun {
             //防止MQTT先启动线程做判断
             if (system == 0 && online == 0) {
                 PVjob thread = new PVjob(agentID, "upstream", mogo, dmogo);
+                mogo.updateEmulatorRegister(agentID, "packing", "0,0,0,0,"+num);
                 Registry.INSTANCE.saveKey(agentID + "_Job", thread);
                 Registry.INSTANCE.startJob(thread);
                 logger.debug(agentID + "PV设备准备成功开始上传数据..");
