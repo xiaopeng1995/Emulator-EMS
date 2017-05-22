@@ -1,10 +1,5 @@
 package io.j1st.storage.entity;
 
-import org.bson.types.ObjectId;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by xiaopeng on 2017/1/13.

@@ -125,8 +125,6 @@ public class GetDataAll {
 
         pvData.setType("SUNS103");
         pvData.setSta(0);
-        pvData.setDsn(agentID + "SUNS103");
-        pvData.setModel("SC30KTL-DO");
         pvData.setValues(data103);
 
 
@@ -155,7 +153,6 @@ public class GetDataAll {
         } else {
             if (packing[0] < 100) {
                 for (int i = 0; i < packing[0]; i++) {
-
                     datas.add(emsData01);
                 }
             } else { //告警数据
@@ -185,8 +182,15 @@ public class GetDataAll {
                 getAlarm(packing[3], agentID, "SUNS201", "ZEMETERL", data201);
             }
             if (packing[4] < 100) {
-                for (int i = 0; i < packing[4]; i++) {
-                    datas.add(pvData);
+                for (int i = 1; i <= packing[4]; i++) {
+                    EmsData pvData1 = new EmsData();//
+                    pvData1.setType("SUNS103");
+                    pvData1.setSta(0);
+                    pvData1.setValues(data103);
+                    pvData1.setDsn(agentID.substring(0, 10) + i);
+                    pvData1.setModId(i);
+                    pvData1.setModel("SCA60KTL-DO/US-480");
+                    datas.add(pvData1);
                 }
             } else {//告警数据
                 getAlarm(packing[4], agentID, "SUNS103", "SC30KTL-DO", data103);
@@ -447,7 +451,7 @@ public class GetDataAll {
         //告警参数
         Map<String, Object> noDevice = new HashMap<>();
         EmsData device = new EmsData();
-        if (number > 5000) {//Fault
+        if (number > 5000 && number < 10000) {//Fault
             switch (number) {
                 case 5101:
                     data.put(Values.evt, "F0001");
@@ -495,24 +499,21 @@ public class GetDataAll {
             device.setDsn(agentID + type);
             device.setType(type);
             device.setModel(model);
+            datas.add(device);
         } else if (number < 5000 && number > 1000) {//Warning
 
             switch (number) {
-                case 1101:
-                    data.put(Values.evt, "W0020");
-                    data.put(Values.evtD, "ACFanWarn");
+                case 5301:
+                    data.put(Values.evt, "2");
+                    data.put(Values.evtD, "过温保护");
                     break;
-                case 1102:
-                    data.put(Values.evt, "W0010");
-                    data.put(Values.evtD, "DCFanWarn");
+                case 5302:
+                    data.put(Values.evt, "8");
+                    data.put(Values.evtD, "掉相");
                     break;
-                case 1201:
-                    data.put(Values.evt, "W0001");
-                    data.put(Values.evtD, "ModTempLowWarn");
-                    break;
-                case 1202:
-                    data.put(Values.evt, "W0002");
-                    data.put(Values.evtD, "ModTempHighWarn");
+                case 5303:
+                    data.put(Values.evt, "100");
+                    data.put(Values.evtD, "电网线电压超限");
                     break;
                 case 1301:
                     data.put(Values.evt, "8000");
@@ -533,7 +534,7 @@ public class GetDataAll {
             device.setDsn(agentID + type);
             device.setType(type);
             device.setModel(model);
-
+            datas.add(device);
         } else if (number == 102) {//Device disconnect（Node通讯异常）
             noDevice.put(Values.evt, "102");
             noDevice.put(Values.evtD, "Device communication is lost");
@@ -542,7 +543,7 @@ public class GetDataAll {
             device.setDsn(agentID + type);
             device.setType(type);
             device.setModel(model);
-
+            datas.add(device);
         } else if (number == 103) {//Device fault（Node运行出现错误）
             data.put(Values.evt, "103");
             data.put(Values.evtD, "Device fault");
@@ -551,7 +552,7 @@ public class GetDataAll {
             device.setDsn(agentID + type);
             device.setType(type);
             device.setModel(model);
-
+            datas.add(device);
         } else if (number == 104) {//Device warning （Node运行出现警告）
             data.put(Values.evt, "la104");
             data.put(Values.evtD, "Device communication is lost");
@@ -560,13 +561,74 @@ public class GetDataAll {
             device.setDsn(agentID + type);
             device.setType(type);
             device.setModel(model);
-
+            datas.add(device);
+        } else if (number > 10000) {//多设备
+            String aac = number + "";
+            //pv个数
+            int pvnum = Integer.parseInt(aac.substring(4,5));
+            //第几个PV 100022
+            int pvnu = Integer.parseInt(aac.substring(5,6));
+            //作错误码
+            int pvcode = Integer.parseInt(aac.substring(0, 4));
+            for (int p = 1; p <= pvnum; p++) {
+                Map pvData2 = new HashMap();//
+                for (String key : data.keySet()) {
+                    pvData2.put(key,data.get(key));
+                }
+                String dsn = agentID.substring(0, 10) + p;
+                EmsData device2 = new EmsData();
+                device2.setSta(0);
+                if (p == pvnu) {
+                    switch (pvcode) {
+                        case 5301:
+                            pvData2.put(Values.evt, "2");
+                            pvData2.put(Values.evtD, "过温保护");
+                            device2.setSta(2);
+                            break;
+                        case 5302:
+                            pvData2.put(Values.evt, "8");
+                            pvData2.put(Values.evtD, "掉相");
+                            device2.setSta(2);
+                            break;
+                        case 5303:
+                            pvData2.put(Values.evt, "100");
+                            pvData2.put(Values.evtD, "电网线电压超限");
+                            device2.setSta(2);
+                            break;
+                        case 1301:
+                            pvData2.put(Values.evt, "8000");
+                            pvData2.put(Values.evtD, "外部风扇告警");
+                            device2.setSta(2);
+                            break;
+                        case 1302:
+                            pvData2.put(Values.evt, "4000");
+                            pvData2.put(Values.evtD, "内部风扇告警");
+                            device2.setSta(2);
+                            break;
+                        case 1303:
+                            pvData2.put(Values.evt, "2000");
+                            pvData2.put(Values.evtD, "Reserved");
+                            device2.setSta(2);
+                            break;
+                    }
+                    if (number > 100000) {
+                        dsn = agentID.substring(10, 20) + p;
+                    }
+                }
+                device2.setValues(pvData2);
+                device2.setType(type);
+                device2.setDsn(dsn);
+                device2.setModId(p);
+                device2.setModel("SCA60KTL-DO/US-480");
+                datas.add(device2);
+            }
         }
-        datas.add(device);
+
     }
 
     /**
      * 获取指定位数随机小数
+     * *6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9
      *
      * @param num 保留位数
      * @return
@@ -606,4 +668,45 @@ public class GetDataAll {
         Double Ran = GttRetainValue.getRealVaule(Ra, maxleng).doubleValue();
         return Ran;
     }
+
+
+    /**
+     * 随机字符
+     *
+     * @return 随机字符
+     */
+    private char[] getChar() {
+        char[] passwordLit = new char[62];
+        char fword = 'A';
+        char mword = 'A';
+        char bword = '0';
+        for (int i = 0; i < 62; i++) {
+            if (i < 26) {
+                passwordLit[i] = fword;
+                fword++;
+            } else if (i < 52) {
+                passwordLit[i] = mword;
+                mword++;
+            } else {
+                passwordLit[i] = bword;
+                bword++;
+            }
+        }
+        return passwordLit;
+    }
+
+    /**
+     * @return 激活码
+     */
+    private String getRandom() {
+        char[] r = getChar();
+        Random rr = new Random();
+        String pw = "";
+        for (int i = 0; i < 8; i++) {
+            int num = rr.nextInt(62);
+            pw += r[num];
+        }
+        return pw;
+    }
+
 }

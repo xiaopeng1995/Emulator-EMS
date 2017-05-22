@@ -109,7 +109,7 @@ public class DownResoure extends AbstractResource {
             body = JsonUtils.Mapper.writeValueAsString(payload);
 
 //            final String body = JsonUtils.Mapper.writeValueAsString(map.get("payload"));
-            PropertiesConfiguration mqttHttp = new PropertiesConfiguration("config/mqttHttp.properties");
+            PropertiesConfiguration mqttHttp = new PropertiesConfiguration("F:/test/mqttHttp.properties");
             //
             final String url = "http://" + mqttHttp.getString("mqtt.http") + "/mqtt/clients/" + agentId + "/publish?qos=" + qos + "&topicName=" + topic;
             logger.debug(agentId + "收到指令");

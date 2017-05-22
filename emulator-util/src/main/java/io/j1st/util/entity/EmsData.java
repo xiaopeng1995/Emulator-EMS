@@ -12,7 +12,8 @@ public class EmsData {
     private String asn;
     private String type;
     private String model;
-    private int sta;
+    private Integer modId;
+    private Integer sta;
     private Map values;
 
     public void setDsn(String dsn){
@@ -50,11 +51,19 @@ public class EmsData {
         this.model = model;
     }
 
-    public int getSta() {
+    public Integer getSta() {
         return sta;
     }
 
-    public void setSta(int sta) {
+    public void setSta(Integer sta) {
         this.sta = sta;
+    }
+
+    public Integer getModId() {
+        return modId;
+    }
+
+    public void setModId(Integer modId) {
+        this.modId = modId;
     }
 }

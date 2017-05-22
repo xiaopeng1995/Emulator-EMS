@@ -190,8 +190,8 @@ public class EmulatorApplication {
         }
         //打印配置信息
         logger.info("数据库任务加载完毕！\n应加载任务 {} 个，实际加载任务 {} 个 .EMS数据{}个.PV数据{}个",
-                EmulatorRegisterAll.size(), initagunt, jobagunt, initagunt - jobagunt);
-        //是否继续开始任务..
+                EmulatorRegisterAll.size(), initagunt, initagunt - jobagunt, jobagunt);
+        //是否继续开始任务..112.74.97.162
         Scanner ss = new Scanner(System.in);
         System.out.println("是否启动已加载的任务?(输入 1 继续,其他不启动)");
         String line = ss.nextLine();

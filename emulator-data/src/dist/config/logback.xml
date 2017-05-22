@@ -10,7 +10,7 @@
         <file>logs/data.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>log/archived/data-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
+            <MaxHistory>5</MaxHistory>
             <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <MaxFileSize>200MB</MaxFileSize>
             </TimeBasedFileNamingAndTriggeringPolicy>

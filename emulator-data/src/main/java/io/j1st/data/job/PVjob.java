@@ -1,18 +1,18 @@
 
 package io.j1st.data.job;
 
-        import io.j1st.data.entity.Registry;
-        import io.j1st.data.entity.config.BatConfig;
-        import io.j1st.data.mqtt.MqttConnThread;
-        import io.j1st.data.predict.PVpredict;
-        import io.j1st.storage.DataMongoStorage;
-        import io.j1st.storage.MongoStorage;
-        import org.slf4j.Logger;
-        import org.slf4j.LoggerFactory;
+import io.j1st.data.entity.Registry;
+import io.j1st.data.entity.config.BatConfig;
+import io.j1st.data.mqtt.MqttConnThread;
+import io.j1st.data.predict.PVpredict;
+import io.j1st.storage.DataMongoStorage;
+import io.j1st.storage.MongoStorage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-        import java.text.ParseException;
-        import java.text.SimpleDateFormat;
-        import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 单线程工作任务,模拟单个ems系统数据
@@ -44,7 +44,11 @@ public class PVjob extends Thread {
         mogo.updateEmulatorRegister(agentId, "systemTpye", 0);
         mogo.updateEmulatorRegister(agentId, "topic", topic);
         //更新数据格式
-        mogo.updateEmulatorRegister(agentId, "packing", "0,0,0,0,1");
+        Object datapacking = mogo.findEmulatorRegister(agentId, "packing");
+        if (datapacking == null) {
+            datapacking = "0,0,0,0,1";
+        }
+        mogo.updateEmulatorRegister(agentId, "packing", datapacking);
         while (!exit) {
             mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;
@@ -76,8 +80,7 @@ public class PVjob extends Thread {
                         //添加预测数据
                         p.PVInfo(date, agentId, 0, pvcloud());
 
-                    }
-                    else {
+                    } else {
                         logger.debug("过滤凌晨重复动作");
                     }
                 } catch (ParseException e) {
@@ -110,7 +113,7 @@ public class PVjob extends Thread {
             } else {
                 //睡眠300秒
                 try {
-                    Thread.sleep(300*1000);
+                    Thread.sleep(300 * 1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

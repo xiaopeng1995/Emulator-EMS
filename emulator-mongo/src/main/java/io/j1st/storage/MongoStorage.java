@@ -20,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
+import java.util.regex.Pattern;
 
 import static com.mongodb.client.model.Accumulators.sum;
 import static com.mongodb.client.model.Aggregates.group;
@@ -769,6 +770,7 @@ public class MongoStorage {
 //                        r.add(parseAgentDocument(d)));
 //        return r;
 //    }
+
     /**
      * 获取 采集器列表，根据产品Id
      *
@@ -1072,18 +1074,19 @@ public class MongoStorage {
                                     .append("updated_at", new Date()))
                             , new UpdateOptions().upsert(true)).getModifiedCount() > 0;
     }
+
     /**
      * 根据plantId查询Plant下的资产信息列表
      *
      * @param plantId
      * @return
      */
-    public List<AssetsInfo> getAssetsListByPlantId(ObjectId plantId, List<String> tags,Integer assetType) {
+    public List<AssetsInfo> getAssetsListByPlantId(ObjectId plantId, List<String> tags, Integer assetType) {
         List<AssetsInfo> AssetsInfos = new ArrayList<>();
         Document query = new Document();
         query.append("plant_id", plantId);
-        if(assetType != null){
-            query.append("assets_type",assetType);
+        if (assetType != null) {
+            query.append("assets_type", assetType);
         }
         if (tags != null && tags.size() > 0) {
             query.append("tags", new Document("$in", tags));
@@ -1094,6 +1097,7 @@ public class MongoStorage {
                         AssetsInfos.add(parseAssets(document)));
         return AssetsInfos;
     }
+
     /**
      * 解析资产组文档信息
      *
@@ -1117,6 +1121,7 @@ public class MongoStorage {
         assetsInfo.setUpdatedAt(doc.getDate("updated_at"));
         return assetsInfo;
     }
+
     /**
      * findEmulatorRegister
      *
@@ -1137,6 +1142,7 @@ public class MongoStorage {
 
     /**
      * 查询正在运行任务总数
+     *
      * @return
      */
     public long findEmulatorJobNum() {
@@ -1223,68 +1229,65 @@ public class MongoStorage {
      * @param isAsc 创建时间升序？
      * @return 事件列表
      */
-    public List<EmulatorRegister> getEmulatorRegisterByno(int skip, int limit, boolean isAsc) {
+    public List<EmulatorRegister> getEmulatorRegisterByno(String id, int skip, int limit, boolean isAsc) {
         List<EmulatorRegister> r = new ArrayList<>();
+        Pattern pattern = Pattern.compile("^.*" + id + ".*$", Pattern.CASE_INSENSITIVE);
+        BasicDBObject query = new BasicDBObject();
+        query.put("agent_id", pattern);
         this.database.getCollection("emulator_register")
-                .find()
-                .sort(isAsc ? ascending("created_at") : descending("updated_at"))
+                .find(query)
+                .sort(isAsc ? ascending("created_at") : descending("created_at"))
                 .skip((skip - 1) * limit).limit(limit)
                 .forEach((Consumer<Document>) document ->
                         r.add(parseRegisterDocument(document)));
         return r;
     }
 
-    /**
-     * 获取 单个
-     *
-     * @param id 分页起始（略过）
-     * @return 事件列表
-     */
-    public List<EmulatorRegister> getEmulatorRegisterByID(String id) {
-        List<EmulatorRegister> r = new ArrayList<>();
-        this.database.getCollection("emulator_register")
-                .find(eq("agent_id", id))
-                .forEach((Consumer<Document>) document ->
-                        r.add(parseRegisterDocument(document)));
-        return r;
-    }
-
     //查询警告信息已读未读总数
-    public Long getEmulatorRegister() {
-        return this.database.getCollection("emulator_register").count();
+    public Long getEmulatorRegister(String id) {
+        Pattern pattern = Pattern.compile("^.*" + id + ".*$", Pattern.CASE_INSENSITIVE);
+        BasicDBObject query = new BasicDBObject();
+        query.put("agent_id", pattern);
+        return this.database.getCollection("emulator_register").count(query);
     }
 
     @SuppressWarnings("unchecked")
     protected EmulatorRegister parseRegisterDocument(Document d) {
-        SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//可以方便地修改日期格式
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MMddHHmm");//可以方便地修改日期格式
-        int odldate = Integer.parseInt(dateFormat.format(d.getDate("updated_at")));
-        int newdate = Integer.parseInt(dateFormat.format(new Date()));
-        EmulatorRegister e = new EmulatorRegister();
-        e.setId(d.getObjectId("_id").toString());
-        e.setAgent_id(d.getString("agent_id"));
-        e.setUpdated_at(dateFormat1.format(d.getDate("updated_at")));
-        e.setPacking(d.getString("packing"));
-        e.setSystemType(d.getInteger("systemTpye"));
-        e.setTopic(d.getString("topic"));
-        e.setCreated_at(dateFormat1.format(d.getDate("created_at")));
+        try {
+            SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//可以方便地修改日期格式
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MMddHHmm");//可以方便地修改日期格式
+            int odldate = Integer.parseInt(dateFormat.format(d.getDate("updated_at")));
+            int newdate = Integer.parseInt(dateFormat.format(new Date()));
+            EmulatorRegister e = new EmulatorRegister();
+            e.setId(d.getObjectId("_id").toString());
+            e.setAgent_id(d.getString("agent_id"));
+            e.setUpdated_at(dateFormat1.format(d.getDate("updated_at")));
+            e.setPacking(d.getString("packing"));
+            e.setSystemType(d.getInteger("systemTpye"));
+            e.setTopic(d.getString("topic"));
+            e.setCreated_at(dateFormat1.format(d.getDate("created_at")));
 
 
-        if (d.get("product_id") != null)
-            e.setProdactId("product_id");
-        else if(d.get("Plant_id") != null)
-            e.setProdactId("Plant_id");
-        //如果更新时间超时设为false
-        if (newdate - odldate > 5) {
-            e.setConnected(false);
-           // updateEmulatorRegister(d.getString("agent_id"), "onlinefail", 0);
-        } else {
-            if (d.get("onlinefail") == null)
+            if (d.get("product_id") != null)
+                e.setProdactId("product_id");
+            else if (d.get("Plant_id") != null)
+                e.setProdactId("Plant_id");
+            //如果更新时间超时设为false
+            if (newdate - odldate > 5) {
                 e.setConnected(false);
-            else {
-                e.setConnected(d.getInteger("onlinefail") > 0);
+                // updateEmulatorRegister(d.getString("agent_id"), "onlinefail", 0);
+            } else {
+                if (d.get("onlinefail") == null)
+                    e.setConnected(false);
+                else {
+                    e.setConnected(d.getInteger("onlinefail") > 0);
+                }
             }
+            return e;
+        } catch (NullPointerException e) {
+            return null;
         }
-        return e;
+
+
     }
 }

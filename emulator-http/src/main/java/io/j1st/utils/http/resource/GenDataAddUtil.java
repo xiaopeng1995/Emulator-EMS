@@ -1,13 +1,13 @@
 package io.j1st.utils.http.resource;
 
-import com.google.common.base.Optional;
+
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.EmulatorRegister;
-import io.j1st.storage.entity.GenData;
+
 import io.j1st.utils.http.entity.PageResponse;
 import io.j1st.utils.http.entity.ResultEntity;
-import org.bson.Document;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,13 +56,14 @@ public class GenDataAddUtil extends AbstractResource {
     @GET
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity findGendDataBytime(@QueryParam("page") @DefaultValue("1") int page,
+    public ResultEntity findGendDataBytime(@QueryParam("emulatorid") @DefaultValue("")String emulatorid,
+                                           @QueryParam("page") @DefaultValue("1") int page,
                                            @QueryParam("limit") @DefaultValue("10") int limit,
                                            @QueryParam("isAsc") @DefaultValue("false") Boolean isAsc,
                                            @QueryParam("isRead") @DefaultValue("false") Boolean isRead) {
 
-        List<EmulatorRegister> sy = mongo.getEmulatorRegisterByno(page, limit, isAsc);
-        Long count = mongo.getEmulatorRegister();
+        List<EmulatorRegister> sy = mongo.getEmulatorRegisterByno(emulatorid,page, limit, isAsc);
+        Long count = mongo.getEmulatorRegister(emulatorid);
         PageResponse pageResponse = new PageResponse();
         pageResponse.setCount(count);
         Long totalPage;
@@ -77,17 +78,16 @@ public class GenDataAddUtil extends AbstractResource {
         return new ResultEntity<>(info);
     }
 
-    @Path("/findone")
-    @GET
-    @PermitAll
-    @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity findGendDataBytime(@QueryParam("emulatorid") String emulatorid) {
-        EmulatorRegister sy=new EmulatorRegister();
-        List<EmulatorRegister> syall = mongo.getEmulatorRegisterByID(emulatorid);
-        if (syall.size() > 0)
-             sy = mongo.getEmulatorRegisterByID(emulatorid).get(0);
-        return new ResultEntity<>(sy);
-    }
+//    @Path("/findone")
+//    @GET
+//    @PermitAll
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public ResultEntity findGendDataBytime(@QueryParam("emulatorid") String emulatorid) {
+//        EmulatorRegister sy = new EmulatorRegister();
+//        List<EmulatorRegister> syall = mongo.getEmulatorRegisterByID(emulatorid);
+//
+//        return new ResultEntity<>(syall);
+//    }
 
     @Path("/delete")
     @GET
