@@ -6,6 +6,7 @@ import io.j1st.data.job.EmsJob;
 import io.j1st.data.job.PVjob;
 import io.j1st.data.mqtt.MqttConnThread;
 import io.j1st.data.predict.PVpredict;
+import io.j1st.data.rabbitmq.RabittMQSend;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
@@ -66,6 +67,7 @@ public class ConfigFun {
                 }
             } catch (NullPointerException e) {
                 logger.info("agentID不存在跳过:" + emulatorId);
+                RabittMQSend.sendRabbitMQ("agentID不存在跳过:" + emulatorId);
             }
             //启动接收任务包括预测数据 启动MQTT线程
 
@@ -74,10 +76,12 @@ public class ConfigFun {
             } catch (Exception e) {
                 e.printStackTrace();
                 logger.error("添加批次出错");
+                RabittMQSend.sendRabbitMQ("添加批次出错");
             }
 
         } else {
             logger.error("添加的重复任务..过滤");
+            RabittMQSend.sendRabbitMQ("添加的重复任务..过滤");
         }
     }
 
@@ -145,6 +149,7 @@ public class ConfigFun {
                 Registry.INSTANCE.saveKey(agentID + "_Job", thread);
                 Registry.INSTANCE.startJob(thread);
                 logger.debug(agentID + "EMS设备准备成功开始上传数据..");
+                RabittMQSend.sendRabbitMQ(agentID + "EMS设备准备成功开始上传数据..");
             }
             //防止MQTT先启动线程做判断
             if (system == 0 && online == 0) {
@@ -153,6 +158,7 @@ public class ConfigFun {
                 Registry.INSTANCE.saveKey(agentID + "_Job", thread);
                 Registry.INSTANCE.startJob(thread);
                 logger.debug(agentID + "PV设备准备成功开始上传数据..");
+                RabittMQSend.sendRabbitMQ(agentID + "PV设备准备成功开始上传数据..");
             }
             Thread.sleep(90);
         }

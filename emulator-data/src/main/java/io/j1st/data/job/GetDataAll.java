@@ -9,7 +9,9 @@ import io.j1st.util.entity.EmsData;
 import io.j1st.util.entity.data.Values;
 import io.j1st.util.util.GttRetainValue;
 import io.j1st.util.util.JsonUtils;
+import io.j1st.util.util.RandomNumberUtils;
 import org.bson.Document;
+import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -187,7 +189,13 @@ public class GetDataAll {
                     pvData1.setType("SUNS103");
                     pvData1.setSta(0);
                     pvData1.setValues(data103);
-                    pvData1.setDsn(agentID.substring(0, 10) + i);
+                    Object dsn =mogo.findEmulatorRegister(agentID, "dsn" + i);
+                    String dsnx=null;
+                    if (dsn == null) {
+                        dsnx = RandomNumberUtils.getRandom();
+                        mogo.updateEmulatorRegister(agentID, "dsn" + i, dsnx);
+                    }
+                    pvData1.setDsn(dsn==null?dsnx:dsn.toString());
                     pvData1.setModId(i);
                     pvData1.setModel("SCA60KTL-DO/US-480");
                     datas.add(pvData1);
@@ -428,6 +436,9 @@ public class GetDataAll {
         data103.put(Values.Mode, 1);
         data103.put(Values.Qac, getRanNum(1));
         data103.put(Values.Eff, getRanNum(0.9, 0.5));
+        data103.put("" + Values.DSPVer, getRanNum(3.09, 1.99) + "");
+        data103.put("" + Values.LCDVer, getRanNum(2.89, 1.98) + "");
+
 
     }
 
@@ -564,18 +575,21 @@ public class GetDataAll {
             datas.add(device);
         } else if (number > 10000) {//多设备
             String aac = number + "";
+            if(agentID.equals("5926a014dafbaf3d82330a00"))
+            {
+                System.out.println(1);
+            }
             //pv个数
-            int pvnum = Integer.parseInt(aac.substring(4,5));
+            int pvnum = Integer.parseInt(aac.substring(4, 5));
             //第几个PV 100022
-            int pvnu = Integer.parseInt(aac.substring(5,6));
+            int pvnu = Integer.parseInt(aac.substring(5, 6));
             //作错误码
             int pvcode = Integer.parseInt(aac.substring(0, 4));
             for (int p = 1; p <= pvnum; p++) {
                 Map pvData2 = new HashMap();//
                 for (String key : data.keySet()) {
-                    pvData2.put(key,data.get(key));
+                    pvData2.put(key, data.get(key));
                 }
-                String dsn = agentID.substring(0, 10) + p;
                 EmsData device2 = new EmsData();
                 device2.setSta(0);
                 if (p == pvnu) {
@@ -611,13 +625,19 @@ public class GetDataAll {
                             device2.setSta(2);
                             break;
                     }
-                    if (number > 100000) {
-                        dsn = agentID.substring(10, 20) + p;
+                    if (number > 100000) {//换dSN
+                        mogo.updateEmulatorRegister(agentID, "dsn" + p, RandomNumberUtils.getRandom());
                     }
                 }
+                Object dsn =mogo.findEmulatorRegister(agentID, "dsn" + p);
+                String dsnx=null;
+                if (dsn == null) {
+                    dsnx = RandomNumberUtils.getRandom();
+                    mogo.updateEmulatorRegister(agentID, "dsn" + p, dsnx);
+                }
+                device2.setDsn(dsn==null?dsnx:dsn.toString());
                 device2.setValues(pvData2);
                 device2.setType(type);
-                device2.setDsn(dsn);
                 device2.setModId(p);
                 device2.setModel("SCA60KTL-DO/US-480");
                 datas.add(device2);

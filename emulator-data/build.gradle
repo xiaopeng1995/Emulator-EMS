@@ -11,4 +11,6 @@ dependencies {
     compile project(':emulator-util')
     // project
     compile project(':emulator-mongo')
+    //rabbit
+    compile 'com.rabbitmq:amqp-client:3.6.0'
 }

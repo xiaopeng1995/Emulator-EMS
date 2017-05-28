@@ -95,7 +95,8 @@ public class Values {
     public static final String Qac = "Qac";
     public static final String Ipv2 = "Ipv2";
     public static final String Eff = "Eff";
-
+    public static final String DSPVer = "DSPVer";
+    public static final String LCDVer = "LCDVer";
 
 
 

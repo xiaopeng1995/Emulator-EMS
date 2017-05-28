@@ -7,6 +7,7 @@ import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.EmsJob;
 import io.j1st.data.job.GetDataAll;
 import io.j1st.data.job.PVjob;
+import io.j1st.data.rabbitmq.RabittMQSend;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
@@ -71,6 +72,7 @@ public class MqttConnThread implements Callable {
                         try {
                             String agentid = mqttClient.getClientId();
                             logger.debug("接收线程:{}断开连接1111", agentid);
+                            RabittMQSend.sendRabbitMQ("接收线程:" + agentid + "断开连接11111");
                             Object oldjob = Registry.INSTANCE.getValue().get(agentid + "_Job");
                             // 如果有停掉旧的线程
                             if (oldjob != null) {
@@ -112,6 +114,7 @@ public class MqttConnThread implements Callable {
                     public void messageArrived(String topic, MqttMessage message) throws Exception {
                         String AgentID = mqttClient.getClientId();
                         logger.debug(AgentID + "收到的消息为：" + message.toString());
+                        RabittMQSend.sendRabbitMQ(AgentID + "收到的消息为：" + message.toString());
                         Map<Object, Object> msgData = JsonUtils.Mapper.readValue(message.toString().getBytes(), Map.class);
                         if (msgData.keySet().toString().contains("Query")) {
                             List<Map> bbc = (List<Map>) msgData.get("Query");
@@ -166,10 +169,13 @@ public class MqttConnThread implements Callable {
                             int type = Integer.parseInt(bbc.get(0).get("type").toString());
                             // 0   PV   1 EMS
                             int system = Integer.parseInt(bbc.get(0).get("system").toString());
-                            int num = Integer.parseInt(bbc.get(0).get("num").toString());
+                            int num = Integer.parseInt(bbc.get(0).get("num") != null ? bbc.get(0).get("num").toString() : "1");
                             //开始添加新任务
-                            logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, type, system == 0 ? "PV" : "EMS");
-                            new ConfigFun(dmogo, mogo, emulatorConfig).startOne(emulatorAgent, type, system,num);
+                            String types = type == 0 ? "AgentId" : "批次号";
+                            String systems = system == 0 ? "PV" : "EMS";
+                            logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, types, systems);
+                            RabittMQSend.sendRabbitMQ("开始收到新任务--ID:{" + emulatorAgent + "}类型:{" + types + "}系统:{" + systems + "}");
+                            new ConfigFun(dmogo, mogo, emulatorConfig).startOne(emulatorAgent, type, system, num);
                         } else if (msgData.keySet().toString().contains("packs")) {
                             List<Map> bbc = (List<Map>) msgData.get("packs");
                             String dataqc = bbc.get(0).get("packs").toString();
@@ -204,6 +210,7 @@ public class MqttConnThread implements Callable {
                                     sendMessage(getTopic(AgentID, 1), msg);
                                 }
                                 logger.info("实时packs  类型:" + msg);
+                                RabittMQSend.sendRabbitMQ("实时packs  类型:" + msg);
                             }
                         } else {
                             logger.error("错误格式");

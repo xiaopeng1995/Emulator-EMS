@@ -23,6 +23,7 @@
     <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.2" level="project" />
     <orderEntry type="module" module-name="emulator-util_main" />
     <orderEntry type="module" module-name="emulator-mongo_main" />
+    <orderEntry type="library" name="Gradle: com.rabbitmq:amqp-client:3.6.0" level="project" />
     <orderEntry type="library" name="Gradle: c3p0:c3p0:0.9.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.7.0" level="project" />
     <orderEntry type="library" name="Gradle: commons-lang:commons-lang:2.6" level="project" />

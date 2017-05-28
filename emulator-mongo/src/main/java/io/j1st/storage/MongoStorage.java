@@ -490,7 +490,7 @@ public class MongoStorage {
                 .find(eq("_id", id))
                 .projection(include("product_id"))
                 .first();
-        ObjectId pid = (ObjectId) d.get("product_id");
+        ObjectId pid = d.getObjectId("product_id");
 
         Document products = this.database.getCollection("products")
                 .find(eq("_id", pid))

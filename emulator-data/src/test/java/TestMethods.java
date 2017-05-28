@@ -15,7 +15,7 @@ public class TestMethods {
     @Test
     public void testLogBack() {
 
-        System.out.println(getRanNum(8.99, 1));
+        System.out.println(getRanNum(1.98, 2.89));
     }
 
     /**
