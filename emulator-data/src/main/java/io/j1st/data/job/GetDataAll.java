@@ -627,6 +627,7 @@ public class GetDataAll {
                     }
                     if (number > 100000) {//换dSN
                         mogo.updateEmulatorRegister(agentID, "dsn" + p, RandomNumberUtils.getRandom());
+                        mogo.updateEmulatorRegister(agentID, "packing", "0,0,0,0,"+pvnum);
                     }
                 }
                 Object dsn =mogo.findEmulatorRegister(agentID, "dsn" + p);
