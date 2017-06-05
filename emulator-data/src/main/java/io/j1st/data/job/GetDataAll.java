@@ -102,31 +102,31 @@ public class GetDataAll {
         }
 
         emsData01.setType("SUNS120");
-        pvData.setSta(0);
+        pvData.setSta(1);
         emsData01.setDsn(agentID + "SUNS120");
         emsData01.setModel("SC36KTL-DO");
         emsData01.setValues(data120);
 
         emsData02.setType("SUNS801");
-        pvData.setSta(0);
+        pvData.setSta(1);
         emsData02.setDsn(agentID + "SUNS801");
         emsData02.setModel("ZE60BATTERY");
         emsData02.setValues(data801);
 
         gridData.setType("SUNS202");
-        pvData.setSta(0);
+        pvData.setSta(1);
         gridData.setDsn(agentID + "SUNS202");
         gridData.setModel("ZEMETERG");
         gridData.setValues(data202);
 
         loadData.setType("SUNS201");
-        pvData.setSta(0);
+        pvData.setSta(1);
         loadData.setDsn(agentID + "SUNS201");
         loadData.setModel("ZEMETERL");
         loadData.setValues(data201);
 
         pvData.setType("SUNS103");
-        pvData.setSta(0);
+        pvData.setSta(1);
         pvData.setValues(data103);
 
 
@@ -187,15 +187,15 @@ public class GetDataAll {
                 for (int i = 1; i <= packing[4]; i++) {
                     EmsData pvData1 = new EmsData();//
                     pvData1.setType("SUNS103");
-                    pvData1.setSta(0);
+                    pvData1.setSta(1);
                     pvData1.setValues(data103);
-                    Object dsn =mogo.findEmulatorRegister(agentID, "dsn" + i);
-                    String dsnx=null;
+                    Object dsn = mogo.findEmulatorRegister(agentID, "dsn" + i);
+                    String dsnx = null;
                     if (dsn == null) {
                         dsnx = RandomNumberUtils.getRandom();
                         mogo.updateEmulatorRegister(agentID, "dsn" + i, dsnx);
                     }
-                    pvData1.setDsn(dsn==null?dsnx:dsn.toString());
+                    pvData1.setDsn(dsn == null ? dsnx : dsn.toString());
                     pvData1.setModId(i);
                     pvData1.setModel("SCA60KTL-DO/US-480");
                     datas.add(pvData1);
@@ -436,8 +436,8 @@ public class GetDataAll {
         data103.put(Values.Mode, 1);
         data103.put(Values.Qac, getRanNum(1));
         data103.put(Values.Eff, getRanNum(0.9, 0.5));
-        data103.put("" + Values.DSPVer, getRanNum(3.09, 1.99) + "");
-        data103.put("" + Values.LCDVer, getRanNum(2.89, 1.98) + "");
+        data103.put(Values.DSPVer, "01.12");
+        data103.put(Values.LCDVer, "02.21");
 
 
     }
@@ -575,8 +575,7 @@ public class GetDataAll {
             datas.add(device);
         } else if (number > 10000) {//多设备
             String aac = number + "";
-            if(agentID.equals("5926a014dafbaf3d82330a00"))
-            {
+            if (agentID.equals("5926a014dafbaf3d82330a00")) {
                 System.out.println(1);
             }
             //pv个数
@@ -591,21 +590,21 @@ public class GetDataAll {
                     pvData2.put(key, data.get(key));
                 }
                 EmsData device2 = new EmsData();
-                device2.setSta(0);
+                device2.setSta(1);
                 if (p == pvnu) {
                     switch (pvcode) {
                         case 5301:
-                            pvData2.put(Values.evt, "2");
+                            pvData2.put(Values.evt, "0001000000000000000000000000");
                             pvData2.put(Values.evtD, "过温保护");
                             device2.setSta(2);
                             break;
                         case 5302:
-                            pvData2.put(Values.evt, "8");
+                            pvData2.put(Values.evt, "0008000000000000000000000000");
                             pvData2.put(Values.evtD, "掉相");
                             device2.setSta(2);
                             break;
                         case 5303:
-                            pvData2.put(Values.evt, "100");
+                            pvData2.put(Values.evt, "0009000000000000000000000000");
                             pvData2.put(Values.evtD, "电网线电压超限");
                             device2.setSta(2);
                             break;
@@ -625,18 +624,18 @@ public class GetDataAll {
                             device2.setSta(2);
                             break;
                     }
-                    if (number > 100000) {//换dSN
+                    if (number > 100000 && number < 101000) {//换dSN
                         mogo.updateEmulatorRegister(agentID, "dsn" + p, RandomNumberUtils.getRandom());
-                        mogo.updateEmulatorRegister(agentID, "packing", "0,0,0,0,"+pvnum);
+                        mogo.updateEmulatorRegister(agentID, "packing", "0,0,0,0," + pvnum);
                     }
                 }
-                Object dsn =mogo.findEmulatorRegister(agentID, "dsn" + p);
-                String dsnx=null;
+                Object dsn = mogo.findEmulatorRegister(agentID, "dsn" + p);
+                String dsnx = null;
                 if (dsn == null) {
                     dsnx = RandomNumberUtils.getRandom();
                     mogo.updateEmulatorRegister(agentID, "dsn" + p, dsnx);
                 }
-                device2.setDsn(dsn==null?dsnx:dsn.toString());
+                device2.setDsn(dsn == null ? dsnx : dsn.toString());
                 device2.setValues(pvData2);
                 device2.setType(type);
                 device2.setModId(p);

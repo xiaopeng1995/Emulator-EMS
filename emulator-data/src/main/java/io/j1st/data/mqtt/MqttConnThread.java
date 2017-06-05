@@ -94,14 +94,14 @@ public class MqttConnThread implements Callable {
                                 logger.debug("无发送线程直接结束..");
                             }
                             if (agentid.equals(emulatorConfig.getString("sever_id"))) {
-                                logger.info("sever_id断开直接重连!");
-                                Thread.sleep(10 * 1000);
+                                logger.info("sever_id断开30秒后重连!");
+                                Thread.sleep(30 * 1000);
                                 Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
                             }
                             if (mogo.findEmulatorRegister(agentid, "onlinefail").toString().equals("1")) {
-                                logger.info("意外停止...尝试1分钟后重启此任务!!");
-                                //睡眠1分钟
-                                Thread.sleep(1 * 60 * 1000);
+                                logger.info("一处意外停止...尝试5分钟后重启此任务!!");
+                                //睡眠5分钟
+                                Thread.sleep(5 * 60 * 1000);
                                 resetJob();
                             }
                         } catch (InterruptedException e) {
@@ -228,9 +228,9 @@ public class MqttConnThread implements Callable {
             }
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         } catch (Exception e) {
-            //睡眠1分钟
+            //睡眠10分钟
             logger.error("后台mqtt客户端:{}连接服务器 broker失败！1分钟后重新连接开始...", mqttClient.getClientId());
-            Thread.sleep(1 * 60 * 1000);
+            Thread.sleep(10 * 60 * 1000);
             resetJob();
         }
         return null;
@@ -296,7 +296,7 @@ public class MqttConnThread implements Callable {
                 Registry.INSTANCE.saveKey(agentid + "_Job", threadnew);
             }
         } catch (Exception ejob) {
-            logger.info("重新启动发送线程异常!!!!!!!!!!!!!!!!!!!!!!!!!");
+            logger.info("二处重新启动发送线程异常!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
     }
 
