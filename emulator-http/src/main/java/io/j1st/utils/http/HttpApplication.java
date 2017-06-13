@@ -9,6 +9,8 @@ import io.dropwizard.lifecycle.Managed;
 import io.dropwizard.setup.Environment;
 import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
+import io.j1st.utils.http.mysql.DataMySqlStorage;
+import io.j1st.utils.http.mysql.manager.ConnectionManager;
 import io.j1st.utils.http.resource.*;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.lang3.ArrayUtils;
@@ -27,13 +29,16 @@ public class HttpApplication extends Application<HttpConfiguration> {
     private static final Logger logger = LoggerFactory.getLogger(HttpApplication.class);
 
     private static PropertiesConfiguration mongoConfig;
+    private static PropertiesConfiguration mysqlConfig;
 
     public static void main(String[] args) throws Exception {
         if (args.length >= 3) {
             mongoConfig = new PropertiesConfiguration(args[0]);
+            mysqlConfig = new PropertiesConfiguration(args[1]);
             args = ArrayUtils.subarray(args, 1, args.length);
         } else {
             mongoConfig = new PropertiesConfiguration("config/mongo.properties");
+            mysqlConfig = new PropertiesConfiguration("config/mysql.properties");
         }
         new HttpApplication().run(args);
     }
@@ -43,6 +48,8 @@ public class HttpApplication extends Application<HttpConfiguration> {
         // storage & message queue
         final MongoStorage mongo = new MongoStorage();
         final DataMongoStorage dataMongo = new DataMongoStorage();
+        ConnectionManager connectionManager = ConnectionManager.getInstance();
+        DataMySqlStorage mySqlStorage = new DataMySqlStorage();
 
         environment.lifecycle().manage(new Managed() {
             @Override
@@ -50,6 +57,11 @@ public class HttpApplication extends Application<HttpConfiguration> {
                 logger.debug("Initializing mongo storage ...");
                 mongo.init(mongoConfig);
                 dataMongo.init(mongoConfig);
+                //初始化mysql连接池
+                // Mysql storage
+               logger.debug("Initializing Mysql storage ...");
+                connectionManager.init(mysqlConfig);
+                mySqlStorage.init(connectionManager);
             }
 
             @Override
@@ -76,6 +88,7 @@ public class HttpApplication extends Application<HttpConfiguration> {
         environment.jersey().register(new InsertUtil(mongo, dataMongo));
         environment.jersey().register(new GenDataAddUtil(mongo, dataMongo));
         environment.jersey().register(new DownResoure(mongo, dataMongo));
+        environment.jersey().register(new DataInsert(mySqlStorage));
 
         // config jackson
         environment.getObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
