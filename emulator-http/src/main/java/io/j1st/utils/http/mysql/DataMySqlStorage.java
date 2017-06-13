@@ -1,12 +1,15 @@
 package io.j1st.utils.http.mysql;
 
+
+import io.j1st.utils.http.entity.DataField;
+import io.j1st.utils.http.entity.Stream;
 import io.j1st.utils.http.mysql.manager.ConnectionManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.UUID;
 import java.util.List;
 
 /**
@@ -25,43 +28,82 @@ public class DataMySqlStorage {
 
 
     /**
-     * 写入一条用户账户信息
+     * 写入一条主表信息 RD_REAL_TIME_DATA
      *
-     * @param userAccount
+     * @param kzqxh
      * @return
      */
-//    public boolean insertUserAccount(UserAccount userAccount) {
-//        Connection conn = pool.getConnection();
-//        PreparedStatement statement = null;
-//        int count = 0;
-//        String sql = "insert into user_account(user_id,balance,pay_type,pay_pass,begin_date,end_date) " +
-//                "values(?,?,?,?,?,?)";
-//        try {
-//            statement = conn.prepareStatement(sql);
-//            statement.setString(1, userAccount.getUserId());
-//            statement.setDouble(2, userAccount.getBalance());
-//            statement.setInt(3, userAccount.getPayType());
-//            statement.setString(4, userAccount.getPayPass());
-//            if (userAccount.getBeginDate() != null)
-//                statement.setDate(5, new java.sql.Date(userAccount.getBeginDate().getTime()));
-//            if (userAccount.getEndDate() != null)
-//                statement.setDate(6, new java.sql.Date(userAccount.getEndDate().getTime()));
-//
-//            count = statement.executeUpdate();
-//        } catch (SQLException e) {
-//            logger.error("保存用户ID为 {} 的用户账户信息时出错 {}", userAccount.getUserId(), e);
-//        } finally {
-//            try {
-//                if (statement != null)
-//                    statement.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//            pool.closeConnection(conn);
-//        }
-//        return count > 0;
-//    }
+    public boolean insertRD(String id, String kzqxh, String status) {
+        Connection conn = pool.getConnection();
+        PreparedStatement statement = null;
+        int count = 0;
+        String sql = "insert into RD_REAL_TIME_DATA(DATA_ID,PRODUCT_ID,KZQXH,STATUS,UPLOAD_TIME,CREATE_TIME) " +
+                "values(?,?,?,?,?,?)";
+        try {
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, id);
+            statement.setString(2, "xx");
+            statement.setString(3, kzqxh);
+            statement.setString(4, status);
+            java.util.Date date = new java.util.Date();
+            Timestamp tt = new Timestamp(date.getTime());
+            statement.setTimestamp(5, tt);
+            statement.setTimestamp(6, tt);
 
+            count = statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("保存ID为 {} 的主表数据信息时出错 {}", id, e);
+        } finally {
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            pool.closeConnection(conn);
+        }
+        return count > 0;
+    }
+
+
+    /**
+     * 写入一条从表信息 RD_DATA_FIELD
+     *
+     * @param datax
+     * @return
+     */
+    public boolean insertRDdata(DataField datax) {
+        Connection conn = pool.getConnection();
+        PreparedStatement statement = null;
+        int count = 0;
+        String sql = "insert into RD_DATA_FIELD(ID,DATA_ID,CATE,FIELD_NAME,FIELD_VALUE,PREFIX,UNIT,ROW_ID,CREATE_TIME) " +
+                "values(?,?,?,?,?,?,?,?,?)";
+        try {
+            statement = conn.prepareStatement(sql);
+            statement.setString(1, datax.getId());
+            statement.setString(2, datax.getDataId());
+            statement.setString(3, datax.getCate());
+            statement.setString(4, datax.getFieldName());
+            statement.setDouble(5, datax.getFieldValue());
+            statement.setString(6, datax.getPrefix());
+            statement.setString(7, datax.getUnit());
+            statement.setInt(8, datax.getRowId());
+            Timestamp tt = new Timestamp(datax.getCreateTime().getTime());
+            statement.setTimestamp(9, tt);
+            count = statement.executeUpdate();
+        } catch (SQLException e) {
+            logger.error("保存ID为 {} 的从数据信息时出错 {}", datax.getId(), e);
+        } finally {
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            pool.closeConnection(conn);
+        }
+        return count > 0;
+    }
 
     /**
      * 查询所有套餐用户Id
