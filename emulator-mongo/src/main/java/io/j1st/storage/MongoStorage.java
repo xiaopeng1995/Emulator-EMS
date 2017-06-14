@@ -59,8 +59,8 @@ public class MongoStorage {
         // indexes
         this.database.getCollection("users").createIndex(ascending("name"), new IndexOptions().unique(true));
         this.database.getCollection("users").createIndex(ascending("token"), new IndexOptions().unique(true));
-        this.database.getCollection("sms_verifies").createIndex(ascending("mobile"));
-        this.database.getCollection("sms_verifies").createIndex(ascending("updated_at"), new IndexOptions().expireAfter(5L, TimeUnit.MINUTES));
+      //  this.database.getCollection("sms_verifies").createIndex(ascending("mobile"));
+//        this.database.getCollection("sms_verifies").createIndex(ascending("updated_at"), new IndexOptions().expireAfter(5L, TimeUnit.MINUTES));
         this.database.getCollection("mail_verifies").createIndex(ascending("mail"));
         this.database.getCollection("mail_verifies").createIndex(ascending("updated_at"), new IndexOptions().expireAfter(5L, TimeUnit.MINUTES));
         this.database.getCollection("products").createIndex(ascending("token"), new IndexOptions().unique(true));

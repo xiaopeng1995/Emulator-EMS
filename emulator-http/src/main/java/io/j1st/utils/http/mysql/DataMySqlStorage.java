@@ -4,6 +4,7 @@ package io.j1st.utils.http.mysql;
 import io.j1st.utils.http.entity.DataField;
 import io.j1st.utils.http.entity.Stream;
 import io.j1st.utils.http.mysql.manager.ConnectionManager;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,9 +22,11 @@ public class DataMySqlStorage {
     private static final Logger logger = LoggerFactory.getLogger(DataMySqlStorage.class);
 
     private ConnectionManager pool;
+    private PropertiesConfiguration dataConfig;
 
-    public void init(ConnectionManager pool) {
+    public void init(ConnectionManager pool, PropertiesConfiguration dataConfig) {
         this.pool = pool;
+        this.dataConfig = dataConfig;
     }
 
 
@@ -42,7 +45,7 @@ public class DataMySqlStorage {
         try {
             statement = conn.prepareStatement(sql);
             statement.setString(1, id);
-            statement.setString(2, "xx");
+            statement.setString(2, dataConfig.getString("productId"));
             statement.setString(3, kzqxh);
             statement.setString(4, status);
             java.util.Date date = new java.util.Date();

@@ -41,7 +41,7 @@ public class DataInsert {
         try {
             for (Stream stream : data) {
                 String dataId = get32UUID();
-                Boolean zu = this.dataMySqlStorage.insertRD(dataId, stream.getAsn(),stream.getSta().toString());
+                Boolean zu = this.dataMySqlStorage.insertRD(dataId, stream.getType(),stream.getSta().toString());
 
                 if (zu)
                     for (String key : stream.getValues().keySet()) {

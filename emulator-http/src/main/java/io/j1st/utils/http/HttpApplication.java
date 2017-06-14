@@ -29,13 +29,16 @@ public class HttpApplication extends Application<HttpConfiguration> {
 
     private static PropertiesConfiguration mysqlConfig;
 
-    public static void main(String[] args) throws Exception {
-        if (args.length >= 1) {
-            mysqlConfig = new PropertiesConfiguration(args[0]);
-            args = ArrayUtils.subarray(args, 1, args.length);
-        } else {
+    private static PropertiesConfiguration dataConfig;
 
+    public static void main(String[] args) throws Exception {
+        if (args.length >= 3) {
+            mysqlConfig = new PropertiesConfiguration(args[0]);
+            dataConfig = new PropertiesConfiguration(args[1]);
+            args = ArrayUtils.subarray(args, args.length - 2, args.length);
+        } else {
             mysqlConfig = new PropertiesConfiguration("config/mysql.properties");
+            dataConfig = new PropertiesConfiguration("config/dataConfig.properties");
         }
         new HttpApplication().run(args);
     }
@@ -51,9 +54,9 @@ public class HttpApplication extends Application<HttpConfiguration> {
             public void start() throws Exception {
                 //初始化mysql连接池
                 // Mysql storage
-               logger.debug("Initializing Mysql storage ...");
+                logger.debug("Initializing Mysql storage ...");
                 connectionManager.init(mysqlConfig);
-                mySqlStorage.init(connectionManager);
+                mySqlStorage.init(connectionManager, dataConfig);
             }
 
             @Override

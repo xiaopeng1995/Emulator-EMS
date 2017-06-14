@@ -33,5 +33,5 @@ server:
   adminContextPath: /admin
   connector:
     type: http
-    port: 8899
+    port: 8891
     #port: 8099

@@ -118,7 +118,7 @@ public class EmulatorApplication {
         int jobagunt = 0;
         if (islocal) {
             EmulatorRegister emulatorRegister = new EmulatorRegister();
-            emulatorRegister.setAgent_id(emulatorConfig.getString("emsagent_id"));
+            emulatorRegister.setAgent_id(emulatorConfig.getString("pvagent_id"));
             emulatorRegister.setSystemType(emulatorConfig.getInt("systemType"));
             EmulatorRegisterAll.add(emulatorRegister);
         }
