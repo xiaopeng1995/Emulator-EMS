@@ -26,7 +26,7 @@ public class RabittMQSend {
         try {
 
             ConnectionFactory factory = new ConnectionFactory();
-            factory.setHost("139.196.235.75");
+            factory.setHost("localhost");
             factory.setUsername("zenin");
             factory.setPassword("zenin");
             factory.setPort(5672);

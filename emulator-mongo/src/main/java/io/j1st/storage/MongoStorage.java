@@ -57,27 +57,30 @@ public class MongoStorage {
         this.database = this.client.getDatabase(config.getString("mongo.database"));
 
         // indexes
-        this.database.getCollection("users").createIndex(ascending("name"), new IndexOptions().unique(true));
-        this.database.getCollection("users").createIndex(ascending("token"), new IndexOptions().unique(true));
-        this.database.getCollection("sms_verifies").createIndex(ascending("mobile"));
-        this.database.getCollection("sms_verifies").createIndex(ascending("updated_at"), new IndexOptions().expireAfter(5L, TimeUnit.MINUTES));
-        this.database.getCollection("mail_verifies").createIndex(ascending("mail"));
-        this.database.getCollection("mail_verifies").createIndex(ascending("updated_at"), new IndexOptions().expireAfter(5L, TimeUnit.MINUTES));
-        this.database.getCollection("products").createIndex(ascending("token"), new IndexOptions().unique(true));
-        this.database.getCollection("products").createIndex(ascending("user_id"));
-        this.database.getCollection("products").createIndex(ascending("settings.fields.device_type", "settings.fields.key"));
-        this.database.getCollection("agents").createIndex(ascending("token"), new IndexOptions().unique(true));
-        this.database.getCollection("agents").createIndex(ascending("product_id"));
-        this.database.getCollection("agents").createIndex(ascending("permissions.user_id", "permissions.level"));
-        this.database.getCollection("devices").createIndex(ascending("agent_id", "sn"), new IndexOptions().unique(true));
-        this.database.getCollection("geetest_verifies").createIndex(ascending("datetime"), new IndexOptions().expireAfter(10L, TimeUnit.MINUTES));
-        this.database.getCollection("event_logs").createIndex(ascending("action_date"), new IndexOptions().expireAfter(15L, TimeUnit.DAYS));
-        this.database.getCollection("event_logs").createIndex(ascending("user_id", "product_id", "agent_id"));
-        // this.database.getCollection("emulator_datas").createIndex(ascending("test"), new IndexOptions().expireAfter(1L, TimeUnit.MINUTES));
+//        this.database.getCollection("users").createIndex(ascending("name"), new IndexOptions().unique(true));
+//        this.database.getCollection("users").createIndex(ascending("token"), new IndexOptions().unique(true));
+//        this.database.getCollection("sms_verifies").createIndex(ascending("mobile"));
+//        this.database.getCollection("sms_verifies").createIndex(ascending("updated_at"), new IndexOptions().expireAfter(1440L, TimeUnit.MINUTES));
+//
+//        this.database.getCollection("mail_verifies").createIndex(ascending("mail"));
+//        this.database.getCollection("mail_verifies").createIndex(ascending("updated_at"), new IndexOptions().expireAfter(5L, TimeUnit.MINUTES));
+//        this.database.getCollection("products").createIndex(ascending("token"), new IndexOptions().unique(true));
+//        this.database.getCollection("products").createIndex(ascending("user_id"));
+//        this.database.getCollection("products").createIndex(ascending("settings.fields.device_type", "settings.fields.key"));
+//        this.database.getCollection("agents").createIndex(ascending("token"), new IndexOptions().unique(true));
+//        this.database.getCollection("agents").createIndex(ascending("product_id"));
+//        this.database.getCollection("agents").createIndex(ascending("permissions.user_id", "permissions.level"));
+//        this.database.getCollection("devices").createIndex(ascending("agent_id", "sn"), new IndexOptions().unique(true));
+//        this.database.getCollection("geetest_verifies").createIndex(ascending("datetime"), new IndexOptions().expireAfter(10L, TimeUnit.MINUTES));
+//        this.database.getCollection("event_logs").createIndex(ascending("action_date"), new IndexOptions().expireAfter(15L, TimeUnit.DAYS));
+//        this.database.getCollection("event_logs").createIndex(ascending("user_id", "product_id", "agent_id"));
+//        // this.database.getCollection("emulator_datas").createIndex(ascending("test"), new IndexOptions().expireAfter(1L, TimeUnit.MINUTES));
         //drop index(这里暂时没用，预留，当我们需要改变与时间相关的检索字段时，需要先删除再新建，删除的前提是检索字段已经存在，不存在会报错，慎改)
         //this.database.getCollection("emulator_datas").dropIndex(ascending("test"));
         //this.database.getCollection("mail_verifies").dropIndex(ascending("mail"));
         //this.database.getCollection("users").dropIndex(ascending("email"));
+        //this.database.getCollection("sms_verifies").dropIndex(ascending("updated_at"));
+        //this.database.getCollection("sms_verifies").dropIndex(ascending("mobile"));
     }
 
     public void destroy() {
