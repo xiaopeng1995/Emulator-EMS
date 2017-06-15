@@ -39,28 +39,64 @@ public class DataInsert {
                                       @Valid List<Stream> data) {
         int count = 0;
         try {
+            String status = null;
             for (Stream stream : data) {
+                if (stream.getValues() != null)
+                    for (String key : stream.getValues().keySet()) {
+                        if (key.equals("FSta"))
+                            status = stream.getValues().get(key).toString();
+                    }
+            }
+            for (Stream stream : data) {
+                logger.debug("add data :{}", stream);
                 String dataId = get32UUID();
-                Boolean zu = this.dataMySqlStorage.insertRD(dataId, stream.getType(),stream.getSta().toString());
-
-                if (zu)
+                if (stream.getValues() != null)
                     for (String key : stream.getValues().keySet()) {
                         DataField dataf = new DataField();
                         dataf.setDataId(dataId);
                         dataf.setId(get32UUID());
-                        dataf.setCate("po");
+                        switch (key.substring(0, 1)) {
+                            case "I":
+                                dataf.setCate("A");
+                                break;
+                            case "V":
+                                dataf.setCate("V");
+                                break;
+                            case "P":
+                                dataf.setCate("P");
+                                break;
+                            case "F":
+                                dataf.setCate("F");
+                                break;
+                            default:
+                                dataf.setCate("unknown");
+                                break;
+                        }
                         dataf.setFieldName(key);
-                        dataf.setFieldValue((Double) stream.getValues().get(key));
+                        Double value = 0d;
+                        try {
+                            value = Double.parseDouble(stream.getValues().get(key).toString());
+                        } catch (Exception ex) {
+                            logger.error("Type mismatch! key:{} , value:{}", key, stream.getValues().get(key));
+                        }
+                        dataf.setFieldValue(value);
                         dataf.setCreateTime(new Date(new java.util.Date().getTime()));
                         Boolean cu = this.dataMySqlStorage.insertRDdata(dataf);
                         if (cu)
                             count++;
                     }
+                if (status == null) {
+                    status = "4";
+                }
+                this.dataMySqlStorage.insertRD(dataId, status);
             }
             Map<String, Object> m = new HashMap<>();
             m.put("trueAmount", count);
+            logger.debug("Successfully adding count:{}", count);
             return new ResultEntity<>(m);
         } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("Error format, add failure! ");
             return new ResultEntity<>(500, e.getMessage());
         }
     }

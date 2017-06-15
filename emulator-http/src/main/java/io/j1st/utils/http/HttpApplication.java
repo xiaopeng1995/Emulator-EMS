@@ -32,7 +32,7 @@ public class HttpApplication extends Application<HttpConfiguration> {
     private static PropertiesConfiguration dataConfig;
 
     public static void main(String[] args) throws Exception {
-        if (args.length >= 3) {
+        if (args.length > 3) {
             mysqlConfig = new PropertiesConfiguration(args[0]);
             dataConfig = new PropertiesConfiguration(args[1]);
             args = ArrayUtils.subarray(args, args.length - 2, args.length);

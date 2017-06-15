@@ -33,10 +33,10 @@ public class DataMySqlStorage {
     /**
      * 写入一条主表信息 RD_REAL_TIME_DATA
      *
-     * @param kzqxh
+     * @param
      * @return
      */
-    public boolean insertRD(String id, String kzqxh, String status) {
+    public boolean insertRD(String id, String status) {
         Connection conn = pool.getConnection();
         PreparedStatement statement = null;
         int count = 0;
@@ -46,7 +46,7 @@ public class DataMySqlStorage {
             statement = conn.prepareStatement(sql);
             statement.setString(1, id);
             statement.setString(2, dataConfig.getString("productId"));
-            statement.setString(3, kzqxh);
+            statement.setString(3, dataConfig.getString("kzqxh"));
             statement.setString(4, status);
             java.util.Date date = new java.util.Date();
             Timestamp tt = new Timestamp(date.getTime());
