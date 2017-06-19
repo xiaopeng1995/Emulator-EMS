@@ -1,0 +1,48 @@
+2017-06-15 16:14:09.097 [main] INFO  o.e.jetty.util.log - Logging initialized @2332ms
+ 2017-06-15 16:14:09.284 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-06-15 16:14:09.294 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-06-15 16:14:09.310 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-06-15 16:14:09.351 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@52500920{HTTP/1.1}{0.0.0.0:8891}
+ 2017-06-15 16:14:09.353 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-06-15 16:14:09.360 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-06-15 16:14:09.360 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-06-15 16:14:09.391 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-06-15 16:14:09.478 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-06-15 16:14:09.522 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-06-15 16:14:10.358 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-06-15 16:14:10.360 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@328902d5{/,null,AVAILABLE}
+ 2017-06-15 16:14:10.377 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-06-15 16:14:10.378 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-06-15 16:14:10.386 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@3701e6e4{/admin,null,AVAILABLE}
+ 2017-06-15 16:14:10.453 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@52500920{HTTP/1.1}{0.0.0.0:8891}
+ 2017-06-15 16:14:10.453 [main] INFO  o.e.j.server.Server - Started @3689ms
+ 2017-06-15 16:14:27.524 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@425220f0
+ 2017-06-15 16:14:27.587 [dw-22 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo6f9o1be8ow8n53txe|2c177f9e, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo6f9o1be8ow8n53txe|2c177f9e, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-06-15 16:14:27.812 [dw-22 - POST /data/add] ERROR i.j.u.h.r.DataInsert - Type mismatch! key:Mn , value:ZEIN Tech 
+ 2017-06-15 16:14:27.817 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3628d25e
+ 2017-06-15 16:14:27.841 [dw-22 - POST /data/add] ERROR i.j.u.h.r.DataInsert - Type mismatch! key:Status , value:On
+ 2017-06-15 16:14:27.843 [dw-22 - POST /data/add] ERROR i.j.u.h.r.DataInsert - Type mismatch! key:LDC , value:IT
+ 2017-06-15 16:14:27.845 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:76
+ 2017-06-15 16:17:19.436 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3118d376
+ 2017-06-15 16:17:19.437 [dw-22 - POST /data/add] ERROR i.j.u.h.r.DataInsert - Type mismatch! key:Mn , value:ZEIN Tech 
+ 2017-06-15 16:17:19.441 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5c1f282b
+ 2017-06-15 16:17:19.463 [dw-22 - POST /data/add] ERROR i.j.u.h.r.DataInsert - Type mismatch! key:Status , value:On
+ 2017-06-15 16:17:19.464 [dw-22 - POST /data/add] ERROR i.j.u.h.r.DataInsert - Type mismatch! key:LDC , value:IT
+ 2017-06-15 16:17:19.465 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:76
+ 
