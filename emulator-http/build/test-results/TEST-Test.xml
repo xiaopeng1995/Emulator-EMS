@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-06-19T02:50:33" hostname="DESKTOP-2C8EB59" time="0.002">
-  <properties/>
-  <testcase name="aa" classname="Test" time="0.002"/>
-  <system-out><![CDATA[Q15PM6SN
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
