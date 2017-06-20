@@ -1,6 +1,7 @@
 package io.j1st.utils.http.resource;
 
 
+import io.j1st.utils.http.DataMap;
 import io.j1st.utils.http.entity.DataField;
 import io.j1st.utils.http.entity.ResultEntity;
 import io.j1st.utils.http.entity.Stream;
@@ -52,38 +53,30 @@ public class DataInsert {
                 String dataId = get32UUID();
                 if (stream.getValues() != null)
                     for (String key : stream.getValues().keySet()) {
-                        DataField dataf = new DataField();
-                        dataf.setDataId(dataId);
-                        dataf.setId(get32UUID());
-                        switch (key.substring(0, 1)) {
-                            case "I":
-                                dataf.setCate("A");
-                                break;
-                            case "V":
-                                dataf.setCate("V");
-                                break;
-                            case "P":
-                                dataf.setCate("P");
-                                break;
-                            case "F":
-                                dataf.setCate("F");
-                                break;
-                            default:
-                                dataf.setCate("unknown");
-                                break;
+                        boolean xy = false;
+                        for (String xkey : DataMap.getkey()) {
+                            if (key.equals(xkey))
+                                xy = true;
                         }
-                        dataf.setFieldName(key);
-                        Double value = 0d;
-                        try {
-                            value = Double.parseDouble(stream.getValues().get(key).toString());
-                        } catch (Exception ex) {
-                            logger.error("Type mismatch! key:{} , value:{}", key, stream.getValues().get(key));
+                        if (xy) {
+                            DataField dataf = new DataField();
+                            dataf.setDataId(dataId);
+                            dataf.setId(get32UUID());
+                            dataf.setCate(DataMap.getCate(key));
+                            dataf.setUnit(DataMap.getUnit(key));
+                            dataf.setFieldName(key);
+                            Double value = 0d;
+                            try {
+                                value = Double.parseDouble(stream.getValues().get(key).toString());
+                            } catch (Exception ex) {
+                                logger.error("Type mismatch! key:{} , value:{}", key, stream.getValues().get(key));
+                            }
+                            dataf.setFieldValue(value);
+                            dataf.setCreateTime(new Date(new java.util.Date().getTime()));
+                            Boolean cu = this.dataMySqlStorage.insertRDdata(dataf);
+                            if (cu)
+                                count++;
                         }
-                        dataf.setFieldValue(value);
-                        dataf.setCreateTime(new Date(new java.util.Date().getTime()));
-                        Boolean cu = this.dataMySqlStorage.insertRDdata(dataf);
-                        if (cu)
-                            count++;
                     }
                 if (status == null) {
                     status = "4";
@@ -107,7 +100,16 @@ public class DataInsert {
     @Consumes(MediaType.APPLICATION_JSON)
     public ResultEntity findGendDataBytime() {
 
-        return new ResultEntity<>(this.dataMySqlStorage.getUserIds());
+        return new ResultEntity<>(this.dataMySqlStorage.getCount());
+    }
+
+    @Path("/test")
+    @GET
+    @PermitAll
+    @Consumes(MediaType.APPLICATION_JSON)
+    public ResultEntity test() {
+
+        return new ResultEntity<>(true);
     }
 
     private static String get32UUID() {

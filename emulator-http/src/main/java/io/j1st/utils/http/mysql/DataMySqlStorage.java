@@ -113,20 +113,21 @@ public class DataMySqlStorage {
      *
      * @return
      */
-    public List<String> getUserIds() {
-        Connection conn = pool.getConnection();
+    public Integer getCount() {
+            Connection conn = pool.getConnection();
         Statement stmt = null;
         ResultSet rs = null;
-        String sql = "select name from test";
-        List<String> idList = new ArrayList<>();
+        String sql = "SELECT COUNT(*)  \n" +
+                "FROM rd_data_field" ;
+        Integer count=0;
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                idList.add(rs.getString("name"));
+            if (rs.first()) {
+                count=rs.getInt(1);
             }
         } catch (SQLException e) {
-            logger.error("查询套餐用户ID时出错 {}", e);
+            logger.error("查询数据数量时出错 {}", e);
         } finally {
             try {
                 if (rs != null)
@@ -138,7 +139,7 @@ public class DataMySqlStorage {
             }
             pool.closeConnection(conn);
         }
-        return idList;
+        return count;
     }
 
 }
