@@ -36,21 +36,28 @@ public class DataInsert {
     @POST
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
-    public ResultEntity fnxDownStream(@HeaderParam("Accept-Language") @DefaultValue("zh") String lang,
+    public ResultEntity fnxDownStream(@HeaderParam("agentId") String agentId,
                                       @Valid List<Stream> data) {
+        logger.debug("请求添加AgentID:{}的数据",agentId);
         int count = 0;
         try {
-            String status = null;
+            String status = "";
+            String asn = "";
+            String dsn = "";
+            String dataId = get32UUID();
             for (Stream stream : data) {
                 if (stream.getValues() != null)
                     for (String key : stream.getValues().keySet()) {
                         if (key.equals("FSta"))
                             status = stream.getValues().get(key).toString();
+                        if (key.equals("sn"))
+                            asn = stream.getValues().get(key).toString();
                     }
             }
             for (Stream stream : data) {
                 logger.debug("add data :{}", stream);
-                String dataId = get32UUID();
+                if (stream.getDsn() != null)
+                    dsn = stream.getDsn();
                 if (stream.getValues() != null)
                     for (String key : stream.getValues().keySet()) {
                         boolean xy = false;
@@ -81,8 +88,8 @@ public class DataInsert {
                 if (status == null) {
                     status = "4";
                 }
-                this.dataMySqlStorage.insertRD(dataId, status);
             }
+            this.dataMySqlStorage.insertRD(dataId, status, asn, dsn, agentId);
             Map<String, Object> m = new HashMap<>();
             m.put("trueAmount", count);
             logger.debug("Successfully adding count:{}", count);

@@ -36,22 +36,25 @@ public class DataMySqlStorage {
      * @param
      * @return
      */
-    public boolean insertRD(String id, String status) {
+    public boolean insertRD(String id, String status, String asn, String dsn, String agentId) {
         Connection conn = pool.getConnection();
         PreparedStatement statement = null;
         int count = 0;
-        String sql = "insert into RD_REAL_TIME_DATA(DATA_ID,PRODUCT_ID,KZQXH,STATUS,UPLOAD_TIME,CREATE_TIME) " +
-                "values(?,?,?,?,?,?)";
+        String sql = "insert into RD_REAL_TIME_DATA(DATA_ID,PRODUCT_ID,KZQXH,AGENT_SN,DEVICE_SN,AGENT_ID,STATUS,UPLOAD_TIME,CREATE_TIME) " +
+                "values(?,?,?,?,?,?,?,?,?)";
         try {
             statement = conn.prepareStatement(sql);
             statement.setString(1, id);
             statement.setString(2, dataConfig.getString("productId"));
             statement.setString(3, dataConfig.getString("kzqxh"));
-            statement.setString(4, status);
+            statement.setString(4, asn);
+            statement.setString(5, dsn);
+            statement.setString(6, agentId);
+            statement.setString(7, status);
             java.util.Date date = new java.util.Date();
             Timestamp tt = new Timestamp(date.getTime());
-            statement.setTimestamp(5, tt);
-            statement.setTimestamp(6, tt);
+            statement.setTimestamp(8, tt);
+            statement.setTimestamp(9, tt);
 
             count = statement.executeUpdate();
         } catch (SQLException e) {
@@ -114,17 +117,17 @@ public class DataMySqlStorage {
      * @return
      */
     public Integer getCount() {
-            Connection conn = pool.getConnection();
+        Connection conn = pool.getConnection();
         Statement stmt = null;
         ResultSet rs = null;
         String sql = "SELECT COUNT(*)  \n" +
-                "FROM rd_data_field" ;
-        Integer count=0;
+                "FROM rd_data_field";
+        Integer count = 0;
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(sql);
             if (rs.first()) {
-                count=rs.getInt(1);
+                count = rs.getInt(1);
             }
         } catch (SQLException e) {
             logger.error("查询数据数量时出错 {}", e);
