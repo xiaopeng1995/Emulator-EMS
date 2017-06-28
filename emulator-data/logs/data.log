@@ -1,0 +1,1087 @@
+2017-06-20 15:07:06.925 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[192.168.117.250:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:07:07.092 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=192.168.117.250:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:07:27.102 [cluster-ClusterId{value='5948c99aebdcf02718d04b60', description='null'}-192.168.117.250:27017] INFO  o.m.driver.cluster - Exception in monitor thread while connecting to server 192.168.117.250:27017
+ com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+2017-06-20 15:08:15.366 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:08:15.489 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:08:15.561 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:08:16.250 [cluster-ClusterId{value='5948c9dfebdcf0083096c6c5', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:11465}] to 139.196.235.75:27017
+ 2017-06-20 15:08:16.255 [cluster-ClusterId{value='5948c9dfebdcf0083096c6c5', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4096460}
+ 2017-06-20 15:08:16.321 [cluster-ClusterId{value='5948c9dfebdcf0083096c6c6', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:11466}] to 139.196.235.75:27017
+ 2017-06-20 15:08:16.326 [cluster-ClusterId{value='5948c9dfebdcf0083096c6c6', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4465020}
+ 2017-06-20 15:08:16.421 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:11467}] to 139.196.235.75:27017
+ 2017-06-20 15:08:16.904 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:11468}] to 139.196.235.75:27017
+ 2017-06-20 15:08:17.457 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-20 15:08:18.920 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-20 15:08:29.220 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-06-20 15:08:29.226 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52c9.加载完毕.
+ 2017-06-20 15:08:29.231 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52ca.加载完毕.
+ 2017-06-20 15:08:29.236 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3692.加载完毕.
+ 2017-06-20 15:08:29.242 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941de881f886d231d4d369e.加载完毕.
+ 2017-06-20 15:08:29.247 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3695.加载完毕.
+ 2017-06-20 15:08:29.247 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 5 个，实际加载任务 5 个 .EMS数据0个.PV数据5个
+ 2017-06-20 15:08:30.775 [main] INFO  i.j.d.EmulatorApplication - 5秒后开始启动任务.
+ 2017-06-20 15:08:35.775 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有接收任务..
+ 2017-06-20 15:08:35.805 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c9连接服务器 broker成功！
+ 2017-06-20 15:08:35.854 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52ca连接服务器 broker成功！
+ 2017-06-20 15:08:35.952 [pool-1-thread-5] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941de881f886d231d4d369e连接服务器 broker成功！
+ 2017-06-20 15:08:36.000 [pool-1-thread-6] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3695连接服务器 broker成功！
+ 2017-06-20 15:08:36.028 [main] INFO  i.j.d.EmulatorApplication - 所有接收任务启动完毕 共5个 
+ 2017-06-20 15:08:36.117 [pool-1-thread-4] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3692连接服务器 broker成功！
+ 2017-06-20 15:08:36.268 [MQTT Rec: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 接收线程:5941ddc71f886d231d4d3695断开连接1111
+ 2017-06-20 15:08:36.778 [MQTT Rec: 5941ddc71f886d231d4d3695] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:08:36.779 [MQTT Rec: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 无发送线程直接结束..
+ 2017-06-20 15:08:36.783 [MQTT Rec: 5941ddc71f886d231d4d3695] INFO  i.j.d.m.MqttConnThread - 一处意外停止...尝试5分钟后重启此任务!!
+ 2017-06-20 15:08:41.028 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有发送任务..
+ 2017-06-20 15:08:41.155 [pool-1-thread-8] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:11469}] to 139.196.235.75:27017
+ 2017-06-20 15:08:41.181 [pool-1-thread-9] INFO  o.m.d.connection - Opened connection [connectionId{localValue:6, serverValue:11470}] to 139.196.235.75:27017
+ 2017-06-20 15:08:41.282 [main] INFO  i.j.d.EmulatorApplication - 所有发送任务启动完毕 共5个
+ 2017-06-20 15:08:41.410 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:08:41.410 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:08:41.411 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:08:41.427 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:08:41.428 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:26
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.8,"Upv1":0.2,"Upv2":0.2,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.3,"RunT":462.0,"Pmax":26.7,"Uca":0.4,"Qac":0.4,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":370,"Uab":0.6,"Ia":0.5,"Ib":0.9,"Freq":0.9,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.8,"Upv1":0.2,"Upv2":0.2,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.3,"RunT":462.0,"Pmax":26.7,"Uca":0.4,"Qac":0.4,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":370,"Uab":0.6,"Ia":0.5,"Ib":0.9,"Freq":0.9,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:08:41.428 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:08:41.428 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:26
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":0.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.4,"Upv1":0.9,"Upv2":0.4,"Ipv1":0.4,"Ipv2":0.6,"Ipv3":0.9,"Mode":1,"Tcoil":0.2,"RunT":435.5,"Pmax":44.0,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":1.0,"Ib":0.9,"Freq":0.9,"Ic":0.9}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":0.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.4,"Upv1":0.9,"Upv2":0.4,"Ipv1":0.4,"Ipv2":0.6,"Ipv3":0.9,"Mode":1,"Tcoil":0.2,"RunT":435.5,"Pmax":44.0,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":1.0,"Ib":0.9,"Freq":0.9,"Ic":0.9}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":0.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.4,"Upv1":0.9,"Upv2":0.4,"Ipv1":0.4,"Ipv2":0.6,"Ipv3":0.9,"Mode":1,"Tcoil":0.2,"RunT":435.5,"Pmax":44.0,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":1.0,"Ib":0.9,"Freq":0.9,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:08:41.431 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:08:41.432 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:26
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.2,"Ubc":0.9,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":428.0,"Pmax":26.5,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.4,"Ib":0.0,"Freq":0.4,"Ic":0.5}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.2,"Ubc":0.9,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":428.0,"Pmax":26.5,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.4,"Ib":0.0,"Freq":0.4,"Ic":0.5}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.2,"Ubc":0.9,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":428.0,"Pmax":26.5,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.4,"Ib":0.0,"Freq":0.4,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:08:41.470 [pool-1-thread-10] INFO  o.m.d.connection - Opened connection [connectionId{localValue:7, serverValue:11471}] to 139.196.235.75:27017
+ 2017-06-20 15:08:41.511 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:08:41.514 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:08:41.514 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:26
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.8,"Upv3":0.2,"Ubc":0.9,"Upv1":0.0,"Upv2":0.9,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":447.4,"Pmax":20.3,"Uca":0.0,"Qac":0.1,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":154,"Uab":0.0,"Ia":0.6,"Ib":0.2,"Freq":0.1,"Ic":1.0}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.8,"Upv3":0.2,"Ubc":0.9,"Upv1":0.0,"Upv2":0.9,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":447.4,"Pmax":20.3,"Uca":0.0,"Qac":0.1,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":154,"Uab":0.0,"Ia":0.6,"Ib":0.2,"Freq":0.1,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:08:58.905 [MQTT Rec: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.m.MqttConnThread - 接收线程:593a33ec1f886d29fa8b52c8断开连接1111
+ 2017-06-20 15:08:58.915 [MQTT Rec: 593a33ec1f886d29fa8b52c8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:08:58.916 [MQTT Rec: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.m.MqttConnThread - 无发送线程直接结束..
+ 2017-06-20 15:08:58.917 [MQTT Rec: 593a33ec1f886d29fa8b52c8] INFO  i.j.d.m.MqttConnThread - sever_id断开30秒后重连!
+ 2017-06-20 15:09:28.960 [pool-1-thread-12] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-20 15:09:43.831 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:09:43.892 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:09:43.911 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:09:44.288 [cluster-ClusterId{value='5948ca37ebdcf00d589686ec', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:11480}] to 139.196.235.75:27017
+ 2017-06-20 15:09:44.294 [cluster-ClusterId{value='5948ca37ebdcf00d589686ec', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5066535}
+ 2017-06-20 15:09:44.308 [cluster-ClusterId{value='5948ca37ebdcf00d589686ed', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:11481}] to 139.196.235.75:27017
+ 2017-06-20 15:09:44.312 [cluster-ClusterId{value='5948ca37ebdcf00d589686ed', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4217448}
+ 2017-06-20 15:09:44.583 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:11482}] to 139.196.235.75:27017
+ 2017-06-20 15:09:44.900 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:11483}] to 139.196.235.75:27017
+ 2017-06-20 15:09:44.941 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-20 15:09:46.909 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-20 15:09:57.904 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:09:57.964 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:09:57.985 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:09:58.332 [cluster-ClusterId{value='5948ca45ebdcf022a092587f', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:11484}] to 139.196.235.75:27017
+ 2017-06-20 15:09:58.337 [cluster-ClusterId{value='5948ca45ebdcf022a092587f', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5062803}
+ 2017-06-20 15:09:58.546 [cluster-ClusterId{value='5948ca45ebdcf022a0925880', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:11485}] to 139.196.235.75:27017
+ 2017-06-20 15:09:58.553 [cluster-ClusterId{value='5948ca45ebdcf022a0925880', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=6741695}
+ 2017-06-20 15:09:58.626 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:11486}] to 139.196.235.75:27017
+ 2017-06-20 15:09:58.679 [main] INFO  i.j.d.EmulatorApplication - 启动本地模拟测试!!
+ 2017-06-20 15:09:58.779 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:11487}] to 139.196.235.75:27017
+ 2017-06-20 15:10:23.090 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:10:23.154 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:10:23.179 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:10:23.548 [cluster-ClusterId{value='5948ca5febdcf022705d5b88', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:11488}] to 139.196.235.75:27017
+ 2017-06-20 15:10:23.553 [cluster-ClusterId{value='5948ca5febdcf022705d5b88', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4655676}
+ 2017-06-20 15:10:23.554 [cluster-ClusterId{value='5948ca5febdcf022705d5b89', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:11489}] to 139.196.235.75:27017
+ 2017-06-20 15:10:23.559 [cluster-ClusterId{value='5948ca5febdcf022705d5b89', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5465887}
+ 2017-06-20 15:10:23.618 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:11490}] to 139.196.235.75:27017
+ 2017-06-20 15:10:23.668 [main] INFO  i.j.d.EmulatorApplication - 启动本地模拟测试!!
+ 2017-06-20 15:10:23.746 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:11491}] to 139.196.235.75:27017
+ 2017-06-20 15:10:23.798 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-20 15:10:25.757 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-20 15:10:30.990 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-06-20 15:10:30.990 [main] INFO  i.j.d.EmulatorApplication - 没有启动的ID
+ 2017-06-20 15:10:30.996 [main] DEBUG i.j.d.EmulatorApplication - Agent:null.加载完毕.
+ 2017-06-20 15:10:30.996 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 1 个，实际加载任务 -1 个 .EMS数据-1个.PV数据0个
+ 2017-06-20 15:10:32.607 [main] INFO  i.j.d.EmulatorApplication - 5秒后开始启动任务.
+ 2017-06-20 15:10:37.608 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有接收任务..
+ 2017-06-20 15:10:37.609 [main] INFO  i.j.d.EmulatorApplication - 所有接收任务启动完毕 共0个 
+ 2017-06-20 15:10:42.610 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有发送任务..
+ 2017-06-20 15:10:42.610 [main] INFO  i.j.d.EmulatorApplication - 所有发送任务启动完毕 共0个
+ 2017-06-20 15:11:09.647 [MQTT Rec: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.m.MqttConnThread - 接收线程:593a33ec1f886d29fa8b52c8断开连接1111
+ 2017-06-20 15:11:09.723 [MQTT Rec: 593a33ec1f886d29fa8b52c8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:11:09.724 [MQTT Rec: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.m.MqttConnThread - 无发送线程直接结束..
+ 2017-06-20 15:11:09.724 [MQTT Rec: 593a33ec1f886d29fa8b52c8] INFO  i.j.d.m.MqttConnThread - sever_id断开30秒后重连!
+ 2017-06-20 15:11:25.800 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:11:25.862 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:11:25.891 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:11:26.237 [cluster-ClusterId{value='5948ca9debdcf00648437284', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:11493}] to 139.196.235.75:27017
+ 2017-06-20 15:11:26.243 [cluster-ClusterId{value='5948ca9debdcf00648437284', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5288293}
+ 2017-06-20 15:11:26.249 [cluster-ClusterId{value='5948ca9debdcf00648437283', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:11492}] to 139.196.235.75:27017
+ 2017-06-20 15:11:26.256 [cluster-ClusterId{value='5948ca9debdcf00648437283', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=6965942}
+ 2017-06-20 15:11:26.329 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:11494}] to 139.196.235.75:27017
+ 2017-06-20 15:11:26.477 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:11495}] to 139.196.235.75:27017
+ 2017-06-20 15:11:26.622 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-20 15:11:28.493 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-20 15:11:31.778 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-06-20 15:11:32.006 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52c9.加载完毕.
+ 2017-06-20 15:11:32.016 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52ca.加载完毕.
+ 2017-06-20 15:11:32.023 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3692.加载完毕.
+ 2017-06-20 15:11:32.031 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941de881f886d231d4d369e.加载完毕.
+ 2017-06-20 15:11:32.039 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3695.加载完毕.
+ 2017-06-20 15:11:32.039 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 5 个，实际加载任务 5 个 .EMS数据0个.PV数据5个
+ 2017-06-20 15:11:38.254 [main] INFO  i.j.d.EmulatorApplication - 5秒后开始启动任务.
+ 2017-06-20 15:11:43.255 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有接收任务..
+ 2017-06-20 15:11:43.285 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c9连接服务器 broker成功！
+ 2017-06-20 15:11:43.334 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52ca连接服务器 broker成功！
+ 2017-06-20 15:11:43.384 [pool-1-thread-4] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3692连接服务器 broker成功！
+ 2017-06-20 15:11:43.434 [pool-1-thread-5] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941de881f886d231d4d369e连接服务器 broker成功！
+ 2017-06-20 15:11:43.507 [main] INFO  i.j.d.EmulatorApplication - 所有接收任务启动完毕 共5个 
+ 2017-06-20 15:11:43.729 [pool-1-thread-6] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3695连接服务器 broker成功！
+ 2017-06-20 15:11:43.796 [MQTT Rec: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 接收线程:5941ddc71f886d231d4d3695断开连接1111
+ 2017-06-20 15:11:43.891 [MQTT Rec: 5941ddc71f886d231d4d3695] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:11:43.891 [MQTT Rec: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 无发送线程直接结束..
+ 2017-06-20 15:11:43.898 [MQTT Rec: 5941ddc71f886d231d4d3695] INFO  i.j.d.m.MqttConnThread - 一处意外停止...尝试5分钟后重启此任务!!
+ 2017-06-20 15:11:48.507 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有发送任务..
+ 2017-06-20 15:11:48.625 [pool-1-thread-8] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:11496}] to 139.196.235.75:27017
+ 2017-06-20 15:11:48.655 [pool-1-thread-9] INFO  o.m.d.connection - Opened connection [connectionId{localValue:6, serverValue:11497}] to 139.196.235.75:27017
+ 2017-06-20 15:11:48.759 [main] INFO  i.j.d.EmulatorApplication - 所有发送任务启动完毕 共5个
+ 2017-06-20 15:11:48.760 [pool-1-thread-11] INFO  o.m.d.connection - Opened connection [connectionId{localValue:7, serverValue:11498}] to 139.196.235.75:27017
+ 2017-06-20 15:11:48.797 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:11:48.797 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:11:48.797 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:11:48.804 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:11:48.805 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:23
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.5,"Upv3":0.6,"Ubc":0.1,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.8,"Mode":1,"Tcoil":0.7,"RunT":464.3,"Pmax":22.9,"Uca":0.4,"Qac":0.5,"Pac":0.0,"Sac":0.9,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.1,"Ia":0.7,"Ib":0.3,"Freq":0.4,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.5,"Upv3":0.6,"Ubc":0.1,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.8,"Mode":1,"Tcoil":0.7,"RunT":464.3,"Pmax":22.9,"Uca":0.4,"Qac":0.5,"Pac":0.0,"Sac":0.9,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.1,"Ia":0.7,"Ib":0.3,"Freq":0.4,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:11:48.806 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:11:48.807 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:11:48.807 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:23
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.0,"DYield":0.0,"Tmod":0.5,"Upv3":0.1,"Ubc":1.0,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.1,"Ipv3":0.7,"Mode":1,"Tcoil":0.6,"RunT":445.9,"Pmax":33.4,"Uca":0.2,"Qac":0.4,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.5,"Ia":0.6,"Ib":0.8,"Freq":0.4,"Ic":0.2}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.0,"DYield":0.0,"Tmod":0.5,"Upv3":0.1,"Ubc":1.0,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.1,"Ipv3":0.7,"Mode":1,"Tcoil":0.6,"RunT":445.9,"Pmax":33.4,"Uca":0.2,"Qac":0.4,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.5,"Ia":0.6,"Ib":0.8,"Freq":0.4,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:11:48.807 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:23
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":0.0,"Tmod":0.5,"Upv3":0.9,"Ubc":0.6,"Upv1":0.9,"Upv2":1.0,"Ipv1":0.1,"Ipv2":1.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.8,"RunT":449.9,"Pmax":26.6,"Uca":0.1,"Qac":0.2,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.3,"Ib":0.7,"Freq":0.9,"Ic":0.9}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":0.0,"Tmod":0.5,"Upv3":0.9,"Ubc":0.6,"Upv1":0.9,"Upv2":1.0,"Ipv1":0.1,"Ipv2":1.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.8,"RunT":449.9,"Pmax":26.6,"Uca":0.1,"Qac":0.2,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.3,"Ib":0.7,"Freq":0.9,"Ic":0.9}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":0.0,"Tmod":0.5,"Upv3":0.9,"Ubc":0.6,"Upv1":0.9,"Upv2":1.0,"Ipv1":0.1,"Ipv2":1.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.8,"RunT":449.9,"Pmax":26.6,"Uca":0.1,"Qac":0.2,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.3,"Ib":0.7,"Freq":0.9,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:11:48.838 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:11:48.840 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:11:48.840 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:23
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.6,"DYield":0.0,"Tmod":1.0,"Upv3":0.5,"Ubc":0.8,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.8,"Ipv2":0.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.8,"RunT":453.2,"Pmax":42.0,"Uca":0.9,"Qac":0.3,"Pac":0.0,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":0.8,"Ib":0.8,"Freq":0.6,"Ic":0.2}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.6,"DYield":0.0,"Tmod":1.0,"Upv3":0.5,"Ubc":0.8,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.8,"Ipv2":0.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.8,"RunT":453.2,"Pmax":42.0,"Uca":0.9,"Qac":0.3,"Pac":0.0,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":0.8,"Ib":0.8,"Freq":0.6,"Ic":0.2}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.6,"DYield":0.0,"Tmod":1.0,"Upv3":0.5,"Ubc":0.8,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.8,"Ipv2":0.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.8,"RunT":453.2,"Pmax":42.0,"Uca":0.9,"Qac":0.3,"Pac":0.0,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":0.8,"Ib":0.8,"Freq":0.6,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:11:59.937 [MQTT Rec: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.m.MqttConnThread - 接收线程:593a33ec1f886d29fa8b52c8断开连接1111
+ 2017-06-20 15:11:59.941 [MQTT Rec: 593a33ec1f886d29fa8b52c8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:11:59.942 [MQTT Rec: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.m.MqttConnThread - 无发送线程直接结束..
+ 2017-06-20 15:11:59.942 [MQTT Rec: 593a33ec1f886d29fa8b52c8] INFO  i.j.d.m.MqttConnThread - sever_id断开30秒后重连!
+ 2017-06-20 15:13:10.187 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:13:10.248 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:13:10.273 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:13:10.639 [cluster-ClusterId{value='5948cb06ebdcf03854233573', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:11504}] to 139.196.235.75:27017
+ 2017-06-20 15:13:10.648 [cluster-ClusterId{value='5948cb06ebdcf03854233573', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=8312664}
+ 2017-06-20 15:13:10.676 [cluster-ClusterId{value='5948cb06ebdcf03854233572', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:11503}] to 139.196.235.75:27017
+ 2017-06-20 15:13:10.683 [cluster-ClusterId{value='5948cb06ebdcf03854233572', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=6387753}
+ 2017-06-20 15:13:10.709 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:11506}] to 139.196.235.75:27017
+ 2017-06-20 15:13:10.905 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:11507}] to 139.196.235.75:27017
+ 2017-06-20 15:13:10.973 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-20 15:13:12.918 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-20 15:13:17.567 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-06-20 15:13:17.576 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52c9.加载完毕.
+ 2017-06-20 15:13:17.583 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52ca.加载完毕.
+ 2017-06-20 15:13:17.590 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3692.加载完毕.
+ 2017-06-20 15:13:17.596 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941de881f886d231d4d369e.加载完毕.
+ 2017-06-20 15:13:17.604 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3695.加载完毕.
+ 2017-06-20 15:13:17.604 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 5 个，实际加载任务 5 个 .EMS数据0个.PV数据5个
+ 2017-06-20 15:13:18.718 [main] INFO  i.j.d.EmulatorApplication - 5秒后开始启动任务.
+ 2017-06-20 15:13:23.720 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有接收任务..
+ 2017-06-20 15:13:23.743 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c9连接服务器 broker成功！
+ 2017-06-20 15:13:23.801 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52ca连接服务器 broker成功！
+ 2017-06-20 15:13:23.843 [pool-1-thread-4] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3692连接服务器 broker成功！
+ 2017-06-20 15:13:23.895 [pool-1-thread-5] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941de881f886d231d4d369e连接服务器 broker成功！
+ 2017-06-20 15:13:23.957 [pool-1-thread-6] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3695连接服务器 broker成功！
+ 2017-06-20 15:13:23.971 [main] INFO  i.j.d.EmulatorApplication - 所有接收任务启动完毕 共5个 
+ 2017-06-20 15:13:28.972 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有发送任务..
+ 2017-06-20 15:13:29.080 [pool-1-thread-7] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:11510}] to 139.196.235.75:27017
+ 2017-06-20 15:13:29.111 [pool-1-thread-9] INFO  o.m.d.connection - Opened connection [connectionId{localValue:6, serverValue:11511}] to 139.196.235.75:27017
+ 2017-06-20 15:13:29.224 [main] INFO  i.j.d.EmulatorApplication - 所有发送任务启动完毕 共5个
+ 2017-06-20 15:13:29.295 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:13:29.296 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:13:29.297 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:13:29.297 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:13:29.301 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:13:29.350 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:13:29.350 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:13:29.350 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:13:29.350 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:13:29.350 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:13:29.350 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:19
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.0,"Upv3":0.8,"Ubc":0.7,"Upv1":0.1,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.0,"Ipv3":0.4,"Mode":1,"Tcoil":0.8,"RunT":476.2,"Pmax":47.8,"Uca":0.7,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.1,"Ia":0.2,"Ib":0.3,"Freq":0.1,"Ic":0.6}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.0,"Upv3":0.8,"Ubc":0.7,"Upv1":0.1,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.0,"Ipv3":0.4,"Mode":1,"Tcoil":0.8,"RunT":476.2,"Pmax":47.8,"Uca":0.7,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.1,"Ia":0.2,"Ib":0.3,"Freq":0.1,"Ic":0.6}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.0,"Upv3":0.8,"Ubc":0.7,"Upv1":0.1,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.0,"Ipv3":0.4,"Mode":1,"Tcoil":0.8,"RunT":476.2,"Pmax":47.8,"Uca":0.7,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.1,"Ia":0.2,"Ib":0.3,"Freq":0.1,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:13:29.350 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:19
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.6,"Upv1":0.5,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.7,"RunT":425.2,"Pmax":45.7,"Uca":0.0,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.7,"Ia":0.4,"Ib":0.4,"Freq":0.1,"Ic":1.0}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.6,"Upv1":0.5,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.7,"RunT":425.2,"Pmax":45.7,"Uca":0.0,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.7,"Ia":0.4,"Ib":0.4,"Freq":0.1,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:13:29.350 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:19
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.2,"Upv3":0.0,"Ubc":0.2,"Upv1":0.0,"Upv2":0.7,"Ipv1":0.7,"Ipv2":1.0,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":456.3,"Pmax":26.6,"Uca":0.6,"Qac":0.4,"Pac":0.0,"Sac":0.7,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.0,"Ia":0.8,"Ib":0.6,"Freq":0.9,"Ic":0.7}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.2,"Upv3":0.0,"Ubc":0.2,"Upv1":0.0,"Upv2":0.7,"Ipv1":0.7,"Ipv2":1.0,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":456.3,"Pmax":26.6,"Uca":0.6,"Qac":0.4,"Pac":0.0,"Sac":0.7,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.0,"Ia":0.8,"Ib":0.6,"Freq":0.9,"Ic":0.7}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.2,"Upv3":0.0,"Ubc":0.2,"Upv1":0.0,"Upv2":0.7,"Ipv1":0.7,"Ipv2":1.0,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":456.3,"Pmax":26.6,"Uca":0.6,"Qac":0.4,"Pac":0.0,"Sac":0.7,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.0,"Ia":0.8,"Ib":0.6,"Freq":0.9,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:13:29.350 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:19
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":0.0,"Tmod":1.0,"Upv3":0.1,"Ubc":0.2,"Upv1":0.9,"Upv2":0.5,"Ipv1":0.6,"Ipv2":1.0,"Ipv3":0.7,"Mode":1,"Tcoil":0.6,"RunT":460.7,"Pmax":44.3,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.2,"PF":0.7,"LCDVer":"02.21","TYield":370,"Uab":1.0,"Ia":0.0,"Ib":0.1,"Freq":0.2,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":0.0,"Tmod":1.0,"Upv3":0.1,"Ubc":0.2,"Upv1":0.9,"Upv2":0.5,"Ipv1":0.6,"Ipv2":1.0,"Ipv3":0.7,"Mode":1,"Tcoil":0.6,"RunT":460.7,"Pmax":44.3,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.2,"PF":0.7,"LCDVer":"02.21","TYield":370,"Uab":1.0,"Ia":0.0,"Ib":0.1,"Freq":0.2,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:13:29.350 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:19
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":0.0,"Tmod":0.3,"Upv3":0.8,"Ubc":0.7,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":1.0,"RunT":462.9,"Pmax":25.4,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.6,"Ib":0.4,"Freq":0.0,"Ic":0.8}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":0.0,"Tmod":0.3,"Upv3":0.8,"Ubc":0.7,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":1.0,"RunT":462.9,"Pmax":25.4,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.6,"Ib":0.4,"Freq":0.0,"Ic":0.8}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":0.0,"Tmod":0.3,"Upv3":0.8,"Ubc":0.7,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":1.0,"RunT":462.9,"Pmax":25.4,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.6,"Ib":0.4,"Freq":0.0,"Ic":0.8}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":0.0,"Tmod":0.3,"Upv3":0.8,"Ubc":0.7,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":1.0,"RunT":462.9,"Pmax":25.4,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.6,"Ib":0.4,"Freq":0.0,"Ic":0.8}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":0.0,"Tmod":0.3,"Upv3":0.8,"Ubc":0.7,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":1.0,"RunT":462.9,"Pmax":25.4,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.6,"Ib":0.4,"Freq":0.0,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:14:29.399 [pool-1-thread-9] INFO  o.m.d.connection - Opened connection [connectionId{localValue:9, serverValue:11515}] to 139.196.235.75:27017
+ 2017-06-20 15:14:29.399 [pool-1-thread-7] INFO  o.m.d.connection - Opened connection [connectionId{localValue:7, serverValue:11513}] to 139.196.235.75:27017
+ 2017-06-20 15:14:29.404 [pool-1-thread-8] INFO  o.m.d.connection - Opened connection [connectionId{localValue:8, serverValue:11514}] to 139.196.235.75:27017
+ 2017-06-20 15:14:29.405 [pool-1-thread-11] INFO  o.m.d.connection - Opened connection [connectionId{localValue:10, serverValue:11516}] to 139.196.235.75:27017
+ 2017-06-20 15:14:29.415 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:14:29.421 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:14:29.421 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:79
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.6,"DYield":0.0,"Tmod":0.4,"Upv3":0.8,"Ubc":0.5,"Upv1":0.5,"Upv2":0.8,"Ipv1":0.2,"Ipv2":0.0,"Ipv3":1.0,"Mode":1,"Tcoil":0.7,"RunT":469.0,"Pmax":39.0,"Uca":0.4,"Qac":0.0,"Pac":0.0,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":154,"Uab":0.4,"Ia":0.1,"Ib":0.7,"Freq":0.7,"Ic":0.4}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.6,"DYield":0.0,"Tmod":0.4,"Upv3":0.8,"Ubc":0.5,"Upv1":0.5,"Upv2":0.8,"Ipv1":0.2,"Ipv2":0.0,"Ipv3":1.0,"Mode":1,"Tcoil":0.7,"RunT":469.0,"Pmax":39.0,"Uca":0.4,"Qac":0.0,"Pac":0.0,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":154,"Uab":0.4,"Ia":0.1,"Ib":0.7,"Freq":0.7,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:14:29.437 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:14:29.441 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:14:29.442 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:79
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.7,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.3,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":414.2,"Pmax":26.0,"Uca":0.1,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.5,"LCDVer":"02.21","TYield":1247,"Uab":0.8,"Ia":0.2,"Ib":0.1,"Freq":0.6,"Ic":0.8}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.7,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.3,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":414.2,"Pmax":26.0,"Uca":0.1,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.5,"LCDVer":"02.21","TYield":1247,"Uab":0.8,"Ia":0.2,"Ib":0.1,"Freq":0.6,"Ic":0.8}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.7,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.3,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":414.2,"Pmax":26.0,"Uca":0.1,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.5,"LCDVer":"02.21","TYield":1247,"Uab":0.8,"Ia":0.2,"Ib":0.1,"Freq":0.6,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:14:29.445 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:14:29.447 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:14:29.450 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:14:29.451 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:14:29.451 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:79
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":1.0,"Upv3":0.5,"Ubc":0.1,"Upv1":0.0,"Upv2":0.7,"Ipv1":0.7,"Ipv2":0.8,"Ipv3":1.0,"Mode":1,"Tcoil":0.7,"RunT":451.3,"Pmax":49.6,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":0.4,"Ib":0.9,"Freq":1.0,"Ic":0.4}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":1.0,"Upv3":0.5,"Ubc":0.1,"Upv1":0.0,"Upv2":0.7,"Ipv1":0.7,"Ipv2":0.8,"Ipv3":1.0,"Mode":1,"Tcoil":0.7,"RunT":451.3,"Pmax":49.6,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":0.4,"Ib":0.9,"Freq":1.0,"Ic":0.4}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":1.0,"Upv3":0.5,"Ubc":0.1,"Upv1":0.0,"Upv2":0.7,"Ipv1":0.7,"Ipv2":0.8,"Ipv3":1.0,"Mode":1,"Tcoil":0.7,"RunT":451.3,"Pmax":49.6,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.4,"Ia":0.4,"Ib":0.9,"Freq":1.0,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:14:29.451 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:79
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.1,"DYield":0.0,"Tmod":0.3,"Upv3":0.0,"Ubc":0.3,"Upv1":0.0,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":1.0,"RunT":425.0,"Pmax":45.4,"Uca":0.9,"Qac":0.1,"Pac":0.0,"Sac":0.8,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.6,"Ia":0.9,"Ib":0.6,"Freq":0.9,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.1,"DYield":0.0,"Tmod":0.3,"Upv3":0.0,"Ubc":0.3,"Upv1":0.0,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":1.0,"RunT":425.0,"Pmax":45.4,"Uca":0.9,"Qac":0.1,"Pac":0.0,"Sac":0.8,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.6,"Ia":0.9,"Ib":0.6,"Freq":0.9,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:14:29.467 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:14:29.469 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:14:29.469 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:79
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.0,"Upv3":0.4,"Ubc":0.2,"Upv1":0.7,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.0,"RunT":464.3,"Pmax":30.7,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.7,"Ib":0.8,"Freq":0.1,"Ic":0.6}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.0,"Upv3":0.4,"Ubc":0.2,"Upv1":0.7,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.0,"RunT":464.3,"Pmax":30.7,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.7,"Ib":0.8,"Freq":0.1,"Ic":0.6}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.0,"Upv3":0.4,"Ubc":0.2,"Upv1":0.7,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.0,"RunT":464.3,"Pmax":30.7,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.7,"Ib":0.8,"Freq":0.1,"Ic":0.6}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.0,"Upv3":0.4,"Ubc":0.2,"Upv1":0.7,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.0,"RunT":464.3,"Pmax":30.7,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.7,"Ib":0.8,"Freq":0.1,"Ic":0.6}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.0,"Upv3":0.4,"Ubc":0.2,"Upv1":0.7,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.0,"RunT":464.3,"Pmax":30.7,"Uca":0.5,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.7,"Ib":0.8,"Freq":0.1,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:15:03.612 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9收到的消息为：{"SetMHRegM":[{"Value":"2","MsgID":"qFAGGG","RegStart":"2","Bus":0,"RegType":4,"Count":"2","ModID":1}]}
+ 2017-06-20 15:15:03.637 [MQTT Call: 593a33ec1f886d29fa8b52c9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:15:03.678 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 接收线程:593a33ec1f886d29fa8b52c9断开连接1111
+ 2017-06-20 15:15:03.683 [MQTT Call: 593a33ec1f886d29fa8b52c9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:15:03.683 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-06-20 15:15:03.693 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 发送线程:593a33ec1f886d29fa8b52c9断开连接2222 threadID:[22]
+ 2017-06-20 15:15:03.699 [MQTT Call: 593a33ec1f886d29fa8b52c9] INFO  i.j.d.m.MqttConnThread - 一处意外停止...尝试5分钟后重启此任务!!
+ 2017-06-20 15:15:29.451 [pool-1-thread-11] DEBUG i.j.data.job.PVjob - 593a33ec1f886d29fa8b52c9Old  worker thread:22End!
+ 2017-06-20 15:15:29.490 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:15:29.495 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:15:29.495 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:139
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":0.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.2,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.0,"Mode":1,"Tcoil":0.1,"RunT":477.5,"Pmax":47.1,"Uca":0.9,"Qac":0.5,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":154,"Uab":0.8,"Ia":0.5,"Ib":0.0,"Freq":0.4,"Ic":0.7}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":0.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.2,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.0,"Mode":1,"Tcoil":0.1,"RunT":477.5,"Pmax":47.1,"Uca":0.9,"Qac":0.5,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":154,"Uab":0.8,"Ia":0.5,"Ib":0.0,"Freq":0.4,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:15:29.502 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:15:29.506 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:15:29.506 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:139
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":0.3,"Upv3":0.9,"Ubc":0.1,"Upv1":0.0,"Upv2":0.1,"Ipv1":1.0,"Ipv2":0.2,"Ipv3":0.9,"Mode":1,"Tcoil":0.5,"RunT":433.6,"Pmax":46.4,"Uca":0.4,"Qac":0.9,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":370,"Uab":0.5,"Ia":1.0,"Ib":0.4,"Freq":0.7,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":0.3,"Upv3":0.9,"Ubc":0.1,"Upv1":0.0,"Upv2":0.1,"Ipv1":1.0,"Ipv2":0.2,"Ipv3":0.9,"Mode":1,"Tcoil":0.5,"RunT":433.6,"Pmax":46.4,"Uca":0.4,"Qac":0.9,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":370,"Uab":0.5,"Ia":1.0,"Ib":0.4,"Freq":0.7,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:15:29.516 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:15:29.520 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:15:29.520 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:139
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.3,"Upv3":0.3,"Ubc":0.5,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.9,"Ipv3":0.7,"Mode":1,"Tcoil":0.9,"RunT":467.3,"Pmax":47.5,"Uca":0.9,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.5,"Ib":0.5,"Freq":0.4,"Ic":0.7}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.3,"Upv3":0.3,"Ubc":0.5,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.9,"Ipv3":0.7,"Mode":1,"Tcoil":0.9,"RunT":467.3,"Pmax":47.5,"Uca":0.9,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.5,"Ib":0.5,"Freq":0.4,"Ic":0.7}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.3,"Upv3":0.3,"Ubc":0.5,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.9,"Ipv3":0.7,"Mode":1,"Tcoil":0.9,"RunT":467.3,"Pmax":47.5,"Uca":0.9,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.5,"Ib":0.5,"Freq":0.4,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:15:29.567 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:15:29.572 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:15:29.573 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:139
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.6,"Ubc":0.7,"Upv1":0.0,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":453.7,"Pmax":49.2,"Uca":0.2,"Qac":0.8,"Pac":0.0,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.2,"Ib":0.8,"Freq":0.1,"Ic":0.6}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.6,"Ubc":0.7,"Upv1":0.0,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":453.7,"Pmax":49.2,"Uca":0.2,"Qac":0.8,"Pac":0.0,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.2,"Ib":0.8,"Freq":0.1,"Ic":0.6}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.6,"Ubc":0.7,"Upv1":0.0,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":453.7,"Pmax":49.2,"Uca":0.2,"Qac":0.8,"Pac":0.0,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.2,"Ib":0.8,"Freq":0.1,"Ic":0.6}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.6,"Ubc":0.7,"Upv1":0.0,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":453.7,"Pmax":49.2,"Uca":0.2,"Qac":0.8,"Pac":0.0,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.2,"Ib":0.8,"Freq":0.1,"Ic":0.6}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.6,"Ubc":0.7,"Upv1":0.0,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":453.7,"Pmax":49.2,"Uca":0.2,"Qac":0.8,"Pac":0.0,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.2,"Ib":0.8,"Freq":0.1,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:16:29.548 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:16:29.552 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:16:29.558 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:16:29.559 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:16:29.559 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:199
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":0.0,"Tmod":0.9,"Upv3":0.8,"Ubc":0.9,"Upv1":0.5,"Upv2":0.9,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":447.5,"Pmax":39.4,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.3,"Ia":0.8,"Ib":0.8,"Freq":0.2,"Ic":0.2}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":0.0,"Tmod":0.9,"Upv3":0.8,"Ubc":0.9,"Upv1":0.5,"Upv2":0.9,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":447.5,"Pmax":39.4,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.3,"Ia":0.8,"Ib":0.8,"Freq":0.2,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:16:29.559 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:199
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.6,"DYield":0.0,"Tmod":0.9,"Upv3":0.3,"Ubc":0.1,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.2,"RunT":419.1,"Pmax":47.4,"Uca":0.4,"Qac":0.0,"Pac":0.0,"Sac":0.6,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":1.0,"Ib":0.5,"Freq":0.9,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.6,"DYield":0.0,"Tmod":0.9,"Upv3":0.3,"Ubc":0.1,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.2,"RunT":419.1,"Pmax":47.4,"Uca":0.4,"Qac":0.0,"Pac":0.0,"Sac":0.6,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":1.0,"Ib":0.5,"Freq":0.9,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:16:29.574 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:16:29.576 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:16:29.577 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:199
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.6,"DYield":0.0,"Tmod":0.2,"Upv3":0.8,"Ubc":0.7,"Upv1":0.6,"Upv2":0.1,"Ipv1":0.6,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":464.9,"Pmax":34.8,"Uca":0.4,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.4,"Ib":1.0,"Freq":0.5,"Ic":0.5}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.6,"DYield":0.0,"Tmod":0.2,"Upv3":0.8,"Ubc":0.7,"Upv1":0.6,"Upv2":0.1,"Ipv1":0.6,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":464.9,"Pmax":34.8,"Uca":0.4,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.4,"Ib":1.0,"Freq":0.5,"Ic":0.5}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.6,"DYield":0.0,"Tmod":0.2,"Upv3":0.8,"Ubc":0.7,"Upv1":0.6,"Upv2":0.1,"Ipv1":0.6,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":464.9,"Pmax":34.8,"Uca":0.4,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.3,"Ia":0.4,"Ib":1.0,"Freq":0.5,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:16:29.635 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:16:29.638 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:16:29.639 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:199
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.3,"Upv3":0.1,"Ubc":0.4,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":459.7,"Pmax":27.9,"Uca":0.7,"Qac":0.2,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.3,"Ib":1.0,"Freq":0.7,"Ic":0.1}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.3,"Upv3":0.1,"Ubc":0.4,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":459.7,"Pmax":27.9,"Uca":0.7,"Qac":0.2,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.3,"Ib":1.0,"Freq":0.7,"Ic":0.1}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.3,"Upv3":0.1,"Ubc":0.4,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":459.7,"Pmax":27.9,"Uca":0.7,"Qac":0.2,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.3,"Ib":1.0,"Freq":0.7,"Ic":0.1}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.3,"Upv3":0.1,"Ubc":0.4,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":459.7,"Pmax":27.9,"Uca":0.7,"Qac":0.2,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.3,"Ib":1.0,"Freq":0.7,"Ic":0.1}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.3,"Upv3":0.1,"Ubc":0.4,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":459.7,"Pmax":27.9,"Uca":0.7,"Qac":0.2,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.3,"Ib":1.0,"Freq":0.7,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:17:29.908 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:17:29.914 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:17:29.915 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:17:29.915 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:240	server run time:259
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":0.0,"Tmod":0.8,"Upv3":0.0,"Ubc":0.8,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":466.1,"Pmax":46.8,"Uca":0.6,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":0.5,"Ib":0.7,"Freq":0.4,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":0.0,"Tmod":0.8,"Upv3":0.0,"Ubc":0.8,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":466.1,"Pmax":46.8,"Uca":0.6,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":0.5,"Ib":0.7,"Freq":0.4,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:17:29.922 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:17:29.924 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:240	server run time:259
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":0.7,"Upv3":1.0,"Ubc":0.3,"Upv1":0.3,"Upv2":0.1,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":449.9,"Pmax":34.4,"Uca":0.6,"Qac":0.0,"Pac":0.0,"Sac":1.0,"PF":0.5,"LCDVer":"02.21","TYield":154,"Uab":1.0,"Ia":0.8,"Ib":0.0,"Freq":1.0,"Ic":0.5}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":0.7,"Upv3":1.0,"Ubc":0.3,"Upv1":0.3,"Upv2":0.1,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":449.9,"Pmax":34.4,"Uca":0.6,"Qac":0.0,"Pac":0.0,"Sac":1.0,"PF":0.5,"LCDVer":"02.21","TYield":154,"Uab":1.0,"Ia":0.8,"Ib":0.0,"Freq":1.0,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:17:29.936 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:17:29.942 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:17:29.943 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:240	server run time:259
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":0.0,"Tmod":0.7,"Upv3":0.7,"Ubc":0.2,"Upv1":0.5,"Upv2":0.5,"Ipv1":0.7,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":457.8,"Pmax":36.5,"Uca":0.3,"Qac":0.0,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.6,"Ia":0.5,"Ib":0.4,"Freq":0.3,"Ic":0.4}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":0.0,"Tmod":0.7,"Upv3":0.7,"Ubc":0.2,"Upv1":0.5,"Upv2":0.5,"Ipv1":0.7,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":457.8,"Pmax":36.5,"Uca":0.3,"Qac":0.0,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.6,"Ia":0.5,"Ib":0.4,"Freq":0.3,"Ic":0.4}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":0.0,"Tmod":0.7,"Upv3":0.7,"Ubc":0.2,"Upv1":0.5,"Upv2":0.5,"Ipv1":0.7,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":457.8,"Pmax":36.5,"Uca":0.3,"Qac":0.0,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.6,"Ia":0.5,"Ib":0.4,"Freq":0.3,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:17:30.055 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:17:30.063 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:17:30.063 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:241	server run time:260
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.8,"Upv3":0.1,"Ubc":0.1,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":460.8,"Pmax":25.3,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.4,"Ib":0.5,"Freq":0.3,"Ic":0.3}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.8,"Upv3":0.1,"Ubc":0.1,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":460.8,"Pmax":25.3,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.4,"Ib":0.5,"Freq":0.3,"Ic":0.3}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.8,"Upv3":0.1,"Ubc":0.1,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":460.8,"Pmax":25.3,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.4,"Ib":0.5,"Freq":0.3,"Ic":0.3}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.8,"Upv3":0.1,"Ubc":0.1,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":460.8,"Pmax":25.3,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.4,"Ib":0.5,"Freq":0.3,"Ic":0.3}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.8,"Upv3":0.1,"Ubc":0.1,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":460.8,"Pmax":25.3,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":0,"Uab":0.9,"Ia":0.4,"Ib":0.5,"Freq":0.3,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:17:46.193 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:17:46.261 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:17:46.281 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:17:46.506 [cluster-ClusterId{value='5948cc1aebdcf01254dc4c95', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:11518}] to 139.196.235.75:27017
+ 2017-06-20 15:17:46.507 [cluster-ClusterId{value='5948cc1aebdcf01254dc4c94', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:11517}] to 139.196.235.75:27017
+ 2017-06-20 15:17:46.511 [cluster-ClusterId{value='5948cc1aebdcf01254dc4c95', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4371714}
+ 2017-06-20 15:17:46.512 [cluster-ClusterId{value='5948cc1aebdcf01254dc4c94', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4283384}
+ 2017-06-20 15:17:46.559 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:11519}] to 139.196.235.75:27017
+ 2017-06-20 15:17:46.680 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:11520}] to 139.196.235.75:27017
+ 2017-06-20 15:17:46.777 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-20 15:17:48.717 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-20 15:17:52.479 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-06-20 15:17:52.487 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52c9.加载完毕.
+ 2017-06-20 15:17:52.492 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52ca.加载完毕.
+ 2017-06-20 15:17:52.501 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3692.加载完毕.
+ 2017-06-20 15:17:52.506 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941de881f886d231d4d369e.加载完毕.
+ 2017-06-20 15:17:52.512 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3695.加载完毕.
+ 2017-06-20 15:17:52.513 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 5 个，实际加载任务 5 个 .EMS数据0个.PV数据5个
+ 2017-06-20 15:17:53.846 [main] INFO  i.j.d.EmulatorApplication - 5秒后开始启动任务.
+ 2017-06-20 15:17:58.847 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有接收任务..
+ 2017-06-20 15:17:58.873 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c9连接服务器 broker成功！
+ 2017-06-20 15:17:58.920 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52ca连接服务器 broker成功！
+ 2017-06-20 15:17:58.973 [pool-1-thread-4] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3692连接服务器 broker成功！
+ 2017-06-20 15:17:59.033 [pool-1-thread-5] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941de881f886d231d4d369e连接服务器 broker成功！
+ 2017-06-20 15:17:59.072 [pool-1-thread-6] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3695连接服务器 broker成功！
+ 2017-06-20 15:17:59.098 [main] INFO  i.j.d.EmulatorApplication - 所有接收任务启动完毕 共5个 
+ 2017-06-20 15:18:04.099 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有发送任务..
+ 2017-06-20 15:18:04.205 [pool-1-thread-8] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:11521}] to 139.196.235.75:27017
+ 2017-06-20 15:18:04.298 [pool-1-thread-9] INFO  o.m.d.connection - Opened connection [connectionId{localValue:6, serverValue:11522}] to 139.196.235.75:27017
+ 2017-06-20 15:18:04.357 [pool-1-thread-9] INFO  o.m.d.connection - Opened connection [connectionId{localValue:7, serverValue:11523}] to 139.196.235.75:27017
+ 2017-06-20 15:18:04.357 [main] INFO  i.j.d.EmulatorApplication - 所有发送任务启动完毕 共5个
+ 2017-06-20 15:18:04.386 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:18:04.389 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:18:04.389 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:18:04.396 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:18:04.399 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:18:04.441 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:18:04.441 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:18:04.441 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:18:04.441 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:18:04.442 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:18:04.442 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:18
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":0.0,"Tmod":0.1,"Upv3":1.0,"Ubc":0.2,"Upv1":1.0,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.3,"Ipv3":0.8,"Mode":1,"Tcoil":0.8,"RunT":419.4,"Pmax":32.5,"Uca":0.6,"Qac":0.1,"Pac":0.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":0.9,"Ib":0.1,"Freq":0.9,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":0.0,"Tmod":0.1,"Upv3":1.0,"Ubc":0.2,"Upv1":1.0,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.3,"Ipv3":0.8,"Mode":1,"Tcoil":0.8,"RunT":419.4,"Pmax":32.5,"Uca":0.6,"Qac":0.1,"Pac":0.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":0.9,"Ib":0.1,"Freq":0.9,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:18:04.442 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:18
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.5,"DYield":0.0,"Tmod":0.1,"Upv3":0.2,"Ubc":0.1,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.0,"Ipv2":0.9,"Ipv3":0.0,"Mode":1,"Tcoil":0.2,"RunT":427.6,"Pmax":44.8,"Uca":0.2,"Qac":1.0,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.6,"Ia":0.0,"Ib":0.6,"Freq":0.9,"Ic":0.7}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.5,"DYield":0.0,"Tmod":0.1,"Upv3":0.2,"Ubc":0.1,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.0,"Ipv2":0.9,"Ipv3":0.0,"Mode":1,"Tcoil":0.2,"RunT":427.6,"Pmax":44.8,"Uca":0.2,"Qac":1.0,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.6,"Ia":0.0,"Ib":0.6,"Freq":0.9,"Ic":0.7}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.5,"DYield":0.0,"Tmod":0.1,"Upv3":0.2,"Ubc":0.1,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.0,"Ipv2":0.9,"Ipv3":0.0,"Mode":1,"Tcoil":0.2,"RunT":427.6,"Pmax":44.8,"Uca":0.2,"Qac":1.0,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.6,"Ia":0.0,"Ib":0.6,"Freq":0.9,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:18:04.442 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:18
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":0.0,"Tmod":0.5,"Upv3":0.4,"Ubc":0.5,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.9,"Ipv3":0.5,"Mode":1,"Tcoil":0.0,"RunT":475.7,"Pmax":48.1,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.5,"Ia":0.9,"Ib":0.6,"Freq":0.1,"Ic":0.6}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":0.0,"Tmod":0.5,"Upv3":0.4,"Ubc":0.5,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.9,"Ipv3":0.5,"Mode":1,"Tcoil":0.0,"RunT":475.7,"Pmax":48.1,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.5,"Ia":0.9,"Ib":0.6,"Freq":0.1,"Ic":0.6}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":0.0,"Tmod":0.5,"Upv3":0.4,"Ubc":0.5,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.9,"Ipv3":0.5,"Mode":1,"Tcoil":0.0,"RunT":475.7,"Pmax":48.1,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.5,"Ia":0.9,"Ib":0.6,"Freq":0.1,"Ic":0.6}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":0.0,"Tmod":0.5,"Upv3":0.4,"Ubc":0.5,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.9,"Ipv3":0.5,"Mode":1,"Tcoil":0.0,"RunT":475.7,"Pmax":48.1,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.5,"Ia":0.9,"Ib":0.6,"Freq":0.1,"Ic":0.6}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":0.0,"Tmod":0.5,"Upv3":0.4,"Ubc":0.5,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.9,"Ipv3":0.5,"Mode":1,"Tcoil":0.0,"RunT":475.7,"Pmax":48.1,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.5,"Ia":0.9,"Ib":0.6,"Freq":0.1,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:18:04.442 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:18
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":0.0,"Tmod":0.4,"Upv3":0.8,"Ubc":0.1,"Upv1":0.9,"Upv2":0.9,"Ipv1":0.1,"Ipv2":0.9,"Ipv3":0.1,"Mode":1,"Tcoil":0.3,"RunT":424.9,"Pmax":27.0,"Uca":0.5,"Qac":1.0,"Pac":0.0,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":1.0,"Ia":0.2,"Ib":0.4,"Freq":0.7,"Ic":0.1}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":0.0,"Tmod":0.4,"Upv3":0.8,"Ubc":0.1,"Upv1":0.9,"Upv2":0.9,"Ipv1":0.1,"Ipv2":0.9,"Ipv3":0.1,"Mode":1,"Tcoil":0.3,"RunT":424.9,"Pmax":27.0,"Uca":0.5,"Qac":1.0,"Pac":0.0,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":1.0,"Ia":0.2,"Ib":0.4,"Freq":0.7,"Ic":0.1}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":0.0,"Tmod":0.4,"Upv3":0.8,"Ubc":0.1,"Upv1":0.9,"Upv2":0.9,"Ipv1":0.1,"Ipv2":0.9,"Ipv3":0.1,"Mode":1,"Tcoil":0.3,"RunT":424.9,"Pmax":27.0,"Uca":0.5,"Qac":1.0,"Pac":0.0,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":1.0,"Ia":0.2,"Ib":0.4,"Freq":0.7,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:18:04.442 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:18
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.6,"Upv3":0.5,"Ubc":0.3,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.0,"Ipv2":0.3,"Ipv3":1.0,"Mode":1,"Tcoil":0.4,"RunT":422.4,"Pmax":30.4,"Uca":0.3,"Qac":0.7,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":154,"Uab":0.9,"Ia":0.0,"Ib":0.5,"Freq":0.4,"Ic":0.7}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":0.0,"Tmod":0.6,"Upv3":0.5,"Ubc":0.3,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.0,"Ipv2":0.3,"Ipv3":1.0,"Mode":1,"Tcoil":0.4,"RunT":422.4,"Pmax":30.4,"Uca":0.3,"Qac":0.7,"Pac":0.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":154,"Uab":0.9,"Ia":0.0,"Ib":0.5,"Freq":0.4,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:04.507 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:19:04.511 [pool-1-thread-11] INFO  o.m.d.connection - Opened connection [connectionId{localValue:10, serverValue:11528}] to 139.196.235.75:27017
+ 2017-06-20 15:19:04.512 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:04.513 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:78
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":0.0,"Tmod":1.0,"Upv3":0.3,"Ubc":0.6,"Upv1":0.3,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.9,"Mode":1,"Tcoil":1.0,"RunT":470.7,"Pmax":24.3,"Uca":0.2,"Qac":0.4,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.2,"Ia":0.5,"Ib":0.1,"Freq":0.8,"Ic":0.5}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":0.0,"Tmod":1.0,"Upv3":0.3,"Ubc":0.6,"Upv1":0.3,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.9,"Mode":1,"Tcoil":1.0,"RunT":470.7,"Pmax":24.3,"Uca":0.2,"Qac":0.4,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.2,"Ia":0.5,"Ib":0.1,"Freq":0.8,"Ic":0.5}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":0.0,"Tmod":1.0,"Upv3":0.3,"Ubc":0.6,"Upv1":0.3,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.9,"Mode":1,"Tcoil":1.0,"RunT":470.7,"Pmax":24.3,"Uca":0.2,"Qac":0.4,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.2,"Ia":0.5,"Ib":0.1,"Freq":0.8,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:04.515 [pool-1-thread-10] INFO  o.m.d.connection - Opened connection [connectionId{localValue:9, serverValue:11529}] to 139.196.235.75:27017
+ 2017-06-20 15:19:04.520 [pool-1-thread-7] INFO  o.m.d.connection - Opened connection [connectionId{localValue:8, serverValue:11530}] to 139.196.235.75:27017
+ 2017-06-20 15:19:04.525 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:19:04.528 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:04.529 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:78
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.2,"Upv3":0.7,"Ubc":0.1,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.8,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":443.0,"Pmax":23.6,"Uca":0.1,"Qac":0.5,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.3,"Ia":0.6,"Ib":0.1,"Freq":0.0,"Ic":0.3}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.2,"Upv3":0.7,"Ubc":0.1,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.8,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":443.0,"Pmax":23.6,"Uca":0.1,"Qac":0.5,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.3,"Ia":0.6,"Ib":0.1,"Freq":0.0,"Ic":0.3}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.2,"Upv3":0.7,"Ubc":0.1,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.8,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":443.0,"Pmax":23.6,"Uca":0.1,"Qac":0.5,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.3,"Ia":0.6,"Ib":0.1,"Freq":0.0,"Ic":0.3}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.2,"Upv3":0.7,"Ubc":0.1,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.8,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":443.0,"Pmax":23.6,"Uca":0.1,"Qac":0.5,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.3,"Ia":0.6,"Ib":0.1,"Freq":0.0,"Ic":0.3}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":0.0,"Tmod":0.2,"Upv3":0.7,"Ubc":0.1,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.8,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":443.0,"Pmax":23.6,"Uca":0.1,"Qac":0.5,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":0,"Uab":0.3,"Ia":0.6,"Ib":0.1,"Freq":0.0,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:04.554 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:19:04.557 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:04.557 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:19:04.557 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:78
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.9,"Upv3":0.0,"Ubc":0.2,"Upv1":1.0,"Upv2":0.8,"Ipv1":1.0,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":439.8,"Pmax":27.3,"Uca":0.8,"Qac":0.9,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.3,"Ia":0.0,"Ib":0.2,"Freq":0.7,"Ic":1.0}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.9,"Upv3":0.0,"Ubc":0.2,"Upv1":1.0,"Upv2":0.8,"Ipv1":1.0,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":439.8,"Pmax":27.3,"Uca":0.8,"Qac":0.9,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.3,"Ia":0.0,"Ib":0.2,"Freq":0.7,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:04.560 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:19:04.561 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:04.562 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:78
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":0.0,"Tmod":0.5,"Upv3":0.3,"Ubc":0.8,"Upv1":0.4,"Upv2":0.1,"Ipv1":1.0,"Ipv2":0.0,"Ipv3":0.7,"Mode":1,"Tcoil":0.4,"RunT":430.2,"Pmax":29.2,"Uca":0.8,"Qac":0.8,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":0.5,"Ib":0.1,"Freq":0.8,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":0.0,"Tmod":0.5,"Upv3":0.3,"Ubc":0.8,"Upv1":0.4,"Upv2":0.1,"Ipv1":1.0,"Ipv2":0.0,"Ipv3":0.7,"Mode":1,"Tcoil":0.4,"RunT":430.2,"Pmax":29.2,"Uca":0.8,"Qac":0.8,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":0.5,"Ib":0.1,"Freq":0.8,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:04.563 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:04.564 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:78
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":1.0,"Ubc":0.7,"Upv1":0.6,"Upv2":0.7,"Ipv1":0.5,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.5,"RunT":433.8,"Pmax":32.4,"Uca":0.7,"Qac":0.0,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.8,"Ia":0.8,"Ib":0.9,"Freq":0.7,"Ic":0.4}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":1.0,"Ubc":0.7,"Upv1":0.6,"Upv2":0.7,"Ipv1":0.5,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.5,"RunT":433.8,"Pmax":32.4,"Uca":0.7,"Qac":0.0,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.8,"Ia":0.8,"Ib":0.9,"Freq":0.7,"Ic":0.4}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":1.0,"Ubc":0.7,"Upv1":0.6,"Upv2":0.7,"Ipv1":0.5,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.5,"RunT":433.8,"Pmax":32.4,"Uca":0.7,"Qac":0.0,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.8,"Ia":0.8,"Ib":0.9,"Freq":0.7,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:12.571 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:19:12.630 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-20 15:19:12.666 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-20 15:19:12.872 [cluster-ClusterId{value='5948cc70ebdcf0055c002f01', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:11531}] to 139.196.235.75:27017
+ 2017-06-20 15:19:12.876 [cluster-ClusterId{value='5948cc70ebdcf0055c002f01', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=3519515}
+ 2017-06-20 15:19:12.887 [cluster-ClusterId{value='5948cc70ebdcf0055c002f00', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:11532}] to 139.196.235.75:27017
+ 2017-06-20 15:19:12.894 [cluster-ClusterId{value='5948cc70ebdcf0055c002f00', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5990579}
+ 2017-06-20 15:19:12.920 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:11533}] to 139.196.235.75:27017
+ 2017-06-20 15:19:13.041 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:11534}] to 139.196.235.75:27017
+ 2017-06-20 15:19:13.137 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-20 15:19:15.053 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-20 15:19:17.614 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-06-20 15:19:17.624 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52c9.加载完毕.
+ 2017-06-20 15:19:17.631 [main] DEBUG i.j.d.EmulatorApplication - Agent:593a33ec1f886d29fa8b52ca.加载完毕.
+ 2017-06-20 15:19:17.638 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3692.加载完毕.
+ 2017-06-20 15:19:17.646 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941de881f886d231d4d369e.加载完毕.
+ 2017-06-20 15:19:17.653 [main] DEBUG i.j.d.EmulatorApplication - Agent:5941ddc71f886d231d4d3695.加载完毕.
+ 2017-06-20 15:19:17.653 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 5 个，实际加载任务 5 个 .EMS数据0个.PV数据5个
+ 2017-06-20 15:19:19.248 [main] INFO  i.j.d.EmulatorApplication - 5秒后开始启动任务.
+ 2017-06-20 15:19:24.248 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有接收任务..
+ 2017-06-20 15:19:24.276 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c9连接服务器 broker成功！
+ 2017-06-20 15:19:24.326 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52ca连接服务器 broker成功！
+ 2017-06-20 15:19:24.373 [pool-1-thread-4] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3692连接服务器 broker成功！
+ 2017-06-20 15:19:24.424 [pool-1-thread-5] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941de881f886d231d4d369e连接服务器 broker成功！
+ 2017-06-20 15:19:24.478 [pool-1-thread-6] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3695连接服务器 broker成功！
+ 2017-06-20 15:19:24.499 [main] INFO  i.j.d.EmulatorApplication - 所有接收任务启动完毕 共5个 
+ 2017-06-20 15:19:29.500 [main] INFO  i.j.d.EmulatorApplication - 开始启动所有发送任务..
+ 2017-06-20 15:19:29.600 [pool-1-thread-8] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:11535}] to 139.196.235.75:27017
+ 2017-06-20 15:19:29.659 [pool-1-thread-9] INFO  o.m.d.connection - Opened connection [connectionId{localValue:6, serverValue:11536}] to 139.196.235.75:27017
+ 2017-06-20 15:19:29.747 [pool-1-thread-9] INFO  o.m.d.connection - Opened connection [connectionId{localValue:7, serverValue:11537}] to 139.196.235.75:27017
+ 2017-06-20 15:19:29.751 [main] INFO  i.j.d.EmulatorApplication - 所有发送任务启动完毕 共5个
+ 2017-06-20 15:19:29.782 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:19:29.782 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:19:29.782 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:19:29.792 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:19:29.803 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:19:29.837 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:29.837 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	agents/593a33ec1f886d29fa8b52ca/jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:17
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":0.0,"Tmod":0.6,"Upv3":0.5,"Ubc":0.8,"Upv1":0.7,"Upv2":0.4,"Ipv1":0.5,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.8,"RunT":429.5,"Pmax":26.4,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":1247,"Uab":0.9,"Ia":0.6,"Ib":0.3,"Freq":0.8,"Ic":0.6}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":0.0,"Tmod":0.6,"Upv3":0.5,"Ubc":0.8,"Upv1":0.7,"Upv2":0.4,"Ipv1":0.5,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.8,"RunT":429.5,"Pmax":26.4,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":1247,"Uab":0.9,"Ia":0.6,"Ib":0.3,"Freq":0.8,"Ic":0.6}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":0.0,"Tmod":0.6,"Upv3":0.5,"Ubc":0.8,"Upv1":0.7,"Upv2":0.4,"Ipv1":0.5,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.8,"RunT":429.5,"Pmax":26.4,"Uca":0.2,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":1247,"Uab":0.9,"Ia":0.6,"Ib":0.3,"Freq":0.8,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:29.837 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:29.837 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	agents/5941de881f886d231d4d369e/jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:17
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":0.0,"Tmod":0.6,"Upv3":0.8,"Ubc":0.6,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.7,"Ipv3":0.5,"Mode":1,"Tcoil":0.4,"RunT":422.2,"Pmax":29.1,"Uca":0.6,"Qac":0.8,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.6,"Ia":0.5,"Ib":0.5,"Freq":0.6,"Ic":0.5}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":0.0,"Tmod":0.6,"Upv3":0.8,"Ubc":0.6,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.7,"Ipv3":0.5,"Mode":1,"Tcoil":0.4,"RunT":422.2,"Pmax":29.1,"Uca":0.6,"Qac":0.8,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.6,"Ia":0.5,"Ib":0.5,"Freq":0.6,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:29.838 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:29.838 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:29.838 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:19:29.838 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	agents/593a33ec1f886d29fa8b52c9/jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:17
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.6,"Upv3":0.5,"Ubc":0.2,"Upv1":0.0,"Upv2":0.8,"Ipv1":1.0,"Ipv2":0.6,"Ipv3":0.8,"Mode":1,"Tcoil":0.9,"RunT":473.1,"Pmax":41.9,"Uca":0.5,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.1,"Ia":0.9,"Ib":0.5,"Freq":0.3,"Ic":1.0}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.6,"Upv3":0.5,"Ubc":0.2,"Upv1":0.0,"Upv2":0.8,"Ipv1":1.0,"Ipv2":0.6,"Ipv3":0.8,"Mode":1,"Tcoil":0.9,"RunT":473.1,"Pmax":41.9,"Uca":0.5,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.1,"Ia":0.9,"Ib":0.5,"Freq":0.3,"Ic":1.0}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.6,"Upv3":0.5,"Ubc":0.2,"Upv1":0.0,"Upv2":0.8,"Ipv1":1.0,"Ipv2":0.6,"Ipv3":0.8,"Mode":1,"Tcoil":0.9,"RunT":473.1,"Pmax":41.9,"Uca":0.5,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.1,"Ia":0.9,"Ib":0.5,"Freq":0.3,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:29.838 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	agents/5941ddc71f886d231d4d3692/jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:17
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.5,"Upv3":0.1,"Ubc":0.0,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.9,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":470.5,"Pmax":44.0,"Uca":0.6,"Qac":0.9,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":1.0,"Ib":0.3,"Freq":0.3,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.5,"Upv3":0.1,"Ubc":0.0,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.9,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":470.5,"Pmax":44.0,"Uca":0.6,"Qac":0.9,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":1.0,"Ib":0.3,"Freq":0.3,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:19:29.839 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	agents/5941ddc71f886d231d4d3695/jsonMRes
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:17
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.4,"Upv3":0.2,"Ubc":0.5,"Upv1":0.8,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":418.9,"Pmax":24.5,"Uca":0.4,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.6,"Ia":0.7,"Ib":0.9,"Freq":0.5,"Ic":0.0}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.4,"Upv3":0.2,"Ubc":0.5,"Upv1":0.8,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":418.9,"Pmax":24.5,"Uca":0.4,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.6,"Ia":0.7,"Ib":0.9,"Freq":0.5,"Ic":0.0}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.4,"Upv3":0.2,"Ubc":0.5,"Upv1":0.8,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":418.9,"Pmax":24.5,"Uca":0.4,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.6,"Ia":0.7,"Ib":0.9,"Freq":0.5,"Ic":0.0}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.4,"Upv3":0.2,"Ubc":0.5,"Upv1":0.8,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":418.9,"Pmax":24.5,"Uca":0.4,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.6,"Ia":0.7,"Ib":0.9,"Freq":0.5,"Ic":0.0}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.4,"Upv3":0.2,"Ubc":0.5,"Upv1":0.8,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":418.9,"Pmax":24.5,"Uca":0.4,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.6,"Ia":0.7,"Ib":0.9,"Freq":0.5,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:20:29.924 [pool-1-thread-7] INFO  o.m.d.connection - Opened connection [connectionId{localValue:9, serverValue:11542}] to 139.196.235.75:27017
+ 2017-06-20 15:20:29.949 [pool-1-thread-8] INFO  o.m.d.connection - Opened connection [connectionId{localValue:8, serverValue:11543}] to 139.196.235.75:27017
+ 2017-06-20 15:20:29.966 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:20:29.969 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:20:29.969 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	agents/593a33ec1f886d29fa8b52c9/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:77
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.8,"Ubc":0.7,"Upv1":0.9,"Upv2":0.7,"Ipv1":0.1,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.8,"RunT":441.6,"Pmax":38.0,"Uca":0.4,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.3,"Ia":0.4,"Ib":0.6,"Freq":1.0,"Ic":0.9}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.8,"Ubc":0.7,"Upv1":0.9,"Upv2":0.7,"Ipv1":0.1,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.8,"RunT":441.6,"Pmax":38.0,"Uca":0.4,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.3,"Ia":0.4,"Ib":0.6,"Freq":1.0,"Ic":0.9}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.8,"Ubc":0.7,"Upv1":0.9,"Upv2":0.7,"Ipv1":0.1,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.8,"RunT":441.6,"Pmax":38.0,"Uca":0.4,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.3,"Ia":0.4,"Ib":0.6,"Freq":1.0,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:20:29.974 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:20:29.978 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:20:29.978 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	agents/593a33ec1f886d29fa8b52ca/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:77
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.9,"Upv1":0.8,"Upv2":1.0,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":424.8,"Pmax":26.3,"Uca":0.9,"Qac":0.5,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.4,"Ia":0.1,"Ib":0.9,"Freq":0.2,"Ic":0.3}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.9,"Upv1":0.8,"Upv2":1.0,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":424.8,"Pmax":26.3,"Uca":0.9,"Qac":0.5,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.4,"Ia":0.1,"Ib":0.9,"Freq":0.2,"Ic":0.3}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.9,"Upv1":0.8,"Upv2":1.0,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":424.8,"Pmax":26.3,"Uca":0.9,"Qac":0.5,"Pac":0.0,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.4,"Ia":0.1,"Ib":0.9,"Freq":0.2,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:20:30.180 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:20:30.185 [pool-1-thread-10] INFO  o.m.d.connection - Opened connection [connectionId{localValue:10, serverValue:11544}] to 139.196.235.75:27017
+ 2017-06-20 15:20:30.187 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:20:30.188 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	agents/5941ddc71f886d231d4d3695/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:77
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.3,"Ubc":0.4,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.0,"RunT":477.7,"Pmax":42.2,"Uca":0.1,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.3,"Ib":0.3,"Freq":0.3,"Ic":0.1}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.3,"Ubc":0.4,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.0,"RunT":477.7,"Pmax":42.2,"Uca":0.1,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.3,"Ib":0.3,"Freq":0.3,"Ic":0.1}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.3,"Ubc":0.4,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.0,"RunT":477.7,"Pmax":42.2,"Uca":0.1,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.3,"Ib":0.3,"Freq":0.3,"Ic":0.1}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.3,"Ubc":0.4,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.0,"RunT":477.7,"Pmax":42.2,"Uca":0.1,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.3,"Ib":0.3,"Freq":0.3,"Ic":0.1}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":0.0,"Tmod":0.7,"Upv3":0.3,"Ubc":0.4,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.0,"RunT":477.7,"Pmax":42.2,"Uca":0.1,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.3,"Ib":0.3,"Freq":0.3,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:20:30.283 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:20:30.285 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:20:30.286 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	agents/5941de881f886d231d4d369e/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:77
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.3,"Upv3":1.0,"Ubc":0.9,"Upv1":1.0,"Upv2":0.9,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.2,"Mode":1,"Tcoil":0.1,"RunT":413.1,"Pmax":30.8,"Uca":0.8,"Qac":0.9,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":154,"Uab":1.0,"Ia":0.4,"Ib":0.5,"Freq":0.8,"Ic":0.4}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.3,"Upv3":1.0,"Ubc":0.9,"Upv1":1.0,"Upv2":0.9,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.2,"Mode":1,"Tcoil":0.1,"RunT":413.1,"Pmax":30.8,"Uca":0.8,"Qac":0.9,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":154,"Uab":1.0,"Ia":0.4,"Ib":0.5,"Freq":0.8,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:20:30.309 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:20:30.313 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:20:30.313 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	agents/5941ddc71f886d231d4d3692/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:77
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":0.0,"Tmod":0.3,"Upv3":0.0,"Ubc":0.4,"Upv1":0.3,"Upv2":0.3,"Ipv1":0.8,"Ipv2":0.4,"Ipv3":0.7,"Mode":1,"Tcoil":0.9,"RunT":471.5,"Pmax":31.4,"Uca":0.3,"Qac":0.3,"Pac":0.0,"Sac":0.8,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.2,"Ia":0.0,"Ib":0.3,"Freq":0.4,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":0.0,"Tmod":0.3,"Upv3":0.0,"Ubc":0.4,"Upv1":0.3,"Upv2":0.3,"Ipv1":0.8,"Ipv2":0.4,"Ipv3":0.7,"Mode":1,"Tcoil":0.9,"RunT":471.5,"Pmax":31.4,"Uca":0.3,"Qac":0.3,"Pac":0.0,"Sac":0.8,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.2,"Ia":0.0,"Ib":0.3,"Freq":0.4,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:21:30.044 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:21:30.049 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:21:30.051 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:21:30.052 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	agents/593a33ec1f886d29fa8b52c9/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:137
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":1.0,"DYield":0.0,"Tmod":0.4,"Upv3":0.8,"Ubc":0.8,"Upv1":0.3,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":461.0,"Pmax":36.6,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.6,"Ia":0.0,"Ib":0.7,"Freq":0.5,"Ic":0.9}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":1.0,"DYield":0.0,"Tmod":0.4,"Upv3":0.8,"Ubc":0.8,"Upv1":0.3,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":461.0,"Pmax":36.6,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.6,"Ia":0.0,"Ib":0.7,"Freq":0.5,"Ic":0.9}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":1.0,"DYield":0.0,"Tmod":0.4,"Upv3":0.8,"Ubc":0.8,"Upv1":0.3,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":461.0,"Pmax":36.6,"Uca":0.3,"Qac":0.9,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.6,"Ia":0.0,"Ib":0.7,"Freq":0.5,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:21:30.055 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:21:30.056 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	agents/593a33ec1f886d29fa8b52ca/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:137
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":0.0,"Tmod":0.3,"Upv3":1.0,"Ubc":0.1,"Upv1":0.0,"Upv2":0.4,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.9,"RunT":431.4,"Pmax":31.5,"Uca":1.0,"Qac":0.1,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.3,"Ib":1.0,"Freq":0.7,"Ic":0.9}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":0.0,"Tmod":0.3,"Upv3":1.0,"Ubc":0.1,"Upv1":0.0,"Upv2":0.4,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.9,"RunT":431.4,"Pmax":31.5,"Uca":1.0,"Qac":0.1,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.3,"Ib":1.0,"Freq":0.7,"Ic":0.9}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":0.0,"Tmod":0.3,"Upv3":1.0,"Ubc":0.1,"Upv1":0.0,"Upv2":0.4,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.9,"RunT":431.4,"Pmax":31.5,"Uca":1.0,"Qac":0.1,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.3,"Ib":1.0,"Freq":0.7,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:21:30.260 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:21:30.299 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:21:30.300 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	agents/5941ddc71f886d231d4d3695/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:137
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":0.0,"Tmod":0.7,"Upv3":0.2,"Ubc":0.8,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":410.8,"Pmax":26.5,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.9,"Ib":0.3,"Freq":1.0,"Ic":0.2}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":0.0,"Tmod":0.7,"Upv3":0.2,"Ubc":0.8,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":410.8,"Pmax":26.5,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.9,"Ib":0.3,"Freq":1.0,"Ic":0.2}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":0.0,"Tmod":0.7,"Upv3":0.2,"Ubc":0.8,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":410.8,"Pmax":26.5,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.9,"Ib":0.3,"Freq":1.0,"Ic":0.2}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":0.0,"Tmod":0.7,"Upv3":0.2,"Ubc":0.8,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":410.8,"Pmax":26.5,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.9,"Ib":0.3,"Freq":1.0,"Ic":0.2}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":0.0,"Tmod":0.7,"Upv3":0.2,"Ubc":0.8,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":410.8,"Pmax":26.5,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.9,"Ib":0.3,"Freq":1.0,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:21:30.338 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:21:30.343 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:21:30.347 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	agents/5941de881f886d231d4d369e/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:138
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.0,"DYield":0.0,"Tmod":0.2,"Upv3":0.3,"Ubc":0.2,"Upv1":1.0,"Upv2":0.9,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":442.2,"Pmax":38.6,"Uca":0.1,"Qac":0.7,"Pac":0.0,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":154,"Uab":0.7,"Ia":0.3,"Ib":0.9,"Freq":0.5,"Ic":0.5}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.0,"DYield":0.0,"Tmod":0.2,"Upv3":0.3,"Ubc":0.2,"Upv1":1.0,"Upv2":0.9,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":442.2,"Pmax":38.6,"Uca":0.1,"Qac":0.7,"Pac":0.0,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":154,"Uab":0.7,"Ia":0.3,"Ib":0.9,"Freq":0.5,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:21:30.366 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:21:30.369 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:21:30.370 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	agents/5941ddc71f886d231d4d3692/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:138
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":0.0,"Tmod":0.6,"Upv3":0.2,"Ubc":0.8,"Upv1":0.8,"Upv2":0.9,"Ipv1":0.1,"Ipv2":0.2,"Ipv3":0.0,"Mode":1,"Tcoil":0.4,"RunT":448.5,"Pmax":39.3,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":370,"Uab":0.1,"Ia":0.4,"Ib":0.1,"Freq":0.1,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":0.0,"Tmod":0.6,"Upv3":0.2,"Ubc":0.8,"Upv1":0.8,"Upv2":0.9,"Ipv1":0.1,"Ipv2":0.2,"Ipv3":0.0,"Mode":1,"Tcoil":0.4,"RunT":448.5,"Pmax":39.3,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":370,"Uab":0.1,"Ia":0.4,"Ib":0.1,"Freq":0.1,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:22:30.116 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:22:30.125 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:22:30.127 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:22:30.127 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	agents/593a33ec1f886d29fa8b52c9/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:197
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.5,"Ubc":0.9,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.3,"Ipv2":0.5,"Ipv3":0.3,"Mode":1,"Tcoil":0.3,"RunT":475.2,"Pmax":40.2,"Uca":0.3,"Qac":0.0,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.8,"Ia":1.0,"Ib":0.5,"Freq":0.2,"Ic":0.4}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.5,"Ubc":0.9,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.3,"Ipv2":0.5,"Ipv3":0.3,"Mode":1,"Tcoil":0.3,"RunT":475.2,"Pmax":40.2,"Uca":0.3,"Qac":0.0,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.8,"Ia":1.0,"Ib":0.5,"Freq":0.2,"Ic":0.4}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.5,"Ubc":0.9,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.3,"Ipv2":0.5,"Ipv3":0.3,"Mode":1,"Tcoil":0.3,"RunT":475.2,"Pmax":40.2,"Uca":0.3,"Qac":0.0,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":547,"Uab":0.8,"Ia":1.0,"Ib":0.5,"Freq":0.2,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:22:30.131 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:22:30.132 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	agents/593a33ec1f886d29fa8b52ca/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:197
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":0.0,"Tmod":0.8,"Upv3":0.2,"Ubc":0.2,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.2,"Mode":1,"Tcoil":0.7,"RunT":449.0,"Pmax":28.0,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.0,"Ia":0.4,"Ib":0.1,"Freq":0.0,"Ic":0.4}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":0.0,"Tmod":0.8,"Upv3":0.2,"Ubc":0.2,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.2,"Mode":1,"Tcoil":0.7,"RunT":449.0,"Pmax":28.0,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.0,"Ia":0.4,"Ib":0.1,"Freq":0.0,"Ic":0.4}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":0.0,"Tmod":0.8,"Upv3":0.2,"Ubc":0.2,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.2,"Mode":1,"Tcoil":0.7,"RunT":449.0,"Pmax":28.0,"Uca":0.8,"Qac":0.3,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":1247,"Uab":0.0,"Ia":0.4,"Ib":0.1,"Freq":0.0,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:22:30.381 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:22:30.386 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:22:30.387 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	agents/5941ddc71f886d231d4d3695/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:198
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.3,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":428.5,"Pmax":45.1,"Uca":0.5,"Qac":0.5,"Pac":0.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.1,"Ib":0.8,"Freq":0.1,"Ic":0.7}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.3,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":428.5,"Pmax":45.1,"Uca":0.5,"Qac":0.5,"Pac":0.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.1,"Ib":0.8,"Freq":0.1,"Ic":0.7}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.3,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":428.5,"Pmax":45.1,"Uca":0.5,"Qac":0.5,"Pac":0.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.1,"Ib":0.8,"Freq":0.1,"Ic":0.7}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.3,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":428.5,"Pmax":45.1,"Uca":0.5,"Qac":0.5,"Pac":0.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.1,"Ib":0.8,"Freq":0.1,"Ic":0.7}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":0.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.3,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":428.5,"Pmax":45.1,"Uca":0.5,"Qac":0.5,"Pac":0.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.2,"Ia":0.1,"Ib":0.8,"Freq":0.1,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:22:30.404 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:22:30.407 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:22:30.407 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	agents/5941de881f886d231d4d369e/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:198
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":0.0,"Tmod":0.9,"Upv3":0.1,"Ubc":0.4,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.7,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":464.8,"Pmax":30.3,"Uca":0.6,"Qac":0.5,"Pac":0.0,"Sac":0.5,"PF":0.9,"LCDVer":"02.21","TYield":154,"Uab":0.5,"Ia":0.8,"Ib":0.6,"Freq":0.5,"Ic":0.5}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":0.0,"Tmod":0.9,"Upv3":0.1,"Ubc":0.4,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.7,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":464.8,"Pmax":30.3,"Uca":0.6,"Qac":0.5,"Pac":0.0,"Sac":0.5,"PF":0.9,"LCDVer":"02.21","TYield":154,"Uab":0.5,"Ia":0.8,"Ib":0.6,"Freq":0.5,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:22:30.422 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:22:30.425 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:22:30.426 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	agents/5941ddc71f886d231d4d3692/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:198
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.6,"Upv3":0.2,"Ubc":0.6,"Upv1":0.2,"Upv2":0.1,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.3,"RunT":446.0,"Pmax":45.3,"Uca":0.9,"Qac":0.8,"Pac":0.0,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":0.7,"Ib":0.6,"Freq":0.9,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.6,"Upv3":0.2,"Ubc":0.6,"Upv1":0.2,"Upv2":0.1,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.3,"RunT":446.0,"Pmax":45.3,"Uca":0.9,"Qac":0.8,"Pac":0.0,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":370,"Uab":0.9,"Ia":0.7,"Ib":0.6,"Freq":0.9,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:23:30.191 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:23:30.192 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:23:30.197 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:23:30.197 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	agents/593a33ec1f886d29fa8b52ca/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:240	server run time:257
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":0.8,"Ubc":0.3,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":433.5,"Pmax":27.3,"Uca":0.9,"Qac":0.2,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.9,"Ib":0.6,"Freq":0.2,"Ic":0.4}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":0.8,"Ubc":0.3,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":433.5,"Pmax":27.3,"Uca":0.9,"Qac":0.2,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.9,"Ib":0.6,"Freq":0.2,"Ic":0.4}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":0.8,"Ubc":0.3,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":433.5,"Pmax":27.3,"Uca":0.9,"Qac":0.2,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.9,"Ib":0.6,"Freq":0.2,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:23:30.198 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:23:30.198 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	agents/593a33ec1f886d29fa8b52c9/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:240	server run time:257
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":0.0,"Tmod":0.9,"Upv3":0.7,"Ubc":0.4,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":469.0,"Pmax":45.4,"Uca":0.2,"Qac":1.0,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.1,"Ia":0.8,"Ib":0.9,"Freq":0.3,"Ic":0.8}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":0.0,"Tmod":0.9,"Upv3":0.7,"Ubc":0.4,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":469.0,"Pmax":45.4,"Uca":0.2,"Qac":1.0,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.1,"Ia":0.8,"Ib":0.9,"Freq":0.3,"Ic":0.8}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":0.0,"Tmod":0.9,"Upv3":0.7,"Ubc":0.4,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":469.0,"Pmax":45.4,"Uca":0.2,"Qac":1.0,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.1,"Ia":0.8,"Ib":0.9,"Freq":0.3,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:23:30.459 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:23:30.461 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:23:30.468 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:23:30.470 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	agents/5941de881f886d231d4d369e/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:240	server run time:258
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":0.0,"Tmod":1.0,"Upv3":0.5,"Ubc":0.1,"Upv1":0.8,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.3,"Mode":1,"Tcoil":0.7,"RunT":452.9,"Pmax":30.1,"Uca":0.4,"Qac":0.8,"Pac":0.0,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":154,"Uab":0.9,"Ia":0.4,"Ib":0.3,"Freq":0.2,"Ic":0.9}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":0.0,"Tmod":1.0,"Upv3":0.5,"Ubc":0.1,"Upv1":0.8,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.3,"Mode":1,"Tcoil":0.7,"RunT":452.9,"Pmax":30.1,"Uca":0.4,"Qac":0.8,"Pac":0.0,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":154,"Uab":0.9,"Ia":0.4,"Ib":0.3,"Freq":0.2,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:23:30.470 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:23:30.470 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	agents/5941ddc71f886d231d4d3695/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:240	server run time:258
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.0,"Upv1":1.0,"Upv2":0.7,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":452.9,"Pmax":47.6,"Uca":0.6,"Qac":0.4,"Pac":0.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.5,"Ib":0.4,"Freq":0.3,"Ic":0.8}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.0,"Upv1":1.0,"Upv2":0.7,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":452.9,"Pmax":47.6,"Uca":0.6,"Qac":0.4,"Pac":0.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.5,"Ib":0.4,"Freq":0.3,"Ic":0.8}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.0,"Upv1":1.0,"Upv2":0.7,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":452.9,"Pmax":47.6,"Uca":0.6,"Qac":0.4,"Pac":0.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.5,"Ib":0.4,"Freq":0.3,"Ic":0.8}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.0,"Upv1":1.0,"Upv2":0.7,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":452.9,"Pmax":47.6,"Uca":0.6,"Qac":0.4,"Pac":0.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.5,"Ib":0.4,"Freq":0.3,"Ic":0.8}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":0.0,"Tmod":0.1,"Upv3":0.4,"Ubc":0.0,"Upv1":1.0,"Upv2":0.7,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":452.9,"Pmax":47.6,"Uca":0.6,"Qac":0.4,"Pac":0.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.4,"Ia":0.5,"Ib":0.4,"Freq":0.3,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:23:30.481 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:23:30.485 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:23:30.487 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	agents/5941ddc71f886d231d4d3692/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:240	server run time:258
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.2,"Upv3":0.3,"Ubc":1.0,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":430.4,"Pmax":30.1,"Uca":0.0,"Qac":0.5,"Pac":0.0,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":370,"Uab":0.0,"Ia":0.4,"Ib":0.5,"Freq":0.4,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":0.0,"Tmod":0.2,"Upv3":0.3,"Ubc":1.0,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":430.4,"Pmax":30.1,"Uca":0.0,"Qac":0.5,"Pac":0.0,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":370,"Uab":0.0,"Ia":0.4,"Ib":0.5,"Freq":0.4,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:24:30.499 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:24:30.502 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:24:30.507 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:24:30.508 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	agents/593a33ec1f886d29fa8b52ca/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:300	server run time:318
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":0.6,"Ubc":0.1,"Upv1":0.6,"Upv2":0.2,"Ipv1":0.7,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":0.8,"RunT":417.8,"Pmax":37.8,"Uca":1.0,"Qac":0.4,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.8,"Ib":0.0,"Freq":0.0,"Ic":0.4}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":0.6,"Ubc":0.1,"Upv1":0.6,"Upv2":0.2,"Ipv1":0.7,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":0.8,"RunT":417.8,"Pmax":37.8,"Uca":1.0,"Qac":0.4,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.8,"Ib":0.0,"Freq":0.0,"Ic":0.4}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.3,"DYield":0.0,"Tmod":0.6,"Upv3":0.6,"Ubc":0.1,"Upv1":0.6,"Upv2":0.2,"Ipv1":0.7,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":0.8,"RunT":417.8,"Pmax":37.8,"Uca":1.0,"Qac":0.4,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":1247,"Uab":0.5,"Ia":0.8,"Ib":0.0,"Freq":0.0,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:24:30.513 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:24:30.514 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	agents/593a33ec1f886d29fa8b52c9/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:300	server run time:318
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":0.5,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.8,"Ipv2":0.0,"Ipv3":1.0,"Mode":1,"Tcoil":0.2,"RunT":419.4,"Pmax":38.2,"Uca":0.6,"Qac":0.2,"Pac":0.0,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.5,"Ia":0.8,"Ib":0.9,"Freq":0.1,"Ic":0.3}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":0.5,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.8,"Ipv2":0.0,"Ipv3":1.0,"Mode":1,"Tcoil":0.2,"RunT":419.4,"Pmax":38.2,"Uca":0.6,"Qac":0.2,"Pac":0.0,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.5,"Ia":0.8,"Ib":0.9,"Freq":0.1,"Ic":0.3}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":0.5,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.8,"Ipv2":0.0,"Ipv3":1.0,"Mode":1,"Tcoil":0.2,"RunT":419.4,"Pmax":38.2,"Uca":0.6,"Qac":0.2,"Pac":0.0,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":547,"Uab":0.5,"Ia":0.8,"Ib":0.9,"Freq":0.1,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:24:30.571 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:24:30.575 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:24:30.575 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	agents/5941de881f886d231d4d369e/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:300	server run time:318
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.9,"Upv3":0.9,"Ubc":0.2,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.4,"Ipv2":0.3,"Ipv3":0.2,"Mode":1,"Tcoil":0.7,"RunT":426.2,"Pmax":33.6,"Uca":0.9,"Qac":0.0,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.4,"Ia":0.3,"Ib":0.5,"Freq":0.3,"Ic":0.4}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":0.0,"Tmod":0.9,"Upv3":0.9,"Ubc":0.2,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.4,"Ipv2":0.3,"Ipv3":0.2,"Mode":1,"Tcoil":0.7,"RunT":426.2,"Pmax":33.6,"Uca":0.9,"Qac":0.0,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":154,"Uab":0.4,"Ia":0.3,"Ib":0.5,"Freq":0.3,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:24:30.590 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:24:30.594 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:24:30.595 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	agents/5941ddc71f886d231d4d3692/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:301	server run time:318
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.4,"DYield":0.0,"Tmod":0.4,"Upv3":0.2,"Ubc":0.3,"Upv1":1.0,"Upv2":0.9,"Ipv1":0.4,"Ipv2":0.8,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":446.4,"Pmax":23.1,"Uca":0.7,"Qac":0.1,"Pac":0.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":370,"Uab":0.4,"Ia":0.9,"Ib":0.9,"Freq":0.1,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.4,"DYield":0.0,"Tmod":0.4,"Upv3":0.2,"Ubc":0.3,"Upv1":1.0,"Upv2":0.9,"Ipv1":0.4,"Ipv2":0.8,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":446.4,"Pmax":23.1,"Uca":0.7,"Qac":0.1,"Pac":0.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":370,"Uab":0.4,"Ia":0.9,"Ib":0.9,"Freq":0.1,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:24:30.607 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:24:30.610 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:24:30.610 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	agents/5941ddc71f886d231d4d3695/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:301	server run time:318
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.1,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":0.3,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":420.2,"Pmax":46.4,"Uca":0.5,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.0,"Ia":0.7,"Ib":0.6,"Freq":0.6,"Ic":1.0}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.1,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":0.3,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":420.2,"Pmax":46.4,"Uca":0.5,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.0,"Ia":0.7,"Ib":0.6,"Freq":0.6,"Ic":1.0}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.1,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":0.3,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":420.2,"Pmax":46.4,"Uca":0.5,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.0,"Ia":0.7,"Ib":0.6,"Freq":0.6,"Ic":1.0}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.1,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":0.3,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":420.2,"Pmax":46.4,"Uca":0.5,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.0,"Ia":0.7,"Ib":0.6,"Freq":0.6,"Ic":1.0}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.1,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":0.3,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":420.2,"Pmax":46.4,"Uca":0.5,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":0,"Uab":0.0,"Ia":0.7,"Ib":0.6,"Freq":0.6,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:25:30.593 [MQTT Call: 593a33ec1f886d29fa8b52ca] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52ca:send successful!
+ 2017-06-20 15:25:30.594 [MQTT Call: 593a33ec1f886d29fa8b52c9] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c9:send successful!
+ 2017-06-20 15:25:30.599 [pool-1-thread-11] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:25:30.599 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:25:30.599 [pool-1-thread-11] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[22]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52c9
+Topic:	agents/593a33ec1f886d29fa8b52c9/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:360	server run time:378
+Send Data:	[{"dsn":"qexfqvp5","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":0.0,"Tmod":0.4,"Upv3":0.9,"Ubc":0.4,"Upv1":0.5,"Upv2":0.7,"Ipv1":0.6,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.3,"RunT":434.8,"Pmax":40.0,"Uca":0.9,"Qac":0.2,"Pac":0.0,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.3,"Ia":0.4,"Ib":0.6,"Freq":0.4,"Ic":0.5}},{"dsn":"y2wlxafv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":0.0,"Tmod":0.4,"Upv3":0.9,"Ubc":0.4,"Upv1":0.5,"Upv2":0.7,"Ipv1":0.6,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.3,"RunT":434.8,"Pmax":40.0,"Uca":0.9,"Qac":0.2,"Pac":0.0,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.3,"Ia":0.4,"Ib":0.6,"Freq":0.4,"Ic":0.5}},{"dsn":"ge64pa9t","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":0.0,"Tmod":0.4,"Upv3":0.9,"Ubc":0.4,"Upv1":0.5,"Upv2":0.7,"Ipv1":0.6,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.3,"RunT":434.8,"Pmax":40.0,"Uca":0.9,"Qac":0.2,"Pac":0.0,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":547,"Uab":0.3,"Ia":0.4,"Ib":0.6,"Freq":0.4,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:25:30.600 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[23]Send Data Info:
+AgentID:	593a33ec1f886d29fa8b52ca
+Topic:	agents/593a33ec1f886d29fa8b52ca/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:360	server run time:378
+Send Data:	[{"dsn":"enlgwmoh","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":1.0,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.3,"Ipv2":0.4,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":466.8,"Pmax":44.0,"Uca":0.2,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.9,"LCDVer":"02.21","TYield":1247,"Uab":0.9,"Ia":0.1,"Ib":0.6,"Freq":0.2,"Ic":0.3}},{"dsn":"nhvkxa94","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":1.0,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.3,"Ipv2":0.4,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":466.8,"Pmax":44.0,"Uca":0.2,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.9,"LCDVer":"02.21","TYield":1247,"Uab":0.9,"Ia":0.1,"Ib":0.6,"Freq":0.2,"Ic":0.3}},{"dsn":"bmm7s4wb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":0.0,"Tmod":0.1,"Upv3":0.6,"Ubc":1.0,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.3,"Ipv2":0.4,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":466.8,"Pmax":44.0,"Uca":0.2,"Qac":0.9,"Pac":0.0,"Sac":0.9,"PF":0.9,"LCDVer":"02.21","TYield":1247,"Uab":0.9,"Ia":0.1,"Ib":0.6,"Freq":0.2,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:25:30.624 [MQTT Call: 5941de881f886d231d4d369e] DEBUG i.j.d.m.MqttConnThread - 5941de881f886d231d4d369e:send successful!
+ 2017-06-20 15:25:30.628 [pool-1-thread-10] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:25:30.628 [pool-1-thread-10] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[25]Send Data Info:
+AgentID:	5941de881f886d231d4d369e
+Topic:	agents/5941de881f886d231d4d369e/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:360	server run time:378
+Send Data:	[{"dsn":"6y3uhkmv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.1,"DYield":0.0,"Tmod":0.3,"Upv3":0.2,"Ubc":0.3,"Upv1":0.1,"Upv2":0.8,"Ipv1":0.3,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.2,"RunT":447.5,"Pmax":35.8,"Uca":0.6,"Qac":1.0,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":154,"Uab":0.5,"Ia":0.2,"Ib":0.3,"Freq":0.3,"Ic":0.5}},{"dsn":"fgrzdgys","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.1,"DYield":0.0,"Tmod":0.3,"Upv3":0.2,"Ubc":0.3,"Upv1":0.1,"Upv2":0.8,"Ipv1":0.3,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.2,"RunT":447.5,"Pmax":35.8,"Uca":0.6,"Qac":1.0,"Pac":0.0,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":154,"Uab":0.5,"Ia":0.2,"Ib":0.3,"Freq":0.3,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:25:30.648 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-20 15:25:30.653 [pool-1-thread-7] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:25:30.653 [pool-1-thread-7] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[24]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	agents/5941ddc71f886d231d4d3692/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:361	server run time:378
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.5,"Upv3":0.4,"Ubc":0.9,"Upv1":0.7,"Upv2":0.6,"Ipv1":0.6,"Ipv2":0.9,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":429.2,"Pmax":33.6,"Uca":0.9,"Qac":0.6,"Pac":0.0,"Sac":0.7,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.6,"Ia":0.9,"Ib":0.1,"Freq":0.3,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":0.0,"Tmod":0.5,"Upv3":0.4,"Ubc":0.9,"Upv1":0.7,"Upv2":0.6,"Ipv1":0.6,"Ipv2":0.9,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":429.2,"Pmax":33.6,"Uca":0.9,"Qac":0.6,"Pac":0.0,"Sac":0.7,"PF":0.9,"LCDVer":"02.21","TYield":370,"Uab":0.6,"Ia":0.9,"Ib":0.1,"Freq":0.3,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-20 15:25:30.678 [MQTT Call: 5941ddc71f886d231d4d3695] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3695:send successful!
+ 2017-06-20 15:25:30.681 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+ 2017-06-20 15:25:30.681 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[26]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3695
+Topic:	agents/5941ddc71f886d231d4d3695/jsonMRes
+Time Interval:	60 	Set the time:60	Thread run time:361	server run time:378
+Send Data:	[{"dsn":"xdpct2t3","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.0,"DYield":0.0,"Tmod":0.4,"Upv3":0.0,"Ubc":0.9,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.5,"Mode":1,"Tcoil":0.6,"RunT":465.1,"Pmax":46.1,"Uca":0.9,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.8,"Ia":0.1,"Ib":0.9,"Freq":0.4,"Ic":0.9}},{"dsn":"swooaehf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.0,"DYield":0.0,"Tmod":0.4,"Upv3":0.0,"Ubc":0.9,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.5,"Mode":1,"Tcoil":0.6,"RunT":465.1,"Pmax":46.1,"Uca":0.9,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.8,"Ia":0.1,"Ib":0.9,"Freq":0.4,"Ic":0.9}},{"dsn":"ezgkzrbo","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":3,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.0,"DYield":0.0,"Tmod":0.4,"Upv3":0.0,"Ubc":0.9,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.5,"Mode":1,"Tcoil":0.6,"RunT":465.1,"Pmax":46.1,"Uca":0.9,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.8,"Ia":0.1,"Ib":0.9,"Freq":0.4,"Ic":0.9}},{"dsn":"2d4vebym","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":4,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.0,"DYield":0.0,"Tmod":0.4,"Upv3":0.0,"Ubc":0.9,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.5,"Mode":1,"Tcoil":0.6,"RunT":465.1,"Pmax":46.1,"Uca":0.9,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.8,"Ia":0.1,"Ib":0.9,"Freq":0.4,"Ic":0.9}},{"dsn":"jxvivtd2","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":5,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.0,"DYield":0.0,"Tmod":0.4,"Upv3":0.0,"Ubc":0.9,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.5,"Mode":1,"Tcoil":0.6,"RunT":465.1,"Pmax":46.1,"Uca":0.9,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":0,"Uab":0.8,"Ia":0.1,"Ib":0.9,"Freq":0.4,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 

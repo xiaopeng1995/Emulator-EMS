@@ -1,0 +1,1518 @@
+2017-06-15 10:29:48.448 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-15 10:29:48.712 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-15 10:29:49.332 [cluster-ClusterId{value='5941f11c5911bd391c0e2d1f', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:10030}] to 139.196.235.75:27017
+ 2017-06-15 10:29:49.337 [cluster-ClusterId{value='5941f11c5911bd391c0e2d1f', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=3788853}
+ 2017-06-15 10:29:49.412 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:10031}] to 139.196.235.75:27017
+ 2017-06-15 10:30:54.783 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-15 10:30:54.886 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-15 10:30:55.087 [cluster-ClusterId{value='5941f15e5911bd2418f050d3', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:10032}] to 139.196.235.75:27017
+ 2017-06-15 10:30:55.093 [cluster-ClusterId{value='5941f15e5911bd2418f050d3', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4781942}
+ 2017-06-15 10:30:55.151 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:10033}] to 139.196.235.75:27017
+ 2017-06-15 10:30:55.288 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-15 10:30:55.289 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-15 10:30:55.338 [cluster-ClusterId{value='5941f15f5911bd2418f050d4', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:10034}] to 139.196.235.75:27017
+ 2017-06-15 10:30:55.343 [cluster-ClusterId{value='5941f15f5911bd2418f050d4', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4394100}
+ 2017-06-15 10:30:55.393 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:10035}] to 139.196.235.75:27017
+ 2017-06-15 10:30:55.634 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-15 10:30:57.538 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-15 10:32:17.732 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-15 10:32:17.792 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-06-15 10:32:17.822 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-06-15 10:32:18.021 [cluster-ClusterId{value='5941f1b15911bd47f49e63eb', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:10036}] to 139.196.235.75:27017
+ 2017-06-15 10:32:18.025 [cluster-ClusterId{value='5941f1b15911bd47f49e63eb', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=2856413}
+ 2017-06-15 10:32:18.028 [cluster-ClusterId{value='5941f1b15911bd47f49e63ec', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:10037}] to 139.196.235.75:27017
+ 2017-06-15 10:32:18.034 [cluster-ClusterId{value='5941f1b15911bd47f49e63ec', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5117844}
+ 2017-06-15 10:32:18.089 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:10038}] to 139.196.235.75:27017
+ 2017-06-15 10:32:18.209 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:10039}] to 139.196.235.75:27017
+ 2017-06-15 10:32:18.404 [pool-1-thread-1] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:593a33ec1f886d29fa8b52c8连接服务器 broker成功！
+ 2017-06-15 10:32:20.222 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-06-15 10:41:25.587 [MQTT Call: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.m.MqttConnThread - 593a33ec1f886d29fa8b52c8收到的消息为：{"emulatorJob":[{"emulatorId":"5941ddc71f886d231d4d3692","type":"0","system":"0","num":"2"}]}
+ 2017-06-15 10:41:26.250 [MQTT Call: 593a33ec1f886d29fa8b52c8] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:5941ddc71f886d231d4d3692
+类型:AgentId
+系统:PV
+ 2017-06-15 10:41:26.350 [MQTT Call: 593a33ec1f886d29fa8b52c8] INFO  i.j.data.ConfigFun - 5941ddc71f886d231d4d3692:已删除历史数据0条
+ 2017-06-15 10:41:26.664 [MQTT Call: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-06-15 10:41:26.760 [MQTT Call: 593a33ec1f886d29fa8b52c8] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-06-15 10:41:29.893 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:5941ddc71f886d231d4d3692连接服务器 broker成功！
+ 2017-06-15 10:41:30.124 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:41:30.201 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:552
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":43.7,"Tmod":0.4,"Upv3":1.0,"Ubc":0.9,"Upv1":0.2,"Upv2":0.3,"Ipv1":0.3,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.7,"RunT":437.3,"Pmax":33.7,"Uca":0.6,"Qac":1.0,"Pac":22.5,"Sac":0.2,"PF":0.5,"LCDVer":"02.21","TYield":44,"Uab":0.1,"Ia":0.8,"Ib":0.9,"Freq":0.8,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":43.7,"Tmod":0.4,"Upv3":1.0,"Ubc":0.9,"Upv1":0.2,"Upv2":0.3,"Ipv1":0.3,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.7,"RunT":437.3,"Pmax":33.7,"Uca":0.6,"Qac":1.0,"Pac":22.5,"Sac":0.2,"PF":0.5,"LCDVer":"02.21","TYield":44,"Uab":0.1,"Ia":0.8,"Ib":0.9,"Freq":0.8,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:42:30.307 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:42:30.384 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:60	server run time:612
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":44.1,"Tmod":0.3,"Upv3":0.1,"Ubc":0.0,"Upv1":0.3,"Upv2":0.0,"Ipv1":0.7,"Ipv2":0.2,"Ipv3":0.3,"Mode":1,"Tcoil":0.5,"RunT":449.1,"Pmax":35.9,"Uca":0.6,"Qac":0.9,"Pac":22.8,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":44,"Uab":0.2,"Ia":0.3,"Ib":1.0,"Freq":0.6,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":44.1,"Tmod":0.3,"Upv3":0.1,"Ubc":0.0,"Upv1":0.3,"Upv2":0.0,"Ipv1":0.7,"Ipv2":0.2,"Ipv3":0.3,"Mode":1,"Tcoil":0.5,"RunT":449.1,"Pmax":35.9,"Uca":0.6,"Qac":0.9,"Pac":22.8,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":44,"Uab":0.2,"Ia":0.3,"Ib":1.0,"Freq":0.6,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:43:30.548 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:43:30.623 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:120	server run time:673
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":44.5,"Tmod":0.9,"Upv3":0.1,"Ubc":0.5,"Upv1":0.5,"Upv2":0.4,"Ipv1":0.1,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.1,"RunT":470.5,"Pmax":20.8,"Uca":0.1,"Qac":0.2,"Pac":22.5,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":45,"Uab":0.1,"Ia":0.4,"Ib":0.2,"Freq":0.1,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":44.5,"Tmod":0.9,"Upv3":0.1,"Ubc":0.5,"Upv1":0.5,"Upv2":0.4,"Ipv1":0.1,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.1,"RunT":470.5,"Pmax":20.8,"Uca":0.1,"Qac":0.2,"Pac":22.5,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":45,"Uab":0.1,"Ia":0.4,"Ib":0.2,"Freq":0.1,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:44:30.732 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:44:30.814 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:180	server run time:733
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":44.8,"Tmod":0.1,"Upv3":0.5,"Ubc":0.8,"Upv1":1.0,"Upv2":0.5,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":0.6,"RunT":417.2,"Pmax":32.8,"Uca":0.6,"Qac":0.0,"Pac":22.5,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":45,"Uab":0.9,"Ia":0.3,"Ib":0.6,"Freq":0.8,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":44.8,"Tmod":0.1,"Upv3":0.5,"Ubc":0.8,"Upv1":1.0,"Upv2":0.5,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":0.6,"RunT":417.2,"Pmax":32.8,"Uca":0.6,"Qac":0.0,"Pac":22.5,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":45,"Uab":0.9,"Ia":0.3,"Ib":0.6,"Freq":0.8,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:45:30.914 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:45:30.992 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:241	server run time:793
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":45.2,"Tmod":0.3,"Upv3":0.5,"Ubc":0.3,"Upv1":1.0,"Upv2":0.4,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.9,"Mode":1,"Tcoil":0.8,"RunT":420.5,"Pmax":23.7,"Uca":0.4,"Qac":0.9,"Pac":24.5,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":45,"Uab":0.4,"Ia":0.5,"Ib":0.5,"Freq":0.8,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":45.2,"Tmod":0.3,"Upv3":0.5,"Ubc":0.3,"Upv1":1.0,"Upv2":0.4,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.9,"Mode":1,"Tcoil":0.8,"RunT":420.5,"Pmax":23.7,"Uca":0.4,"Qac":0.9,"Pac":24.5,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":45,"Uab":0.4,"Ia":0.5,"Ib":0.5,"Freq":0.8,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:46:31.140 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:46:31.214 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:301	server run time:853
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":45.6,"Tmod":0.6,"Upv3":0.9,"Ubc":0.3,"Upv1":0.0,"Upv2":0.0,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.0,"RunT":480.0,"Pmax":31.6,"Uca":0.3,"Qac":0.8,"Pac":21.2,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":46,"Uab":0.6,"Ia":0.1,"Ib":1.0,"Freq":0.8,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":45.6,"Tmod":0.6,"Upv3":0.9,"Ubc":0.3,"Upv1":0.0,"Upv2":0.0,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.0,"RunT":480.0,"Pmax":31.6,"Uca":0.3,"Qac":0.8,"Pac":21.2,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":46,"Uab":0.6,"Ia":0.1,"Ib":1.0,"Freq":0.8,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:47:31.315 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:47:31.395 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:361	server run time:913
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":46.0,"Tmod":0.7,"Upv3":0.9,"Ubc":0.5,"Upv1":0.6,"Upv2":0.1,"Ipv1":0.6,"Ipv2":0.9,"Ipv3":0.8,"Mode":1,"Tcoil":0.5,"RunT":467.2,"Pmax":26.5,"Uca":0.1,"Qac":0.5,"Pac":23.8,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":46,"Uab":1.0,"Ia":0.6,"Ib":0.7,"Freq":0.9,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":46.0,"Tmod":0.7,"Upv3":0.9,"Ubc":0.5,"Upv1":0.6,"Upv2":0.1,"Ipv1":0.6,"Ipv2":0.9,"Ipv3":0.8,"Mode":1,"Tcoil":0.5,"RunT":467.2,"Pmax":26.5,"Uca":0.1,"Qac":0.5,"Pac":23.8,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":46,"Uab":1.0,"Ia":0.6,"Ib":0.7,"Freq":0.9,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:48:31.483 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:48:31.549 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:421	server run time:974
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":46.4,"Tmod":0.0,"Upv3":0.3,"Ubc":0.9,"Upv1":0.7,"Upv2":0.4,"Ipv1":1.0,"Ipv2":0.9,"Ipv3":0.0,"Mode":1,"Tcoil":0.5,"RunT":456.2,"Pmax":49.6,"Uca":0.0,"Qac":0.1,"Pac":23.8,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":46,"Uab":0.0,"Ia":0.7,"Ib":0.9,"Freq":0.1,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":46.4,"Tmod":0.0,"Upv3":0.3,"Ubc":0.9,"Upv1":0.7,"Upv2":0.4,"Ipv1":1.0,"Ipv2":0.9,"Ipv3":0.0,"Mode":1,"Tcoil":0.5,"RunT":456.2,"Pmax":49.6,"Uca":0.0,"Qac":0.1,"Pac":23.8,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":46,"Uab":0.0,"Ia":0.7,"Ib":0.9,"Freq":0.1,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:49:31.678 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:49:31.809 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:481	server run time:1034
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.8,"DYield":46.8,"Tmod":0.2,"Upv3":0.1,"Ubc":0.9,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.1,"Mode":1,"Tcoil":0.3,"RunT":458.8,"Pmax":46.1,"Uca":0.1,"Qac":0.0,"Pac":23.1,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":47,"Uab":0.1,"Ia":0.3,"Ib":0.2,"Freq":0.3,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.8,"DYield":46.8,"Tmod":0.2,"Upv3":0.1,"Ubc":0.9,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.1,"Mode":1,"Tcoil":0.3,"RunT":458.8,"Pmax":46.1,"Uca":0.1,"Qac":0.0,"Pac":23.1,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":47,"Uab":0.1,"Ia":0.3,"Ib":0.2,"Freq":0.3,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:50:31.909 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:50:31.983 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:542	server run time:1094
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":47.2,"Tmod":0.9,"Upv3":0.8,"Ubc":0.9,"Upv1":0.5,"Upv2":0.5,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":430.9,"Pmax":27.1,"Uca":0.4,"Qac":0.3,"Pac":24.8,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":47,"Uab":0.7,"Ia":0.4,"Ib":0.4,"Freq":0.0,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":47.2,"Tmod":0.9,"Upv3":0.8,"Ubc":0.9,"Upv1":0.5,"Upv2":0.5,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":430.9,"Pmax":27.1,"Uca":0.4,"Qac":0.3,"Pac":24.8,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":47,"Uab":0.7,"Ia":0.4,"Ib":0.4,"Freq":0.0,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:51:32.069 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:51:32.131 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:602	server run time:1154
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":47.6,"Tmod":0.7,"Upv3":0.1,"Ubc":0.5,"Upv1":0.1,"Upv2":0.0,"Ipv1":0.1,"Ipv2":0.3,"Ipv3":0.2,"Mode":1,"Tcoil":0.3,"RunT":454.4,"Pmax":28.5,"Uca":0.8,"Qac":0.0,"Pac":24.3,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":48,"Uab":1.0,"Ia":0.8,"Ib":0.3,"Freq":0.0,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":47.6,"Tmod":0.7,"Upv3":0.1,"Ubc":0.5,"Upv1":0.1,"Upv2":0.0,"Ipv1":0.1,"Ipv2":0.3,"Ipv3":0.2,"Mode":1,"Tcoil":0.3,"RunT":454.4,"Pmax":28.5,"Uca":0.8,"Qac":0.0,"Pac":24.3,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":48,"Uab":1.0,"Ia":0.8,"Ib":0.3,"Freq":0.0,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:52:32.529 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:52:32.623 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:662	server run time:1215
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":48.0,"Tmod":0.4,"Upv3":0.4,"Ubc":0.1,"Upv1":0.9,"Upv2":0.5,"Ipv1":0.9,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":447.0,"Pmax":47.3,"Uca":1.0,"Qac":1.0,"Pac":22.7,"Sac":0.0,"PF":0.8,"LCDVer":"02.21","TYield":48,"Uab":0.0,"Ia":0.9,"Ib":0.2,"Freq":0.1,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":48.0,"Tmod":0.4,"Upv3":0.4,"Ubc":0.1,"Upv1":0.9,"Upv2":0.5,"Ipv1":0.9,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":447.0,"Pmax":47.3,"Uca":1.0,"Qac":1.0,"Pac":22.7,"Sac":0.0,"PF":0.8,"LCDVer":"02.21","TYield":48,"Uab":0.0,"Ia":0.9,"Ib":0.2,"Freq":0.1,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:53:32.729 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:53:32.784 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:722	server run time:1275
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.9,"DYield":48.3,"Tmod":0.1,"Upv3":0.6,"Ubc":0.6,"Upv1":0.6,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.6,"Mode":1,"Tcoil":0.0,"RunT":443.6,"Pmax":40.7,"Uca":0.7,"Qac":0.9,"Pac":21.6,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":48,"Uab":0.7,"Ia":0.8,"Ib":0.6,"Freq":0.8,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.9,"DYield":48.3,"Tmod":0.1,"Upv3":0.6,"Ubc":0.6,"Upv1":0.6,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.6,"Mode":1,"Tcoil":0.0,"RunT":443.6,"Pmax":40.7,"Uca":0.7,"Qac":0.9,"Pac":21.6,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":48,"Uab":0.7,"Ia":0.8,"Ib":0.6,"Freq":0.8,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:54:32.892 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:54:32.953 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:783	server run time:1335
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.2,"DYield":48.7,"Tmod":0.2,"Upv3":0.7,"Ubc":0.2,"Upv1":0.1,"Upv2":0.9,"Ipv1":0.8,"Ipv2":0.3,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":416.1,"Pmax":21.2,"Uca":1.0,"Qac":0.2,"Pac":21.9,"Sac":0.8,"PF":0.8,"LCDVer":"02.21","TYield":49,"Uab":0.6,"Ia":0.3,"Ib":0.5,"Freq":0.2,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.2,"DYield":48.7,"Tmod":0.2,"Upv3":0.7,"Ubc":0.2,"Upv1":0.1,"Upv2":0.9,"Ipv1":0.8,"Ipv2":0.3,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":416.1,"Pmax":21.2,"Uca":1.0,"Qac":0.2,"Pac":21.9,"Sac":0.8,"PF":0.8,"LCDVer":"02.21","TYield":49,"Uab":0.6,"Ia":0.3,"Ib":0.5,"Freq":0.2,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:55:33.041 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:55:33.369 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:843	server run time:1395
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":49.0,"Tmod":0.5,"Upv3":0.8,"Ubc":0.8,"Upv1":0.0,"Upv2":0.9,"Ipv1":0.3,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":465.4,"Pmax":46.3,"Uca":0.9,"Qac":1.0,"Pac":20.3,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":49,"Uab":0.5,"Ia":0.3,"Ib":0.8,"Freq":0.7,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":49.0,"Tmod":0.5,"Upv3":0.8,"Ubc":0.8,"Upv1":0.0,"Upv2":0.9,"Ipv1":0.3,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":465.4,"Pmax":46.3,"Uca":0.9,"Qac":1.0,"Pac":20.3,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":49,"Uab":0.5,"Ia":0.3,"Ib":0.8,"Freq":0.7,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:56:33.457 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:56:33.534 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:903	server run time:1455
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":49.4,"Tmod":0.1,"Upv3":1.0,"Ubc":0.8,"Upv1":0.4,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.6,"Ipv3":0.5,"Mode":1,"Tcoil":0.5,"RunT":412.0,"Pmax":48.8,"Uca":0.8,"Qac":0.2,"Pac":24.3,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":49,"Uab":0.7,"Ia":0.0,"Ib":0.3,"Freq":0.4,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":49.4,"Tmod":0.1,"Upv3":1.0,"Ubc":0.8,"Upv1":0.4,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.6,"Ipv3":0.5,"Mode":1,"Tcoil":0.5,"RunT":412.0,"Pmax":48.8,"Uca":0.8,"Qac":0.2,"Pac":24.3,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":49,"Uab":0.7,"Ia":0.0,"Ib":0.3,"Freq":0.4,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:57:33.614 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:57:33.678 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:963	server run time:1516
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":49.8,"Tmod":1.0,"Upv3":0.3,"Ubc":0.5,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.0,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.9,"RunT":452.6,"Pmax":28.2,"Uca":0.9,"Qac":0.9,"Pac":25.4,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":50,"Uab":0.3,"Ia":0.5,"Ib":0.8,"Freq":0.0,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":49.8,"Tmod":1.0,"Upv3":0.3,"Ubc":0.5,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.0,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.9,"RunT":452.6,"Pmax":28.2,"Uca":0.9,"Qac":0.9,"Pac":25.4,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":50,"Uab":0.3,"Ia":0.5,"Ib":0.8,"Freq":0.0,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:58:33.762 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:58:33.833 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1023	server run time:1576
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":50.2,"Tmod":0.1,"Upv3":1.0,"Ubc":0.2,"Upv1":0.1,"Upv2":1.0,"Ipv1":0.1,"Ipv2":0.7,"Ipv3":0.9,"Mode":1,"Tcoil":0.7,"RunT":426.8,"Pmax":23.1,"Uca":0.1,"Qac":0.3,"Pac":22.1,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":50,"Uab":0.7,"Ia":0.3,"Ib":0.9,"Freq":0.2,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":50.2,"Tmod":0.1,"Upv3":1.0,"Ubc":0.2,"Upv1":0.1,"Upv2":1.0,"Ipv1":0.1,"Ipv2":0.7,"Ipv3":0.9,"Mode":1,"Tcoil":0.7,"RunT":426.8,"Pmax":23.1,"Uca":0.1,"Qac":0.3,"Pac":22.1,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":50,"Uab":0.7,"Ia":0.3,"Ib":0.9,"Freq":0.2,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 10:59:33.917 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 10:59:34.006 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1084	server run time:1636
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.0,"DYield":50.6,"Tmod":0.3,"Upv3":0.0,"Ubc":0.7,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.8,"Ipv2":0.4,"Ipv3":0.0,"Mode":1,"Tcoil":0.4,"RunT":451.9,"Pmax":32.2,"Uca":0.2,"Qac":0.3,"Pac":22.6,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":51,"Uab":0.7,"Ia":0.7,"Ib":1.0,"Freq":0.4,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.0,"DYield":50.6,"Tmod":0.3,"Upv3":0.0,"Ubc":0.7,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.8,"Ipv2":0.4,"Ipv3":0.0,"Mode":1,"Tcoil":0.4,"RunT":451.9,"Pmax":32.2,"Uca":0.2,"Qac":0.3,"Pac":22.6,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":51,"Uab":0.7,"Ia":0.7,"Ib":1.0,"Freq":0.4,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:00:34.162 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:00:34.222 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1144	server run time:1696
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":51.0,"Tmod":0.9,"Upv3":0.3,"Ubc":0.4,"Upv1":0.4,"Upv2":0.2,"Ipv1":0.7,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.4,"RunT":429.5,"Pmax":23.4,"Uca":0.4,"Qac":1.0,"Pac":22.1,"Sac":0.8,"PF":0.8,"LCDVer":"02.21","TYield":51,"Uab":0.7,"Ia":0.4,"Ib":1.0,"Freq":0.5,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":51.0,"Tmod":0.9,"Upv3":0.3,"Ubc":0.4,"Upv1":0.4,"Upv2":0.2,"Ipv1":0.7,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.4,"RunT":429.5,"Pmax":23.4,"Uca":0.4,"Qac":1.0,"Pac":22.1,"Sac":0.8,"PF":0.8,"LCDVer":"02.21","TYield":51,"Uab":0.7,"Ia":0.4,"Ib":1.0,"Freq":0.5,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:01:34.307 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:01:34.372 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1204	server run time:1756
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":51.3,"Tmod":0.7,"Upv3":0.5,"Ubc":0.6,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.5,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.2,"RunT":448.5,"Pmax":50.3,"Uca":0.2,"Qac":0.6,"Pac":20.7,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":51,"Uab":0.1,"Ia":0.8,"Ib":0.3,"Freq":0.2,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":51.3,"Tmod":0.7,"Upv3":0.5,"Ubc":0.6,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.5,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.2,"RunT":448.5,"Pmax":50.3,"Uca":0.2,"Qac":0.6,"Pac":20.7,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":51,"Uab":0.1,"Ia":0.8,"Ib":0.3,"Freq":0.2,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:02:34.518 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:02:34.582 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1264	server run time:1817
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":51.7,"Tmod":0.3,"Upv3":1.0,"Ubc":0.8,"Upv1":0.1,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":452.7,"Pmax":30.0,"Uca":0.9,"Qac":0.3,"Pac":24.1,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":52,"Uab":0.9,"Ia":0.1,"Ib":0.2,"Freq":0.7,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":51.7,"Tmod":0.3,"Upv3":1.0,"Ubc":0.8,"Upv1":0.1,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":452.7,"Pmax":30.0,"Uca":0.9,"Qac":0.3,"Pac":24.1,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":52,"Uab":0.9,"Ia":0.1,"Ib":0.2,"Freq":0.7,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:03:34.755 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:03:34.873 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1324	server run time:1877
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":52.1,"Tmod":0.5,"Upv3":0.5,"Ubc":0.5,"Upv1":0.1,"Upv2":0.7,"Ipv1":0.5,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":472.6,"Pmax":22.8,"Uca":0.1,"Qac":0.2,"Pac":23.3,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":52,"Uab":0.2,"Ia":0.1,"Ib":0.4,"Freq":0.8,"Ic":1.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":52.1,"Tmod":0.5,"Upv3":0.5,"Ubc":0.5,"Upv1":0.1,"Upv2":0.7,"Ipv1":0.5,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":472.6,"Pmax":22.8,"Uca":0.1,"Qac":0.2,"Pac":23.3,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":52,"Uab":0.2,"Ia":0.1,"Ib":0.4,"Freq":0.8,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:04:35.048 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:04:35.123 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1385	server run time:1937
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":52.5,"Tmod":0.6,"Upv3":1.0,"Ubc":0.4,"Upv1":0.8,"Upv2":0.5,"Ipv1":0.3,"Ipv2":0.7,"Ipv3":0.2,"Mode":1,"Tcoil":0.9,"RunT":423.7,"Pmax":50.1,"Uca":0.9,"Qac":0.6,"Pac":22.6,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":53,"Uab":0.3,"Ia":0.2,"Ib":1.0,"Freq":0.9,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":52.5,"Tmod":0.6,"Upv3":1.0,"Ubc":0.4,"Upv1":0.8,"Upv2":0.5,"Ipv1":0.3,"Ipv2":0.7,"Ipv3":0.2,"Mode":1,"Tcoil":0.9,"RunT":423.7,"Pmax":50.1,"Uca":0.9,"Qac":0.6,"Pac":22.6,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":53,"Uab":0.3,"Ia":0.2,"Ib":1.0,"Freq":0.9,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:05:35.555 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:05:35.615 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1445	server run time:1998
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":52.9,"Tmod":0.7,"Upv3":0.3,"Ubc":0.4,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.9,"Ipv3":0.0,"Mode":1,"Tcoil":0.6,"RunT":465.2,"Pmax":23.2,"Uca":0.4,"Qac":0.4,"Pac":24.7,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":53,"Uab":0.1,"Ia":0.2,"Ib":0.7,"Freq":0.0,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":52.9,"Tmod":0.7,"Upv3":0.3,"Ubc":0.4,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.9,"Ipv3":0.0,"Mode":1,"Tcoil":0.6,"RunT":465.2,"Pmax":23.2,"Uca":0.4,"Qac":0.4,"Pac":24.7,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":53,"Uab":0.1,"Ia":0.2,"Ib":0.7,"Freq":0.0,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:06:35.994 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:06:36.064 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1506	server run time:2058
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":53.3,"Tmod":0.3,"Upv3":0.7,"Ubc":0.7,"Upv1":0.7,"Upv2":0.4,"Ipv1":0.2,"Ipv2":0.2,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":473.7,"Pmax":26.4,"Uca":0.1,"Qac":0.1,"Pac":24.4,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":53,"Uab":0.2,"Ia":0.1,"Ib":0.6,"Freq":0.8,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":53.3,"Tmod":0.3,"Upv3":0.7,"Ubc":0.7,"Upv1":0.7,"Upv2":0.4,"Ipv1":0.2,"Ipv2":0.2,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":473.7,"Pmax":26.4,"Uca":0.1,"Qac":0.1,"Pac":24.4,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":53,"Uab":0.2,"Ia":0.1,"Ib":0.6,"Freq":0.8,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:07:36.172 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:07:36.240 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1566	server run time:2118
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":53.7,"Tmod":0.5,"Upv3":0.1,"Ubc":0.8,"Upv1":0.4,"Upv2":0.0,"Ipv1":0.8,"Ipv2":0.3,"Ipv3":0.4,"Mode":1,"Tcoil":0.2,"RunT":478.2,"Pmax":50.4,"Uca":1.0,"Qac":0.3,"Pac":22.5,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":54,"Uab":0.1,"Ia":0.5,"Ib":0.2,"Freq":0.1,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":53.7,"Tmod":0.5,"Upv3":0.1,"Ubc":0.8,"Upv1":0.4,"Upv2":0.0,"Ipv1":0.8,"Ipv2":0.3,"Ipv3":0.4,"Mode":1,"Tcoil":0.2,"RunT":478.2,"Pmax":50.4,"Uca":1.0,"Qac":0.3,"Pac":22.5,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":54,"Uab":0.1,"Ia":0.5,"Ib":0.2,"Freq":0.1,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:08:36.455 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:08:36.521 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1626	server run time:2178
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.4,"DYield":54.1,"Tmod":0.6,"Upv3":0.2,"Ubc":0.3,"Upv1":0.6,"Upv2":0.9,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":1.0,"RunT":431.4,"Pmax":48.8,"Uca":0.8,"Qac":0.7,"Pac":24.1,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":54,"Uab":0.9,"Ia":0.7,"Ib":0.6,"Freq":0.3,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.4,"DYield":54.1,"Tmod":0.6,"Upv3":0.2,"Ubc":0.3,"Upv1":0.6,"Upv2":0.9,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":1.0,"RunT":431.4,"Pmax":48.8,"Uca":0.8,"Qac":0.7,"Pac":24.1,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":54,"Uab":0.9,"Ia":0.7,"Ib":0.6,"Freq":0.3,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:09:36.633 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:09:36.967 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1686	server run time:2239
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":54.5,"Tmod":0.5,"Upv3":0.0,"Ubc":0.2,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":455.3,"Pmax":30.4,"Uca":0.1,"Qac":0.7,"Pac":23.3,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":55,"Uab":0.2,"Ia":0.5,"Ib":0.1,"Freq":0.6,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":54.5,"Tmod":0.5,"Upv3":0.0,"Ubc":0.2,"Upv1":0.2,"Upv2":0.4,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":455.3,"Pmax":30.4,"Uca":0.1,"Qac":0.7,"Pac":23.3,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":55,"Uab":0.2,"Ia":0.5,"Ib":0.1,"Freq":0.6,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:10:37.088 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:10:37.161 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1747	server run time:2299
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":1.0,"DYield":54.8,"Tmod":0.4,"Upv3":0.8,"Ubc":0.8,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.9,"Ipv2":0.6,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":414.4,"Pmax":35.3,"Uca":0.7,"Qac":0.6,"Pac":23.3,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":55,"Uab":0.8,"Ia":0.4,"Ib":0.6,"Freq":0.8,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":1.0,"DYield":54.8,"Tmod":0.4,"Upv3":0.8,"Ubc":0.8,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.9,"Ipv2":0.6,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":414.4,"Pmax":35.3,"Uca":0.7,"Qac":0.6,"Pac":23.3,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":55,"Uab":0.8,"Ia":0.4,"Ib":0.6,"Freq":0.8,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:11:37.249 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:11:37.313 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1807	server run time:2359
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.8,"DYield":55.2,"Tmod":0.4,"Upv3":0.5,"Ubc":0.7,"Upv1":0.7,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":1.0,"RunT":428.6,"Pmax":37.0,"Uca":0.2,"Qac":0.4,"Pac":21.7,"Sac":0.6,"PF":0.8,"LCDVer":"02.21","TYield":55,"Uab":0.3,"Ia":1.0,"Ib":0.7,"Freq":0.3,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.8,"DYield":55.2,"Tmod":0.4,"Upv3":0.5,"Ubc":0.7,"Upv1":0.7,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":1.0,"RunT":428.6,"Pmax":37.0,"Uca":0.2,"Qac":0.4,"Pac":21.7,"Sac":0.6,"PF":0.8,"LCDVer":"02.21","TYield":55,"Uab":0.3,"Ia":1.0,"Ib":0.7,"Freq":0.3,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:12:37.745 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:12:37.835 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1867	server run time:2420
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":55.6,"Tmod":0.1,"Upv3":0.1,"Ubc":0.2,"Upv1":0.4,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.0,"Mode":1,"Tcoil":0.8,"RunT":452.5,"Pmax":47.8,"Uca":1.0,"Qac":0.7,"Pac":23.0,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":56,"Uab":0.1,"Ia":0.1,"Ib":1.0,"Freq":0.5,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":55.6,"Tmod":0.1,"Upv3":0.1,"Ubc":0.2,"Upv1":0.4,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.0,"Mode":1,"Tcoil":0.8,"RunT":452.5,"Pmax":47.8,"Uca":1.0,"Qac":0.7,"Pac":23.0,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":56,"Uab":0.1,"Ia":0.1,"Ib":1.0,"Freq":0.5,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:13:38.165 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:13:38.222 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1928	server run time:2480
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":1.0,"DYield":56.0,"Tmod":0.3,"Upv3":0.5,"Ubc":0.1,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":438.0,"Pmax":33.9,"Uca":0.2,"Qac":0.9,"Pac":22.0,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":56,"Uab":0.2,"Ia":0.2,"Ib":0.4,"Freq":0.8,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":1.0,"DYield":56.0,"Tmod":0.3,"Upv3":0.5,"Ubc":0.1,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":438.0,"Pmax":33.9,"Uca":0.2,"Qac":0.9,"Pac":22.0,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":56,"Uab":0.2,"Ia":0.2,"Ib":0.4,"Freq":0.8,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:14:38.307 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:14:38.370 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:1988	server run time:2540
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":56.4,"Tmod":0.2,"Upv3":1.0,"Ubc":0.1,"Upv1":0.0,"Upv2":0.6,"Ipv1":0.9,"Ipv2":1.0,"Ipv3":1.0,"Mode":1,"Tcoil":0.1,"RunT":475.1,"Pmax":34.2,"Uca":0.9,"Qac":0.6,"Pac":25.2,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":56,"Uab":0.2,"Ia":0.9,"Ib":0.2,"Freq":0.5,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":56.4,"Tmod":0.2,"Upv3":1.0,"Ubc":0.1,"Upv1":0.0,"Upv2":0.6,"Ipv1":0.9,"Ipv2":1.0,"Ipv3":1.0,"Mode":1,"Tcoil":0.1,"RunT":475.1,"Pmax":34.2,"Uca":0.9,"Qac":0.6,"Pac":25.2,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":56,"Uab":0.2,"Ia":0.9,"Ib":0.2,"Freq":0.5,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:15:38.448 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:15:38.522 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2048	server run time:2600
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":56.8,"Tmod":0.1,"Upv3":1.0,"Ubc":0.6,"Upv1":0.8,"Upv2":0.6,"Ipv1":0.6,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":427.5,"Pmax":25.0,"Uca":0.6,"Qac":0.1,"Pac":24.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":57,"Uab":0.3,"Ia":0.7,"Ib":0.8,"Freq":0.5,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":56.8,"Tmod":0.1,"Upv3":1.0,"Ubc":0.6,"Upv1":0.8,"Upv2":0.6,"Ipv1":0.6,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":427.5,"Pmax":25.0,"Uca":0.6,"Qac":0.1,"Pac":24.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":57,"Uab":0.3,"Ia":0.7,"Ib":0.8,"Freq":0.5,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:16:38.622 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:16:38.703 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2108	server run time:2661
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":57.2,"Tmod":0.4,"Upv3":0.2,"Ubc":0.9,"Upv1":0.9,"Upv2":1.0,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":441.7,"Pmax":23.4,"Uca":0.8,"Qac":0.8,"Pac":22.7,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":57,"Uab":0.0,"Ia":0.8,"Ib":0.8,"Freq":0.6,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":57.2,"Tmod":0.4,"Upv3":0.2,"Ubc":0.9,"Upv1":0.9,"Upv2":1.0,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":441.7,"Pmax":23.4,"Uca":0.8,"Qac":0.8,"Pac":22.7,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":57,"Uab":0.0,"Ia":0.8,"Ib":0.8,"Freq":0.6,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:17:38.909 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:17:38.977 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2169	server run time:2721
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.0,"DYield":57.5,"Tmod":0.4,"Upv3":0.6,"Ubc":0.7,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.5,"Ipv2":0.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.5,"RunT":425.8,"Pmax":46.3,"Uca":0.3,"Qac":0.7,"Pac":22.9,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":58,"Uab":0.3,"Ia":0.4,"Ib":0.9,"Freq":0.5,"Ic":1.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.0,"DYield":57.5,"Tmod":0.4,"Upv3":0.6,"Ubc":0.7,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.5,"Ipv2":0.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.5,"RunT":425.8,"Pmax":46.3,"Uca":0.3,"Qac":0.7,"Pac":22.9,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":58,"Uab":0.3,"Ia":0.4,"Ib":0.9,"Freq":0.5,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:18:39.082 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:18:39.154 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2229	server run time:2781
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":57.9,"Tmod":0.2,"Upv3":0.1,"Ubc":0.5,"Upv1":0.6,"Upv2":0.5,"Ipv1":0.2,"Ipv2":0.7,"Ipv3":0.1,"Mode":1,"Tcoil":0.1,"RunT":437.4,"Pmax":32.8,"Uca":0.5,"Qac":0.1,"Pac":24.6,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":58,"Uab":0.3,"Ia":1.0,"Ib":0.3,"Freq":0.1,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":57.9,"Tmod":0.2,"Upv3":0.1,"Ubc":0.5,"Upv1":0.6,"Upv2":0.5,"Ipv1":0.2,"Ipv2":0.7,"Ipv3":0.1,"Mode":1,"Tcoil":0.1,"RunT":437.4,"Pmax":32.8,"Uca":0.5,"Qac":0.1,"Pac":24.6,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":58,"Uab":0.3,"Ia":1.0,"Ib":0.3,"Freq":0.1,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:19:39.245 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:19:39.294 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2289	server run time:2841
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.3,"DYield":58.3,"Tmod":0.1,"Upv3":0.3,"Ubc":0.9,"Upv1":1.0,"Upv2":1.0,"Ipv1":1.0,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":475.4,"Pmax":33.9,"Uca":0.5,"Qac":0.4,"Pac":24.2,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":58,"Uab":0.9,"Ia":0.5,"Ib":0.9,"Freq":0.9,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.3,"DYield":58.3,"Tmod":0.1,"Upv3":0.3,"Ubc":0.9,"Upv1":1.0,"Upv2":1.0,"Ipv1":1.0,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":475.4,"Pmax":33.9,"Uca":0.5,"Qac":0.4,"Pac":24.2,"Sac":0.4,"PF":0.9,"LCDVer":"02.21","TYield":58,"Uab":0.9,"Ia":0.5,"Ib":0.9,"Freq":0.9,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:20:39.424 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:20:39.478 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2349	server run time:2901
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":1.0,"DYield":58.7,"Tmod":0.7,"Upv3":0.9,"Ubc":0.9,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":470.6,"Pmax":36.5,"Uca":0.9,"Qac":0.3,"Pac":23.4,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":59,"Uab":0.5,"Ia":0.3,"Ib":0.6,"Freq":0.1,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":1.0,"DYield":58.7,"Tmod":0.7,"Upv3":0.9,"Ubc":0.9,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":470.6,"Pmax":36.5,"Uca":0.9,"Qac":0.3,"Pac":23.4,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":59,"Uab":0.5,"Ia":0.3,"Ib":0.6,"Freq":0.1,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:21:39.561 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:21:39.620 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2409	server run time:2962
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":59.1,"Tmod":0.1,"Upv3":0.2,"Ubc":0.3,"Upv1":0.4,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.7,"RunT":435.8,"Pmax":30.5,"Uca":1.0,"Qac":0.5,"Pac":25.2,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":59,"Uab":0.1,"Ia":0.9,"Ib":0.7,"Freq":0.2,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":59.1,"Tmod":0.1,"Upv3":0.2,"Ubc":0.3,"Upv1":0.4,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.7,"RunT":435.8,"Pmax":30.5,"Uca":1.0,"Qac":0.5,"Pac":25.2,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":59,"Uab":0.1,"Ia":0.9,"Ib":0.7,"Freq":0.2,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:22:39.699 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:22:39.750 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2469	server run time:3022
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":59.6,"Tmod":0.1,"Upv3":0.4,"Ubc":1.0,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.6,"Ipv2":0.0,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":437.7,"Pmax":34.3,"Uca":0.5,"Qac":0.6,"Pac":24.2,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":60,"Uab":0.9,"Ia":0.9,"Ib":0.1,"Freq":0.1,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":59.6,"Tmod":0.1,"Upv3":0.4,"Ubc":1.0,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.6,"Ipv2":0.0,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":437.7,"Pmax":34.3,"Uca":0.5,"Qac":0.6,"Pac":24.2,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":60,"Uab":0.9,"Ia":0.9,"Ib":0.1,"Freq":0.1,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:23:39.836 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:23:39.903 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2529	server run time:3082
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":1.0,"DYield":60.0,"Tmod":0.5,"Upv3":0.2,"Ubc":0.3,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.3,"Ipv2":0.3,"Ipv3":0.2,"Mode":1,"Tcoil":0.9,"RunT":435.0,"Pmax":48.9,"Uca":0.0,"Qac":0.7,"Pac":24.0,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":60,"Uab":0.9,"Ia":0.3,"Ib":0.1,"Freq":0.4,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":1.0,"DYield":60.0,"Tmod":0.5,"Upv3":0.2,"Ubc":0.3,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.3,"Ipv2":0.3,"Ipv3":0.2,"Mode":1,"Tcoil":0.9,"RunT":435.0,"Pmax":48.9,"Uca":0.0,"Qac":0.7,"Pac":24.0,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":60,"Uab":0.9,"Ia":0.3,"Ib":0.1,"Freq":0.4,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:24:39.993 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:24:40.059 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2590	server run time:3142
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.1,"DYield":60.3,"Tmod":0.6,"Upv3":0.4,"Ubc":0.2,"Upv1":0.8,"Upv2":0.6,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.6,"RunT":454.1,"Pmax":30.9,"Uca":0.9,"Qac":0.3,"Pac":22.1,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":60,"Uab":0.4,"Ia":0.8,"Ib":0.0,"Freq":0.2,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.1,"DYield":60.3,"Tmod":0.6,"Upv3":0.4,"Ubc":0.2,"Upv1":0.8,"Upv2":0.6,"Ipv1":0.2,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.6,"RunT":454.1,"Pmax":30.9,"Uca":0.9,"Qac":0.3,"Pac":22.1,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":60,"Uab":0.4,"Ia":0.8,"Ib":0.0,"Freq":0.2,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:25:40.155 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:25:40.213 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2650	server run time:3202
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":60.7,"Tmod":0.2,"Upv3":0.5,"Ubc":0.7,"Upv1":0.6,"Upv2":0.5,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.7,"Mode":1,"Tcoil":0.5,"RunT":474.9,"Pmax":35.1,"Uca":0.7,"Qac":0.3,"Pac":24.7,"Sac":0.9,"PF":0.5,"LCDVer":"02.21","TYield":61,"Uab":0.3,"Ia":0.3,"Ib":0.2,"Freq":0.0,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":60.7,"Tmod":0.2,"Upv3":0.5,"Ubc":0.7,"Upv1":0.6,"Upv2":0.5,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.7,"Mode":1,"Tcoil":0.5,"RunT":474.9,"Pmax":35.1,"Uca":0.7,"Qac":0.3,"Pac":24.7,"Sac":0.9,"PF":0.5,"LCDVer":"02.21","TYield":61,"Uab":0.3,"Ia":0.3,"Ib":0.2,"Freq":0.0,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:26:40.305 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:26:40.370 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2710	server run time:3262
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.8,"DYield":61.2,"Tmod":0.5,"Upv3":0.2,"Ubc":0.5,"Upv1":0.8,"Upv2":0.6,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.7,"RunT":414.3,"Pmax":40.0,"Uca":1.0,"Qac":0.8,"Pac":25.2,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":61,"Uab":1.0,"Ia":0.7,"Ib":0.0,"Freq":0.4,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.8,"DYield":61.2,"Tmod":0.5,"Upv3":0.2,"Ubc":0.5,"Upv1":0.8,"Upv2":0.6,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.7,"RunT":414.3,"Pmax":40.0,"Uca":1.0,"Qac":0.8,"Pac":25.2,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":61,"Uab":1.0,"Ia":0.7,"Ib":0.0,"Freq":0.4,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:27:40.461 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:27:40.525 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2770	server run time:3322
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.4,"DYield":61.6,"Tmod":0.8,"Upv3":0.2,"Ubc":0.5,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":468.7,"Pmax":27.2,"Uca":0.4,"Qac":0.2,"Pac":24.3,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":62,"Uab":0.1,"Ia":0.7,"Ib":0.1,"Freq":0.4,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.4,"DYield":61.6,"Tmod":0.8,"Upv3":0.2,"Ubc":0.5,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":468.7,"Pmax":27.2,"Uca":0.4,"Qac":0.2,"Pac":24.3,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":62,"Uab":0.1,"Ia":0.7,"Ib":0.1,"Freq":0.4,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:28:40.613 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:28:40.677 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2830	server run time:3383
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":62.0,"Tmod":0.7,"Upv3":0.7,"Ubc":0.8,"Upv1":1.0,"Upv2":0.5,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":411.3,"Pmax":45.7,"Uca":0.8,"Qac":0.9,"Pac":24.6,"Sac":0.8,"PF":0.9,"LCDVer":"02.21","TYield":62,"Uab":0.7,"Ia":0.3,"Ib":0.2,"Freq":0.9,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":62.0,"Tmod":0.7,"Upv3":0.7,"Ubc":0.8,"Upv1":1.0,"Upv2":0.5,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":411.3,"Pmax":45.7,"Uca":0.8,"Qac":0.9,"Pac":24.6,"Sac":0.8,"PF":0.9,"LCDVer":"02.21","TYield":62,"Uab":0.7,"Ia":0.3,"Ib":0.2,"Freq":0.9,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:29:40.930 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:29:41.001 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2891	server run time:3443
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.8,"DYield":62.4,"Tmod":0.9,"Upv3":0.5,"Ubc":0.8,"Upv1":1.0,"Upv2":0.7,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.4,"RunT":478.3,"Pmax":42.4,"Uca":0.2,"Qac":0.1,"Pac":24.6,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":62,"Uab":0.6,"Ia":0.0,"Ib":0.3,"Freq":0.9,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.8,"DYield":62.4,"Tmod":0.9,"Upv3":0.5,"Ubc":0.8,"Upv1":1.0,"Upv2":0.7,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.4,"RunT":478.3,"Pmax":42.4,"Uca":0.2,"Qac":0.1,"Pac":24.6,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":62,"Uab":0.6,"Ia":0.0,"Ib":0.3,"Freq":0.9,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:30:41.089 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:30:41.159 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:2951	server run time:3503
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":62.8,"Tmod":0.4,"Upv3":0.2,"Ubc":0.2,"Upv1":0.2,"Upv2":0.5,"Ipv1":0.1,"Ipv2":0.3,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":447.5,"Pmax":36.3,"Uca":1.0,"Qac":0.8,"Pac":24.2,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":63,"Uab":0.3,"Ia":0.4,"Ib":0.9,"Freq":0.1,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":62.8,"Tmod":0.4,"Upv3":0.2,"Ubc":0.2,"Upv1":0.2,"Upv2":0.5,"Ipv1":0.1,"Ipv2":0.3,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":447.5,"Pmax":36.3,"Uca":1.0,"Qac":0.8,"Pac":24.2,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":63,"Uab":0.3,"Ia":0.4,"Ib":0.9,"Freq":0.1,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:31:41.249 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:31:41.310 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3011	server run time:3563
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":1.0,"DYield":63.2,"Tmod":0.6,"Upv3":0.4,"Ubc":0.7,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":427.4,"Pmax":26.0,"Uca":0.1,"Qac":0.5,"Pac":22.1,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":63,"Uab":0.2,"Ia":0.9,"Ib":0.2,"Freq":0.4,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":1.0,"DYield":63.2,"Tmod":0.6,"Upv3":0.4,"Ubc":0.7,"Upv1":0.5,"Upv2":0.2,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":427.4,"Pmax":26.0,"Uca":0.1,"Qac":0.5,"Pac":22.1,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":63,"Uab":0.2,"Ia":0.9,"Ib":0.2,"Freq":0.4,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:32:41.413 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:32:41.475 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3071	server run time:3623
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":63.6,"Tmod":0.6,"Upv3":0.5,"Ubc":0.6,"Upv1":0.3,"Upv2":0.7,"Ipv1":0.3,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.1,"RunT":444.8,"Pmax":30.6,"Uca":0.5,"Qac":0.6,"Pac":24.7,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":64,"Uab":0.6,"Ia":0.4,"Ib":0.8,"Freq":1.0,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":63.6,"Tmod":0.6,"Upv3":0.5,"Ubc":0.6,"Upv1":0.3,"Upv2":0.7,"Ipv1":0.3,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.1,"RunT":444.8,"Pmax":30.6,"Uca":0.5,"Qac":0.6,"Pac":24.7,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":64,"Uab":0.6,"Ia":0.4,"Ib":0.8,"Freq":1.0,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:33:41.564 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:33:41.635 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3131	server run time:3684
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":64.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.9,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.2,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":448.5,"Pmax":23.1,"Uca":0.9,"Qac":1.0,"Pac":22.3,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":64,"Uab":0.3,"Ia":0.9,"Ib":0.8,"Freq":0.5,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":64.0,"Tmod":0.8,"Upv3":0.4,"Ubc":0.9,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.2,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":448.5,"Pmax":23.1,"Uca":0.9,"Qac":1.0,"Pac":22.3,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":64,"Uab":0.3,"Ia":0.9,"Ib":0.8,"Freq":0.5,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:34:41.728 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:34:41.798 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3191	server run time:3744
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":64.4,"Tmod":0.7,"Upv3":0.3,"Ubc":0.8,"Upv1":0.4,"Upv2":0.2,"Ipv1":0.4,"Ipv2":0.9,"Ipv3":0.6,"Mode":1,"Tcoil":0.6,"RunT":437.2,"Pmax":50.0,"Uca":0.2,"Qac":0.2,"Pac":24.7,"Sac":0.3,"PF":0.9,"LCDVer":"02.21","TYield":64,"Uab":0.5,"Ia":0.2,"Ib":0.6,"Freq":0.6,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":64.4,"Tmod":0.7,"Upv3":0.3,"Ubc":0.8,"Upv1":0.4,"Upv2":0.2,"Ipv1":0.4,"Ipv2":0.9,"Ipv3":0.6,"Mode":1,"Tcoil":0.6,"RunT":437.2,"Pmax":50.0,"Uca":0.2,"Qac":0.2,"Pac":24.7,"Sac":0.3,"PF":0.9,"LCDVer":"02.21","TYield":64,"Uab":0.5,"Ia":0.2,"Ib":0.6,"Freq":0.6,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:35:41.881 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:35:41.947 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3252	server run time:3804
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.1,"DYield":64.8,"Tmod":0.0,"Upv3":0.3,"Ubc":0.5,"Upv1":0.9,"Upv2":0.1,"Ipv1":1.0,"Ipv2":0.3,"Ipv3":0.9,"Mode":1,"Tcoil":0.1,"RunT":465.6,"Pmax":20.8,"Uca":0.7,"Qac":0.6,"Pac":25.5,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":65,"Uab":0.8,"Ia":0.2,"Ib":0.1,"Freq":0.1,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.1,"DYield":64.8,"Tmod":0.0,"Upv3":0.3,"Ubc":0.5,"Upv1":0.9,"Upv2":0.1,"Ipv1":1.0,"Ipv2":0.3,"Ipv3":0.9,"Mode":1,"Tcoil":0.1,"RunT":465.6,"Pmax":20.8,"Uca":0.7,"Qac":0.6,"Pac":25.5,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":65,"Uab":0.8,"Ia":0.2,"Ib":0.1,"Freq":0.1,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:36:42.026 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:36:42.087 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3312	server run time:3864
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":65.2,"Tmod":0.2,"Upv3":0.3,"Ubc":0.5,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.0,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.4,"RunT":457.1,"Pmax":50.5,"Uca":0.6,"Qac":0.4,"Pac":25.7,"Sac":0.6,"PF":0.9,"LCDVer":"02.21","TYield":65,"Uab":0.9,"Ia":0.8,"Ib":0.7,"Freq":0.1,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":65.2,"Tmod":0.2,"Upv3":0.3,"Ubc":0.5,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.0,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.4,"RunT":457.1,"Pmax":50.5,"Uca":0.6,"Qac":0.4,"Pac":25.7,"Sac":0.6,"PF":0.9,"LCDVer":"02.21","TYield":65,"Uab":0.9,"Ia":0.8,"Ib":0.7,"Freq":0.1,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:37:42.228 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:37:42.361 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3372	server run time:3924
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.7,"DYield":65.6,"Tmod":0.5,"Upv3":0.1,"Ubc":0.5,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.8,"Ipv2":0.9,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":417.0,"Pmax":31.1,"Uca":0.6,"Qac":0.2,"Pac":25.5,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":66,"Uab":0.0,"Ia":0.6,"Ib":0.9,"Freq":0.9,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.7,"DYield":65.6,"Tmod":0.5,"Upv3":0.1,"Ubc":0.5,"Upv1":0.6,"Upv2":1.0,"Ipv1":0.8,"Ipv2":0.9,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":417.0,"Pmax":31.1,"Uca":0.6,"Qac":0.2,"Pac":25.5,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":66,"Uab":0.0,"Ia":0.6,"Ib":0.9,"Freq":0.9,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:38:42.531 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:38:42.598 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3432	server run time:3985
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":66.0,"Tmod":0.3,"Upv3":1.0,"Ubc":1.0,"Upv1":0.8,"Upv2":0.8,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.2,"RunT":464.6,"Pmax":29.5,"Uca":0.4,"Qac":0.5,"Pac":24.6,"Sac":0.5,"PF":0.9,"LCDVer":"02.21","TYield":66,"Uab":0.2,"Ia":0.4,"Ib":0.8,"Freq":0.1,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":66.0,"Tmod":0.3,"Upv3":1.0,"Ubc":1.0,"Upv1":0.8,"Upv2":0.8,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.2,"RunT":464.6,"Pmax":29.5,"Uca":0.4,"Qac":0.5,"Pac":24.6,"Sac":0.5,"PF":0.9,"LCDVer":"02.21","TYield":66,"Uab":0.2,"Ia":0.4,"Ib":0.8,"Freq":0.1,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:39:42.705 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:39:42.756 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3492	server run time:4045
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":66.5,"Tmod":0.8,"Upv3":0.6,"Ubc":0.8,"Upv1":1.0,"Upv2":0.8,"Ipv1":0.6,"Ipv2":0.7,"Ipv3":0.1,"Mode":1,"Tcoil":0.5,"RunT":447.3,"Pmax":27.4,"Uca":0.0,"Qac":0.7,"Pac":25.6,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":67,"Uab":0.6,"Ia":0.3,"Ib":0.6,"Freq":0.4,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":66.5,"Tmod":0.8,"Upv3":0.6,"Ubc":0.8,"Upv1":1.0,"Upv2":0.8,"Ipv1":0.6,"Ipv2":0.7,"Ipv3":0.1,"Mode":1,"Tcoil":0.5,"RunT":447.3,"Pmax":27.4,"Uca":0.0,"Qac":0.7,"Pac":25.6,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":67,"Uab":0.6,"Ia":0.3,"Ib":0.6,"Freq":0.4,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:40:42.924 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:40:42.997 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3553	server run time:4105
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.5,"DYield":66.9,"Tmod":0.6,"Upv3":0.3,"Ubc":1.0,"Upv1":0.2,"Upv2":0.8,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.8,"Mode":1,"Tcoil":1.0,"RunT":416.7,"Pmax":33.0,"Uca":0.2,"Qac":1.0,"Pac":25.8,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":67,"Uab":0.1,"Ia":0.9,"Ib":1.0,"Freq":0.1,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.5,"DYield":66.9,"Tmod":0.6,"Upv3":0.3,"Ubc":1.0,"Upv1":0.2,"Upv2":0.8,"Ipv1":0.8,"Ipv2":0.8,"Ipv3":0.8,"Mode":1,"Tcoil":1.0,"RunT":416.7,"Pmax":33.0,"Uca":0.2,"Qac":1.0,"Pac":25.8,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":67,"Uab":0.1,"Ia":0.9,"Ib":1.0,"Freq":0.1,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:41:49.299 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:41:49.383 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	66 	Set the time:60	Thread run time:3619	server run time:4171
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":67.3,"Tmod":0.0,"Upv3":0.7,"Ubc":0.9,"Upv1":0.4,"Upv2":0.1,"Ipv1":1.0,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.2,"RunT":442.3,"Pmax":48.8,"Uca":0.8,"Qac":0.3,"Pac":25.9,"Sac":0.3,"PF":0.5,"LCDVer":"02.21","TYield":67,"Uab":0.2,"Ia":0.7,"Ib":0.2,"Freq":1.0,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":67.3,"Tmod":0.0,"Upv3":0.7,"Ubc":0.9,"Upv1":0.4,"Upv2":0.1,"Ipv1":1.0,"Ipv2":0.8,"Ipv3":0.6,"Mode":1,"Tcoil":0.2,"RunT":442.3,"Pmax":48.8,"Uca":0.8,"Qac":0.3,"Pac":25.9,"Sac":0.3,"PF":0.5,"LCDVer":"02.21","TYield":67,"Uab":0.2,"Ia":0.7,"Ib":0.2,"Freq":1.0,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:42:49.588 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:42:49.658 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3679	server run time:4232
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":67.7,"Tmod":1.0,"Upv3":0.5,"Ubc":0.2,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.6,"Mode":1,"Tcoil":0.1,"RunT":416.1,"Pmax":39.4,"Uca":0.6,"Qac":0.2,"Pac":23.0,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":68,"Uab":0.6,"Ia":1.0,"Ib":0.8,"Freq":0.1,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":67.7,"Tmod":1.0,"Upv3":0.5,"Ubc":0.2,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.6,"Mode":1,"Tcoil":0.1,"RunT":416.1,"Pmax":39.4,"Uca":0.6,"Qac":0.2,"Pac":23.0,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":68,"Uab":0.6,"Ia":1.0,"Ib":0.8,"Freq":0.1,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:43:50.898 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:43:50.950 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	61 	Set the time:60	Thread run time:3741	server run time:4293
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":68.1,"Tmod":0.3,"Upv3":0.3,"Ubc":0.7,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":1.0,"Mode":1,"Tcoil":0.8,"RunT":457.4,"Pmax":47.0,"Uca":0.3,"Qac":0.2,"Pac":24.3,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":68,"Uab":0.1,"Ia":0.7,"Ib":0.8,"Freq":0.9,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":68.1,"Tmod":0.3,"Upv3":0.3,"Ubc":0.7,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":1.0,"Mode":1,"Tcoil":0.8,"RunT":457.4,"Pmax":47.0,"Uca":0.3,"Qac":0.2,"Pac":24.3,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":68,"Uab":0.1,"Ia":0.7,"Ib":0.8,"Freq":0.9,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:44:51.177 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:44:51.283 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3801	server run time:4353
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":68.5,"Tmod":0.5,"Upv3":0.3,"Ubc":0.2,"Upv1":1.0,"Upv2":0.8,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":421.5,"Pmax":34.1,"Uca":0.2,"Qac":0.8,"Pac":24.5,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":69,"Uab":1.0,"Ia":0.7,"Ib":0.7,"Freq":0.9,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":68.5,"Tmod":0.5,"Upv3":0.3,"Ubc":0.2,"Upv1":1.0,"Upv2":0.8,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":421.5,"Pmax":34.1,"Uca":0.2,"Qac":0.8,"Pac":24.5,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":69,"Uab":1.0,"Ia":0.7,"Ib":0.7,"Freq":0.9,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:45:51.726 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:45:51.792 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3861	server run time:4414
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":68.9,"Tmod":0.5,"Upv3":0.3,"Ubc":0.1,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":454.7,"Pmax":42.6,"Uca":0.9,"Qac":0.8,"Pac":24.9,"Sac":0.6,"PF":0.9,"LCDVer":"02.21","TYield":69,"Uab":0.2,"Ia":0.5,"Ib":0.7,"Freq":0.3,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":68.9,"Tmod":0.5,"Upv3":0.3,"Ubc":0.1,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":454.7,"Pmax":42.6,"Uca":0.9,"Qac":0.8,"Pac":24.9,"Sac":0.6,"PF":0.9,"LCDVer":"02.21","TYield":69,"Uab":0.2,"Ia":0.5,"Ib":0.7,"Freq":0.3,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:46:51.928 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:46:51.999 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3922	server run time:4474
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.4,"DYield":69.3,"Tmod":0.4,"Upv3":0.2,"Ubc":0.1,"Upv1":0.2,"Upv2":0.6,"Ipv1":0.1,"Ipv2":0.7,"Ipv3":0.2,"Mode":1,"Tcoil":0.4,"RunT":429.3,"Pmax":50.4,"Uca":0.4,"Qac":1.0,"Pac":21.3,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":69,"Uab":0.2,"Ia":0.5,"Ib":0.8,"Freq":0.3,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.4,"DYield":69.3,"Tmod":0.4,"Upv3":0.2,"Ubc":0.1,"Upv1":0.2,"Upv2":0.6,"Ipv1":0.1,"Ipv2":0.7,"Ipv3":0.2,"Mode":1,"Tcoil":0.4,"RunT":429.3,"Pmax":50.4,"Uca":0.4,"Qac":1.0,"Pac":21.3,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":69,"Uab":0.2,"Ia":0.5,"Ib":0.8,"Freq":0.3,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:47:52.165 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:47:52.248 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:3982	server run time:4534
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.1,"DYield":69.7,"Tmod":0.3,"Upv3":0.9,"Ubc":0.1,"Upv1":0.5,"Upv2":0.9,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":440.5,"Pmax":45.4,"Uca":0.5,"Qac":0.0,"Pac":26.1,"Sac":0.7,"PF":0.5,"LCDVer":"02.21","TYield":70,"Uab":0.5,"Ia":1.0,"Ib":0.8,"Freq":0.3,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.1,"DYield":69.7,"Tmod":0.3,"Upv3":0.9,"Ubc":0.1,"Upv1":0.5,"Upv2":0.9,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":440.5,"Pmax":45.4,"Uca":0.5,"Qac":0.0,"Pac":26.1,"Sac":0.7,"PF":0.5,"LCDVer":"02.21","TYield":70,"Uab":0.5,"Ia":1.0,"Ib":0.8,"Freq":0.3,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:48:52.445 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:48:52.545 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4042	server run time:4594
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":70.2,"Tmod":0.7,"Upv3":0.9,"Ubc":0.5,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.1,"Mode":1,"Tcoil":0.6,"RunT":423.2,"Pmax":40.2,"Uca":0.6,"Qac":0.2,"Pac":26.0,"Sac":0.6,"PF":0.9,"LCDVer":"02.21","TYield":70,"Uab":0.3,"Ia":0.9,"Ib":1.0,"Freq":0.4,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":70.2,"Tmod":0.7,"Upv3":0.9,"Ubc":0.5,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.1,"Mode":1,"Tcoil":0.6,"RunT":423.2,"Pmax":40.2,"Uca":0.6,"Qac":0.2,"Pac":26.0,"Sac":0.6,"PF":0.9,"LCDVer":"02.21","TYield":70,"Uab":0.3,"Ia":0.9,"Ib":1.0,"Freq":0.4,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:49:52.671 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:49:52.739 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4102	server run time:4655
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.3,"DYield":70.6,"Tmod":0.1,"Upv3":0.5,"Ubc":0.7,"Upv1":0.4,"Upv2":0.2,"Ipv1":0.9,"Ipv2":0.3,"Ipv3":0.5,"Mode":1,"Tcoil":0.7,"RunT":426.7,"Pmax":38.7,"Uca":0.3,"Qac":0.8,"Pac":25.1,"Sac":0.0,"PF":0.9,"LCDVer":"02.21","TYield":71,"Uab":0.5,"Ia":0.4,"Ib":0.4,"Freq":0.1,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.3,"DYield":70.6,"Tmod":0.1,"Upv3":0.5,"Ubc":0.7,"Upv1":0.4,"Upv2":0.2,"Ipv1":0.9,"Ipv2":0.3,"Ipv3":0.5,"Mode":1,"Tcoil":0.7,"RunT":426.7,"Pmax":38.7,"Uca":0.3,"Qac":0.8,"Pac":25.1,"Sac":0.0,"PF":0.9,"LCDVer":"02.21","TYield":71,"Uab":0.5,"Ia":0.4,"Ib":0.4,"Freq":0.1,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:50:52.833 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:50:52.903 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4162	server run time:4715
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":71.0,"Tmod":0.9,"Upv3":0.5,"Ubc":0.3,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.5,"Ipv2":0.0,"Ipv3":0.4,"Mode":1,"Tcoil":0.4,"RunT":461.3,"Pmax":37.3,"Uca":0.2,"Qac":0.9,"Pac":26.5,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":71,"Uab":0.6,"Ia":0.4,"Ib":0.1,"Freq":0.7,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":71.0,"Tmod":0.9,"Upv3":0.5,"Ubc":0.3,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.5,"Ipv2":0.0,"Ipv3":0.4,"Mode":1,"Tcoil":0.4,"RunT":461.3,"Pmax":37.3,"Uca":0.2,"Qac":0.9,"Pac":26.5,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":71,"Uab":0.6,"Ia":0.4,"Ib":0.1,"Freq":0.7,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:51:53.185 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:51:53.313 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4223	server run time:4775
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.0,"DYield":71.5,"Tmod":0.5,"Upv3":0.7,"Ubc":0.3,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.2,"Mode":1,"Tcoil":0.8,"RunT":467.9,"Pmax":37.8,"Uca":0.3,"Qac":0.5,"Pac":25.7,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":72,"Uab":0.3,"Ia":0.8,"Ib":0.3,"Freq":0.8,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.0,"DYield":71.5,"Tmod":0.5,"Upv3":0.7,"Ubc":0.3,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.2,"Mode":1,"Tcoil":0.8,"RunT":467.9,"Pmax":37.8,"Uca":0.3,"Qac":0.5,"Pac":25.7,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":72,"Uab":0.3,"Ia":0.8,"Ib":0.3,"Freq":0.8,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:52:53.573 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:52:53.639 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4283	server run time:4836
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":71.9,"Tmod":0.2,"Upv3":0.5,"Ubc":0.4,"Upv1":0.5,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.8,"Ipv3":0.8,"Mode":1,"Tcoil":0.8,"RunT":420.2,"Pmax":43.2,"Uca":0.0,"Qac":0.5,"Pac":24.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":72,"Uab":0.2,"Ia":0.7,"Ib":0.1,"Freq":0.2,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":71.9,"Tmod":0.2,"Upv3":0.5,"Ubc":0.4,"Upv1":0.5,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.8,"Ipv3":0.8,"Mode":1,"Tcoil":0.8,"RunT":420.2,"Pmax":43.2,"Uca":0.0,"Qac":0.5,"Pac":24.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":72,"Uab":0.2,"Ia":0.7,"Ib":0.1,"Freq":0.2,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:53:53.901 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:53:54.001 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4344	server run time:4896
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":72.3,"Tmod":0.7,"Upv3":0.7,"Ubc":0.3,"Upv1":0.0,"Upv2":0.8,"Ipv1":0.8,"Ipv2":0.5,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":471.0,"Pmax":31.4,"Uca":0.9,"Qac":0.7,"Pac":26.6,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":72,"Uab":1.0,"Ia":0.9,"Ib":0.4,"Freq":0.2,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":72.3,"Tmod":0.7,"Upv3":0.7,"Ubc":0.3,"Upv1":0.0,"Upv2":0.8,"Ipv1":0.8,"Ipv2":0.5,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":471.0,"Pmax":31.4,"Uca":0.9,"Qac":0.7,"Pac":26.6,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":72,"Uab":1.0,"Ia":0.9,"Ib":0.4,"Freq":0.2,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:54:54.136 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:54:54.201 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4404	server run time:4956
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":72.7,"Tmod":0.3,"Upv3":0.4,"Ubc":0.5,"Upv1":0.7,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":435.5,"Pmax":24.3,"Uca":0.4,"Qac":0.1,"Pac":25.4,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":73,"Uab":0.3,"Ia":0.0,"Ib":0.8,"Freq":0.2,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":72.7,"Tmod":0.3,"Upv3":0.4,"Ubc":0.5,"Upv1":0.7,"Upv2":1.0,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":435.5,"Pmax":24.3,"Uca":0.4,"Qac":0.1,"Pac":25.4,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":73,"Uab":0.3,"Ia":0.0,"Ib":0.8,"Freq":0.2,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:55:54.369 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:55:54.644 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4464	server run time:5016
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":73.1,"Tmod":0.5,"Upv3":0.8,"Ubc":0.7,"Upv1":0.9,"Upv2":0.4,"Ipv1":0.3,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":453.8,"Pmax":36.8,"Uca":0.8,"Qac":0.2,"Pac":24.5,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":73,"Uab":0.3,"Ia":0.9,"Ib":0.5,"Freq":0.7,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":73.1,"Tmod":0.5,"Upv3":0.8,"Ubc":0.7,"Upv1":0.9,"Upv2":0.4,"Ipv1":0.3,"Ipv2":0.2,"Ipv3":0.6,"Mode":1,"Tcoil":0.7,"RunT":453.8,"Pmax":36.8,"Uca":0.8,"Qac":0.2,"Pac":24.5,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":73,"Uab":0.3,"Ia":0.9,"Ib":0.5,"Freq":0.7,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:56:54.821 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:56:54.900 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4524	server run time:5077
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.3,"DYield":73.6,"Tmod":0.8,"Upv3":0.6,"Ubc":0.2,"Upv1":0.6,"Upv2":0.5,"Ipv1":0.1,"Ipv2":0.0,"Ipv3":0.1,"Mode":1,"Tcoil":0.1,"RunT":419.5,"Pmax":39.8,"Uca":0.1,"Qac":0.1,"Pac":26.1,"Sac":0.7,"PF":0.9,"LCDVer":"02.21","TYield":74,"Uab":0.8,"Ia":1.0,"Ib":0.9,"Freq":0.2,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.3,"DYield":73.6,"Tmod":0.8,"Upv3":0.6,"Ubc":0.2,"Upv1":0.6,"Upv2":0.5,"Ipv1":0.1,"Ipv2":0.0,"Ipv3":0.1,"Mode":1,"Tcoil":0.1,"RunT":419.5,"Pmax":39.8,"Uca":0.1,"Qac":0.1,"Pac":26.1,"Sac":0.7,"PF":0.9,"LCDVer":"02.21","TYield":74,"Uab":0.8,"Ia":1.0,"Ib":0.9,"Freq":0.2,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:57:55.058 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:57:55.144 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4585	server run time:5137
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":74.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.8,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.8,"Ipv2":0.3,"Ipv3":0.1,"Mode":1,"Tcoil":1.0,"RunT":454.8,"Pmax":29.2,"Uca":0.3,"Qac":0.7,"Pac":23.9,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":74,"Uab":0.2,"Ia":0.5,"Ib":0.9,"Freq":0.6,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":74.0,"Tmod":0.9,"Upv3":0.4,"Ubc":0.8,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.8,"Ipv2":0.3,"Ipv3":0.1,"Mode":1,"Tcoil":1.0,"RunT":454.8,"Pmax":29.2,"Uca":0.3,"Qac":0.7,"Pac":23.9,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":74,"Uab":0.2,"Ia":0.5,"Ib":0.9,"Freq":0.6,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:58:55.237 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:58:55.311 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4645	server run time:5197
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":74.4,"Tmod":0.5,"Upv3":0.1,"Ubc":0.7,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.6,"Ipv2":0.7,"Ipv3":0.9,"Mode":1,"Tcoil":0.7,"RunT":437.9,"Pmax":29.6,"Uca":0.8,"Qac":0.4,"Pac":25.9,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":74,"Uab":0.4,"Ia":0.8,"Ib":0.7,"Freq":0.1,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":74.4,"Tmod":0.5,"Upv3":0.1,"Ubc":0.7,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.6,"Ipv2":0.7,"Ipv3":0.9,"Mode":1,"Tcoil":0.7,"RunT":437.9,"Pmax":29.6,"Uca":0.8,"Qac":0.4,"Pac":25.9,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":74,"Uab":0.4,"Ia":0.8,"Ib":0.7,"Freq":0.1,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 11:59:55.421 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 11:59:55.490 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4705	server run time:5257
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":74.8,"Tmod":0.5,"Upv3":0.4,"Ubc":0.6,"Upv1":0.1,"Upv2":0.5,"Ipv1":1.0,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.1,"RunT":470.0,"Pmax":22.6,"Uca":0.2,"Qac":0.0,"Pac":24.1,"Sac":0.3,"PF":0.5,"LCDVer":"02.21","TYield":75,"Uab":0.6,"Ia":0.1,"Ib":0.6,"Freq":0.4,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":74.8,"Tmod":0.5,"Upv3":0.4,"Ubc":0.6,"Upv1":0.1,"Upv2":0.5,"Ipv1":1.0,"Ipv2":0.5,"Ipv3":0.8,"Mode":1,"Tcoil":0.1,"RunT":470.0,"Pmax":22.6,"Uca":0.2,"Qac":0.0,"Pac":24.1,"Sac":0.3,"PF":0.5,"LCDVer":"02.21","TYield":75,"Uab":0.6,"Ia":0.1,"Ib":0.6,"Freq":0.4,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:00:55.631 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:00:55.722 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4765	server run time:5318
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":75.2,"Tmod":0.9,"Upv3":0.7,"Ubc":0.6,"Upv1":0.0,"Upv2":0.8,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":424.6,"Pmax":25.7,"Uca":0.9,"Qac":0.3,"Pac":27.5,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":75,"Uab":0.6,"Ia":0.4,"Ib":0.7,"Freq":0.1,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":75.2,"Tmod":0.9,"Upv3":0.7,"Ubc":0.6,"Upv1":0.0,"Upv2":0.8,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":424.6,"Pmax":25.7,"Uca":0.9,"Qac":0.3,"Pac":27.5,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":75,"Uab":0.6,"Ia":0.4,"Ib":0.7,"Freq":0.1,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:01:55.854 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:01:55.938 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4825	server run time:5378
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.3,"DYield":75.7,"Tmod":0.2,"Upv3":0.6,"Ubc":0.5,"Upv1":0.5,"Upv2":1.0,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.5,"Mode":1,"Tcoil":0.2,"RunT":462.0,"Pmax":20.9,"Uca":0.7,"Qac":0.1,"Pac":26.2,"Sac":0.7,"PF":0.8,"LCDVer":"02.21","TYield":76,"Uab":0.9,"Ia":1.0,"Ib":0.9,"Freq":0.4,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.3,"DYield":75.7,"Tmod":0.2,"Upv3":0.6,"Ubc":0.5,"Upv1":0.5,"Upv2":1.0,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.5,"Mode":1,"Tcoil":0.2,"RunT":462.0,"Pmax":20.9,"Uca":0.7,"Qac":0.1,"Pac":26.2,"Sac":0.7,"PF":0.8,"LCDVer":"02.21","TYield":76,"Uab":0.9,"Ia":1.0,"Ib":0.9,"Freq":0.4,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:02:56.103 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:02:56.191 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4886	server run time:5438
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.0,"DYield":76.1,"Tmod":0.1,"Upv3":0.9,"Ubc":0.3,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.1,"Mode":1,"Tcoil":0.7,"RunT":471.3,"Pmax":29.4,"Uca":0.6,"Qac":0.2,"Pac":27.3,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":76,"Uab":0.6,"Ia":0.1,"Ib":0.9,"Freq":0.3,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.0,"DYield":76.1,"Tmod":0.1,"Upv3":0.9,"Ubc":0.3,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.4,"Ipv3":0.1,"Mode":1,"Tcoil":0.7,"RunT":471.3,"Pmax":29.4,"Uca":0.6,"Qac":0.2,"Pac":27.3,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":76,"Uab":0.6,"Ia":0.1,"Ib":0.9,"Freq":0.3,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:03:56.290 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:03:56.364 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:4946	server run time:5498
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.6,"DYield":76.6,"Tmod":0.8,"Upv3":0.6,"Ubc":0.6,"Upv1":0.9,"Upv2":0.8,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":440.1,"Pmax":44.5,"Uca":0.8,"Qac":0.1,"Pac":29.1,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":77,"Uab":0.3,"Ia":0.5,"Ib":0.3,"Freq":0.3,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.6,"DYield":76.6,"Tmod":0.8,"Upv3":0.6,"Ubc":0.6,"Upv1":0.9,"Upv2":0.8,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":440.1,"Pmax":44.5,"Uca":0.8,"Qac":0.1,"Pac":29.1,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":77,"Uab":0.3,"Ia":0.5,"Ib":0.3,"Freq":0.3,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:04:56.543 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:04:56.632 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5006	server run time:5559
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":77.1,"Tmod":0.4,"Upv3":0.2,"Ubc":0.7,"Upv1":0.3,"Upv2":0.6,"Ipv1":0.3,"Ipv2":0.2,"Ipv3":0.3,"Mode":1,"Tcoil":0.7,"RunT":444.2,"Pmax":41.5,"Uca":0.4,"Qac":0.8,"Pac":26.5,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":77,"Uab":0.3,"Ia":0.3,"Ib":0.4,"Freq":0.8,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":77.1,"Tmod":0.4,"Upv3":0.2,"Ubc":0.7,"Upv1":0.3,"Upv2":0.6,"Ipv1":0.3,"Ipv2":0.2,"Ipv3":0.3,"Mode":1,"Tcoil":0.7,"RunT":444.2,"Pmax":41.5,"Uca":0.4,"Qac":0.8,"Pac":26.5,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":77,"Uab":0.3,"Ia":0.3,"Ib":0.4,"Freq":0.8,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:05:56.848 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:05:56.924 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5066	server run time:5619
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":77.5,"Tmod":0.9,"Upv3":0.1,"Ubc":0.2,"Upv1":0.6,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":0.1,"RunT":413.1,"Pmax":45.6,"Uca":0.5,"Qac":0.1,"Pac":26.2,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":78,"Uab":1.0,"Ia":0.9,"Ib":0.6,"Freq":0.1,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":77.5,"Tmod":0.9,"Upv3":0.1,"Ubc":0.2,"Upv1":0.6,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":0.1,"RunT":413.1,"Pmax":45.6,"Uca":0.5,"Qac":0.1,"Pac":26.2,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":78,"Uab":1.0,"Ia":0.9,"Ib":0.6,"Freq":0.1,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:06:57.106 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:06:57.185 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5127	server run time:5679
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":77.9,"Tmod":0.7,"Upv3":0.6,"Ubc":1.0,"Upv1":0.2,"Upv2":0.8,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.6,"RunT":456.9,"Pmax":36.3,"Uca":0.1,"Qac":0.3,"Pac":26.6,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":78,"Uab":0.5,"Ia":0.7,"Ib":0.7,"Freq":0.8,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":77.9,"Tmod":0.7,"Upv3":0.6,"Ubc":1.0,"Upv1":0.2,"Upv2":0.8,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.6,"RunT":456.9,"Pmax":36.3,"Uca":0.1,"Qac":0.3,"Pac":26.6,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":78,"Uab":0.5,"Ia":0.7,"Ib":0.7,"Freq":0.8,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:07:57.519 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:07:57.594 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5187	server run time:5740
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":78.4,"Tmod":0.9,"Upv3":0.8,"Ubc":0.6,"Upv1":0.9,"Upv2":0.6,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.1,"Mode":1,"Tcoil":0.8,"RunT":480.2,"Pmax":47.9,"Uca":0.2,"Qac":0.3,"Pac":27.3,"Sac":1.0,"PF":0.8,"LCDVer":"02.21","TYield":78,"Uab":0.8,"Ia":0.4,"Ib":0.2,"Freq":0.8,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":78.4,"Tmod":0.9,"Upv3":0.8,"Ubc":0.6,"Upv1":0.9,"Upv2":0.6,"Ipv1":0.8,"Ipv2":0.1,"Ipv3":0.1,"Mode":1,"Tcoil":0.8,"RunT":480.2,"Pmax":47.9,"Uca":0.2,"Qac":0.3,"Pac":27.3,"Sac":1.0,"PF":0.8,"LCDVer":"02.21","TYield":78,"Uab":0.8,"Ia":0.4,"Ib":0.2,"Freq":0.8,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:08:57.774 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:08:57.860 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5247	server run time:5800
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.5,"DYield":78.9,"Tmod":0.1,"Upv3":0.1,"Ubc":0.3,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":442.0,"Pmax":24.8,"Uca":0.5,"Qac":0.3,"Pac":27.4,"Sac":0.9,"PF":0.5,"LCDVer":"02.21","TYield":79,"Uab":0.9,"Ia":0.7,"Ib":0.3,"Freq":0.7,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.5,"DYield":78.9,"Tmod":0.1,"Upv3":0.1,"Ubc":0.3,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":442.0,"Pmax":24.8,"Uca":0.5,"Qac":0.3,"Pac":27.4,"Sac":0.9,"PF":0.5,"LCDVer":"02.21","TYield":79,"Uab":0.9,"Ia":0.7,"Ib":0.3,"Freq":0.7,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:09:58.018 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:09:58.084 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5308	server run time:5860
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":79.3,"Tmod":0.6,"Upv3":0.3,"Ubc":0.7,"Upv1":0.2,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.2,"Ipv3":0.0,"Mode":1,"Tcoil":0.7,"RunT":479.2,"Pmax":33.2,"Uca":1.0,"Qac":0.1,"Pac":27.1,"Sac":0.7,"PF":0.6,"LCDVer":"02.21","TYield":79,"Uab":0.2,"Ia":1.0,"Ib":1.0,"Freq":0.8,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":79.3,"Tmod":0.6,"Upv3":0.3,"Ubc":0.7,"Upv1":0.2,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.2,"Ipv3":0.0,"Mode":1,"Tcoil":0.7,"RunT":479.2,"Pmax":33.2,"Uca":1.0,"Qac":0.1,"Pac":27.1,"Sac":0.7,"PF":0.6,"LCDVer":"02.21","TYield":79,"Uab":0.2,"Ia":1.0,"Ib":1.0,"Freq":0.8,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:10:58.232 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:10:58.311 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5368	server run time:5920
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":79.7,"Tmod":0.8,"Upv3":0.1,"Ubc":0.7,"Upv1":0.9,"Upv2":0.7,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.9,"RunT":418.9,"Pmax":42.0,"Uca":0.8,"Qac":0.5,"Pac":26.4,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":80,"Uab":0.3,"Ia":0.4,"Ib":0.4,"Freq":0.4,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":79.7,"Tmod":0.8,"Upv3":0.1,"Ubc":0.7,"Upv1":0.9,"Upv2":0.7,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.9,"RunT":418.9,"Pmax":42.0,"Uca":0.8,"Qac":0.5,"Pac":26.4,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":80,"Uab":0.3,"Ia":0.4,"Ib":0.4,"Freq":0.4,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:11:58.422 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:11:58.489 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5428	server run time:5980
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":80.2,"Tmod":0.3,"Upv3":0.2,"Ubc":0.2,"Upv1":0.3,"Upv2":0.4,"Ipv1":0.2,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.3,"RunT":435.3,"Pmax":31.2,"Uca":0.9,"Qac":0.4,"Pac":25.1,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":80,"Uab":0.4,"Ia":0.7,"Ib":0.3,"Freq":0.1,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":80.2,"Tmod":0.3,"Upv3":0.2,"Ubc":0.2,"Upv1":0.3,"Upv2":0.4,"Ipv1":0.2,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.3,"RunT":435.3,"Pmax":31.2,"Uca":0.9,"Qac":0.4,"Pac":25.1,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":80,"Uab":0.4,"Ia":0.7,"Ib":0.3,"Freq":0.1,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:12:58.593 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:12:58.661 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5488	server run time:6041
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":80.6,"Tmod":0.1,"Upv3":0.1,"Ubc":0.4,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.1,"Ipv2":0.0,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":420.3,"Pmax":42.3,"Uca":0.7,"Qac":0.8,"Pac":25.7,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":81,"Uab":0.8,"Ia":0.2,"Ib":0.8,"Freq":1.0,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":80.6,"Tmod":0.1,"Upv3":0.1,"Ubc":0.4,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.1,"Ipv2":0.0,"Ipv3":0.5,"Mode":1,"Tcoil":0.9,"RunT":420.3,"Pmax":42.3,"Uca":0.7,"Qac":0.8,"Pac":25.7,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":81,"Uab":0.8,"Ia":0.2,"Ib":0.8,"Freq":1.0,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:13:58.799 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:13:58.890 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5548	server run time:6101
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":81.0,"Tmod":0.9,"Upv3":0.7,"Ubc":0.4,"Upv1":0.6,"Upv2":0.9,"Ipv1":0.9,"Ipv2":0.0,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":432.5,"Pmax":20.4,"Uca":0.5,"Qac":0.3,"Pac":27.1,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":81,"Uab":0.6,"Ia":0.6,"Ib":0.6,"Freq":0.7,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":81.0,"Tmod":0.9,"Upv3":0.7,"Ubc":0.4,"Upv1":0.6,"Upv2":0.9,"Ipv1":0.9,"Ipv2":0.0,"Ipv3":0.6,"Mode":1,"Tcoil":0.9,"RunT":432.5,"Pmax":20.4,"Uca":0.5,"Qac":0.3,"Pac":27.1,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":81,"Uab":0.6,"Ia":0.6,"Ib":0.6,"Freq":0.7,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:14:59.000 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:14:59.065 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5609	server run time:6161
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":81.5,"Tmod":0.7,"Upv3":1.0,"Ubc":0.5,"Upv1":0.5,"Upv2":0.8,"Ipv1":0.3,"Ipv2":0.3,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":469.1,"Pmax":27.1,"Uca":0.3,"Qac":1.0,"Pac":26.4,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":82,"Uab":1.0,"Ia":0.9,"Ib":0.6,"Freq":0.4,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":81.5,"Tmod":0.7,"Upv3":1.0,"Ubc":0.5,"Upv1":0.5,"Upv2":0.8,"Ipv1":0.3,"Ipv2":0.3,"Ipv3":0.2,"Mode":1,"Tcoil":1.0,"RunT":469.1,"Pmax":27.1,"Uca":0.3,"Qac":1.0,"Pac":26.4,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":82,"Uab":1.0,"Ia":0.9,"Ib":0.6,"Freq":0.4,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:15:59.217 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:15:59.300 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5669	server run time:6221
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":81.9,"Tmod":0.9,"Upv3":0.3,"Ubc":0.1,"Upv1":0.1,"Upv2":0.6,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.7,"Mode":1,"Tcoil":0.4,"RunT":474.5,"Pmax":20.4,"Uca":0.3,"Qac":0.8,"Pac":26.4,"Sac":0.8,"PF":0.9,"LCDVer":"02.21","TYield":82,"Uab":0.9,"Ia":0.6,"Ib":0.8,"Freq":0.0,"Ic":1.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":81.9,"Tmod":0.9,"Upv3":0.3,"Ubc":0.1,"Upv1":0.1,"Upv2":0.6,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.7,"Mode":1,"Tcoil":0.4,"RunT":474.5,"Pmax":20.4,"Uca":0.3,"Qac":0.8,"Pac":26.4,"Sac":0.8,"PF":0.9,"LCDVer":"02.21","TYield":82,"Uab":0.9,"Ia":0.6,"Ib":0.8,"Freq":0.0,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:16:59.455 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:16:59.534 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5729	server run time:6281
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.3,"DYield":82.3,"Tmod":0.4,"Upv3":0.7,"Ubc":0.7,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.7,"Ipv2":0.1,"Ipv3":0.1,"Mode":1,"Tcoil":0.8,"RunT":443.8,"Pmax":35.8,"Uca":0.9,"Qac":0.4,"Pac":23.4,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":82,"Uab":0.1,"Ia":0.7,"Ib":0.2,"Freq":0.3,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.3,"DYield":82.3,"Tmod":0.4,"Upv3":0.7,"Ubc":0.7,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.7,"Ipv2":0.1,"Ipv3":0.1,"Mode":1,"Tcoil":0.8,"RunT":443.8,"Pmax":35.8,"Uca":0.9,"Qac":0.4,"Pac":23.4,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":82,"Uab":0.1,"Ia":0.7,"Ib":0.2,"Freq":0.3,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:17:59.715 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:17:59.849 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5789	server run time:6342
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":82.7,"Tmod":0.9,"Upv3":0.2,"Ubc":0.1,"Upv1":0.6,"Upv2":0.3,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.0,"Mode":1,"Tcoil":0.6,"RunT":471.7,"Pmax":37.3,"Uca":0.2,"Qac":0.5,"Pac":26.6,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":83,"Uab":0.1,"Ia":0.7,"Ib":0.2,"Freq":0.3,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":82.7,"Tmod":0.9,"Upv3":0.2,"Ubc":0.1,"Upv1":0.6,"Upv2":0.3,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.0,"Mode":1,"Tcoil":0.6,"RunT":471.7,"Pmax":37.3,"Uca":0.2,"Qac":0.5,"Pac":26.6,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":83,"Uab":0.1,"Ia":0.7,"Ib":0.2,"Freq":0.3,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:18:59.981 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:19:00.050 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5850	server run time:6402
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":83.2,"Tmod":0.6,"Upv3":0.6,"Ubc":0.9,"Upv1":0.9,"Upv2":1.0,"Ipv1":0.8,"Ipv2":0.4,"Ipv3":1.0,"Mode":1,"Tcoil":0.4,"RunT":477.6,"Pmax":36.1,"Uca":0.8,"Qac":0.6,"Pac":25.7,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":83,"Uab":0.3,"Ia":0.3,"Ib":0.4,"Freq":0.8,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":83.2,"Tmod":0.6,"Upv3":0.6,"Ubc":0.9,"Upv1":0.9,"Upv2":1.0,"Ipv1":0.8,"Ipv2":0.4,"Ipv3":1.0,"Mode":1,"Tcoil":0.4,"RunT":477.6,"Pmax":36.1,"Uca":0.8,"Qac":0.6,"Pac":25.7,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":83,"Uab":0.3,"Ia":0.3,"Ib":0.4,"Freq":0.8,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:20:00.197 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:20:00.277 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5910	server run time:6462
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":84.1,"Tmod":0.9,"Upv3":0.5,"Ubc":0.8,"Upv1":0.2,"Upv2":0.1,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":472.4,"Pmax":40.4,"Uca":0.3,"Qac":0.4,"Pac":27.3,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":84,"Uab":0.7,"Ia":0.7,"Ib":0.2,"Freq":0.3,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":84.1,"Tmod":0.9,"Upv3":0.5,"Ubc":0.8,"Upv1":0.2,"Upv2":0.1,"Ipv1":0.1,"Ipv2":0.6,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":472.4,"Pmax":40.4,"Uca":0.3,"Qac":0.4,"Pac":27.3,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":84,"Uab":0.7,"Ia":0.7,"Ib":0.2,"Freq":0.3,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:21:00.386 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:21:00.455 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:5970	server run time:6522
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":1.0,"DYield":84.5,"Tmod":0.6,"Upv3":0.6,"Ubc":0.8,"Upv1":0.9,"Upv2":0.8,"Ipv1":1.0,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.6,"RunT":472.3,"Pmax":35.3,"Uca":0.3,"Qac":0.9,"Pac":25.5,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":85,"Uab":0.6,"Ia":0.0,"Ib":0.7,"Freq":0.3,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":1.0,"DYield":84.5,"Tmod":0.6,"Upv3":0.6,"Ubc":0.8,"Upv1":0.9,"Upv2":0.8,"Ipv1":1.0,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.6,"RunT":472.3,"Pmax":35.3,"Uca":0.3,"Qac":0.9,"Pac":25.5,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":85,"Uab":0.6,"Ia":0.0,"Ib":0.7,"Freq":0.3,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:22:00.539 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:22:00.615 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6030	server run time:6583
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":85.0,"Tmod":0.3,"Upv3":0.8,"Ubc":0.1,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.2,"RunT":433.7,"Pmax":24.6,"Uca":0.8,"Qac":0.5,"Pac":27.8,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":85,"Uab":0.2,"Ia":1.0,"Ib":0.8,"Freq":0.3,"Ic":0.9}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":85.0,"Tmod":0.3,"Upv3":0.8,"Ubc":0.1,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.2,"RunT":433.7,"Pmax":24.6,"Uca":0.8,"Qac":0.5,"Pac":27.8,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":85,"Uab":0.2,"Ia":1.0,"Ib":0.8,"Freq":0.3,"Ic":0.9}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:23:00.732 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:23:00.835 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6090	server run time:6643
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.3,"DYield":85.4,"Tmod":0.6,"Upv3":0.5,"Ubc":0.5,"Upv1":0.1,"Upv2":0.7,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.9,"Mode":1,"Tcoil":0.5,"RunT":431.7,"Pmax":47.9,"Uca":0.6,"Qac":0.9,"Pac":27.1,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":85,"Uab":0.5,"Ia":0.5,"Ib":0.9,"Freq":0.9,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.3,"DYield":85.4,"Tmod":0.6,"Upv3":0.5,"Ubc":0.5,"Upv1":0.1,"Upv2":0.7,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.9,"Mode":1,"Tcoil":0.5,"RunT":431.7,"Pmax":47.9,"Uca":0.6,"Qac":0.9,"Pac":27.1,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":85,"Uab":0.5,"Ia":0.5,"Ib":0.9,"Freq":0.9,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:24:00.987 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:24:01.060 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6151	server run time:6703
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":85.9,"Tmod":0.3,"Upv3":0.5,"Ubc":0.2,"Upv1":0.5,"Upv2":0.5,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":459.6,"Pmax":37.1,"Uca":0.5,"Qac":0.7,"Pac":25.4,"Sac":0.7,"PF":0.8,"LCDVer":"02.21","TYield":86,"Uab":0.3,"Ia":0.1,"Ib":0.6,"Freq":0.1,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":85.9,"Tmod":0.3,"Upv3":0.5,"Ubc":0.2,"Upv1":0.5,"Upv2":0.5,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":459.6,"Pmax":37.1,"Uca":0.5,"Qac":0.7,"Pac":25.4,"Sac":0.7,"PF":0.8,"LCDVer":"02.21","TYield":86,"Uab":0.3,"Ia":0.1,"Ib":0.6,"Freq":0.1,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:25:01.216 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:25:01.308 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6211	server run time:6763
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":86.3,"Tmod":0.2,"Upv3":0.5,"Ubc":0.7,"Upv1":0.8,"Upv2":0.9,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.7,"RunT":438.6,"Pmax":44.4,"Uca":0.6,"Qac":0.8,"Pac":25.5,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":86,"Uab":0.2,"Ia":0.4,"Ib":0.8,"Freq":0.6,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":86.3,"Tmod":0.2,"Upv3":0.5,"Ubc":0.7,"Upv1":0.8,"Upv2":0.9,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.5,"Mode":1,"Tcoil":0.7,"RunT":438.6,"Pmax":44.4,"Uca":0.6,"Qac":0.8,"Pac":25.5,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":86,"Uab":0.2,"Ia":0.4,"Ib":0.8,"Freq":0.6,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:26:01.405 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:26:01.477 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6271	server run time:6823
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":86.7,"Tmod":0.4,"Upv3":0.5,"Ubc":0.7,"Upv1":0.6,"Upv2":0.7,"Ipv1":0.1,"Ipv2":0.5,"Ipv3":0.0,"Mode":1,"Tcoil":0.2,"RunT":426.0,"Pmax":24.5,"Uca":0.4,"Qac":1.0,"Pac":24.1,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":87,"Uab":0.9,"Ia":0.3,"Ib":0.6,"Freq":0.8,"Ic":1.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":86.7,"Tmod":0.4,"Upv3":0.5,"Ubc":0.7,"Upv1":0.6,"Upv2":0.7,"Ipv1":0.1,"Ipv2":0.5,"Ipv3":0.0,"Mode":1,"Tcoil":0.2,"RunT":426.0,"Pmax":24.5,"Uca":0.4,"Qac":1.0,"Pac":24.1,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":87,"Uab":0.9,"Ia":0.3,"Ib":0.6,"Freq":0.8,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:27:01.589 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:27:01.649 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6331	server run time:6884
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.1,"DYield":87.1,"Tmod":0.1,"Upv3":0.4,"Ubc":0.3,"Upv1":0.5,"Upv2":0.0,"Ipv1":0.0,"Ipv2":0.8,"Ipv3":0.2,"Mode":1,"Tcoil":0.8,"RunT":421.0,"Pmax":48.6,"Uca":0.9,"Qac":0.0,"Pac":25.2,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":87,"Uab":0.7,"Ia":0.9,"Ib":0.6,"Freq":0.6,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.1,"DYield":87.1,"Tmod":0.1,"Upv3":0.4,"Ubc":0.3,"Upv1":0.5,"Upv2":0.0,"Ipv1":0.0,"Ipv2":0.8,"Ipv3":0.2,"Mode":1,"Tcoil":0.8,"RunT":421.0,"Pmax":48.6,"Uca":0.9,"Qac":0.0,"Pac":25.2,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":87,"Uab":0.7,"Ia":0.9,"Ib":0.6,"Freq":0.6,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:28:01.780 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:28:01.840 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6391	server run time:6944
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.8,"DYield":87.5,"Tmod":0.2,"Upv3":0.1,"Ubc":0.9,"Upv1":0.1,"Upv2":0.4,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.8,"Mode":1,"Tcoil":0.1,"RunT":429.6,"Pmax":26.4,"Uca":0.8,"Qac":0.1,"Pac":25.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":88,"Uab":0.1,"Ia":0.7,"Ib":0.3,"Freq":0.8,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.8,"DYield":87.5,"Tmod":0.2,"Upv3":0.1,"Ubc":0.9,"Upv1":0.1,"Upv2":0.4,"Ipv1":0.2,"Ipv2":0.8,"Ipv3":0.8,"Mode":1,"Tcoil":0.1,"RunT":429.6,"Pmax":26.4,"Uca":0.8,"Qac":0.1,"Pac":25.0,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":88,"Uab":0.1,"Ia":0.7,"Ib":0.3,"Freq":0.8,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:29:01.938 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:29:02.022 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6452	server run time:7004
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":88.0,"Tmod":0.2,"Upv3":0.8,"Ubc":0.8,"Upv1":0.9,"Upv2":0.6,"Ipv1":0.2,"Ipv2":0.2,"Ipv3":0.5,"Mode":1,"Tcoil":0.5,"RunT":457.3,"Pmax":24.7,"Uca":0.3,"Qac":0.8,"Pac":26.6,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":88,"Uab":0.2,"Ia":0.7,"Ib":0.5,"Freq":0.7,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":88.0,"Tmod":0.2,"Upv3":0.8,"Ubc":0.8,"Upv1":0.9,"Upv2":0.6,"Ipv1":0.2,"Ipv2":0.2,"Ipv3":0.5,"Mode":1,"Tcoil":0.5,"RunT":457.3,"Pmax":24.7,"Uca":0.3,"Qac":0.8,"Pac":26.6,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":88,"Uab":0.2,"Ia":0.7,"Ib":0.5,"Freq":0.7,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:30:02.106 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:30:02.170 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6512	server run time:7064
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.6,"DYield":88.4,"Tmod":0.5,"Upv3":1.0,"Ubc":0.1,"Upv1":0.6,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.6,"Mode":1,"Tcoil":0.1,"RunT":463.0,"Pmax":25.1,"Uca":0.2,"Qac":0.6,"Pac":25.4,"Sac":0.7,"PF":0.6,"LCDVer":"02.21","TYield":88,"Uab":0.3,"Ia":0.1,"Ib":0.3,"Freq":0.5,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.6,"DYield":88.4,"Tmod":0.5,"Upv3":1.0,"Ubc":0.1,"Upv1":0.6,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.6,"Mode":1,"Tcoil":0.1,"RunT":463.0,"Pmax":25.1,"Uca":0.2,"Qac":0.6,"Pac":25.4,"Sac":0.7,"PF":0.6,"LCDVer":"02.21","TYield":88,"Uab":0.3,"Ia":0.1,"Ib":0.3,"Freq":0.5,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:31:02.261 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:31:02.323 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6572	server run time:7124
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":88.8,"Tmod":0.4,"Upv3":0.3,"Ubc":0.4,"Upv1":0.3,"Upv2":0.4,"Ipv1":0.2,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":0.5,"RunT":440.0,"Pmax":46.2,"Uca":0.6,"Qac":0.5,"Pac":24.3,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":89,"Uab":0.5,"Ia":0.3,"Ib":0.8,"Freq":0.3,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":88.8,"Tmod":0.4,"Upv3":0.3,"Ubc":0.4,"Upv1":0.3,"Upv2":0.4,"Ipv1":0.2,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":0.5,"RunT":440.0,"Pmax":46.2,"Uca":0.6,"Qac":0.5,"Pac":24.3,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":89,"Uab":0.5,"Ia":0.3,"Ib":0.8,"Freq":0.3,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:32:02.405 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:32:02.475 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6632	server run time:7184
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":89.2,"Tmod":0.4,"Upv3":0.9,"Ubc":0.2,"Upv1":0.1,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.8,"Mode":1,"Tcoil":0.0,"RunT":474.4,"Pmax":47.3,"Uca":0.3,"Qac":0.5,"Pac":26.5,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":89,"Uab":0.3,"Ia":0.7,"Ib":0.5,"Freq":0.6,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":89.2,"Tmod":0.4,"Upv3":0.9,"Ubc":0.2,"Upv1":0.1,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.8,"Mode":1,"Tcoil":0.0,"RunT":474.4,"Pmax":47.3,"Uca":0.3,"Qac":0.5,"Pac":26.5,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":89,"Uab":0.3,"Ia":0.7,"Ib":0.5,"Freq":0.6,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:33:02.563 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:33:02.616 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6692	server run time:7245
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":89.7,"Tmod":0.9,"Upv3":0.4,"Ubc":0.7,"Upv1":0.8,"Upv2":0.7,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.7,"Mode":1,"Tcoil":0.1,"RunT":479.9,"Pmax":36.9,"Uca":0.1,"Qac":0.0,"Pac":26.2,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":90,"Uab":0.6,"Ia":0.2,"Ib":0.7,"Freq":0.3,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":89.7,"Tmod":0.9,"Upv3":0.4,"Ubc":0.7,"Upv1":0.8,"Upv2":0.7,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.7,"Mode":1,"Tcoil":0.1,"RunT":479.9,"Pmax":36.9,"Uca":0.1,"Qac":0.0,"Pac":26.2,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":90,"Uab":0.6,"Ia":0.2,"Ib":0.7,"Freq":0.3,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:34:02.700 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:34:02.757 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6752	server run time:7305
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":90.1,"Tmod":1.0,"Upv3":0.8,"Ubc":0.9,"Upv1":0.7,"Upv2":0.7,"Ipv1":0.1,"Ipv2":1.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.0,"RunT":415.5,"Pmax":29.1,"Uca":0.6,"Qac":0.0,"Pac":22.7,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":90,"Uab":0.1,"Ia":0.1,"Ib":1.0,"Freq":0.7,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":90.1,"Tmod":1.0,"Upv3":0.8,"Ubc":0.9,"Upv1":0.7,"Upv2":0.7,"Ipv1":0.1,"Ipv2":1.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.0,"RunT":415.5,"Pmax":29.1,"Uca":0.6,"Qac":0.0,"Pac":22.7,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":90,"Uab":0.1,"Ia":0.1,"Ib":1.0,"Freq":0.7,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:35:02.841 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:35:02.905 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6812	server run time:7365
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":90.5,"Tmod":0.8,"Upv3":0.1,"Ubc":0.3,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.9,"Ipv2":0.9,"Ipv3":0.6,"Mode":1,"Tcoil":1.0,"RunT":450.9,"Pmax":50.3,"Uca":0.4,"Qac":0.1,"Pac":26.7,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":91,"Uab":0.5,"Ia":0.9,"Ib":0.9,"Freq":0.4,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":90.5,"Tmod":0.8,"Upv3":0.1,"Ubc":0.3,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.9,"Ipv2":0.9,"Ipv3":0.6,"Mode":1,"Tcoil":1.0,"RunT":450.9,"Pmax":50.3,"Uca":0.4,"Qac":0.1,"Pac":26.7,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":91,"Uab":0.5,"Ia":0.9,"Ib":0.9,"Freq":0.4,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:36:02.982 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:36:03.042 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6873	server run time:7425
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":90.9,"Tmod":0.4,"Upv3":0.2,"Ubc":0.5,"Upv1":0.2,"Upv2":0.7,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.2,"Mode":1,"Tcoil":0.6,"RunT":419.2,"Pmax":31.5,"Uca":0.5,"Qac":0.6,"Pac":23.0,"Sac":1.0,"PF":0.8,"LCDVer":"02.21","TYield":91,"Uab":0.9,"Ia":0.6,"Ib":0.6,"Freq":0.4,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":90.9,"Tmod":0.4,"Upv3":0.2,"Ubc":0.5,"Upv1":0.2,"Upv2":0.7,"Ipv1":0.4,"Ipv2":0.1,"Ipv3":0.2,"Mode":1,"Tcoil":0.6,"RunT":419.2,"Pmax":31.5,"Uca":0.5,"Qac":0.6,"Pac":23.0,"Sac":1.0,"PF":0.8,"LCDVer":"02.21","TYield":91,"Uab":0.9,"Ia":0.6,"Ib":0.6,"Freq":0.4,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:37:03.131 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:37:03.186 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6933	server run time:7485
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":91.3,"Tmod":0.4,"Upv3":0.8,"Ubc":0.3,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.7,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.7,"RunT":427.0,"Pmax":41.8,"Uca":0.1,"Qac":0.6,"Pac":24.2,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":91,"Uab":0.6,"Ia":0.6,"Ib":0.6,"Freq":0.2,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":91.3,"Tmod":0.4,"Upv3":0.8,"Ubc":0.3,"Upv1":0.7,"Upv2":0.5,"Ipv1":0.7,"Ipv2":0.7,"Ipv3":0.4,"Mode":1,"Tcoil":0.7,"RunT":427.0,"Pmax":41.8,"Uca":0.1,"Qac":0.6,"Pac":24.2,"Sac":0.1,"PF":0.9,"LCDVer":"02.21","TYield":91,"Uab":0.6,"Ia":0.6,"Ib":0.6,"Freq":0.2,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:38:03.299 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:38:03.368 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:6993	server run time:7545
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":91.7,"Tmod":1.0,"Upv3":0.5,"Ubc":0.6,"Upv1":0.5,"Upv2":0.7,"Ipv1":0.0,"Ipv2":0.4,"Ipv3":0.1,"Mode":1,"Tcoil":1.0,"RunT":476.2,"Pmax":44.7,"Uca":0.2,"Qac":0.7,"Pac":25.0,"Sac":1.0,"PF":0.8,"LCDVer":"02.21","TYield":92,"Uab":0.8,"Ia":0.8,"Ib":0.2,"Freq":0.6,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.3,"DYield":91.7,"Tmod":1.0,"Upv3":0.5,"Ubc":0.6,"Upv1":0.5,"Upv2":0.7,"Ipv1":0.0,"Ipv2":0.4,"Ipv3":0.1,"Mode":1,"Tcoil":1.0,"RunT":476.2,"Pmax":44.7,"Uca":0.2,"Qac":0.7,"Pac":25.0,"Sac":1.0,"PF":0.8,"LCDVer":"02.21","TYield":92,"Uab":0.8,"Ia":0.8,"Ib":0.2,"Freq":0.6,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:39:03.443 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:39:03.498 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7053	server run time:7605
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":92.1,"Tmod":0.4,"Upv3":0.2,"Ubc":0.4,"Upv1":0.0,"Upv2":0.7,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.4,"RunT":430.8,"Pmax":43.2,"Uca":0.7,"Qac":0.3,"Pac":27.2,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":92,"Uab":0.8,"Ia":0.1,"Ib":0.0,"Freq":0.6,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":92.1,"Tmod":0.4,"Upv3":0.2,"Ubc":0.4,"Upv1":0.0,"Upv2":0.7,"Ipv1":0.7,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.4,"RunT":430.8,"Pmax":43.2,"Uca":0.7,"Qac":0.3,"Pac":27.2,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":92,"Uab":0.8,"Ia":0.1,"Ib":0.0,"Freq":0.6,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:40:03.675 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:40:03.760 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7113	server run time:7666
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":92.6,"Tmod":0.0,"Upv3":0.4,"Ubc":0.2,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":452.7,"Pmax":47.3,"Uca":0.7,"Qac":0.3,"Pac":25.8,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":93,"Uab":0.5,"Ia":0.6,"Ib":0.9,"Freq":0.7,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":92.6,"Tmod":0.0,"Upv3":0.4,"Ubc":0.2,"Upv1":0.2,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":452.7,"Pmax":47.3,"Uca":0.7,"Qac":0.3,"Pac":25.8,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":93,"Uab":0.5,"Ia":0.6,"Ib":0.9,"Freq":0.7,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:41:03.838 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:41:03.901 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7173	server run time:7726
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":93.0,"Tmod":1.0,"Upv3":0.2,"Ubc":0.0,"Upv1":0.6,"Upv2":0.0,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":466.7,"Pmax":30.8,"Uca":0.5,"Qac":0.3,"Pac":24.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":93,"Uab":0.1,"Ia":0.4,"Ib":0.4,"Freq":0.6,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.6,"DYield":93.0,"Tmod":1.0,"Upv3":0.2,"Ubc":0.0,"Upv1":0.6,"Upv2":0.0,"Ipv1":0.3,"Ipv2":0.6,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":466.7,"Pmax":30.8,"Uca":0.5,"Qac":0.3,"Pac":24.0,"Sac":0.8,"PF":0.7,"LCDVer":"02.21","TYield":93,"Uab":0.1,"Ia":0.4,"Ib":0.4,"Freq":0.6,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:42:03.982 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:42:04.034 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7234	server run time:7786
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.3,"DYield":93.4,"Tmod":0.3,"Upv3":0.3,"Ubc":0.1,"Upv1":0.3,"Upv2":0.6,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":452.5,"Pmax":50.0,"Uca":0.7,"Qac":0.9,"Pac":25.1,"Sac":0.0,"PF":0.7,"LCDVer":"02.21","TYield":93,"Uab":0.3,"Ia":0.6,"Ib":0.0,"Freq":0.6,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.3,"DYield":93.4,"Tmod":0.3,"Upv3":0.3,"Ubc":0.1,"Upv1":0.3,"Upv2":0.6,"Ipv1":0.9,"Ipv2":0.4,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":452.5,"Pmax":50.0,"Uca":0.7,"Qac":0.9,"Pac":25.1,"Sac":0.0,"PF":0.7,"LCDVer":"02.21","TYield":93,"Uab":0.3,"Ia":0.6,"Ib":0.0,"Freq":0.6,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:43:04.129 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:43:04.193 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7294	server run time:7846
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":93.8,"Tmod":0.1,"Upv3":0.0,"Ubc":0.1,"Upv1":0.9,"Upv2":0.4,"Ipv1":0.7,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":423.0,"Pmax":38.0,"Uca":0.8,"Qac":0.6,"Pac":23.7,"Sac":0.8,"PF":0.8,"LCDVer":"02.21","TYield":94,"Uab":0.9,"Ia":0.1,"Ib":0.9,"Freq":0.7,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":93.8,"Tmod":0.1,"Upv3":0.0,"Ubc":0.1,"Upv1":0.9,"Upv2":0.4,"Ipv1":0.7,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.6,"RunT":423.0,"Pmax":38.0,"Uca":0.8,"Qac":0.6,"Pac":23.7,"Sac":0.8,"PF":0.8,"LCDVer":"02.21","TYield":94,"Uab":0.9,"Ia":0.1,"Ib":0.9,"Freq":0.7,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:44:04.268 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:44:04.331 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7354	server run time:7906
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":94.2,"Tmod":0.4,"Upv3":0.5,"Ubc":0.3,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":1.0,"RunT":439.5,"Pmax":47.8,"Uca":0.1,"Qac":0.9,"Pac":26.0,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":94,"Uab":0.9,"Ia":0.0,"Ib":0.4,"Freq":0.3,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":94.2,"Tmod":0.4,"Upv3":0.5,"Ubc":0.3,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.6,"Mode":1,"Tcoil":1.0,"RunT":439.5,"Pmax":47.8,"Uca":0.1,"Qac":0.9,"Pac":26.0,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":94,"Uab":0.9,"Ia":0.0,"Ib":0.4,"Freq":0.3,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:45:04.416 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:45:04.470 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7414	server run time:7966
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":94.7,"Tmod":0.7,"Upv3":0.1,"Ubc":0.9,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.0,"Mode":1,"Tcoil":0.5,"RunT":413.7,"Pmax":30.2,"Uca":0.1,"Qac":0.1,"Pac":25.2,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":95,"Uab":0.2,"Ia":0.1,"Ib":0.3,"Freq":1.0,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":94.7,"Tmod":0.7,"Upv3":0.1,"Ubc":0.9,"Upv1":0.8,"Upv2":0.1,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":0.0,"Mode":1,"Tcoil":0.5,"RunT":413.7,"Pmax":30.2,"Uca":0.1,"Qac":0.1,"Pac":25.2,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":95,"Uab":0.2,"Ia":0.1,"Ib":0.3,"Freq":1.0,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:46:04.552 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:46:04.624 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7474	server run time:8027
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":95.1,"Tmod":0.3,"Upv3":0.6,"Ubc":0.8,"Upv1":0.2,"Upv2":0.7,"Ipv1":0.2,"Ipv2":0.2,"Ipv3":0.4,"Mode":1,"Tcoil":0.8,"RunT":412.2,"Pmax":23.7,"Uca":0.4,"Qac":0.2,"Pac":25.6,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":95,"Uab":0.7,"Ia":0.7,"Ib":0.1,"Freq":0.1,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":95.1,"Tmod":0.3,"Upv3":0.6,"Ubc":0.8,"Upv1":0.2,"Upv2":0.7,"Ipv1":0.2,"Ipv2":0.2,"Ipv3":0.4,"Mode":1,"Tcoil":0.8,"RunT":412.2,"Pmax":23.7,"Uca":0.4,"Qac":0.2,"Pac":25.6,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":95,"Uab":0.7,"Ia":0.7,"Ib":0.1,"Freq":0.1,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:47:04.710 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:47:04.781 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7534	server run time:8087
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.4,"DYield":95.5,"Tmod":0.3,"Upv3":0.6,"Ubc":0.2,"Upv1":0.2,"Upv2":0.9,"Ipv1":0.1,"Ipv2":0.5,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":479.9,"Pmax":24.9,"Uca":0.1,"Qac":1.0,"Pac":25.7,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":96,"Uab":0.6,"Ia":0.6,"Ib":0.2,"Freq":0.1,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.4,"DYield":95.5,"Tmod":0.3,"Upv3":0.6,"Ubc":0.2,"Upv1":0.2,"Upv2":0.9,"Ipv1":0.1,"Ipv2":0.5,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":479.9,"Pmax":24.9,"Uca":0.1,"Qac":1.0,"Pac":25.7,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":96,"Uab":0.6,"Ia":0.6,"Ib":0.2,"Freq":0.1,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:48:05.010 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:48:05.110 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7595	server run time:8147
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":95.9,"Tmod":0.6,"Upv3":0.6,"Ubc":0.2,"Upv1":0.7,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.1,"RunT":456.9,"Pmax":40.8,"Uca":0.4,"Qac":0.3,"Pac":25.8,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":96,"Uab":0.5,"Ia":0.9,"Ib":0.9,"Freq":0.5,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":95.9,"Tmod":0.6,"Upv3":0.6,"Ubc":0.2,"Upv1":0.7,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.1,"RunT":456.9,"Pmax":40.8,"Uca":0.4,"Qac":0.3,"Pac":25.8,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":96,"Uab":0.5,"Ia":0.9,"Ib":0.9,"Freq":0.5,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:49:05.201 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:49:05.275 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7655	server run time:8207
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":96.4,"Tmod":1.0,"Upv3":0.8,"Ubc":0.3,"Upv1":0.5,"Upv2":0.1,"Ipv1":0.6,"Ipv2":0.9,"Ipv3":0.8,"Mode":1,"Tcoil":0.1,"RunT":462.8,"Pmax":27.7,"Uca":0.8,"Qac":0.9,"Pac":25.1,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":96,"Uab":0.3,"Ia":0.0,"Ib":0.2,"Freq":0.5,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":96.4,"Tmod":1.0,"Upv3":0.8,"Ubc":0.3,"Upv1":0.5,"Upv2":0.1,"Ipv1":0.6,"Ipv2":0.9,"Ipv3":0.8,"Mode":1,"Tcoil":0.1,"RunT":462.8,"Pmax":27.7,"Uca":0.8,"Qac":0.9,"Pac":25.1,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":96,"Uab":0.3,"Ia":0.0,"Ib":0.2,"Freq":0.5,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:50:05.407 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:50:05.511 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7715	server run time:8267
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.1,"DYield":96.8,"Tmod":0.9,"Upv3":0.2,"Ubc":0.5,"Upv1":0.0,"Upv2":0.4,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.7,"Mode":1,"Tcoil":0.0,"RunT":457.7,"Pmax":26.2,"Uca":0.4,"Qac":0.1,"Pac":24.8,"Sac":0.0,"PF":0.9,"LCDVer":"02.21","TYield":97,"Uab":0.3,"Ia":0.2,"Ib":0.9,"Freq":0.7,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.1,"DYield":96.8,"Tmod":0.9,"Upv3":0.2,"Ubc":0.5,"Upv1":0.0,"Upv2":0.4,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.7,"Mode":1,"Tcoil":0.0,"RunT":457.7,"Pmax":26.2,"Uca":0.4,"Qac":0.1,"Pac":24.8,"Sac":0.0,"PF":0.9,"LCDVer":"02.21","TYield":97,"Uab":0.3,"Ia":0.2,"Ib":0.9,"Freq":0.7,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:51:05.614 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:51:05.686 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7775	server run time:8328
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":97.2,"Tmod":1.0,"Upv3":0.7,"Ubc":0.6,"Upv1":0.9,"Upv2":0.9,"Ipv1":0.3,"Ipv2":0.2,"Ipv3":0.1,"Mode":1,"Tcoil":0.9,"RunT":429.1,"Pmax":26.0,"Uca":1.0,"Qac":0.9,"Pac":24.1,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":97,"Uab":0.1,"Ia":0.1,"Ib":0.7,"Freq":0.1,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":97.2,"Tmod":1.0,"Upv3":0.7,"Ubc":0.6,"Upv1":0.9,"Upv2":0.9,"Ipv1":0.3,"Ipv2":0.2,"Ipv3":0.1,"Mode":1,"Tcoil":0.9,"RunT":429.1,"Pmax":26.0,"Uca":1.0,"Qac":0.9,"Pac":24.1,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":97,"Uab":0.1,"Ia":0.1,"Ib":0.7,"Freq":0.1,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:52:05.774 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:52:05.829 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7835	server run time:8388
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.0,"DYield":97.6,"Tmod":0.8,"Upv3":0.6,"Ubc":0.8,"Upv1":0.8,"Upv2":0.5,"Ipv1":0.8,"Ipv2":0.6,"Ipv3":0.9,"Mode":1,"Tcoil":1.0,"RunT":465.1,"Pmax":33.7,"Uca":0.9,"Qac":0.6,"Pac":26.3,"Sac":0.6,"PF":0.8,"LCDVer":"02.21","TYield":98,"Uab":0.0,"Ia":0.4,"Ib":0.6,"Freq":0.2,"Ic":1.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.0,"DYield":97.6,"Tmod":0.8,"Upv3":0.6,"Ubc":0.8,"Upv1":0.8,"Upv2":0.5,"Ipv1":0.8,"Ipv2":0.6,"Ipv3":0.9,"Mode":1,"Tcoil":1.0,"RunT":465.1,"Pmax":33.7,"Uca":0.9,"Qac":0.6,"Pac":26.3,"Sac":0.6,"PF":0.8,"LCDVer":"02.21","TYield":98,"Uab":0.0,"Ia":0.4,"Ib":0.6,"Freq":0.2,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:53:06.011 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:53:06.091 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7896	server run time:8448
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.9,"DYield":98.0,"Tmod":0.5,"Upv3":0.3,"Ubc":0.2,"Upv1":0.7,"Upv2":0.9,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":470.5,"Pmax":35.6,"Uca":0.2,"Qac":0.1,"Pac":26.7,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":98,"Uab":0.5,"Ia":0.2,"Ib":0.7,"Freq":0.1,"Ic":0.7}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.9,"DYield":98.0,"Tmod":0.5,"Upv3":0.3,"Ubc":0.2,"Upv1":0.7,"Upv2":0.9,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":470.5,"Pmax":35.6,"Uca":0.2,"Qac":0.1,"Pac":26.7,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":98,"Uab":0.5,"Ia":0.2,"Ib":0.7,"Freq":0.1,"Ic":0.7}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:54:06.202 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:54:06.294 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:7956	server run time:8508
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":98.5,"Tmod":0.2,"Upv3":1.0,"Ubc":0.1,"Upv1":0.2,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":437.0,"Pmax":46.7,"Uca":0.5,"Qac":0.5,"Pac":23.9,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":99,"Uab":0.7,"Ia":0.3,"Ib":0.5,"Freq":0.4,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":98.5,"Tmod":0.2,"Upv3":1.0,"Ubc":0.1,"Upv1":0.2,"Upv2":0.2,"Ipv1":0.5,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":437.0,"Pmax":46.7,"Uca":0.5,"Qac":0.5,"Pac":23.9,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":99,"Uab":0.7,"Ia":0.3,"Ib":0.5,"Freq":0.4,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:55:06.388 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:55:06.449 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8016	server run time:8568
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":98.9,"Tmod":1.0,"Upv3":0.1,"Ubc":0.6,"Upv1":0.5,"Upv2":0.9,"Ipv1":0.7,"Ipv2":0.8,"Ipv3":0.8,"Mode":1,"Tcoil":0.7,"RunT":459.8,"Pmax":34.0,"Uca":0.9,"Qac":0.3,"Pac":24.1,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":99,"Uab":0.7,"Ia":0.2,"Ib":0.7,"Freq":0.9,"Ic":0.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":98.9,"Tmod":1.0,"Upv3":0.1,"Ubc":0.6,"Upv1":0.5,"Upv2":0.9,"Ipv1":0.7,"Ipv2":0.8,"Ipv3":0.8,"Mode":1,"Tcoil":0.7,"RunT":459.8,"Pmax":34.0,"Uca":0.9,"Qac":0.3,"Pac":24.1,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":99,"Uab":0.7,"Ia":0.2,"Ib":0.7,"Freq":0.9,"Ic":0.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:56:06.536 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:56:06.589 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8076	server run time:8629
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":1.0,"DYield":99.3,"Tmod":0.2,"Upv3":0.3,"Ubc":0.2,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":468.2,"Pmax":31.6,"Uca":0.6,"Qac":0.6,"Pac":25.7,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":99,"Uab":0.9,"Ia":0.7,"Ib":0.3,"Freq":0.1,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":1.0,"DYield":99.3,"Tmod":0.2,"Upv3":0.3,"Ubc":0.2,"Upv1":0.9,"Upv2":0.1,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":468.2,"Pmax":31.6,"Uca":0.6,"Qac":0.6,"Pac":25.7,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":99,"Uab":0.9,"Ia":0.7,"Ib":0.3,"Freq":0.1,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:57:06.790 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:57:06.883 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8136	server run time:8689
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":99.7,"Tmod":0.3,"Upv3":0.7,"Ubc":0.3,"Upv1":1.0,"Upv2":0.4,"Ipv1":0.3,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.0,"RunT":476.4,"Pmax":30.9,"Uca":0.8,"Qac":0.2,"Pac":24.9,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":100,"Uab":0.9,"Ia":0.3,"Ib":0.9,"Freq":0.6,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":99.7,"Tmod":0.3,"Upv3":0.7,"Ubc":0.3,"Upv1":1.0,"Upv2":0.4,"Ipv1":0.3,"Ipv2":0.8,"Ipv3":0.4,"Mode":1,"Tcoil":0.0,"RunT":476.4,"Pmax":30.9,"Uca":0.8,"Qac":0.2,"Pac":24.9,"Sac":0.3,"PF":0.7,"LCDVer":"02.21","TYield":100,"Uab":0.9,"Ia":0.3,"Ib":0.9,"Freq":0.6,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:58:06.966 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:58:07.033 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8197	server run time:8749
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":100.1,"Tmod":0.9,"Upv3":0.3,"Ubc":0.5,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.4,"Mode":1,"Tcoil":0.4,"RunT":475.3,"Pmax":42.2,"Uca":0.7,"Qac":0.3,"Pac":24.1,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":100,"Uab":0.7,"Ia":0.8,"Ib":0.9,"Freq":0.8,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.5,"DYield":100.1,"Tmod":0.9,"Upv3":0.3,"Ubc":0.5,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.4,"Mode":1,"Tcoil":0.4,"RunT":475.3,"Pmax":42.2,"Uca":0.7,"Qac":0.3,"Pac":24.1,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":100,"Uab":0.7,"Ia":0.8,"Ib":0.9,"Freq":0.8,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 12:59:07.109 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 12:59:07.177 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8257	server run time:8809
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":100.5,"Tmod":0.8,"Upv3":0.0,"Ubc":0.7,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.7,"Ipv2":1.0,"Ipv3":0.6,"Mode":1,"Tcoil":0.2,"RunT":443.2,"Pmax":40.3,"Uca":0.7,"Qac":0.9,"Pac":23.9,"Sac":0.9,"PF":0.6,"LCDVer":"02.21","TYield":101,"Uab":0.1,"Ia":0.4,"Ib":0.0,"Freq":0.6,"Ic":0.2}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":100.5,"Tmod":0.8,"Upv3":0.0,"Ubc":0.7,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.7,"Ipv2":1.0,"Ipv3":0.6,"Mode":1,"Tcoil":0.2,"RunT":443.2,"Pmax":40.3,"Uca":0.7,"Qac":0.9,"Pac":23.9,"Sac":0.9,"PF":0.6,"LCDVer":"02.21","TYield":101,"Uab":0.1,"Ia":0.4,"Ib":0.0,"Freq":0.6,"Ic":0.2}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:00:07.260 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:00:07.334 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8317	server run time:8869
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":100.9,"Tmod":0.6,"Upv3":0.2,"Ubc":0.4,"Upv1":0.1,"Upv2":0.4,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.5,"Mode":1,"Tcoil":0.8,"RunT":442.9,"Pmax":28.3,"Uca":0.8,"Qac":0.3,"Pac":24.2,"Sac":0.2,"PF":0.7,"LCDVer":"02.21","TYield":101,"Uab":0.3,"Ia":0.9,"Ib":0.2,"Freq":0.0,"Ic":0.3}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":100.9,"Tmod":0.6,"Upv3":0.2,"Ubc":0.4,"Upv1":0.1,"Upv2":0.4,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.5,"Mode":1,"Tcoil":0.8,"RunT":442.9,"Pmax":28.3,"Uca":0.8,"Qac":0.3,"Pac":24.2,"Sac":0.2,"PF":0.7,"LCDVer":"02.21","TYield":101,"Uab":0.3,"Ia":0.9,"Ib":0.2,"Freq":0.0,"Ic":0.3}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:01:07.422 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:01:07.493 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8377	server run time:8929
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":101.3,"Tmod":0.7,"Upv3":0.7,"Ubc":0.2,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.8,"Ipv2":0.9,"Ipv3":0.2,"Mode":1,"Tcoil":0.5,"RunT":439.2,"Pmax":41.9,"Uca":0.2,"Qac":0.9,"Pac":22.9,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":101,"Uab":0.0,"Ia":0.1,"Ib":0.9,"Freq":0.6,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":101.3,"Tmod":0.7,"Upv3":0.7,"Ubc":0.2,"Upv1":0.5,"Upv2":0.3,"Ipv1":0.8,"Ipv2":0.9,"Ipv3":0.2,"Mode":1,"Tcoil":0.5,"RunT":439.2,"Pmax":41.9,"Uca":0.2,"Qac":0.9,"Pac":22.9,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":101,"Uab":0.0,"Ia":0.1,"Ib":0.9,"Freq":0.6,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:02:07.580 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:02:07.650 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8437	server run time:8990
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":101.7,"Tmod":0.9,"Upv3":1.0,"Ubc":0.4,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.7,"Ipv2":0.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":470.4,"Pmax":49.6,"Uca":0.5,"Qac":0.8,"Pac":25.7,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":102,"Uab":0.7,"Ia":0.3,"Ib":0.9,"Freq":0.8,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":101.7,"Tmod":0.9,"Upv3":1.0,"Ubc":0.4,"Upv1":0.7,"Upv2":0.2,"Ipv1":0.7,"Ipv2":0.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":470.4,"Pmax":49.6,"Uca":0.5,"Qac":0.8,"Pac":25.7,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":102,"Uab":0.7,"Ia":0.3,"Ib":0.9,"Freq":0.8,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:03:07.738 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:03:07.808 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8497	server run time:9050
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":102.1,"Tmod":0.4,"Upv3":0.2,"Ubc":0.1,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.2,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":480.4,"Pmax":31.7,"Uca":0.2,"Qac":0.1,"Pac":26.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":102,"Uab":0.9,"Ia":0.7,"Ib":0.8,"Freq":1.0,"Ic":1.0}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.5,"DYield":102.1,"Tmod":0.4,"Upv3":0.2,"Ubc":0.1,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.2,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.4,"RunT":480.4,"Pmax":31.7,"Uca":0.2,"Qac":0.1,"Pac":26.0,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":102,"Uab":0.9,"Ia":0.7,"Ib":0.8,"Freq":1.0,"Ic":1.0}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:04:07.977 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:04:08.064 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8558	server run time:9110
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.3,"DYield":102.6,"Tmod":0.5,"Upv3":0.7,"Ubc":0.3,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":0.1,"RunT":465.3,"Pmax":23.8,"Uca":0.1,"Qac":0.4,"Pac":24.5,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":103,"Uab":0.1,"Ia":0.2,"Ib":0.5,"Freq":0.5,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.3,"DYield":102.6,"Tmod":0.5,"Upv3":0.7,"Ubc":0.3,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.9,"Ipv2":0.1,"Ipv3":0.3,"Mode":1,"Tcoil":0.1,"RunT":465.3,"Pmax":23.8,"Uca":0.1,"Qac":0.4,"Pac":24.5,"Sac":0.2,"PF":0.9,"LCDVer":"02.21","TYield":103,"Uab":0.1,"Ia":0.2,"Ib":0.5,"Freq":0.5,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:05:08.160 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:05:08.232 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8618	server run time:9170
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":103.0,"Tmod":0.3,"Upv3":0.9,"Ubc":0.6,"Upv1":0.3,"Upv2":0.8,"Ipv1":0.1,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":468.5,"Pmax":46.7,"Uca":0.4,"Qac":0.2,"Pac":24.6,"Sac":0.9,"PF":0.6,"LCDVer":"02.21","TYield":103,"Uab":0.6,"Ia":0.6,"Ib":0.1,"Freq":0.3,"Ic":0.4}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.5,"DYield":103.0,"Tmod":0.3,"Upv3":0.9,"Ubc":0.6,"Upv1":0.3,"Upv2":0.8,"Ipv1":0.1,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":468.5,"Pmax":46.7,"Uca":0.4,"Qac":0.2,"Pac":24.6,"Sac":0.9,"PF":0.6,"LCDVer":"02.21","TYield":103,"Uab":0.6,"Ia":0.6,"Ib":0.1,"Freq":0.3,"Ic":0.4}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:06:08.337 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:06:08.410 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8678	server run time:9230
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":103.4,"Tmod":0.4,"Upv3":0.6,"Ubc":0.5,"Upv1":0.8,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.1,"Mode":1,"Tcoil":0.9,"RunT":473.3,"Pmax":35.6,"Uca":0.2,"Qac":0.8,"Pac":23.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":103,"Uab":0.8,"Ia":0.5,"Ib":0.2,"Freq":0.5,"Ic":0.5}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":103.4,"Tmod":0.4,"Upv3":0.6,"Ubc":0.5,"Upv1":0.8,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.8,"Ipv3":0.1,"Mode":1,"Tcoil":0.9,"RunT":473.3,"Pmax":35.6,"Uca":0.2,"Qac":0.8,"Pac":23.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":103,"Uab":0.8,"Ia":0.5,"Ib":0.2,"Freq":0.5,"Ic":0.5}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:07:08.520 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:07:08.590 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8738	server run time:9291
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":103.8,"Tmod":0.0,"Upv3":0.2,"Ubc":1.0,"Upv1":0.7,"Upv2":0.1,"Ipv1":0.3,"Ipv2":0.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.4,"RunT":456.8,"Pmax":28.4,"Uca":0.7,"Qac":0.2,"Pac":23.1,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":104,"Uab":0.6,"Ia":0.1,"Ib":0.9,"Freq":0.6,"Ic":0.8}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":103.8,"Tmod":0.0,"Upv3":0.2,"Ubc":1.0,"Upv1":0.7,"Upv2":0.1,"Ipv1":0.3,"Ipv2":0.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.4,"RunT":456.8,"Pmax":28.4,"Uca":0.7,"Qac":0.2,"Pac":23.1,"Sac":0.9,"PF":0.7,"LCDVer":"02.21","TYield":104,"Uab":0.6,"Ia":0.1,"Ib":0.9,"Freq":0.6,"Ic":0.8}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:08:08.685 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:08:08.748 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8798	server run time:9351
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":104.2,"Tmod":0.5,"Upv3":0.9,"Ubc":0.7,"Upv1":0.0,"Upv2":0.8,"Ipv1":0.5,"Ipv2":0.9,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":476.9,"Pmax":29.2,"Uca":0.1,"Qac":0.2,"Pac":23.7,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":104,"Uab":0.8,"Ia":0.1,"Ib":0.2,"Freq":0.0,"Ic":0.1}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":104.2,"Tmod":0.5,"Upv3":0.9,"Ubc":0.7,"Upv1":0.0,"Upv2":0.8,"Ipv1":0.5,"Ipv2":0.9,"Ipv3":0.9,"Mode":1,"Tcoil":0.9,"RunT":476.9,"Pmax":29.2,"Uca":0.1,"Qac":0.2,"Pac":23.7,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":104,"Uab":0.8,"Ia":0.1,"Ib":0.2,"Freq":0.0,"Ic":0.1}}]
+Other Info:	other
+##########end###########
+ 2017-06-15 13:09:08.843 [MQTT Call: 5941ddc71f886d231d4d3692] DEBUG i.j.d.m.MqttConnThread - 5941ddc71f886d231d4d3692:send successful!
+ 2017-06-15 13:09:08.900 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[32]Send Data Info:
+AgentID:	5941ddc71f886d231d4d3692
+Topic:	upstream
+Time Interval:	60 	Set the time:60	Thread run time:8858	server run time:9411
+Send Data:	[{"dsn":"n9rcp7yy","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":104.5,"Tmod":0.0,"Upv3":0.9,"Ubc":0.7,"Upv1":0.7,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.6,"Ipv3":1.0,"Mode":1,"Tcoil":0.4,"RunT":419.2,"Pmax":38.4,"Uca":0.1,"Qac":0.4,"Pac":22.9,"Sac":0.9,"PF":0.6,"LCDVer":"02.21","TYield":105,"Uab":0.0,"Ia":0.3,"Ib":0.5,"Freq":0.6,"Ic":0.6}},{"dsn":"n0wcibyj","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":2,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":104.5,"Tmod":0.0,"Upv3":0.9,"Ubc":0.7,"Upv1":0.7,"Upv2":0.0,"Ipv1":0.9,"Ipv2":0.6,"Ipv3":1.0,"Mode":1,"Tcoil":0.4,"RunT":419.2,"Pmax":38.4,"Uca":0.1,"Qac":0.4,"Pac":22.9,"Sac":0.9,"PF":0.6,"LCDVer":"02.21","TYield":105,"Uab":0.0,"Ia":0.3,"Ib":0.5,"Freq":0.6,"Ic":0.6}}]
+Other Info:	other
+##########end###########
+ 
