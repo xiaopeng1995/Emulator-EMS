@@ -33,27 +33,27 @@
 
     <!-- MongoDB -->
 
-    <logger name="com.mongodb" level="WARN" additivity="false">
+    <logger name="org.mongodb" level="INFO" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-    <logger name="io.j1st.data.predict" level="DBUG" additivity="false">
+    <logger name="io.j1st.data.predict" level="INFO" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-    <logger name="io.j1st.data.job" level="DBUG" additivity="false">
+    <logger name="io.j1st.data.job" level="INFO" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-    <logger name="io.j1st.data.mqtt" level="DBUG" additivity="false">
+    <logger name="io.j1st.data.mqtt" level="INFO" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-    <logger name="io.j1st.data.job.GetDataAll" level="DBUG" additivity="false">
+    <logger name="io.j1st.data.job.GetDataAll" level="INFO" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>
-    <logger name="io.j1st.data.EmulatorApplication" level="DBUG" additivity="false">
+    <logger name="io.j1st.data.EmulatorApplication" level="INFO" additivity="false">
         <appender-ref ref="Console"/>
         <appender-ref ref="File"/>
     </logger>

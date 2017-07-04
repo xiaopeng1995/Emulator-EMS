@@ -22,7 +22,7 @@ public enum Registry {
     public Map<String, Object> value = new ConcurrentHashMap<>();
 
     // connect pool
-    private final ExecutorService es = Executors.newFixedThreadPool(5000);
+    private final ExecutorService es = Executors.newFixedThreadPool(60);
 
     // save session
     public void saveSession(String agentId, MqttConnThread client) {

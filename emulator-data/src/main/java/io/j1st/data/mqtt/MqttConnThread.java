@@ -228,10 +228,17 @@ public class MqttConnThread implements Callable {
             }
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         } catch (Exception e) {
-            //睡眠10分钟
-            logger.error("后台mqtt客户端:{}连接服务器 broker失败！1分钟后重新连接开始...", mqttClient.getClientId());
-            Thread.sleep(10 * 60 * 1000);
-            resetJob();
+            if (mqttClient.getClientId().equals(emulatorConfig.getString("sever_id"))) {
+                logger.info("sever_id断开30秒后重连!");
+                Thread.sleep(30 * 1000);
+                Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
+            }else {
+                //睡眠10分钟
+                logger.error("后台mqtt客户端:{}连接服务器 broker失败！10分钟后重新连接开始...", mqttClient.getClientId());
+                mqttClient.close();
+                // Thread.sleep(1 * 1000);
+                resetJob();
+            }
         }
         return null;
     }

@@ -199,8 +199,8 @@ public class EmulatorApplication {
             logger.info("模拟器准备就绪..");
             return;
         }
-        logger.info("5秒后开始启动任务.");
-        Thread.sleep(5 * 1000);
+        logger.info("2秒后开始启动任务.");
+        Thread.sleep(2 * 1000);
         //开始执行任务
         EmulatorApplication emu = new EmulatorApplication();
         //1.启动接收任务

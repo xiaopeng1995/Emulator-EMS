@@ -394,9 +394,6 @@ public class GetDataAll {
         double Pac = 0.0;
         double eToday = 0.0;
         if (pVPower != null && eTodayy != null) {
-            if ("587741c7dafbaf42f1617753".equals(agentID))
-                System.out.println(pVPower);
-            System.out.println(date);
             Pac = (pVPower.getDouble(date));
             eToday = eTodayy.getDouble(date);
         }
