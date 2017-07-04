@@ -38,7 +38,7 @@ public class DataInsert {
     @Consumes(MediaType.APPLICATION_JSON)
     public ResultEntity fnxDownStream(@HeaderParam("agentId") String agentId,
                                       @Valid List<Stream> data) {
-        logger.debug("请求添加AgentID:{}的数据",agentId);
+        logger.debug("请求添加AgentID:{}的数据", agentId);
         int count = 0;
         try {
             String status = "";
@@ -71,7 +71,7 @@ public class DataInsert {
                             dataf.setId(get32UUID());
                             dataf.setCate(DataMap.getCate(key));
                             dataf.setUnit(DataMap.getUnit(key));
-                            dataf.setFieldName(key);
+                            dataf.setFieldName(DataMap.getZHName(key));
                             Double value = 0d;
                             try {
                                 value = Double.parseDouble(stream.getValues().get(key).toString());
@@ -106,8 +106,10 @@ public class DataInsert {
     @PermitAll
     @Consumes(MediaType.APPLICATION_JSON)
     public ResultEntity findGendDataBytime() {
-
-        return new ResultEntity<>(this.dataMySqlStorage.getCount());
+        Map<String, Integer> data = new HashMap();
+        data.put("rd_real_time_data", this.dataMySqlStorage.getTimeCount());
+        data.put("rd_data_field", this.dataMySqlStorage.getCount());
+        return new ResultEntity<>(data);
     }
 
     @Path("/test")

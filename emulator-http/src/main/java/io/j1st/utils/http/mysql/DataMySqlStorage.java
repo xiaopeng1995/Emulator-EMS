@@ -145,4 +145,37 @@ public class DataMySqlStorage {
         return count;
     }
 
+    /**
+     * 查询所有套餐用户Id
+     *
+     * @return
+     */
+    public Integer getTimeCount() {
+        Connection conn = pool.getConnection();
+        Statement stmt = null;
+        ResultSet rs = null;
+        String sql = "SELECT COUNT(*)  \n" +
+                "FROM rd_real_time_data";
+        Integer count = 0;
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+            if (rs.first()) {
+                count = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            logger.error("查询数据数量时出错 {}", e);
+        } finally {
+            try {
+                if (rs != null)
+                    rs.close();
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            pool.closeConnection(conn);
+        }
+        return count;
+    }
 }
