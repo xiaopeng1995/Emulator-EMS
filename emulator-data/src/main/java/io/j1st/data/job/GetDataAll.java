@@ -93,13 +93,20 @@ public class GetDataAll {
         //查找上传数据类型
         datapacking = mogo.findEmulatorRegister(agentID, "packing");
         //EMS 系统时才会计算一下值
-        if (!datapacking.toString().contains("0,0,0,0")) {
-            try {
-                battery01(date, agentID);
-            } catch (Exception e) {
-                logger.error("获取EMS数据出错！");
+        try {
+            if (!datapacking.toString().contains("0,0,0,0")) {
+                try {
+                    battery01(date, agentID);
+                } catch (Exception e) {
+                    logger.error("获取EMS数据出错！");
+                }
             }
+        } catch (NullPointerException enull) {
+            logger.error("异常ID：" + agentID);
+            enull.printStackTrace();
+
         }
+
 
         emsData01.setType("SUNS120");
         pvData.setSta(1);

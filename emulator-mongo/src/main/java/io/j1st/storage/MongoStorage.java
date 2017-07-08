@@ -1237,6 +1237,7 @@ public class MongoStorage {
         Pattern pattern = Pattern.compile("^.*" + id + ".*$", Pattern.CASE_INSENSITIVE);
         BasicDBObject query = new BasicDBObject();
         query.put("agent_id", pattern);
+        query.put("onlinefail",1);
         this.database.getCollection("emulator_register")
                 .find(query)
                 .sort(isAsc ? ascending("created_at") : descending("created_at"))

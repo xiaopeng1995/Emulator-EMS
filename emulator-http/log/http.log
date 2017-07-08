@@ -1,0 +1,49 @@
+2017-07-08 17:54:15.702 [main] INFO  o.e.jetty.util.log - Logging initialized @2460ms
+ 2017-07-08 17:54:15.926 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-08 17:54:15.941 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-08 17:54:15.967 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-08 17:54:16.017 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@fd46303{HTTP/1.1}{0.0.0.0:8899}
+ 2017-07-08 17:54:16.027 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-08 17:54:16.036 [main] DEBUG i.j.u.h.HttpApplication - Initializing mongo storage ...
+ 2017-07-08 17:54:16.278 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 17:54:16.339 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 17:54:16.353 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 17:54:16.609 [cluster-ClusterId{value='5960abc89ec7ce352c6b4b42', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17138}] to 139.196.235.75:27017
+ 2017-07-08 17:54:16.615 [cluster-ClusterId{value='5960abc89ec7ce352c6b4b42', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5794014}
+ 2017-07-08 17:54:16.617 [cluster-ClusterId{value='5960abc89ec7ce352c6b4b41', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17139}] to 139.196.235.75:27017
+ 2017-07-08 17:54:16.692 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17140}] to 139.196.235.75:27017
+ 2017-07-08 17:54:16.832 [cluster-ClusterId{value='5960abc89ec7ce352c6b4b41', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=214833223}
+ 2017-07-08 17:54:17.805 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/delete (io.j1st.utils.http.resource.GenDataAddUtil)
+    GET     /data/findall (io.j1st.utils.http.resource.GenDataAddUtil)
+    DELETE  /delete/infos/analysis/{agentId} (io.j1st.utils.http.resource.DeleteUtil)
+    DELETE  /delete/infos/basic/{userName}/{role} (io.j1st.utils.http.resource.DeleteUtil)
+    POST    /downstream/{agentId} (io.j1st.utils.http.resource.DownResoure)
+    GET     /insert/info/user/{name}/{password}/{email}/{mobile}/{role} (io.j1st.utils.http.resource.InsertUtil)
+    GET     /select/infos/products/{userId} (io.j1st.utils.http.resource.SelectUtile)
+    GET     /select/infos/token/{email} (io.j1st.utils.http.resource.SelectUtile)
+
+ 2017-07-08 17:54:17.814 [main] WARN  o.g.j.i.Errors - The following warnings have been detected: WARNING: A resource, Resource{"/judge/infos", 0 child resources, 0 resource methods, 0 sub-resource locator, 0 method handler classes, 0 method handler instances}, with path "/judge/infos" is empty. It has no resource (or sub resource) methods neither sub resource locators defined.
+
+ 2017-07-08 17:54:17.815 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@2009f9b0{/,null,AVAILABLE}
+ 2017-07-08 17:54:17.820 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-08 17:54:17.820 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-08 17:54:17.826 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@3fbcfe81{/admin,null,AVAILABLE}
+ 2017-07-08 17:54:17.870 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@fd46303{HTTP/1.1}{0.0.0.0:8899}
+ 2017-07-08 17:54:17.870 [main] INFO  o.e.j.server.Server - Started @4630ms
+ 2017-07-08 17:55:59.110 [dw-22 - GET /data/findall?emulatorid=&limit=6&page=1] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17141}] to 139.196.235.75:27017
+ 

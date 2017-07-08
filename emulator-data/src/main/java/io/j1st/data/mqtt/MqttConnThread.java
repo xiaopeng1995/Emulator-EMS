@@ -2,6 +2,7 @@ package io.j1st.data.mqtt;
 
 
 import io.j1st.data.ConfigFun;
+import io.j1st.data.GetThreadAcount;
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.EmsJob;
@@ -12,6 +13,7 @@ import io.j1st.storage.DataMongoStorage;
 import io.j1st.storage.MongoStorage;
 import io.j1st.storage.entity.Agent;
 import io.j1st.util.util.JsonUtils;
+import io.j1st.util.util.SendMailUtil;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.eclipse.paho.client.mqttv3.*;
 import org.slf4j.Logger;
@@ -79,23 +81,24 @@ public class MqttConnThread implements Callable {
                                 logger.debug("存在发送线程 断开中..");
                                 Object systemTyp = mogo.findEmulatorRegister(agentid, "systemTpye");
                                 int systemType = (int) systemTyp;
-                                if (systemType > 0) {
-                                    EmsJob thread = (EmsJob) oldjob;
-                                    thread.exit = true;  // 终止线程thread
-                                    logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
-                                    thread.join();
-                                } else {
+//                                if (systemType > 0) {
+//                                    EmsJob thread = (EmsJob) oldjob;
+//                                    thread.exit = true;  // 终止线程thread
+//                                    logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
+//                                    thread.join();
+                                //} else {
                                     PVjob thread = (PVjob) oldjob;
                                     thread.exit = true;  // 终止线程thread
                                     logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
                                     thread.join();
-                                }
+                               // }
                             } else {
                                 logger.debug("无发送线程直接结束..");
                             }
                             if (agentid.equals(emulatorConfig.getString("sever_id"))) {
-                                logger.info("sever_id断开30秒后重连!");
-                                Thread.sleep(30 * 1000);
+                                logger.info("sever_id断开一小时后重连!");
+                                SendMailUtil.sendEmail("模拟器sever_id断开!", "pxiao@zeninfor.com", "模拟器sever_id断开!尽快检查，当前程序进程数量为：" + GetThreadAcount.GetThreadAcount() + "操作：一小时后重启！");
+                                Thread.sleep(60 * 60 * 1000);
                                 Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
                             }
                             if (mogo.findEmulatorRegister(agentid, "onlinefail").toString().equals("1")) {
@@ -173,7 +176,7 @@ public class MqttConnThread implements Callable {
                             //开始添加新任务
                             String types = type == 0 ? "AgentId" : "批次号";
                             String systems = system == 0 ? "PV" : "EMS";
-                            logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}", emulatorAgent, types, systems);
+                            logger.info("\n开始收到新任务--ID:{}\n类型:{}\n系统:{}\n当前线程数：{}", emulatorAgent, types, systems, GetThreadAcount.GetThreadAcount());
                             RabittMQSend.sendRabbitMQ("开始收到新任务--ID:{" + emulatorAgent + "}类型:{" + types + "}系统:{" + systems + "}");
                             new ConfigFun(dmogo, mogo, emulatorConfig).startOne(emulatorAgent, type, system, num);
                         } else if (msgData.keySet().toString().contains("packs")) {
@@ -181,7 +184,6 @@ public class MqttConnThread implements Callable {
                             String dataqc = bbc.get(0).get("packs").toString();
                             //关闭线程
                             if (dataqc.equals("kill")) {
-                                mogo.updateEmulatorRegister(AgentID, "onlinefail", 0);
                                 long cuntdmogo = dmogo.deleteGendDataByTime(AgentID);
                                 logger.debug("已删除此Agent对应数据:{}个", cuntdmogo);
                                 mqttClient.close();
@@ -229,10 +231,11 @@ public class MqttConnThread implements Callable {
             logger.debug("后台mqtt客户端:{}连接服务器 broker成功！", mqttClient.getClientId());
         } catch (Exception e) {
             if (mqttClient.getClientId().equals(emulatorConfig.getString("sever_id"))) {
-                logger.info("sever_id断开30秒后重连!");
-                Thread.sleep(30 * 1000);
+                logger.info("sever_id连接失败一小时后后重连!");
+                SendMailUtil.sendEmail("sever_id连接失败！", "pxiao@zeninfor.com", "sever_id连接失败！尽快检查，当前程序进程数量为：" + GetThreadAcount.GetThreadAcount() + " 操作：一小时后重启！");
+                Thread.sleep(60 * 60 * 1000);
                 Registry.INSTANCE.startThread(new MqttConnThread(mqttClient, options, mogo, dmogo, emulatorConfig));
-            }else {
+            } else {
                 //睡眠10分钟
                 logger.error("后台mqtt客户端:{}连接服务器 broker失败！10分钟后重新连接开始...", mqttClient.getClientId());
                 mqttClient.close();

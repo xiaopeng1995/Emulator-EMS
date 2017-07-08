@@ -4,6 +4,7 @@ import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.job.EmsJob;
 import io.j1st.data.job.PVjob;
+import io.j1st.data.job.TestJob;
 import io.j1st.data.mqtt.MqttConnThread;
 
 import io.j1st.data.predict.PVpredict;
@@ -35,9 +36,10 @@ public class EmulatorApplication {
     private static final Logger logger = LoggerFactory.getLogger(EmulatorApplication.class);
 
     public static void main(String[] args) throws Exception {
+        //开始线程监控线程
+        Registry.INSTANCE.startJob(new TestJob());
         //start a job thread
         Registry.INSTANCE.saveKey("startDate", new Date().getTime());
-
         PropertiesConfiguration emulatorConfig;
         PropertiesConfiguration mongoConfig;
         PropertiesConfiguration mqttConfig;
@@ -129,6 +131,7 @@ public class EmulatorApplication {
         logger.info("正在加载配置到内存..");
         for (EmulatorRegister eR : EmulatorRegisterAll) {
             //获取agentId
+            System.out.println(eR.getAgent_id());
             String agentId = eR.getAgent_id();
             Agent agent = null;
             try {
@@ -208,6 +211,7 @@ public class EmulatorApplication {
         Thread.sleep(5 * 1000);
         //2.启动发送任务
         emu.startSendThreadAll(threadSend);
+
     }
 
     /**

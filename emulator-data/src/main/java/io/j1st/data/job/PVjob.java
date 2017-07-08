@@ -1,6 +1,7 @@
 
 package io.j1st.data.job;
 
+import io.j1st.data.GetThreadAcount;
 import io.j1st.data.entity.Registry;
 import io.j1st.data.entity.config.BatConfig;
 import io.j1st.data.mqtt.MqttConnThread;
@@ -111,7 +112,7 @@ public class PVjob extends Thread {
                 startDate = (now.getTime() - (long) Registry.INSTANCE.getValue().get("startDate")) / 1000;
                 RabittMQSend.sendRabbitMQ("线程ID["+super.getId()+"]发送数据详情:<br>AgentID:\t["+agentId+"]<br>Topic:\t"+topicall+"<br>上传时间间隔:\t"+interval+" \t设置时间间隔:"+jgtime+"\t此线程运行时间:"+startThtead+"\t模拟器运行时间:"+startDate+" 单位:秒<br>发送数据为:\t"+msg+"<br>");
                 logger.info("\n##########start###########\nThread[{}]Send Data Info:\nAgentID:\t{}\nTopic:\t{}\nTime Interval:\t{} \tSet the time:{}\tThread run time:{}\tserver run time:{}\nSend Data:\t{}\nOther Info:\t{}\n##########end###########"
-                        , super.getId(), agentId, topicall, interval, jgtime, startThtead, startDate, msg, "other");
+                        , super.getId(), agentId, topicall, interval, jgtime, startThtead, startDate, msg, GetThreadAcount.GetThreadAcountInfo());
             } else {
                 //睡眠300秒
                 try {
