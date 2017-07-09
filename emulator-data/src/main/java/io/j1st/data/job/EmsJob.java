@@ -52,8 +52,8 @@ public class EmsJob extends Thread {
             topic = "upstream";
         }
         mogo.updateEmulatorRegister(agentId, "packing", packing);
+        mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
         while (!exit) {
-            mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;
             //添加预测数据
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");

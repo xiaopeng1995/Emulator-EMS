@@ -81,17 +81,18 @@ public class MqttConnThread implements Callable {
                                 logger.debug("存在发送线程 断开中..");
                                 Object systemTyp = mogo.findEmulatorRegister(agentid, "systemTpye");
                                 int systemType = (int) systemTyp;
-//                                if (systemType > 0) {
-//                                    EmsJob thread = (EmsJob) oldjob;
-//                                    thread.exit = true;  // 终止线程thread
-//                                    logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
-//                                    thread.join();
-                                //} else {
-                                    PVjob thread = (PVjob) oldjob;
+                                if (systemType > 0) {
+                                    EmsJob thread = (EmsJob) oldjob;
                                     thread.exit = true;  // 终止线程thread
                                     logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
                                     thread.join();
-                               // }
+                                } else {
+                                    PVjob thread = (PVjob) oldjob;
+                                    thread.exit = true;  // 终止线程thread
+                                    thread.join();
+                                    logger.debug("发送线程:{}断开连接2222 threadID:[{}]", agentid, thread.getId());
+
+                                }
                             } else {
                                 logger.debug("无发送线程直接结束..");
                             }
@@ -103,6 +104,7 @@ public class MqttConnThread implements Callable {
                             }
                             if (mogo.findEmulatorRegister(agentid, "onlinefail").toString().equals("1")) {
                                 logger.info("一处意外停止...尝试5分钟后重启此任务!!");
+                                SendMailUtil.sendEmail("一处意外停止", "pxiao@zeninfor.com", "一处意外停止...尝试5分钟后重启此任务!!，当前程序进程数量为：" + GetThreadAcount.GetThreadAcount() + "操作：一小时后重启！");
                                 //睡眠5分钟
                                 Thread.sleep(5 * 60 * 1000);
                                 resetJob();

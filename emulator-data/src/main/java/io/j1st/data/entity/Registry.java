@@ -20,9 +20,8 @@ public enum Registry {
     public Map<String, MqttConnThread> map = new ConcurrentHashMap<>();
     public Map<String, PropertiesConfiguration> config = new ConcurrentHashMap<>();
     public Map<String, Object> value = new ConcurrentHashMap<>();
-
     // connect pool
-    private final ExecutorService es = Executors.newFixedThreadPool(60);
+    private final ExecutorService es = Executors.newFixedThreadPool(5);
 
     // save session
     public void saveSession(String agentId, MqttConnThread client) {
@@ -45,12 +44,10 @@ public enum Registry {
     }
 
     /**
-     *
-     * @return
-     * AgentID_TotWhExp,AgentID_Job,AgentID_TotWhImp,AgentID_Soc,AgentIDstorage01
+     * @return AgentID_TotWhExp, AgentID_Job, AgentID_TotWhImp, AgentID_Soc, AgentIDstorage01
      * AgentID_STROAGE_002Config,AgentID_date,startDate,AgentID_packing
      * agents
-     * */
+     */
     public Map<String, Object> getValue() {
         return this.value;
     }
@@ -68,11 +65,17 @@ public enum Registry {
     // Start Thread
     public void startThread(MqttConnThread client) {
         this.es.submit(client);
+        Registry.INSTANCE.saveKey("sn", Registry.INSTANCE.getValue().get("sn") != null ?
+                Integer.parseInt(Registry.INSTANCE.getValue().get("sn").toString()) + 1 : 1);
     }
+
     public void startJob(Thread job) {
         this.es.execute(job);
+        Registry.INSTANCE.saveKey("en", Registry.INSTANCE.getValue().get("en") != null ?
+                Integer.parseInt(Registry.INSTANCE.getValue().get("en").toString()) + 1 : 1);
 
     }
+
     public void shutdown() {
         this.es.shutdown();
     }

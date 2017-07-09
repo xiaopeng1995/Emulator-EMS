@@ -36,8 +36,8 @@ public class EmulatorApplication {
     private static final Logger logger = LoggerFactory.getLogger(EmulatorApplication.class);
 
     public static void main(String[] args) throws Exception {
-        //开始线程监控线程
-        Registry.INSTANCE.startJob(new TestJob());
+//        //开始线程监控线程
+//        Registry.INSTANCE.startJob(new TestJob());
         //start a job thread
         Registry.INSTANCE.saveKey("startDate", new Date().getTime());
         PropertiesConfiguration emulatorConfig;

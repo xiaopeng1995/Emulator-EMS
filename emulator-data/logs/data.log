@@ -1263,4 +1263,1314 @@ Other Info:	当前进程线程数量为：★21
  2017-07-08 16:46:51.294 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
  2017-07-08 16:46:51.393 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
  2017-07-08 16:46:54.453 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:14:34.189 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:14:34.448 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:14:34.499 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 18:14:34.900 [cluster-ClusterId{value='5960b08a9ec7ce057cecd3cb', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17151}] to 139.196.235.75:27017
+ 2017-07-08 18:14:34.906 [cluster-ClusterId{value='5960b08a9ec7ce057cecd3cb', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5602425}
+ 2017-07-08 18:14:34.912 [cluster-ClusterId{value='5960b08a9ec7ce057cecd3ca', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17150}] to 139.196.235.75:27017
+ 2017-07-08 18:14:34.918 [cluster-ClusterId{value='5960b08a9ec7ce057cecd3ca', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5380356}
+ 2017-07-08 18:14:34.963 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17152}] to 139.196.235.75:27017
+ 2017-07-08 18:14:35.109 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17153}] to 139.196.235.75:27017
+ 2017-07-08 18:14:35.173 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 18:14:37.126 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 18:14:40.115 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 18:14:40.124 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 18:14:40.130 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 18:14:40.137 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 18:14:40.145 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 18:14:40.145 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 4 个，实际加载任务 4 个 .EMS数据0个.PV数据4个
+ 2017-07-08 18:14:42.523 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 18:19:12.420 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:19:13.460 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:19:13.681 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 18:19:14.683 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:19:14.707 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据3条
+ 2017-07-08 18:19:14.847 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:19:15.262 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:19:18.320 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:19:18.475 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:19:19.306 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:19:19.489 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:19:19.489 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:284
+Send Data:	[{"dsn":"ax9zfzbs","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.3,"DYield":184.0,"Tmod":0.5,"Upv3":0.7,"Ubc":0.6,"Upv1":0.3,"Upv2":0.4,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.1,"RunT":420.0,"Pmax":48.6,"Uca":0.9,"Qac":0.3,"Pac":1.3,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":184,"Uab":0.9,"Ia":0.7,"Ib":0.1,"Freq":0.1,"Ic":0.6}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 18:19:49.599 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 18:19:50.601 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:19:50.613 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 18:19:50.614 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 18:19:51.626 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:19:51.626 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 18:20:07.161 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f64断开连接2222 threadID:[33]
+ 2017-07-08 18:20:28.970 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:20:29.298 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:20:29.371 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 18:20:29.900 [cluster-ClusterId{value='5960b1ec9ec7ce1c58b2f3ce', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17155}] to 139.196.235.75:27017
+ 2017-07-08 18:20:29.900 [cluster-ClusterId{value='5960b1ed9ec7ce1c58b2f3cf', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17156}] to 139.196.235.75:27017
+ 2017-07-08 18:20:29.905 [cluster-ClusterId{value='5960b1ec9ec7ce1c58b2f3ce', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4479949}
+ 2017-07-08 18:20:29.908 [cluster-ClusterId{value='5960b1ed9ec7ce1c58b2f3cf', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=7441804}
+ 2017-07-08 18:20:29.976 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17157}] to 139.196.235.75:27017
+ 2017-07-08 18:20:30.121 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17158}] to 139.196.235.75:27017
+ 2017-07-08 18:20:30.191 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 18:20:32.138 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 18:20:33.779 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 18:20:33.790 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 18:20:33.798 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 18:20:33.806 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 18:20:33.814 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 18:20:33.822 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f64.加载完毕.
+ 2017-07-08 18:20:33.822 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 5 个，实际加载任务 5 个 .EMS数据0个.PV数据5个
+ 2017-07-08 18:20:34.508 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 18:21:18.927 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:21:19.958 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:21:20.160 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 18:21:21.164 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:21:21.195 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据0条
+ 2017-07-08 18:21:21.329 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:21:21.427 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:21:24.494 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:21:24.686 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:21:25.497 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:21:25.699 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:21:25.699 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[37]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:56
+Send Data:	[{"dsn":"fvx6wx9z","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":189.1,"Tmod":1.0,"Upv3":0.5,"Ubc":0.5,"Upv1":0.3,"Upv2":0.8,"Ipv1":0.4,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.0,"RunT":432.1,"Pmax":23.0,"Uca":0.6,"Qac":1.0,"Pac":1.1,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":189,"Uab":0.8,"Ia":0.9,"Ib":0.1,"Freq":0.0,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 18:21:45.095 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 18:21:46.098 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:21:46.113 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 18:21:46.116 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 18:21:47.129 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:21:47.129 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 18:25:43.565 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f64断开连接2222 threadID:[37]
+ 2017-07-08 18:25:49.531 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:25:49.842 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:25:49.865 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 18:25:50.456 [cluster-ClusterId{value='5960b32d9ec7ce31acce350e', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17164}] to 139.196.235.75:27017
+ 2017-07-08 18:25:50.458 [cluster-ClusterId{value='5960b32d9ec7ce31acce350d', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17163}] to 139.196.235.75:27017
+ 2017-07-08 18:25:50.464 [cluster-ClusterId{value='5960b32d9ec7ce31acce350e', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=6091039}
+ 2017-07-08 18:25:50.466 [cluster-ClusterId{value='5960b32d9ec7ce31acce350d', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=7936328}
+ 2017-07-08 18:25:50.534 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17165}] to 139.196.235.75:27017
+ 2017-07-08 18:25:50.715 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17166}] to 139.196.235.75:27017
+ 2017-07-08 18:25:50.796 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 18:25:52.744 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 18:25:55.171 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 18:25:55.180 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 18:25:55.188 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 18:25:55.195 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 18:25:55.202 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 18:25:55.208 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f64.加载完毕.
+ 2017-07-08 18:25:55.208 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 5 个，实际加载任务 5 个 .EMS数据0个.PV数据5个
+ 2017-07-08 18:25:56.563 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 18:26:17.496 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:26:18.518 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:26:18.783 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 18:26:19.786 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:26:19.816 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据0条
+ 2017-07-08 18:26:19.946 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:26:20.072 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:26:23.142 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:26:23.323 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:26:24.127 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:26:24.325 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:26:24.325 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[34]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:34
+Send Data:	[{"dsn":"u4pekywb","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":197.5,"Tmod":0.1,"Upv3":0.8,"Ubc":0.2,"Upv1":0.0,"Upv2":0.6,"Ipv1":0.2,"Ipv2":0.7,"Ipv3":0.5,"Mode":1,"Tcoil":0.0,"RunT":430.7,"Pmax":29.2,"Uca":0.6,"Qac":0.7,"Pac":1.1,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":198,"Uab":0.6,"Ia":0.7,"Ib":0.9,"Freq":0.6,"Ic":0.3}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 18:26:30.386 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 18:26:31.388 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:26:31.404 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 18:26:31.408 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 18:26:32.411 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:26:32.417 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 18:27:24.363 [pool-1-thread-4] ERROR i.j.d.job.GetDataAll - 异常ID：596072161f886d61071c8f64
+ 2017-07-08 18:27:24.364 [pool-1-thread-4] ERROR i.j.d.job.GetDataAll - 数据出错!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-08 18:28:32.199 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:28:32.464 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:28:32.595 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 18:28:33.138 [cluster-ClusterId{value='5960b3d09ec7ce2ac8144e30', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17171}] to 139.196.235.75:27017
+ 2017-07-08 18:28:33.144 [cluster-ClusterId{value='5960b3d09ec7ce2ac8144e30', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5350498}
+ 2017-07-08 18:28:33.157 [cluster-ClusterId{value='5960b3d09ec7ce2ac8144e31', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17172}] to 139.196.235.75:27017
+ 2017-07-08 18:28:33.163 [cluster-ClusterId{value='5960b3d09ec7ce2ac8144e31', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5436962}
+ 2017-07-08 18:28:33.228 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17173}] to 139.196.235.75:27017
+ 2017-07-08 18:28:33.437 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17174}] to 139.196.235.75:27017
+ 2017-07-08 18:28:33.616 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 18:28:35.459 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 18:29:27.710 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:29:28.763 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:29:29.039 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 18:29:30.042 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:29:30.072 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据0条
+ 2017-07-08 18:29:30.205 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:29:30.304 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:29:33.371 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:29:33.555 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:29:34.364 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:29:34.559 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:29:34.561 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[31]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:61
+Send Data:	[{"dsn":"zncys8b1","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":1.0,"DYield":154.2,"Tmod":0.9,"Upv3":0.5,"Ubc":0.3,"Upv1":0.2,"Upv2":0.1,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":443.8,"Pmax":38.4,"Uca":0.4,"Qac":0.8,"Pac":0.7,"Sac":0.7,"PF":0.6,"LCDVer":"02.21","TYield":154,"Uab":0.6,"Ia":0.2,"Ib":0.9,"Freq":0.9,"Ic":0.3}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 18:29:49.910 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 18:29:50.913 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:29:50.928 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 18:29:50.931 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 18:29:51.935 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:29:51.935 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 18:30:18.846 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f64断开连接2222 threadID:[31]
+ 2017-07-08 18:30:34.569 [pool-1-thread-4] DEBUG i.j.data.job.PVjob - 596072161f886d61071c8f64Old  worker thread:31End!
+ 2017-07-08 18:43:50.391 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:43:51.402 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:43:51.405 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：17
+ 2017-07-08 18:43:52.408 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:43:52.440 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据0条
+ 2017-07-08 18:43:52.540 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:43:52.632 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:43:55.688 [pool-1-thread-5] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:43:55.808 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:43:56.672 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:43:56.809 [pool-1-thread-6] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:43:56.809 [pool-1-thread-6] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[36]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:924
+Send Data:	[{"dsn":"puk8k7hn","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.0,"DYield":189.9,"Tmod":0.7,"Upv3":0.8,"Ubc":1.0,"Upv1":0.5,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.0,"Ipv3":0.2,"Mode":1,"Tcoil":0.2,"RunT":428.6,"Pmax":25.1,"Uca":0.4,"Qac":0.1,"Pac":0.4,"Sac":0.7,"PF":0.6,"LCDVer":"02.21","TYield":190,"Uab":1.0,"Ia":0.5,"Ib":0.3,"Freq":1.0,"Ic":0.1}}]
+Other Info:	当前进程线程数量为：★23
+##########end###########
+ 2017-07-08 18:44:04.160 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 18:44:05.166 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:44:05.178 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 18:44:05.180 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 18:44:06.182 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:44:06.182 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 18:45:12.060 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f64断开连接2222 threadID:[36]
+ 2017-07-08 18:45:12.110 [MQTT Call: 596072161f886d61071c8f64] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:17185}] to 139.196.235.75:27017
+ 2017-07-08 18:45:12.115 [MQTT Call: 596072161f886d61071c8f64] INFO  i.j.d.m.MqttConnThread - 一处意外停止...尝试5分钟后重启此任务!!
+ 2017-07-08 18:50:12.107 [pool-1-thread-6] INFO  i.j.data.job.PVjob - 596072161f886d61071c8f64MQTT链接信息错误,链接失败
+ 2017-07-08 18:50:12.115 [MQTT Call: 596072161f886d61071c8f64] INFO  i.j.d.m.MqttConnThread - 启动发送线程..596072161f886d61071c8f64
+ 2017-07-08 18:50:12.117 [pool-1-thread-8] ERROR i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker失败！10分钟后重新连接开始...
+ 2017-07-08 18:50:12.134 [pool-1-thread-7] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:50:12.195 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:50:13.208 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:50:13.208 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[48]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:1300
+Send Data:	[{"dsn":"puk8k7hn","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":0.0,"Tmod":0.1,"Upv3":0.8,"Ubc":0.9,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.0,"Ipv2":0.3,"Ipv3":0.7,"Mode":1,"Tcoil":0.1,"RunT":465.0,"Pmax":30.6,"Uca":1.0,"Qac":0.4,"Pac":0.0,"Sac":0.7,"PF":0.6,"LCDVer":"02.21","TYield":0,"Uab":0.8,"Ia":0.9,"Ib":0.0,"Freq":0.8,"Ic":0.6}}]
+Other Info:	当前进程线程数量为：★27
+##########end###########
+ 2017-07-08 18:51:12.113 [pool-1-thread-6] DEBUG i.j.data.job.PVjob - 596072161f886d61071c8f64Old  worker thread:36End!
+ 2017-07-08 18:51:13.241 [pool-1-thread-9] ERROR i.j.d.job.GetDataAll - 异常ID：596072161f886d61071c8f64
+ 2017-07-08 18:51:13.243 [pool-1-thread-9] ERROR i.j.d.job.GetDataAll - 数据出错!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-08 18:51:13.249 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:51:14.251 [pool-1-thread-9] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:51:14.252 [pool-1-thread-9] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[48]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:61	server run time:1361
+Send Data:	[]
+Other Info:	当前进程线程数量为：★27
+##########end###########
+ 2017-07-08 18:52:30.332 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:52:30.451 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:52:30.473 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 18:52:30.781 [cluster-ClusterId{value='5960b96e9ec7ce1a943d58dc', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17203}] to 139.196.235.75:27017
+ 2017-07-08 18:52:30.787 [cluster-ClusterId{value='5960b96e9ec7ce1a943d58dc', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4882411}
+ 2017-07-08 18:52:30.790 [cluster-ClusterId{value='5960b96e9ec7ce1a943d58dd', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17204}] to 139.196.235.75:27017
+ 2017-07-08 18:52:30.796 [cluster-ClusterId{value='5960b96e9ec7ce1a943d58dd', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5978138}
+ 2017-07-08 18:52:30.857 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17205}] to 139.196.235.75:27017
+ 2017-07-08 18:52:31.027 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17206}] to 139.196.235.75:27017
+ 2017-07-08 18:52:31.093 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 18:52:33.052 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 18:52:37.739 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 18:52:37.748 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 18:52:37.754 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 18:52:37.759 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 18:52:37.764 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 18:52:37.764 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 4 个，实际加载任务 4 个 .EMS数据0个.PV数据4个
+ 2017-07-08 18:52:38.498 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 18:52:46.814 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:52:47.855 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:52:48.132 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 18:52:49.135 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:52:49.160 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据0条
+ 2017-07-08 18:52:49.303 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:52:49.416 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:52:52.474 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:52:52.638 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:52:53.475 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:52:53.641 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:52:53.641 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[36]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:23
+Send Data:	[{"dsn":"bwbsep6w","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.4,"DYield":184.4,"Tmod":0.5,"Upv3":0.8,"Ubc":0.6,"Upv1":0.3,"Upv2":0.9,"Ipv1":0.2,"Ipv2":0.7,"Ipv3":0.5,"Mode":1,"Tcoil":0.2,"RunT":420.5,"Pmax":32.3,"Uca":0.4,"Qac":0.5,"Pac":0.2,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":184,"Uab":0.6,"Ia":0.3,"Ib":0.9,"Freq":0.2,"Ic":0.3}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 18:53:02.343 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 18:53:03.346 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:53:03.360 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 18:53:03.362 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 18:53:04.365 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:53:04.365 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 18:53:12.221 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f64断开连接2222 threadID:[36]
+ 2017-07-08 18:53:53.647 [pool-1-thread-4] DEBUG i.j.data.job.PVjob - 596072161f886d61071c8f64Old  worker thread:36End!
+ 2017-07-08 18:54:46.800 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:54:46.903 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 18:54:46.926 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 18:54:47.560 [cluster-ClusterId{value='5960b9f69ec7ce3090a2aa1a', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17207}] to 139.196.235.75:27017
+ 2017-07-08 18:54:47.566 [cluster-ClusterId{value='5960b9f69ec7ce3090a2aa1a', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5843778}
+ 2017-07-08 18:54:47.689 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17209}] to 139.196.235.75:27017
+ 2017-07-08 18:54:47.696 [cluster-ClusterId{value='5960b9f69ec7ce3090a2aa19', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17208}] to 139.196.235.75:27017
+ 2017-07-08 18:54:47.705 [cluster-ClusterId{value='5960b9f69ec7ce3090a2aa19', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=8472218}
+ 2017-07-08 18:54:47.931 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17210}] to 139.196.235.75:27017
+ 2017-07-08 18:54:48.039 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 18:54:49.972 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 18:55:05.725 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 18:55:05.737 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 18:55:05.744 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 18:55:05.751 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 18:55:05.758 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 18:55:05.758 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 4 个，实际加载任务 4 个 .EMS数据0个.PV数据4个
+ 2017-07-08 18:55:07.810 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 18:55:21.147 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:55:22.188 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:55:22.422 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 18:55:23.424 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:55:23.452 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据0条
+ 2017-07-08 18:55:23.589 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:55:23.691 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:55:26.751 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 18:55:26.923 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:55:27.746 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:55:27.925 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:55:27.925 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[36]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:40
+Send Data:	[{"dsn":"13gu5gke","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":198.1,"Tmod":0.5,"Upv3":0.5,"Ubc":0.4,"Upv1":0.4,"Upv2":0.9,"Ipv1":0.2,"Ipv2":0.7,"Ipv3":1.0,"Mode":1,"Tcoil":0.0,"RunT":433.0,"Pmax":49.3,"Uca":1.0,"Qac":0.7,"Pac":0.1,"Sac":0.7,"PF":0.7,"LCDVer":"02.21","TYield":198,"Uab":0.4,"Ia":0.5,"Ib":0.4,"Freq":0.9,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 18:56:23.479 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f65","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:56:24.483 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:24.484 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f65
+类型:AgentId
+系统:PV
+当前线程数：21
+ 2017-07-08 18:56:25.487 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:25.511 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f65:已删除历史数据0条
+ 2017-07-08 18:56:25.557 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:56:25.654 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:56:28.007 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:56:28.713 [pool-1-thread-5] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f65连接服务器 broker成功！
+ 2017-07-08 18:56:28.820 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 18:56:29.019 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:29.019 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[36]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:61	server run time:101
+Send Data:	[{"dsn":"13gu5gke","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.4,"DYield":198.1,"Tmod":0.2,"Upv3":0.8,"Ubc":0.4,"Upv1":0.1,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.7,"Ipv3":0.7,"Mode":1,"Tcoil":0.5,"RunT":423.6,"Pmax":38.2,"Uca":0.7,"Qac":0.2,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":198,"Uab":0.8,"Ia":0.0,"Ib":0.3,"Freq":1.0,"Ic":0.2}}]
+Other Info:	当前进程线程数量为：★27
+##########end###########
+ 2017-07-08 18:56:29.709 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:29.831 [pool-1-thread-6] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:29.831 [pool-1-thread-6] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[44]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:102
+Send Data:	[{"dsn":"htkbx2jg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":198.1,"Tmod":0.6,"Upv3":0.1,"Ubc":0.8,"Upv1":0.8,"Upv2":0.3,"Ipv1":0.3,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":460.5,"Pmax":44.3,"Uca":0.0,"Qac":0.6,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":198,"Uab":0.5,"Ia":0.4,"Ib":0.1,"Freq":0.9,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★27
+##########end###########
+ 2017-07-08 18:56:47.292 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f66","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 18:56:48.294 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:48.294 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f66
+类型:AgentId
+系统:PV
+当前线程数：27
+ 2017-07-08 18:56:49.298 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:49.322 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f66:已删除历史数据0条
+ 2017-07-08 18:56:49.394 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 18:56:49.489 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 18:56:52.529 [pool-1-thread-7] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f66连接服务器 broker成功！
+ 2017-07-08 18:56:52.647 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 18:56:53.521 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:53.648 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:56:53.648 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[49]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:126
+Send Data:	[{"dsn":"ct781de7","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.7,"DYield":198.2,"Tmod":0.6,"Upv3":0.7,"Ubc":0.3,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.6,"Ipv2":1.0,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":467.0,"Pmax":39.9,"Uca":0.7,"Qac":0.9,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":198,"Uab":0.7,"Ia":0.8,"Ib":0.1,"Freq":0.8,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:57:29.100 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:57:29.909 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 18:57:30.104 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:57:30.104 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[36]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:122	server run time:162
+Send Data:	[{"dsn":"13gu5gke","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":198.1,"Tmod":0.3,"Upv3":0.2,"Ubc":0.6,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.9,"Ipv2":0.7,"Ipv3":0.7,"Mode":1,"Tcoil":0.7,"RunT":455.8,"Pmax":30.7,"Uca":0.6,"Qac":0.5,"Pac":0.0,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":198,"Uab":0.7,"Ia":0.6,"Ib":0.2,"Freq":0.7,"Ic":1.0}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:57:30.910 [pool-1-thread-6] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:57:30.910 [pool-1-thread-6] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[44]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:61	server run time:163
+Send Data:	[{"dsn":"htkbx2jg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":198.1,"Tmod":0.4,"Upv3":0.3,"Ubc":0.3,"Upv1":0.5,"Upv2":0.6,"Ipv1":0.7,"Ipv2":0.7,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":424.0,"Pmax":25.9,"Uca":0.7,"Qac":1.0,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":198,"Uab":0.3,"Ia":0.3,"Ib":0.4,"Freq":0.5,"Ic":0.5}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:57:53.727 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 18:57:54.738 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:57:54.738 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[49]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:61	server run time:187
+Send Data:	[{"dsn":"ct781de7","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.3,"DYield":198.2,"Tmod":0.6,"Upv3":0.4,"Ubc":0.6,"Upv1":0.5,"Upv2":0.9,"Ipv1":0.7,"Ipv2":0.8,"Ipv3":0.2,"Mode":1,"Tcoil":0.0,"RunT":430.8,"Pmax":25.0,"Uca":0.6,"Qac":0.1,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":198,"Uab":0.7,"Ia":0.2,"Ib":0.5,"Freq":0.2,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:58:30.184 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:58:30.995 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 18:58:31.186 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:58:31.186 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[36]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:183	server run time:223
+Send Data:	[{"dsn":"13gu5gke","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.5,"DYield":198.1,"Tmod":0.8,"Upv3":0.2,"Ubc":0.5,"Upv1":0.5,"Upv2":0.6,"Ipv1":0.8,"Ipv2":0.9,"Ipv3":0.3,"Mode":1,"Tcoil":0.9,"RunT":447.2,"Pmax":21.7,"Uca":0.1,"Qac":0.8,"Pac":0.0,"Sac":0.2,"PF":0.8,"LCDVer":"02.21","TYield":198,"Uab":0.9,"Ia":0.0,"Ib":0.7,"Freq":0.8,"Ic":0.6}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:58:31.997 [pool-1-thread-6] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:58:31.997 [pool-1-thread-6] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[44]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:122	server run time:224
+Send Data:	[{"dsn":"htkbx2jg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":198.1,"Tmod":0.4,"Upv3":0.4,"Ubc":0.7,"Upv1":0.5,"Upv2":0.8,"Ipv1":0.0,"Ipv2":0.9,"Ipv3":0.5,"Mode":1,"Tcoil":0.8,"RunT":447.7,"Pmax":42.4,"Uca":0.1,"Qac":0.0,"Pac":0.0,"Sac":0.9,"PF":0.8,"LCDVer":"02.21","TYield":198,"Uab":0.3,"Ia":0.5,"Ib":0.3,"Freq":0.8,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:58:54.825 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 18:58:55.827 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:58:55.827 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[49]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:122	server run time:248
+Send Data:	[{"dsn":"ct781de7","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":198.2,"Tmod":0.2,"Upv3":0.9,"Ubc":0.3,"Upv1":1.0,"Upv2":0.0,"Ipv1":0.8,"Ipv2":0.6,"Ipv3":0.2,"Mode":1,"Tcoil":0.9,"RunT":477.1,"Pmax":38.6,"Uca":0.9,"Qac":0.9,"Pac":0.0,"Sac":0.6,"PF":0.8,"LCDVer":"02.21","TYield":198,"Uab":0.8,"Ia":0.9,"Ib":0.8,"Freq":0.1,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:59:31.269 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 18:59:32.083 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 18:59:32.273 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:59:32.273 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[36]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:244	server run time:284
+Send Data:	[{"dsn":"13gu5gke","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":198.1,"Tmod":0.4,"Upv3":0.6,"Ubc":0.5,"Upv1":1.0,"Upv2":0.1,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.1,"Mode":1,"Tcoil":0.2,"RunT":475.5,"Pmax":31.3,"Uca":0.5,"Qac":0.3,"Pac":0.0,"Sac":0.7,"PF":0.5,"LCDVer":"02.21","TYield":198,"Uab":0.4,"Ia":0.9,"Ib":0.6,"Freq":0.9,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:59:33.097 [pool-1-thread-6] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:59:33.097 [pool-1-thread-6] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[44]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:183	server run time:285
+Send Data:	[{"dsn":"htkbx2jg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.2,"DYield":198.1,"Tmod":0.7,"Upv3":0.4,"Ubc":0.3,"Upv1":0.6,"Upv2":0.8,"Ipv1":0.5,"Ipv2":1.0,"Ipv3":0.9,"Mode":1,"Tcoil":0.7,"RunT":466.3,"Pmax":34.5,"Uca":0.0,"Qac":0.2,"Pac":0.0,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":198,"Uab":0.3,"Ia":0.2,"Ib":1.0,"Freq":0.6,"Ic":0.6}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 18:59:55.911 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 18:59:56.913 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 18:59:56.913 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[49]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:183	server run time:309
+Send Data:	[{"dsn":"ct781de7","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.2,"DYield":198.2,"Tmod":0.6,"Upv3":0.4,"Ubc":1.0,"Upv1":0.6,"Upv2":0.4,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.8,"Mode":1,"Tcoil":0.9,"RunT":475.1,"Pmax":26.1,"Uca":0.3,"Qac":0.8,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":198,"Uab":0.3,"Ia":0.4,"Ib":0.2,"Freq":0.7,"Ic":0.5}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 19:00:32.365 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:00:33.212 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:00:33.367 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:00:33.367 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[36]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:305	server run time:346
+Send Data:	[{"dsn":"13gu5gke","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.6,"DYield":198.1,"Tmod":0.0,"Upv3":0.4,"Ubc":0.1,"Upv1":1.0,"Upv2":0.5,"Ipv1":0.7,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":474.7,"Pmax":45.3,"Uca":0.8,"Qac":0.2,"Pac":0.0,"Sac":0.2,"PF":0.7,"LCDVer":"02.21","TYield":198,"Uab":0.6,"Ia":0.8,"Ib":0.9,"Freq":0.0,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 19:00:34.213 [pool-1-thread-6] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:00:34.213 [pool-1-thread-6] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[44]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:244	server run time:346
+Send Data:	[{"dsn":"htkbx2jg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.6,"DYield":198.1,"Tmod":0.8,"Upv3":0.9,"Ubc":0.4,"Upv1":0.7,"Upv2":0.4,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.6,"Mode":1,"Tcoil":0.2,"RunT":453.3,"Pmax":35.1,"Uca":0.1,"Qac":0.7,"Pac":0.0,"Sac":0.8,"PF":0.6,"LCDVer":"02.21","TYield":198,"Uab":0.8,"Ia":0.5,"Ib":0.8,"Freq":0.7,"Ic":0.1}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 19:00:57.007 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:00:58.009 [pool-1-thread-8] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:00:58.009 [pool-1-thread-8] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[49]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:244	server run time:370
+Send Data:	[{"dsn":"ct781de7","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.0,"DYield":198.2,"Tmod":0.7,"Upv3":0.5,"Ubc":0.5,"Upv1":0.9,"Upv2":0.7,"Ipv1":1.0,"Ipv2":0.9,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":457.0,"Pmax":34.4,"Uca":0.7,"Qac":0.5,"Pac":0.0,"Sac":0.6,"PF":0.8,"LCDVer":"02.21","TYield":198,"Uab":0.5,"Ia":0.7,"Ib":0.7,"Freq":0.2,"Ic":0.4}}]
+Other Info:	当前进程线程数量为：★33
+##########end###########
+ 2017-07-08 19:01:29.989 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:01:30.251 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:01:30.363 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:01:30.908 [cluster-ClusterId{value='5960bb8a9ec7ce22dc1d0a67', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17241}] to 139.196.235.75:27017
+ 2017-07-08 19:01:30.914 [cluster-ClusterId{value='5960bb8a9ec7ce22dc1d0a67', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5771309}
+ 2017-07-08 19:01:30.944 [cluster-ClusterId{value='5960bb899ec7ce22dc1d0a66', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17240}] to 139.196.235.75:27017
+ 2017-07-08 19:01:30.950 [cluster-ClusterId{value='5960bb899ec7ce22dc1d0a66', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5337434}
+ 2017-07-08 19:01:31.002 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17242}] to 139.196.235.75:27017
+ 2017-07-08 19:01:31.219 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17243}] to 139.196.235.75:27017
+ 2017-07-08 19:01:31.279 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:01:33.238 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:04:49.820 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:04:50.119 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:04:50.154 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:04:50.545 [cluster-ClusterId{value='5960bc519ec7ce32104bee46', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17246}] to 139.196.235.75:27017
+ 2017-07-08 19:04:50.553 [cluster-ClusterId{value='5960bc519ec7ce32104bee46', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=7433718}
+ 2017-07-08 19:04:50.595 [cluster-ClusterId{value='5960bc529ec7ce32104bee47', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17247}] to 139.196.235.75:27017
+ 2017-07-08 19:04:50.601 [cluster-ClusterId{value='5960bc529ec7ce32104bee47', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5143668}
+ 2017-07-08 19:04:50.651 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17248}] to 139.196.235.75:27017
+ 2017-07-08 19:04:50.798 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17249}] to 139.196.235.75:27017
+ 2017-07-08 19:04:50.915 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:04:52.815 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:05:38.780 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:05:39.018 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:05:39.040 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:05:39.522 [cluster-ClusterId{value='5960bc839ec7ce3238321433', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17251}] to 139.196.235.75:27017
+ 2017-07-08 19:05:39.531 [cluster-ClusterId{value='5960bc839ec7ce3238321433', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=8275963}
+ 2017-07-08 19:05:39.554 [cluster-ClusterId{value='5960bc829ec7ce3238321432', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17250}] to 139.196.235.75:27017
+ 2017-07-08 19:05:39.559 [cluster-ClusterId{value='5960bc829ec7ce3238321432', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4517583}
+ 2017-07-08 19:05:39.587 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17252}] to 139.196.235.75:27017
+ 2017-07-08 19:05:39.716 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17253}] to 139.196.235.75:27017
+ 2017-07-08 19:05:39.783 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:05:41.732 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:06:36.312 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:06:36.412 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:06:36.431 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:06:36.961 [cluster-ClusterId{value='5960bcbc9ec7ce2fb07bceb7', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17254}] to 139.196.235.75:27017
+ 2017-07-08 19:06:36.970 [cluster-ClusterId{value='5960bcbc9ec7ce2fb07bceb7', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=8325726}
+ 2017-07-08 19:06:37.013 [cluster-ClusterId{value='5960bcbc9ec7ce2fb07bceb8', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17255}] to 139.196.235.75:27017
+ 2017-07-08 19:06:37.021 [cluster-ClusterId{value='5960bcbc9ec7ce2fb07bceb8', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=7647700}
+ 2017-07-08 19:06:37.084 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17256}] to 139.196.235.75:27017
+ 2017-07-08 19:06:37.314 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17257}] to 139.196.235.75:27017
+ 2017-07-08 19:06:37.444 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:06:39.358 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:07:06.558 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:07:06.653 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:07:06.675 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:07:07.452 [cluster-ClusterId{value='5960bcda9ec7ce3078c7943f', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17258}] to 139.196.235.75:27017
+ 2017-07-08 19:07:07.458 [cluster-ClusterId{value='5960bcda9ec7ce3078c7943f', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5374446}
+ 2017-07-08 19:07:07.460 [cluster-ClusterId{value='5960bcda9ec7ce3078c7943e', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17259}] to 139.196.235.75:27017
+ 2017-07-08 19:07:07.466 [cluster-ClusterId{value='5960bcda9ec7ce3078c7943e', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5441315}
+ 2017-07-08 19:07:07.512 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17260}] to 139.196.235.75:27017
+ 2017-07-08 19:07:07.700 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17261}] to 139.196.235.75:27017
+ 2017-07-08 19:07:07.834 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:07:09.726 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:07:45.712 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:07:46.071 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:07:46.110 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:07:46.503 [cluster-ClusterId{value='5960bd019ec7ce3288b1bc1c', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17262}] to 139.196.235.75:27017
+ 2017-07-08 19:07:46.509 [cluster-ClusterId{value='5960bd019ec7ce3288b1bc1c', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4728455}
+ 2017-07-08 19:07:46.528 [cluster-ClusterId{value='5960bd029ec7ce3288b1bc1d', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17263}] to 139.196.235.75:27017
+ 2017-07-08 19:07:46.535 [cluster-ClusterId{value='5960bd029ec7ce3288b1bc1d', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=6333325}
+ 2017-07-08 19:07:46.604 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17264}] to 139.196.235.75:27017
+ 2017-07-08 19:07:46.763 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17265}] to 139.196.235.75:27017
+ 2017-07-08 19:07:46.829 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:07:48.784 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:07:52.370 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 19:07:52.385 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 19:07:52.397 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 19:07:52.406 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 19:07:52.415 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 19:07:52.424 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f64.加载完毕.
+ 2017-07-08 19:07:52.431 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f65.加载完毕.
+ 2017-07-08 19:07:52.439 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f66.加载完毕.
+ 2017-07-08 19:07:52.440 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 7 个，实际加载任务 7 个 .EMS数据0个.PV数据7个
+ 2017-07-08 19:07:55.619 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 19:08:35.972 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:08:37.034 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:08:37.290 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 19:08:38.292 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:08:38.325 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据3条
+ 2017-07-08 19:08:38.479 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:08:38.576 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:08:41.637 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 19:08:41.838 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:08:42.628 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:08:42.840 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:08:42.841 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[39]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:56
+Send Data:	[{"dsn":"9lh1tbti","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.1,"DYield":173.5,"Tmod":0.9,"Upv3":0.7,"Ubc":0.9,"Upv1":0.1,"Upv2":0.5,"Ipv1":0.1,"Ipv2":0.1,"Ipv3":0.4,"Mode":1,"Tcoil":0.9,"RunT":418.6,"Pmax":20.6,"Uca":0.0,"Qac":0.7,"Pac":0.0,"Sac":0.0,"PF":0.7,"LCDVer":"02.21","TYield":174,"Uab":0.0,"Ia":0.9,"Ib":0.0,"Freq":0.2,"Ic":0.1}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:09:37.028 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:09:37.331 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:09:37.376 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:09:37.827 [cluster-ClusterId{value='5960bd709ec7ce32780f8a2d', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17267}] to 139.196.235.75:27017
+ 2017-07-08 19:09:37.832 [cluster-ClusterId{value='5960bd719ec7ce32780f8a2e', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17266}] to 139.196.235.75:27017
+ 2017-07-08 19:09:37.833 [cluster-ClusterId{value='5960bd709ec7ce32780f8a2d', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5618909}
+ 2017-07-08 19:09:37.839 [cluster-ClusterId{value='5960bd719ec7ce32780f8a2e', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5982804}
+ 2017-07-08 19:09:37.893 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17268}] to 139.196.235.75:27017
+ 2017-07-08 19:09:38.033 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17269}] to 139.196.235.75:27017
+ 2017-07-08 19:09:38.098 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:09:40.052 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:11:09.766 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:11:09.847 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:11:09.867 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:11:10.186 [cluster-ClusterId{value='5960bdcd9ec7ce31d8341f93', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17284}] to 139.196.235.75:27017
+ 2017-07-08 19:11:10.186 [cluster-ClusterId{value='5960bdcd9ec7ce31d8341f92', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17283}] to 139.196.235.75:27017
+ 2017-07-08 19:11:10.192 [cluster-ClusterId{value='5960bdcd9ec7ce31d8341f92', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5436961}
+ 2017-07-08 19:11:10.194 [cluster-ClusterId{value='5960bdcd9ec7ce31d8341f93', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=7480060}
+ 2017-07-08 19:11:10.261 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17285}] to 139.196.235.75:27017
+ 2017-07-08 19:11:10.400 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17286}] to 139.196.235.75:27017
+ 2017-07-08 19:11:10.478 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:11:12.417 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:11:31.868 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:11:32.090 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:11:32.125 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:11:32.466 [cluster-ClusterId{value='5960bde39ec7ce30bc573157', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17288}] to 139.196.235.75:27017
+ 2017-07-08 19:11:32.473 [cluster-ClusterId{value='5960bde39ec7ce30bc573157', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=6595826}
+ 2017-07-08 19:11:32.484 [cluster-ClusterId{value='5960bde49ec7ce30bc573158', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17287}] to 139.196.235.75:27017
+ 2017-07-08 19:11:32.491 [cluster-ClusterId{value='5960bde49ec7ce30bc573158', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5619531}
+ 2017-07-08 19:11:32.552 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17289}] to 139.196.235.75:27017
+ 2017-07-08 19:11:32.683 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17290}] to 139.196.235.75:27017
+ 2017-07-08 19:11:32.739 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:11:34.700 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:11:43.162 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 19:11:43.172 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 19:11:43.179 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 19:11:43.187 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 19:11:43.193 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 19:11:43.193 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 4 个，实际加载任务 4 个 .EMS数据0个.PV数据4个
+ 2017-07-08 19:11:44.329 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 19:11:49.960 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:11:51.005 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:11:51.212 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 19:11:52.215 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:11:52.240 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据3条
+ 2017-07-08 19:11:52.389 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:11:52.489 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:11:55.548 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 19:11:55.708 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:11:56.535 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:11:56.710 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:11:56.710 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:24
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":184.3,"Tmod":0.4,"Upv3":0.5,"Ubc":0.6,"Upv1":0.4,"Upv2":0.7,"Ipv1":0.6,"Ipv2":0.1,"Ipv3":0.7,"Mode":1,"Tcoil":0.6,"RunT":421.7,"Pmax":37.1,"Uca":0.5,"Qac":0.5,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":184,"Uab":0.4,"Ia":0.5,"Ib":0.4,"Freq":0.2,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:12:20.018 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f65","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:12:21.035 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:12:21.036 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f65
+类型:AgentId
+系统:PV
+当前线程数：21
+ 2017-07-08 19:12:22.039 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:12:22.063 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f65:已删除历史数据3条
+ 2017-07-08 19:12:22.109 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:12:22.188 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:12:25.234 [pool-1-thread-5] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f65连接服务器 broker成功！
+ 2017-07-08 19:12:25.347 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:12:26.237 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:12:26.348 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:12:26.349 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:54
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.1,"DYield":173.8,"Tmod":0.6,"Upv3":0.7,"Ubc":0.1,"Upv1":1.0,"Upv2":0.8,"Ipv1":0.1,"Ipv2":0.3,"Ipv3":0.0,"Mode":1,"Tcoil":0.0,"RunT":472.6,"Pmax":37.1,"Uca":0.0,"Qac":0.3,"Pac":0.0,"Sac":0.8,"PF":0.8,"LCDVer":"02.21","TYield":174,"Uab":0.7,"Ia":1.0,"Ib":0.1,"Freq":0.8,"Ic":0.5}}]
+Other Info:	当前进程线程数量为：★26
+##########end###########
+ 2017-07-08 19:12:56.800 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:12:57.803 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:12:57.803 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:61	server run time:85
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":184.3,"Tmod":0.4,"Upv3":0.7,"Ubc":0.1,"Upv1":0.6,"Upv2":0.1,"Ipv1":0.8,"Ipv2":0.5,"Ipv3":1.0,"Mode":1,"Tcoil":0.8,"RunT":436.5,"Pmax":26.9,"Uca":0.2,"Qac":1.0,"Pac":0.0,"Sac":0.4,"PF":0.6,"LCDVer":"02.21","TYield":184,"Uab":0.3,"Ia":1.0,"Ib":0.7,"Freq":0.6,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★26
+##########end###########
+ 2017-07-08 19:13:08.743 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f66","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:13:09.757 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:09.757 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f66
+类型:AgentId
+系统:PV
+当前线程数：26
+ 2017-07-08 19:13:10.759 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:10.786 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f66:已删除历史数据3条
+ 2017-07-08 19:13:10.824 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:13:10.907 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:13:13.970 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f66连接服务器 broker成功！
+ 2017-07-08 19:13:14.060 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:13:14.944 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:15.073 [pool-1-thread-5] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:15.073 [pool-1-thread-5] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[47]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:102
+Send Data:	[{"dsn":"97gkzi9v","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.5,"DYield":190.2,"Tmod":0.0,"Upv3":0.2,"Ubc":0.9,"Upv1":0.3,"Upv2":0.9,"Ipv1":0.6,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.9,"RunT":456.4,"Pmax":20.7,"Uca":0.7,"Qac":0.4,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":190,"Uab":0.2,"Ia":0.5,"Ib":0.3,"Freq":0.7,"Ic":0.2}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:13:26.433 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:13:27.434 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:27.434 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:61	server run time:115
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":173.8,"Tmod":0.8,"Upv3":0.6,"Ubc":0.0,"Upv1":1.0,"Upv2":0.4,"Ipv1":0.4,"Ipv2":0.3,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":459.0,"Pmax":35.7,"Uca":0.1,"Qac":1.0,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":174,"Uab":0.1,"Ia":0.2,"Ib":0.7,"Freq":0.5,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:13:42.705 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f67","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:13:43.709 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:43.710 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f67
+类型:AgentId
+系统:PV
+当前线程数：30
+ 2017-07-08 19:13:44.712 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:44.734 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f67:已删除历史数据0条
+ 2017-07-08 19:13:44.763 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:13:44.816 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:13:47.869 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f67连接服务器 broker成功！
+ 2017-07-08 19:13:47.982 [MQTT Call: 596072161f886d61071c8f67] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f67:send successful!
+ 2017-07-08 19:13:48.866 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:48.995 [pool-1-thread-3] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:48.995 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[53]Send Data Info:
+AgentID:	596072161f886d61071c8f67
+Topic:	agents/596072161f886d61071c8f67/upstream
+Time Interval:	0 	Set the time:60	Thread run time:0	server run time:136
+Send Data:	[{"dsn":"ygqgvcda","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":189.7,"Tmod":0.3,"Upv3":0.9,"Ubc":0.9,"Upv1":1.0,"Upv2":0.1,"Ipv1":0.7,"Ipv2":0.8,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":462.0,"Pmax":28.5,"Uca":0.7,"Qac":0.8,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":190,"Uab":0.5,"Ia":0.6,"Ib":0.7,"Freq":0.3,"Ic":0.5}}]
+Other Info:	当前进程线程数量为：★34
+##########end###########
+ 2017-07-08 19:13:57.883 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:13:58.897 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:13:58.897 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:122	server run time:146
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":184.3,"Tmod":0.2,"Upv3":0.2,"Ubc":0.2,"Upv1":0.7,"Upv2":0.0,"Ipv1":0.4,"Ipv2":0.3,"Ipv3":1.0,"Mode":1,"Tcoil":0.3,"RunT":423.9,"Pmax":34.7,"Uca":0.4,"Qac":0.1,"Pac":0.0,"Sac":0.1,"PF":0.5,"LCDVer":"02.21","TYield":184,"Uab":0.7,"Ia":0.6,"Ib":0.1,"Freq":0.4,"Ic":0.1}}]
+Other Info:	当前进程线程数量为：★34
+##########end###########
+ 2017-07-08 19:14:15.157 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:14:15.811 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f68","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:14:16.171 [pool-1-thread-5] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:14:16.171 [pool-1-thread-5] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[47]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:61	server run time:164
+Send Data:	[{"dsn":"97gkzi9v","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.6,"DYield":190.2,"Tmod":0.2,"Upv3":0.1,"Ubc":0.4,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.1,"Ipv2":0.5,"Ipv3":0.4,"Mode":1,"Tcoil":0.5,"RunT":466.7,"Pmax":37.1,"Uca":0.1,"Qac":0.7,"Pac":0.0,"Sac":0.2,"PF":0.5,"LCDVer":"02.21","TYield":190,"Uab":0.4,"Ia":0.8,"Ib":0.6,"Freq":0.1,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★34
+##########end###########
+ 2017-07-08 19:14:16.815 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:14:16.816 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f68
+类型:AgentId
+系统:PV
+当前线程数：34
+ 2017-07-08 19:14:17.819 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:14:17.843 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f68:已删除历史数据0条
+ 2017-07-08 19:14:17.872 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:14:17.930 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:14:21.962 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:14:27.515 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:14:28.518 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:14:28.518 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:122	server run time:176
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.2,"DYield":173.8,"Tmod":0.4,"Upv3":0.9,"Ubc":0.5,"Upv1":0.1,"Upv2":0.4,"Ipv1":0.4,"Ipv2":0.3,"Ipv3":0.8,"Mode":1,"Tcoil":0.2,"RunT":454.8,"Pmax":24.2,"Uca":0.8,"Qac":0.8,"Pac":0.0,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":174,"Uab":0.3,"Ia":0.8,"Ib":0.3,"Freq":0.6,"Ic":0.2}}]
+Other Info:	当前进程线程数量为：★34
+##########end###########
+ 2017-07-08 19:14:49.077 [MQTT Call: 596072161f886d61071c8f67] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f67:send successful!
+ 2017-07-08 19:14:50.078 [pool-1-thread-3] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:14:50.078 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[53]Send Data Info:
+AgentID:	596072161f886d61071c8f67
+Topic:	agents/596072161f886d61071c8f67/upstream
+Time Interval:	60 	Set the time:60	Thread run time:61	server run time:198
+Send Data:	[{"dsn":"ygqgvcda","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.2,"DYield":189.7,"Tmod":0.2,"Upv3":0.3,"Ubc":1.0,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.4,"Ipv2":0.5,"Ipv3":0.9,"Mode":1,"Tcoil":0.2,"RunT":445.2,"Pmax":45.3,"Uca":0.9,"Qac":0.1,"Pac":0.0,"Sac":0.1,"PF":0.8,"LCDVer":"02.21","TYield":190,"Uab":0.2,"Ia":0.4,"Ib":0.0,"Freq":0.2,"Ic":0.3}}]
+Other Info:	当前进程线程数量为：★34
+##########end###########
+ 2017-07-08 19:14:58.972 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:14:59.974 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:14:59.974 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:183	server run time:207
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.6,"DYield":184.3,"Tmod":0.7,"Upv3":0.8,"Ubc":0.8,"Upv1":0.3,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.1,"Ipv3":0.5,"Mode":1,"Tcoil":0.3,"RunT":463.0,"Pmax":47.4,"Uca":0.9,"Qac":0.2,"Pac":0.0,"Sac":0.6,"PF":0.7,"LCDVer":"02.21","TYield":184,"Uab":0.1,"Ia":0.0,"Ib":0.8,"Freq":1.0,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★34
+##########end###########
+ 2017-07-08 19:15:15.443 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f68","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:15:16.252 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:15:16.459 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:15:16.459 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f68
+类型:AgentId
+系统:PV
+当前线程数：34
+ 2017-07-08 19:15:17.254 [pool-1-thread-5] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:15:17.254 [pool-1-thread-5] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[47]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:122	server run time:225
+Send Data:	[{"dsn":"97gkzi9v","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":190.2,"Tmod":1.0,"Upv3":0.1,"Ubc":0.6,"Upv1":0.1,"Upv2":0.2,"Ipv1":0.2,"Ipv2":0.0,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":474.2,"Pmax":24.2,"Uca":0.1,"Qac":0.4,"Pac":0.0,"Sac":0.3,"PF":0.8,"LCDVer":"02.21","TYield":190,"Uab":0.4,"Ia":0.2,"Ib":0.8,"Freq":0.8,"Ic":0.4}}]
+Other Info:	当前进程线程数量为：★34
+##########end###########
+ 2017-07-08 19:15:17.471 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:15:17.493 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f68:已删除历史数据3条
+ 2017-07-08 19:15:17.530 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:15:17.582 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:15:21.614 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:15:28.596 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:15:29.600 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:15:29.600 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:183	server run time:237
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.0,"DYield":173.8,"Tmod":0.8,"Upv3":0.9,"Ubc":0.6,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.4,"Ipv2":0.4,"Ipv3":1.0,"Mode":1,"Tcoil":0.2,"RunT":424.9,"Pmax":50.1,"Uca":0.8,"Qac":0.5,"Pac":0.0,"Sac":0.7,"PF":0.8,"LCDVer":"02.21","TYield":174,"Uab":0.5,"Ia":0.3,"Ib":0.7,"Freq":0.1,"Ic":0.9}}]
+Other Info:	当前进程线程数量为：★34
+##########end###########
+ 2017-07-08 19:15:47.138 [MQTT Call: 596072161f886d61071c8f67] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f67收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 19:15:48.141 [MQTT Call: 596072161f886d61071c8f67] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:15:48.153 [MQTT Call: 596072161f886d61071c8f67] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 19:15:48.158 [MQTT Call: 596072161f886d61071c8f67] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f67断开连接1111
+ 2017-07-08 19:15:49.159 [MQTT Call: 596072161f886d61071c8f67] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:15:49.159 [MQTT Call: 596072161f886d61071c8f67] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 19:15:50.772 [MQTT Call: 596072161f886d61071c8f67] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f67断开连接2222 threadID:[53]
+ 2017-07-08 19:15:50.819 [MQTT Call: 596072161f886d61071c8f67] INFO  o.m.d.connection - Opened connection [connectionId{localValue:5, serverValue:17291}] to 139.196.235.75:27017
+ 2017-07-08 19:16:00.046 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:16:01.047 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:16:01.048 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:244	server run time:268
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.7,"DYield":184.3,"Tmod":0.5,"Upv3":0.3,"Ubc":0.8,"Upv1":0.6,"Upv2":0.9,"Ipv1":0.2,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.2,"RunT":415.3,"Pmax":29.2,"Uca":0.9,"Qac":0.7,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":184,"Uab":0.4,"Ia":0.9,"Ib":0.3,"Freq":0.2,"Ic":0.1}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:16:17.335 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:16:18.336 [pool-1-thread-5] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:16:18.336 [pool-1-thread-5] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[47]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:183	server run time:286
+Send Data:	[{"dsn":"97gkzi9v","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.9,"DYield":190.2,"Tmod":1.0,"Upv3":0.1,"Ubc":0.4,"Upv1":0.9,"Upv2":1.0,"Ipv1":0.3,"Ipv2":0.7,"Ipv3":0.7,"Mode":1,"Tcoil":0.1,"RunT":430.4,"Pmax":44.8,"Uca":0.3,"Qac":0.7,"Pac":0.0,"Sac":0.2,"PF":0.6,"LCDVer":"02.21","TYield":190,"Uab":0.9,"Ia":0.9,"Ib":0.7,"Freq":0.5,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:16:29.677 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:16:30.677 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:16:30.677 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:244	server run time:298
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.0,"DYield":173.8,"Tmod":0.7,"Upv3":0.3,"Ubc":0.7,"Upv1":0.4,"Upv2":0.4,"Ipv1":1.0,"Ipv2":0.5,"Ipv3":0.3,"Mode":1,"Tcoil":0.7,"RunT":429.3,"Pmax":30.8,"Uca":1.0,"Qac":0.9,"Pac":0.0,"Sac":1.0,"PF":0.7,"LCDVer":"02.21","TYield":174,"Uab":0.7,"Ia":0.3,"Ib":0.5,"Freq":0.5,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:17:01.142 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:17:02.145 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:17:02.145 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:305	server run time:330
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.6,"DYield":184.3,"Tmod":0.6,"Upv3":0.1,"Ubc":0.2,"Upv1":0.3,"Upv2":0.1,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.6,"RunT":454.7,"Pmax":46.7,"Uca":0.5,"Qac":0.6,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":184,"Uab":0.1,"Ia":0.5,"Ib":0.3,"Freq":0.3,"Ic":0.7}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:17:18.422 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:17:19.435 [pool-1-thread-5] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:17:19.435 [pool-1-thread-5] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[47]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:244	server run time:347
+Send Data:	[{"dsn":"97gkzi9v","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.3,"DYield":190.2,"Tmod":0.5,"Upv3":0.6,"Ubc":0.9,"Upv1":0.6,"Upv2":0.7,"Ipv1":1.0,"Ipv2":0.2,"Ipv3":0.2,"Mode":1,"Tcoil":0.6,"RunT":462.9,"Pmax":41.5,"Uca":0.8,"Qac":0.9,"Pac":0.0,"Sac":0.8,"PF":0.5,"LCDVer":"02.21","TYield":190,"Uab":0.3,"Ia":0.7,"Ib":0.2,"Freq":0.9,"Ic":0.6}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:17:30.752 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:17:31.753 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:17:31.753 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:305	server run time:359
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.9,"DYield":173.8,"Tmod":0.8,"Upv3":0.0,"Ubc":0.1,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.5,"Ipv2":0.6,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":474.6,"Pmax":34.3,"Uca":0.9,"Qac":0.2,"Pac":0.0,"Sac":0.4,"PF":0.5,"LCDVer":"02.21","TYield":174,"Uab":0.0,"Ia":0.6,"Ib":0.8,"Freq":0.8,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:18:02.235 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:18:03.238 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:18:03.238 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:366	server run time:391
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.2,"DYield":184.3,"Tmod":0.6,"Upv3":0.1,"Ubc":0.4,"Upv1":0.4,"Upv2":0.9,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.8,"Mode":1,"Tcoil":1.0,"RunT":420.0,"Pmax":49.2,"Uca":0.2,"Qac":0.5,"Pac":0.0,"Sac":0.5,"PF":0.7,"LCDVer":"02.21","TYield":184,"Uab":0.1,"Ia":0.6,"Ib":0.0,"Freq":0.4,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:18:19.523 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:18:20.525 [pool-1-thread-5] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:18:20.525 [pool-1-thread-5] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[47]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:305	server run time:408
+Send Data:	[{"dsn":"97gkzi9v","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.9,"DYield":190.2,"Tmod":0.2,"Upv3":0.7,"Ubc":0.2,"Upv1":1.0,"Upv2":0.6,"Ipv1":0.4,"Ipv2":0.2,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":464.0,"Pmax":31.6,"Uca":0.1,"Qac":0.7,"Pac":0.0,"Sac":0.3,"PF":0.6,"LCDVer":"02.21","TYield":190,"Uab":0.2,"Ia":0.2,"Ib":0.5,"Freq":0.8,"Ic":0.0}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:18:31.827 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:18:32.828 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:18:32.828 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:366	server run time:420
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.8,"DYield":173.8,"Tmod":0.4,"Upv3":0.1,"Ubc":0.9,"Upv1":0.1,"Upv2":0.6,"Ipv1":1.0,"Ipv2":0.5,"Ipv3":0.0,"Mode":1,"Tcoil":0.5,"RunT":466.4,"Pmax":43.3,"Uca":0.7,"Qac":0.1,"Pac":0.0,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":174,"Uab":1.0,"Ia":0.0,"Ib":0.3,"Freq":0.8,"Ic":0.0}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:19:03.317 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:19:04.320 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:19:04.320 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:427	server run time:452
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.4,"DYield":184.3,"Tmod":0.8,"Upv3":0.4,"Ubc":0.0,"Upv1":0.2,"Upv2":0.9,"Ipv1":0.3,"Ipv2":0.3,"Ipv3":0.1,"Mode":1,"Tcoil":0.5,"RunT":463.5,"Pmax":35.2,"Uca":0.2,"Qac":0.1,"Pac":0.0,"Sac":0.5,"PF":0.5,"LCDVer":"02.21","TYield":184,"Uab":0.1,"Ia":0.7,"Ib":0.5,"Freq":1.0,"Ic":0.6}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:19:20.607 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:19:21.620 [pool-1-thread-5] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:19:21.620 [pool-1-thread-5] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[47]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:366	server run time:469
+Send Data:	[{"dsn":"97gkzi9v","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.0,"DYield":190.2,"Tmod":0.4,"Upv3":0.7,"Ubc":0.9,"Upv1":0.1,"Upv2":0.3,"Ipv1":0.1,"Ipv2":0.4,"Ipv3":0.9,"Mode":1,"Tcoil":0.8,"RunT":416.7,"Pmax":33.5,"Uca":0.6,"Qac":0.6,"Pac":0.0,"Sac":0.2,"PF":0.5,"LCDVer":"02.21","TYield":190,"Uab":0.5,"Ia":0.3,"Ib":0.6,"Freq":0.2,"Ic":0.4}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:19:32.897 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:19:33.900 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:19:33.900 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:427	server run time:481
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.2,"DYield":173.8,"Tmod":0.3,"Upv3":1.0,"Ubc":0.5,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.1,"RunT":453.9,"Pmax":50.4,"Uca":0.5,"Qac":0.8,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":174,"Uab":0.3,"Ia":0.3,"Ib":0.6,"Freq":0.4,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:20:04.394 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:20:05.396 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:20:05.396 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:488	server run time:513
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.1,"DYield":184.3,"Tmod":0.1,"Upv3":0.5,"Ubc":0.0,"Upv1":0.1,"Upv2":0.1,"Ipv1":0.5,"Ipv2":0.5,"Ipv3":0.6,"Mode":1,"Tcoil":0.2,"RunT":420.3,"Pmax":31.2,"Uca":0.4,"Qac":0.9,"Pac":0.0,"Sac":0.6,"PF":0.6,"LCDVer":"02.21","TYield":184,"Uab":0.3,"Ia":0.8,"Ib":0.6,"Freq":0.2,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:20:21.721 [MQTT Call: 596072161f886d61071c8f66] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f66:send successful!
+ 2017-07-08 19:20:22.734 [pool-1-thread-5] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:20:22.734 [pool-1-thread-5] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[47]Send Data Info:
+AgentID:	596072161f886d61071c8f66
+Topic:	agents/596072161f886d61071c8f66/upstream
+Time Interval:	60 	Set the time:60	Thread run time:427	server run time:530
+Send Data:	[{"dsn":"97gkzi9v","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.9,"DYield":190.2,"Tmod":0.2,"Upv3":0.5,"Ubc":0.6,"Upv1":0.4,"Upv2":0.4,"Ipv1":0.4,"Ipv2":0.3,"Ipv3":0.1,"Mode":1,"Tcoil":0.7,"RunT":410.5,"Pmax":20.8,"Uca":0.9,"Qac":0.6,"Pac":0.0,"Sac":0.6,"PF":0.5,"LCDVer":"02.21","TYield":190,"Uab":0.8,"Ia":0.2,"Ib":0.3,"Freq":0.8,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:20:33.976 [MQTT Call: 596072161f886d61071c8f65] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f65:send successful!
+ 2017-07-08 19:20:34.977 [pool-1-thread-2] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:20:34.977 [pool-1-thread-2] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[41]Send Data Info:
+AgentID:	596072161f886d61071c8f65
+Topic:	agents/596072161f886d61071c8f65/upstream
+Time Interval:	60 	Set the time:60	Thread run time:488	server run time:542
+Send Data:	[{"dsn":"je6cqusg","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.1,"DYield":173.8,"Tmod":1.0,"Upv3":0.3,"Ubc":0.4,"Upv1":0.8,"Upv2":0.2,"Ipv1":0.3,"Ipv2":0.9,"Ipv3":0.2,"Mode":1,"Tcoil":0.3,"RunT":465.4,"Pmax":24.5,"Uca":0.1,"Qac":0.4,"Pac":0.0,"Sac":0.4,"PF":0.7,"LCDVer":"02.21","TYield":174,"Uab":0.2,"Ia":0.4,"Ib":0.8,"Freq":0.5,"Ic":0.4}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:20:50.793 [pool-1-thread-3] INFO  i.j.data.job.PVjob - 596072161f886d61071c8f67MQTT链接信息错误,链接失败
+ 2017-07-08 19:21:05.479 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:21:06.481 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:21:06.482 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	60 	Set the time:60	Thread run time:549	server run time:574
+Send Data:	[{"dsn":"jkq4cgrv","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":184.3,"Tmod":0.1,"Upv3":1.0,"Ubc":0.5,"Upv1":0.4,"Upv2":0.8,"Ipv1":0.8,"Ipv2":0.4,"Ipv3":0.7,"Mode":1,"Tcoil":0.8,"RunT":415.7,"Pmax":43.4,"Uca":0.2,"Qac":0.1,"Pac":0.0,"Sac":0.0,"PF":0.8,"LCDVer":"02.21","TYield":184,"Uab":0.8,"Ia":0.1,"Ib":0.7,"Freq":0.1,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★30
+##########end###########
+ 2017-07-08 19:21:13.052 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:21:13.141 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:21:13.189 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:21:13.682 [cluster-ClusterId{value='5960c0299ec7ce30b0358165', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17295}] to 139.196.235.75:27017
+ 2017-07-08 19:21:13.690 [cluster-ClusterId{value='5960c0299ec7ce30b0358165', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=7224711}
+ 2017-07-08 19:21:13.704 [cluster-ClusterId{value='5960c0299ec7ce30b0358164', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17294}] to 139.196.235.75:27017
+ 2017-07-08 19:21:13.710 [cluster-ClusterId{value='5960c0299ec7ce30b0358164', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5643791}
+ 2017-07-08 19:21:13.786 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17296}] to 139.196.235.75:27017
+ 2017-07-08 19:21:13.992 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17297}] to 139.196.235.75:27017
+ 2017-07-08 19:21:14.195 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:21:16.011 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:21:18.034 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 19:21:18.042 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 19:21:18.049 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 19:21:18.054 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 19:21:18.060 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 19:21:18.067 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f64.加载完毕.
+ 2017-07-08 19:21:18.072 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f65.加载完毕.
+ 2017-07-08 19:21:18.077 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f66.加载完毕.
+ 2017-07-08 19:21:18.077 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 7 个，实际加载任务 7 个 .EMS数据0个.PV数据7个
+ 2017-07-08 19:21:19.529 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 19:22:13.738 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:22:13.979 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:22:13.999 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:22:14.290 [cluster-ClusterId{value='5960c0659ec7ce32846c9b8e', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17298}] to 139.196.235.75:27017
+ 2017-07-08 19:22:14.291 [cluster-ClusterId{value='5960c0659ec7ce32846c9b8f', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17299}] to 139.196.235.75:27017
+ 2017-07-08 19:22:14.295 [cluster-ClusterId{value='5960c0659ec7ce32846c9b8e', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4517272}
+ 2017-07-08 19:22:14.297 [cluster-ClusterId{value='5960c0659ec7ce32846c9b8f', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=5537732}
+ 2017-07-08 19:22:14.360 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17300}] to 139.196.235.75:27017
+ 2017-07-08 19:22:14.487 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17301}] to 139.196.235.75:27017
+ 2017-07-08 19:22:14.550 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:22:16.502 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:22:17.489 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 19:22:17.499 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 19:22:17.505 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 19:22:17.511 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 19:22:17.517 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 19:22:17.518 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 4 个，实际加载任务 4 个 .EMS数据0个.PV数据4个
+ 2017-07-08 19:22:18.332 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 19:22:35.006 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:22:36.062 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:22:36.288 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 19:22:37.302 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:22:37.328 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据3条
+ 2017-07-08 19:22:37.468 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:22:37.558 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:22:40.613 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 19:22:40.783 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:22:41.600 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:22:41.785 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:22:41.785 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:10	Thread run time:0	server run time:28
+Send Data:	[{"dsn":"iodq1qgf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.7,"DYield":173.4,"Tmod":0.4,"Upv3":0.7,"Ubc":0.4,"Upv1":0.6,"Upv2":0.5,"Ipv1":0.7,"Ipv2":0.8,"Ipv3":0.3,"Mode":1,"Tcoil":0.6,"RunT":443.3,"Pmax":25.6,"Uca":0.0,"Qac":0.1,"Pac":0.0,"Sac":0.5,"PF":0.8,"LCDVer":"02.21","TYield":173,"Uab":0.9,"Ia":0.5,"Ib":0.1,"Freq":1.0,"Ic":0.5}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:22:51.862 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:22:52.864 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:22:52.864 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	10 	Set the time:10	Thread run time:11	server run time:39
+Send Data:	[{"dsn":"iodq1qgf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.8,"DYield":173.4,"Tmod":0.3,"Upv3":0.9,"Ubc":0.3,"Upv1":0.9,"Upv2":0.3,"Ipv1":0.6,"Ipv2":0.4,"Ipv3":0.1,"Mode":1,"Tcoil":0.6,"RunT":458.1,"Pmax":40.5,"Uca":0.8,"Qac":0.9,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":173,"Uab":0.9,"Ia":0.3,"Ib":0.9,"Freq":0.0,"Ic":0.6}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:23:02.942 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:23:03.954 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:23:03.954 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	10 	Set the time:10	Thread run time:22	server run time:50
+Send Data:	[{"dsn":"iodq1qgf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.9,"Tamb":0.7,"DYield":173.4,"Tmod":0.3,"Upv3":0.8,"Ubc":0.8,"Upv1":0.0,"Upv2":0.4,"Ipv1":0.1,"Ipv2":0.7,"Ipv3":0.8,"Mode":1,"Tcoil":0.4,"RunT":451.2,"Pmax":32.0,"Uca":0.8,"Qac":0.7,"Pac":0.0,"Sac":0.1,"PF":0.6,"LCDVer":"02.21","TYield":173,"Uab":0.9,"Ia":0.8,"Ib":0.9,"Freq":0.6,"Ic":0.1}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:23:14.044 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:23:15.049 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:23:15.049 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	10 	Set the time:10	Thread run time:33	server run time:61
+Send Data:	[{"dsn":"iodq1qgf","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.8,"DYield":173.4,"Tmod":1.0,"Upv3":0.6,"Ubc":0.8,"Upv1":0.0,"Upv2":0.8,"Ipv1":0.8,"Ipv2":0.7,"Ipv3":0.3,"Mode":1,"Tcoil":0.8,"RunT":457.9,"Pmax":50.5,"Uca":0.7,"Qac":0.5,"Pac":0.0,"Sac":0.1,"PF":0.7,"LCDVer":"02.21","TYield":173,"Uab":0.1,"Ia":0.3,"Ib":0.2,"Freq":0.3,"Ic":0.8}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:23:19.392 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 19:23:20.395 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:23:20.409 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 19:23:20.412 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 19:23:21.414 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:23:21.414 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 19:23:26.530 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f64断开连接2222 threadID:[33]
+ 2017-07-08 19:24:03.578 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:24:03.835 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:24:03.862 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:24:04.411 [cluster-ClusterId{value='5960c0d39ec7ce3264b0f661', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17303}] to 139.196.235.75:27017
+ 2017-07-08 19:24:04.418 [cluster-ClusterId{value='5960c0d39ec7ce3264b0f661', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=7085996}
+ 2017-07-08 19:24:04.451 [cluster-ClusterId{value='5960c0d39ec7ce3264b0f662', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17304}] to 139.196.235.75:27017
+ 2017-07-08 19:24:04.459 [cluster-ClusterId{value='5960c0d39ec7ce3264b0f662', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=7092838}
+ 2017-07-08 19:24:04.521 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17305}] to 139.196.235.75:27017
+ 2017-07-08 19:24:04.721 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17306}] to 139.196.235.75:27017
+ 2017-07-08 19:24:04.800 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:24:06.742 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:24:09.426 [main] INFO  i.j.d.EmulatorApplication - 正在加载配置到内存..
+ 2017-07-08 19:24:09.438 [main] DEBUG i.j.d.EmulatorApplication - Agent:595f7a041f886d7e32a9e9ab.加载完毕.
+ 2017-07-08 19:24:09.445 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f60.加载完毕.
+ 2017-07-08 19:24:09.453 [main] DEBUG i.j.d.EmulatorApplication - Agent:596072161f886d61071c8f61.加载完毕.
+ 2017-07-08 19:24:09.459 [main] DEBUG i.j.d.EmulatorApplication - Agent:596074451f886d61071c8fd7.加载完毕.
+ 2017-07-08 19:24:09.459 [main] INFO  i.j.d.EmulatorApplication - 数据库任务加载完毕！
+应加载任务 4 个，实际加载任务 4 个 .EMS数据0个.PV数据4个
+ 2017-07-08 19:24:10.067 [main] INFO  i.j.d.EmulatorApplication - 模拟器准备就绪..
+ 2017-07-08 19:24:24.320 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:24:25.382 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:24:25.627 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 19:24:26.629 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:24:26.656 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据0条
+ 2017-07-08 19:24:26.790 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:24:26.890 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:24:29.949 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 19:24:30.116 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:24:30.929 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:24:31.129 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:24:31.129 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:10	Thread run time:0	server run time:26
+Send Data:	[{"dsn":"8dhqrcs9","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.5,"Tamb":0.8,"DYield":184.6,"Tmod":0.1,"Upv3":0.3,"Ubc":0.7,"Upv1":0.5,"Upv2":0.1,"Ipv1":0.1,"Ipv2":1.0,"Ipv3":0.0,"Mode":1,"Tcoil":0.2,"RunT":460.2,"Pmax":29.2,"Uca":0.7,"Qac":0.6,"Pac":0.0,"Sac":0.4,"PF":0.8,"LCDVer":"02.21","TYield":185,"Uab":0.3,"Ia":0.8,"Ib":0.5,"Freq":0.4,"Ic":0.2}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:24:41.214 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:24:42.228 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:24:42.228 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[33]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	10 	Set the time:10	Thread run time:11	server run time:38
+Send Data:	[{"dsn":"8dhqrcs9","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.8,"Tamb":0.7,"DYield":184.6,"Tmod":0.2,"Upv3":0.9,"Ubc":0.4,"Upv1":0.3,"Upv2":0.5,"Ipv1":0.8,"Ipv2":0.2,"Ipv3":0.9,"Mode":1,"Tcoil":0.4,"RunT":449.1,"Pmax":47.3,"Uca":0.5,"Qac":0.0,"Pac":0.0,"Sac":0.5,"PF":0.6,"LCDVer":"02.21","TYield":185,"Uab":0.0,"Ia":0.2,"Ib":0.1,"Freq":0.9,"Ic":0.2}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:24:43.288 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 19:24:44.302 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:24:44.315 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 19:24:44.317 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 19:24:45.321 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:24:45.321 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 19:24:45.327 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f64断开连接2222 threadID:[33]
+ 2017-07-08 19:24:59.982 [pool-1-thread-4] DEBUG i.j.data.job.PVjob - 596072161f886d61071c8f64Old  worker thread:33End!
+ 2017-07-08 19:25:37.579 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:25:37.831 [main] INFO  o.m.driver.cluster - Cluster created with settings {hosts=[139.196.235.75:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+ 2017-07-08 19:25:37.885 [main] INFO  o.m.driver.cluster - No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=139.196.235.75:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+ 2017-07-08 19:25:38.355 [cluster-ClusterId{value='5960c1319ec7ce321cd0045c', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:1, serverValue:17307}] to 139.196.235.75:27017
+ 2017-07-08 19:25:38.360 [cluster-ClusterId{value='5960c1319ec7ce321cd0045c', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=4591294}
+ 2017-07-08 19:25:38.376 [cluster-ClusterId{value='5960c1319ec7ce321cd0045b', description='null'}-139.196.235.75:27017] INFO  o.m.d.connection - Opened connection [connectionId{localValue:2, serverValue:17308}] to 139.196.235.75:27017
+ 2017-07-08 19:25:38.382 [cluster-ClusterId{value='5960c1319ec7ce321cd0045b', description='null'}-139.196.235.75:27017] INFO  o.m.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=139.196.235.75:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 11]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=6403927}
+ 2017-07-08 19:25:38.413 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:3, serverValue:17309}] to 139.196.235.75:27017
+ 2017-07-08 19:25:38.569 [main] INFO  o.m.d.connection - Opened connection [connectionId{localValue:4, serverValue:17310}] to 139.196.235.75:27017
+ 2017-07-08 19:25:38.657 [pool-1-thread-2] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f63连接服务器 broker成功！
+ 2017-07-08 19:25:40.588 [main] INFO  i.j.d.EmulatorApplication - 开始加载数据库配置..
+ 2017-07-08 19:25:56.100 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f63收到的消息为：{"emulatorJob":[{"emulatorId":"596072161f886d61071c8f64","type":"0","system":"0","num":"1"}]}
+ 2017-07-08 19:25:57.138 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:25:57.368 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.d.m.MqttConnThread - 
+开始收到新任务--ID:596072161f886d61071c8f64
+类型:AgentId
+系统:PV
+当前线程数：15
+ 2017-07-08 19:25:58.370 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:25:58.393 [MQTT Call: 596072161f886d61071c8f63] INFO  i.j.data.ConfigFun - 596072161f886d61071c8f64:已删除历史数据0条
+ 2017-07-08 19:25:58.521 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的实时111
+ 2017-07-08 19:25:58.612 [MQTT Call: 596072161f886d61071c8f63] DEBUG i.j.d.p.PVpredict - 开始计算并添加一天的预测000
+ 2017-07-08 19:26:01.675 [pool-1-thread-3] DEBUG i.j.d.m.MqttConnThread - 后台mqtt客户端:596072161f886d61071c8f64连接服务器 broker成功！
+ 2017-07-08 19:26:01.882 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:26:02.668 [MQTT Call: 596072161f886d61071c8f63] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:26:02.884 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:26:02.885 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[31]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	0 	Set the time:10	Thread run time:0	server run time:24
+Send Data:	[{"dsn":"ltznrged","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.6,"Tamb":0.1,"DYield":173.5,"Tmod":1.0,"Upv3":0.0,"Ubc":0.0,"Upv1":0.5,"Upv2":1.0,"Ipv1":0.6,"Ipv2":0.3,"Ipv3":0.8,"Mode":1,"Tcoil":0.7,"RunT":457.8,"Pmax":40.3,"Uca":0.6,"Qac":0.6,"Pac":0.0,"Sac":1.0,"PF":0.8,"LCDVer":"02.21","TYield":174,"Uab":0.1,"Ia":0.9,"Ib":0.8,"Freq":0.2,"Ic":0.6}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:26:12.993 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64:send successful!
+ 2017-07-08 19:26:14.007 [pool-1-thread-4] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:26:14.007 [pool-1-thread-4] INFO  i.j.data.job.PVjob - 
+##########start###########
+Thread[31]Send Data Info:
+AgentID:	596072161f886d61071c8f64
+Topic:	agents/596072161f886d61071c8f64/upstream
+Time Interval:	10 	Set the time:10	Thread run time:11	server run time:35
+Send Data:	[{"dsn":"ltznrged","type":"SUNS103","model":"SCA60KTL-DO/US-480","modId":1,"sta":1,"values":{"DSPVer":"01.12","Eff":0.7,"Tamb":0.7,"DYield":173.5,"Tmod":0.3,"Upv3":0.8,"Ubc":0.3,"Upv1":0.6,"Upv2":0.6,"Ipv1":0.5,"Ipv2":0.2,"Ipv3":0.3,"Mode":1,"Tcoil":0.0,"RunT":416.7,"Pmax":41.2,"Uca":0.4,"Qac":0.1,"Pac":0.0,"Sac":0.0,"PF":0.6,"LCDVer":"02.21","TYield":174,"Uab":0.0,"Ia":0.2,"Ib":0.2,"Freq":0.1,"Ic":0.3}}]
+Other Info:	当前进程线程数量为：★21
+##########end###########
+ 2017-07-08 19:26:18.504 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 596072161f886d61071c8f64收到的消息为：{"packs":[{"packs":"kill"}]}
+ 2017-07-08 19:26:19.508 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:26:19.522 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 已删除此Agent对应数据:3个
+ 2017-07-08 19:26:19.527 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 接收线程:596072161f886d61071c8f64断开连接1111
+ 2017-07-08 19:26:20.538 [MQTT Call: 596072161f886d61071c8f64] ERROR i.j.d.r.RabittMQSend - Connection refused: connect
+ 2017-07-08 19:26:20.538 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 存在发送线程 断开中..
+ 2017-07-08 19:26:20.544 [MQTT Call: 596072161f886d61071c8f64] DEBUG i.j.d.m.MqttConnThread - 发送线程:596072161f886d61071c8f64断开连接2222 threadID:[31]
+ 2017-07-08 19:26:29.487 [pool-1-thread-4] DEBUG i.j.data.job.PVjob - 596072161f886d61071c8f64Old  worker thread:31End!
  

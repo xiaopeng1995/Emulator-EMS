@@ -51,8 +51,8 @@ public class PVjob extends Thread {
             datapacking = "0,0,0,0,1";
         }
         mogo.updateEmulatorRegister(agentId, "packing", datapacking);
+        mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
         while (!exit) {
-            mogo.updateEmulatorRegister(agentId, "onlinefail", 1);
             MqttConnThread mqttConnThread;
             //添加预测数据
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -132,6 +132,7 @@ public class PVjob extends Thread {
             }
 
         }
+        mogo.deleteemulatorRegisterById(agentId);
         logger.debug(agentId + "Old  worker thread:" + super.getId() + "End!");
     }
 

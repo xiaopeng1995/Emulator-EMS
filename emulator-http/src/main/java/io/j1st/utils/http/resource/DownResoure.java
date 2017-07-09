@@ -60,7 +60,7 @@ public class DownResoure extends AbstractResource {
             return new ResultEntity(503, "不是有效的 ObjectId");
         }
         if (map.get("values").toString().contains("kill")) {
-            this.mongo.updateEmulatorRegister(agentId,"onlinefail",1);
+            this.mongo.updateEmulatorRegister(agentId, "onlinefail", 0);
         }
         if (!map.get("values").toString().contains("kill") && !map.get("code").toString().equals("emulatorJob")) {
             if (mongo.findEmulatorRegister(agentId, "systemTpye").toString().equals("0")
