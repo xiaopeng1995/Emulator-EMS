@@ -57,6 +57,11 @@ public class MongoStorage {
         this.database = this.client.getDatabase(config.getString("mongo.database"));
 
         // indexes
+        try {
+            this.database.getCollection("users").dropIndex(ascending("name"));
+        } catch (MongoCommandException e) {
+            System.out.println("不存在的索引");
+        }
 //        this.database.getCollection("users").createIndex(ascending("name"), new IndexOptions().unique(true));
 //        this.database.getCollection("users").createIndex(ascending("token"), new IndexOptions().unique(true));
 //        this.database.getCollection("sms_verifies").createIndex(ascending("mobile"));

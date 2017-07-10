@@ -21,7 +21,7 @@ public enum Registry {
     public Map<String, PropertiesConfiguration> config = new ConcurrentHashMap<>();
     public Map<String, Object> value = new ConcurrentHashMap<>();
     // connect pool
-    private final ExecutorService es = Executors.newFixedThreadPool(5);
+    private final ExecutorService es = Executors.newFixedThreadPool(50);
 
     // save session
     public void saveSession(String agentId, MqttConnThread client) {
