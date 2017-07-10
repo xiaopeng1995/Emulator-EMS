@@ -187,4 +187,753 @@
  2017-07-04 16:10:11.126 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@6e3c6371
  2017-07-04 16:10:11.126 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2329bc2d
  2017-07-04 16:10:11.139 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-10 15:25:46.197 [main] INFO  o.e.jetty.util.log - Logging initialized @2506ms
+ 2017-07-10 15:25:46.398 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:25:46.407 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:25:46.420 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:25:46.471 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:25:46.474 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:25:46.483 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:25:46.483 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:25:46.520 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:25:46.635 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:25:46.684 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:25:47.478 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:25:47.479 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@6c03fb16{/,null,AVAILABLE}
+ 2017-07-10 15:25:47.484 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:25:47.486 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:25:47.492 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@71dfcf21{/admin,null,AVAILABLE}
+ 2017-07-10 15:25:47.569 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:25:47.569 [main] INFO  o.e.j.server.Server - Started @3879ms
+ 2017-07-10 15:31:16.046 [main] INFO  o.e.jetty.util.log - Logging initialized @1692ms
+ 2017-07-10 15:31:16.206 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:31:16.222 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:31:16.246 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:31:16.312 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:31:16.315 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:31:16.332 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:31:16.332 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:31:16.378 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:31:16.477 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:31:16.503 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:31:17.078 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:31:17.079 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@f4cfd90{/,null,AVAILABLE}
+ 2017-07-10 15:31:17.086 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:31:17.086 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:31:17.091 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@2e1af49b{/admin,null,AVAILABLE}
+ 2017-07-10 15:31:17.148 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:31:17.148 [main] INFO  o.e.j.server.Server - Started @2795ms
+ 2017-07-10 15:33:56.256 [main] INFO  o.e.jetty.util.log - Logging initialized @1746ms
+ 2017-07-10 15:33:56.400 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:33:56.411 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:33:56.428 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:33:56.457 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:33:56.459 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:33:56.466 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:33:56.467 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:33:56.496 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:33:56.590 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:33:56.617 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:33:57.252 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:33:57.255 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@53c68ce{/,null,AVAILABLE}
+ 2017-07-10 15:33:57.260 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:33:57.261 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:33:57.270 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@11e33bac{/admin,null,AVAILABLE}
+ 2017-07-10 15:33:57.338 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:33:57.338 [main] INFO  o.e.j.server.Server - Started @2830ms
+ 2017-07-10 15:35:08.432 [main] INFO  o.e.jetty.util.log - Logging initialized @1621ms
+ 2017-07-10 15:35:08.583 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:35:08.596 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:35:08.619 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:35:08.664 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:35:08.666 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:35:08.674 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:35:08.674 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:35:08.688 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:35:08.793 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:35:08.821 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:35:09.403 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:35:09.405 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@53c68ce{/,null,AVAILABLE}
+ 2017-07-10 15:35:09.412 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:35:09.412 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:35:09.419 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@11e33bac{/admin,null,AVAILABLE}
+ 2017-07-10 15:35:09.490 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:35:09.491 [main] INFO  o.e.j.server.Server - Started @2680ms
+ 2017-07-10 15:36:23.691 [main] INFO  o.e.jetty.util.log - Logging initialized @2030ms
+ 2017-07-10 15:36:23.803 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:36:23.812 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:36:23.831 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:36:23.871 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:36:23.873 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:36:23.883 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:36:23.883 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:36:23.907 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:36:24.087 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:36:24.149 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:37:18.574 [main] INFO  o.e.jetty.util.log - Logging initialized @2275ms
+ 2017-07-10 15:37:18.709 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:37:18.719 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:37:18.738 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:37:18.775 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@468be356{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:37:18.778 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:37:18.791 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:37:18.791 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:37:18.809 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:37:18.913 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:37:18.947 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:37:35.969 [main] INFO  o.e.jetty.util.log - Logging initialized @2056ms
+ 2017-07-10 15:37:36.083 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:37:36.092 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:37:36.109 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:37:36.161 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:37:36.164 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:37:36.173 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:37:36.174 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:37:36.199 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:37:36.303 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:37:36.344 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:37:47.890 [main] INFO  o.e.jetty.util.log - Logging initialized @2029ms
+ 2017-07-10 15:37:48.004 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:37:48.012 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:37:48.029 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:37:48.070 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:37:48.072 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:37:48.081 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:37:48.081 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:37:48.098 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:37:48.213 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:37:48.248 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:37:54.330 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:37:54.332 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@17b016ac{/,null,AVAILABLE}
+ 2017-07-10 15:37:54.339 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:37:54.340 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:37:54.348 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@5b40de43{/admin,null,AVAILABLE}
+ 2017-07-10 15:37:54.444 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:37:54.444 [main] INFO  o.e.j.server.Server - Started @8583ms
+ 2017-07-10 15:38:09.681 [main] INFO  o.e.jetty.util.log - Logging initialized @2240ms
+ 2017-07-10 15:38:09.808 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:38:09.816 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:38:09.837 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:38:09.876 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2264e43c{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:38:09.879 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:38:09.888 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:38:09.888 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:38:09.911 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:38:10.029 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:38:10.064 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:38:32.670 [main] INFO  o.e.jetty.util.log - Logging initialized @2018ms
+ 2017-07-10 15:38:32.795 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:38:32.806 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:38:32.823 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:38:32.861 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:38:32.864 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:38:32.872 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:38:32.872 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:38:32.896 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:38:33.001 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:38:33.036 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:38:37.427 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:38:37.429 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@1f95881a{/,null,AVAILABLE}
+ 2017-07-10 15:38:37.438 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:38:37.439 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:38:37.447 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@9ab310b{/admin,null,AVAILABLE}
+ 2017-07-10 15:38:37.537 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:38:37.537 [main] INFO  o.e.j.server.Server - Started @6887ms
+ 2017-07-10 15:39:06.060 [main] INFO  o.e.jetty.util.log - Logging initialized @1998ms
+ 2017-07-10 15:39:06.174 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:39:06.184 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:39:06.200 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:39:06.240 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@116a2108{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:39:06.243 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:39:06.252 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:39:06.252 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:39:06.274 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:39:06.382 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:39:06.420 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:39:41.781 [main] INFO  o.e.jetty.util.log - Logging initialized @2203ms
+ 2017-07-10 15:39:41.890 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:39:41.901 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:39:41.917 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:39:41.958 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:39:41.961 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:39:41.970 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:39:41.970 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:39:41.989 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:39:42.096 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:39:42.130 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:41:42.535 [main] INFO  o.e.jetty.util.log - Logging initialized @2009ms
+ 2017-07-10 15:41:42.646 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:41:42.654 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:41:42.671 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:41:42.712 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:41:42.715 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:41:42.724 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:41:42.724 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:41:42.742 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:41:42.859 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:41:42.895 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:41:50.159 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:41:50.160 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@733ec58b{/,null,AVAILABLE}
+ 2017-07-10 15:41:50.169 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:41:50.169 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:41:50.178 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@49fb0bbd{/admin,null,AVAILABLE}
+ 2017-07-10 15:41:50.271 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:41:50.271 [main] INFO  o.e.j.server.Server - Started @9745ms
+ 2017-07-10 15:42:33.346 [main] INFO  o.e.jetty.util.log - Logging initialized @2213ms
+ 2017-07-10 15:42:33.482 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:42:33.499 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:42:33.523 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:42:33.578 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:42:33.581 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:42:33.590 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:42:33.590 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:42:33.608 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:42:33.708 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:42:33.745 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:42:48.037 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:42:48.040 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@17b016ac{/,null,AVAILABLE}
+ 2017-07-10 15:42:48.051 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:42:48.052 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:42:48.061 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@5b40de43{/admin,null,AVAILABLE}
+ 2017-07-10 15:42:48.146 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:42:48.146 [main] INFO  o.e.j.server.Server - Started @17015ms
+ 2017-07-10 15:44:17.463 [main] INFO  o.e.jetty.util.log - Logging initialized @2246ms
+ 2017-07-10 15:44:17.571 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:44:17.580 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:44:17.596 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:44:17.637 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:44:17.640 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:44:17.650 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:44:17.650 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:44:17.668 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:44:17.780 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:44:17.815 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:44:18.596 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:44:18.601 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@5e5beb8a{/,null,AVAILABLE}
+ 2017-07-10 15:44:18.610 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:44:18.611 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:44:18.618 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@49ca94a9{/admin,null,AVAILABLE}
+ 2017-07-10 15:44:18.706 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:44:18.706 [main] INFO  o.e.j.server.Server - Started @3491ms
+ 2017-07-10 15:46:50.056 [main] INFO  o.e.jetty.util.log - Logging initialized @2064ms
+ 2017-07-10 15:46:50.166 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:46:50.174 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:46:50.191 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:46:50.229 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:46:50.231 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:46:50.240 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:46:50.240 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:46:50.259 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:46:50.373 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:46:50.408 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:46:53.921 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:46:53.925 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@733ec58b{/,null,AVAILABLE}
+ 2017-07-10 15:46:53.938 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:46:53.946 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:46:53.955 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@49fb0bbd{/admin,null,AVAILABLE}
+ 2017-07-10 15:46:54.048 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:46:54.049 [main] INFO  o.e.j.server.Server - Started @6057ms
+ 2017-07-10 15:48:15.620 [main] INFO  o.e.jetty.util.log - Logging initialized @2388ms
+ 2017-07-10 15:48:15.743 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:48:15.752 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:48:15.771 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:48:15.810 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:48:15.812 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:48:15.821 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:48:15.821 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:48:15.840 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:48:15.955 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:48:16.030 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:48:16.772 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:48:16.774 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4fb56bea{/,null,AVAILABLE}
+ 2017-07-10 15:48:16.780 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:48:16.781 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:48:16.792 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@1526f71{/admin,null,AVAILABLE}
+ 2017-07-10 15:48:16.874 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:48:16.875 [main] INFO  o.e.j.server.Server - Started @3644ms
+ 2017-07-10 15:50:01.497 [main] INFO  o.e.jetty.util.log - Logging initialized @2039ms
+ 2017-07-10 15:50:01.610 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:50:01.619 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:50:01.635 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:50:01.674 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:50:01.676 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:50:01.685 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:50:01.685 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:50:01.703 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:50:01.818 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:50:01.851 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:50:04.104 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:50:04.108 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@733ec58b{/,null,AVAILABLE}
+ 2017-07-10 15:50:04.119 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:50:04.120 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:50:04.129 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@49fb0bbd{/admin,null,AVAILABLE}
+ 2017-07-10 15:50:04.235 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:50:04.235 [main] INFO  o.e.j.server.Server - Started @4778ms
+ 2017-07-10 15:58:52.213 [main] INFO  o.e.jetty.util.log - Logging initialized @2056ms
+ 2017-07-10 15:58:52.342 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 15:58:52.353 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 15:58:52.371 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 15:58:52.412 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:58:52.415 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 15:58:52.427 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 15:58:52.427 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 15:58:52.448 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 15:58:52.562 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 15:58:52.599 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 15:58:53.427 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 15:58:53.429 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4cffcc61{/,null,AVAILABLE}
+ 2017-07-10 15:58:53.440 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 15:58:53.440 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 15:58:53.454 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@62cba181{/admin,null,AVAILABLE}
+ 2017-07-10 15:58:53.543 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 15:58:53.543 [main] INFO  o.e.j.server.Server - Started @3387ms
+ 2017-07-10 16:01:54.179 [main] INFO  o.e.jetty.util.log - Logging initialized @2119ms
+ 2017-07-10 16:01:54.289 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 16:01:54.298 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 16:01:54.314 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 16:01:54.355 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:01:54.358 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 16:01:54.366 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 16:01:54.366 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 16:01:54.385 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 16:01:54.495 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 16:01:54.529 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 16:01:55.196 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 16:01:55.198 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4087c7fc{/,null,AVAILABLE}
+ 2017-07-10 16:01:55.211 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 16:01:55.212 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 16:01:55.220 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@56cc9f29{/admin,null,AVAILABLE}
+ 2017-07-10 16:01:55.300 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:01:55.300 [main] INFO  o.e.j.server.Server - Started @3241ms
+ 2017-07-10 16:03:20.598 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:03:20.599 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@25dbd945
+ 2017-07-10 16:03:20.603 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@59c5f2c5
+ 2017-07-10 16:03:20.738 [dw-24 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc2p6gg149jmzt|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc2p6gg149jmzt|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-10 16:03:21.115 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-10 16:10:15.043 [main] INFO  o.e.jetty.util.log - Logging initialized @2228ms
+ 2017-07-10 16:10:15.176 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 16:10:15.185 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 16:10:15.201 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 16:10:15.240 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:10:15.243 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 16:10:15.260 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 16:10:15.261 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 16:10:15.280 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 16:10:15.390 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 16:10:15.427 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 16:10:16.094 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 16:10:16.096 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4cfa83f9{/,null,AVAILABLE}
+ 2017-07-10 16:10:16.104 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 16:10:16.104 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 16:10:16.113 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@626c19cf{/admin,null,AVAILABLE}
+ 2017-07-10 16:10:16.201 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:10:16.201 [main] INFO  o.e.j.server.Server - Started @3387ms
+ 2017-07-10 16:25:30.434 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:25:30.440 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@51ff248
+ 2017-07-10 16:25:30.447 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@f02c5a1
+ 2017-07-10 16:25:30.532 [dw-22 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc2zwy33s2id2|338cc75f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc2zwy33s2id2|338cc75f, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-10 16:25:30.823 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-10 16:25:31.895 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:25:31.895 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@29edd2c8
+ 2017-07-10 16:25:31.896 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2dd2532d
+ 2017-07-10 16:25:31.924 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-10 16:25:33.206 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:25:33.206 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5a5d9ae
+ 2017-07-10 16:25:33.207 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4a9ac868
+ 2017-07-10 16:25:33.255 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-10 16:25:34.178 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:25:34.178 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3516ef01
+ 2017-07-10 16:25:34.179 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7989835f
+ 2017-07-10 16:25:34.201 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-10 16:28:02.151 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:28:02.151 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5a38a69d
+ 2017-07-10 16:28:02.152 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@203df8fd
+ 2017-07-10 16:28:02.154 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-10 16:29:23.463 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:29:23.463 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@441313c3
+ 2017-07-10 16:29:23.464 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@77fad917
+ 2017-07-10 16:29:23.465 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-10 16:29:31.881 [main] INFO  o.e.jetty.util.log - Logging initialized @2213ms
+ 2017-07-10 16:29:32.024 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 16:29:32.032 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 16:29:32.055 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 16:29:32.106 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:29:32.110 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 16:29:32.119 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 16:29:32.119 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 16:29:32.139 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 16:29:32.267 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 16:29:32.301 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 16:29:33.279 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 16:29:33.286 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@7df28f1{/,null,AVAILABLE}
+ 2017-07-10 16:29:33.294 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 16:29:33.294 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 16:29:33.301 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@415ef4d8{/admin,null,AVAILABLE}
+ 2017-07-10 16:29:33.395 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:29:33.395 [main] INFO  o.e.j.server.Server - Started @3731ms
+ 2017-07-10 16:29:40.474 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:29:40.475 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@771aa0e3
+ 2017-07-10 16:29:40.480 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3d2cf665
+ 2017-07-10 16:29:40.550 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc3opl6h4xr9z|624a24f6, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc3opl6h4xr9z|624a24f6, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-10 16:29:40.814 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:1
+ 2017-07-10 16:36:12.912 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:36:12.912 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3ef1e309
+ 2017-07-10 16:36:12.913 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5abfc82e
+ 2017-07-10 16:36:12.946 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-10 16:36:47.000 [main] INFO  o.e.jetty.util.log - Logging initialized @2528ms
+ 2017-07-10 16:36:47.115 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 16:36:47.129 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 16:36:47.144 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 16:36:47.185 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:36:47.187 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 16:36:47.196 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 16:36:47.196 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 16:36:47.222 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 16:36:47.337 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 16:36:47.369 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 16:36:48.209 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 16:36:48.210 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-10 16:36:48.217 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 16:36:48.217 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 16:36:48.225 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-10 16:36:48.314 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:36:48.315 [main] INFO  o.e.j.server.Server - Started @3844ms
+ 2017-07-10 16:37:00.408 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:37:00.409 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5112c16c
+ 2017-07-10 16:37:00.412 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@1f4a06d3
+ 2017-07-10 16:37:00.474 [dw-22 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc3y1ap1jk8gij|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc3y1ap1jk8gij|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-10 16:37:00.768 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-10 16:37:31.263 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:37:31.263 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@6fb29c24
+ 2017-07-10 16:37:31.263 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@6b8d150a
+ 2017-07-10 16:37:31.266 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:1
+ 2017-07-10 16:40:11.851 [main] INFO  o.e.jetty.util.log - Logging initialized @2643ms
+ 2017-07-10 16:40:11.992 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-10 16:40:12.002 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-10 16:40:12.026 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-10 16:40:12.074 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:40:12.079 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-10 16:40:12.090 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-10 16:40:12.090 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-10 16:40:12.112 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-10 16:40:12.230 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-10 16:40:12.267 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-10 16:40:13.203 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+
+    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
+    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
+
+ 2017-07-10 16:40:13.214 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@3596b249{/,null,AVAILABLE}
+ 2017-07-10 16:40:13.239 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+
+    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
+    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
+
+ 2017-07-10 16:40:13.239 [main] WARN  i.d.s.AdminEnvironment - 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
+!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
+!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
+!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 2017-07-10 16:40:13.246 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@7a3269f5{/admin,null,AVAILABLE}
+ 2017-07-10 16:40:13.356 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-10 16:40:13.357 [main] INFO  o.e.j.server.Server - Started @4150ms
+ 2017-07-10 16:41:00.592 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-10 16:41:00.593 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3285fc6c
+ 2017-07-10 16:41:00.598 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4235d551
+ 2017-07-10 16:41:00.663 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc42fe21qfz7kz|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc42fe21qfz7kz|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-10 16:41:00.940 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
  

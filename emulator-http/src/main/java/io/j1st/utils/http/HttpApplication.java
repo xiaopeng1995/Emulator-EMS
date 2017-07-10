@@ -57,6 +57,8 @@ public class HttpApplication extends Application<HttpConfiguration> {
                 logger.debug("Initializing Mysql storage ...");
                 connectionManager.init(mysqlConfig);
                 mySqlStorage.init(connectionManager, dataConfig);
+                new DataMap(dataConfig);
+
             }
 
             @Override
