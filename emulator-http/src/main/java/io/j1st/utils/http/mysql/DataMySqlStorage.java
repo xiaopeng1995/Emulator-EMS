@@ -36,7 +36,7 @@ public class DataMySqlStorage {
      * @param
      * @return
      */
-    public boolean insertRD(String id, String status, String asn, String dsn, String agentId) {
+    public boolean insertRD(String id, String status, String asn, String dsn, String agentId, java.util.Date time) {
         Connection conn = pool.getConnection();
         PreparedStatement statement = null;
         int count = 0;
@@ -51,10 +51,15 @@ public class DataMySqlStorage {
             statement.setString(5, dsn);
             statement.setString(6, agentId);
             statement.setString(7, status);
+
             java.util.Date date = new java.util.Date();
+            Timestamp tt1 = new Timestamp(date.getTime());
             Timestamp tt = new Timestamp(date.getTime());
+            if (time != null) {
+                tt = new Timestamp(time.getTime());
+            }
             statement.setTimestamp(8, tt);
-            statement.setTimestamp(9, tt);
+            statement.setTimestamp(9, tt1);
 
             count = statement.executeUpdate();
         } catch (SQLException e) {

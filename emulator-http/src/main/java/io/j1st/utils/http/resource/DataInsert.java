@@ -16,6 +16,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -44,6 +45,7 @@ public class DataInsert {
             String status = "";
             String asn = "";
             String dsn = "";
+            java.util.Date date = null;
             String dataId = get32UUID();
             for (Stream stream : data) {
                 if (stream.getValues() != null)
@@ -60,12 +62,149 @@ public class DataInsert {
                     dsn = stream.getDsn();
                 if (stream.getValues() != null)
                     for (String key : stream.getValues().keySet()) {
-                        boolean xy = false;
+                        int xy = 0; //0跳过 1是需要的key储存 2特殊字段
                         for (String xkey : DataMap.getkey()) {
-                            if (key.equals(xkey))
-                                xy = true;
+                            if (key.equals(xkey)) {
+                                xy = 1;
+                                if (key.equals("FirstBrk")) {
+                                    try {
+                                        xy = 2;
+                                        int firstBrkCount = 0;
+                                        String value = stream.getValues().get(key).toString();
+                                        String[] valuess = value.split(";");
+                                        for (String s : valuess) {
+                                            System.out.println(s);
+                                        }
+                                        //第一个值 Overload fault@
+                                        String[] fault = valuess[0].split("@:");
+                                        String faultbw = fault[0];
+                                        String faultbwTime = fault[1];
+                                        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
+                                        date = sdf.parse(faultbwTime);
+                                        String faultbwTime1 = faultbwTime.replace(" ", "").replace(":", "");
+                                        //添加头信息
+                                        if (true) {
+                                            DataField datatbw = new DataField();
+                                            datatbw.setDataId(dataId);
+                                            datatbw.setId(get32UUID());
+                                            datatbw.setCate(faultbw);
+                                            datatbw.setUnit("s");
+                                            datatbw.setFieldName("脱扣信息在Cate");
+                                            datatbw.setFieldValue(0d);
+                                            datatbw.setCreateTime(new Date(new java.util.Date().getTime()));
+                                            Boolean curr = this.dataMySqlStorage.insertRDdata(datatbw);
+                                            if (curr)
+                                                count++;
+                                        }
+                                        //添加时间信息
+                                        if (true) {
+                                            DataField datatbw = new DataField();
+                                            datatbw.setDataId(dataId);
+                                            datatbw.setId(get32UUID());
+                                            datatbw.setCate("BCD\\BCD ");
+                                            datatbw.setUnit("-");
+                                            datatbw.setFieldName("脱扣时间(年\\月)");
+                                            datatbw.setFieldValue(Double.valueOf(faultbwTime1.substring(0, 6)));
+                                            datatbw.setCreateTime(new Date(new java.util.Date().getTime()));
+                                            Boolean curr = this.dataMySqlStorage.insertRDdata(datatbw);
+                                            if (curr)
+                                                count++;
+                                        }
+                                        if (true) {
+                                            DataField datatbw = new DataField();
+                                            datatbw.setDataId(dataId);
+                                            datatbw.setId(get32UUID());
+                                            datatbw.setCate("BCD\\BCD ");
+                                            datatbw.setUnit("-");
+                                            datatbw.setFieldName("脱扣时间(日\\时)");
+                                            datatbw.setFieldValue(Double.valueOf(faultbwTime1.substring(6, 10)));
+                                            datatbw.setCreateTime(new Date(new java.util.Date().getTime()));
+                                            Boolean curr = this.dataMySqlStorage.insertRDdata(datatbw);
+                                            if (curr)
+                                                count++;
+                                        }
+                                        if (true) {
+                                            DataField datatbw = new DataField();
+                                            datatbw.setDataId(dataId);
+                                            datatbw.setId(get32UUID());
+                                            datatbw.setCate("BCD\\BCD ");
+                                            datatbw.setUnit("-");
+                                            datatbw.setFieldName("脱扣时间(分\\秒)");
+                                            datatbw.setFieldValue(Double.valueOf(faultbwTime1.substring(10, faultbwTime1.length())));
+                                            datatbw.setCreateTime(new Date(new java.util.Date().getTime()));
+                                            Boolean curr = this.dataMySqlStorage.insertRDdata(datatbw);
+                                            if (curr)
+                                                count++;
+                                        }
+                                        //第二个值Type
+                                        String Type = valuess[1].replace("Type: ","");
+                                        if(true)
+                                        {
+                                            String duration = valuess[valuess.length - 2].replace("Duration: ", "").replace("s", "");
+                                            DataField datadur = new DataField();
+                                            datadur.setDataId(dataId);
+                                            datadur.setId(get32UUID());
+                                            datadur.setCate("WORD");
+                                            datadur.setUnit(" ");
+                                            datadur.setFieldName("脱扣原因");
+                                            datadur.setFieldValue(Double.valueOf(Type));
+                                            datadur.setCreateTime(new Date(new java.util.Date().getTime()));
+                                            Boolean curr = this.dataMySqlStorage.insertRDdata(datadur);
+                                            if (curr)
+                                                count++;
+                                        }
+                                        //第三个值Duration
+                                        String duration = valuess[valuess.length - 2].replace("Duration: ", "").replace("s", "");
+                                        DataField datadur = new DataField();
+                                        datadur.setDataId(dataId);
+                                        datadur.setId(get32UUID());
+                                        datadur.setCate("UINT");
+                                        datadur.setUnit("s");
+                                        datadur.setFieldName("脱扣时间");
+                                        datadur.setFieldValue(Double.valueOf(duration));
+                                        datadur.setCreateTime(new Date(new java.util.Date().getTime()));
+                                        Boolean curr = this.dataMySqlStorage.insertRDdata(datadur);
+                                        if (curr)
+                                            count++;
+                                        //最后一个值Current
+                                        String[] currents = valuess[valuess.length - 1].replace("Current: ", "").split(",");
+                                        for (String cur : currents) {
+                                            System.out.println(cur);
+                                        }
+                                        for (String cur : currents) {
+                                            DataField datacur = new DataField();
+                                            datacur.setDataId(dataId);
+                                            datacur.setId(get32UUID());
+                                            datacur.setCate("UINT");
+                                            datacur.setUnit("A");
+                                            datacur.setFieldName("脱扣" + cur.split(":")[0] + "电流");
+                                            datacur.setFieldValue(Double.valueOf(cur.split(":")[1].replace("A", "")));
+                                            datacur.setCreateTime(new Date(new java.util.Date().getTime()));
+                                            Boolean cuc = this.dataMySqlStorage.insertRDdata(datacur);
+                                            if (cuc)
+                                                count++;
+                                        }
+                                        //添加特殊字段
+                                        firstBrkCount = valuess.length + fault.length;
+                                    } catch (Exception fir) {
+                                        DataField dataf = new DataField();
+                                        dataf.setDataId(dataId);
+                                        dataf.setId(get32UUID());
+                                        dataf.setCate(stream.getValues().get(key).toString().substring(0, 50));
+                                        dataf.setUnit("UNKNOWN");
+                                        dataf.setFieldName("不能解析的脱口信息保存在Cate中");
+                                        dataf.setFieldValue(0d);
+                                        dataf.setCreateTime(new Date(new java.util.Date().getTime()));
+                                        Boolean cud = this.dataMySqlStorage.insertRDdata(dataf);
+                                        if (cud)
+                                            count++;
+                                    }
+                                    /**************************************************************/
+                                }
+
+                            }
                         }
-                        if (xy) {
+                        if (xy == 1) {
                             DataField dataf = new DataField();
                             dataf.setDataId(dataId);
                             dataf.setId(get32UUID());
@@ -89,7 +228,7 @@ public class DataInsert {
                     status = "4";
                 }
             }
-            this.dataMySqlStorage.insertRD(dataId, status, asn, dsn, agentId);
+            this.dataMySqlStorage.insertRD(dataId, status, asn, dsn, agentId, date);
             Map<String, Object> m = new HashMap<>();
             m.put("trueAmount", count);
             logger.debug("Successfully adding count:{}", count);

@@ -1,27 +1,27 @@
-2017-07-04 15:44:43.743 [main] INFO  o.e.jetty.util.log - Logging initialized @2368ms
- 2017-07-04 15:44:43.941 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-04 15:44:43.959 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-04 15:44:43.976 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-04 15:44:44.037 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@52500920{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-04 15:44:44.040 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-04 15:44:44.050 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-04 15:44:44.050 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-04 15:44:44.094 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-04 15:44:44.215 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-04 15:44:44.258 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-04 15:44:45.010 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+2017-07-11 09:35:33.285 [main] INFO  o.e.jetty.util.log - Logging initialized @2996ms
+ 2017-07-11 09:35:33.475 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 09:35:33.486 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 09:35:33.518 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 09:35:33.579 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:35:33.584 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 09:35:33.594 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 09:35:33.594 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 09:35:33.618 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 09:35:33.780 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 09:35:33.857 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 09:35:34.827 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-04 15:44:45.012 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@7c1812b3{/,null,AVAILABLE}
- 2017-07-04 15:44:45.018 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 09:35:34.832 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4087c7fc{/,null,AVAILABLE}
+ 2017-07-11 09:35:34.845 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-04 15:44:45.018 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 09:35:34.847 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -30,23 +30,16 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-04 15:44:45.024 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@65f58c6e{/admin,null,AVAILABLE}
- 2017-07-04 15:44:45.084 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@52500920{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-04 15:44:45.084 [main] INFO  o.e.j.server.Server - Started @3710ms
- 2017-07-04 15:45:56.753 [dw-22 - GET /data/find] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729p3hfzh7t88kke|2c177f9e, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729p3hfzh7t88kke|2c177f9e, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
- 2017-07-04 15:47:57.894 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:null的数据
- 2017-07-04 15:47:57.894 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@fca2a78
- 2017-07-04 15:47:57.895 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@187850b9
- 2017-07-04 15:47:58.026 [dw-22 - POST /data/add] ERROR i.j.u.h.m.DataMySqlStorage - 保存ID为 45e352c920624ce0a1b9a2d771ee39f6 的主表数据信息时出错 {}
- ! com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'AGENT_ID' cannot be null
-! at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-! at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-! at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-! at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
-! at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
-! at com.mysql.jdbc.Util.getInstance(Util.java:386)
-! at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1041)
-! at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4120)
+ 2017-07-11 09:35:34.861 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@56cc9f29{/admin,null,AVAILABLE}
+ 2017-07-11 09:35:34.997 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:35:34.997 [main] INFO  o.e.j.server.Server - Started @4710ms
+ 2017-07-11 09:35:39.958 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 09:35:39.963 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@ea2b8c8
+ 2017-07-11 09:35:40.004 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@14f6139d
+ 2017-07-11 09:36:19.605 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd4c6qz3c5sq0|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd4c6qz3c5sq0|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 09:36:19.913 [dw-23 - POST /data/add] ERROR i.j.u.h.m.DataMySqlStorage - 保存ID为 440cc00ca2f34f49b03de22128e96f2a 的从数据信息时出错 {}
+ ! com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CATE' at row 1
+! at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4118)
 ! at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
 ! at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
 ! at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
@@ -56,8 +49,8 @@
 ! at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2375)
 ! at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2359)
 ! at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
-! at io.j1st.utils.http.mysql.DataMySqlStorage.insertRD(DataMySqlStorage.java:59)
-! at io.j1st.utils.http.resource.DataInsert.fnxDownStream(DataInsert.java:92)
+! at io.j1st.utils.http.mysql.DataMySqlStorage.insertRDdata(DataMySqlStorage.java:103)
+! at io.j1st.utils.http.resource.DataInsert.fnxDownStream(DataInsert.java:119)
 ! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 ! at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 ! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -118,39 +111,31 @@
 ! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
 ! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
 ! at java.lang.Thread.run(Thread.java:745)
-2017-07-04 15:47:58.026 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-04 15:51:08.853 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-04 15:51:08.853 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7dd0bbf9
- 2017-07-04 15:51:08.853 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4944f387
- 2017-07-04 15:51:08.865 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-04 15:51:29.156 [dw-20 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-04 15:51:29.156 [dw-20 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@73da80c2
- 2017-07-04 15:51:29.156 [dw-20 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@77e50a61
- 2017-07-04 15:51:29.177 [dw-20 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-04 16:06:35.908 [main] INFO  o.e.jetty.util.log - Logging initialized @1733ms
- 2017-07-04 16:06:36.063 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-04 16:06:36.072 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-04 16:06:36.088 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-04 16:06:36.118 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@52500920{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-04 16:06:36.120 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-04 16:06:36.129 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-04 16:06:36.129 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-04 16:06:36.145 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-04 16:06:36.242 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-04 16:06:36.294 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-04 16:06:36.800 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+2017-07-11 09:36:19.916 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-11 09:38:08.787 [main] INFO  o.e.jetty.util.log - Logging initialized @2331ms
+ 2017-07-11 09:38:08.909 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 09:38:08.918 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 09:38:08.935 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 09:38:08.978 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:38:08.981 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 09:38:08.991 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 09:38:08.991 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 09:38:09.013 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 09:38:09.127 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 09:38:09.163 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 09:38:09.990 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-04 16:06:36.802 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@7c1812b3{/,null,AVAILABLE}
- 2017-07-04 16:06:36.808 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 09:38:09.994 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4087c7fc{/,null,AVAILABLE}
+ 2017-07-11 09:38:10.002 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-04 16:06:36.809 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 09:38:10.002 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -159,58 +144,112 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-04 16:06:36.814 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@65f58c6e{/admin,null,AVAILABLE}
- 2017-07-04 16:06:36.887 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@52500920{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-04 16:06:36.887 [main] INFO  o.e.j.server.Server - Started @2713ms
- 2017-07-04 16:06:42.610 [dw-22 - GET /data/find] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729p3i83ux1k3dzqi|2c177f9e, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729p3i83ux1k3dzqi|2c177f9e, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
- 2017-07-04 16:07:13.977 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-04 16:07:13.978 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@102a1136
- 2017-07-04 16:07:13.978 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@71ccca0a
- 2017-07-04 16:07:14.005 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-04 16:08:11.461 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-04 16:08:11.462 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4058392a
- 2017-07-04 16:08:11.462 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@d9363b0
- 2017-07-04 16:08:11.463 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
- 2017-07-04 16:08:16.372 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-04 16:08:16.372 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2eb47c0d
- 2017-07-04 16:08:16.372 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3bc2b6f
- 2017-07-04 16:08:16.374 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
- 2017-07-04 16:08:58.679 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-04 16:08:58.679 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@340dfd2
- 2017-07-04 16:08:58.679 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@10dff309
- 2017-07-04 16:08:58.680 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
- 2017-07-04 16:09:21.534 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-04 16:09:21.534 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2abd67b8
- 2017-07-04 16:09:21.534 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4f802d00
- 2017-07-04 16:09:21.535 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
- 2017-07-04 16:10:11.125 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-04 16:10:11.126 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@6e3c6371
- 2017-07-04 16:10:11.126 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2329bc2d
- 2017-07-04 16:10:11.139 [dw-21 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-10 15:25:46.197 [main] INFO  o.e.jetty.util.log - Logging initialized @2506ms
- 2017-07-10 15:25:46.398 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:25:46.407 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:25:46.420 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:25:46.471 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:25:46.474 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:25:46.483 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:25:46.483 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:25:46.520 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:25:46.635 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:25:46.684 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:25:47.478 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 09:38:10.012 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@56cc9f29{/admin,null,AVAILABLE}
+ 2017-07-11 09:38:10.087 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:38:10.087 [main] INFO  o.e.j.server.Server - Started @3632ms
+ 2017-07-11 09:38:12.956 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 09:38:12.957 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2aad7013
+ 2017-07-11 09:38:12.960 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@55ce9bd5
+ 2017-07-11 09:38:18.207 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd4fimop5jk36|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd4fimop5jk36|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 09:38:18.467 [dw-23 - POST /data/add] ERROR i.j.u.h.m.DataMySqlStorage - 保存ID为 fcda173655454999a6a3da373baacd09 的从数据信息时出错 {}
+ ! com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'CATE' at row 1
+! at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4118)
+! at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4052)
+! at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2503)
+! at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2664)
+! at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2815)
+! at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2155)
+! at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2458)
+! at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2375)
+! at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2359)
+! at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeUpdate(NewProxyPreparedStatement.java:105)
+! at io.j1st.utils.http.mysql.DataMySqlStorage.insertRDdata(DataMySqlStorage.java:103)
+! at io.j1st.utils.http.resource.DataInsert.fnxDownStream(DataInsert.java:119)
+! at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+! at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+! at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+! at java.lang.reflect.Method.invoke(Method.java:497)
+! at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+! at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+! at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+! at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+! at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+! at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+! at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+! at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+! at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+! at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+! at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+! at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:471)
+! at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:425)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:383)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:336)
+! at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:223)
+! at io.dropwizard.jetty.NonblockingServletHolder.handle(NonblockingServletHolder.java:49)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1669)
+! at org.eclipse.jetty.servlets.UserAgentFilter.doFilter(UserAgentFilter.java:83)
+! at org.eclipse.jetty.servlets.GzipFilter.doFilter(GzipFilter.java:300)
+! at io.dropwizard.jetty.BiDiGzipFilter.doFilter(BiDiGzipFilter.java:132)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+! at io.dropwizard.servlets.ThreadNameFilter.doFilter(ThreadNameFilter.java:29)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.handle(AllowedMethodsFilter.java:43)
+! at io.dropwizard.jersey.filter.AllowedMethodsFilter.doFilter(AllowedMethodsFilter.java:38)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+! at org.eclipse.jetty.servlets.CrossOriginFilter.handle(CrossOriginFilter.java:256)
+! at org.eclipse.jetty.servlets.CrossOriginFilter.doFilter(CrossOriginFilter.java:219)
+! at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1652)
+! at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:585)
+! at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1127)
+! at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:515)
+! at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1061)
+! at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+! at com.codahale.metrics.jetty9.InstrumentedHandler.handle(InstrumentedHandler.java:240)
+! at io.dropwizard.jetty.ContextRoutingHandler.handle(ContextRoutingHandler.java:38)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+! at org.eclipse.jetty.server.handler.RequestLogHandler.handle(RequestLogHandler.java:95)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+! at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:159)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+! at org.eclipse.jetty.server.Server.handle(Server.java:499)
+! at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:310)
+! at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:257)
+! at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:540)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:635)
+! at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:555)
+! at java.lang.Thread.run(Thread.java:745)
+2017-07-11 09:38:18.470 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-11 09:39:24.825 [main] INFO  o.e.jetty.util.log - Logging initialized @2187ms
+ 2017-07-11 09:39:24.958 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 09:39:24.966 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 09:39:24.982 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 09:39:25.019 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:39:25.022 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 09:39:25.034 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 09:39:25.034 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 09:39:25.053 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 09:39:25.163 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 09:39:25.244 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 09:39:26.002 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:25:47.479 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@6c03fb16{/,null,AVAILABLE}
- 2017-07-10 15:25:47.484 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 09:39:26.004 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@78ec89a6{/,null,AVAILABLE}
+ 2017-07-11 09:39:26.013 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:25:47.486 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 09:39:26.013 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -219,33 +258,42 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:25:47.492 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@71dfcf21{/admin,null,AVAILABLE}
- 2017-07-10 15:25:47.569 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:25:47.569 [main] INFO  o.e.j.server.Server - Started @3879ms
- 2017-07-10 15:31:16.046 [main] INFO  o.e.jetty.util.log - Logging initialized @1692ms
- 2017-07-10 15:31:16.206 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:31:16.222 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:31:16.246 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:31:16.312 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:31:16.315 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:31:16.332 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:31:16.332 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:31:16.378 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:31:16.477 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:31:16.503 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:31:17.078 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 09:39:26.021 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@1290ed28{/admin,null,AVAILABLE}
+ 2017-07-11 09:39:26.106 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:39:26.106 [main] INFO  o.e.j.server.Server - Started @3469ms
+ 2017-07-11 09:39:32.070 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 09:39:32.071 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@152d5bb1
+ 2017-07-11 09:39:32.077 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5e53d080
+ 2017-07-11 09:39:34.390 [dw-24 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd4h5ay1tzx74k|624a24f6, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd4h5ay1tzx74k|624a24f6, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 09:39:34.636 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:1
+ 2017-07-11 09:40:51.694 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 09:40:51.694 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@35489272
+ 2017-07-11 09:40:51.694 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4190e1c2
+ 2017-07-11 09:41:37.253 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:1
+ 2017-07-11 09:41:41.651 [main] INFO  o.e.jetty.util.log - Logging initialized @2257ms
+ 2017-07-11 09:41:41.775 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 09:41:41.785 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 09:41:41.802 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 09:41:41.845 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:41:41.848 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 09:41:41.858 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 09:41:41.858 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 09:41:41.880 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 09:41:41.997 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 09:41:42.038 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 09:41:42.799 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:31:17.079 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@f4cfd90{/,null,AVAILABLE}
- 2017-07-10 15:31:17.086 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 09:41:42.800 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 09:41:42.807 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:31:17.086 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 09:41:42.808 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -254,33 +302,38 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:31:17.091 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@2e1af49b{/admin,null,AVAILABLE}
- 2017-07-10 15:31:17.148 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:31:17.148 [main] INFO  o.e.j.server.Server - Started @2795ms
- 2017-07-10 15:33:56.256 [main] INFO  o.e.jetty.util.log - Logging initialized @1746ms
- 2017-07-10 15:33:56.400 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:33:56.411 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:33:56.428 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:33:56.457 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:33:56.459 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:33:56.466 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:33:56.467 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:33:56.496 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:33:56.590 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:33:56.617 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:33:57.252 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 09:41:42.816 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 09:41:42.889 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:41:42.889 [main] INFO  o.e.j.server.Server - Started @3495ms
+ 2017-07-11 09:41:47.927 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 09:41:47.927 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2aad7013
+ 2017-07-11 09:41:47.930 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@55ce9bd5
+ 2017-07-11 09:41:56.840 [dw-22 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd4k2vr1ji2okz|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd4k2vr1ji2okz|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 09:42:02.954 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:4
+ 2017-07-11 09:49:13.906 [main] INFO  o.e.jetty.util.log - Logging initialized @2085ms
+ 2017-07-11 09:49:14.021 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 09:49:14.030 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 09:49:14.048 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 09:49:14.088 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@116a2108{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:49:14.090 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 09:49:14.099 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 09:49:14.099 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 09:49:14.119 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 09:49:14.255 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 09:49:14.336 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 09:49:14.991 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:33:57.255 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@53c68ce{/,null,AVAILABLE}
- 2017-07-10 15:33:57.260 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 09:49:14.993 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 09:49:15.001 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:33:57.261 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 09:49:15.001 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -289,33 +342,42 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:33:57.270 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@11e33bac{/admin,null,AVAILABLE}
- 2017-07-10 15:33:57.338 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:33:57.338 [main] INFO  o.e.j.server.Server - Started @2830ms
- 2017-07-10 15:35:08.432 [main] INFO  o.e.jetty.util.log - Logging initialized @1621ms
- 2017-07-10 15:35:08.583 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:35:08.596 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:35:08.619 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:35:08.664 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:35:08.666 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:35:08.674 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:35:08.674 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:35:08.688 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:35:08.793 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:35:08.821 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:35:09.403 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 09:49:15.011 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 09:49:15.103 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@116a2108{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:49:15.103 [main] INFO  o.e.j.server.Server - Started @3283ms
+ 2017-07-11 09:49:18.826 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 09:49:18.826 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3dfcebc8
+ 2017-07-11 09:49:18.833 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7bcf6487
+ 2017-07-11 09:49:18.904 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd4tru510oy10j|2f98635e, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd4tru510oy10j|2f98635e, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 09:49:45.378 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:5
+ 2017-07-11 09:50:15.742 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 09:50:15.742 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@47b7f513
+ 2017-07-11 09:50:15.742 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2979ab61
+ 2017-07-11 09:50:15.746 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:5
+ 2017-07-11 09:52:09.341 [main] INFO  o.e.jetty.util.log - Logging initialized @2101ms
+ 2017-07-11 09:52:09.457 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 09:52:09.467 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 09:52:09.496 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 09:52:09.542 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:52:09.546 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 09:52:09.570 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 09:52:09.570 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 09:52:09.593 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 09:52:09.712 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 09:52:09.749 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 09:52:10.498 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:35:09.405 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@53c68ce{/,null,AVAILABLE}
- 2017-07-10 15:35:09.412 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 09:52:10.500 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@7df28f1{/,null,AVAILABLE}
+ 2017-07-11 09:52:10.509 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:35:09.412 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 09:52:10.510 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -324,66 +386,36 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:35:09.419 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@11e33bac{/admin,null,AVAILABLE}
- 2017-07-10 15:35:09.490 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@2a65bb85{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:35:09.491 [main] INFO  o.e.j.server.Server - Started @2680ms
- 2017-07-10 15:36:23.691 [main] INFO  o.e.jetty.util.log - Logging initialized @2030ms
- 2017-07-10 15:36:23.803 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:36:23.812 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:36:23.831 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:36:23.871 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:36:23.873 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:36:23.883 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:36:23.883 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:36:23.907 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:36:24.087 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:36:24.149 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:37:18.574 [main] INFO  o.e.jetty.util.log - Logging initialized @2275ms
- 2017-07-10 15:37:18.709 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:37:18.719 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:37:18.738 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:37:18.775 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@468be356{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:37:18.778 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:37:18.791 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:37:18.791 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:37:18.809 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:37:18.913 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:37:18.947 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:37:35.969 [main] INFO  o.e.jetty.util.log - Logging initialized @2056ms
- 2017-07-10 15:37:36.083 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:37:36.092 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:37:36.109 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:37:36.161 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:37:36.164 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:37:36.173 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:37:36.174 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:37:36.199 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:37:36.303 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:37:36.344 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:37:47.890 [main] INFO  o.e.jetty.util.log - Logging initialized @2029ms
- 2017-07-10 15:37:48.004 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:37:48.012 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:37:48.029 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:37:48.070 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:37:48.072 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:37:48.081 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:37:48.081 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:37:48.098 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:37:48.213 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:37:48.248 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:37:54.330 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 09:52:10.518 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@415ef4d8{/admin,null,AVAILABLE}
+ 2017-07-11 09:52:10.603 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 09:52:10.603 [main] INFO  o.e.j.server.Server - Started @3365ms
+ 2017-07-11 09:52:12.842 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 09:52:12.845 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@27874159
+ 2017-07-11 09:52:12.854 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@6dac9126
+ 2017-07-11 10:05:20.278 [main] INFO  o.e.jetty.util.log - Logging initialized @2029ms
+ 2017-07-11 10:05:20.397 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:05:20.407 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:05:20.424 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:05:20.467 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:05:20.469 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:05:20.480 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:05:20.480 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:05:20.502 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:05:20.616 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:05:20.652 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:05:21.436 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:37:54.332 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@17b016ac{/,null,AVAILABLE}
- 2017-07-10 15:37:54.339 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:05:21.438 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 10:05:21.446 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:37:54.340 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:05:21.446 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -392,44 +424,37 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:37:54.348 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@5b40de43{/admin,null,AVAILABLE}
- 2017-07-10 15:37:54.444 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:37:54.444 [main] INFO  o.e.j.server.Server - Started @8583ms
- 2017-07-10 15:38:09.681 [main] INFO  o.e.jetty.util.log - Logging initialized @2240ms
- 2017-07-10 15:38:09.808 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:38:09.816 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:38:09.837 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:38:09.876 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@2264e43c{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:38:09.879 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:38:09.888 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:38:09.888 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:38:09.911 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:38:10.029 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:38:10.064 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:38:32.670 [main] INFO  o.e.jetty.util.log - Logging initialized @2018ms
- 2017-07-10 15:38:32.795 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:38:32.806 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:38:32.823 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:38:32.861 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:38:32.864 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:38:32.872 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:38:32.872 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:38:32.896 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:38:33.001 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:38:33.036 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:38:37.427 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:05:21.453 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 10:05:21.531 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:05:21.531 [main] INFO  o.e.j.server.Server - Started @3283ms
+ 2017-07-11 10:05:26.729 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:05:26.730 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7ab698b6
+ 2017-07-11 10:05:26.734 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@145fb2b5
+ 2017-07-11 10:05:41.693 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5ehhtjhu0gl|338cc75f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5ehhtjhu0gl|338cc75f, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:08:04.745 [main] INFO  o.e.jetty.util.log - Logging initialized @2245ms
+ 2017-07-11 10:08:04.891 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:08:04.899 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:08:04.917 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:08:04.958 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:08:04.960 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:08:04.969 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:08:04.969 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:08:04.989 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:08:05.098 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:08:05.180 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:08:05.906 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:38:37.429 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@1f95881a{/,null,AVAILABLE}
- 2017-07-10 15:38:37.438 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:08:05.909 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 10:08:05.915 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:38:37.439 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:08:05.915 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -438,55 +463,42 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:38:37.447 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@9ab310b{/admin,null,AVAILABLE}
- 2017-07-10 15:38:37.537 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:38:37.537 [main] INFO  o.e.j.server.Server - Started @6887ms
- 2017-07-10 15:39:06.060 [main] INFO  o.e.jetty.util.log - Logging initialized @1998ms
- 2017-07-10 15:39:06.174 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:39:06.184 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:39:06.200 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:39:06.240 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@116a2108{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:39:06.243 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:39:06.252 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:39:06.252 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:39:06.274 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:39:06.382 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:39:06.420 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:39:41.781 [main] INFO  o.e.jetty.util.log - Logging initialized @2203ms
- 2017-07-10 15:39:41.890 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:39:41.901 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:39:41.917 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:39:41.958 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:39:41.961 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:39:41.970 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:39:41.970 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:39:41.989 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:39:42.096 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:39:42.130 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:41:42.535 [main] INFO  o.e.jetty.util.log - Logging initialized @2009ms
- 2017-07-10 15:41:42.646 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:41:42.654 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:41:42.671 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:41:42.712 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:41:42.715 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:41:42.724 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:41:42.724 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:41:42.742 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:41:42.859 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:41:42.895 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:41:50.159 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:08:05.921 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 10:08:06.008 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:08:06.009 [main] INFO  o.e.j.server.Server - Started @3510ms
+ 2017-07-11 10:08:11.317 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:08:11.317 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@1b7c0083
+ 2017-07-11 10:08:11.320 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@522d69ac
+ 2017-07-11 10:08:16.495 [dw-24 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5i0ev1fb9j2a|49c8f6e8, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5i0ev1fb9j2a|49c8f6e8, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:08:20.643 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:3
+ 2017-07-11 10:09:11.475 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:09:11.476 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@465b59a6
+ 2017-07-11 10:09:11.476 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4264d5b5
+ 2017-07-11 10:09:33.830 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:3
+ 2017-07-11 10:12:46.601 [main] INFO  o.e.jetty.util.log - Logging initialized @2049ms
+ 2017-07-11 10:12:46.741 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:12:46.749 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:12:46.766 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:12:46.806 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:12:46.809 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:12:46.824 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:12:46.824 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:12:46.843 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:12:46.952 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:12:46.992 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:12:47.858 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:41:50.160 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@733ec58b{/,null,AVAILABLE}
- 2017-07-10 15:41:50.169 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:12:47.868 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 10:12:47.878 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:41:50.169 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:12:47.882 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -495,33 +507,37 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:41:50.178 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@49fb0bbd{/admin,null,AVAILABLE}
- 2017-07-10 15:41:50.271 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:41:50.271 [main] INFO  o.e.j.server.Server - Started @9745ms
- 2017-07-10 15:42:33.346 [main] INFO  o.e.jetty.util.log - Logging initialized @2213ms
- 2017-07-10 15:42:33.482 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:42:33.499 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:42:33.523 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:42:33.578 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:42:33.581 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:42:33.590 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:42:33.590 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:42:33.608 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:42:33.708 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:42:33.745 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:42:48.037 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:12:47.891 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 10:12:47.976 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:12:47.976 [main] INFO  o.e.j.server.Server - Started @3427ms
+ 2017-07-11 10:12:53.190 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:12:53.193 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2d8bba02
+ 2017-07-11 10:12:53.197 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@62c8ca87
+ 2017-07-11 10:12:53.265 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5o1w72hi92q|338cc75f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5o1w72hi92q|338cc75f, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:14:19.237 [main] INFO  o.e.jetty.util.log - Logging initialized @2145ms
+ 2017-07-11 10:14:19.352 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:14:19.361 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:14:19.377 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:14:19.418 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:14:19.421 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:14:19.430 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:14:19.431 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:14:19.451 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:14:19.560 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:14:19.595 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:14:20.242 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:42:48.040 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@17b016ac{/,null,AVAILABLE}
- 2017-07-10 15:42:48.051 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:14:20.244 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@7237f3c1{/,null,AVAILABLE}
+ 2017-07-11 10:14:20.251 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:42:48.052 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:14:20.252 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -530,33 +546,37 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:42:48.061 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@5b40de43{/admin,null,AVAILABLE}
- 2017-07-10 15:42:48.146 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:42:48.146 [main] INFO  o.e.j.server.Server - Started @17015ms
- 2017-07-10 15:44:17.463 [main] INFO  o.e.jetty.util.log - Logging initialized @2246ms
- 2017-07-10 15:44:17.571 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:44:17.580 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:44:17.596 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:44:17.637 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:44:17.640 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:44:17.650 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:44:17.650 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:44:17.668 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:44:17.780 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:44:17.815 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:44:18.596 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:14:20.262 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@5c887052{/admin,null,AVAILABLE}
+ 2017-07-11 10:14:20.345 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:14:20.345 [main] INFO  o.e.j.server.Server - Started @3254ms
+ 2017-07-11 10:14:25.438 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:14:25.438 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@57aeb623
+ 2017-07-11 10:14:25.442 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@1557f0bc
+ 2017-07-11 10:14:25.502 [dw-24 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5q1cnzmez9s|49c8f6e8, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5q1cnzmez9s|49c8f6e8, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:15:05.177 [main] INFO  o.e.jetty.util.log - Logging initialized @2155ms
+ 2017-07-11 10:15:05.299 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:15:05.309 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:15:05.327 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:15:05.375 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@3bec2275{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:15:05.380 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:15:05.390 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:15:05.390 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:15:05.410 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:15:05.520 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:15:05.606 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:15:06.451 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:44:18.601 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@5e5beb8a{/,null,AVAILABLE}
- 2017-07-10 15:44:18.610 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:15:06.454 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 10:15:06.460 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:44:18.611 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:15:06.460 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -565,33 +585,38 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:44:18.618 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@49ca94a9{/admin,null,AVAILABLE}
- 2017-07-10 15:44:18.706 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5e8c34a0{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:44:18.706 [main] INFO  o.e.j.server.Server - Started @3491ms
- 2017-07-10 15:46:50.056 [main] INFO  o.e.jetty.util.log - Logging initialized @2064ms
- 2017-07-10 15:46:50.166 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:46:50.174 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:46:50.191 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:46:50.229 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:46:50.231 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:46:50.240 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:46:50.240 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:46:50.259 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:46:50.373 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:46:50.408 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:46:53.921 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:15:06.466 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 10:15:06.562 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@3bec2275{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:15:06.563 [main] INFO  o.e.j.server.Server - Started @3542ms
+ 2017-07-11 10:15:11.502 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:15:11.503 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@575d0e02
+ 2017-07-11 10:15:11.508 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@66e72911
+ 2017-07-11 10:15:11.589 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5r0t71y9vtt2|3ec2ecea, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5r0t71y9vtt2|3ec2ecea, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:15:16.979 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:4
+ 2017-07-11 10:16:01.107 [main] INFO  o.e.jetty.util.log - Logging initialized @2101ms
+ 2017-07-11 10:16:01.230 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:16:01.240 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:16:01.257 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:16:01.299 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:16:01.301 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:16:01.312 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:16:01.312 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:16:01.343 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:16:01.465 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:16:01.507 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:16:02.234 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:46:53.925 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@733ec58b{/,null,AVAILABLE}
- 2017-07-10 15:46:53.938 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:16:02.237 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4cfa83f9{/,null,AVAILABLE}
+ 2017-07-11 10:16:02.245 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:46:53.946 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:16:02.246 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -600,33 +625,38 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:46:53.955 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@49fb0bbd{/admin,null,AVAILABLE}
- 2017-07-10 15:46:54.048 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:46:54.049 [main] INFO  o.e.j.server.Server - Started @6057ms
- 2017-07-10 15:48:15.620 [main] INFO  o.e.jetty.util.log - Logging initialized @2388ms
- 2017-07-10 15:48:15.743 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:48:15.752 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:48:15.771 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:48:15.810 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:48:15.812 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:48:15.821 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:48:15.821 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:48:15.840 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:48:15.955 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:48:16.030 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:48:16.772 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:16:02.256 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@626c19cf{/admin,null,AVAILABLE}
+ 2017-07-11 10:16:02.382 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:16:02.382 [main] INFO  o.e.j.server.Server - Started @3377ms
+ 2017-07-11 10:16:06.136 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:16:06.136 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@10171bd0
+ 2017-07-11 10:16:06.139 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@72f5834d
+ 2017-07-11 10:16:06.198 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5s7z4oyhyg4|338cc75f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5s7z4oyhyg4|338cc75f, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:16:09.202 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:4
+ 2017-07-11 10:16:43.546 [main] INFO  o.e.jetty.util.log - Logging initialized @2099ms
+ 2017-07-11 10:16:43.678 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:16:43.688 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:16:43.709 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:16:43.750 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:16:43.753 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:16:43.764 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:16:43.764 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:16:43.784 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:16:43.891 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:16:43.928 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:16:44.612 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:48:16.774 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4fb56bea{/,null,AVAILABLE}
- 2017-07-10 15:48:16.780 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:16:44.614 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 10:16:44.622 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:48:16.781 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:16:44.623 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -635,33 +665,38 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:48:16.792 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@1526f71{/admin,null,AVAILABLE}
- 2017-07-10 15:48:16.874 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:48:16.875 [main] INFO  o.e.j.server.Server - Started @3644ms
- 2017-07-10 15:50:01.497 [main] INFO  o.e.jetty.util.log - Logging initialized @2039ms
- 2017-07-10 15:50:01.610 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:50:01.619 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:50:01.635 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:50:01.674 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:50:01.676 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:50:01.685 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:50:01.685 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:50:01.703 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:50:01.818 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:50:01.851 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:50:04.104 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:16:44.629 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 10:16:44.718 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:16:44.718 [main] INFO  o.e.j.server.Server - Started @3273ms
+ 2017-07-11 10:16:49.115 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:16:49.115 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@1dd121e
+ 2017-07-11 10:16:49.119 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7ee8f3f0
+ 2017-07-11 10:16:49.191 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5t4purfc8oc|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5t4purfc8oc|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:16:51.803 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:4
+ 2017-07-11 10:17:18.745 [main] INFO  o.e.jetty.util.log - Logging initialized @2131ms
+ 2017-07-11 10:17:18.885 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:17:18.899 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:17:18.917 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:17:18.956 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:17:18.960 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:17:18.969 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:17:18.970 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:17:18.989 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:17:19.094 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:17:19.133 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:17:19.922 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:50:04.108 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@733ec58b{/,null,AVAILABLE}
- 2017-07-10 15:50:04.119 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:17:19.923 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@642ee49c{/,null,AVAILABLE}
+ 2017-07-11 10:17:19.932 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:50:04.120 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:17:19.933 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -670,33 +705,37 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:50:04.129 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@49fb0bbd{/admin,null,AVAILABLE}
- 2017-07-10 15:50:04.235 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:50:04.235 [main] INFO  o.e.j.server.Server - Started @4778ms
- 2017-07-10 15:58:52.213 [main] INFO  o.e.jetty.util.log - Logging initialized @2056ms
- 2017-07-10 15:58:52.342 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 15:58:52.353 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 15:58:52.371 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 15:58:52.412 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:58:52.415 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 15:58:52.427 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 15:58:52.427 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 15:58:52.448 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 15:58:52.562 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 15:58:52.599 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 15:58:53.427 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:17:19.941 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@29050de5{/admin,null,AVAILABLE}
+ 2017-07-11 10:17:20.029 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:17:20.029 [main] INFO  o.e.j.server.Server - Started @3417ms
+ 2017-07-11 10:17:22.843 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:17:22.843 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@57aeb623
+ 2017-07-11 10:17:22.846 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@1557f0bc
+ 2017-07-11 10:17:22.909 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5tvvrvz844d|7afbf561, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5tvvrvz844d|7afbf561, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:18:49.205 [main] INFO  o.e.jetty.util.log - Logging initialized @2055ms
+ 2017-07-11 10:18:49.346 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:18:49.355 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:18:49.372 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:18:49.412 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:18:49.416 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:18:49.427 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:18:49.428 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:18:49.446 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:18:49.551 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:18:49.592 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:18:50.298 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 15:58:53.429 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4cffcc61{/,null,AVAILABLE}
- 2017-07-10 15:58:53.440 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:18:50.302 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 10:18:50.310 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 15:58:53.440 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:18:50.310 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -705,33 +744,38 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 15:58:53.454 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@62cba181{/admin,null,AVAILABLE}
- 2017-07-10 15:58:53.543 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 15:58:53.543 [main] INFO  o.e.j.server.Server - Started @3387ms
- 2017-07-10 16:01:54.179 [main] INFO  o.e.jetty.util.log - Logging initialized @2119ms
- 2017-07-10 16:01:54.289 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 16:01:54.298 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 16:01:54.314 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 16:01:54.355 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:01:54.358 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 16:01:54.366 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 16:01:54.366 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 16:01:54.385 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 16:01:54.495 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 16:01:54.529 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 16:01:55.196 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:18:50.320 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 10:18:50.404 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@7a1f8def{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:18:50.404 [main] INFO  o.e.j.server.Server - Started @3257ms
+ 2017-07-11 10:18:54.971 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:18:54.972 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2daccacb
+ 2017-07-11 10:18:54.978 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@6871eb75
+ 2017-07-11 10:18:55.048 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd5vtoh1gsocz1|7afbf561, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd5vtoh1gsocz1|7afbf561, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:18:57.947 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:9
+ 2017-07-11 10:22:04.900 [main] INFO  o.e.jetty.util.log - Logging initialized @2010ms
+ 2017-07-11 10:22:05.020 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:22:05.030 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:22:05.048 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:22:05.091 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:22:05.095 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:22:05.104 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:22:05.104 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:22:05.122 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:22:05.233 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:22:05.310 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:22:06.139 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 16:01:55.198 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4087c7fc{/,null,AVAILABLE}
- 2017-07-10 16:01:55.211 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:22:06.140 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 10:22:06.147 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 16:01:55.212 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:22:06.148 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -740,38 +784,37 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 16:01:55.220 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@56cc9f29{/admin,null,AVAILABLE}
- 2017-07-10 16:01:55.300 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:01:55.300 [main] INFO  o.e.j.server.Server - Started @3241ms
- 2017-07-10 16:03:20.598 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:03:20.599 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@25dbd945
- 2017-07-10 16:03:20.603 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@59c5f2c5
- 2017-07-10 16:03:20.738 [dw-24 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc2p6gg149jmzt|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc2p6gg149jmzt|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
- 2017-07-10 16:03:21.115 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-10 16:10:15.043 [main] INFO  o.e.jetty.util.log - Logging initialized @2228ms
- 2017-07-10 16:10:15.176 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 16:10:15.185 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 16:10:15.201 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 16:10:15.240 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:10:15.243 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 16:10:15.260 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 16:10:15.261 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 16:10:15.280 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 16:10:15.390 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 16:10:15.427 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 16:10:16.094 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
+ 2017-07-11 10:22:06.155 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 10:22:06.235 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:22:06.235 [main] INFO  o.e.j.server.Server - Started @3347ms
+ 2017-07-11 10:22:11.169 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:22:11.170 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7ab698b6
+ 2017-07-11 10:22:11.175 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@145fb2b5
+ 2017-07-11 10:22:11.231 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd600nx1bezgrk|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd600nx1bezgrk|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:25:29.777 [main] INFO  o.e.jetty.util.log - Logging initialized @2109ms
+ 2017-07-11 10:25:29.901 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
+ 2017-07-11 10:25:29.910 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
+ 2017-07-11 10:25:29.927 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
+ 2017-07-11 10:25:29.968 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:25:29.971 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
+ 2017-07-11 10:25:29.980 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
+ 2017-07-11 10:25:29.980 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
+ 2017-07-11 10:25:29.998 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
+ 2017-07-11 10:25:30.106 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
+ 2017-07-11 10:25:30.181 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
+ 2017-07-11 10:25:30.830 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
 
     POST    /data/add (io.j1st.utils.http.resource.DataInsert)
     GET     /data/find (io.j1st.utils.http.resource.DataInsert)
     GET     /data/test (io.j1st.utils.http.resource.DataInsert)
 
- 2017-07-10 16:10:16.096 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@4cfa83f9{/,null,AVAILABLE}
- 2017-07-10 16:10:16.104 [main] INFO  i.d.s.AdminEnvironment - tasks = 
+ 2017-07-11 10:25:30.832 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
+ 2017-07-11 10:25:30.843 [main] INFO  i.d.s.AdminEnvironment - tasks = 
 
     POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
     POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
 
- 2017-07-10 16:10:16.104 [main] WARN  i.d.s.AdminEnvironment - 
+ 2017-07-11 10:25:30.844 [main] WARN  i.d.s.AdminEnvironment - 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
@@ -780,160 +823,36 @@
 !         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 16:10:16.113 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@626c19cf{/admin,null,AVAILABLE}
- 2017-07-10 16:10:16.201 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@58b67519{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:10:16.201 [main] INFO  o.e.j.server.Server - Started @3387ms
- 2017-07-10 16:25:30.434 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:25:30.440 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@51ff248
- 2017-07-10 16:25:30.447 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@f02c5a1
- 2017-07-10 16:25:30.532 [dw-22 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc2zwy33s2id2|338cc75f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc2zwy33s2id2|338cc75f, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
- 2017-07-10 16:25:30.823 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-10 16:25:31.895 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:25:31.895 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@29edd2c8
- 2017-07-10 16:25:31.896 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@2dd2532d
- 2017-07-10 16:25:31.924 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-10 16:25:33.206 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:25:33.206 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5a5d9ae
- 2017-07-10 16:25:33.207 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4a9ac868
- 2017-07-10 16:25:33.255 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-10 16:25:34.178 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:25:34.178 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3516ef01
- 2017-07-10 16:25:34.179 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7989835f
- 2017-07-10 16:25:34.201 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-10 16:28:02.151 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:28:02.151 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5a38a69d
- 2017-07-10 16:28:02.152 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@203df8fd
- 2017-07-10 16:28:02.154 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
- 2017-07-10 16:29:23.463 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:29:23.463 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@441313c3
- 2017-07-10 16:29:23.464 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@77fad917
- 2017-07-10 16:29:23.465 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
- 2017-07-10 16:29:31.881 [main] INFO  o.e.jetty.util.log - Logging initialized @2213ms
- 2017-07-10 16:29:32.024 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 16:29:32.032 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 16:29:32.055 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 16:29:32.106 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:29:32.110 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 16:29:32.119 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 16:29:32.119 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 16:29:32.139 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 16:29:32.267 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 16:29:32.301 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 16:29:33.279 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
-
-    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
-    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
-    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
-
- 2017-07-10 16:29:33.286 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@7df28f1{/,null,AVAILABLE}
- 2017-07-10 16:29:33.294 [main] INFO  i.d.s.AdminEnvironment - tasks = 
-
-    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
-    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
-
- 2017-07-10 16:29:33.294 [main] WARN  i.d.s.AdminEnvironment - 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
-!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
-!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
-!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 16:29:33.301 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@415ef4d8{/admin,null,AVAILABLE}
- 2017-07-10 16:29:33.395 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@5f18f9d2{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:29:33.395 [main] INFO  o.e.j.server.Server - Started @3731ms
- 2017-07-10 16:29:40.474 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:29:40.475 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@771aa0e3
- 2017-07-10 16:29:40.480 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3d2cf665
- 2017-07-10 16:29:40.550 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc3opl6h4xr9z|624a24f6, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc3opl6h4xr9z|624a24f6, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
- 2017-07-10 16:29:40.814 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:1
- 2017-07-10 16:36:12.912 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:36:12.912 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3ef1e309
- 2017-07-10 16:36:12.913 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5abfc82e
- 2017-07-10 16:36:12.946 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-10 16:36:47.000 [main] INFO  o.e.jetty.util.log - Logging initialized @2528ms
- 2017-07-10 16:36:47.115 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 16:36:47.129 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 16:36:47.144 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 16:36:47.185 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:36:47.187 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 16:36:47.196 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 16:36:47.196 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 16:36:47.222 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 16:36:47.337 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 16:36:47.369 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 16:36:48.209 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
-
-    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
-    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
-    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
-
- 2017-07-10 16:36:48.210 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@318c68d5{/,null,AVAILABLE}
- 2017-07-10 16:36:48.217 [main] INFO  i.d.s.AdminEnvironment - tasks = 
-
-    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
-    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
-
- 2017-07-10 16:36:48.217 [main] WARN  i.d.s.AdminEnvironment - 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
-!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
-!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
-!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 16:36:48.225 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
- 2017-07-10 16:36:48.314 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:36:48.315 [main] INFO  o.e.j.server.Server - Started @3844ms
- 2017-07-10 16:37:00.408 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:37:00.409 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5112c16c
- 2017-07-10 16:37:00.412 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@1f4a06d3
- 2017-07-10 16:37:00.474 [dw-22 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc3y1ap1jk8gij|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc3y1ap1jk8gij|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
- 2017-07-10 16:37:00.768 [dw-22 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
- 2017-07-10 16:37:31.263 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:37:31.263 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@6fb29c24
- 2017-07-10 16:37:31.263 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@6b8d150a
- 2017-07-10 16:37:31.266 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:1
- 2017-07-10 16:40:11.851 [main] INFO  o.e.jetty.util.log - Logging initialized @2643ms
- 2017-07-10 16:40:11.992 [main] INFO  i.d.s.ServerFactory - Starting HttpApplication
- 2017-07-10 16:40:12.002 [main] INFO  i.d.s.SimpleServerFactory - Registering jersey handler with root path prefix: /
- 2017-07-10 16:40:12.026 [main] INFO  i.d.s.SimpleServerFactory - Registering admin handler with root path prefix: /admin
- 2017-07-10 16:40:12.074 [main] INFO  o.e.j.s.SetUIDListener - Opened HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:40:12.079 [main] INFO  o.e.j.server.Server - jetty-9.2.13.v20150730
- 2017-07-10 16:40:12.090 [main] DEBUG i.j.u.h.HttpApplication - Initializing Mysql storage ...
- 2017-07-10 16:40:12.090 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Pool 
- 2017-07-10 16:40:12.112 [main] INFO  c.m.v2.log.MLog - MLog clients using log4j logging.
- 2017-07-10 16:40:12.230 [main] INFO  c.m.v.c.C3P0Registry - Initializing c3p0-0.9.1.1 [built 15-March-2007 01:32:31; debug? true; trace: 10]
- 2017-07-10 16:40:12.267 [main] DEBUG i.j.u.h.m.m.ConnectionManager - Init Mysql DataSource Success 
- 2017-07-10 16:40:13.203 [main] INFO  i.d.j.DropwizardResourceConfig - The following paths were found for the configured resources:
-
-    POST    /data/add (io.j1st.utils.http.resource.DataInsert)
-    GET     /data/find (io.j1st.utils.http.resource.DataInsert)
-    GET     /data/test (io.j1st.utils.http.resource.DataInsert)
-
- 2017-07-10 16:40:13.214 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@3596b249{/,null,AVAILABLE}
- 2017-07-10 16:40:13.239 [main] INFO  i.d.s.AdminEnvironment - tasks = 
-
-    POST    /tasks/log-level (io.dropwizard.servlets.tasks.LogConfigurationTask)
-    POST    /tasks/gc (io.dropwizard.servlets.tasks.GarbageCollectionTask)
-
- 2017-07-10 16:40:13.239 [main] WARN  i.d.s.AdminEnvironment - 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!    THIS APPLICATION HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW      !
-!     IF IT DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE      !
-!    LETTING YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH OF YOUR    !
-!         APPLICATION'S DEPENDENCIES WHICH FULLY (BUT LIGHTLY) TESTS IT.       !
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- 2017-07-10 16:40:13.246 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@7a3269f5{/admin,null,AVAILABLE}
- 2017-07-10 16:40:13.356 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
- 2017-07-10 16:40:13.357 [main] INFO  o.e.j.server.Server - Started @4150ms
- 2017-07-10 16:41:00.592 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
- 2017-07-10 16:41:00.593 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3285fc6c
- 2017-07-10 16:41:00.598 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@4235d551
- 2017-07-10 16:41:00.663 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pc42fe21qfz7kz|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pc42fe21qfz7kz|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
- 2017-07-10 16:41:00.940 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
+ 2017-07-11 10:25:30.855 [main] INFO  o.e.j.s.h.ContextHandler - Started i.d.j.MutableServletContextHandler@535b1ae6{/admin,null,AVAILABLE}
+ 2017-07-11 10:25:30.945 [main] INFO  o.e.j.s.ServerConnector - Started HttpApplication@598260a6{HTTP/1.1}{0.0.0.0:8891}
+ 2017-07-11 10:25:30.945 [main] INFO  o.e.j.server.Server - Started @3277ms
+ 2017-07-11 10:25:46.939 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:25:46.940 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@49abebc4
+ 2017-07-11 10:25:46.943 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@32a6d16e
+ 2017-07-11 10:25:47.000 [dw-23 - POST /data/add] INFO  c.m.v.c.i.AbstractPoolBackedDataSource - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hgeo729pd64er1188bzhi|6b00ad9, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> null, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeo729pd64er1188bzhi|6b00ad9, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8, lastAcquisitionFailureDefaultUser -> null, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 5, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+ 2017-07-11 10:25:51.886 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:10
+ 2017-07-11 10:27:52.454 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:27:52.454 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@887ff05
+ 2017-07-11 10:27:52.455 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7ee173ca
+ 2017-07-11 10:27:52.460 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-11 10:28:05.616 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:28:05.617 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7be43eaa
+ 2017-07-11 10:28:05.618 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7fdba50e
+ 2017-07-11 10:28:05.621 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-11 10:28:09.460 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:28:09.460 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@7a8ad603
+ 2017-07-11 10:28:09.461 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@3e2f20f8
+ 2017-07-11 10:28:09.463 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-11 10:28:21.778 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:29:02.498 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@19bb5317
+ 2017-07-11 10:30:36.368 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@5b9392ea
+ 2017-07-11 10:31:11.585 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-11 10:31:52.741 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:31:55.728 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@bb7ade9
+ 2017-07-11 10:33:34.657 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@12ba45e3
+ 2017-07-11 10:33:38.506 [dw-24 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:0
+ 2017-07-11 10:33:40.416 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - 请求添加AgentID:dfsdfdsfds的数据
+ 2017-07-11 10:33:40.417 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@617f190a
+ 2017-07-11 10:34:02.697 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - add data :io.j1st.utils.http.entity.Stream@1107ec8d
+ 2017-07-11 10:34:12.139 [dw-23 - POST /data/add] DEBUG i.j.u.h.r.DataInsert - Successfully adding count:29
  
